@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Activity, Gem } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import RunCard from './components/RunCard.jsx'
 
@@ -77,7 +76,7 @@ export default function App() {
     })
     if (!res.ok) {
       const err = await res.json().catch(() => ({}))
-      throw new Error(err.error || '提交失败')
+      throw new Error(err.error || 'failed')
     }
   }, [])
 
@@ -95,7 +94,6 @@ export default function App() {
     setLogs((prev) => ({ ...prev, [id]: text.length > LOG_CAP ? text.slice(-LOG_CAP) : text }))
   }, [])
 
-  // 按项目分组，组按最新活动排序
   const groups = useMemo(() => {
     const map = new Map()
     for (const run of runs) {
@@ -111,56 +109,73 @@ export default function App() {
     return arr
   }, [runs])
 
-  const runningCount = runs.filter((r) => r.status === 'running' || r.status === 'pending').length
+  const active = runs.filter((r) => r.status === 'running' || r.status === 'pending').length
 
   return (
     <>
-      <div className="aurora" />
-      <header className="sticky top-0 z-40 border-b border-white/[0.07] bg-black/25 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-[1320px] items-center justify-between px-6 py-3.5">
-          <div className="flex items-baseline gap-3">
-            <span className="flex items-center gap-2 text-xl font-bold tracking-wide">
-              <Gem className="h-5 w-5 text-clay" strokeWidth={2.2} />
-              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                Touchstone
-              </span>
-            </span>
-            <span className="text-xs text-white/40">多模型试金石 · AI Coding Arena</span>
-          </div>
-          <div className="flex items-center gap-3">
-            {runningCount > 0 && (
-              <span className="flex items-center gap-1.5 rounded-full border border-clay/50 bg-clay/10 px-3 py-1 text-xs text-clay shimmer">
-                <Activity className="h-3.5 w-3.5" />
-                {runningCount} 个任务运行中
+      <div className="bg-arena" />
+      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#09090b]/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-4 px-6">
+          <span className="font-mono text-[15px] font-bold tracking-[0.25em] text-white">
+            TOUCHSTONE<span className="text-acid">_</span>
+          </span>
+          <span className="mt-px font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase">
+            AI Coding Arena
+          </span>
+          <div className="ml-auto flex items-center gap-4">
+            {active > 0 && (
+              <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-acid uppercase">
+                <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
+                {active} running
               </span>
             )}
+            <a
+              href="https://github.com/jefflinshu/touchstone"
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-[10px] tracking-[0.18em] text-white/40 uppercase transition-colors hover:text-white"
+            >
+              GitHub ↗
+            </a>
             <span
-              className={`h-2 w-2 rounded-full transition-colors ${wsOk ? 'bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]' : 'bg-rose-500'}`}
-              title={wsOk ? '实时连接正常' : '连接断开'}
+              className={`h-1.5 w-1.5 rounded-full ${wsOk ? 'bg-acid shadow-[0_0_6px_rgba(212,255,79,0.9)]' : 'bg-red-500'}`}
+              title={wsOk ? 'live' : 'disconnected'}
             />
           </div>
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1320px] px-6 pb-24">
+      <div className="mx-auto max-w-[1400px] px-6 pb-28">
         <TaskForm agents={agents} onSubmit={submitTask} />
 
-        <main className="mt-10 flex flex-col gap-12">
+        <div className="mt-10 mb-4 flex items-center gap-6 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
+          <span>
+            Projects <span className="text-white/70">{groups.length}</span>
+          </span>
+          <span>
+            Runs <span className="text-white/70">{runs.length}</span>
+          </span>
+          <span>
+            Active <span className={active ? 'text-acid' : 'text-white/70'}>{active}</span>
+          </span>
+          <span className="h-px flex-1 bg-white/8" />
+        </div>
+
+        <main className="flex flex-col gap-14">
           {groups.length === 0 && (
-            <div className="glass rounded-3xl px-8 py-16 text-center leading-8 text-white/45">
-              还没有任务。在上方输入项目名和任务描述，选择模型，点击「下发任务」——
-              <br />
-              各家 CLI 会并行开工，作品完成后自动出现在这里。
+            <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
+              No runs yet
             </div>
           )}
           {groups.map((g) => (
             <section key={g.project}>
-              <h2 className="mb-4 flex items-baseline gap-2.5 text-lg font-semibold">
-                <span className="h-4 w-1 self-center rounded-full bg-gradient-to-b from-clay to-clay-deep" />
-                {g.project}
-                <span className="text-xs font-normal text-white/35">{g.runs.length} 次运行</span>
-              </h2>
-              <div className="grid gap-5 [grid-template-columns:repeat(auto-fill,minmax(390px,1fr))]">
+              <div className="mb-4 flex items-baseline gap-4">
+                <h2 className="text-xl font-semibold tracking-tight">{g.project}</h2>
+                <span className="font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
+                  {g.runs.length} runs
+                </span>
+              </div>
+              <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(380px,1fr))]">
                 {g.runs.map((run) => (
                   <RunCard
                     key={run.id}

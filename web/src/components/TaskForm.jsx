@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Zap, Loader2, Sparkles } from 'lucide-react'
+import { Loader2, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input, Textarea } from '@/components/ui/input'
+import { cn } from '@/lib/utils'
 
 export default function TaskForm({ agents, onSubmit }) {
   const [project, setProject] = useState('')
@@ -10,7 +13,6 @@ export default function TaskForm({ agents, onSubmit }) {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    // 默认全选
     setSelected((prev) => {
       const next = { ...prev }
       for (const a of agents) if (!(a.id in next)) next[a.id] = true
@@ -23,7 +25,7 @@ export default function TaskForm({ agents, onSubmit }) {
     setError('')
     const agentIds = agents.filter((a) => selected[a.id]).map((a) => a.id)
     if (!project.trim() || !prompt.trim() || agentIds.length === 0) {
-      setError('请填写项目名、任务描述，并至少选择一个模型')
+      setError('project / prompt / agents required')
       return
     }
     setBusy(true)
@@ -37,79 +39,81 @@ export default function TaskForm({ agents, onSubmit }) {
     }
   }
 
-  const inputCls =
-    'rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-sm text-white/90 placeholder:text-white/30 outline-none transition focus:border-clay/70 focus:bg-white/[0.06] focus:shadow-[0_0_0_3px_rgba(217,119,87,0.15)]'
-
   return (
-    <form onSubmit={handleSubmit} className="glass mt-8 flex flex-col gap-4 rounded-3xl p-5">
-      <div className="flex flex-wrap items-center gap-3">
-        <input
-          className={`${inputCls} min-w-[240px] flex-1`}
-          placeholder="项目名（如 bouncing-ball）"
-          value={project}
-          onChange={(e) => setProject(e.target.value)}
-        />
+    <form
+      onSubmit={handleSubmit}
+      className="mt-8 rounded-lg border border-white/10 bg-white/[0.02]"
+    >
+      <div className="border-b border-white/8 px-5 py-3 font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">
+        New benchmark
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-        {agents.map((a) => (
-          <div key={a.id} className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setSelected((s) => ({ ...s, [a.id]: !s[a.id] }))}
-              className={`rounded-full border px-4 py-1.5 text-[13px] font-medium transition ${
-                selected[a.id]
-                  ? 'bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]'
-                  : 'border-white/10 text-white/35 hover:text-white/60'
-              }`}
-              style={selected[a.id] ? { borderColor: a.color, color: a.color } : {}}
-            >
-              {a.name}
-            </button>
-            {selected[a.id] && (
-              <>
-                <input
-                  className={`${inputCls} w-[170px] px-3 py-1.5 text-xs`}
-                  list={`models-${a.id}`}
-                  placeholder="默认模型"
-                  value={models[a.id] || ''}
-                  onChange={(e) => setModels((m) => ({ ...m, [a.id]: e.target.value }))}
-                />
-                <datalist id={`models-${a.id}`}>
-                  {(a.models || []).map((m) => (
-                    <option key={m} value={m} />
-                  ))}
-                </datalist>
-              </>
-            )}
+      <div className="flex flex-col gap-4 p-5">
+        <div className="flex flex-wrap gap-3">
+          <Input
+            className="max-w-[300px] font-mono"
+            placeholder="project-name"
+            value={project}
+            onChange={(e) => setProject(e.target.value)}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            {agents.map((a) => (
+              <div
+                key={a.id}
+                className={cn(
+                  'flex h-9 items-center overflow-hidden rounded-md border transition-colors',
+                  selected[a.id] ? 'border-white/20 bg-white/[0.04]' : 'border-white/8'
+                )}
+              >
+                <button
+                  type="button"
+                  onClick={() => setSelected((s) => ({ ...s, [a.id]: !s[a.id] }))}
+                  className={cn(
+                    'flex h-full cursor-pointer items-center gap-2 px-3 text-[13px] font-medium transition-colors',
+                    selected[a.id] ? 'text-white' : 'text-white/30 hover:text-white/60'
+                  )}
+                >
+                  <span
+                    className="h-2 w-2 rounded-full transition-opacity"
+                    style={{ background: a.color, opacity: selected[a.id] ? 1 : 0.3 }}
+                  />
+                  {a.name}
+                </button>
+                {selected[a.id] && (
+                  <>
+                    <input
+                      className="h-full w-[150px] border-l border-white/10 bg-transparent px-2.5 font-mono text-[11px] text-white/70 outline-none placeholder:text-white/20"
+                      list={`models-${a.id}`}
+                      placeholder="default model"
+                      value={models[a.id] || ''}
+                      onChange={(e) => setModels((m) => ({ ...m, [a.id]: e.target.value }))}
+                    />
+                    <datalist id={`models-${a.id}`}>
+                      {(a.models || []).map((m) => (
+                        <option key={m} value={m} />
+                      ))}
+                    </datalist>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
 
-      <textarea
-        className={`${inputCls} w-full resize-y leading-6`}
-        rows={3}
-        placeholder={
-          '任务描述（同一个任务会并行下发给所有勾选的模型）…\n例：用纯 HTML/CSS/JS 实现一个六边形内弹跳小球的物理动画'
-        }
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-      />
+        <Textarea
+          rows={3}
+          placeholder="Prompt — 同一任务并行下发给所有选中的 CLI，自动要求产出 index.html"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
 
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="flex items-center gap-1.5 text-xs text-white/35">
-          <Sparkles className="h-3.5 w-3.5 text-clay/70" />
-          每次下发均为全新独立会话 · 自动要求产出可直接打开的 index.html
-        </span>
-        <div className="flex items-center gap-3">
-          {error && <span className="text-[13px] text-rose-400">{error}</span>}
-          <button
-            disabled={busy}
-            className="flex items-center gap-2 rounded-xl bg-gradient-to-br from-clay to-clay-deep px-6 py-2.5 text-sm font-bold text-white shadow-[0_4px_20px_rgba(217,119,87,0.35)] transition hover:brightness-110 active:scale-[0.98] disabled:opacity-50"
-          >
-            {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Zap className="h-4 w-4" />}
-            {busy ? '下发中…' : '下发任务'}
-          </button>
+        <div className="flex items-center justify-end gap-4">
+          {error && <span className="font-mono text-xs text-red-400">{error}</span>}
+          <Button disabled={busy} className="font-mono text-xs font-bold tracking-[0.15em] uppercase">
+            {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
+            Run
+            {!busy && <ArrowRight className="h-3.5 w-3.5" />}
+          </Button>
         </div>
       </div>
     </form>

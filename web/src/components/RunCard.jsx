@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 import {
   Loader2,
   Maximize2,
@@ -9,16 +8,18 @@ import {
   Square,
   Terminal,
   X,
-  FolderClosed,
 } from 'lucide-react'
+import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
-const STATUS_META = {
-  pending: { text: '排队中', cls: 'border-white/20 text-white/50' },
-  running: { text: '运行中', cls: 'border-amber-300/50 bg-amber-300/10 text-amber-300' },
-  done: { text: '完成', cls: 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300' },
-  failed: { text: '失败', cls: 'border-rose-400/40 bg-rose-400/10 text-rose-300' },
-  stopped: { text: '已停止', cls: 'border-white/20 text-white/50' },
-  interrupted: { text: '已中断', cls: 'border-rose-400/30 text-rose-300/70' },
+const STATUS = {
+  pending: { label: 'QUEUED', dot: 'bg-white/40', text: 'text-white/40' },
+  running: { label: 'RUNNING', dot: 'bg-acid pulse-dot', text: 'text-acid' },
+  done: { label: 'DONE', dot: 'bg-emerald-400', text: 'text-emerald-400' },
+  failed: { label: 'FAILED', dot: 'bg-red-500', text: 'text-red-400' },
+  stopped: { label: 'STOPPED', dot: 'bg-white/40', text: 'text-white/40' },
+  interrupted: { label: 'INTERRUPTED', dot: 'bg-red-500/60', text: 'text-red-400/70' },
 }
 
 // 虚拟视口：作品按桌面尺寸渲染后整体缩放，保证内容完整可见
@@ -30,7 +31,7 @@ function elapsed(run) {
   const end = run.endedAt ? new Date(run.endedAt) : new Date()
   const sec = Math.max(0, Math.round((end - new Date(run.startedAt)) / 1000))
   if (sec < 60) return `${sec}s`
-  return `${Math.floor(sec / 60)}m${sec % 60}s`
+  return `${Math.floor(sec / 60)}m${String(sec % 60).padStart(2, '0')}s`
 }
 
 function previewUrlOf(run) {
@@ -39,23 +40,7 @@ function previewUrlOf(run) {
   return `/workspace/${folderPath}/${run.entry}`
 }
 
-const btnCls =
-  'flex items-center gap-1 rounded-lg border border-white/10 bg-white/[0.05] px-2 py-1.5 text-xs text-white/70 transition hover:border-white/35 hover:text-white'
-
-function ModelTag({ run }) {
-  const m = run.model || run.resolvedModel
-  if (!m) return null
-  return (
-    <span
-      className="max-w-[160px] overflow-hidden rounded-full border border-white/10 bg-white/[0.04] px-2 py-px text-[11px] font-normal text-ellipsis whitespace-nowrap text-white/50"
-      title={run.model ? `指定模型 ${m}` : `默认模型 ${m}`}
-    >
-      {m}
-    </span>
-  )
-}
-
-function ScaledPreview({ url, frameKey, onClick }) {
+function ScaledPreview({ url, frameKey }) {
   const boxRef = useRef(null)
   const [scale, setScale] = useState(0)
 
@@ -69,12 +54,7 @@ function ScaledPreview({ url, frameKey, onClick }) {
   }, [])
 
   return (
-    <div
-      ref={boxRef}
-      onClick={onClick}
-      className="group relative h-full w-full cursor-zoom-in overflow-hidden"
-      title="点击全屏查看"
-    >
+    <div ref={boxRef} className="absolute inset-0 overflow-hidden">
       {scale > 0 && (
         <iframe
           key={frameKey}
@@ -85,55 +65,7 @@ function ScaledPreview({ url, frameKey, onClick }) {
           style={{ width: VIEW_W, height: VIEW_H, transform: `scale(${scale})` }}
         />
       )}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
-        <span className="flex items-center gap-1.5 rounded-full bg-black/60 px-3.5 py-1.5 text-xs text-white backdrop-blur">
-          <Maximize2 className="h-3.5 w-3.5" /> 全屏查看
-        </span>
-      </div>
     </div>
-  )
-}
-
-function FullscreenModal({ run, url, onClose }) {
-  useEffect(() => {
-    const onKey = (e) => e.key === 'Escape' && onClose()
-    window.addEventListener('keydown', onKey)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
-    }
-  }, [onClose])
-
-  return createPortal(
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-5 backdrop-blur-md"
-      onClick={onClose}
-    >
-      <div
-        className="glass-deep flex h-full w-full max-w-[1480px] flex-col overflow-hidden rounded-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="flex items-center gap-2.5 border-b border-white/10 px-4 py-3">
-          <span className="h-2.5 w-2.5 rounded-[3px]" style={{ background: run.color }} />
-          <span className="flex items-baseline gap-2 text-sm font-semibold">
-            {run.agentName}
-            <ModelTag run={run} />
-          </span>
-          <span className="text-xs text-white/40">{run.project}</span>
-          <div className="ml-auto flex items-center gap-2">
-            <a href={url} target="_blank" rel="noreferrer" className={btnCls}>
-              <ExternalLink className="h-3.5 w-3.5" /> 新窗口
-            </a>
-            <button onClick={onClose} className={btnCls}>
-              <X className="h-3.5 w-3.5" /> 关闭
-            </button>
-          </div>
-        </header>
-        <iframe src={url} title={`${run.folder}-full`} className="w-full flex-1 border-0 bg-black" />
-      </div>
-    </div>,
-    document.body
   )
 }
 
@@ -145,7 +77,8 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
   const logRef = useRef(null)
 
   const isLive = run.status === 'running' || run.status === 'pending'
-  const meta = STATUS_META[run.status] || STATUS_META.pending
+  const st = STATUS[run.status] || STATUS.pending
+  const model = run.model || run.resolvedModel
 
   useEffect(() => {
     if (!isLive) return
@@ -170,102 +103,127 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
 
   return (
     <article
-      className={`glass flex flex-col overflow-hidden rounded-2xl transition hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(0,0,0,0.5)] ${
-        isLive ? 'border-amber-300/25' : ''
-      }`}
+      className={cn(
+        'group overflow-hidden rounded-lg border bg-[#0c0c0f] transition-colors',
+        isLive ? 'border-acid/25' : 'border-white/10 hover:border-white/25'
+      )}
     >
-      <header className="flex items-center gap-2.5 px-4 py-3">
-        <span className="h-2.5 w-2.5 shrink-0 rounded-[3px]" style={{ background: run.color }} />
-        <span className="flex min-w-0 flex-1 items-baseline gap-2 text-sm font-semibold">
-          {run.agentName}
-          <ModelTag run={run} />
-        </span>
-        <span
-          className={`flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] ${meta.cls}`}
-        >
-          {isLive && <Loader2 className="h-3 w-3 animate-spin" />}
-          {meta.text}
-        </span>
-        <span className="shrink-0 text-xs text-white/40 tabular-nums">{elapsed(run)}</span>
-      </header>
-
-      <div className="relative aspect-[16/10] bg-black/50">
+      {/* 预览区 */}
+      <div
+        className={cn('relative aspect-[16/10] bg-black', previewUrl && 'cursor-zoom-in')}
+        onClick={() => previewUrl && setShowFull(true)}
+      >
         {previewUrl ? (
-          <ScaledPreview url={previewUrl} frameKey={frameKey} onClick={() => setShowFull(true)} />
+          <ScaledPreview url={previewUrl} frameKey={frameKey} />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center px-6 text-center text-[13px] text-white/35">
+          <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
             {isLive ? (
-              <span className="shimmer">生成中，作品出现后自动预览…</span>
-            ) : run.status === 'failed' ? (
-              run.error || '未产出可预览的作品'
+              <Loader2 className="h-5 w-5 animate-spin text-white/25" />
             ) : (
-              '暂无可预览的作品'
+              <span className="font-mono text-[11px] tracking-wider text-white/25 uppercase">
+                {run.status === 'failed' ? run.error || 'no output' : 'no output'}
+              </span>
             )}
           </div>
         )}
-      </div>
 
-      <footer className="flex items-center justify-between gap-2 px-4 py-2.5">
-        <span
-          className="flex min-w-0 items-center gap-1.5 overflow-hidden text-[11px] text-ellipsis whitespace-nowrap text-white/35"
-          title={run.folder}
+        {/* 悬停操作层 */}
+        <div
+          className="absolute top-2 right-2 flex items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100"
+          onClick={(e) => e.stopPropagation()}
         >
-          <FolderClosed className="h-3 w-3 shrink-0" />
-          {run.folder}
-        </span>
-        <div className="flex shrink-0 items-center gap-1.5">
           {previewUrl && (
             <>
-              <button onClick={() => setShowFull(true)} className={btnCls} title="全屏查看">
+              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title="fullscreen" onClick={() => setShowFull(true)}>
                 <Maximize2 className="h-3.5 w-3.5" />
-              </button>
-              <button onClick={() => setFrameKey((k) => k + 1)} className={btnCls} title="重新加载预览">
+              </Button>
+              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title="reload" onClick={() => setFrameKey((k) => k + 1)}>
                 <RotateCw className="h-3.5 w-3.5" />
-              </button>
-              <a href={previewUrl} target="_blank" rel="noreferrer" className={btnCls} title="新窗口打开">
+              </Button>
+              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title="open" asChild={false} onClick={() => window.open(previewUrl, '_blank')}>
                 <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              </Button>
             </>
           )}
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
+            className={cn('bg-black/70 backdrop-blur', showLog && 'text-acid')}
+            title="log"
             onClick={() => setShowLog((s) => !s)}
-            className={`${btnCls} ${showLog ? 'border-clay/60 text-clay' : ''}`}
-            title="日志"
           >
             <Terminal className="h-3.5 w-3.5" />
-          </button>
+          </Button>
           {isLive ? (
-            <button
-              onClick={() => onStop(run.id)}
-              className={`${btnCls} hover:border-rose-400/60 hover:text-rose-300`}
-              title="终止进程"
-            >
+            <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur hover:text-red-400" title="stop" onClick={() => onStop(run.id)}>
               <Square className="h-3.5 w-3.5" />
-            </button>
+            </Button>
           ) : (
-            <button
-              onClick={() => {
-                if (confirm(`删除 ${run.folder} 及其全部文件？`)) onDelete(run.id)
-              }}
-              className={`${btnCls} hover:border-rose-400/60 hover:text-rose-300`}
-              title="删除记录与文件夹"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="bg-black/70 backdrop-blur hover:text-red-400"
+              title="delete"
+              onClick={() => confirm(`Delete ${run.folder}?`) && onDelete(run.id)}
             >
               <Trash2 className="h-3.5 w-3.5" />
-            </button>
+            </Button>
           )}
         </div>
+      </div>
+
+      {/* 数据行 */}
+      <footer className="flex h-11 items-center gap-2.5 border-t border-white/8 px-3.5">
+        <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: run.color }} />
+        <span className="truncate text-[13px] font-medium">{run.agentName}</span>
+        {model && (
+          <span className="truncate font-mono text-[11px] text-white/35" title={run.model ? 'specified' : 'default'}>
+            {model}
+          </span>
+        )}
+        <span className="ml-auto flex shrink-0 items-center gap-3">
+          <span className="font-mono text-[11px] text-white/35 tabular-nums">{elapsed(run)}</span>
+          <span className={cn('flex items-center gap-1.5 font-mono text-[10px] tracking-[0.15em]', st.text)}>
+            <span className={cn('h-1.5 w-1.5 rounded-full', st.dot)} />
+            {st.label}
+          </span>
+        </span>
       </footer>
 
+      {/* 日志 */}
       {showLog && (
         <pre
           ref={logRef}
-          className="m-0 max-h-60 overflow-auto border-t border-white/10 bg-black/60 p-3.5 font-mono text-[11px] leading-relaxed break-all whitespace-pre-wrap text-white/60"
+          className="m-0 max-h-56 overflow-auto border-t border-white/8 bg-black/60 p-3.5 font-mono text-[11px] leading-relaxed break-all whitespace-pre-wrap text-white/55"
         >
-          {log || '（暂无日志输出）'}
+          {log || 'no output yet'}
         </pre>
       )}
 
-      {showFull && previewUrl && <FullscreenModal run={run} url={previewUrl} onClose={() => setShowFull(false)} />}
+      {/* 全屏查看 */}
+      <Dialog open={showFull} onOpenChange={setShowFull}>
+        <DialogContent className="h-[94vh] w-[96vw] max-w-[1500px] overflow-hidden rounded-lg p-0">
+          <div className="flex h-full flex-col">
+            <header className="flex h-12 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
+              <span className="h-2 w-2 rounded-full" style={{ background: run.color }} />
+              <DialogTitle className="text-[13px] font-medium">{run.agentName}</DialogTitle>
+              {model && <span className="font-mono text-[11px] text-white/35">{model}</span>}
+              <span className="font-mono text-[11px] text-white/25">/ {run.project}</span>
+              <div className="ml-auto flex items-center gap-1.5">
+                <Button variant="outline" size="sm" className="font-mono text-[10px] tracking-wider uppercase" onClick={() => window.open(previewUrl, '_blank')}>
+                  <ExternalLink className="h-3 w-3" /> Open
+                </Button>
+                <DialogClose asChild>
+                  <Button variant="ghost" size="icon">
+                    <X className="h-4 w-4" />
+                  </Button>
+                </DialogClose>
+              </div>
+            </header>
+            {previewUrl && <iframe src={previewUrl} title={`${run.folder}-full`} className="w-full flex-1 border-0 bg-black" />}
+          </div>
+        </DialogContent>
+      </Dialog>
     </article>
   )
 }
