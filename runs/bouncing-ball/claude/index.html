@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发光小球在旋转六边形内弹跳</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #10131c 0%, #07090f 70%, #04050a 100%);
+    overflow: hidden;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+  .hint {
+    position: fixed;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(180, 200, 255, 0.35);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    user-select: none;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div class="hint">点击画面给小球一个随机推力</div>
+<script>
+(function () {
+  'use strict';
+
+  const canvas = document.getElementById('scene');
+  const ctx = canvas.getContext('2d');
+
+  let W = 0, H = 0, DPR = 1;
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // ---------- 物理参数 ----------
+  const GRAVITY = 1400;        // px / s^2
+  const RESTITUTION = 0.88;    // 法向反弹系数
+  const WALL_FRICTION = 0.985; // 切向摩擦
+  const BALL_RADIUS = 13;
+  const HEX_SIDES = 6;
+  const OMEGA = 0.6;           // 六边形旋转角速度 rad/s
+
+  const ball = {
+    x: 0, y: -60,
+    vx: 220, vy: 0,
+    r: BALL_RADIUS,
+    trail: []   // 拖尾
+  };
+
+  let hexAngle = 0;
+
+  function hexRadius() {
+    return Math.min(W, H) * 0.36;
+  }
+
+  // 六边形顶点（以画布中心为原点）
+  function hexVertices(angle, R) {
+    const pts = [];
+    for (let i = 0; i < HEX_SIDES; i++) {
+      const a = angle + (Math.PI * 2 * i) / HEX_SIDES - Math.PI / 2;
+      pts.push({ x: Math.cos(a) * R, y: Math.sin(a) * R });
+    }
+    return pts;
+  }
+
+  // ---------- 碰撞：小球 vs 旋转六边形的每条边 ----------
+  function collide(dt) {
+    const R = hexRadius();
+    const pts = hexVertices(hexAngle, R);
+
+    for (let i = 0; i < HEX_SIDES; i++) {
+      const a = pts[i];
+      const b = pts[(i + 1) % HEX_SIDES];
+
+      const ex = b.x - a.x, ey = b.y - a.y;
+      const elen = Math.hypot(ex, ey);
+      const ux = ex / elen, uy = ey / elen;
+
+      // 小球到线段最近点
+      let t = ((ball.x - a.x) * ux + (ball.y - a.y) * uy);
+      t = Math.max(0, Math.min(elen, t));
+      const cx = a.x + ux * t;
+      const cy = a.y + uy * t;
+
+      let dx = ball.x - cx, dy = ball.y - cy;
+      let dist = Math.hypot(dx, dy);
+
+      if (dist < ball.r) {
+        // 法线：从墙指向球心（球在内部，法线大致指向中心方向）
+        let nx, ny;
+        if (dist > 1e-6) {
+          nx = dx / dist; ny = dy / dist;
+        } else {
+          // 退化情况：用边的内法线
+          nx = -uy; ny = ux;
+          if (nx * (0 - cx) + ny * (0 - cy) < 0) { nx = -nx; ny = -ny; }
+        }
+        // 确保法线指向六边形内部（中心方向）
+        if (nx * (0 - cx) + ny * (0 - cy) < 0) { nx = -nx; ny = -ny; }
+
+        // 推出穿透
+        const pen = ball.r - dist;
+        ball.x += nx * pen;
+        ball.y += ny * pen;
+
+        // 墙面因旋转产生的线速度 v = ω × r（接触点处）
+        const wallVx = -OMEGA * cy;
+        const wallVy = OMEGA * cx;
+
+        // 相对速度
+        let rvx = ball.vx - wallVx;
+        let rvy = ball.vy - wallVy;
+        const vn = rvx * nx + rvy * ny;
+
+        if (vn < 0) {
+          // 分解为法向 + 切向
+          const tnx = rvx - vn * nx;
+          const tny = rvy - vn * ny;
+          // 法向反弹 + 切向摩擦
+          rvx = tnx * WALL_FRICTION - vn * RESTITUTION * nx;
+          rvy = tny * WALL_FRICTION - vn * RESTITUTION * ny;
+          ball.vx = rvx + wallVx;
+          ball.vy = rvy + wallVy;
+          flash = 1; // 碰撞闪光
+        }
+      }
+    }
+  }
+
+  let flash = 0;
+
+  // ---------- 主循环 ----------
+  let last = performance.now();
+  function frame(now) {
+    let dt = (now - last) / 1000;
+    last = now;
+    dt = Math.min(dt, 1 / 30); // 防止切页后大步长
+
+    hexAngle += OMEGA * dt;
+
+    // 子步进，提升高速碰撞稳定性
+    const steps = 4;
+    const sdt = dt / steps;
+    for (let s = 0; s < steps; s++) {
+      ball.vy += GRAVITY * sdt;
+      ball.x += ball.vx * sdt;
+      ball.y += ball.vy * sdt;
+      collide(sdt);
+    }
+
+    // 拖尾记录
+    ball.trail.push({ x: ball.x, y: ball.y });
+    if (ball.trail.length > 26) ball.trail.shift();
+
+    flash *= 0.90;
+
+    draw();
+    requestAnimationFrame(frame);
+  }
+
+  // ---------- 绘制 ----------
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const cx = W / 2, cy = H / 2;
+    const R = hexRadius();
+    const pts = hexVertices(hexAngle, R);
+
+    ctx.save();
+    ctx.translate(cx, cy);
+
+    // 六边形外发光
+    ctx.beginPath();
+    pts.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+    ctx.closePath();
+    ctx.strokeStyle = 'rgba(80, 200, 255, ' + (0.55 + flash * 0.45) + ')';
+    ctx.lineWidth = 2.5;
+    ctx.shadowColor = 'rgba(80, 200, 255, 0.9)';
+    ctx.shadowBlur = 18 + flash * 30;
+    ctx.stroke();
+
+    // 第二层细描边
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = 'rgba(200, 240, 255, 0.85)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // 顶点小光点
+    for (const p of pts) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(160, 230, 255, 0.9)';
+      ctx.shadowColor = 'rgba(80, 200, 255, 1)';
+      ctx.shadowBlur = 10;
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+
+    // 拖尾
+    for (let i = 0; i < ball.trail.length; i++) {
+      const p = ball.trail[i];
+      const k = i / ball.trail.length;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, ball.r * k * 0.85, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 150, 60, ' + (0.06 * k) + ')';
+      ctx.fill();
+    }
+
+    // 发光小球（径向渐变 + shadow 光晕）
+    const g = ctx.createRadialGradient(
+      ball.x - ball.r * 0.3, ball.y - ball.r * 0.35, ball.r * 0.1,
+      ball.x, ball.y, ball.r
+    );
+    g.addColorStop(0, '#fff7e8');
+    g.addColorStop(0.35, '#ffd27a');
+    g.addColorStop(0.75, '#ff9a3c');
+    g.addColorStop(1, '#ff6a1a');
+
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+    ctx.fillStyle = g;
+    ctx.shadowColor = 'rgba(255, 150, 50, 0.95)';
+    ctx.shadowBlur = 35 + flash * 25;
+    ctx.fill();
+    // 再叠一层增强光晕
+    ctx.shadowBlur = 60;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+
+    ctx.restore();
+  }
+
+  // 点击给随机冲量
+  window.addEventListener('pointerdown', () => {
+    const a = Math.random() * Math.PI * 2;
+    const s = 500 + Math.random() * 400;
+    ball.vx += Math.cos(a) * s;
+    ball.vy += Math.sin(a) * s - 200;
+  });
+
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

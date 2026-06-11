@@ -1,0 +1,17 @@
+{
+  "name": "touchstone",
+  "version": "1.0.0",
+  "description": "本地多模型 CLI 任务编排与作品对比展示平台",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev:web": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "setup": "npm install && npm --prefix web install && npm --prefix web run build"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
