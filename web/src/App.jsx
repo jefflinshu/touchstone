@@ -1,12 +1,21 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { ChevronRight, Folder, FolderOpen, TerminalSquare, GitBranch } from 'lucide-react'
+import { Folder, TerminalSquare, GitBranch, Loader2 } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
-import RunCard from './components/RunCard.jsx'
+import ProjectPage from './components/ProjectPage.jsx'
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
+const LOG_CAP = 30000
 const CONSENT_KEY = 'touchstone-consent-v1'
+
+function GithubIcon({ className }) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+    </svg>
+  )
+}
 
 function ConsentDialog({ open, onAgree }) {
   return (
@@ -50,22 +59,29 @@ function ConsentDialog({ open, onAgree }) {
   )
 }
 
-function GithubIcon({ className }) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
-    </svg>
-  )
+// 极简 hash 路由：'#/'' 首页，'#/p/<project>' 详情页
+function useRoute() {
+  const [hash, setHash] = useState(location.hash)
+  useEffect(() => {
+    const onChange = () => setHash(location.hash)
+    window.addEventListener('hashchange', onChange)
+    return () => window.removeEventListener('hashchange', onChange)
+  }, [])
+  const m = hash.match(/^#\/p\/(.+)$/)
+  return m ? { page: 'project', project: decodeURIComponent(m[1]) } : { page: 'home' }
 }
 
-const LOG_CAP = 30000
+const goProject = (project) => (location.hash = `#/p/${encodeURIComponent(project)}`)
+const goHome = () => (location.hash = '#/')
 
 export default function App() {
   const [agents, setAgents] = useState([])
   const [runs, setRuns] = useState([])
   const [logs, setLogs] = useState({})
   const [wsOk, setWsOk] = useState(false)
+  const [consent, setConsent] = useState(() => localStorage.getItem(CONSENT_KEY) === '1')
   const wsRef = useRef(null)
+  const route = useRoute()
 
   const refresh = useCallback(async () => {
     const r = await fetch('/api/runs').then((r) => r.json())
@@ -124,10 +140,6 @@ export default function App() {
     }
   }, [refresh])
 
-  const [expanded, setExpanded] = useState(() => new Set())
-  const expandedInit = useRef(false)
-  const [consent, setConsent] = useState(() => localStorage.getItem(CONSENT_KEY) === '1')
-
   const submitTask = useCallback(async (payload) => {
     const res = await fetch('/api/tasks', {
       method: 'POST',
@@ -139,7 +151,7 @@ export default function App() {
       throw new Error(err.error || 'failed')
     }
     const data = await res.json()
-    if (data.project) setExpanded((prev) => new Set(prev).add(data.project))
+    if (data.project) goProject(data.project)
   }, [])
 
   const stopRun = useCallback(async (id) => {
@@ -172,30 +184,16 @@ export default function App() {
   }, [runs])
 
   const active = runs.filter((r) => r.status === 'running' || r.status === 'pending').length
-
-  // 首次加载默认展开最新项目
-  useEffect(() => {
-    if (!expandedInit.current && groups.length) {
-      expandedInit.current = true
-      setExpanded(new Set([groups[0].project]))
-    }
-  }, [groups])
-
-  const toggle = (project) =>
-    setExpanded((prev) => {
-      const next = new Set(prev)
-      next.has(project) ? next.delete(project) : next.add(project)
-      return next
-    })
+  const currentGroup = route.page === 'project' ? groups.find((g) => g.project === route.project) : null
 
   return (
     <>
       <div className="bg-arena" />
       <header className="sticky top-0 z-40 border-b border-white/8 bg-[#09090b]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-4 px-6">
-          <span className="font-mono text-[15px] font-bold tracking-[0.25em] text-white">
+          <a href="#/" className="font-mono text-[15px] font-bold tracking-[0.25em] text-white">
             TOUCHSTONE<span className="text-acid">_</span>
-          </span>
+          </a>
           <span className="mt-px font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase">
             AI Coding Arena
           </span>
@@ -232,96 +230,98 @@ export default function App() {
       />
 
       <div className="mx-auto max-w-[1400px] px-6 pb-28">
-        <TaskForm agents={agents} onSubmit={submitTask} disabled={!consent} />
-
-        <div className="mt-10 mb-4 flex items-center gap-6 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
-          <span>
-            Projects <span className="text-white/70">{groups.length}</span>
-          </span>
-          <span>
-            Runs <span className="text-white/70">{runs.length}</span>
-          </span>
-          <span>
-            Active <span className={active ? 'text-acid' : 'text-white/70'}>{active}</span>
-          </span>
-          <span className="h-px flex-1 bg-white/8" />
-        </div>
-
-        <main className="flex flex-col gap-3">
-          {groups.length === 0 && (
-            <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-              No runs yet
+        {route.page === 'project' ? (
+          currentGroup ? (
+            <ProjectPage
+              project={currentGroup.project}
+              runs={currentGroup.runs}
+              logs={logs}
+              onBack={goHome}
+              onStop={stopRun}
+              onDelete={deleteRun}
+              onFetchLog={fetchLog}
+            />
+          ) : (
+            <div className="mt-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
+              {runs.length === 0 ? <Loader2 className="mx-auto h-5 w-5 animate-spin" /> : 'Project not found'}
             </div>
-          )}
-          {groups.map((g) => {
-            const open = expanded.has(g.project)
-            const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
-            const done = g.runs.filter((r) => r.status === 'done').length
-            const failed = g.runs.length - running - done
-            return (
-              <section
-                key={g.project}
-                className={cn(
-                  'overflow-hidden rounded-lg border transition-colors',
-                  open ? 'border-white/15 bg-white/[0.015]' : 'border-white/10 hover:border-white/25'
-                )}
-              >
-                <button
-                  type="button"
-                  onClick={() => toggle(g.project)}
-                  className="flex h-12 w-full cursor-pointer items-center gap-3 px-4 text-left"
-                >
-                  <ChevronRight
-                    className={cn('h-3.5 w-3.5 shrink-0 text-white/35 transition-transform', open && 'rotate-90')}
-                  />
-                  {open ? (
-                    <FolderOpen className="h-4 w-4 shrink-0 text-acid/80" />
-                  ) : (
-                    <Folder className="h-4 w-4 shrink-0 text-white/40" />
-                  )}
-                  <span className="truncate text-[15px] font-semibold tracking-tight">{g.project}</span>
-                  <span className="ml-auto flex shrink-0 items-center gap-4 font-mono text-[11px] tabular-nums">
-                    {running > 0 && (
-                      <span className="flex items-center gap-1.5 text-acid">
-                        <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
-                        {running}
-                      </span>
-                    )}
-                    {done > 0 && (
-                      <span className="flex items-center gap-1.5 text-emerald-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                        {done}
-                      </span>
-                    )}
-                    {failed > 0 && (
-                      <span className="flex items-center gap-1.5 text-red-400/80">
-                        <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />
-                        {failed}
-                      </span>
-                    )}
-                    <span className="text-white/30">
-                      {new Date(g.latest).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
-                    </span>
-                  </span>
-                </button>
-                {open && (
-                  <div className="grid gap-4 border-t border-white/8 p-4 [grid-template-columns:repeat(auto-fill,minmax(380px,1fr))]">
-                    {g.runs.map((run) => (
-                      <RunCard
-                        key={run.id}
-                        run={run}
-                        log={logs[run.id]}
-                        onStop={stopRun}
-                        onDelete={deleteRun}
-                        onFetchLog={fetchLog}
-                      />
-                    ))}
-                  </div>
-                )}
-              </section>
-            )
-          })}
-        </main>
+          )
+        ) : (
+          <>
+            <TaskForm agents={agents} onSubmit={submitTask} disabled={!consent} />
+
+            <div className="mt-10 mb-4 flex items-center gap-6 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
+              <span>
+                Projects <span className="text-white/70">{groups.length}</span>
+              </span>
+              <span>
+                Runs <span className="text-white/70">{runs.length}</span>
+              </span>
+              <span>
+                Active <span className={active ? 'text-acid' : 'text-white/70'}>{active}</span>
+              </span>
+              <span className="h-px flex-1 bg-white/8" />
+            </div>
+
+            {groups.length === 0 ? (
+              <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
+                No runs yet
+              </div>
+            ) : (
+              <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+                {groups.map((g) => {
+                  const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
+                  const done = g.runs.filter((r) => r.status === 'done').length
+                  const failed = g.runs.length - running - done
+                  return (
+                    <button
+                      key={g.project}
+                      type="button"
+                      onClick={() => goProject(g.project)}
+                      className={cn(
+                        'group cursor-pointer rounded-lg border bg-[#0c0c0f] p-4 text-left transition-all hover:-translate-y-0.5',
+                        running ? 'border-acid/30' : 'border-white/10 hover:border-white/30'
+                      )}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <Folder className={cn('h-4 w-4 shrink-0', running ? 'text-acid' : 'text-white/40 group-hover:text-acid/70')} />
+                        <span className="truncate text-[15px] font-semibold tracking-tight">{g.project}</span>
+                      </div>
+                      <div className="mt-3 flex items-center gap-1.5">
+                        {[...new Map(g.runs.map((r) => [r.agentId, r.color])).values()].map((c, i) => (
+                          <span key={i} className="h-2 w-2 rounded-full" style={{ background: c }} />
+                        ))}
+                        <span className="ml-1 font-mono text-[10px] tracking-wider text-white/35 uppercase">
+                          {g.runs.length} runs
+                        </span>
+                      </div>
+                      <div className="mt-3 flex items-center gap-4 font-mono text-[11px] tabular-nums">
+                        {running > 0 && (
+                          <span className="flex items-center gap-1.5 text-acid">
+                            <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" /> {running}
+                          </span>
+                        )}
+                        {done > 0 && (
+                          <span className="flex items-center gap-1.5 text-emerald-400">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {done}
+                          </span>
+                        )}
+                        {failed > 0 && (
+                          <span className="flex items-center gap-1.5 text-red-400/80">
+                            <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" /> {failed}
+                          </span>
+                        )}
+                        <span className="ml-auto text-white/25">
+                          {new Date(g.latest).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+                        </span>
+                      </div>
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </>
+        )}
       </div>
     </>
   )
