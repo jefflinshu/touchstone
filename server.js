@@ -157,10 +157,10 @@ saveRegistry()
 
 // ---------- 浏览量 / 点赞 ----------
 const STATS_FILE = path.join(DATA_DIR, 'stats.json')
-let stats = { views: {}, likes: {} }
+let stats = { views: {}, likes: {}, projectLikes: {} }
 if (fs.existsSync(STATS_FILE)) {
   try {
-    stats = { views: {}, likes: {}, ...JSON.parse(fs.readFileSync(STATS_FILE, 'utf8')) }
+    stats = { views: {}, likes: {}, projectLikes: {}, ...JSON.parse(fs.readFileSync(STATS_FILE, 'utf8')) }
   } catch {}
 }
 let statsTimer = null
@@ -276,7 +276,7 @@ function autoCommitRun(run) {
       if (!fs.existsSync(path.join(__dirname, '.git'))) return
       await execGit(['add', '--', path.join('runs', run.folder)])
       const model = run.model || run.resolvedModel
-      const msg = `${run.project}: ${run.agentName}${model ? ` (${model})` : ''} 作品完成`
+      const msg = `showcase(${run.project}): add ${run.agentName}${model ? ` (${model})` : ''} run`
       const { error } = await execGit(['commit', '-m', msg])
       if (!error && gitCfg.autoPush !== false) {
         const { error: pushErr } = await execGit(['push'])
@@ -514,6 +514,41 @@ function agentHealth(agent) {
 // ---------- Google 登录（复用本机 gcloud CLI 凭据，gemini CLI 作回退） ----------
 let authCache = { at: 0, email: null }
 
+// 用户资料（头像/昵称），发布者信息展示在 folder 卡片上
+const USERS_FILE = path.join(DATA_DIR, 'users.json')
+let users = {}
+if (fs.existsSync(USERS_FILE)) {
+  try {
+    users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'))
+  } catch {}
+}
+
+// 用 gcloud 的 access token 调 userinfo 拿头像；curl 走系统代理环境变量
+function fetchProfile() {
+  return new Promise((resolve) => {
+    execFile('gcloud', ['auth', 'print-access-token'], { timeout: 15000 }, (err, token) => {
+      if (err) return resolve(null)
+      execFile(
+        'curl',
+        ['-s', '--max-time', '10', '-H', `Authorization: Bearer ${String(token).trim()}`,
+          'https://www.googleapis.com/oauth2/v2/userinfo'],
+        (err2, out) => {
+          if (err2) return resolve(null)
+          try {
+            const j = JSON.parse(out)
+            if (j.email) {
+              users[j.email] = { name: j.name || j.email.split('@')[0], picture: j.picture || null }
+              fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
+              return resolve(users[j.email])
+            }
+          } catch {}
+          resolve(null)
+        }
+      )
+    })
+  })
+}
+
 function geminiAccount() {
   try {
     const j = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.gemini', 'google_accounts.json'), 'utf8'))
@@ -547,7 +582,8 @@ function getGoogleAccount(force = false) {
 
 app.get('/api/auth/me', async (req, res) => {
   const email = await getGoogleAccount()
-  res.json({ loggedIn: !!email, email })
+  if (email && !users[email]) await fetchProfile()
+  res.json({ loggedIn: !!email, email, ...(users[email] || {}) })
 })
 
 // 拉起 gcloud 的浏览器 OAuth 流程，等用户在浏览器里完成授权后返回
@@ -572,7 +608,8 @@ app.post('/api/auth/login', async (req, res) => {
     await new Promise((r) => setTimeout(r, 1500))
   }
   const email = await getGoogleAccount(true)
-  res.json({ loggedIn: !!email, email })
+  if (email) await fetchProfile()
+  res.json({ loggedIn: !!email, email, ...(users[email] || {}) })
 })
 
 app.post('/api/tasks', async (req, res) => {
@@ -630,7 +667,34 @@ app.post('/api/tasks', async (req, res) => {
 })
 
 app.get('/api/runs', (req, res) => {
-  res.json({ runs: runs.map(publicRun), views: stats.views })
+  res.json({ runs: runs.map(publicRun), views: stats.views, projectLikes: stats.projectLikes, users })
+})
+
+// 项目（case）级点赞
+app.post('/api/projects/:project/like', (req, res) => {
+  const project = req.params.project
+  const delta = req.body?.action === 'unlike' ? -1 : 1
+  stats.projectLikes[project] = Math.max(0, (stats.projectLikes[project] || 0) + delta)
+  saveStats()
+  broadcast({ type: 'projectLike', project, likes: stats.projectLikes[project] })
+  res.json({ likes: stats.projectLikes[project] })
+})
+
+// 登录用户修改自己的昵称 / bio / 头像
+app.post('/api/users/me', async (req, res) => {
+  const email = await getGoogleAccount()
+  if (!email) return res.status(401).json({ error: '请先登录 Google 账号' })
+  const { name, bio, picture } = req.body || {}
+  const cur = users[email] || {}
+  users[email] = {
+    ...cur,
+    name: typeof name === 'string' && name.trim() ? name.trim().slice(0, 40) : cur.name || email.split('@')[0],
+    bio: typeof bio === 'string' ? bio.trim().slice(0, 500) : cur.bio || '',
+    picture: typeof picture === 'string' ? picture.trim() || null : cur.picture || null,
+  }
+  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
+  broadcast({ type: 'user', email, profile: users[email] })
+  res.json({ email, ...users[email] })
 })
 
 app.post('/api/projects/:project/view', (req, res) => {

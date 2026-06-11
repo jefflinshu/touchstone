@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft, Copy, Check, Share2, LayoutGrid } from 'lucide-react'
 import RunCard from './RunCard.jsx'
+import AgentIcon from './AgentIcon.jsx'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -134,7 +135,7 @@ export default function ProjectPage({ project, runs, logs, onBack, onStop, onDel
                     on ? 'border-white/25 text-white/80' : 'border-white/8 text-white/25'
                   )}
                 >
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: r.color, opacity: on ? 1 : 0.3 }} />
+                  <AgentIcon agentId={r.agentId} color={r.color} className={cn('h-3 w-3', !on && 'opacity-30')} />
                   {r.agentName}
                   {(r.model || r.resolvedModel) && <span className="text-white/40">{r.model || r.resolvedModel}</span>}
                 </button>

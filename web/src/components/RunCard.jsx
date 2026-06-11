@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
+import AgentIcon from './AgentIcon.jsx'
 import { cn } from '@/lib/utils'
 
 const STATUS = {
@@ -248,7 +249,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
 
       {/* 数据行 */}
       <footer className="flex h-11 items-center gap-2.5 border-t border-white/8 px-3.5">
-        <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: run.color }} />
+        <AgentIcon agentId={run.agentId} color={run.color} className="h-4 w-4" />
         <span className="truncate text-[13px] font-medium">{run.agentName}</span>
         {model && (
           <span className="truncate font-mono text-[11px] text-white/35" title={run.model ? 'specified' : 'default'}>
@@ -281,7 +282,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
         <DialogContent className="h-[94vh] w-[96vw] max-w-[1500px] overflow-hidden rounded-lg p-0">
           <div className="flex h-full flex-col">
             <header className="flex h-12 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
-              <span className="h-2 w-2 rounded-full" style={{ background: run.color }} />
+              <AgentIcon agentId={run.agentId} color={run.color} className="h-4 w-4" />
               <DialogTitle className="text-[13px] font-medium">{run.agentName}</DialogTitle>
               {model && <span className="font-mono text-[11px] text-white/35">{model}</span>}
               <span className="font-mono text-[11px] text-white/25">/ {run.project}</span>

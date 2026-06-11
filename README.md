@@ -1,59 +1,123 @@
-# ◈ Touchstone · 多模型试金石
+# ◈ Touchstone — AI Coding Arena
 
-把同一个任务并行下发给本地的多个 AI CLI（Claude Code / Codex / Gemini CLI），每个模型在独立文件夹里产出作品，网页上以对比网格实时展示运行效果——类似社交平台上常见的「多模型同题对比」视频，但全自动。
+**One prompt. Every AI coding CLI on your machine. Side-by-side results.**
 
-## 快速开始
+English | [中文](#-touchstone--ai-编程竞技场)
+
+---
+
+Ever wondered which AI actually writes the best code — Claude, GPT, or Gemini? Touchstone turns that question into a one-click experiment. Type a task once, and it fans out to **Claude Code**, **Codex CLI**, and **Gemini CLI** running locally on your machine, fully automated. Minutes later, every model's work renders live in a comparison grid — like those viral "4 AIs, same prompt" videos, except you can run them yourself.
+
+![arena](https://img.shields.io/badge/stack-Express%20·%20React%20·%20Tailwind-d4ff4f) ![local](https://img.shields.io/badge/runs-100%25%20local-d4ff4f)
+
+## ✨ What you get
+
+- **One prompt, parallel runs** — pick any combination of CLIs and models (even two Claude entries with different models racing each other). Each run is a fresh, isolated session.
+- **Zero naming chores** — project names are auto-generated from your prompt (via Claude Haiku, with CLI and timestamp fallbacks).
+- **Live arena view** — works render in scaled live previews the moment an `index.html` appears; click for fullscreen. Detail pages default to a 2×2 grid with selectable layouts and per-runner filtering.
+- **Hard numbers, not vibes** — every run reports duration, token usage, tool-call count, and (for Claude) dollar cost.
+- **Community signals** — per-run likes, per-project views, shareable project URLs, and a copyable prompt panel on every detail page.
+- **Opt-in publishing** — tick "publish" on a task and finished works are auto-committed and pushed to the public showcase repo, organized as `runs/<project>/<model>/`.
+- **Health checks built in** — the UI detects which CLIs are installed and logged in, and tells you exactly how to fix the ones that aren't.
+
+## 🚀 Quick start
+
+```bash
+npm run setup   # one-time: install deps + build the web UI
+npm start       # http://localhost:3000
+```
+
+Prerequisites: Node.js 20+, plus whichever CLIs you want in the arena:
+
+| CLI | Install | First-time auth |
+|---|---|---|
+| Claude Code | `npm i -g @anthropic-ai/claude-code` | run `claude` once and log in |
+| Codex CLI | `npm i -g @openai/codex` | run `codex login` |
+| Gemini CLI | `npm i -g @google/gemini-cli` | run `gemini` once (browser sign-in) |
+
+Missing or unauthenticated CLIs show an amber warning in the UI with the fix.
+
+## ⚙️ How it works
+
+1. You describe a task in the web UI and pick your runners (CLI × model — model lists are probed from each CLI's local config).
+2. The server creates `runs/<project>/<model>/` per runner and spawns each CLI there in full-auto mode (`claude -p --dangerously-skip-permissions`, `codex exec --full-auto`, `gemini -p --yolo`).
+3. A delivery requirement is appended to every prompt: produce a self-contained `index.html`.
+4. Output streams to the UI over WebSocket; as soon as an HTML entry appears, the card previews it live.
+5. On completion, metrics are parsed from each CLI's output, and (if you opted in) the work is committed and pushed to the showcase repo.
+
+Everything runs on your machine — your prompts and API usage stay local unless you choose to publish results.
+
+## 🔧 Configuration (`agents.json`)
+
+- Add/remove CLIs, change commands and flags (`{{PROMPT}}` is the placeholder).
+- `models`: fallback model suggestions per CLI (local config takes priority).
+- `defaults.timeoutMinutes`: per-run timeout (default 20).
+- `defaults.git`: `autoCommit` / `autoPush` switches for publishing.
+- `defaults.artifactHint`: the delivery requirement appended to prompts.
+
+## ⚠️ Notes
+
+- All CLIs run in skip-confirmation mode. They work inside their run directory, but permissions are not sandboxed — only dispatch tasks you trust.
+- Deleting a card deletes its run folder. Logs (`.touchstone.log`) are kept locally and never published.
+
+---
+
+# ◈ Touchstone — AI 编程竞技场
+
+**一个提示词，驱动你本机所有 AI 编程 CLI，结果同台对比。**
+
+[English](#-touchstone--ai-coding-arena) | 中文
+
+---
+
+想知道 Claude、GPT、Gemini 到底谁写代码最强？Touchstone 把这个问题变成一键实验：任务只写一次，自动并行下发给本机的 **Claude Code**、**Codex CLI**、**Gemini CLI** 全自动执行。几分钟后，每个模型的作品在对比网格里实时渲染——就像社交平台上"同题四模型"的爆款视频，但你自己就能跑。
+
+## ✨ 你能得到什么
+
+- **一个提示词，并行竞赛** — 任意组合 CLI 和模型（甚至让两个不同模型的 Claude 同场竞技），每次运行都是全新的独立会话
+- **零命名负担** — 项目名根据提示词自动生成（Claude Haiku 总结，CLI / 时间戳兜底）
+- **实时竞技场** — 作品一产出 `index.html` 立即等比缩放实时预览，点击全屏；详情页默认 2×2 宫格，列数可选、可按模型筛选
+- **数据说话** — 每次运行展示耗时、token 消耗、工具调用次数，Claude 还有美元成本
+- **社区信号** — 按模型点赞、按项目统计浏览量、项目页可分享 URL、提示词一键复制
+- **可选发布** — 下发任务时勾选"发布"，完成的作品自动 commit 并推送到公开 showcase 仓库，按 `runs/<项目>/<模型>/` 归档
+- **内置健康检查** — UI 自动检测各 CLI 是否安装、是否登录，没就绪的会告诉你怎么修
+
+## 🚀 快速开始
 
 ```bash
 npm run setup   # 一次性：安装依赖 + 构建前端
-npm start       # 启动服务
+npm start       # http://localhost:3000
 ```
 
-打开 http://localhost:3000 ，填写项目名和任务描述，（可选）为每个 CLI 指定模型，点「⚡ 下发任务」。
+前置条件：Node.js 20+，以及你想参赛的 CLI：
 
-> Gemini CLI 首次使用前需在终端运行一次 `gemini` 完成浏览器登录授权，否则 headless 模式会直接退出。
+| CLI | 安装 | 首次授权 |
+|---|---|---|
+| Claude Code | `npm i -g @anthropic-ai/claude-code` | 运行一次 `claude` 并登录 |
+| Codex CLI | `npm i -g @openai/codex` | `codex login` |
+| Gemini CLI | `npm i -g @google/gemini-cli` | 运行一次 `gemini`（浏览器登录） |
 
-## 工作原理
+未安装或未登录的 CLI 会在界面上显示琥珀色警告和修复方法。
 
-1. 后端按 **项目优先** 的结构为每个勾选的模型创建工作目录：
+## ⚙️ 工作原理
 
-   ```
-   runs/
-   └── bouncing-ball/          # 项目
-       ├── claude/             # 各模型作品（指定模型时为 claude-opus 这类命名）
-       ├── codex/
-       └── gemini/             # 同项目重复运行同模型时自动加 _2、_3 后缀
-   ```
+1. 在网页里描述任务、选择参赛者（CLI × 模型——模型列表从各 CLI 本地配置探测）
+2. 服务器为每个参赛者创建 `runs/<项目>/<模型>/` 目录，以全自动模式启动 CLI（`claude -p --dangerously-skip-permissions`、`codex exec --full-auto`、`gemini -p --yolo`）
+3. 每个任务自动附加交付要求：产出可直接打开的单文件 `index.html`
+4. 输出通过 WebSocket 实时流到页面；HTML 入口一出现，卡片立即实时预览
+5. 完成后从各 CLI 输出解析运行指标；如果勾选了发布，作品自动 commit 并推送到 showcase 仓库
 
-2. 以该目录为工作目录、全自动模式启动 CLI 子进程（每次都是全新独立会话）：
-   - Claude Code：`claude -p "<任务>" --dangerously-skip-permissions [--model xxx]`
-   - Codex：`codex exec --full-auto --skip-git-repo-check "<任务>" [-m xxx]`
-   - Gemini：`gemini -p "<任务>" --yolo [-m xxx]`
-3. 任务自动附加「交付要求」：必须产出可直接在浏览器打开的 `index.html`
-4. CLI 输出实时写入 `.touchstone.log` 并通过 WebSocket 推送到网页
-5. 目录里一旦出现 HTML 入口，卡片立即等比缩放预览（1280×800 虚拟视口，内容完整可见），点击可全屏查看
-6. 卡片上 CLI 名称右侧显示 **实际执行模型**：显式指定的直接记录；未指定的从运行日志（codex 打印 `model:`）或各 CLI 本地配置探测
-7. 任务完成后自动 `git commit`（按项目归档作品代码）并 `git push`
+一切都在你本机运行——除非你选择发布结果，提示词和 API 用量都不会离开本地。
 
-## 配置（agents.json）
+## 🔧 配置（agents.json）
 
-- 增删模型、修改 CLI 命令和参数（`{{PROMPT}}` 占位符会被替换为任务内容）
-- `modelFlag` / `models`：模型参数名与候选模型（表单中也可自由填写任意模型名）
-- `defaults.timeoutMinutes`：单任务超时（默认 20 分钟）
-- `defaults.git`：`autoCommit` / `autoPush` 开关
+- 增删 CLI、修改命令和参数（`{{PROMPT}}` 为占位符）
+- `models`：各 CLI 的兜底模型清单（本地配置探测结果优先）
+- `defaults.timeoutMinutes`：单次运行超时（默认 20 分钟）
+- `defaults.git`：发布相关的 `autoCommit` / `autoPush` 开关
 - `defaults.artifactHint`：自动附加的交付要求文案
 
-## 前端开发模式
+## ⚠️ 注意
 
-```bash
-npm start        # 终端 1：后端 (3000)
-npm run dev:web  # 终端 2：Vite 热更新 (5173，已配置代理)
-```
-
-技术栈：Express + ws / React 18 + Vite + Tailwind CSS v4 + lucide-react，liquid glass 视觉。
-
-## 注意
-
-- 三个 CLI 均以「跳过确认」的全自动模式运行，只在工作目录内操作，但理论上权限不受限，请只下发可信任务
-- 删除卡片会同时删除对应的作品文件夹
-- `.touchstone.log` 不入库（.gitignore），仓库里只保留作品代码
+- 所有 CLI 以跳过确认的全自动模式运行，工作在各自运行目录内，但权限并未沙箱化——请只下发可信任务
+- 删除卡片会同时删除对应运行文件夹；日志（`.touchstone.log`）仅保留在本地，永不发布

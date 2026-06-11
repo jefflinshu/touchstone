@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Folder, Loader2, Eye } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
+import ProfilePage from './components/ProfilePage.jsx'
+import ProjectCard from './components/ProjectCard.jsx'
+import Avatar from './components/Avatar.jsx'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 
 const LOG_CAP = 30000
 
@@ -26,29 +28,7 @@ function GoogleIcon({ className }) {
   )
 }
 
-function Avatar({ email, picture, className }) {
-  const [broken, setBroken] = useState(false)
-  if (picture && !broken) {
-    return (
-      <img
-        src={picture}
-        alt=""
-        referrerPolicy="no-referrer"
-        onError={() => setBroken(true)}
-        className={cn('rounded-full object-cover', className)}
-      />
-    )
-  }
-  return (
-    <span className={cn('flex items-center justify-center rounded-full bg-white/10 font-mono uppercase text-white/70', className)}>
-      {(email || '?')[0]}
-    </span>
-  )
-}
-
-const displayName = (email, users) => users?.[email]?.name || (email ? email.split('@')[0] : '')
-
-// 极简 hash 路由：'#/'' 首页，'#/p/<project>' 详情页
+// 极简 hash 路由：'#/' 首页，'#/p/<project>' 详情页，'#/u/<email>' 个人主页
 function useRoute() {
   const [hash, setHash] = useState(location.hash)
   useEffect(() => {
@@ -56,17 +36,22 @@ function useRoute() {
     window.addEventListener('hashchange', onChange)
     return () => window.removeEventListener('hashchange', onChange)
   }, [])
-  const m = hash.match(/^#\/p\/(.+)$/)
-  return m ? { page: 'project', project: decodeURIComponent(m[1]) } : { page: 'home' }
+  let m = hash.match(/^#\/p\/(.+)$/)
+  if (m) return { page: 'project', project: decodeURIComponent(m[1]) }
+  m = hash.match(/^#\/u\/(.+)$/)
+  if (m) return { page: 'user', email: decodeURIComponent(m[1]) }
+  return { page: 'home' }
 }
 
 const goProject = (project) => (location.hash = `#/p/${encodeURIComponent(project)}`)
+const goUser = (email) => (location.hash = `#/u/${encodeURIComponent(email)}`)
 const goHome = () => (location.hash = '#/')
 
 export default function App() {
   const [agents, setAgents] = useState([])
   const [runs, setRuns] = useState([])
   const [views, setViews] = useState({})
+  const [projectLikes, setProjectLikes] = useState({})
   const [logs, setLogs] = useState({})
   const [wsOk, setWsOk] = useState(false)
   const [auth, setAuth] = useState({ loaded: false, email: null, name: null, picture: null })
@@ -79,12 +64,13 @@ export default function App() {
     const r = await fetch('/api/runs').then((r) => r.json())
     setRuns(r.runs)
     setViews(r.views || {})
+    setProjectLikes(r.projectLikes || {})
     setUsers(r.users || {})
   }, [])
 
   const applyAuth = useCallback((d) => {
     setAuth({ loaded: true, email: d.email || null, name: d.name || null, picture: d.picture || null })
-    if (d.email) setUsers((prev) => ({ ...prev, [d.email]: { name: d.name, picture: d.picture } }))
+    if (d.email) setUsers((prev) => ({ ...prev, [d.email]: { ...prev[d.email], name: d.name, picture: d.picture, bio: d.bio } }))
   }, [])
 
   useEffect(() => {
@@ -106,6 +92,23 @@ export default function App() {
       setLoggingIn(false)
     }
   }, [loggingIn, applyAuth])
+
+  const saveProfile = useCallback(
+    async (p) => {
+      const res = await fetch('/api/users/me', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(p),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        throw new Error(err.error || 'failed')
+      }
+      const d = await res.json()
+      applyAuth({ ...d, loggedIn: true })
+    },
+    [applyAuth]
+  )
 
   useEffect(() => {
     fetch('/api/agents')
@@ -145,6 +148,10 @@ export default function App() {
           setRuns((prev) => prev.filter((r) => r.id !== msg.runId))
         } else if (msg.type === 'view') {
           setViews((prev) => ({ ...prev, [msg.project]: msg.views }))
+        } else if (msg.type === 'projectLike') {
+          setProjectLikes((prev) => ({ ...prev, [msg.project]: msg.likes }))
+        } else if (msg.type === 'user') {
+          setUsers((prev) => ({ ...prev, [msg.email]: msg.profile }))
         }
       }
       ws.onclose = () => {
@@ -236,12 +243,16 @@ export default function App() {
             </a>
             {auth.loaded &&
               (auth.email ? (
-                <span className="flex items-center gap-2" title={auth.email}>
+                <a
+                  href={`#/u/${encodeURIComponent(auth.email)}`}
+                  title="个人主页"
+                  className="flex items-center gap-2 transition-opacity hover:opacity-80"
+                >
                   <Avatar email={auth.email} picture={auth.picture} className="h-5 w-5 text-[10px]" />
                   <span className="hidden font-mono text-[11px] text-white/45 sm:inline">
                     {auth.name || auth.email.split('@')[0]}
                   </span>
-                </span>
+                </a>
               ) : (
                 <Button
                   variant="outline"
@@ -269,6 +280,7 @@ export default function App() {
               project={currentGroup.project}
               runs={currentGroup.runs}
               logs={logs}
+              likes={projectLikes[currentGroup.project]}
               onBack={goHome}
               onStop={stopRun}
               onDelete={deleteRun}
@@ -279,9 +291,22 @@ export default function App() {
               {runs.length === 0 ? <Loader2 className="mx-auto h-5 w-5 animate-spin" /> : 'Project not found'}
             </div>
           )
+        ) : route.page === 'user' ? (
+          <ProfilePage
+            email={route.email}
+            groups={groups}
+            users={users}
+            views={views}
+            projectLikes={projectLikes}
+            authEmail={auth.email}
+            onSaveProfile={saveProfile}
+            onBack={goHome}
+            onOpenProject={goProject}
+            onOpenUser={goUser}
+          />
         ) : (
           <>
-            <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} loggingIn={loggingIn} />
+            <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} />
 
             <div className="mt-10 mb-4 flex items-center gap-6 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
               <span>
@@ -302,80 +327,17 @@ export default function App() {
               </div>
             ) : (
               <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
-                {groups.map((g) => {
-                  const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
-                  const done = g.runs.filter((r) => r.status === 'done').length
-                  const failed = g.runs.length - running - done
-                  const contributors = [...new Set(g.runs.map((r) => r.user).filter(Boolean))]
-                  return (
-                    <button
-                      key={g.project}
-                      type="button"
-                      onClick={() => goProject(g.project)}
-                      className={cn(
-                        'group cursor-pointer rounded-lg border bg-[#0c0c0f] p-4 text-left transition-all hover:-translate-y-0.5',
-                        running ? 'border-acid/30' : 'border-white/10 hover:border-white/30'
-                      )}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <Folder className={cn('h-4 w-4 shrink-0', running ? 'text-acid' : 'text-white/40 group-hover:text-acid/70')} />
-                        <span className="truncate text-[15px] font-semibold tracking-tight">{g.project}</span>
-                      </div>
-                      <div className="mt-3 flex items-center gap-1.5">
-                        {[...new Map(g.runs.map((r) => [r.agentId, r.color])).values()].map((c, i) => (
-                          <span key={i} className="h-2 w-2 rounded-full" style={{ background: c }} />
-                        ))}
-                        <span className="ml-1 font-mono text-[10px] tracking-wider text-white/35 uppercase">
-                          {g.runs.length} runs
-                        </span>
-                        <span className="ml-auto flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums">
-                          <Eye className="h-3 w-3" />
-                          {views[g.project] || 0}
-                        </span>
-                      </div>
-                      <div className="mt-3 flex items-center gap-3 font-mono text-[11px] tabular-nums">
-                        {contributors.length > 0 ? (
-                          <span className="flex min-w-0 flex-1 items-center gap-1.5" title={contributors.join(', ')}>
-                            <span className="flex shrink-0 -space-x-1.5">
-                              {contributors.slice(0, 3).map((e) => (
-                                <Avatar
-                                  key={e}
-                                  email={e}
-                                  picture={users[e]?.picture}
-                                  className="h-4 w-4 text-[8px] ring-2 ring-[#0c0c0f]"
-                                />
-                              ))}
-                            </span>
-                            <span className="truncate text-[10px] text-white/45">
-                              {displayName(contributors[0], users)}
-                              {contributors.length > 1 && ` +${contributors.length - 1}`}
-                            </span>
-                          </span>
-                        ) : (
-                          <span className="min-w-0 flex-1" />
-                        )}
-                        {running > 0 && (
-                          <span className="flex items-center gap-1.5 text-acid">
-                            <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" /> {running}
-                          </span>
-                        )}
-                        {done > 0 && (
-                          <span className="flex items-center gap-1.5 text-emerald-400">
-                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {done}
-                          </span>
-                        )}
-                        {failed > 0 && (
-                          <span className="flex items-center gap-1.5 text-red-400/80">
-                            <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" /> {failed}
-                          </span>
-                        )}
-                        <span className="shrink-0 text-white/25">
-                          {new Date(g.latest).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
-                        </span>
-                      </div>
-                    </button>
-                  )
-                })}
+                {groups.map((g) => (
+                  <ProjectCard
+                    key={g.project}
+                    group={g}
+                    views={views[g.project]}
+                    likes={projectLikes[g.project]}
+                    users={users}
+                    onOpen={() => goProject(g.project)}
+                    onOpenUser={goUser}
+                  />
+                ))}
               </div>
             )}
           </>

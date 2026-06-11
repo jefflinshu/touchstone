@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Loader2, ArrowRight, Plus, X, ChevronDown, TriangleAlert } from 'lucide-react'
+import { Loader2, ArrowRight, Plus, X, Check, ChevronDown, TriangleAlert } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
 import {
@@ -8,6 +8,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
+import AgentIcon from './AgentIcon.jsx'
+import { cn } from '@/lib/utils'
 
 let uid = 0
 
@@ -26,6 +28,7 @@ function ModelPicker({ agent, value, onChange }) {
       <DropdownMenuContent align="start" className="font-mono text-[11px]">
         {(agent.models || []).map((m) => (
           <DropdownMenuItem key={m} onSelect={() => onChange(m)}>
+            <AgentIcon agentId={agent.id} color={agent.color} className="h-3 w-3" />
             {m}
           </DropdownMenuItem>
         ))}
@@ -34,9 +37,34 @@ function ModelPicker({ agent, value, onChange }) {
   )
 }
 
-export default function TaskForm({ agents, onSubmit, disabled }) {
+// CLI 未就绪：点击警告图标弹出配置引导（不再常驻展示）
+function HealthHint({ agent }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          title="需要配置，点击查看"
+          className="flex h-full cursor-pointer items-center text-amber-400/90 outline-none transition-colors hover:text-amber-300"
+        >
+          <TriangleAlert className="h-3 w-3" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="w-[280px] p-3">
+        <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-amber-400 uppercase">
+          {agent.name} 需要配置
+        </p>
+        <p className="mt-2 text-xs leading-5 text-white/75">{agent.health?.fix}</p>
+        <p className="mt-1.5 text-[11px] leading-5 text-white/40">配置完成后刷新页面即可</p>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
+export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   const [prompt, setPrompt] = useState('')
   const [runners, setRunners] = useState([])
+  const [publish, setPublish] = useState(false)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
 
@@ -56,11 +84,17 @@ export default function TaskForm({ agents, onSubmit, disabled }) {
       setError('required')
       return
     }
+    if (!user) {
+      setError('请先登录 Google 账号')
+      onLogin?.()
+      return
+    }
     setBusy(true)
     try {
       await onSubmit({
         prompt: prompt.trim(),
         runners: runners.map(({ agentId, model }) => ({ agentId, model: model.trim() })),
+        publish,
       })
       setPrompt('')
     } catch (err) {
@@ -94,11 +128,9 @@ export default function TaskForm({ agents, onSubmit, disabled }) {
                 className="flex h-8 items-center overflow-hidden rounded-md border border-white/15 bg-white/[0.04]"
               >
                 <span className="flex h-full items-center gap-1.5 pl-2.5 text-xs font-medium">
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: a.color }} />
+                  <AgentIcon agentId={a.id} color={a.color} className="h-3.5 w-3.5" />
                   {a.name}
-                  {!ready && (
-                    <TriangleAlert className="h-3 w-3 text-amber-400" title={a.health?.fix} />
-                  )}
+                  {!ready && <HealthHint agent={a} />}
                 </span>
                 <ModelPicker
                   agent={a}
@@ -118,8 +150,8 @@ export default function TaskForm({ agents, onSubmit, disabled }) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button type="button" variant="outline" size="sm" className="h-8 font-mono text-[10px] tracking-[0.15em] uppercase">
-                <Plus className="h-3 w-3" /> Add
+              <Button type="button" variant="outline" size="sm" title="添加 runner" className="h-8 w-8 p-0">
+                <Plus className="h-3.5 w-3.5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
@@ -130,7 +162,7 @@ export default function TaskForm({ agents, onSubmit, disabled }) {
                     setRunners((rs) => [...rs, { key: ++uid, agentId: a.id, model: a.models?.[0] || '' }])
                   }
                 >
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: a.color }} />
+                  <AgentIcon agentId={a.id} color={a.color} className="h-3.5 w-3.5" />
                   {a.name}
                   {a.health?.ready === false && <TriangleAlert className="ml-auto h-3 w-3 text-amber-400" />}
                 </DropdownMenuItem>
@@ -138,31 +170,35 @@ export default function TaskForm({ agents, onSubmit, disabled }) {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <div className="ml-auto flex items-center gap-2.5">
+          <div className="ml-auto flex items-center gap-3">
             {error && <span className="font-mono text-xs text-red-400">{error}</span>}
-            <Button
-              disabled={busy || disabled}
-              className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase"
+            <label
+              title="勾选后作品完成将自动 commit 并上传到公开的 GitHub 社区仓库；不勾选则只保存在本地"
+              className="flex cursor-pointer items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase select-none"
             >
+              <input
+                type="checkbox"
+                checked={publish}
+                onChange={(e) => setPublish(e.target.checked)}
+                className="sr-only"
+              />
+              <span
+                className={cn(
+                  'flex h-3.5 w-3.5 items-center justify-center rounded-[3px] border transition-colors',
+                  publish ? 'border-acid bg-acid text-black' : 'border-white/25'
+                )}
+              >
+                {publish && <Check className="h-2.5 w-2.5" strokeWidth={3.5} />}
+              </span>
+              <span className={publish ? 'text-white/80' : 'text-white/40'}>同意发布到社区</span>
+            </label>
+            <Button disabled={busy} className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase">
               {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
               {busy ? 'Naming' : 'Run'}
               {!busy && <ArrowRight className="h-3.5 w-3.5" />}
             </Button>
           </div>
         </div>
-
-        {agents.some((a) => a.health?.ready === false) && (
-          <div className="flex flex-col gap-1">
-            {agents
-              .filter((a) => a.health?.ready === false)
-              .map((a) => (
-                <span key={a.id} className="flex items-center gap-1.5 font-mono text-[11px] text-amber-400/90">
-                  <TriangleAlert className="h-3 w-3 shrink-0" />
-                  {a.name}: {a.health.fix}
-                </span>
-              ))}
-          </div>
-        )}
       </div>
     </form>
   )

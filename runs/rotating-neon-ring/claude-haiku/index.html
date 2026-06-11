@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转霓虹圆环加载动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: #0a0e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 外层旋转圆环 - 青色 */
+        .ring {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 3px solid transparent;
+            border-top: 3px solid #00f3ff;
+            border-right: 3px solid #00f3ff;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+            box-shadow: 0 0 20px #00f3ff, inset 0 0 20px rgba(0, 243, 255, 0.2);
+        }
+
+        /* 中层旋转圆环 - 紫色 */
+        .ring:nth-child(2) {
+            width: 110px;
+            height: 110px;
+            border-top: 3px solid #ff00ff;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-left: 3px solid #ff00ff;
+            animation: spin-reverse 1.5s linear infinite;
+            box-shadow: 0 0 15px #ff00ff, inset 0 0 15px rgba(255, 0, 255, 0.2);
+        }
+
+        /* 内层旋转圆环 - 粉色 */
+        .ring:nth-child(3) {
+            width: 70px;
+            height: 70px;
+            border-top: 3px solid #ff1493;
+            border-right: 3px solid #ff1493;
+            border-bottom: 3px solid transparent;
+            border-left: 3px solid transparent;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 10px #ff1493, inset 0 0 10px rgba(255, 20, 147, 0.2);
+        }
+
+        /* 中心发光球 */
+        .center {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at 40% 40%, #ffffff, #00f3ff);
+            border-radius: 50%;
+            box-shadow: 0 0 30px #00f3ff, 0 0 60px #00f3ff, 0 0 90px rgba(0, 243, 255, 0.5);
+            animation: pulse 1.5s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        /* 旋转动画顺时针 */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 旋转动画逆时针 */
+        @keyframes spin-reverse {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* 中心脉冲动画 */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px #00f3ff, 0 0 60px #00f3ff, 0 0 90px rgba(0, 243, 255, 0.5);
+            }
+            50% {
+                transform: scale(1.2);
+                box-shadow: 0 0 40px #ff00ff, 0 0 80px #ff00ff, 0 0 120px rgba(255, 0, 255, 0.6);
+            }
+        }
+
+        /* 背景动画闪烁 */
+        @keyframes backgroundGlow {
+            0%, 100% {
+                background: #0a0e27;
+                box-shadow: inset 0 0 100px rgba(0, 243, 255, 0.05);
+            }
+            50% {
+                background: #0a0e27;
+                box-shadow: inset 0 0 100px rgba(0, 243, 255, 0.1);
+            }
+        }
+
+        body {
+            animation: backgroundGlow 4s ease-in-out infinite;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 640px) {
+            .container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .ring {
+                width: 120px;
+                height: 120px;
+            }
+
+            .ring:nth-child(2) {
+                width: 85px;
+                height: 85px;
+            }
+
+            .ring:nth-child(3) {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="center"></div>
+    </div>
+</body>
+</html>

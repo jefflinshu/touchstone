@@ -1,0 +1,143 @@
+import { useEffect, useState } from 'react'
+import { Folder, Eye, Heart } from 'lucide-react'
+import Avatar, { displayName } from './Avatar.jsx'
+import AgentIcon from './AgentIcon.jsx'
+import { cn } from '@/lib/utils'
+
+const LIKED_PROJECTS_KEY = 'touchstone-liked-projects'
+const getLikedProjects = () => {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(LIKED_PROJECTS_KEY) || '[]'))
+  } catch {
+    return new Set()
+  }
+}
+
+// 项目（case）级点赞，乐观更新 + 服务器广播校准
+export function ProjectLikeButton({ project, likes, className }) {
+  const [liked, setLiked] = useState(() => getLikedProjects().has(project))
+  const [count, setCount] = useState(likes || 0)
+
+  useEffect(() => setCount(likes || 0), [likes])
+
+  const toggle = (e) => {
+    e.stopPropagation()
+    const next = !liked
+    setLiked(next)
+    setCount((c) => Math.max(0, c + (next ? 1 : -1)))
+    const set = getLikedProjects()
+    next ? set.add(project) : set.delete(project)
+    localStorage.setItem(LIKED_PROJECTS_KEY, JSON.stringify([...set]))
+    fetch(`/api/projects/${encodeURIComponent(project)}/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: next ? 'like' : 'unlike' }),
+    }).catch(() => {})
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      title={liked ? '取消点赞' : '点赞这个 case'}
+      className={cn(
+        'flex cursor-pointer items-center gap-1 font-mono text-[11px] tabular-nums transition-colors',
+        liked ? 'text-rose-400' : 'text-white/35 hover:text-rose-300',
+        className
+      )}
+    >
+      <Heart className={cn('h-3 w-3', liked && 'fill-rose-400')} />
+      {count}
+    </button>
+  )
+}
+
+export default function ProjectCard({ group: g, views, likes, users, onOpen, onOpenUser }) {
+  const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
+  const done = g.runs.filter((r) => r.status === 'done').length
+  const failed = g.runs.length - running - done
+  const contributors = [...new Set(g.runs.map((r) => r.user).filter(Boolean))]
+  const agents = [...new Map(g.runs.map((r) => [r.agentId, r.color])).entries()]
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={(e) => e.key === 'Enter' && onOpen()}
+      className={cn(
+        'group cursor-pointer rounded-lg border bg-[#0c0c0f] p-4 text-left transition-all hover:-translate-y-0.5',
+        running ? 'border-acid/30' : 'border-white/10 hover:border-white/30'
+      )}
+    >
+      <div className="flex items-center gap-2.5">
+        <Folder className={cn('h-4 w-4 shrink-0', running ? 'text-acid' : 'text-white/40 group-hover:text-acid/70')} />
+        <span className="truncate text-[15px] font-semibold tracking-tight">{g.project}</span>
+      </div>
+
+      <div className="mt-3 flex items-center gap-1.5">
+        {agents.map(([agentId, color]) => (
+          <AgentIcon key={agentId} agentId={agentId} color={color} className="h-3 w-3" />
+        ))}
+        <span className="ml-1 font-mono text-[10px] tracking-wider text-white/35 uppercase">
+          {g.runs.length} runs
+        </span>
+        <span className="ml-auto flex items-center gap-3">
+          <ProjectLikeButton project={g.project} likes={likes} />
+          <span className="flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums">
+            <Eye className="h-3 w-3" />
+            {views || 0}
+          </span>
+        </span>
+      </div>
+
+      <div className="mt-3 flex items-center gap-3 font-mono text-[11px] tabular-nums">
+        {contributors.length > 0 ? (
+          <span
+            className="flex min-w-0 flex-1 cursor-pointer items-center gap-1.5"
+            title={contributors.join(', ')}
+            onClick={(e) => {
+              e.stopPropagation()
+              onOpenUser?.(contributors[0])
+            }}
+          >
+            <span className="flex shrink-0 -space-x-1.5">
+              {contributors.slice(0, 3).map((e) => (
+                <Avatar
+                  key={e}
+                  email={e}
+                  picture={users?.[e]?.picture}
+                  className="h-4 w-4 text-[8px] ring-2 ring-[#0c0c0f]"
+                />
+              ))}
+            </span>
+            <span className="truncate text-[10px] text-white/45 transition-colors hover:text-white">
+              {displayName(contributors[0], users)}
+              {contributors.length > 1 && ` +${contributors.length - 1}`}
+            </span>
+          </span>
+        ) : (
+          <span className="min-w-0 flex-1" />
+        )}
+        {running > 0 && (
+          <span className="flex items-center gap-1.5 text-acid">
+            <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" /> {running}
+          </span>
+        )}
+        {done > 0 && (
+          <span className="flex items-center gap-1.5 text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {done}
+          </span>
+        )}
+        {failed > 0 && (
+          <span className="flex items-center gap-1.5 text-red-400/80">
+            <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" /> {failed}
+          </span>
+        )}
+        <span className="shrink-0 text-white/25">
+          {new Date(g.latest).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+        </span>
+      </div>
+    </div>
+  )
+}
