@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Folder, TerminalSquare, GitBranch, Loader2 } from 'lucide-react'
+import { Folder, TerminalSquare, GitBranch, Loader2, Eye } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
@@ -77,6 +77,7 @@ const goHome = () => (location.hash = '#/')
 export default function App() {
   const [agents, setAgents] = useState([])
   const [runs, setRuns] = useState([])
+  const [views, setViews] = useState({})
   const [logs, setLogs] = useState({})
   const [wsOk, setWsOk] = useState(false)
   const [consent, setConsent] = useState(() => localStorage.getItem(CONSENT_KEY) === '1')
@@ -86,6 +87,7 @@ export default function App() {
   const refresh = useCallback(async () => {
     const r = await fetch('/api/runs').then((r) => r.json())
     setRuns(r.runs)
+    setViews(r.views || {})
   }, [])
 
   useEffect(() => {
@@ -124,6 +126,8 @@ export default function App() {
           })
         } else if (msg.type === 'removed') {
           setRuns((prev) => prev.filter((r) => r.id !== msg.runId))
+        } else if (msg.type === 'view') {
+          setViews((prev) => ({ ...prev, [msg.project]: msg.views }))
         }
       }
       ws.onclose = () => {
@@ -293,6 +297,10 @@ export default function App() {
                         ))}
                         <span className="ml-1 font-mono text-[10px] tracking-wider text-white/35 uppercase">
                           {g.runs.length} runs
+                        </span>
+                        <span className="ml-auto flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums">
+                          <Eye className="h-3 w-3" />
+                          {views[g.project] || 0}
                         </span>
                       </div>
                       <div className="mt-3 flex items-center gap-4 font-mono text-[11px] tabular-nums">

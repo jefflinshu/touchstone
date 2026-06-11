@@ -8,6 +8,7 @@ import {
   Square,
   Terminal,
   X,
+  Heart,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -38,6 +39,52 @@ function previewUrlOf(run) {
   if (!run.entry) return null
   const folderPath = run.folder.split('/').map(encodeURIComponent).join('/')
   return `/workspace/${folderPath}/${run.entry}`
+}
+
+const LIKED_KEY = 'touchstone-liked'
+const getLiked = () => {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(LIKED_KEY) || '[]'))
+  } catch {
+    return new Set()
+  }
+}
+
+function LikeButton({ run }) {
+  const [liked, setLiked] = useState(() => getLiked().has(run.id))
+  const [count, setCount] = useState(run.likes || 0)
+
+  // 服务器广播的最新数字优先
+  useEffect(() => setCount(run.likes || 0), [run.likes])
+
+  const toggle = () => {
+    const next = !liked
+    setLiked(next)
+    setCount((c) => Math.max(0, c + (next ? 1 : -1)))
+    const set = getLiked()
+    next ? set.add(run.id) : set.delete(run.id)
+    localStorage.setItem(LIKED_KEY, JSON.stringify([...set]))
+    fetch(`/api/runs/${run.id}/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: next ? 'like' : 'unlike' }),
+    }).catch(() => {})
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      title={liked ? '取消点赞' : '点赞'}
+      className={cn(
+        'flex cursor-pointer items-center gap-1 font-mono text-[11px] tabular-nums transition-colors',
+        liked ? 'text-rose-400' : 'text-white/35 hover:text-rose-300'
+      )}
+    >
+      <Heart className={cn('h-3.5 w-3.5', liked && 'fill-rose-400')} />
+      {count}
+    </button>
+  )
 }
 
 function ScaledPreview({ url, frameKey }) {
@@ -182,6 +229,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
           </span>
         )}
         <span className="ml-auto flex shrink-0 items-center gap-3">
+          <LikeButton run={run} />
           <span className="font-mono text-[11px] text-white/35 tabular-nums">{elapsed(run)}</span>
           <span className={cn('flex items-center gap-1.5 font-mono text-[10px] tracking-[0.15em]', st.text)}>
             <span className={cn('h-1.5 w-1.5 rounded-full', st.dot)} />

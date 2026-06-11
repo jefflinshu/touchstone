@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft, Copy, Check, Share2, LayoutGrid } from 'lucide-react'
 import RunCard from './RunCard.jsx'
 import { Button } from '@/components/ui/button'
@@ -23,9 +23,18 @@ function useCopy() {
   ]
 }
 
+// 本会话内同一项目只计一次浏览
+const viewedProjects = new Set()
+
 export default function ProjectPage({ project, runs, logs, onBack, onStop, onDelete, onFetchLog }) {
-  const [layout, setLayout] = useState('auto')
+  const [layout, setLayout] = useState('2')
   const [hidden, setHidden] = useState(() => new Set())
+
+  useEffect(() => {
+    if (viewedProjects.has(project)) return
+    viewedProjects.add(project)
+    fetch(`/api/projects/${encodeURIComponent(project)}/view`, { method: 'POST' }).catch(() => {})
+  }, [project])
   const [promptCopied, copyPrompt] = useCopy()
   const [linkCopied, copyLink] = useCopy()
 

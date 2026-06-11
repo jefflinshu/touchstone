@@ -90,6 +90,20 @@ function saveRegistry() {
 }
 saveRegistry()
 
+// ---------- 浏览量 / 点赞 ----------
+const STATS_FILE = path.join(DATA_DIR, 'stats.json')
+let stats = { views: {}, likes: {} }
+if (fs.existsSync(STATS_FILE)) {
+  try {
+    stats = { views: {}, likes: {}, ...JSON.parse(fs.readFileSync(STATS_FILE, 'utf8')) }
+  } catch {}
+}
+let statsTimer = null
+function saveStats() {
+  clearTimeout(statsTimer)
+  statsTimer = setTimeout(() => fs.writeFileSync(STATS_FILE, JSON.stringify(stats, null, 2)), 200)
+}
+
 // ---------- WebSocket ----------
 
 const app = express()
@@ -176,7 +190,7 @@ function listFiles(folder) {
 
 function publicRun(r) {
   const { proc, ...rest } = r
-  return rest
+  return { ...rest, likes: stats.likes[r.id] || 0 }
 }
 
 // ---------- Git 自动提交 ----------
@@ -479,7 +493,25 @@ app.post('/api/tasks', async (req, res) => {
 })
 
 app.get('/api/runs', (req, res) => {
-  res.json({ runs: runs.map(publicRun) })
+  res.json({ runs: runs.map(publicRun), views: stats.views })
+})
+
+app.post('/api/projects/:project/view', (req, res) => {
+  const project = req.params.project
+  stats.views[project] = (stats.views[project] || 0) + 1
+  saveStats()
+  broadcast({ type: 'view', project, views: stats.views[project] })
+  res.json({ views: stats.views[project] })
+})
+
+app.post('/api/runs/:id/like', (req, res) => {
+  const run = runs.find((r) => r.id === req.params.id)
+  if (!run) return res.status(404).json({ error: 'not found' })
+  const delta = req.body?.action === 'unlike' ? -1 : 1
+  stats.likes[run.id] = Math.max(0, (stats.likes[run.id] || 0) + delta)
+  saveStats()
+  broadcast({ type: 'run', run: publicRun(run) })
+  res.json({ likes: stats.likes[run.id] })
 })
 
 app.get('/api/runs/:id/log', (req, res) => {
@@ -528,6 +560,8 @@ app.delete('/api/runs/:id', (req, res) => {
     }
   }
   runs.splice(idx, 1)
+  delete stats.likes[run.id]
+  saveStats()
   saveRegistry()
   broadcast({ type: 'removed', runId: run.id })
   res.json({ ok: true })
