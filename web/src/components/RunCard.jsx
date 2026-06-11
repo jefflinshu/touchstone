@@ -9,6 +9,8 @@ import {
   Terminal,
   X,
   Heart,
+  Wrench,
+  Coins,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -39,6 +41,31 @@ function previewUrlOf(run) {
   if (!run.entry) return null
   const folderPath = run.folder.split('/').map(encodeURIComponent).join('/')
   return `/workspace/${folderPath}/${run.entry}`
+}
+
+const fmtTokens = (n) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 100000 ? 0 : 1)}k` : String(n))
+
+function Metrics({ metrics }) {
+  if (!metrics) return null
+  return (
+    <>
+      {metrics.toolCalls != null && (
+        <span className="flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums" title="工具调用 / 回合数">
+          <Wrench className="h-3 w-3" />
+          {metrics.toolCalls}
+        </span>
+      )}
+      {metrics.tokens != null && (
+        <span
+          className="flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums"
+          title={`token 消耗 ${metrics.tokens.toLocaleString()}${metrics.costUsd != null ? ` · $${metrics.costUsd.toFixed(3)}` : ''}`}
+        >
+          <Coins className="h-3 w-3" />
+          {fmtTokens(metrics.tokens)}
+        </span>
+      )}
+    </>
+  )
 }
 
 const LIKED_KEY = 'touchstone-liked'
@@ -229,6 +256,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
           </span>
         )}
         <span className="ml-auto flex shrink-0 items-center gap-3">
+          <Metrics metrics={run.metrics} />
           <LikeButton run={run} />
           <span className="font-mono text-[11px] text-white/35 tabular-nums">{elapsed(run)}</span>
           <span className={cn('flex items-center gap-1.5 font-mono text-[10px] tracking-[0.15em]', st.text)}>

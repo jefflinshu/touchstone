@@ -5,7 +5,7 @@
       "name": "Claude Code",
       "color": "#d97b4f",
       "command": "claude",
-      "args": ["-p", "{{PROMPT}}", "--dangerously-skip-permissions"],
+      "args": ["-p", "{{PROMPT}}", "--dangerously-skip-permissions", "--output-format", "json"],
       "modelFlag": "--model",
       "models": ["claude-fable-5", "claude-opus-4-8", "sonnet", "haiku"]
     },
@@ -23,7 +23,7 @@
       "name": "Gemini CLI",
       "color": "#6ea8ff",
       "command": "gemini",
-      "args": ["-p", "{{PROMPT}}", "--yolo"],
+      "args": ["-p", "{{PROMPT}}", "--yolo", "-o", "json"],
       "modelFlag": "-m",
       "models": ["gemini-3.1-pro", "gemini-3-flash", "gemini-2.5-pro"]
     }

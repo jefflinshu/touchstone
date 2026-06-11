@@ -7,28 +7,11 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
 
 let uid = 0
 
 function ModelPicker({ agent, value, onChange }) {
-  const [custom, setCustom] = useState(false)
-
-  if (custom) {
-    return (
-      <input
-        autoFocus
-        className="h-full w-[120px] border-l border-white/10 bg-transparent px-2 font-mono text-[11px] text-white/70 outline-none placeholder:text-white/25"
-        placeholder="model id"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        onBlur={() => !value && setCustom(false)}
-        onKeyDown={(e) => e.key === 'Enter' && e.preventDefault()}
-      />
-    )
-  }
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -46,16 +29,6 @@ function ModelPicker({ agent, value, onChange }) {
             {m}
           </DropdownMenuItem>
         ))}
-        <DropdownMenuSeparator />
-        <DropdownMenuItem
-          onSelect={() => {
-            onChange('')
-            setCustom(true)
-          }}
-          className="text-white/50"
-        >
-          custom…
-        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

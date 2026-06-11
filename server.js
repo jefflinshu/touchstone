@@ -50,6 +50,26 @@ function probeDefaultModel(agentId) {
   return null
 }
 
+// 从本地 CLI 配置读取该 CLI 已知的模型（默认模型排第一）
+function probeLocalModels(agentId) {
+  const out = []
+  try {
+    if (agentId === 'codex') {
+      const t = fs.readFileSync(path.join(os.homedir(), '.codex', 'config.toml'), 'utf8')
+      const def = t.match(/^\s*model\s*=\s*"([^"]+)"/m)?.[1]
+      if (def) out.push(def)
+      const sec = t.match(/\[tui\.model_availability_nux\]([\s\S]*?)(?=\n\[|$)/)
+      if (sec) {
+        for (const m of sec[1].matchAll(/^\s*"?([\w.\-/]+)"?\s*=/gm)) out.push(m[1])
+      }
+    } else {
+      const def = probeDefaultModel(agentId)
+      if (def) out.push(def)
+    }
+  } catch {}
+  return out
+}
+
 function detectModelFromLog(run) {
   const pattern = MODEL_LOG_PATTERNS[run.agentId]
   if (!pattern) return null
@@ -59,6 +79,47 @@ function detectModelFromLog(run) {
   } catch {
     return null
   }
+}
+
+// ---------- 运行指标：token 消耗 / 工具调用次数 / 成本 ----------
+// claude、gemini 走 JSON 输出格式自带 usage；codex 从日志解析
+function parseMetrics(run) {
+  let log
+  try {
+    log = fs.readFileSync(path.join(RUNS_DIR, run.folder, '.touchstone.log'), 'utf8')
+  } catch {
+    return null
+  }
+  try {
+    if (run.agentId === 'codex') {
+      const tok = log.match(/tokens used\s*:?\s*\n?\s*([\d,]+)/i)
+      const tools = (log.match(/^exec\b/gm) || []).length
+      if (!tok && !tools) return null
+      return {
+        tokens: tok ? parseInt(tok[1].replace(/,/g, ''), 10) : null,
+        toolCalls: tools || null,
+        costUsd: null,
+      }
+    }
+    // claude / gemini：取日志末尾的 JSON 对象
+    const start = log.lastIndexOf('\n{')
+    const end = log.lastIndexOf('}')
+    if (start === -1 || end <= start) return null
+    const j = JSON.parse(log.slice(start + 1, end + 1))
+    if (run.agentId === 'claude') {
+      const u = j.usage || {}
+      const tokens =
+        (u.input_tokens || 0) + (u.output_tokens || 0) + (u.cache_creation_input_tokens || 0) + (u.cache_read_input_tokens || 0)
+      return { tokens: tokens || null, toolCalls: j.num_turns ?? null, costUsd: j.total_cost_usd ?? null }
+    }
+    if (run.agentId === 'gemini') {
+      const models = j.stats?.models || {}
+      let tokens = 0
+      for (const k of Object.keys(models)) tokens += models[k]?.tokens?.total || 0
+      return { tokens: tokens || null, toolCalls: j.stats?.tools?.totalCalls ?? null, costUsd: null }
+    }
+  } catch {}
+  return null
 }
 
 let runs = []
@@ -78,6 +139,10 @@ for (const r of runs) {
   // 历史记录回填实际执行模型
   if (!r.model && !r.resolvedModel) {
     r.resolvedModel = detectModelFromLog(r) || probeDefaultModel(r.agentId)
+  }
+  // 历史记录回填运行指标
+  if (!r.metrics && (r.status === 'done' || r.status === 'failed')) {
+    r.metrics = parseMetrics(r)
   }
 }
 
@@ -286,6 +351,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     run.endedAt = new Date().toISOString()
     run.entry = findEntry(run.folder)
     if (!run.model) run.resolvedModel = detectModelFromLog(run) || run.resolvedModel
+    run.metrics = parseMetrics(run)
     if (run.status === 'stopped') {
       // 用户手动停止，保持 stopped
     } else if (run.timedOut) {
@@ -297,7 +363,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     fs.appendFileSync(logFile, `\n[touchstone] 进程退出，exit code = ${code}\n`)
     saveRegistry()
     broadcast({ type: 'run', run: publicRun(run) })
-    if (run.status === 'done') autoCommitRun(run)
+    if (run.status === 'done' && run.publish) autoCommitRun(run)
   })
 
   proc.on('error', (err) => {
@@ -316,7 +382,8 @@ app.get('/api/agents', (req, res) => {
       id: a.id,
       name: a.name,
       color: a.color,
-      models: a.models || [],
+      // 本地配置探测到的模型优先（默认选中），agents.json 列表兜底
+      models: [...new Set([...probeLocalModels(a.id), ...(a.models || [])])],
       health: agentHealth(a),
     })),
     defaults: cfg.defaults,
@@ -444,11 +511,79 @@ function agentHealth(agent) {
   }
 }
 
+// ---------- Google 登录（复用本机 gcloud CLI 凭据，gemini CLI 作回退） ----------
+let authCache = { at: 0, email: null }
+
+function geminiAccount() {
+  try {
+    const j = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.gemini', 'google_accounts.json'), 'utf8'))
+    return j.active || null
+  } catch {
+    return null
+  }
+}
+
+function getGoogleAccount(force = false) {
+  if (!force && Date.now() - authCache.at < 30000) return Promise.resolve(authCache.email)
+  return new Promise((resolve) => {
+    execFile(
+      'gcloud',
+      ['auth', 'list', '--filter=status:ACTIVE', '--format=json'],
+      { timeout: 10000 },
+      (err, stdout) => {
+        let email = null
+        if (!err) {
+          try {
+            email = JSON.parse(stdout)[0]?.account || null
+          } catch {}
+        }
+        if (!email) email = geminiAccount()
+        authCache = { at: Date.now(), email }
+        resolve(email)
+      }
+    )
+  })
+}
+
+app.get('/api/auth/me', async (req, res) => {
+  const email = await getGoogleAccount()
+  res.json({ loggedIn: !!email, email })
+})
+
+// 拉起 gcloud 的浏览器 OAuth 流程，等用户在浏览器里完成授权后返回
+let loginProc = null
+app.post('/api/auth/login', async (req, res) => {
+  if (!checkInstalled('gcloud')) {
+    return res.status(400).json({
+      error: '未检测到 gcloud CLI。安装：brew install google-cloud-sdk；或在终端运行 gemini 完成 Google 登录',
+    })
+  }
+  if (!loginProc) {
+    loginProc = spawn('gcloud', ['auth', 'login', '--brief', '--quiet'], {
+      stdio: 'ignore',
+      env: process.env,
+    })
+    const clear = () => (loginProc = null)
+    loginProc.on('close', clear)
+    loginProc.on('error', clear)
+  }
+  const deadline = Date.now() + 180000
+  while (loginProc && Date.now() < deadline) {
+    await new Promise((r) => setTimeout(r, 1500))
+  }
+  const email = await getGoogleAccount(true)
+  res.json({ loggedIn: !!email, email })
+})
+
 app.post('/api/tasks', async (req, res) => {
-  const { prompt, runners } = req.body || {}
+  const { prompt, runners, publish } = req.body || {}
   let { project } = req.body || {}
   if (!prompt || !Array.isArray(runners) || runners.length === 0) {
     return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
+  }
+  const user = await getGoogleAccount()
+  if (!user) {
+    return res.status(401).json({ error: '请先登录 Google 账号' })
   }
   const cfg = loadAgentsConfig()
   if (!project || !String(project).trim()) {
@@ -482,6 +617,8 @@ app.post('/api/tasks', async (req, res) => {
       folder,
       entry: null,
       status: 'pending',
+      publish: !!publish,
+      user,
       createdAt: new Date().toISOString(),
     }
     runs.unshift(run)
