@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫彩粒子时钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #canvas {
+            display: block;
+            background: rgba(10, 14, 39, 0.3);
+        }
+
+        .time-display {
+            position: absolute;
+            bottom: 40px;
+            font-size: 48px;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 20px #00ff88, 0 0 40px #00ffff;
+            font-family: 'Monaco', 'Courier New', monospace;
+            letter-spacing: 4px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="time-display" id="timeDisplay">00:00:00</div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const timeDisplay = document.getElementById('timeDisplay');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // 粒子数组
+        const particles = [];
+        const maxParticles = 200;
+
+        // 颜色调色板
+        const colors = [
+            '#00ff88',  // 青绿
+            '#00ffff',  // 青蓝
+            '#ff00ff',  // 洋红
+            '#ff0088',  // 深洋红
+            '#00ddff',  // 深青蓝
+            '#ffdd00',  // 黄
+            '#ff6600',  // 橙
+            '#ff0066',  // 红洋红
+            '#66ff00',  // 绿黄
+            '#0066ff',  // 蓝
+        ];
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 4;
+                this.vy = (Math.random() - 0.5) * 4 - 2;
+                this.life = 1;
+                this.maxLife = Math.random() * 60 + 30;
+                this.size = Math.random() * 3 + 1;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vy -= 0.1; // 浮力效果
+                this.life -= 1 / this.maxLife;
+
+                // 边界反弹
+                if (this.x < 0 || this.x > canvas.width) {
+                    this.vx *= -0.8;
+                    this.x = Math.max(0, Math.min(canvas.width, this.x));
+                }
+                if (this.y < 0 || this.y > canvas.height) {
+                    this.vy *= -0.8;
+                    this.y = Math.max(0, Math.min(canvas.height, this.y));
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.life * 1.2);
+                ctx.fillStyle = this.color;
+                ctx.shadowColor = this.color;
+                ctx.shadowBlur = 10;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function emitParticles(x, y, count = 3) {
+            for (let i = 0; i < count; i++) {
+                if (particles.length < maxParticles) {
+                    particles.push(new Particle(x, y));
+                }
+            }
+        }
+
+        function drawClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeStr = `${hours}:${minutes}:${seconds}`;
+            timeDisplay.textContent = timeStr;
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2 - 80;
+            const radius = 100;
+
+            // 绘制钟盘
+            ctx.save();
+            ctx.strokeStyle = 'rgba(0, 255, 136, 0.5)';
+            ctx.lineWidth = 2;
+            ctx.shadowColor = '#00ff88';
+            ctx.shadowBlur = 20;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // 绘制时刻标记
+            for (let i = 0; i < 12; i++) {
+                const angle = (i * 30 - 90) * Math.PI / 180;
+                const x1 = centerX + Math.cos(angle) * (radius - 15);
+                const y1 = centerY + Math.sin(angle) * (radius - 15);
+                const x2 = centerX + Math.cos(angle) * radius;
+                const y2 = centerY + Math.sin(angle) * radius;
+
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+
+            // 时针
+            const hAngle = ((hours % 12) * 30 + minutes * 0.5 - 90) * Math.PI / 180;
+            const hLength = radius * 0.5;
+            ctx.strokeStyle = '#ff00ff';
+            ctx.lineWidth = 4;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + Math.cos(hAngle) * hLength, centerY + Math.sin(hAngle) * hLength);
+            ctx.stroke();
+
+            // 分针
+            const mAngle = (minutes * 6 + seconds * 0.1 - 90) * Math.PI / 180;
+            const mLength = radius * 0.7;
+            ctx.strokeStyle = '#00ffff';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + Math.cos(mAngle) * mLength, centerY + Math.sin(mAngle) * mLength);
+            ctx.stroke();
+
+            // 秒针
+            const sAngle = (seconds * 6 + (now.getMilliseconds() / 1000) * 6 - 90) * Math.PI / 180;
+            const sLength = radius * 0.8;
+            ctx.strokeStyle = '#00ff88';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + Math.cos(sAngle) * sLength, centerY + Math.sin(sAngle) * sLength);
+            ctx.stroke();
+
+            // 中心点
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = '#00ffff';
+            ctx.shadowBlur = 15;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+
+            // 在秒针末端发射粒子
+            const particleX = centerX + Math.cos(sAngle) * sLength;
+            const particleY = centerY + Math.sin(sAngle) * sLength;
+            emitParticles(particleX, particleY, 2);
+        }
+
+        function animate() {
+            // 清除画布（使用半透明填充实现尾迹效果）
+            ctx.fillStyle = 'rgba(10, 14, 39, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 更新和绘制粒子
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
+
+                if (particles[i].life <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            // 绘制时钟
+            drawClock();
+
+            requestAnimationFrame(animate);
+        }
+
+        // 响应窗口resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        animate();
+    </script>
+</body>
+</html>
