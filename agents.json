@@ -7,7 +7,7 @@
       "command": "claude",
       "args": ["-p", "{{PROMPT}}", "--dangerously-skip-permissions"],
       "modelFlag": "--model",
-      "models": ["opus", "sonnet", "haiku"]
+      "models": ["claude-fable-5", "claude-opus-4-8", "sonnet", "haiku"]
     },
     {
       "id": "codex",

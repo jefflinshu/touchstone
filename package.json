@@ -11,6 +11,7 @@
     "setup": "npm install && npm --prefix web install && npm --prefix web run build"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.1",
     "express": "^4.21.2",
     "ws": "^8.18.0"
   }

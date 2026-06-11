@@ -7,6 +7,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import crypto from 'node:crypto'
 import os from 'node:os'
+import Anthropic from '@anthropic-ai/sdk'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const RUNS_DIR = path.join(__dirname, 'runs')
@@ -297,26 +298,157 @@ app.use(express.json({ limit: '1mb' }))
 app.get('/api/agents', (req, res) => {
   const cfg = loadAgentsConfig()
   res.json({
-    agents: cfg.agents.map(({ id, name, color, models }) => ({ id, name, color, models: models || [] })),
+    agents: cfg.agents.map((a) => ({
+      id: a.id,
+      name: a.name,
+      color: a.color,
+      models: a.models || [],
+      health: agentHealth(a),
+    })),
     defaults: cfg.defaults,
   })
 })
 
-app.post('/api/tasks', (req, res) => {
-  const { project, prompt, agentIds, models = {} } = req.body || {}
-  if (!project || !prompt || !Array.isArray(agentIds) || agentIds.length === 0) {
-    return res.status(400).json({ error: '需要 project、prompt 和至少一个 agent' })
+// ---------- 项目自动命名 ----------
+// 优先 Anthropic API（haiku，便宜快），无 API key 时回退 claude CLI，最后回退时间戳名
+const NAMING_PROMPT = (prompt) =>
+  `为下面的编程任务起一个 2-4 个英文单词的 kebab-case 短名（如 bouncing-ball-hexagon），只输出名字本身，不要任何其他文字：\n${prompt.slice(0, 500)}`
+
+const cleanName = (raw) =>
+  slugify(
+    (raw || '').trim().split('\n').filter(Boolean).pop()?.toLowerCase().replace(/[^a-z0-9 _-]/g, '').trim() || ''
+  ).slice(0, 40)
+
+const anthropic = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null
+
+async function nameViaApi(prompt) {
+  const msg = await anthropic.messages.create({
+    model: 'claude-haiku-4-5',
+    max_tokens: 64,
+    messages: [{ role: 'user', content: NAMING_PROMPT(prompt) }],
+  })
+  return cleanName(msg.content.find((b) => b.type === 'text')?.text)
+}
+
+function nameViaCli(prompt) {
+  return new Promise((resolve) => {
+    let settled = false
+    const done = (v) => {
+      if (!settled) {
+        settled = true
+        resolve(v)
+      }
+    }
+    try {
+      const proc = spawn('claude', ['-p', NAMING_PROMPT(prompt), '--model', 'haiku'], {
+        env: process.env,
+        stdio: ['ignore', 'pipe', 'ignore'],
+      })
+      let out = ''
+      proc.stdout.on('data', (d) => (out += d))
+      const timer = setTimeout(() => {
+        proc.kill('SIGKILL')
+        done('')
+      }, 25000)
+      proc.on('close', () => {
+        clearTimeout(timer)
+        done(cleanName(out))
+      })
+      proc.on('error', () => done(''))
+    } catch {
+      done('')
+    }
+  })
+}
+
+async function autoNameProject(prompt) {
+  let name = ''
+  if (anthropic) {
+    try {
+      name = await nameViaApi(prompt)
+    } catch (err) {
+      console.error('[naming] API 失败，回退 CLI：', err?.message)
+    }
+  }
+  if (name.length < 2) name = await nameViaCli(prompt)
+  if (name.length < 2) {
+    const d = new Date()
+    const p = (n) => String(n).padStart(2, '0')
+    name = `task-${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`
+  }
+  return name
+}
+
+// ---------- 本地 CLI 健康检查 ----------
+// installed：PATH 中能找到命令；authed：凭据文件/环境变量存在（启发式）
+const FIX_HINTS = {
+  claude: '终端运行 claude 并完成 /login 登录',
+  codex: '终端运行 codex login 完成登录',
+  gemini: '终端运行 gemini 完成 Google 账号授权（浏览器登录一次即可）',
+}
+
+function checkInstalled(command) {
+  const paths = (process.env.PATH || '').split(path.delimiter)
+  return paths.some((p) => {
+    try {
+      fs.accessSync(path.join(p, command), fs.constants.X_OK)
+      return true
+    } catch {
+      return false
+    }
+  })
+}
+
+function checkAuthed(agentId) {
+  const home = os.homedir()
+  try {
+    if (agentId === 'claude') {
+      return fs.existsSync(path.join(home, '.claude.json')) || !!process.env.ANTHROPIC_API_KEY
+    }
+    if (agentId === 'codex') {
+      return fs.existsSync(path.join(home, '.codex', 'auth.json'))
+    }
+    if (agentId === 'gemini') {
+      return (
+        fs.existsSync(path.join(home, '.gemini', 'oauth_creds.json')) ||
+        !!process.env.GEMINI_API_KEY ||
+        !!process.env.GOOGLE_API_KEY
+      )
+    }
+  } catch {}
+  return true
+}
+
+function agentHealth(agent) {
+  const installed = checkInstalled(agent.command)
+  const authed = installed && checkAuthed(agent.id)
+  return {
+    installed,
+    authed,
+    ready: installed && authed,
+    fix: !installed ? `未检测到 ${agent.command} 命令，请先安装` : !authed ? FIX_HINTS[agent.id] || '请先完成 CLI 登录' : null,
+  }
+}
+
+app.post('/api/tasks', async (req, res) => {
+  const { prompt, runners } = req.body || {}
+  let { project } = req.body || {}
+  if (!prompt || !Array.isArray(runners) || runners.length === 0) {
+    return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
   }
   const cfg = loadAgentsConfig()
+  if (!project || !String(project).trim()) {
+    project = await autoNameProject(prompt)
+  }
   // 交付要求强制附加：网站展示依赖 index.html
   const finalPrompt = prompt + cfg.defaults.artifactHint
   const batchId = crypto.randomUUID()
   const created = []
 
-  for (const agentId of agentIds) {
-    const agent = cfg.agents.find((a) => a.id === agentId)
+  for (const r of runners) {
+    const agent = cfg.agents.find((a) => a.id === r?.agentId)
     if (!agent) continue
-    const model = typeof models[agentId] === 'string' ? models[agentId].trim() : ''
+    const model = typeof r.model === 'string' ? r.model.trim() : ''
     // 目录结构：runs/<项目>/<模型>，同名冲突时追加 _2、_3…
     const projectSlug = slugify(project)
     const base = model ? `${agent.id}-${slugify(model)}` : agent.id
@@ -343,7 +475,7 @@ app.post('/api/tasks', (req, res) => {
     startRun(run, agent, finalPrompt, cfg.defaults.timeoutMinutes || 20)
   }
   saveRegistry()
-  res.json({ batchId, runs: created.map(publicRun) })
+  res.json({ batchId, project, runs: created.map(publicRun) })
 })
 
 app.get('/api/runs', (req, res) => {
