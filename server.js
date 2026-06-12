@@ -302,6 +302,22 @@ const app = express()
 const httpServer = createServer(app)
 const wss = new WebSocketServer({ server: httpServer, path: '/ws' })
 
+app.use((req, res, next) => {
+  const forwardedProto = String(req.get('x-forwarded-proto') || '').split(',')[0].trim()
+  const proto = forwardedProto || req.protocol
+  const host = req.get('host') || ''
+  const isLocalHost = /^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/i.test(host)
+  const shouldForceHttps = process.env.FORCE_HTTPS !== 'false' && !isLocalHost && proto === 'http'
+
+  if (shouldForceHttps) {
+    return res.redirect(308, `https://${host}${req.originalUrl}`)
+  }
+  if (proto === 'https') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000')
+  }
+  next()
+})
+
 function broadcast(msg) {
   const data = JSON.stringify(msg)
   for (const client of wss.clients) {
