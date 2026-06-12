@@ -658,10 +658,18 @@ function getCachedFable5Translation(language, item) {
   const entry = fable5Translations?.[language]?.[item.id]
   if (!entry) return null
   if (entry.sourceHash !== fable5TranslationSourceHash(item)) return null
-  return {
+  const cached = {
     title: cleanFable5TranslationField(entry.title) || cleanFable5TranslationField(item.title),
     summary: cleanFable5TranslationField(entry.summary) || cleanFable5TranslationField(item.summary),
   }
+  if (
+    language !== 'en' &&
+    cached.title === cleanFable5TranslationField(item.title) &&
+    cached.summary === cleanFable5TranslationField(item.summary)
+  ) {
+    return null
+  }
+  return cached
 }
 
 function setCachedFable5Translation(language, item, translation) {
