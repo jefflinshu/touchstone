@@ -486,7 +486,7 @@ export default function App() {
               goHome()
             }}
             className="group flex min-w-0 items-center gap-2.5"
-            aria-label="Touchstone by jefflin.ai"
+            aria-label="Touchstone"
           >
             <img
               src="/brand/touchstone-mark.svg"
@@ -497,14 +497,8 @@ export default function App() {
               <span className="pixel-cycle block font-pixel text-[15px] leading-none tracking-[0.2em] text-white">
                 TOUCHSTONE<span className="text-acid">_</span>
               </span>
-              <span className="mt-1 block font-mono text-[8px] leading-none tracking-[0.26em] text-acid/70 uppercase">
-                jefflin.ai
-              </span>
             </span>
           </a>
-          <span className="mt-px hidden font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase md:inline">
-            {t('nav.subtitle')}
-          </span>
           <div className="ml-auto flex items-center gap-2.5 sm:gap-4">
             <button
               type="button"
