@@ -230,6 +230,10 @@ function actionSummaryFromText(text, media = 'text') {
   const lower = clean.toLowerCase()
   const sentences = informativeSentences(text)
   const title = titleFromText(text)
+
+  const specific = specificSummary(clean, lower, title)
+  if (specific) return specific
+
   const primary =
     sentences.find((line) => {
       const value = line.toLowerCase()
@@ -257,7 +261,81 @@ function actionSummaryFromText(text, media = 'text') {
     const prompt = trimPunctuation(text.match(/prompt:\s*["'“”]?([^"'“”\n.]{3,80})/i)?.[1] || '')
     if (prompt && !description.toLowerCase().includes(prompt.toLowerCase())) description += ` Prompt: "${prompt}".`
   }
-  return limitText(description, 165)
+  return limitText(summaryStyle(description, clean, media), 165)
+}
+
+function specificSummary(clean, lower, title) {
+  if (/system prompt|system prompt الكامل|leaked|تسريب|تسرب/.test(lower) && /fable|mythos|claude/.test(lower)) {
+    return 'Reports a leaked Claude Fable 5 system prompt and frames the release as a full agentic workflow system, not just a chat model.'
+  }
+  if (/artificial analysis|coding agent index|deepswe|swe-bench|benchmark/.test(lower)) {
+    return 'Shares updated coding-agent benchmark results and positions Claude Fable 5 against other frontier coding agents.'
+  }
+  if (/simcity/.test(lower)) {
+    return 'Shows a SimCity-style playable prototype attributed to Fable 5, with the original post linking to a live demo.'
+  }
+  if (/higgsfield games|multiplayer games from a prompt|build and deploy multiplayer games/.test(lower)) {
+    return 'Introduces a prompt-to-multiplayer-game workflow powered by Claude Fable 5 and Higgsfield MCP.'
+  }
+  if (/purely claude fable|no other models|no other models, assets/.test(lower)) {
+    return 'Shows a game prototype the author says was built with Claude Fable alone, without outside models or prepared assets.'
+  }
+  if (/one[- ]?shotted|one prompt|single prompt/.test(lower) && /game|playable|clone/.test(lower)) {
+    return `Shows a playable game prototype attributed to ${modelName(clean)}, with the post emphasizing one-prompt or one-shot generation.`
+  }
+  if (/one[- ]?shotted|one prompt|single prompt/.test(lower) && /website|landing|web app|site/.test(lower)) {
+    return `Shows a website or web app generated with ${modelName(clean)}, with the original post framing it as a one-prompt build.`
+  }
+  if (/tutorial|guide|prompting|prompt structure|full prompt|copy prompt/.test(lower)) {
+    return `Shares a prompt or tutorial for reproducing a ${artifactLabel(lower)} workflow with ${modelName(clean)}.`
+  }
+  if (/mcp|agent|workflow|automation|subagent|autonomous/.test(lower)) {
+    return `Describes an agentic workflow around ${modelName(clean)}, focused on ${artifactLabel(lower)} rather than a simple chat response.`
+  }
+  if (/video|motion|animation|animated|cinematic/.test(lower)) {
+    return `Shows a motion or video generation demo associated with ${modelName(clean)}, based on the original post's media and description.`
+  }
+  if (/3d|three\.?js|webgl|blender|voxel|spatial|cad/.test(lower)) {
+    return `Shows a 3D or interactive visual prototype built with ${modelName(clean)}, based on the original post's media and description.`
+  }
+  if (/game|playable|minecraft|skyrim|pokemon|mario|rpg|tower defense/.test(lower)) {
+    return `Shows a playable game or game-like prototype associated with ${modelName(clean)}.`
+  }
+  if (/website|landing|web app|site|portfolio|hero/.test(lower)) {
+    return `Shows a website or web-app build associated with ${modelName(clean)}.`
+  }
+  if (title && title !== 'Fable 5 post') {
+    return limitText(`Summarizes an original X post about ${title.charAt(0).toLowerCase()}${title.slice(1)}.`, 165)
+  }
+  return ''
+}
+
+function modelName(clean) {
+  if (/mythos/i.test(clean)) return 'Claude Mythos / Fable 5'
+  return 'Claude Fable 5'
+}
+
+function artifactLabel(lower) {
+  if (/game|playable/.test(lower)) return 'game-building'
+  if (/website|landing|web app|site/.test(lower)) return 'web-building'
+  if (/video|motion|animation/.test(lower)) return 'motion-design'
+  if (/3d|three\.?js|webgl|blender/.test(lower)) return '3D prototyping'
+  if (/code|repo|repository|debug|refactor/.test(lower)) return 'coding'
+  if (/agent|workflow|automation|mcp/.test(lower)) return 'agentic automation'
+  return 'Fable 5'
+}
+
+function summaryStyle(description, clean, media) {
+  const lower = `${description} ${clean}`.toLowerCase()
+  if (/^(shows|shares|reports|introduces|describes|compares)\b/i.test(description)) return description
+  if (/benchmark|compare|compared|versus|vs\b/.test(lower)) return `Compares Claude Fable 5 with other coding agents or models, based on the original post's benchmark claim.`
+  if (/prompt:|full prompt|tutorial|guide/.test(lower)) return `Shares a prompt or tutorial around ${artifactLabel(lower)} with ${modelName(clean)}.`
+  if (/built|made|created|recreated|designed|one[- ]?shotted|one prompt/.test(lower)) {
+    return `Shows a ${artifactLabel(lower)} result the author says was built with ${modelName(clean)}.`
+  }
+  if (media === 'video') return `Shows a video demo related to ${modelName(clean)}, with the original post preserved as the source.`
+  if (media === 'image') return `Shows an image-backed case related to ${modelName(clean)}, with the original post preserved as the source.`
+  return description
 }
 
 function summaryFromText(text, media = 'text') {

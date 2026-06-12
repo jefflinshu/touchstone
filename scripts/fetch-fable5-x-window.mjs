@@ -2,6 +2,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { loadTwitterAuthEnv } from './twitter-auth-env.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -43,7 +44,7 @@ const OFFICIAL_HANDLES = [
 
 function usage() {
   console.error(
-    'Usage: node scripts/fetch-fable5-x-window.mjs --from YYYY-MM-DD --to YYYY-MM-DD [--query-file path] [--target 500] [--max 40] [--min-likes 10] [--min-views 0] [--run-id name] [--mode top|latest] [--official-only 0|1] [--handles a,b,c] [--with-replies 1|0] [--max-replies 12] [--seed-tweets url,id] [--seed-search id,url]'
+    'Usage: node scripts/fetch-fable5-x-window.mjs --from YYYY-MM-DD --to YYYY-MM-DD [--query-file path] [--target 500] [--max 40] [--min-likes 10] [--min-views 0] [--run-id name] [--mode top|latest] [--official-only 0|1] [--handles a,b,c] [--handle-query query] [--with-replies 1|0] [--max-replies 12] [--seed-tweets url,id] [--seed-search id,url]'
   )
   process.exit(1)
 }
@@ -171,6 +172,7 @@ function launchctlGetenv(key) {
 }
 
 function twitterEnv() {
+  loadTwitterAuthEnv()
   const env = { ...process.env }
   env.TWITTER_AUTH_TOKEN ||= launchctlGetenv('TWITTER_AUTH_TOKEN')
   env.TWITTER_CT0 ||= launchctlGetenv('TWITTER_CT0')
@@ -337,7 +339,7 @@ try {
 
 if (officialOnly) {
   for (const [index, handle] of handles.entries()) {
-    const query = `${DEFAULT_QUERY} from:${handle}`
+    const query = `${args['handle-query'] || DEFAULT_QUERY} from:${handle}`
     console.log(`[${index + 1}/${handles.length}] @${handle}`)
     try {
       const payload = runTwitter([

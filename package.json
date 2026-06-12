@@ -9,6 +9,7 @@
     "dev:web": "npm --prefix web run dev",
     "build": "npm --prefix web run build",
     "fable5:fetch:xcli": "node scripts/fetch-fable5-x-window.mjs",
+    "fable5:update:incremental": "node scripts/update-fable5-incremental.mjs",
     "fable5:update": "node scripts/update-fable5-showcases.mjs",
     "fable5:update:304": "node scripts/update-fable5-showcases.mjs --limit 304",
     "fable5:update:local": "node scripts/update-fable5-showcases.mjs --cache-assets 0",

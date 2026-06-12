@@ -1,0 +1,39 @@
+{
+  "queryOffset": 0,
+  "creatorOffset": 1,
+  "runs": [
+    {
+      "at": "2026-06-12T08:23:09.627Z",
+      "from": "2026-06-11",
+      "to": "2026-06-12",
+      "queryCount": 3,
+      "creators": [],
+      "mode": "latest",
+      "max": 35,
+      "target": 120
+    },
+    {
+      "at": "2026-06-12T08:23:41.163Z",
+      "from": "2026-06-11",
+      "to": "2026-06-12",
+      "queryCount": 0,
+      "creators": [
+        "claudedevs"
+      ],
+      "mode": "latest",
+      "max": 5,
+      "target": 5
+    }
+  ],
+  "lastRunAt": "2026-06-12T08:23:41.163Z",
+  "lastWindow": {
+    "from": "2026-06-11",
+    "to": "2026-06-12"
+  },
+  "lastSelection": {
+    "queries": [],
+    "creators": [
+      "claudedevs"
+    ]
+  }
+}
