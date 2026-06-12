@@ -599,6 +599,7 @@ app.get('/api/agents', (req, res) => {
       id: a.id,
       name: a.name,
       color: a.color,
+      install: a.install || null,
       // 本地配置探测到的模型优先（默认选中），agents.json 列表兜底
       models: [...new Set([...probeLocalModels(a.id), ...(a.models || [])])],
       health: agentHealth(a),
