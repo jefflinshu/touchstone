@@ -104,19 +104,19 @@ export default function ProjectPage({
 
   const gridStyle =
     layout === 'auto'
-      ? { gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))' }
-      : { gridTemplateColumns: `repeat(${layout}, 1fr)` }
+      ? { gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))' }
+      : { gridTemplateColumns: `repeat(${layout}, minmax(0, 1fr))` }
 
   return (
-    <div className="mt-6">
-      <div className="mb-5 flex items-center gap-3">
+    <div className="mt-5 sm:mt-6">
+      <div className="mb-5 flex flex-wrap items-center gap-2.5 sm:gap-3">
         <Button variant="outline" size="sm" onClick={onBack} className="font-mono text-[10px] tracking-[0.15em] uppercase">
           <ArrowLeft className="h-3 w-3" /> {t('common.back')}
         </Button>
-        <h1 className="font-pixel text-xl">{project}</h1>
+        <h1 className="min-w-0 flex-1 truncate font-pixel text-lg sm:text-xl">{project}</h1>
         <CategoryTag category={category} />
-        <div className="ml-auto flex items-center gap-2">
-          <div className="flex overflow-hidden rounded-md border border-white/12">
+        <div className="flex w-full flex-wrap items-center gap-2 sm:ml-auto sm:w-auto">
+          <div className="hidden overflow-hidden rounded-md border border-white/12 sm:flex">
             {LAYOUTS.map((l) => (
               <button
                 key={l.key}
@@ -156,7 +156,7 @@ export default function ProjectPage({
           <Button
             variant="outline"
             size="sm"
-            className="font-mono text-[10px] tracking-[0.15em] uppercase"
+            className="ml-auto font-mono text-[10px] tracking-[0.15em] uppercase sm:ml-0"
             onClick={() => copyLink(location.href)}
           >
             {linkCopied ? <Check className="h-3 w-3 text-acid" /> : <Share2 className="h-3 w-3" />}
@@ -169,7 +169,7 @@ export default function ProjectPage({
       <div className="flex min-h-[calc(100vh-180px)] flex-col gap-6 lg:flex-row">
         {/* 左侧：提示词 */}
         <aside className="w-full shrink-0 lg:w-[300px]">
-          <div className="sticky top-20 rounded-lg border border-white/10 bg-white/[0.02]">
+          <div className="rounded-lg border border-white/10 bg-white/[0.02] lg:sticky lg:top-20">
             <div className="flex items-center justify-between border-b border-white/8 px-4 py-2.5">
               <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">{t('common.prompt')}</span>
               <button

@@ -210,7 +210,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
 
         {/* 悬停操作层 */}
         <div
-          className="absolute top-2 right-2 flex items-center gap-1 opacity-0 transition-opacity group-hover:opacity-100"
+          className="absolute top-2 right-2 flex items-center gap-1 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100"
           onClick={(e) => e.stopPropagation()}
         >
           {previewUrl && (
@@ -254,15 +254,15 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
       </div>
 
       {/* 数据行 */}
-      <footer className="flex h-11 items-center gap-2.5 border-t border-white/8 px-3.5">
+      <footer className="flex min-h-11 flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-white/8 px-3.5 py-2 sm:h-11 sm:flex-nowrap sm:py-0">
         <AgentIcon agentId={run.agentId} color={run.color} className="h-4 w-4" />
         <span className="truncate text-[13px] font-medium">{run.agentName}</span>
         {model && (
-          <span className="truncate font-mono text-[11px] text-white/35" title={run.model ? t('common.specified') : t('common.default')}>
+          <span className="min-w-0 truncate font-mono text-[11px] text-white/35" title={run.model ? t('common.specified') : t('common.default')}>
             {model}
           </span>
         )}
-        <span className="ml-auto flex shrink-0 items-center gap-3">
+        <span className="flex w-full shrink-0 items-center justify-end gap-3 sm:ml-auto sm:w-auto">
           <Metrics metrics={run.metrics} />
           <LikeButton run={run} />
           <span className="font-mono text-[11px] text-white/35 tabular-nums">{elapsed(run)}</span>
