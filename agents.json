@@ -58,6 +58,6 @@
     "timeoutMinutes": 20,
     "git": { "autoCommit": true, "autoPush": true },
     "autoArtifactHint": true,
-    "artifactHint": "\n\n【交付要求】请在当前工作目录（不要新建子目录作为入口）生成最终成果，必须包含一个可以直接在浏览器中打开运行的 index.html 作为作品入口，所有依赖（CSS/JS）内联或使用相对路径本地文件，不要依赖网络 CDN。完成后确保 index.html 打开即可看到效果。"
+    "artifactHint": "\n\n【交付要求】请在当前工作目录生成最终静态作品，可以包含 HTML/CSS/JS/图片/字体/音频/模型等相对路径资源；必须包含一个可以直接在浏览器中打开运行的 HTML 入口，优先命名为 index.html。所有资源必须位于当前目录内并使用相对路径，不要依赖网络 CDN、localhost 服务、密钥或父目录文件。完成后确保入口 HTML 打开即可看到效果。"
   }
 }

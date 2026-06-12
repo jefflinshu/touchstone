@@ -18,9 +18,15 @@ PUBLIC_BASE_URL=https://touchstone.jefflin.ai
 GOOGLE_CLIENT_ID=...
 GOOGLE_CLIENT_SECRET=...
 ANTHROPIC_API_KEY=...
+PUBLISH_GOOGLE_CLIENT_IDS=...
+PUBLISH_API_TOKEN=...
+# optional: set to 1 to serve published runs without committing them back to GitHub
+DISABLE_GIT_AUTOCOMMIT=0
 ```
 
 `ANTHROPIC_API_KEY` is optional. It is only used for faster project naming; the app falls back to the local Claude CLI and then timestamp naming.
+
+`PUBLISH_GOOGLE_CLIENT_IDS` is optional when local and production use the same Google OAuth client. Set it to a comma-separated list of allowed OAuth client IDs if local Touchstone installs publish with a different client. `PUBLISH_API_TOKEN` is optional and only needed for trusted server-to-server publishing.
 
 ## Google OAuth
 
@@ -92,3 +98,4 @@ Then route `touchstone.jefflin.ai` to the tunnel in Cloudflare.
 - The server needs access to the local CLIs it runs: Claude Code, Codex CLI, and Gemini CLI.
 - The `touchstone_session` cookie is host-only, which is correct for `touchstone.jefflin.ai`.
 - If a reverse proxy terminates TLS before Node, keep `PUBLIC_BASE_URL=https://touchstone.jefflin.ai` so OAuth and SEO URLs stay HTTPS.
+- Community publish accepts complete static run directories through `POST /api/publish`; published files are public under `/workspace/...`. See `docs/community-publish.md`.

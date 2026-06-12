@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Check, ExternalLink, Globe2, Heart, Loader2, LogOut, Menu, Monitor, Moon, Sun, User } from 'lucide-react'
+import { Check, ExternalLink, Globe2, Heart, Loader2, LogOut, Menu, Monitor, Moon, Search, Sun, User, X } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import ProfilePage from './components/ProfilePage.jsx'
@@ -9,6 +9,7 @@ import SponsorCard from './components/SponsorCard.jsx'
 import GuideCard from './components/GuideCard.jsx'
 import Avatar from './components/Avatar.jsx'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { trackEvent, trackPageView } from '@/lib/analytics'
 import {
   DropdownMenu,
@@ -81,6 +82,52 @@ function setPageSeo({ title, description, canonicalPath = '/', imagePath = '/bra
 function navigate(path) {
   window.history.pushState(null, '', path)
   window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+function normalizeSearchText(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/^@+/, '')
+    .toLowerCase()
+    .trim()
+}
+
+function compactSearchText(value) {
+  return normalizeSearchText(value).replace(/[\s._-]+/g, '')
+}
+
+function projectGroupMatchesSearch(group, query, users) {
+  const tokens = normalizeSearchText(query)
+    .split(/\s+/)
+    .map((token) => token.replace(/^@+/, ''))
+    .filter(Boolean)
+  if (tokens.length === 0) return true
+
+  const fields = new Set([group.project, group.category])
+  for (const run of group.runs) {
+    fields.add(run.project)
+    fields.add(run.category)
+    fields.add(run.prompt)
+    fields.add(run.agentName)
+    fields.add(run.agentId)
+    if (run.user) {
+      const profile = users?.[run.user] || {}
+      const local = String(run.user).split('@')[0]
+      fields.add(run.user)
+      fields.add(local)
+      fields.add(`@${local}`)
+      fields.add(profile.name)
+      fields.add(profile.bio)
+    }
+  }
+
+  const haystacks = [...fields].flatMap((field) => [normalizeSearchText(field), compactSearchText(field)])
+  return tokens.every((token) => {
+    const normalizedToken = normalizeSearchText(token)
+    const compactToken = compactSearchText(token)
+    return haystacks.some((field) => field.includes(normalizedToken) || (compactToken && field.includes(compactToken)))
+  })
 }
 
 function GithubIcon({ className }) {
@@ -470,8 +517,13 @@ export default function App() {
 
   // 首页分类筛选
   const [catFilter, setCatFilter] = useState('all')
+  const [searchQuery, setSearchQuery] = useState('')
+  const activeSearchQuery = searchQuery.trim()
   const categories = useMemo(() => [...new Set(groups.map((g) => g.category))], [groups])
-  const filteredGroups = catFilter === 'all' ? groups : groups.filter((g) => g.category === catFilter)
+  const filteredGroups = useMemo(() => {
+    const byCategory = catFilter === 'all' ? groups : groups.filter((g) => g.category === catFilter)
+    return activeSearchQuery ? byCategory.filter((g) => projectGroupMatchesSearch(g, activeSearchQuery, users)) : byCategory
+  }, [activeSearchQuery, catFilter, groups, users])
 
   return (
     <>
@@ -676,30 +728,56 @@ export default function App() {
 
             <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} />
 
-            <div className="mt-10 mb-4 flex flex-wrap items-center gap-1.5">
-              {['all', ...categories].map((c) => (
-                <button
-                  key={c}
-                  type="button"
-                  onClick={() => {
-                    setCatFilter(c)
-                    trackEvent('category_filter', { category: c })
+            <div className="mt-10 mb-4 flex flex-col gap-3 lg:flex-row lg:items-center">
+              <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
+                {['all', ...categories].map((c) => (
+                  <button
+                    key={c}
+                    type="button"
+                    onClick={() => {
+                      setCatFilter(c)
+                      trackEvent('category_filter', { category: c })
+                    }}
+                    className={`cursor-pointer rounded-full border px-3 py-1 font-mono text-[10px] tracking-[0.15em] uppercase transition-colors ${
+                      catFilter === c
+                        ? 'border-acid bg-acid text-black'
+                        : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
+                    }`}
+                  >
+                    {c}
+                  </button>
+                ))}
+                <span className="ml-2 hidden h-px min-w-8 flex-1 bg-white/8 sm:block" />
+              </div>
+              <div className="relative w-full lg:w-[360px]">
+                <Search className="pointer-events-none absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-white/30" />
+                <Input
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onBlur={() => {
+                    if (searchQuery.trim()) trackEvent('project_search', { query_length: searchQuery.trim().length })
                   }}
-                  className={`cursor-pointer rounded-full border px-3 py-1 font-mono text-[10px] tracking-[0.15em] uppercase transition-colors ${
-                    catFilter === c
-                      ? 'border-acid bg-acid text-black'
-                      : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
-                  }`}
-                >
-                  {c}
-                </button>
-              ))}
-              <span className="ml-2 h-px flex-1 bg-white/8" />
+                  placeholder={t('home.searchPlaceholder')}
+                  className="h-9 pr-9 pl-9 font-mono text-[11px]"
+                  aria-label={t('common.search')}
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="absolute top-1/2 right-2 flex h-6 w-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded text-white/35 transition-colors hover:bg-white/8 hover:text-white"
+                    title={t('common.cancel')}
+                    aria-label={t('common.cancel')}
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                )}
+              </div>
             </div>
 
             {filteredGroups.length === 0 ? (
               <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-pixel text-sm tracking-[0.2em] text-white/30 uppercase">
-                {t('home.noRuns')}
+                {activeSearchQuery ? t('home.noSearchResults') : t('home.noRuns')}
               </div>
             ) : (
               <div className="grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">

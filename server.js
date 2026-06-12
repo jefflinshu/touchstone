@@ -19,6 +19,22 @@ const SITE_NAME = 'Touchstone'
 const SITE_DESCRIPTION =
   'Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。'
 const DEFAULT_SOCIAL_IMAGE = '/brand/touchstone-og.svg'
+const DEFAULT_COMMUNITY_PUBLISH_URL = 'https://touchstone.jefflin.ai/api/publish'
+const PUBLISH_LIMITS = {
+  maxFiles: Number(process.env.PUBLISH_MAX_FILES || 500),
+  maxTotalBytes: Number(process.env.PUBLISH_MAX_TOTAL_BYTES || 50 * 1024 * 1024),
+  maxFileBytes: Number(process.env.PUBLISH_MAX_FILE_BYTES || 20 * 1024 * 1024),
+  maxDepth: Number(process.env.PUBLISH_MAX_DEPTH || 8),
+}
+const RUN_CONTRACT = `# Touchstone Run Output Contract
+
+- Build the final static showcase in this current directory.
+- The browser entry must be an HTML file, preferably ./index.html.
+- Use relative local files for CSS, JavaScript, images, fonts, audio, video, and models.
+- Do not depend on external CDN scripts or private localhost services.
+- Do not read, write, or include secrets, credentials, tokens, hidden files, or parent-directory files.
+- Do not write outside this directory.
+`
 
 fs.mkdirSync(RUNS_DIR, { recursive: true })
 fs.mkdirSync(DATA_DIR, { recursive: true })
@@ -397,8 +413,163 @@ function listFiles(folder) {
 }
 
 function publicRun(r) {
-  const { proc, ...rest } = r
+  const { proc, publishAuth, ...rest } = r
   return { ...rest, likes: stats.likes[r.id] || 0 }
+}
+
+function writeRunContract(dir) {
+  try {
+    fs.writeFileSync(path.join(dir, 'AGENTS.md'), RUN_CONTRACT)
+  } catch {}
+}
+
+function safeRelativePath(value) {
+  const raw = String(value || '')
+  if (raw.startsWith('/') || raw.includes('\\')) return null
+  const rel = raw.replace(/^\/+/, '')
+  const parts = rel.split('/').filter(Boolean)
+  if (!parts.length || parts.length > PUBLISH_LIMITS.maxDepth) return null
+  if (parts.some((part) => part === '.' || part === '..' || part.includes('\0'))) return null
+  return parts.join('/')
+}
+
+function isBlockedPublishPath(rel) {
+  const parts = rel.split('/')
+  const lower = parts.map((part) => part.toLowerCase())
+  if (lower.some((part) => part.startsWith('.') || part === 'node_modules')) return true
+  if (lower.includes('node_modules') || lower.includes('.git') || lower.includes('.ssh')) return true
+  const base = lower[lower.length - 1]
+  if (
+    [
+      'agents.md',
+      '.touchstone.log',
+      '.touchstone-preview.png',
+      '.env',
+      '.env.local',
+      '.env.production',
+      'id_rsa',
+      'id_ed25519',
+    ].includes(base)
+  ) {
+    return true
+  }
+  return /\.(pem|key|crt|p12|pfx|sqlite|db|log|command|sh|bash|zsh|fish|ps1|bat|cmd|exe|dll|dylib|so)$/i.test(base)
+}
+
+function collectPublishFiles(folder) {
+  const root = path.join(RUNS_DIR, folder)
+  const files = []
+  let totalBytes = 0
+
+  function walk(rel, depth) {
+    if (depth > PUBLISH_LIMITS.maxDepth) return
+    const dir = path.join(root, rel)
+    let entries = []
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true })
+    } catch {
+      return
+    }
+    for (const entry of entries) {
+      const childRel = rel ? `${rel}/${entry.name}` : entry.name
+      const safeRel = safeRelativePath(childRel)
+      if (!safeRel || isBlockedPublishPath(safeRel)) continue
+      const abs = path.join(root, safeRel)
+      let stat
+      try {
+        stat = fs.lstatSync(abs)
+      } catch {
+        continue
+      }
+      if (stat.isSymbolicLink()) continue
+      if (stat.isDirectory()) {
+        walk(safeRel, depth + 1)
+        continue
+      }
+      if (!stat.isFile()) continue
+      if (stat.size > PUBLISH_LIMITS.maxFileBytes) {
+        throw new Error(`文件过大：${safeRel}`)
+      }
+      totalBytes += stat.size
+      if (totalBytes > PUBLISH_LIMITS.maxTotalBytes) throw new Error('发布文件总大小超过限制')
+      if (files.length >= PUBLISH_LIMITS.maxFiles) throw new Error('发布文件数量超过限制')
+      files.push({ path: safeRel, size: stat.size, contentBase64: fs.readFileSync(abs).toString('base64') })
+    }
+  }
+
+  walk('', 0)
+  if (!files.some((file) => file.path.toLowerCase().endsWith('.html'))) throw new Error('发布作品必须包含 HTML 入口')
+  return { files, totalBytes }
+}
+
+function communityPublishUrl() {
+  const override = process.env.COMMUNITY_PUBLISH_URL
+  if (override === 'off' || override === 'false' || override === '') return null
+  if (override) return override
+  try {
+    const publicHost = new URL(process.env.PUBLIC_BASE_URL || process.env.BASE_URL || '').hostname
+    if (publicHost === 'touchstone.jefflin.ai') return null
+  } catch {}
+  return DEFAULT_COMMUNITY_PUBLISH_URL
+}
+
+function publishToken() {
+  return process.env.COMMUNITY_PUBLISH_TOKEN || process.env.PUBLISH_API_TOKEN || ''
+}
+
+async function publishCompletedRun(run) {
+  const target = communityPublishUrl()
+  if (!target) {
+    autoCommitRun(run)
+    return
+  }
+
+  try {
+    const { files, totalBytes } = collectPublishFiles(run.folder)
+    const body = {
+      schema: 1,
+      source: 'touchstone-local',
+      idToken: publishCredentials.get(run.id)?.idToken || null,
+      run: {
+        id: run.id,
+        batchId: run.batchId,
+        agentId: run.agentId,
+        agentName: run.agentName,
+        model: run.model,
+        resolvedModel: run.resolvedModel,
+        color: run.color,
+        project: run.project,
+        prompt: run.prompt,
+        category: run.category,
+        metrics: run.metrics,
+        createdAt: run.createdAt,
+        startedAt: run.startedAt,
+        endedAt: run.endedAt,
+        exitCode: run.exitCode,
+      },
+      files,
+    }
+    const headers = { 'Content-Type': 'application/json' }
+    const token = publishToken()
+    if (token) headers.Authorization = `Bearer ${token}`
+    const response = await fetch(target, { method: 'POST', headers, body: JSON.stringify(body) })
+    const result = await response.json().catch(() => ({}))
+    if (!response.ok) throw new Error(result.error || `发布失败：${response.status}`)
+    run.publishState = 'published'
+    run.publishedAt = result.run?.publishedAt || new Date().toISOString()
+    run.publicUrl = result.url || null
+    run.publishedBytes = totalBytes
+    saveRegistry()
+    broadcast({ type: 'run', run: publicRun(run) })
+  } catch (err) {
+    run.publishState = 'failed'
+    run.publishError = String(err?.message || err).slice(0, 300)
+    saveRegistry()
+    broadcast({ type: 'run', run: publicRun(run) })
+    console.error('[publish] 发布失败：', run.publishError)
+  } finally {
+    publishCredentials.delete(run.id)
+  }
 }
 
 // ---------- 作品截图（folder 卡片缩略图，本机 Chrome headless，无额外依赖） ----------
@@ -473,12 +644,13 @@ const execGit = (args) =>
 let gitQueue = Promise.resolve()
 
 function autoCommitRun(run) {
+  if (process.env.DISABLE_GIT_AUTOCOMMIT === '1') return
   const gitCfg = loadAgentsConfig().defaults.git || {}
   if (gitCfg.autoCommit === false) return
   gitQueue = gitQueue
     .then(async () => {
       if (!fs.existsSync(path.join(__dirname, '.git'))) return
-      await execGit(['add', '--', path.join('runs', run.folder)])
+      await execGit(['add', '--', path.join('runs', run.folder), path.join('data', 'runs.json')])
       const model = run.model || run.resolvedModel
       const msg = `showcase(${run.project}): add ${run.agentName}${model ? ` (${model})` : ''} run`
       const { error } = await execGit(['commit', '-m', msg])
@@ -493,10 +665,12 @@ function autoCommitRun(run) {
 // ---------- 任务执行 ----------
 
 const liveProcs = new Map() // runId -> ChildProcess
+const publishCredentials = new Map() // runId -> { idToken }
 
 function startRun(run, agent, prompt, timeoutMinutes) {
   const dir = path.join(RUNS_DIR, run.folder)
   fs.mkdirSync(dir, { recursive: true })
+  writeRunContract(dir)
   const logFile = path.join(dir, '.touchstone.log')
 
   const args = agent.args.map((a) => a.replaceAll('{{PROMPT}}', prompt))
@@ -569,7 +743,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     broadcast({ type: 'run', run: publicRun(run) })
     if (run.status === 'done') {
       capturePreview(run)
-      if (run.publish) autoCommitRun(run)
+      if (run.publish) publishCompletedRun(run)
     }
   })
 
@@ -580,7 +754,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
 
 // ---------- API ----------
 
-app.use(express.json({ limit: '1mb' }))
+app.use(express.json({ limit: process.env.JSON_BODY_LIMIT || '80mb' }))
 
 app.get('/api/health', (req, res) => {
   res.json({
@@ -927,6 +1101,140 @@ function agentHealth(agent) {
   }
 }
 
+// ---------- Community publish ----------
+
+function acceptedGoogleClientIds() {
+  return [
+    process.env.GOOGLE_CLIENT_ID,
+    ...(process.env.PUBLISH_GOOGLE_CLIENT_IDS || '').split(','),
+  ]
+    .map((id) => String(id || '').trim())
+    .filter(Boolean)
+}
+
+async function verifyGoogleIdToken(idToken) {
+  if (!idToken) return null
+  const response = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(idToken)}`)
+  const data = await response.json().catch(() => ({}))
+  if (!response.ok) throw new Error(data.error_description || data.error || `Google token 验证失败：${response.status}`)
+  const allowedAudiences = acceptedGoogleClientIds()
+  if (allowedAudiences.length && !allowedAudiences.includes(data.aud)) throw new Error('Google token audience 不匹配')
+  if (String(data.email_verified) !== 'true') throw new Error('Google 邮箱未验证')
+  if (!data.email) throw new Error('Google token 缺少 email')
+  return {
+    email: data.email,
+    name: data.name || data.email.split('@')[0],
+    picture: data.picture || null,
+  }
+}
+
+async function publishIdentity(req, body) {
+  const cur = currentSession(req)
+  if (cur?.email) return { email: cur.email, name: cur.name, picture: cur.picture, method: 'session' }
+
+  const auth = String(req.get('authorization') || '')
+  const bearer = auth.match(/^Bearer\s+(.+)$/i)?.[1]?.trim()
+  if (bearer && process.env.PUBLISH_API_TOKEN && bearer === process.env.PUBLISH_API_TOKEN) {
+    const email = String(body?.user?.email || body?.run?.user || 'publisher@touchstone.local').trim()
+    return { email, name: body?.user?.name || email.split('@')[0], picture: body?.user?.picture || null, method: 'token' }
+  }
+
+  const google = await verifyGoogleIdToken(body?.idToken)
+  if (google) return { ...google, method: 'google' }
+  return null
+}
+
+function validatePublishFiles(files) {
+  if (!Array.isArray(files) || files.length === 0) throw new Error('files required')
+  if (files.length > PUBLISH_LIMITS.maxFiles) throw new Error('文件数量超过限制')
+
+  const seen = new Set()
+  let totalBytes = 0
+  const out = []
+  for (const file of files) {
+    const rel = safeRelativePath(file?.path)
+    if (!rel || isBlockedPublishPath(rel)) throw new Error(`非法文件路径：${file?.path || ''}`)
+    if (seen.has(rel)) throw new Error(`重复文件：${rel}`)
+    seen.add(rel)
+    if (typeof file.contentBase64 !== 'string' || !file.contentBase64) throw new Error(`文件内容为空：${rel}`)
+    const bytes = Buffer.from(file.contentBase64, 'base64')
+    if (bytes.length === 0) throw new Error(`文件内容为空：${rel}`)
+    if (bytes.length > PUBLISH_LIMITS.maxFileBytes) throw new Error(`文件过大：${rel}`)
+    totalBytes += bytes.length
+    if (totalBytes > PUBLISH_LIMITS.maxTotalBytes) throw new Error('发布文件总大小超过限制')
+    out.push({ path: rel, bytes })
+  }
+  if (!out.some((file) => file.path.toLowerCase().endsWith('.html'))) throw new Error('发布作品必须包含 HTML 入口')
+  return { files: out, totalBytes }
+}
+
+function uniquePublishedFolder(project, base) {
+  const projectSlug = slugify(project)
+  const baseSlug = slugify(base)
+  let sub = baseSlug
+  for (let n = 2; fs.existsSync(path.join(RUNS_DIR, projectSlug, sub)); n++) sub = `${baseSlug}_${n}`
+  return `${projectSlug}/${sub}`
+}
+
+function writePublishedFiles(folder, files) {
+  const root = path.join(RUNS_DIR, folder)
+  fs.mkdirSync(root, { recursive: true })
+  for (const file of files) {
+    const abs = path.join(root, file.path)
+    if (!abs.startsWith(root + path.sep)) throw new Error(`非法文件路径：${file.path}`)
+    fs.mkdirSync(path.dirname(abs), { recursive: true })
+    fs.writeFileSync(abs, file.bytes)
+  }
+}
+
+function registerPublishedRun({ sourceRun, identity, folder, totalBytes }) {
+  const entry = findEntry(folder)
+  if (!entry) throw new Error('找不到可渲染的 HTML 入口')
+  const now = new Date().toISOString()
+  const project = String(sourceRun.project || '').trim() || path.dirname(folder)
+  const run = {
+    id: crypto.randomUUID(),
+    sourceRunId: sourceRun.id || null,
+    batchId: sourceRun.batchId || null,
+    agentId: sourceRun.agentId || 'unknown',
+    agentName: sourceRun.agentName || sourceRun.agentId || 'Unknown Agent',
+    model: sourceRun.model || null,
+    resolvedModel: sourceRun.resolvedModel || null,
+    color: sourceRun.color || '#d4ff4f',
+    project,
+    prompt: String(sourceRun.prompt || '').slice(0, 20000),
+    folder,
+    entry,
+    status: 'done',
+    publish: true,
+    publishState: 'published',
+    publishSource: 'community-api',
+    publishedAt: now,
+    publishedBytes: totalBytes,
+    user: identity.email,
+    category: CATEGORIES.includes(sourceRun.category) ? sourceRun.category : classifyHeuristic(sourceRun.prompt),
+    metrics: sourceRun.metrics || null,
+    createdAt: sourceRun.createdAt || now,
+    startedAt: sourceRun.startedAt || null,
+    endedAt: sourceRun.endedAt || now,
+    exitCode: sourceRun.exitCode ?? 0,
+  }
+  runs.unshift(run)
+  if (identity.email) {
+    users[identity.email] = {
+      ...users[identity.email],
+      name: identity.name || users[identity.email]?.name || identity.email.split('@')[0],
+      picture: identity.picture || users[identity.email]?.picture || null,
+    }
+    saveUsers()
+  }
+  saveRegistry()
+  broadcast({ type: 'run', run: publicRun(run) })
+  capturePreview(run)
+  autoCommitRun(run)
+  return run
+}
+
 // ---------- Google 登录（标准 OAuth 2.0 Web flow） ----------
 const SESSION_FILE = path.join(DATA_DIR, 'session.json')
 let session = { sessions: {}, oauthStates: {} }
@@ -1157,7 +1465,13 @@ app.get('/api/auth/callback', async (req, res) => {
     const token = await exchangeGoogleCode(req, String(req.query.code || ''))
     const profile = await fetchGoogleProfile(token.access_token)
     const sid = crypto.randomBytes(32).toString('base64url')
-    session.sessions[sid] = { email: profile.email, name: profile.name, picture: profile.picture, createdAt: Date.now() }
+    session.sessions[sid] = {
+      email: profile.email,
+      name: profile.name,
+      picture: profile.picture,
+      idToken: token.id_token || null,
+      createdAt: Date.now(),
+    }
     saveSession()
     setSessionCookie(req, res, sid)
     res.redirect(pending.returnTo || '/')
@@ -1199,7 +1513,8 @@ app.post('/api/tasks', async (req, res) => {
   if (!prompt || !Array.isArray(runners) || runners.length === 0) {
     return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
   }
-  const user = await getGoogleAccount(req)
+  const sessionUser = currentSession(req)
+  const user = sessionUser?.email || null
   if (!user) {
     return res.status(401).json({ error: '请先登录 Google 账号' })
   }
@@ -1245,6 +1560,7 @@ app.post('/api/tasks', async (req, res) => {
       createdAt: new Date().toISOString(),
     }
     runs.unshift(run)
+    if (run.publish && sessionUser?.idToken) publishCredentials.set(run.id, { idToken: sessionUser.idToken })
     created.push(run)
     startRun(run, agent, finalPrompt, cfg.defaults.timeoutMinutes || 20)
   }
@@ -1254,6 +1570,34 @@ app.post('/api/tasks', async (req, res) => {
 
 app.get('/api/runs', (req, res) => {
   res.json({ runs: runs.map(publicRun), views: stats.views, projectLikes: stats.projectLikes, users })
+})
+
+app.post('/api/publish', async (req, res) => {
+  let folder = null
+  try {
+    if (req.body?.schema !== 1) return res.status(400).json({ error: 'unsupported publish schema' })
+    const identity = await publishIdentity(req, req.body)
+    if (!identity?.email) return res.status(401).json({ error: 'publish auth required' })
+    const { files, totalBytes } = validatePublishFiles(req.body.files)
+    const sourceRun = req.body.run || {}
+    const project = String(sourceRun.project || '').trim() || 'untitled'
+    const model = sourceRun.model || sourceRun.resolvedModel || sourceRun.agentId || 'run'
+    folder = uniquePublishedFolder(project, `${sourceRun.agentId || 'agent'}-${model}`)
+    writePublishedFiles(folder, files)
+    const run = registerPublishedRun({ sourceRun: { ...sourceRun, project }, identity, folder, totalBytes })
+    const folderPath = run.folder.split('/').map(encodeURIComponent).join('/')
+    const entryPath = run.entry.split('/').map(encodeURIComponent).join('/')
+    res.json({
+      ok: true,
+      run: publicRun(run),
+      url: `${requestOrigin(req)}/p/${encodeURIComponent(run.project)}`,
+      workspaceUrl: `${requestOrigin(req)}/workspace/${folderPath}/${entryPath}`,
+    })
+  } catch (err) {
+    if (folder) fs.rmSync(path.join(RUNS_DIR, folder), { recursive: true, force: true })
+    console.error('[publish] 接收失败：', err)
+    res.status(400).json({ error: err?.message || String(err) })
+  }
 })
 
 app.get('/api/fable5/favorites', async (req, res) => {
