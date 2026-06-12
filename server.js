@@ -61,7 +61,7 @@ function latestIso(list) {
 function seoForPath(req) {
   const origin = requestOrigin(req)
   let pathname = publicPath(req.path || '/')
-  let title = `${SITE_NAME} · AI Coding Arena`
+  let title = SITE_NAME
   let description = SITE_DESCRIPTION
   let type = 'WebSite'
 
