@@ -3,6 +3,7 @@ import { ArrowDownAZ, ArrowUpAZ, Bookmark, Check, Copy, ExternalLink, Eye, Heart
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
+import { trackEvent } from '@/lib/analytics'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
 import { useI18n } from '@/i18n.jsx'
 
@@ -89,8 +90,8 @@ function MediaPlaceholder({ label = 'no preview from source' }) {
 
 function LoadingCard() {
   return (
-    <article className="h-[460px] overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f]">
-      <div className="h-[210px] animate-pulse bg-white/8" />
+    <article className="h-[420px] overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] sm:h-[460px]">
+      <div className="h-[180px] animate-pulse bg-white/8 sm:h-[210px]" />
       <div className="space-y-4 p-4">
         <div className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-full bg-white/8" />
@@ -131,7 +132,7 @@ function MediaBlock({ item, priority = false }) {
 
   if (!imageUrl && !videoUrl) {
     return (
-      <div className="relative h-[210px] shrink-0 overflow-hidden bg-black">
+      <div className="relative h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
         <MediaPlaceholder label={item.media === 'text' ? t('fable.textOnly') : t('fable.noPreview')} />
         <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
       </div>
@@ -140,7 +141,7 @@ function MediaBlock({ item, priority = false }) {
 
   if (playing && videoUrl && !videoFailed) {
     return (
-      <div className="h-[210px] shrink-0 overflow-hidden bg-black">
+      <div className="h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
         <video
           src={videoUrl}
           poster={item.mediaThumbUrl || undefined}
@@ -156,7 +157,7 @@ function MediaBlock({ item, priority = false }) {
   }
 
   return (
-    <div className="relative h-[210px] shrink-0 overflow-hidden bg-black">
+    <div className="relative h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
       {showImage ? (
         <>
           {!imageLoaded && <div className="absolute inset-0 animate-pulse bg-white/8" />}
@@ -214,8 +215,8 @@ function ShowcaseCard({ item, index, favorite, copied, authLoaded, loginRequired
 
   return (
     <article
-      className="flex h-[460px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-colors hover:border-white/25"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '460px' }}
+      className="flex h-[420px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-colors hover:border-white/25 sm:h-[460px]"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '420px' }}
     >
       <MediaBlock item={item} priority={index < INITIAL_PRIORITY_IMAGES} />
 
@@ -288,7 +289,7 @@ function ShowcaseCard({ item, index, favorite, copied, authLoaded, loginRequired
           </div>
         )}
 
-        <div className="mt-auto flex shrink-0 items-center gap-4 border-t border-white/8 pt-3 font-mono text-[10px] text-white/35">
+        <div className="mt-auto flex shrink-0 items-center gap-3 border-t border-white/8 pt-3 font-mono text-[10px] text-white/35 sm:gap-4">
           <span className="flex items-center gap-1">
             <Heart className="h-3 w-3" />
             {n(metrics.likes)}
@@ -328,6 +329,34 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   const [sortDirection, setSortDirection] = useState('desc')
   const [favorites, setFavorites] = useState(() => getFavorites())
   const [copiedId, copy] = useCopy()
+
+  useEffect(() => {
+    if (!authEmail) {
+      setFavorites(new Set())
+      return undefined
+    }
+    let alive = true
+    fetch('/api/fable5/favorites')
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error('failed'))))
+      .then((data) => {
+        if (!alive) return
+        const local = getFavorites()
+        const merged = new Set([...(data.favorites || []), ...local])
+        setFavorites(merged)
+        writeFavoriteSet(FABLE5_FAVORITES_KEY, merged)
+        if (local.size > 0 && merged.size !== (data.favorites || []).length) {
+          fetch('/api/fable5/favorites', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ favorites: [...merged] }),
+          }).catch(() => {})
+        }
+      })
+      .catch(() => {})
+    return () => {
+      alive = false
+    }
+  }, [authEmail])
 
   useEffect(() => {
     let alive = true
@@ -408,23 +437,35 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
       onLogin?.()
       return
     }
+    const favorite = !favorites.has(id)
     setFavorites((prev) => {
       const next = new Set(prev)
-      next.has(id) ? next.delete(id) : next.add(id)
+      favorite ? next.add(id) : next.delete(id)
       writeFavoriteSet(FABLE5_FAVORITES_KEY, next)
       return next
     })
+    trackEvent('fable5_favorite', { item_id: id, favorite })
+    fetch(`/api/fable5/favorites/${encodeURIComponent(id)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ favorite }),
+    }).catch(() => {})
+  }
+
+  const copyPrompt = (id, prompt) => {
+    copy(id, prompt)
+    trackEvent('fable5_copy_prompt', { item_id: id })
   }
 
   return (
     <main className="pb-20">
-      <section className="mt-10 flex flex-wrap items-center justify-between gap-5">
+      <section className="mt-7 flex flex-wrap items-center justify-between gap-4 sm:mt-10 sm:gap-5">
         <button type="button" onClick={onBack} className="cursor-pointer text-left">
           <span className="flex items-center gap-3">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
               <img src={claudeIcon} alt="" className="h-6 w-6 sm:h-8 sm:w-8" />
             </span>
-            <span className="block font-pixel text-[34px] leading-none text-white sm:text-[48px]">FABLE 5</span>
+            <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">FABLE 5</span>
           </span>
         </button>
         <a
@@ -436,7 +477,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
         </a>
       </section>
 
-      <section className="sticky top-14 z-30 mt-6 py-3">
+      <section className="sticky top-14 z-30 mt-5 py-3 sm:mt-6">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-screen -translate-x-1/2 bg-[#09090b]/86 backdrop-blur-xl" />
         <div className="relative z-10">
           <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto]">
@@ -449,8 +490,8 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
                 className="h-9 w-full rounded-md border border-white/10 bg-black/30 pr-3 pl-9 text-sm text-white outline-none placeholder:text-white/24 focus:border-white/25"
               />
             </label>
-            <div className="grid grid-cols-[auto_minmax(0,170px)_36px] items-center gap-2">
-              <span className="font-mono text-[10px] tracking-[0.16em] whitespace-nowrap text-white/32 uppercase">{t('common.sortBy')}</span>
+            <div className="grid grid-cols-[minmax(0,1fr)_36px] items-center gap-2 sm:grid-cols-[auto_minmax(0,170px)_36px]">
+              <span className="hidden font-mono text-[10px] tracking-[0.16em] whitespace-nowrap text-white/32 uppercase sm:inline">{t('common.sortBy')}</span>
               <label className="sr-only" htmlFor="fable-sort">
                 {t('common.sortBy')}
               </label>
@@ -479,7 +520,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
           {scenes.length > 0 && (
             <div className="mt-2">
               <div className="mb-1.5 font-mono text-[10px] tracking-[0.16em] text-white/32 uppercase">{t('common.categories')}</div>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
                 <SceneChip label={t('common.all')} count={items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
                 {scenes.map(([key, count]) => (
                   <SceneChip key={key} label={key} count={count} active={scene === key} onClick={() => setScene(key)} />
@@ -490,7 +531,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
         </div>
       </section>
 
-      <div id="showcases" className="mt-5 grid scroll-mt-32 gap-4 [grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]">
+      <div id="showcases" className="mt-5 grid grid-cols-1 scroll-mt-32 gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]">
         {filtered.map((item, itemIndex) => (
           <ShowcaseCard
             key={item.id}
@@ -502,7 +543,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
             loginRequired={authLoaded && !authEmail}
             loggingIn={loggingIn}
             onToggleFavorite={toggleFavorite}
-            onCopy={copy}
+            onCopy={copyPrompt}
           />
         ))}
         {!items && !loadError && Array.from({ length: 9 }, (_, index) => <LoadingCard key={index} />)}

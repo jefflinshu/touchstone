@@ -4,7 +4,7 @@ import Avatar, { displayName } from './Avatar.jsx'
 import { Button } from '@/components/ui/button'
 import { Input, Textarea } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
-import { FABLE5_FAVORITES_KEY, FAVORITES_CHANGED_EVENT, LIKED_PROJECTS_KEY, readFavoriteSet } from '@/lib/favorites'
+import { FABLE5_FAVORITES_KEY, FAVORITES_CHANGED_EVENT, LIKED_PROJECTS_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases } from '@/lib/fable5Data'
 import { useI18n } from '@/i18n.jsx'
 
@@ -190,6 +190,22 @@ export default function ProfilePage({
       window.removeEventListener('storage', onChange)
     }
   }, [])
+
+  useEffect(() => {
+    if (!isMe || !authEmail) return
+    let alive = true
+    fetch('/api/fable5/favorites')
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error('failed'))))
+      .then((data) => {
+        if (!alive) return
+        writeFavoriteSet(FABLE5_FAVORITES_KEY, new Set(data.favorites || []))
+        setFavoriteVersion((v) => v + 1)
+      })
+      .catch(() => {})
+    return () => {
+      alive = false
+    }
+  }, [authEmail, isMe])
 
   // 该用户参与过的项目（case）
   const myGroups = useMemo(

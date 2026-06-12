@@ -758,6 +758,20 @@ if (fs.existsSync(USERS_FILE)) {
 }
 const saveUsers = () => fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
 
+const FABLE5_FAVORITES_FILE = path.join(DATA_DIR, 'fable5-favorites.json')
+let fable5Favorites = {}
+if (fs.existsSync(FABLE5_FAVORITES_FILE)) {
+  try {
+    fable5Favorites = JSON.parse(fs.readFileSync(FABLE5_FAVORITES_FILE, 'utf8'))
+  } catch {}
+}
+const saveFable5Favorites = () => fs.writeFileSync(FABLE5_FAVORITES_FILE, JSON.stringify(fable5Favorites, null, 2))
+
+function sanitizeFavoriteIds(ids) {
+  if (!Array.isArray(ids)) return []
+  return [...new Set(ids.map((id) => String(id || '').trim()).filter(Boolean))].slice(0, 5000)
+}
+
 // Google 头像直链浏览器端常被网络环境拦截；服务端经代理（curl 读系统代理变量）
 // 下载缓存到本地，前端改用本站 /avatars/ 地址
 const AVATARS_DIR = path.join(DATA_DIR, 'avatars')
@@ -1042,6 +1056,33 @@ app.post('/api/tasks', async (req, res) => {
 
 app.get('/api/runs', (req, res) => {
   res.json({ runs: runs.map(publicRun), views: stats.views, projectLikes: stats.projectLikes, users })
+})
+
+app.get('/api/fable5/favorites', async (req, res) => {
+  const email = await getGoogleAccount(req)
+  if (!email) return res.status(401).json({ error: '请先登录 Google 账号' })
+  res.json({ favorites: sanitizeFavoriteIds(fable5Favorites[email] || []) })
+})
+
+app.put('/api/fable5/favorites', async (req, res) => {
+  const email = await getGoogleAccount(req)
+  if (!email) return res.status(401).json({ error: '请先登录 Google 账号' })
+  fable5Favorites[email] = sanitizeFavoriteIds(req.body?.favorites)
+  saveFable5Favorites()
+  res.json({ favorites: fable5Favorites[email] })
+})
+
+app.post('/api/fable5/favorites/:id', async (req, res) => {
+  const email = await getGoogleAccount(req)
+  if (!email) return res.status(401).json({ error: '请先登录 Google 账号' })
+  const id = String(req.params.id || '').trim()
+  if (!id) return res.status(400).json({ error: 'id required' })
+  const current = new Set(sanitizeFavoriteIds(fable5Favorites[email] || []))
+  const favorite = req.body?.favorite !== false
+  favorite ? current.add(id) : current.delete(id)
+  fable5Favorites[email] = sanitizeFavoriteIds([...current])
+  saveFable5Favorites()
+  res.json({ favorite, favorites: fable5Favorites[email] })
 })
 
 // 项目（case）级点赞

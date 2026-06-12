@@ -4,6 +4,7 @@ import Avatar, { displayName } from './Avatar.jsx'
 import AgentIcon from './AgentIcon.jsx'
 import { cn } from '@/lib/utils'
 import { LIKED_PROJECTS_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
+import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
 
 const getLikedProjects = () => {
@@ -31,6 +32,7 @@ export function ProjectLikeButton({ project, likes, className }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: next ? 'like' : 'unlike' }),
     }).catch(() => {})
+    trackEvent('project_like', { project, liked: next })
   }
 
   return (

@@ -16,6 +16,7 @@ import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui
 import { Button } from '@/components/ui/button'
 import AgentIcon from './AgentIcon.jsx'
 import { cn } from '@/lib/utils'
+import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
 
 const STATUS = {
@@ -100,6 +101,7 @@ function LikeButton({ run }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: next ? 'like' : 'unlike' }),
     }).catch(() => {})
+    trackEvent('run_like', { run_id: run.id, project: run.project, liked: next })
   }
 
   return (

@@ -476,7 +476,7 @@ export default function App() {
     <>
       <div className="bg-arena" />
       <header className="sticky top-0 z-40 border-b border-white/8 bg-[#09090b]/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-4 px-6">
+        <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-2.5 px-4 sm:gap-4 sm:px-6">
           <a
             href="/"
             onClick={(e) => {
@@ -500,10 +500,10 @@ export default function App() {
               </span>
             </span>
           </a>
-          <span className="mt-px font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase">
+          <span className="mt-px hidden font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase md:inline">
             {t('nav.subtitle')}
           </span>
-          <div className="ml-auto flex items-center gap-4">
+          <div className="ml-auto flex items-center gap-2.5 sm:gap-4">
             <button
               type="button"
               onClick={goFable5}
@@ -589,7 +589,7 @@ export default function App() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-[1400px] px-6 pb-28">
+      <div className="mx-auto max-w-[1400px] px-4 pb-28 sm:px-6">
         {route.page === 'fable5' ? (
           <Fable5Page onBack={goHome} authLoaded={auth.loaded} authEmail={auth.email} onLogin={login} loggingIn={loggingIn} />
         ) : route.page === 'project' ? (
@@ -630,9 +630,9 @@ export default function App() {
           />
         ) : (
           <>
-            <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
+            <div className="mt-10 flex flex-wrap items-center justify-between gap-5 sm:mt-14 sm:gap-6">
               <div>
-                <h1 className="font-pixel text-[32px] leading-[1.18] text-white sm:text-[42px]">
+                <h1 className="font-pixel text-[28px] leading-[1.18] text-white sm:text-[42px]">
                   {t('home.heroOne')}
                   <br />
                   <span className="text-acid">{t('home.heroTwo')}</span>
@@ -669,7 +669,7 @@ export default function App() {
                 {t('home.noRuns')}
               </div>
             ) : (
-              <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+              <div className="grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
                 {filteredGroups.map((g) => (
                   <ProjectCard
                     key={g.project}
