@@ -5,13 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Dialog, DialogClose, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { useI18n } from '@/i18n.jsx'
 
-// 各 CLI 的安装引导（health.fix 是登录类问题的修复提示，未安装时用这里的命令）
-const INSTALL = {
-  claude: { cmd: 'npm install -g @anthropic-ai/claude-code', doc: 'https://claude.com/claude-code' },
-  codex: { cmd: 'npm install -g @openai/codex', doc: 'https://developers.openai.com/codex/cli' },
-  gemini: { cmd: 'npm install -g @google/gemini-cli', doc: 'https://github.com/google-gemini/gemini-cli' },
-}
-
 const STEPS = [
   { n: '01', titleKey: 'guide.step1Title', descKey: 'guide.step1Desc' },
   { n: '02', titleKey: 'guide.step2Title', descKey: 'guide.step2Desc' },
@@ -42,7 +35,7 @@ function AgentStatus({ agent }) {
   const { t } = useI18n()
   const h = agent.health || {}
   const ready = h.ready !== false
-  const install = INSTALL[agent.id]
+  const install = agent.install || {}
   return (
     <div className="rounded-md border border-white/10 bg-white/[0.02] px-3.5 py-3">
       <div className="flex items-center gap-2">
@@ -61,8 +54,8 @@ function AgentStatus({ agent }) {
       {!ready && (
         <div className="mt-2.5 border-t border-white/8 pt-2.5">
           <p className="text-xs leading-5 text-white/60">{h.fix}</p>
-          {!h.installed && install && <CmdLine cmd={install.cmd} />}
-          {!h.installed && install && (
+          {!h.installed && install.cmd && <CmdLine cmd={install.cmd} />}
+          {!h.installed && install.doc && (
             <a
               href={install.doc}
               target="_blank"

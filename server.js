@@ -693,12 +693,7 @@ async function autoNameProject(prompt) {
 }
 
 // ---------- 本地 CLI 健康检查 ----------
-// installed：PATH 中能找到命令；authed：凭据文件/环境变量存在（启发式）
-const FIX_HINTS = {
-  claude: '终端运行 claude 并完成 /login 登录',
-  codex: '终端运行 codex login 完成登录',
-  gemini: '终端运行 gemini 完成 Google 账号授权（浏览器登录一次即可）',
-}
+// installed：PATH 中能找到命令；authed：按 agents.json 中 auth.files / auth.env 动态检测。
 
 function checkInstalled(command) {
   const paths = (process.env.PATH || '').split(path.delimiter)
@@ -712,34 +707,33 @@ function checkInstalled(command) {
   })
 }
 
-function checkAuthed(agentId) {
-  const home = os.homedir()
+function expandHome(value) {
+  return String(value || '').replace(/^~(?=$|\/|\\)/, os.homedir())
+}
+
+function checkAuthed(agent) {
+  const auth = agent.auth || {}
+  const files = Array.isArray(auth.files) ? auth.files : []
+  const env = Array.isArray(auth.env) ? auth.env : []
+
+  if (files.length === 0 && env.length === 0) return true
+
   try {
-    if (agentId === 'claude') {
-      return fs.existsSync(path.join(home, '.claude.json')) || !!process.env.ANTHROPIC_API_KEY
-    }
-    if (agentId === 'codex') {
-      return fs.existsSync(path.join(home, '.codex', 'auth.json'))
-    }
-    if (agentId === 'gemini') {
-      return (
-        fs.existsSync(path.join(home, '.gemini', 'oauth_creds.json')) ||
-        !!process.env.GEMINI_API_KEY ||
-        !!process.env.GOOGLE_API_KEY
-      )
-    }
+    if (files.some((file) => fs.existsSync(expandHome(file)))) return true
+    if (env.some((key) => Boolean(process.env[key]))) return true
   } catch {}
-  return true
+  return false
 }
 
 function agentHealth(agent) {
   const installed = checkInstalled(agent.command)
-  const authed = installed && checkAuthed(agent.id)
+  const authed = installed && checkAuthed(agent)
+  const installCmd = agent.install?.cmd ? `，可运行：${agent.install.cmd}` : ''
   return {
     installed,
     authed,
     ready: installed && authed,
-    fix: !installed ? `未检测到 ${agent.command} 命令，请先安装` : !authed ? FIX_HINTS[agent.id] || '请先完成 CLI 登录' : null,
+    fix: !installed ? `未检测到 ${agent.command} 命令，请先安装${installCmd}` : !authed ? agent.auth?.loginHint || '请先完成 CLI 登录' : null,
   }
 }
 

@@ -7,7 +7,16 @@
       "command": "claude",
       "args": ["-p", "{{PROMPT}}", "--dangerously-skip-permissions", "--output-format", "json"],
       "modelFlag": "--model",
-      "models": ["claude-fable-5", "claude-opus-4-8", "sonnet", "haiku"]
+      "models": ["claude-fable-5", "claude-opus-4-8", "sonnet", "haiku"],
+      "install": {
+        "cmd": "npm install -g @anthropic-ai/claude-code",
+        "doc": "https://claude.com/claude-code"
+      },
+      "auth": {
+        "files": ["~/.claude.json"],
+        "env": ["ANTHROPIC_API_KEY"],
+        "loginHint": "终端运行 claude 并完成 /login 登录"
+      }
     },
     {
       "id": "codex",
@@ -16,7 +25,15 @@
       "command": "codex",
       "args": ["exec", "--full-auto", "--skip-git-repo-check", "{{PROMPT}}"],
       "modelFlag": "-m",
-      "models": ["gpt-5.5", "gpt-5.5-codex", "gpt-5.1-codex-max"]
+      "models": ["gpt-5.5", "gpt-5.5-codex", "gpt-5.1-codex-max"],
+      "install": {
+        "cmd": "npm install -g @openai/codex",
+        "doc": "https://developers.openai.com/codex/cli"
+      },
+      "auth": {
+        "files": ["~/.codex/auth.json"],
+        "loginHint": "终端运行 codex login 完成登录"
+      }
     },
     {
       "id": "gemini",
@@ -25,7 +42,16 @@
       "command": "gemini",
       "args": ["-p", "{{PROMPT}}", "--yolo", "-o", "json"],
       "modelFlag": "-m",
-      "models": ["gemini-3.1-pro", "gemini-3-flash", "gemini-2.5-pro"]
+      "models": ["gemini-3.1-pro", "gemini-3-flash", "gemini-2.5-pro"],
+      "install": {
+        "cmd": "npm install -g @google/gemini-cli",
+        "doc": "https://github.com/google-gemini/gemini-cli"
+      },
+      "auth": {
+        "files": ["~/.gemini/oauth_creds.json"],
+        "env": ["GEMINI_API_KEY", "GOOGLE_API_KEY"],
+        "loginHint": "终端运行 gemini 完成 Google 账号授权（浏览器登录一次即可）"
+      }
     }
   ],
   "defaults": {

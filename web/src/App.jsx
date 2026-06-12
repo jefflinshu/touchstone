@@ -191,16 +191,21 @@ export default function App() {
   const [loggingIn, setLoggingIn] = useState(false)
   const [users, setUsers] = useState({})
   const [stars, setStars] = useState(null)
+  const route = useRoute()
   // 新手指南：首次访问展示；有 CLI 未就绪时每个新会话再提醒一次
   const [showGuide, setShowGuide] = useState(() => {
     const params = new URLSearchParams(window.location.search)
-    return params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
+    return route.page !== 'fable5' && params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
   })
   useEffect(() => {
+    if (route.page === 'fable5') {
+      setShowGuide(false)
+      return
+    }
     if (agents.some((a) => a.health?.ready === false) && !sessionStorage.getItem('ts:guide:dismissed')) {
       setShowGuide(true)
     }
-  }, [agents])
+  }, [agents, route.page])
   const dismissGuide = useCallback(() => {
     setShowGuide(false)
     localStorage.setItem('ts:guide:dismissed', '1')
@@ -210,7 +215,6 @@ export default function App() {
   const [themeMode, setThemeMode] = useState(getStoredThemeMode)
   const [resolvedTheme, setResolvedTheme] = useState(() => resolveTheme(getStoredThemeMode()))
   const wsRef = useRef(null)
-  const route = useRoute()
 
   useEffect(() => {
     trackPageView(getAnalyticsPage(route))
@@ -683,11 +687,13 @@ export default function App() {
         )}
       </div>
 
-      <GuideCard
-        agents={agents}
-        open={showGuide}
-        onOpenChange={(o) => (o ? setShowGuide(true) : dismissGuide())}
-      />
+      {route.page !== 'fable5' && (
+        <GuideCard
+          agents={agents}
+          open={showGuide}
+          onOpenChange={(o) => (o ? setShowGuide(true) : dismissGuide())}
+        />
+      )}
     </>
   )
 }
