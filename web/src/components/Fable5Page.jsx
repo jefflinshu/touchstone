@@ -56,7 +56,8 @@ const SORT_OPTIONS = [
   { key: 'replies', labelKey: 'fable.sort.replies' },
 ]
 
-const SHARD_LOAD_STEP = 1
+const INITIAL_SHARD_LOAD_COUNT = 4
+const SHARD_LOAD_STEP = 2
 const INITIAL_PRIORITY_IMAGES = 6
 const CATEGORY_ORDER = ['games', 'apps', 'websites', 'videos', '3d', 'design', 'agents', 'prompts', 'code', 'research', 'news', 'safety', 'experiments']
 
@@ -360,7 +361,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
 
   useEffect(() => {
     let alive = true
-    loadFable5Showcases({ start: 0, count: SHARD_LOAD_STEP }).then(
+    loadFable5Showcases({ start: 0, count: INITIAL_SHARD_LOAD_COUNT }).then(
       ({ index: nextIndex, items: nextItems, loadedShards }) => {
         if (!alive) return
         setIndex(nextIndex)
@@ -514,7 +515,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
             <div className="mt-2">
               <div className="mb-1.5 font-mono text-[10px] tracking-[0.16em] text-white/32 uppercase">{t('common.categories')}</div>
               <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
-                <SceneChip label={t('common.all')} count={items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
+                <SceneChip label={t('common.all')} count={totalCount || items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
                 {scenes.map(([key, count]) => (
                   <SceneChip key={key} label={key} count={count} active={scene === key} onClick={() => setScene(key)} />
                 ))}
