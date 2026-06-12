@@ -799,16 +799,58 @@ function translateFable5BatchViaCli(language, items) {
   })
 }
 
+function translateFable5BatchViaCodexCli(language, items) {
+  return new Promise((resolve) => {
+    let settled = false
+    const done = (value) => {
+      if (!settled) {
+        settled = true
+        resolve(value)
+      }
+    }
+    try {
+      const proc = spawn('codex', ['exec', '--skip-git-repo-check', '--full-auto', buildFable5TranslationPrompt(language, items)], {
+        env: process.env,
+        stdio: ['ignore', 'pipe', 'ignore'],
+      })
+      let out = ''
+      proc.stdout.on('data', (chunk) => (out += chunk))
+      const timer = setTimeout(() => {
+        proc.kill('SIGKILL')
+        done(parseFable5Translations('', items))
+      }, 45000)
+      proc.on('close', () => {
+        clearTimeout(timer)
+        done(parseFable5Translations(out, items))
+      })
+      proc.on('error', () => done(parseFable5Translations('', items)))
+    } catch {
+      done(parseFable5Translations('', items))
+    }
+  })
+}
+
+function fable5TranslationsChangedSource(translations, items) {
+  return items.some((item) => {
+    const next = translations[item.id]
+    if (!next) return false
+    return next.title !== cleanFable5TranslationField(item.title) || next.summary !== cleanFable5TranslationField(item.summary)
+  })
+}
+
 async function translateFable5Batch(language, items) {
   if (!items.length) return {}
   if (anthropic) {
     try {
-      return await translateFable5BatchViaApi(language, items)
+      const translated = await translateFable5BatchViaApi(language, items)
+      if (fable5TranslationsChangedSource(translated, items)) return translated
     } catch (err) {
       console.error('[fable5 translation] API 失败，回退 CLI：', err?.message)
     }
   }
-  return translateFable5BatchViaCli(language, items)
+  const claudeCli = await translateFable5BatchViaCli(language, items)
+  if (fable5TranslationsChangedSource(claudeCli, items)) return claudeCli
+  return translateFable5BatchViaCodexCli(language, items)
 }
 
 async function autoNameProject(prompt) {
