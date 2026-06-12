@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2064949876463645026",
+      "text": "We’re rolling out changes to make Fable 5’s safeguards for frontier LLM development visible.\n\nStarting this week, flagged requests will visibly fall back to Opus 4.8—the same as our safeguards for cyber and bio. You will see this every time it happens. On the API, any flagged requests will return a reason for their refusal (coming to server-side fallback in the next few days).\n\nWe wanted to deploy Fable 5 to our users quickly and safely. Visible safeguards can be probed, so they have to be robust, which takes time to get right. Invisible safeguards can be targeted more narrowly, allowing us to ship quickly with very few false positives. We went with invisible safeguards for this reason—and that was the wrong tradeoff. You should have visibility into the safeguards we have in place, and why. We’re sorry for not getting the balance right.\n\nMaking the safeguards visible makes them easier to work around, so keeping them robust to jailbreaks will unfortunately mean more false positives while we improve the classifiers. We're also tuning our bio and cyber classifiers to trigger less often on harmless requests. We know this is frustrating and we’ll do our best to keep this period as short as possible.\n\nIf you think a request has been mistakenly flagged: run /feedback in Claude Code, click thumbs-down on the fallback in https://t.co/LtktniD5HY or Cowork, or file the safeguard appeal form for API requests. Your reports help us tune these classifiers and we appreciate your feedback.   \nhttps://t.co/TDAAYRGqDt",
+      "author": {
+        "id": "2024518793679294464",
+        "name": "ClaudeDevs",
+        "screenName": "ClaudeDevs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2044472418815893504/xf14RxM8_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4780,
+        "retweets": 407,
+        "replies": 652,
+        "quotes": 310,
+        "views": 761635,
+        "bookmarks": 902
+      },
+      "createdAt": "Thu Jun 11 05:56:30 +0000 2026",
+      "createdAtLocal": "2026-06-11 13:56",
+      "createdAtISO": "2026-06-11T05:56:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

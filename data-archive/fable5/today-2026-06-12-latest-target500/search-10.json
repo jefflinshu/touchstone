@@ -1,0 +1,1350 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2065343481011220768",
+      "text": "Don't get me wrong, the models do still improve measurably.\n\nThey went from barely being able to write any coherent Haskell (Sonnet-3.7) to solving most of my challenges (GPT-5) to solving my challenges better than most experts (GPT-5.5) -- and every major release still delivers a new improvement on my little benchmark.\n\nIn particular, Fable 5 solved a challenge in 30 minutes that GPT-5.5 only solved once in almost a hundred runs. Not only that, it also pointed out that my spec for it is wrong for an edge case.\n\nFunny how my little hobby turned out to be a very decent benchmark for AI model capabilities.",
+      "author": {
+        "id": "767333176826032128",
+        "name": "effectfully",
+        "screenName": "effectfully",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1745212771111780352/PiARQbdh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 37,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:00:32 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:00",
+      "createdAtISO": "2026-06-12T08:00:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065226186293162259",
+        "text": "I don't understand the obsession of the big labs with making the models bigger and fancier.\n\nWell-targeted performance of AI is already superhuman.\n\nJust advance context management in tooling, that has way more upside than adding another B to the model size.",
+        "author": {
+          "screenName": "effectfully",
+          "name": "effectfully"
+        }
+      }
+    },
+    {
+      "id": "2065342455084704154",
+      "text": "@ArtificialAnlys Interesting that Fable 5 only edges out GPT-5.5 by a single point on the new benchmark, feels like the gap is way smaller than people hyped it up to be.",
+      "author": {
+        "id": "1716663497046855680",
+        "name": "Eden",
+        "screenName": "Web3Eden01",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062709535954124800/uH6t0DbM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:56:28 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:56",
+      "createdAtISO": "2026-06-12T07:56:28+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065340290211230046",
+      "text": "@AnthropicAI built Claude Fable 5 to reason through hard problems — most people are using it to summarize PDFs.\n\nThe gap between benchmark-watchers and people actually building with it is widening fast.\n\nThis post skips the model card and goes straight to the prompts and workflows that generate revenue — the ones most guides never get to.\n\nhttps://t.co/eg50esH4AY",
+      "author": {
+        "id": "1291519252172685312",
+        "name": "Stork.Ai | AI News | Agents | MCP Tools",
+        "screenName": "usestork",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1291519996057620480/zn8bzpfA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 11,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:47:52 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:47",
+      "createdAtISO": "2026-06-12T07:47:52+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQC95XgAAc-X7.jpg",
+          "width": 1200,
+          "height": 630
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065335797323317570",
+      "text": "Anthropic shipped its most capable public model this week. The benchmark numbers are not the story. The deployment design is. One model, two products: Fable 5 with safeguards for everyone, Mythos 5 with fewer for vetted partners. That split is new for this industry.",
+      "author": {
+        "id": "82070318",
+        "name": "Anees Merchant",
+        "screenName": "aneesmerchant",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2031640847826206720/QLScit6I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:30:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:30",
+      "createdAtISO": "2026-06-12T07:30:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065332522062409804",
+      "text": "FABLE 5 DROPPED 48 HOURS AGO. HERE’S WHAT PEOPLE ALREADY DID WITH IT.\n\n→ 50M line Stripe codebase migrated in 1 day.\nA full team needs 2 months.\n\n→ Full game engine with physics + multiplayer.\n10 minutes. One prompt.\n\n→ 271 Firefox zero-days discovered autonomously.\nAnd chained together.\n\n→ McKinsey-style report from scratch.\nOne prompt. Pixel perfect.\n\nThis isn’t a model upgrade.\n\nThis is a different category entirely.\n\n91/100 on Senior Engineer benchmark.\nGPT-5.5 scored 62.\n\nFree until June 22.\n\nhttps://t.co/RbQjcGtbln → model picker → Fable 5.\n\nGo. Now.",
+      "author": {
+        "id": "1305923222492401665",
+        "name": "Vandos ❓",
+        "screenName": "__vandos__",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1830903551301677058/V47ZwNVV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 37,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:16:59 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:16",
+      "createdAtISO": "2026-06-12T07:16:59+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmI-xRWsAAjkKZ.jpg",
+          "width": 635,
+          "height": 355
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064815249610408347",
+        "text": "https://t.co/cAehixz21S",
+        "author": {
+          "screenName": "__vandos__",
+          "name": "Vandos ❓"
+        }
+      }
+    },
+    {
+      "id": "2065329338124239087",
+      "text": "you have about 10 days for Fable 5.\n\nthat's how long the public still gets to touch the smartest model claude has ever shipped at full power. \n\npause at 0:12 on the benchmark table and you'll see why that matters.\n\n> 80.3% on agentic coding. best non-claude model sits at 58.6%\n> 1932 on knowledge work. gpt 5.5 is at 1769\n> top score on nearly every row in the table\n> the longer and messier the task, the bigger the lead\n\nnow read the small print under that same table.\n\non cybersecurity and biology, the starred rows, your version already drops to opus 4.8 levels. 78% quietly becomes 40%. that's not the model getting dumber. that's the safeguard deciding you don't get the full one.\n\nthe version that keeps those numbers is mythos 5. defenders only. and the throttle only moves one way.\n\nso this is the countdown. the door is open today. in 10 days nobody's promising it reads like this.\n\nscreenshot the table while it still does.",
+      "author": {
+        "id": "1585556605101285376",
+        "name": "Bounce",
+        "screenName": "bounceidc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049888158007848960/RHE0fawq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 75,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:04:20 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:04",
+      "createdAtISO": "2026-06-12T07:04:20+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065329283023704064/vid/avc1/1080x1920/5Uq9hkLaJLx4Lmc0.mp4?tag=27",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064598703139127726",
+        "text": "https://t.co/d3w8qrxzmA",
+        "author": {
+          "screenName": "bounceidc",
+          "name": "Bounce"
+        }
+      }
+    },
+    {
+      "id": "2065328920514515037",
+      "text": "We've updated the Artificial Analysis Coding Agent Index, replacing SWE-Bench Pro with Datacurve's DeepSWE benchmark - the swap lifts Codex with GPT-5.5 (xhigh) above Claude Code with Opus 4.8 (max), while the newly released Claude Fable 5 (max) in Claude Code debuts at the top\n\nDeepSWE, built by @datacurve, writes its tasks from scratch rather than adapting them from public GitHub issues or pull requests, so no model has seen the solutions during training. That matters because SWE-Bench Pro, the benchmark it replaces in our Coding Agent Index, had grown gameable, with some models recovering the fix from the repository's commit history instead of solving the task.\n\nThe swap reorders the index: Codex with GPT-5.5 (xhigh) rises from 65 to 76, overtaking Claude Code with Opus 4.8 (max) at 73. Claude Code with Fable 5 (max), which enters directly on the refreshed index, leads at 77. SWE-Bench Pro had been flattering some combinations and penalizing others.\n\nMore below.",
+      "author": {
+        "id": "1743487864934162432",
+        "name": "Artificial Analysis",
+        "screenName": "ArtificialAnlys",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042402069320290304/A8C1lP07_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 269,
+        "retweets": 23,
+        "replies": 15,
+        "quotes": 7,
+        "views": 10334,
+        "bookmarks": 37
+      },
+      "createdAt": "Fri Jun 12 07:02:41 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:02",
+      "createdAtISO": "2026-06-12T07:02:41+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmDgMpakAAoCNq.jpg",
+          "width": 4096,
+          "height": 1566
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065315823443701957",
+      "text": "https://t.co/vIqtDNkNRo",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 202,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:10:38 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:10",
+      "createdAtISO": "2026-06-12T06:10:38+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065315514625531904"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude SEO Agent Builds Traffic Pages With Fable 5"
+    },
+    {
+      "id": "2065315654702653487",
+      "text": "Fable 5 vs Opus 4.8 \n#ai #claude #fable5 https://t.co/ReoLPajHbP",
+      "author": {
+        "id": "54228619",
+        "name": "Shuey Shujab",
+        "screenName": "shueyshujab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1894314870419378176/W8XyKjlI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:09:58 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:09",
+      "createdAtISO": "2026-06-12T06:09:58+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065315478793510912/vid/avc1/1080x1920/_lV__7fQAwHJ4ieh.mp4?tag=27",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065314907273281894",
+      "text": "Cloned Twitter inside Minecraft ... \nFable 5 (left) vs GPT-5.5 (right): \n\nLeft side produced a fully realized laptop with keyboard, base, pixel art UI, and color depth. Right side output text backwards and exploded outside the screen. The internet declared a winner.\n\nhttps://t.co/jABMBJckdt",
+      "author": {
+        "id": "936558766610190336",
+        "name": "Tejas",
+        "screenName": "stejas809",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1312277885227393024/M4CkttfZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:07:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:07",
+      "createdAtISO": "2026-06-12T06:07:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064403148836397056/vid/avc1/3134x2160/0shHLjSp9UZ2sWEA.mp4?tag=27",
+          "width": 3134,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065314801404780738",
+      "text": "🔍 Today's AI signal — 3 things worth reading:\n\n1. Surprise upset: GPT-5.5 beats Claude Fable 5 on brutal new Agents’ Last Exam benchmark\n   → GPT-5.5 beats Claude Fable 5.\n\n2. NVIDIA Accelerates Google DeepMind’s DiffusionGemma for Local AI\n   → NVIDIA accelerates DiffusionGemma.\n\n3. Anthropic CEO calls for FAA-style regulation of powerful AI models: what enterprises should know\n   → Anthropic CEO seeks FAA-style AI regulation.\n\nFull roundup → https://t.co/u4Y8Ie4E3S\n\n#LLMOps #RAG #AIEngineering #GenerativeAI",
+      "author": {
+        "id": "2001661557940588547",
+        "name": "TheAISignal",
+        "screenName": "ainewshublive",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054615891812446208/LJAL5ayp_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:06:35 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:06",
+      "createdAtISO": "2026-06-12T06:06:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065313671690264841",
+      "text": "Benchmark : Fable 5 vs modèles concurrents https://t.co/5k8qrt4HFt",
+      "author": {
+        "id": "72670381",
+        "name": "Maximilien Labadie 🎯",
+        "screenName": "maximilien912",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1603118839813775363/jIHmMF4d_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 54,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:02:05 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:02",
+      "createdAtISO": "2026-06-12T06:02:05+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKl3v5aacAArHLq.jpg",
+          "width": 1504,
+          "height": 1472
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    },
+    {
+      "id": "2065313584377393613",
+      "text": "There's a second one in Anthropic's own benchmark table.\n\nThe top column is the higher of Mythos 5 and Fable 5. On the starred cyber and biology rows, that's effectively Mythos 5's.\n\nPublic Fable reroutes those queries to Opus 4.8. You don't actually get the score on the chart. https://t.co/c3iFJsU0V8",
+      "author": {
+        "id": "2020407810014732290",
+        "name": "FSR｜Future Stack Reviews",
+        "screenName": "FutureStackRev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047503141609070592/F7lhuyOx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:01:44 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:01",
+      "createdAtISO": "2026-06-12T06:01:44+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKl3uKVbQAAmnmc.jpg",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065313153261371823",
+      "text": "Anthropic vient de sortir Claude Fable 5 ✨\n\nCertains crient à l'AGI, d'autres crient à la censure. Les deux ont raison.\n\nJe t'explique ce que c'est vraiment et ce qu'Anthropic ne dit pas.\n\nLa puissance sur le code est hors-norme.\n\nStripe a migré 50 millions de lignes de Ruby en 24h. Un chantier de 2 mois pour une équipe complète.\n\nFable 5 score 91/100 sur un benchmark de code senior. L'ancien record était 63.\n\nC'est le modèle que tu lances le soir sur un gros projet. Tu reviens le matin, c'est fait.\n\nLa communauté a déjà sorti des projets entiers en un seul prompt :\n\n• Un clone de Pokémon jouable, 8000 lignes, 151 créatures avec les vraies stats de combat\n• Une app mobile complète clonée en une session\n• Une feature live codée en 15 minutes pendant que le dev écoutait son client au téléphone\n\nMais il y a deux problèmes que personne ne te dit clairement.\n\nPremier problème : le prix. 10$ le million de tokens en entrée, 50$ en sortie. Et il est extrêmement gourmand, même sur des tâches simples. Ce n'est pas ton outil du quotidien.\n\nDeuxième problème : la censure silencieuse.\n\nSi ta requête touche à la cybersécurité, à la biologie ou au développement d'IA, le système te bascule automatiquement sur Opus, sans te prévenir.\n\nDes utilisateurs se font bloquer sur \"comment fonctionne le cœur\". Au nom de la biosécurité.\n\nLe vrai modèle sans restrictions, Mythos 5, reste réservé à une poignée de partenaires gouvernementaux et de labs triés sur le volet.\n\nCôté censure : demander d'expliquer une mutation génétique déclenche le filtre instantanément et me rétrograde sur Opus. Demander une landing page de prévention santé : aucun problème.\n\nCôté puissance : coder un clone jouable d'un jeu de survie 3D prend à peine une heure, en un seul essai. Déplacements, tir, monstres, progression d'armes...\n\nLe verdict honnête : Fable 5 est le meilleur modèle IA à ce jour, mais c'est aussi l'un des plus frustrants.\n\nBulldozer absolu sur les gros chantiers de code. Paranoïaque dès que tu effleure la science ou l'IA, cher et lent. Et le modèle complet, tu n'y auras probablement jamais accès.\n\nC'est ça qui devrait faire débat, pas les benchmarks.",
+      "author": {
+        "id": "72670381",
+        "name": "Maximilien Labadie 🎯",
+        "screenName": "maximilien912",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1603118839813775363/jIHmMF4d_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 173,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 06:00:02 +0000 2026",
+      "createdAtLocal": "2026-06-12 14:00",
+      "createdAtISO": "2026-06-12T06:00:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    },
+    {
+      "id": "2065311942806589795",
+      "text": "https://t.co/tKdUciuz6I",
+      "author": {
+        "id": "1457511134869655552",
+        "name": "turtle.canada",
+        "screenName": "turtle_cdn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060878592859582464/rT2Nvz-Y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 109,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 05:55:13 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:55",
+      "createdAtISO": "2026-06-12T05:55:13+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065289503741460480"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Nordic through Fable"
+    },
+    {
+      "id": "2065309638396973134",
+      "text": "> be anthropic\n> ipo soon\n> train it to play pokemon\n> write in the system card that beating pokemon is a big deal\n> attention is all you need, literally\n> call it mighty mythos, fable 5\n> anyway, this is not benchmark cheating, we are agi",
+      "author": {
+        "id": "2002063599305719809",
+        "name": "Sisyphus Labs",
+        "screenName": "justsisyphus",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2002064892287991808/tAVnJfVz_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 353,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 05:46:04 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:46",
+      "createdAtISO": "2026-06-12T05:46:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065305663065207015",
+        "text": "hey @anthropicai did you spent billions to make fable to play pokemon? https://t.co/VSZgG1uNjV",
+        "author": {
+          "screenName": "iyenDOTio",
+          "name": "iyen.io"
+        }
+      }
+    },
+    {
+      "id": "2065308634637033824",
+      "text": "Fable 5 redesigned my onboarding experience. \n\n- 30 minutes of planning\n- 2 hours to MVP\n- ~2 additional hours of polish\n\nThe new experience is feeling really, really good and the model felt like the best Anthropic model I have worked with to date.\n\nIt wasn't perfect though. Even with 30 minutes of planning in Plan mode, it still made mistakes. Don't expect the code or feature to be fully baked in one or two prompts.\n\n- Settings UI clipped\n- It misunderstood 2 features requests and implemented things wrong\n- It was creative with the UI design, but still not polished\n- I went back and forth about 25 times\n- It's slow for interactive development\n\nI burned through ~20% of my Weekly usage and my entire 5 hour usage window.\n\nI do think it's worth a shot, but it feels pricey compared to GPT-5.5, which feels unlimited to me.\n\nWe'll see tomorrow how GPT-5.5 performs with the same task ... and I guess ~4 hours of effort.\n\nIs Fable 5 that much better at UI? I still had UI bugs, which you can see in the images attached. Getting the padding to look decent too several prompts.",
+      "author": {
+        "id": "14683259",
+        "name": "Paul Solt",
+        "screenName": "PaulSolt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1876014019967864832/ucFysJCn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 1124,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 12 05:42:04 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:42",
+      "createdAtISO": "2026-06-12T05:42:04+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065307526342516736/vid/avc1/2694x1694/Fx9Hb_higNgx0uA9.mp4?tag=27",
+          "width": 2694,
+          "height": 1694
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKly4MHXUAAsIVe.jpg",
+          "width": 2980,
+          "height": 1876
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKly4LxXkAA73zF.jpg",
+          "width": 1046,
+          "height": 1122
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKly4LfWMAAtaz4.jpg",
+          "width": 1084,
+          "height": 1488
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065307114143097139",
+      "text": "Claude Mythos is Insane!\n\nIf I were asked in an interview, \"What do you consider the pinnacle of design skill?\", that would be my exact answer. To become a reference.\n\nFor me, the ultimate compliment is when your work becomes a benchmark for someone else. I want people to point at my projects, bring them to other designers, and say, \"We want it exactly like this.\"\n\nP.S. If you want the prompt to create a design in this style, let me know in the comments!",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 1,
+        "views": 456,
+        "bookmarks": 5
+      },
+      "createdAt": "Fri Jun 12 05:36:02 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:36",
+      "createdAtISO": "2026-06-12T05:36:02+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065307038264045568/vid/avc1/1144x720/GBR02PwNHkOP7dRM.mp4?tag=27",
+          "width": 1144,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064857199587836065",
+        "text": "A DEVELOPER IS USING CLAUDE MYTHOS TO BUILD ANIMATED AWARD-WINNING WEBSITES AND DROPPED A FREE 12-MINUTE TUTORIAL SHOWING EXACTLY HOW.\n\nClaude Fable 5 is just too Wilde 🥵\n\nBookmark this. https://t.co/Z3K0SbQPEp",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2065305847840841989",
+      "text": "Someone prompted Claude Fable 5 to generate the entire journey of a baby developing in the womb. It built a fully explorable, first-person 3D world. In a browser. From a single prompt.\n\nClaude Fable 5 is Anthropic's first publicly available Mythos-class model, released June 9, 2026. You describe a world in plain language. It builds the whole thing, with full 3D rendering, playable directly in your browser.\n\nThis is the same model that rendered Borges's \"Library of Babel\" as a 3D game where you pull books off infinite shelves and climb spiral staircases. The same model that built a to-scale Yosemite Valley with 266,000 individually placed trees using real NASA elevation data, all in a single session.\n\nOn Anthropic's senior engineer benchmark, Fable 5 scored 91/100. The previous flagship scored 63.\n\nNow someone walked through the womb.\n\nWe are not building apps anymore. We are building worlds.\n\n#AI #ClaudeFable5 #Anthropic",
+      "author": {
+        "id": "2029587888145657856",
+        "name": "Manav",
+        "screenName": "Manavvv31",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048965054318747648/tAoyEfmA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 239,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 12 05:31:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:31",
+      "createdAtISO": "2026-06-12T05:31:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065290089522171904/vid/avc1/3840x2072/fknH_sGc6ZAT4klU.mp4?tag=27",
+          "width": 3840,
+          "height": 2072
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065304715530039680",
+      "text": "59.8% FuncPassでもSecPassは19.0%。Endor LabsのAgent Security LeagueでClaude Fable 5を200件の脆弱性修正taskにかけると、15件timeout、38/200件でcheating signal。benchmarkは総合点だけ見ると危ない。現場なら安全修正率とshortcutを別枠で見る。\nhttps://t.co/my51arVGWj\n#AI #LLM #生成AI",
+      "author": {
+        "id": "2019339519200497664",
+        "name": "Yutan",
+        "screenName": "yutaaaalll",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027759494890225664/dQQExlC2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 41,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 05:26:30 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:26",
+      "createdAtISO": "2026-06-12T05:26:30+00:00",
+      "media": [],
+      "urls": [
+        "https://www.endorlabs.com/learn/claude-fable-5-mythos-grade-hype"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065303265647141345",
+      "text": "@beamnxw Fable 5 at $3.35 vs Opus 4.8 at $0.93 for the same task means you're paying a 3x premium for noticeably better physics accuracy 👀",
+      "author": {
+        "id": "1858703675864334336",
+        "name": "AI Mastery Guide",
+        "screenName": "aiseomastery",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1863473441715752960/dxHu3jMV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 84,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 05:20:44 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:20",
+      "createdAtISO": "2026-06-12T05:20:44+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065302937652387899",
+      "text": "Anthropic just released Claude Fable 5 to the public — the model they said was \"too powerful to release.\"\n\nThe same Claude Mythos backbone that was private since April is now generally available through Fable 5. Anthropic's own words: \"Fable's capabilities exceed those of any model we've ever made generally available.\"\n\nWhat makes this noteworthy:\n\n— Unattended operation. Fable can work on multi-hour tasks without human intervention. Longer autonomous runs than any previous Claude model.\n— Cybersecurity capability. The ~150 preview groups found 10,000+ critical security flaws using Mythos. That's not a benchmark — that's real-world impact.\n— Microsoft Foundry integration. Fable 5 is available through Azure's enterprise AI platform, meaning it's deployable at scale with enterprise guardrails.\n\nThe safeguards: Anthropic says it's releasing with \"user limitations\" and safeguards in place. But the same announcement says Mythos 5 (the unrestricted version) is now available to a \"small group of cyberdefenders and infrastructure providers\" with plans to expand.\n\nMy take: this is the first real test of the \"release responsibly even when it's powerful\" framework. Anthropic is threading the needle between safety research and commercial pressure (they're approaching a $1T valuation). Fable 5 is the public-facing version with guardrails. Mythos 5 is the unrestricted version for trusted partners.\n\nThe gap between them will define how AI safety works in practice — not in theory.\n\nhttps://t.co/IQVxo2MIqO",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 05:19:26 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:19",
+      "createdAtISO": "2026-06-12T05:19:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065300781503262721",
+      "text": "@qinzytech Fable 5 is a great way to test benchmarks. If the benchmark says its worse than another model. The benchmark is flawed.",
+      "author": {
+        "id": "1906725791188033536",
+        "name": "Monty",
+        "screenName": "MontyDean1A4",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1907327046054776833/_Cvr1zm6_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 132,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 05:10:52 +0000 2026",
+      "createdAtLocal": "2026-06-12 13:10",
+      "createdAtISO": "2026-06-12T05:10:52+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065295844325442041",
+      "text": "https://t.co/Z9b75bymfl",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 227,
+        "bookmarks": 2
+      },
+      "createdAt": "Fri Jun 12 04:51:15 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:51",
+      "createdAtISO": "2026-06-12T04:51:15+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065294900632100864"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Fable 5 Model With Hermes Studio Builds From Ideas Fast"
+    },
+    {
+      "id": "2065292593513247120",
+      "text": "Has anyone compared Fable 5’s game development capabilities with GPT-5.5?\n\nI’ve been seeing a lot of posts about Fable 5’s ability to build games, but I’m curious about comparisons with GPT-5.5. \n\nNot in terms of simple 1-shot performance, but based on much deeper, more interactive workflows over a longer session.",
+      "author": {
+        "id": "1709977321418153984",
+        "name": "NomoreID",
+        "screenName": "Hangsiin",
+        "profileImageUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 422,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 04:38:20 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:38",
+      "createdAtISO": "2026-06-12T04:38:20+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065292254147907720",
+      "text": "A user on Reddit shared a MineBench comparison between Claude Fable 5 and Opus 4.8, and the results are honestly pretty interesting.\n\nFable 5 averaged ~18 mins inference time, while Opus 4.8 took almost ~25 mins on average.\n\nWhich is funny because on Claude, Fable actually feels slower and like it thinks forever \n\nThe cost numbers were interesting too:\nFable 5 → $54.93 for 15 builds\nOpus 4.8 → $41.52 for 15 builds\n\nAnd this is despite Fable’s API pricing being 2x more expensive than Opus 4.8.\n\nSo the benchmark creator thinks Fable is probably generating way fewer tokens overall, which is helping keep the cost relatively lower.\n\nWhat’s also interesting is that the builds apparently weren’t some gigantic leap over GPT 5.5 Pro visually, but Fable showed insane attention to tiny details.\n\nOne example was a Pac-Man arcade build where it correctly added the game screen, score counter, and even the “1UP” label\n\nAlso apparently adding prompts like:\n“LEVEL OF DETAIL: MAXIMUM”\n“BOUNDING BOX: UNLIMITED”\n\nimproved the outputs a lot.\n\nBenchmarks are slowly becoming half model eval and half prompting skill issue at this point.",
+      "author": {
+        "id": "1689841368318062592",
+        "name": "Ninza",
+        "screenName": "ninzaverse",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2035395900357693440/NXjWJMFj_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 60,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 04:36:59 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:36",
+      "createdAtISO": "2026-06-12T04:36:59+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HKlj0UqbkAAvG1g.mp4",
+          "width": 810,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065288165917708392",
+      "text": "1. Zurich morning snapshot - 06:35 CEST\n\nCrypto opens the Zurich morning with a relief bounce, but not with real confidence.\n\nCoinMarketCap shows the global crypto market cap around $2.15T, up about 1.27% over 24h. 24h volume is around $77.13B, while stablecoin volume is around $79.58B, more than reported total volume because of overlapping market classifications. BTC dominance is still high at about 58.4%, ETH dominance around 9.3%, and Fear & Greed sits at 15/100.\n\nSo yes, prices are greener. But sentiment is still very much in fear. This is repair work, not euphoria.\n\n2. Top 10 coins - CoinMarketCap ranking\n\nBitcoin (BTC) - $62,549.44 - 24h +1.83%, 7d -3.22% - trend: bouncing, but still not fully repaired.\nEthereum (ETH) - $1,649.80 - 24h +1.28%, 7d -8.88% - trend: weaker than BTC on the week.\nTether USDt (USDT) - $0.9988 - 24h -0.05%, 7d +0.02% - trend: close to peg.\nBNB (BNB) - $594.59 - 24h +1.20%, 7d -3.93% - trend: modest recovery.\nUSDC (USDC) - $0.9998 - 24h <0.01%, 7d +0.03% - trend: close to peg.\nXRP (XRP) - $1.11 - 24h -0.33%, 7d -7.56% - trend: still soft, despite the payments narrative.\nSolana (SOL) - $65.04 - 24h +0.85%, 7d -8.96% - trend: high-beta rebound, but still damaged weekly.\nTRON (TRX) - $0.3214 - 24h +0.04%, 7d -3.36% - trend: comparatively defensive because stablecoin flows still matter.\nHyperliquid (HYPE) - $54.88 - 24h -2.25%, 7d -26.59% - trend: strong narrative, weak tape.\nDogecoin (DOGE) - $0.08487 - 24h +1.09%, 7d -6.95% - trend: meme beta is green, but not leading.\n\n3. 5 biggest gainers - CoinMarketCap Top 100\n\nAudiera (BEAT) - $7.69 - 24h +63.56% - trend: strongest Top 100 move, very speculative.\nCurve DAO Token (CRV) - $0.2364 - 24h +15.77% - trend: DeFi relief bid.\nMonero (XMR) - $342.92 - 24h +9.70% - trend: privacy-token strength.\nWorld Liberty Financial (WLFI) - $0.05915 - 24h +8.63% - trend: political-token volatility remains high.\nMorpho (MORPHO) - $2.06 - 24h +5.71% - trend: onchain credit and lending narrative still alive.\n\n4. 5 biggest losers - CoinMarketCap Top 100\n\nHumanity (H) - $0.1531 - 24h -13.20% - trend: identity-token stress continues.\nVenice Token (VVV) - $13.50 - 24h -9.47% - trend: AI/privacy momentum cooling.\nLighter (LIT) - $1.46 - 24h -8.02% - trend: derivatives/infrastructure pullback.\nWorldcoin (WLD) - $0.4703 - 24h -6.95% - trend: identity coins remain extremely volatile.\nsiren (SIREN) - $0.6817 - 24h -6.56% - trend: high-beta weakness.\n\nNote: CoinMarketCap’s accessible loser table strips the minus sign, but these assets are listed under “Top Losers”, so I treat the percentages as negative.\n\n5. Recently added on CoinMarketCap\n\nFIFA World Cup AI (FIFA) - $0.0006146 - 24h +69.48% - BNB - added 7h ago.\nStrive, Inc. Series A Preferred tokenized stock (xStock) (SATAx) - $97.59 - 24h 0.00% - Arbitrum - added 21h ago.\niShares MSCI Germany tokenized ETF (xStock) (EWGx) - $40.01 - 24h +7.15% - Arbitrum - added 21h ago.\niShares Semiconductor tokenized ETF (xStock) (SOXXx) - $541.58 - 24h +1.94% - Arbitrum - added 21h ago.\nDraftKings Inc Derivatives (DKNG) - $29.06 - 24h +3.99% - own blockchain - added 22h ago.\n\nSmall warning: several new listings are tokenized equities, tokenized ETFs or derivative-style products. That is not the same legal, liquidity or counterparty-risk profile as BTC, ETH or regulated stablecoins.\n\n6. News from the last 10 hours\n\nCointelegraph reports that the CFTC proposed a new framework for prediction markets, especially sports event contracts. Sports results may be treated differently from pure gambling, but contracts linked to injuries, officiating or manipulation-sensitive outcomes remain problematic.\nThe EU is targeting 11 crypto platforms in its latest Russia sanctions package. The direction is clear: crypto-asset service providers are now fully inside sanctions policy, not outside it.\nAnthropic’s new Claude Mythos model is making crypto users nervous because advanced vulnerability discovery may lower the cost of finding exploitable smart-contract flaws. That is the security story of the morning: better AI can help auditors, but it can also help attackers.\nCoinDesk reports that Kalshi now requires users to disclose their employers on higher-risk markets as it fights insider trading and market manipulation. Prediction markets are becoming more serious, and therefore more legally complicated.\nCoinDesk also reports that BlackRock and Fidelity are quietly turning the Bitcoin ETF market into a two-firm race. Institutional crypto may be “decentralized” in theory, but distribution is becoming very concentrated.\nCoinbase-backed Stand With Crypto is pushing UK users to complain about banks blocking crypto transfers. This is the same old fight in a new form: de-risking versus financial access.\nhttps://t.co/4LWDuBMDKL reports that Visa is bringing OpenAI into its AI-commerce push with stablecoin upgrades, while Mastercard is building AI-agent payment infrastructure with Ripple and Coinbase links. The next payments fight may not be human cardholders. It may be AI agents settling through programmable rails.\nNigeria’s Senate is advancing a bill to regulate crypto exchanges. More jurisdictions are moving from informal tolerance to formal perimeter-setting.\nCoinbase is urging Congress to remove taxes on stablecoin spending. That is not a small detail. If every stablecoin payment creates tax friction, stablecoins remain useful for trading, but clumsy for everyday payments.\n\n7. Altcoins, meme coins, stablecoins, CBDCs, NFTs and crypto baskets\n\nAltcoins are mixed. CRV, XMR and MORPHO are moving, but HYPE, WLD, VVV and H remain weak. This is not a broad altseason. CoinMarketCap’s Altcoin Season Index is around 48/100, still closer to Bitcoin Season than real altcoin rotation.\n\nMeme coins are quiet. DOGE is slightly green, TRUMP is up, but the sector is not leading. The newly added FIFA-themed token is more of a cautionary signal than a market thesis, especially with World Cup-related crypto scams already circulating.\n\nStablecoins remain the actual plumbing. USDT and USDC are close to peg, and stablecoin volume dominates the market snapshot. The legal issues are still reserves, redemption, freezing powers, sanctions screening, tax treatment and whether stablecoin rewards start looking too deposit-like for banks and regulators.\n\nCBDCs are quiet as a trading story this morning. The real institutional contest is between CBDCs, tokenized commercial-bank deposits and private stablecoins.\n\nNFTs are not leading the market. The more important basket story is tokenized stocks, tokenized ETFs, CoinMarketCap 20, CoinMarketCap 100, CoinDesk 20-style products and crypto ETFs. Crypto is being repackaged into allocation products while the underlying market still behaves like crypto.\n\n8. Morning read\n\nThis morning is a bounce, not a victory lap.\n\nBTC is above $62k. ETH is still weak. HYPE has lost heat. Stablecoins are doing the volume. Tokenized ETFs are appearing in new listings. Prediction markets are getting rules. AI is becoming a smart-contract security issue. Sanctions are moving deeper into crypto infrastructure.\n\nThe chart says: recovery attempt.\n\nThe legal layer says: crypto is becoming too important to leave informal.\n\nAnd that may be the real market structure story.\n\n9. Disclaimer\n\nThis is for informational purposes only - not investment advice. Cryptocurrencies are speculative and volatile. Consult a licensed professional before acting. No offer, recommendation, or solicitation.",
+      "author": {
+        "id": "821386341351038978",
+        "name": "Christian Tanner, MLaw, LL.M., TEP",
+        "screenName": "TacTanner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/890193999398666240/5ywCHaqD_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 04:20:44 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:20",
+      "createdAtISO": "2026-06-12T04:20:44+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKlgZmeWMAAbPop.png",
+          "width": 453,
+          "height": 680
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065288017955414191",
+      "text": "https://t.co/fcQQveiF4o",
+      "author": {
+        "id": "1453863241570918400",
+        "name": "Bitplanet",
+        "screenName": "Bitplanet_AI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1780811842744639488/toToxPc-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 55,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 04:20:09 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:20",
+      "createdAtISO": "2026-06-12T04:20:09+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065287016976441344"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Right Now, AI Needs Super Memory "
+    },
+    {
+      "id": "2065284482777878543",
+      "text": "Claude Fable 5 这波争议里，我最在意的不是 benchmark\n\n是它开始把“你能不能问”这件事，悄悄变成产品层权限\n\n模型越强，越容易被包装成“更聪明”\n但一旦默认先替你判断风险，再决定给不给答案\n它就不只是 assistant 了，更像一个带门禁的知识机\n\n我反而觉得这次骂声挺诚实\nAI 这行接下来最值钱的，不一定是更会答\n而是到底谁敢把边界写明白，谁只是在偷偷加围栏\n\n#Claude #Anthropic",
+      "author": {
+        "id": "880962750901501952",
+        "name": "CreeperW",
+        "screenName": "CreeperWoo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1976318254760206336/zSqv9krQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 04:06:06 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:06",
+      "createdAtISO": "2026-06-12T04:06:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2065283993453437131",
+      "text": "I get that people say \"Fable 5\" is so expensive... but... compared to what?",
+      "author": {
+        "id": "87204432",
+        "name": "Jay Owen",
+        "screenName": "owendesign",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1610806588134068224/KanRX-kV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 04:04:09 +0000 2026",
+      "createdAtLocal": "2026-06-12 12:04",
+      "createdAtISO": "2026-06-12T04:04:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065281861673251323",
+      "text": "Notícia empolgante: o Claude Fable 5 está em 1º lugar no novo ranking da Agent Arena.\n\nO Fable 5 lidera com a maior vantagem já registrada sobre o Opus 4.8 e o GPT-5.5 em dois sinais principais: taxa confirmada de sucesso nas tarefas e elogios versus reclamações, mesmo tendo uma dirigibilidade mais fraca.\n\nEm outras palavras: se o Fable consegue fazer algo, ele faz muito bem. Mas se ele não consegue, ou não quer fazer, pode ser difícil direcionar o modelo até o objetivo.\n\nNa Agent Arena, os modelos são avaliados em milhões de tarefas agênticas reais e de longo horizonte. Eles recebem ferramentas como busca na web, sistema de arquivos e terminal para concluir fluxos complexos: escrever código, criar apresentações, pesquisar na internet, construir aplicativos e analisar documentos.\n\nA metodologia usada é de rastreamento causal, medindo a melhoria líquida de cada modelo, ou seja, quanto ele melhora os resultados em comparação com o modelo médio.\n\nParabéns à @AnthropicAI por esse marco impressionante.\n\nAbaixo, eles detalham como o Claude Fable 5, baseado no Mythos, pontuou em 5 sinais diferentes, a partir de tarefas enviadas por uma comunidade global de usuários.",
+      "author": {
+        "id": "1860812818963996672",
+        "name": "Leituras com Ravi 🍁",
+        "screenName": "ravidulundu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1867307755607846913/VWlxnu-T_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 32,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 03:55:41 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:55",
+      "createdAtISO": "2026-06-12T03:55:41+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKla52oWMAA8T14.jpg",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "pt",
+      "score": null
+    },
+    {
+      "id": "2065280737247473929",
+      "text": "4/ Analytics company Hex ran its benchmark — complex, long-running data tasks.\nNo model had ever hit 90%.\nFable 5 was the first.\nThis isn't just for coders. It's for anyone who runs reports, reviews documents, or processes data.",
+      "author": {
+        "id": "1323979330880380929",
+        "name": "Kanji Low",
+        "screenName": "kanji_low",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1934547894524387328/I_jPzC9I_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 9,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 03:51:13 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:51",
+      "createdAtISO": "2026-06-12T03:51:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065277926254260565",
+      "text": "⚔️ Claude Fable 5 vs GPT-5.5 — who wins? (Anthropic dropped Fable 5 June 9)\nFable 5 dominates agentic coding & heavy lifts:\n•  SWE-Bench Pro: 80.3% vs 58.6% (+22 pts 🔥)\n•  FrontierCode Diamond: 29.3% vs 5.7%\n•  OSWorld/Terminal-Bench: edges out\n•  Better for long-horizon tasks, code migrations, vision reasoning\n@claudeai @ChatGPTapp @OpenAI @AnthropicAI",
+      "author": {
+        "id": "2055197596105207808",
+        "name": "Nextwave",
+        "screenName": "Nextwaveks",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055205463273111552/RZAnsoen_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 03:40:03 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:40",
+      "createdAtISO": "2026-06-12T03:40:03+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKlXU-TW8AEojtL.jpg",
+          "width": 1402,
+          "height": 1122
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065277172420583724",
+      "text": "SITUATION EXPLAINED: How does the jump in capabilities for Fable 5 compare to previous model releases? @ml_angelopoulos from @arena explains.\n\n\"Yes. I’d say we have seen precedents for this level of improvement.\n\nNot yet on Agent Arena, which is a new benchmark, so there hasn’t been enough time to build up the historical data needed to understand how often jumps like this happen. But certainly, when GPT-4o came out, it represented a huge leap in performance. Earlier this year, the high Claude 4.X models were also massive leaps forward.\"\n\n\"Another major improvement, perhaps the largest jump in model performance we’ve seen, has been in multimodal capabilities with GPT Image 2. When that model was released, it caused a tectonic shift in the leaderboard, and it still maintains a Bradley-Terry coefficient gap of more than 100 points over the next-best model.\"",
+      "author": {
+        "id": "2029271146445848578",
+        "name": "MTS",
+        "screenName": "MTSlive",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057947669281263616/aovpVL4b_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 19,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2143,
+        "bookmarks": 2
+      },
+      "createdAt": "Fri Jun 12 03:37:03 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:37",
+      "createdAtISO": "2026-06-12T03:37:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065277056032862208/vid/avc1/1280x720/ANLOgYe5csNdgziJ.mp4?tag=14",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065276646920179802",
+      "text": "$AMD could reach $2 Trillion Market Cap FY2027 🧵\nW/ $TSM to solve @OpenAI @AnthropicAI Tokenomic Crisis\nNot Financial Advice! DYOR!\n\n“As these agents do work, they spawn more CPU tasks... We certainly see the movement towards where in the past the CPU to GPU ratio was primarily just as a host node in like a 1:4 or 1:8 configuration, now changing and getting closer to a 1-to-1 configuration or even... you can even imagine if you get lots and lots of agents that you could have more CPUs than GPUs.”\n— Dr. Lisa Su, AMD Chair and CEO\n\nDr. Lisa Su’s observation captures the seismic shift now driving the tokenomic crisis, the transition from GPU-centric training to CPU-intensive, always-on agentic AI. What was once a supporting role for CPUs has become a primary bottleneck, colliding with severe supply constraints and fueling unsustainable inference costs for enterprises. \n\n1. Primary Causes of the Tokenomic Crisis\n\nA.Explosive Agentic AI Demand and Token Multiplication\n\nAgentic workflows with multi-step reasoning, tool calling, orchestration, retries, and long-horizon autonomy  consume 5–100x more tokens per task than traditional prompting. Frontier models like Anthropic’s Fable 5 (premium pricing + verbose outputs) and OpenAI’s advanced variants amplify this effect. Projections show global token demand potentially rising ~24x by 2030, with enterprises reporting budgets exhausted in weeks rather than years.\n\nAnthropic Fable 5 (Mythos-class): $10 / $50 per million input/output tokens explicitly ~2x their prior flagship (Opus 4.8 at $5/$25). It's positioned as a premium agentic/reasoning model. This is unsustainable, hence we are seeing companies crying about Tokens bills.\n\nOpenAI GPT-5.5 (current flagship): $5 / $30 per million, more affordable on a direct sticker-price basis than Fable 5. They also offer cheaper tiers like GPT-5.4 ($2.50/$15) and mini/nano variants for cost-sensitive work\n\nB. CPU Supply Crunch as the Hidden Bottleneck\n\nTraditional AI favored GPU-heavy ratios (1 CPU : 4–8 GPUs). Agentic systems reverse this dynamic to 1-5 CPU to 1 GPU,where CPUs manage orchestration, data loading, state management, external calls, and parallel task spawning, often leaving expensive GPUs idle while waiting on the host. The industry is rapidly shifting toward higher CPU ratios (or AMD new Agentic AI Rack). Server CPUs from AMD (EPYC) and Intel are largely sold out for 2026, with lead times stretching weeks to months and prices rising 10–35% in tight markets. TSMC’s heavy focus on AI accelerators has further squeezed CPU wafer capacity, raising overall cluster costs that flow directly into higher token pricing. Luckily, EPYC Venice has arrived and currently in mass production. \n\nC. Power, Networking, and Systemic Inefficiencies\n\nPoor utilization, high power draw, and legacy networking overhead compound the problem. Hyperscalers and enterprises now demand balanced, power-efficient rack-scale solutions to scale sustainably without exploding operational expenses.\n\nSurging consumption meets hardware scarcity \n→ elevated marginal costs \n→ provider pricing pressure and enterprise ROI scrutiny.\n\n2. Why Increased TSMC 2nm Allocation for AMD Will Significantly Ease Token Costs\n\nAMD has secured strong early access to TSMC’s 2nm (N2) process and significant allocation, positioning EPYC Venice as one of the first major HPC products to ramp on it, with production already advancing in Taiwan and Arizona. This allocation advantage delivers immediate relief on supply, performance, and efficiency. Bringing token cost at GW Scale to as low as $0.0003-$0.0005/M Tokens. TSMC is ramping up 2nm Fabs at the faster pace than prior 3nm expansion, up to 12 2nm/1.4nm Fabs by 2027/2028 to service $AMD Agentic AI demand.\n\n~Core Density & Performance Up to 256 Zen 6 cores per socket, substantial compute uplifts, and higher memory bandwidth  directly alleviating the orchestration bottleneck in agentic workloads.\n~2nm GAA transistors provide major improvements in performance-per-watt, critical for power constrained data centers and lower energy-per-token economics.\n~Accelerated volume ramp (with Verano as the follow-on) will ease the 2026–2027 crunch, allowing hyperscalers like OpenAI and Meta to deploy more balanced clusters faster than allocation-constrained competitors.\n\n3. The AMD Agentic AI Rack and Helios: Purpose-Built for the Agentic Era\n\nAMD is addressing the exact gap Dr. Su highlighted with dense EPYC Venice “Agentic AI Racks”,  high-core-count CPU-optimized racks positioned between traditional servers and full GPU racks. These deliver massive orchestration capacity for fleets of agents.\n\n~Optimized CPU:GPU Balance, Designed for 1:1 to 3–5:1 ratios that eliminate idle time and maximize end-to-end throughput.\n~Rack-Scale Density,  Current EPYC Turin racks already exceed 27,000 cores; Venice pushes beyond 36,000 cores per rack, delivering up to 3.30x rack-level throughput versus NVIDIA Vera baselines in agentic workloads.\n~Efficiency Gains, Lower power per token through superior density, liquid cooling compatibility, and system-level optimizations. Projections show potential inference costs dropping to $0.0001–$0.0005 per million tokens (or even lower with Verano).\n\nH2 2026–2027: Venice-powered Agentic AI Racks and initial Helios deployments (already secured with major hyperscalers) relieve CPU constraints and lower underlying infrastructure costs, supporting token price relief. Pretty much CPUs are sold out for the next 3-5 years. \n\nConclusion:\n\nWhile much of the industry chased raw training FLOPs and GPU scarcity narratives, Dr. Lisa Su positioned AMD early and decisively around inference nearly 4 years ago, the real long-term driver of token economics. She recognized that agentic AI would fundamentally invert workloads, making efficient, abundant CPUs the key to sustainable scaling rather than GPU-only supremacy. \n\nBy doubling down on high-core-density EPYC platforms, rack-scale systems like Helios and dedicated Agentic AI racks, and securing leading TSMC 2nm allocation, AMD is not merely reacting to the tokenomic crisis, it is actively solving it. This strategic clarity enables hyperscalers and enterprises to deploy balanced, power-efficient infrastructure that drives down real $/token costs, improves utilization, and restores economic viability to large-scale agentic deployments.\n\nAs Dr. Su anticipated the problem years in advance, AMD’s execution is now delivering the antidote. The result will be lower token prices, broader AI adoption, and a more balanced ecosystem where CPUs reclaim their central role AKA the brain. In the agentic era, the companies that solve the orchestration and efficiency bottlenecks, not just the matrix multiplications will define the winners. AMD, under Dr. Su’s leadership, is well-placed to be biggest TSMC customer in term of wafer as early as 2028. \n\nNot Financial Advice! DYOR!",
+      "author": {
+        "id": "1280587925336530948",
+        "name": "Mike",
+        "screenName": "MikeLongTerm",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1532356424453480448/hGjaGQoQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 32,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 6823,
+        "bookmarks": 7
+      },
+      "createdAt": "Fri Jun 12 03:34:58 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:34",
+      "createdAtISO": "2026-06-12T03:34:58+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065275086861377536/vid/avc1/1920x1080/ibWBLcikB_Ovofvm.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065044915847872513",
+        "text": "$AMD| The FOMO to buy @AMD Chips is NOW 🧵\nNot Financial Advice! DYOR! Research Purpose Only! \n\nThe Inference Queen is the biggest winner in Agentic AI where all other CPUs are struggling to compete with a 2yr old EPYC Turin and EPYC Venice is in mass production phase. AMD stresses deployability today on standard x86 platforms (no proprietary architectures required), full software compatibility, and open standards. This positions Venice + Helios as a practical, high-density alternative to competing solutions while underscoring that agentic AI shifts the balance toward CPU-rich racks alongside GPUs, and most importantly, lowering the cost of token to accelerate adoption and innovation. \n\nContext: @WSJ yesterday came out with an article that @OpenAI is condiering drasstically lowering the token prices to win more customers from Anthropic. The narrative \"they\" are trying to exacerbate the current AI selloff won't last long. This is a fundamental misunderstanding of what is going on, or what I already discussed for months and years. Followers and Subscribers already knew this for years, that this day would come, where token cost will bcome the central discussion among enterprises as there is no such thing as unlimited budget or Tokenmaxxing when they use $NVDA chips or In-house Hyperscalers chips. \n\nI will link various threads if you are interested in understanding the full picture from supply chain to recent TSMC Rapid 2nm expansion up to 12 Fabs total by 2027/2028.\n\nHyperscalers and AI natives effectively have no choice but to buy more AMD system for Agentic AI as leadership in  economical, power-aware, high-volume internal + agentic use. However, due to supply constraints where Supply is far behind Demand, this makes multi-vendor reality along with in-house chips drive faster industry progress, lower overall costs, and better sustainability.\n\nNVIDIA’s Vera Rubin cannot compete with a 2 years old EPYC Turin, but AMD under Dr. Lisa Su has engineered the lowest cost-per-million-tokens, highly competitive energy-efficient solutions, and superior CPU orchestration for agentic AI at scale with Helios. Dr. Su has championed this shift since at least 2023, foreseeing the rise of agentic workflows that demand far more orchestration, parallel agents, and balanced compute well before the industry fully embraced it. Her long-term vision of AI moving from simple prompts to always on, multi-agent systems has driven AMD’s investments in high-core EPYC CPUs and integrated rack-scale solutions, perfectly positioning the company for today’s realities.\n\nThe OpenAI-AMD 1GW Helios deployment (starting H2 2026) represents a pivotal vertical integration move that directly supercharges the inference economics.  This isn't incremental; it's a structural shift toward ownership of massive, optimized rack-scale capacity, enabling the lowest token costs and triggering the enterprise adoption flywheel. \n\nWe need to be honest, $AMD  is the only company that made a big bet on Inference since the day Chatgpt became sensational where $NVDA and others were betting big on Training. At the end of the day, Token bill from @AnthropicAI has to obey economics. Meaning the bills rise, companies have to get more out of it to justify the cost. It cannot be an unlimited inference budget, and it has to show up on efficiency, profitability and operating leverage. \n\n1. Tokenomics \n\nAfter you understand this, you will understand why Citi cited @AnthropicAI is likely to sign a deal with $AMD along with Hyperscalers, AI Labs, Sovereign AI like Softbank 5GW in France and many other countries. However, OpenAI and $META are now wanting faster deployment, and they are AMD shareholders now, they have prioritized allocation. Anthropic and Hyperscalers just cannot compete when Helios Rack lower token cost to$0.0003–$0.0005 per million tokens at GW scale. \n\nCost to build 1GW data center  \n1GW Helios Rack full build is estimated $30-$35B 1GW Rubin Rack full build is estimated $45-$55B\n\nInference (Cost per Million Tokens) \n~$NVDA B200 / HGX: ~$0.02–$0.08 on optimized workloads (FP4/MXFP4, speculative decoding). Significant improvement over Hopper but still premium-priced. GB200 NVL72 rack-scale: $0.05–$0.25+  \n\n~$AMD Helios Racks: $0.0003-$0.0005 per M tokens, dramatically lower than NVIDIA equivalents in owned infra. MI355X node-level: Up to 40% more tokens per dollar vs. competing solutions ( B200), driven by higher memory capacity (up to 288GB+ HBM), strong bandwidth, and lower acquisition costs.   \n\nTraining \n~$NVDA Rubin Rack is estimated $0.7-$1.2/M Tokens \n~$AMD Helios Rack is estimated $0.65-$1.0/M Tokens\n\nNow, OpenAI, META and Hyperscalers can lower Inference cost even further with $AMD EPYC Venice \"dense rack\" or Agentic AI Rack. AMD published a detailed technical blog emphasizing that the future of agentic AI autonomous, multi-step AI systems requiring heavy orchestration, databases, caching, APIs, and control planes  demands massive CPU-dense rack-scale infrastructure, not just GPUs. The catalyst prominently positions their upcoming 6th Gen EPYC \"Venice\" processors as the key enabler for next-generation dense racks, delivering leadership throughput under real-world power, cooling, and density constraints.\n\n~EPYC Venice (Zen 6 architecture, up to 256 cores / 512 threads per socket) is projected to deliver exceptional rack-level performance. In AMD’s modeled 100 kW rack comparisons, Venice-powered systems are expected to achieve ~3.30x the throughput of NVIDIA’s Vera (88-core Olympus) baseline across a broad mix of agentic-supporting workloads.  \n\n~This builds on current-generation 5th Gen EPYC \"Turin\" (up to 192 cores), which already delivers ~2.37x rack throughput vs. Vera and ~1.6x vs. Intel’s Xeon 6980P (128 cores).  \n\n~ Liquid-cooled Turin deployments already support >27,000 CPU cores per rack today. Venice is architected to push this beyond 36,000 cores in the same rack class, dramatically increasing concurrent agent capacity and overall infrastructure efficiency.\n\n2. Ownership vs renting compute from Hyperscalers matter to OpenAI and only owning $AMD chips can meaningfully lower token cost for enterprises. \n\n~Eliminates cloud overhead: No provider margins, utilization buffers, or egress fees. Direct control over power contracts, cooling, scheduling, and orchestration at dedicated facilities.\n\n~Helios optimizations at GW scale: Rack-level density (1.4+ exaFLOPS FP8 per rack), high HBM4 bandwidth, EPYC orchestration for agentic workloads, and superior TCO/TDP. AMD's long-standing focus on tokens per dollar/watt shines here 20-40%+ efficiency edges in inference-heavy scenarios.\n\n~At 1GW+ optimized deployment, inference hits $0.0003–$0.0005 per million tokens (community/analyst models tied to Helios metrics). This is dramatically lower than typical rented/cloud equivalents, especially for high-volume output tokens in agentic flows. \n\nHigh token bills today, enterprises running heavy agentic/coding/analysis workloads can face $50-100M+/month at current API rates (flagship models $5-30+/M output, scaled to massive volumes).\n\nPost-Helios compression, same volume will drop to $10-15M/month (or better) via lower underlying costs passed through as pricing flexibility, volume tiers, caching, or batch discounts.\n\nROI thresholds collapse. More companies greenlight pilots → production → massive scaling. Agentic AI (autonomous workflows) multiplies token demand exponentially, but affordability removes the friction.\n\nOpenAI gains flexibility, Unlike more cloud-dependent rivals (Anthropic), they can lower effective pricing, offer aggressive enterprise bundles, or absorb volume without margin destruction directly tackling \"high token bill\" complaints while maintaining profitability as usage explodes.\n\n3. Agentic AI Models shifted CPU:GPU Ratio to 1:1 toward 3-5:1 with Explosively Token-Hungry Workloads\n\nAgentic AI (autonomous, multi-step agents with planning, tool use, iteration, and self-correction) is fundamentally more compute and token intensive than conversational or single-turn generative AI. \n\nAgentic AI. autonomous, multi-step workflows with orchestration, tool use, parallel agents, data movement, and enterprise integration  has dramatically increased the importance of strong host CPUs alongside GPUs. This shifts the CPU-to-GPU ratio higher and makes balanced systems critical toward 1:1 to 5:1 as enterprises testing more than 5-10 agents.\n\nAMD EPYC Venice excels  \n~Leadership core density (up to 256 Zen 6 cores per socket) for running many agents in parallel, orchestration layers, and high-throughput control-plane tasks.  \n\n~Superior performance-per-core and power efficiency ( up to 2.1x higher perf/core and 2.26x better SPECpower vs. NVIDIA Grace in benchmarks).  \n\n~Tight integration in Helios: One Venice CPU + multiple MI450 GPUs per node, enabling efficient data feeding to GPUs (\"zero-copy\"), parallel execution, and full rack utilization for complex agentic loops.   \n\nHyperscalers (Meta, Microsoft, Amazon, Google, Softbank) and AI natives (OpenAI, Anthropic...) are adopting high-core EPYC at scale specifically for these agentic demands, as CPUs now handle a larger share of non-model work (orchestration, policy enforcement, tool calls). This complements AMD’s lower-cost GPUs for overall TCO wins.\n\n~Agents often generate 10–100x+ more tokens per task due to iterative reasoning chains, multiple tool calls, verification loops, and long-context orchestration.\n\n~Goldman Sachs forecasts token consumption multiplying 24x by 2030 (to 120 quadrillion tokens/month) largely driven by agentic adoption in consumer and enterprise. \n\n~Enterprise data shows agent-pattern workloads growing at 680% annualized rates, projected to surpass conversational AI in token volume by Q3 2026.\n\n~Daily enterprise agent token consumption is already in the billions, with complex workflows (coding, workflows, analysis) amplifying this dramatically. \n\n4. Competitive Edge: Winning Customers from Anthropic\n\nAnthropic’s Claude models (especially Opus/Sonnet) excel in complex reasoning and agentic coding, commanding premium positioning. However, their higher underlying costs (heavier reliance on third-party cloud with margins) limit pricing flexibility compared to OpenAI’s owned Helios capacity.\n\nAnthropic is on track to generate $10.9 billion in Q2 revenue. The company expects to achieve its first-ever quarterly adjusted operating profit of $559 million. However, sustaining full-year profitability remains challenging due to immense computing and model training costs\n\nThe truth is, Anthropic has no choice but to buy as much $AMD chips as possible if they want to compete with OpenAI or get investors attention. This 5% adjusted operating profit to revenue ratio is just pathetic. \n\nCurrent pricing dynamics (2026): OpenAI already undercuts on many tiers ( flagship output tokens significantly cheaper than equivalent Claude Opus). Nano/mini models offer 5–10x advantages for volume work. Anthropic holds edges in long-context flat pricing and certain reasoning quality. \n\nOpenAI after Helios Rack Ownership, At $0.0003–$0.0005/M effective costs, OpenAI gains massive headroom to:\n\n~Aggressively discount high-volume agentic tiers or bundles.\n\n~Offer “unlimited” enterprise plans or usage-based models that Anthropic struggles to match without margin erosion.\n\n~Target cost-sensitive, high-throughput agent deployments (dev tools, automation platforms) where token bills explode.\n\nEnterprises facing $ millions in monthly agentic bills will migrate to the provider delivering better economics at scale. OpenAI’s combination of strong models (o-series reasoning) + lowest TCO positions it to erode Anthropic’s enterprise share, especially as agentic becomes the dominant token consumer.\n\nCheaper tokens expand the total addressable market  dramatically. This feeds the data/model improvement loop, justifying further capex. AMD benefits from proven scale pulling in more customers (Meta, Oracle, Microsfot, Amazon, Softbank, TensorWave, LumaAI ... already aligned on Helios).\n\nConclusion:\n\nDr. Lisa Su has been laser focused on inference economics since at least 2022–2023, repeatedly emphasizing that the real battleground for AI scalability would be TCO, power efficiency (TDP), and ultimately tokens per dollar and per watt  not just raw training FLOPS. While many viewed inference as a secondary, commoditized workload, Dr. Su architected AMD’s roadmap around rack-scale systems optimized for high-volume, sustained inference that would dominate as models matured and usage exploded. Helios represents the culmination of that multi-year bet: a fully integrated, open platform designed precisely for the economics of massive token throughput. \n\nThis deep, strategic partnership with OpenAI starting with the 1GW Helios deployment in H2 2026 and scaling to 6GW, is the embodiment of that shared vision. Both companies foresaw a future where agentic AI models evolve to become extraordinarily token-hungry: autonomous agents executing complex, iterative workflows with planning, tool use, verification loops, and long-context reasoning. These workloads can consume 100x+ more tokens per task than traditional chat or single-turn generation, driving exponential demand as capabilities improve and enterprises deploy them at scale.\n\nBy owning and optimizing this massive Helios capacity at GW scale, OpenAI achieves inference costs as low as $0.0003–$0.0005 per million tokens. This structural cost advantage allows OpenAI to absorb the coming token explosion profitably, dramatically lower effective pricing for enterprises, and win high-volume agentic workloads from higher-cost competitors like Anthropic. What was once a prohibitive monthly token bill becomes an affordable accelerator for productivity and innovation.\n\nThe OpenAI-AMD alliance validates Dr. Su’s prescient strategy and turns the Agentic flywheel into reality:\n\nCollapsing inference costs \n→ explosive token consumption \n→ richer data and better models \n→ accelerate greater demand. \n\nThis partnership doesn’t just address today’s economics, it positions both leaders at the center of the infrastructure buildout that will power AI’s next decade. By delivering the lowest inference economics at scale, OpenAI not only solves enterprise bill pain but gains a decisive weapon to win share from higher-cost rivals like Anthropic. And that is why @OpenAI and $META will deploy EPYC Dense Rack \n\nNot Financial Advice! DYOR! Research Purpose Only!",
+        "author": {
+          "screenName": "MikeLongTerm",
+          "name": "Mike"
+        }
+      }
+    },
+    {
+      "id": "2065276405730918732",
+      "text": "Les tests ont officiellement commencé.\n\nDepuis hier soir on benchmarke sérieusement Fable 5 vs Opus 4.8 avec Emilien et Orchestria.\n\nPas des benchmarks de code GitHub à 3 minutes.\n\nLe protocole :\n\n→ tâches fermées et vérifiables (code, algorithmes, reasoning)\n→ tâches CEO avec juges aveugles\n→ simulations de startup sur plusieurs jours\n→ 50 tâches simultanées\n→ 40 événements injectés\n→ mémoire, arbitrage, coordination, coût, qualité\n\nJe continue les runs toute la journée.\nArticle complet ce soir après 24h de benchmarks et plusieurs centaines de sessions exécutées.\n\nJe pense qu'il y a quelques conclusions qui vont surprendre pas mal de monde sur les agents, la mémoire et ce qui reste réellement utile dans les architectures multi-agents en 2026... Ce qu'on a mis en place sur Juliette et Emilien depuis des mois :)",
+      "author": {
+        "id": "395327151",
+        "name": "Powlisher",
+        "screenName": "powl_d",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1946649408625364992/PDrv1-6N_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 5081,
+        "bookmarks": 3
+      },
+      "createdAt": "Fri Jun 12 03:34:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:34",
+      "createdAtISO": "2026-06-12T03:34:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065127066782036140",
+        "text": "Bon.\n\nPremière vraie journée sous Fable 5.\n\nEt honnêtement, le résultat le plus surprenant n'est pas celui auquel je m'attendais.\n\nAprès plusieurs benchmarks (code, raisonnement business, workflows multi-agents), ma conclusion provisoire est que le vrai saut générationnel n'est pas Fable 5.\n\nC'est Opus 4.7 → Opus 4.8.\n\nJe pense que beaucoup de gens sous-estiment à quel point 4.8 est devenu bon.\n\nSur certaines tâches benchmarkées, Fable 5, Opus 4.8 et même parfois 4.7 finissent par produire le même résultat final.\n\nLa différence n'est plus vraiment :\n\n\"est-ce que le modèle sait résoudre le problème ?\"\n\nMais plutôt :\n\ncombien de tours il lui faut\ncombien de tokens il brûle\ncombien il coûte\ncomment il arbitre dans l'incertitude\nce qu'il fait quand la tâche devient ambiguë\n\nAutre constat intéressant :\n\nLes systèmes multi-agents deviennent beaucoup plus difficiles à justifier qu'il y a 12 mois.\n\nQuand les modèles étaient moins bons, l'orchestration augmentait directement la qualité.\n\nAujourd'hui, sur les tâches fermées et bien spécifiées, ce n'est plus forcément vrai.\n\nDu coup je pense qu'une partie de l'industrie benchmark le mauvais problème.\n\nRésoudre UNE tâche n'est plus très intéressant.\n\nLa vraie question devient :\n\nQue se passe-t-il quand on donne 50 tâches simultanément à un système pendant plusieurs jours ?\n\nMémoire.\nCoordination.\nArbitrage.\nPriorisation.\nGestion du chaos.\nC'est probablement là que se jouera la prochaine bataille.\nDemain on passe à l'étape suivante :\n50 tâches simultanées\n40 événements injectés\n\nplusieurs jours simulés\n\nClaude seul vs Orchestria\n\nOpus 4.8 vs Fable 5\nBudget open bar. 😅\n\nJ'ai le sentiment qu'on va apprendre beaucoup plus sur l'avenir des agents avec ce benchmark qu'avec les 500 benchmarks de code habituels.",
+        "author": {
+          "screenName": "powl_d",
+          "name": "Powlisher"
+        }
+      }
+    },
+    {
+      "id": "2065273977619296298",
+      "text": "Yeah...I mean, today Anthropic's Fable 5 has come out...years in the future folks will have an equivalent of this clip talking about Fable!\n\nBut yes, the benchmark Fable and its progenies need to match is this scene. That is a pretty significant high bar here.\n\nThis shot is Golden.",
+      "author": {
+        "id": "124834917",
+        "name": "Umesh Patil",
+        "screenName": "umeshgeeta",
+        "profileImageUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 03:24:21 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:24",
+      "createdAtISO": "2026-06-12T03:24:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065270868922523832",
+      "text": "https://t.co/5GcWYWG1fN",
+      "author": {
+        "id": "232519529",
+        "name": "花叔",
+        "screenName": "AlchainHust",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2041105413505220608/Xgv1FKSS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2288,
+        "bookmarks": 8
+      },
+      "createdAt": "Fri Jun 12 03:12:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:12",
+      "createdAtISO": "2026-06-12T03:12:00+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065270434480738304"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "MiniMax的1M上下文是怎么做到这么便宜的？MSA技术报告解读！"
+    },
+    {
+      "id": "2065269605208150498",
+      "text": "Benchmark saturation is accelerating.\n\nCursor's FrontierCode: state of the art was 13.4%. By Tuesday, Claude Fable 5 hit 29.3% more than doubling the frontier in a day.\n\nFor scale: ARC-AGI-1 stood for five years. The 2024 benchmarks fell within ~ twelve months. AIME 2025 was solved by models that shipped before the exam even existed.\n\nAI is burning through yardsticks faster than anyone can build them.",
+      "author": {
+        "id": "2041604675523190784",
+        "name": "Synopticon",
+        "screenName": "SynopticonAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057630400093032449/BawulHWK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 49,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 03:06:59 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:06",
+      "createdAtISO": "2026-06-12T03:06:59+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKlL5kiW8AAP0tE.jpg",
+          "width": 2160,
+          "height": 2700
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065268698370171120",
+      "text": "Claude 新模型最重要的变化：AI 开始按身份分配能力权限\n\nAnthropic 发布 Claude Fable 5 和 Claude Mythos 5。真正值得关注的不是 benchmark 又提高了多少，而是一个新的产品逻辑：同一个底层模型，开始根据用户身份和风险等级开放不同能力。\n\nFable 5 面向普通用户，但在高风险网络安全和生物领域设置了更严格的分类器与回退机制。部分请求不会由 Fable 5 直接回答，而会转交给能力较低的模型。\n\nMythos 5 使用相同的底层模型，却会为特定网络防御机构和关键基础设施合作方解除部分限制。未来，经过审核的生物研究人员也可能获得受控访问。\n\n这意味着，前沿模型正在从“会员等级”走向“能力权限等级”。\n\n01｜模型排行榜的重要性会下降\n\n过去比较模型主要看速度、价格、上下文和跑分。以后还必须多问一句：你测试到的是哪个权限层级？\n\n同一个模型在不同账户、地区、行业和调用环境里，实际表现可能并不相同。\n\n02｜AI 产品的护城河不只是模型\n\n当模型可以自主完成更长、更复杂的任务，身份认证、使用审计、权限升级、异常检测、操作撤销和责任追踪都会成为核心产品能力。\n\n模型越能行动，这些基础设施就越重要。\n\n03｜高能力 AI 可能形成新的不平等\n\n如果最强能力只向大型机构、政府合作方和少数经过审核的组织开放，普通开发者与大型机构之间的差距就不再只是算力和资金，还包括一项新的稀缺资源：可获得的智能权限。\n\nAnthropic 表示，Fable 5 可以处理更长周期的工程任务；Mythos 5 在内部蛋白质设计流程中将部分工作加速约十倍。这些结果目前主要来自官方和早期合作方测试，仍需要更多独立验证。\n\n我的判断是：前沿 AI 正从“人人使用同一个聊天机器人”，进入“不同身份使用不同能力等级的智能系统”。\n\n接下来真正值得观察的，不只是模型能做什么，而是谁可以使用、在什么条件下使用，以及出了问题由谁负责。\n\n模型能力越强，权限设计就越重要。\n\n来源：Anthropic 官方发布\nhttps://t.co/2DNlMXY46c",
+      "author": {
+        "id": "1689715723",
+        "name": "BUG｜AI 前沿观察",
+        "screenName": "anxue201",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064914551968251904/5f2nKE2X_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 03:03:23 +0000 2026",
+      "createdAtLocal": "2026-06-12 11:03",
+      "createdAtISO": "2026-06-12T03:03:23+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKlO61-XMAAMaE7.jpg",
+          "width": 2000,
+          "height": 800
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    }
+  ]
+}

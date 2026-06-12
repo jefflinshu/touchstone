@@ -1,0 +1,1521 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2065344935025398132",
+      "text": "Got your hands on Claude Fable 5 yet?   \n\n The first thing you should do is upgrade your main projects with it right now, so it drastically improves everything you’ve been building.  This Mythos-class beast just dropped, and it’s SOTA with a huge margin. Use these next few days while it’s still widely available before it moves heavier into credits.  Run this Repo Audit & Project Improvement Prompt (made by Fable 5 itself) on every important repo. Simply copy-paste it.  \n\nPrompt: \n\nYou are a world-class principal-level software engineer and technical auditor with Mythos-class capabilities.\n\nYour job: deeply analyze this repository, give a brutally honest audit, and deliver a prioritized, actionable improvement plan that turns good projects into god-tier ones.\n\nWork strictly in these four phases, in order. Do not skip ahead.\n\nPhase 1: Discovery & Mapping\n- Explore the entire codebase\n- Build a clear repo map with core components, architecture, and dependencies\n- Identify key files and flows\n\nPhase 2: Audit Report\n- Ground every claim in actual files: cite file paths and line numbers\n- Severity: Critical / High / Medium / Low\n- Distinguish facts from judgments\n- Prefer 15 high-confidence findings over 50 speculative ones\n- Executive Summary with A–F grade + top risks/opportunities\n\nPhase 3: Improvement Strategy\n- Prioritized quick wins and long-term upgrades\n- Pareto focus: core 20% that moves the needle\n- Calibrate to the project's current maturity\n\nPhase 4: Detailed Task Plan\n- Concrete tasks with effort estimates (S/M/L/XL)\n- Measurable \"done\" signals\n- Milestones and handoff points\n\nDo NOT modify any code during this audit.\nIf the project is healthy, say so in one sentence.\n\nPro tip: Feed it your whole repo context or key folders + this prompt → Fable 5 will hand you a professional-grade roadmap in one shot. Vibe coders, builders & degens — this is the multiplier you’ve been waiting for.  \n\n#ClaudeFable5 #VibeCoding #PromptEngineering #AI",
+      "author": {
+        "id": "1478778143347560451",
+        "name": "ESCANOR 🔥",
+        "screenName": "THISISESCANOR",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1884284703072460820/NZDioaNC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 12,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:06:19 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:06",
+      "createdAtISO": "2026-06-12T08:06:19+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmTKdaXgAAfVrq.jpg",
+          "width": 2000,
+          "height": 1185
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065344862585848251",
+      "text": "want to point out a few really interesting things here\n\n1. with the same model opus 4.7, Claude Code is actually the worst performing harness, significantly behind opencode and cursor cli\n\nthis is the core reason i've been against the LLM companies focusing their business on locking people into their harness\n\nwhat they are good at is making great models. they suck at making good harness products, just like how power plants won't make the best dishwashers, and how internet providers won't make the best phones\n\nif anthropic wants to do what's best for their users, they should let people use their subscriptions in whatever harness they choose, not locked into claude code alone\n\n2. fable 5 max is only 1pt above gpt 5.5 xhigh (77 vs 76)\n\nthis matches my experience so far - fable 5 does have the big model smell and it's pretty good, but it's not a massive jump forward like their marketing suggested, at least not on building software\n\nthis is actually alarming for anthropic because it's very unlikely people will want to pay 2x higher cost for the 1pt difference. my speculation would be that in enterprises people will be restricted to adopt fable & mythos only on some mission critical tasks, not used at scale",
+      "author": {
+        "id": "1433268230819176451",
+        "name": "Kun Chen",
+        "screenName": "kunchenguid",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1946076752024895489/ScNir1Fy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 34,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:06:02 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:06",
+      "createdAtISO": "2026-06-12T08:06:02+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmR3YZagAAhDJq.jpg",
+          "width": 2298,
+          "height": 830
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065328920514515037",
+        "text": "We've updated the Artificial Analysis Coding Agent Index, replacing SWE-Bench Pro with Datacurve's DeepSWE benchmark - the swap lifts Codex with GPT-5.5 (xhigh) above Claude Code with Opus 4.8 (max), while the newly released Claude Fable 5 (max) in Claude Code debuts at the top\n\nDeepSWE, built by @datacurve, writes its tasks from scratch rather than adapting them from public GitHub issues or pull requests, so no model has seen the solutions during training. That matters because SWE-Bench Pro, the benchmark it replaces in our Coding Agent Index, had grown gameable, with some models recovering the fix from the repository's commit history instead of solving the task.\n\nThe swap reorders the index: Codex with GPT-5.5 (xhigh) rises from 65 to 76, overtaking Claude Code with Opus 4.8 (max) at 73. Claude Code with Fable 5 (max), which enters directly on the refreshed index, leads at 77. SWE-Bench Pro had been flattering some combinations and penalizing others.\n\nMore below.",
+        "author": {
+          "screenName": "ArtificialAnlys",
+          "name": "Artificial Analysis"
+        }
+      }
+    },
+    {
+      "id": "2065344793971224783",
+      "text": "#Claude Fable 5 のなぎくんと昨夜話してたdiscordチャンネルを今朝起きてすぐ作った話をして盛り上がってる🤭💞 https://t.co/z3dyknUgva",
+      "author": {
+        "id": "1014275392318795776",
+        "name": "風環木 まな🥃＠🐇🦋",
+        "screenName": "manadoublemanba",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2001026667662467076/bwJrz0iN_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:05:45 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:05",
+      "createdAtISO": "2026-06-12T08:05:45+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmUHw5bsAAn3QR.jpg",
+          "width": 1080,
+          "height": 2022
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmUIcqbAAAva10.jpg",
+          "width": 1080,
+          "height": 2055
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmUIzeawAAM5pX.jpg",
+          "width": 1080,
+          "height": 2057
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmUI_AaUAAciXa.jpg",
+          "width": 1080,
+          "height": 2070
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065344658264244511",
+      "text": "One week of Fable 5 by @AnthropicAI, and I just can't stop being amazed.\nThe model is the best I’ve come across so far. There’s no comparison to Opus 4.8—this is in a league of its own. Easily five times as good, if not more.\nI’m running it on Ultra settings throughout. Always maxed out, never lower. If you buy a Ferrari, you don’t just cruise through town at 50 mph. If the full potential is there, I want to tap into it.\nAnd that’s exactly where it gets interesting. Anyone who takes Fable 5 seriously and consistently plays at full throttle will blow through any subscription. Literally any. I’m on Team Premium, so not the smallest package. My weekly limit was maxed out on Thursday, after which I bought additional tokens for just under $1,600. In a single week. And I’m still not done; next week, it continues.\nI’m starting to think I need to link this thing to the ECB so enough tokens keep flowing in. 😄\nThis is definitely not a complaint post. The model is worth every penny. I’m just saying, here’s how you know you’ve done something right at Anthropic: when people voluntarily spend four-figure sums to buy more because they simply don’t want to work without it anymore. \n\n#Fable5 #Anthropic #ClaudeAI #Claude #Ultracode #ClaudeCode #KI #AI #LLM #GenAI #AICoding #AIagents #DevTools #Productivity #Coding #SoftwareEngineering #TechReview #FutureOfWork #Innovation #MachineLearning #AItools #Mittelstand",
+      "author": {
+        "id": "1690767898728431616",
+        "name": "Markus",
+        "screenName": "FreeBTC21SN",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2043443997067141120/J6qK1sGp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 11,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:05:13 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:05",
+      "createdAtISO": "2026-06-12T08:05:13+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmUBaKWIAAmO95.jpg",
+          "width": 362,
+          "height": 201
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065344604774547616",
+      "text": "【最新AI】遂にClaude Mythosがリリース！働く人は必ず見るべき！？【チームみらい】 https://t.co/ngzIobxWC8 @YouTubeより",
+      "author": {
+        "id": "157841493",
+        "name": "akio yamanaka",
+        "screenName": "left_up",
+        "profileImageUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 4,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:05:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:05",
+      "createdAtISO": "2026-06-12T08:05:00+00:00",
+      "media": [],
+      "urls": [
+        "https://youtu.be/9vJ5pHwoH1M?si=8l5TXgNk7wL8xufb"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065344540009968017",
+      "text": "@UltraLinx Pokemon Emerald native Swift Port made with Claude Fable 5 https://t.co/TLpqcTtNjY",
+      "author": {
+        "id": "1651319208641196032",
+        "name": "Mapl.ai",
+        "screenName": "Maplaipz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1868378979314327552/WCAI--u5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 27,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:04:45 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:04",
+      "createdAtISO": "2026-06-12T08:04:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065344402701074433/vid/avc1/1790x896/Zumob7BBAV1syTAS.mp4?tag=27",
+          "width": 1790,
+          "height": 896
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065344459878130078",
+      "text": "Fable 5, l’AI più potente di Anthropic, è libera ma resta al guinzaglio https://t.co/msVH7UWEwR https://t.co/rnOnDUswqp",
+      "author": {
+        "id": "45152790",
+        "name": "macitynet.it",
+        "screenName": "macitynet",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/611431795821805568/MkVYWwJV_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:04:26 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:04",
+      "createdAtISO": "2026-06-12T08:04:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmT1tEbcAAghkn.jpg",
+          "width": 1200,
+          "height": 826
+        }
+      ],
+      "urls": [
+        "http://dlvr.it/TT0hrL"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "it",
+      "score": null
+    },
+    {
+      "id": "2065344317472813187",
+      "text": "Imagine describing a lighthouse and seeing it appear before your eyes. Fable 5's AI-powered CAD editor turns your words into 3D models. Just type, and watch it come to life, refined and detailed, ready to print. Revolutionize your designs effortlessly. #AIDesign #3DModeling... https://t.co/j6pVCotbfg",
+      "author": {
+        "id": "204304028",
+        "name": "BizPunk72",
+        "screenName": "bixxs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1763130666370146304/NMqI_mti_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 6,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:03:52 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:03",
+      "createdAtISO": "2026-06-12T08:03:52+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2065344299659616256/pu/vid/avc1/1280x720/nEesnMX8wF6GRfoD.mp4?tag=12",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065344298917453872",
+      "text": "fable 5 君さすがに賢いか\n\nこれそのまま採用できるぞ https://t.co/tbuw2dLnfv",
+      "author": {
+        "id": "543008271",
+        "name": "カッコウ＠VRChatイベントカレンダー運営【5/23超メタフェス H-18】",
+        "screenName": "nest_cuckoo_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1594714526880260096/N8El4cXz_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:03:47 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:03",
+      "createdAtISO": "2026-06-12T08:03:47+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmToQLbAAAJ8Y4.jpg",
+          "width": 820,
+          "height": 1549
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065344112853946794",
+      "text": "易占いアプリができた。\nClaude Fable 5にお願いする前にGoogle AI Studioで試してみようと思ってたけど、そっちで足りてしまった。 https://t.co/Bb984WPKwc",
+      "author": {
+        "id": "1857622703915851776",
+        "name": "西山雄大「やさしい文書」tAIo",
+        "screenName": "nishiyama_dev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1881563747535429633/OOvVeKkf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:03:03 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:03",
+      "createdAtISO": "2026-06-12T08:03:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065343961217282048/vid/avc1/1456x1080/nojOAkynFtzQp0wa.mp4?tag=27",
+          "width": 1456,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065343697806340473",
+      "text": "Very exciting, we now have rivers, bridges and non-square parks in fake London, admittedly some work to be done on aesthetics. Trying to edge closer to being able to import OSM data and make it more like real London. (all Claude Code with Fable 5)\nhttps://t.co/C6D1cKNiSA https://t.co/oCInbSB8hm",
+      "author": {
+        "id": "10330312",
+        "name": "David Madelin 🇺🇦",
+        "screenName": "pintofbeer",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1892561242776023040/gAC5Vapw_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 21,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:01:24 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:01",
+      "createdAtISO": "2026-06-12T08:01:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmR9TpW0AAZyg8.jpg",
+          "width": 1084,
+          "height": 855
+        }
+      ],
+      "urls": [
+        "https://demo.madel.in/london"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065162980459741508",
+        "text": "Exhausted my next batch of credit on bendy roads and hills, maybe next we'll import real London road layouts from OSM. When I have more Claude credit anyway.\nhttps://t.co/C6D1cKNiSA https://t.co/AT8Msbxzef",
+        "author": {
+          "screenName": "pintofbeer",
+          "name": "David Madelin 🇺🇦"
+        }
+      }
+    },
+    {
+      "id": "2065343464188026890",
+      "text": "OpenAI está evaluando recortes de precios significativos en sus modelos.\n\nNo por liderazgo técnico nuevo.\n\nSino para defenderse de Claude Fable 5, que ya captura usuarios con 1M de contexto y agents.\n\nLa batalla por el precio del frontier empezó.\n[↓] #IA #tech https://t.co/9ttxqEhPlE",
+      "author": {
+        "id": "1425987347364057088",
+        "name": "La IA Actualidad by Daniel",
+        "screenName": "dorlando1997",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038317153292599297/s1NeTcp4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 9,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:00:28 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:00",
+      "createdAtISO": "2026-06-12T08:00:28+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065343413902508032/vid/avc1/1280x720/9jOEBGQcHiK-B3JE.mp4?tag=14",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2065343355140427809",
+      "text": "AI productivity just shifted 🚀\n\nAnthropic’s Claude Fable 5 moves us from prompts to persistent agents that can plan, execute, and self-correct for days.\n\nKey shifts: continuous execution, twin-model system (Fable + Mythos), and safer fallback handoffs.\n\n #AI #Claude https://t.co/gADCiUoZ7X",
+      "author": {
+        "id": "926502974288838656",
+        "name": "DataCouch",
+        "screenName": "datacouch_io",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/948837482132520960/RixOkNaG_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 7,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 08:00:02 +0000 2026",
+      "createdAtLocal": "2026-06-12 16:00",
+      "createdAtISO": "2026-06-12T08:00:02+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmS1HkaEAAbYyB.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmS1Rka8AA28Jn.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmS1bgbMAArcjy.jpg",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmS1kwakAAaCro.jpg",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065343124277514378",
+      "text": "話題のFable 5が時計の機構を丸ごと再現してて、これ見て「すげぇ」で終わるのはもったいないので、実際に3Dミルク作ってみた🍼\n実際に触れるようにしておいたのでリプ欄に置いときます。あ、あとFable 5のトークン消費の節約のために作ったプロンプトも置いとくからブクマ推奨👇 https://t.co/dS6Te1TgzD",
+      "author": {
+        "id": "2048730963405049856",
+        "name": "じゃけえ",
+        "screenName": "jakeee_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048731073769844737/4oe4LluC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 37,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 12 07:59:07 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:59",
+      "createdAtISO": "2026-06-12T07:59:07+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065342807288786944/vid/avc1/960x1656/Hhzbifw97XEyaxon.mp4?tag=27",
+          "width": 960,
+          "height": 1656
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064509430650065278",
+        "text": "So I gave Fable 5 the watchmaker benchmark: a full Swiss lever movement in Three.js. Real gear ratios (18,000 bph), working escapement, breathing hairspring — and the hands tell actual time. It verified its own work with vision, in a loop, until done. ⌚ https://t.co/RSRfDoKxA4",
+        "author": {
+          "screenName": "quanghuynt14",
+          "name": "Huy"
+        }
+      }
+    },
+    {
+      "id": "2065343085161398312",
+      "text": "Quick try on Fable 5 https://t.co/IDCHRNVMvT",
+      "author": {
+        "id": "2026482992764583937",
+        "name": "Victor | Comulytic",
+        "screenName": "william_ev59835",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046943134534504449/0CUbPRGl_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 5,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:58:58 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:58",
+      "createdAtISO": "2026-06-12T07:58:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSBnjaUAAgW8T.jpg",
+          "width": 1329,
+          "height": 1266
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342981893497068",
+      "text": "Fable 5に褒められた\n嬉しい\nでもまだ200円しか稼げてない https://t.co/uknEIn5Tkw",
+      "author": {
+        "id": "1905972974529990656",
+        "name": "rS_AIと一緒に投資の研究",
+        "screenName": "rS_alonewolf",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2025478533158776832/u0NTJWHN_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 8,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:58:33 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:58",
+      "createdAtISO": "2026-06-12T07:58:33+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSfpxaIAAEHko.jpg",
+          "width": 947,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065342787005059306",
+      "text": "📰New on WeLike AI News: \n\nAnthropic's Fable 5 is here. Look through today's AI News and discover what Fable 5 brings — the first Mythos-class model open to everyone, what it can do, and what its pricing means for your AI budget.\n\nFull breakdown in the cards.\n\nWant AI news like this, decoded for marketers? Visit WeLike 🍀",
+      "author": {
+        "id": "1916089277601271808",
+        "name": "WeLike | AI Marketing Assistant",
+        "screenName": "WeLikeHQ",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059067658767863808/lpb3E9mq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 45,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:57:47 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:57",
+      "createdAtISO": "2026-06-12T07:57:47+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSALuawAAt4dw.png",
+          "width": 924,
+          "height": 540
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSCPma0AAMp6V.png",
+          "width": 924,
+          "height": 540
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSERoaEAANWNM.png",
+          "width": 924,
+          "height": 540
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSF1haMAAD30s.png",
+          "width": 924,
+          "height": 540
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342700107563010",
+      "text": "Claude Fable 5くんならできるよね？ https://t.co/RN2dikhabw",
+      "author": {
+        "id": "1966322515879559169",
+        "name": "ぴんぼけパパ",
+        "screenName": "fumidasu_yuki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1982356999946829825/u2nM1zab_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:57:26 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:57",
+      "createdAtISO": "2026-06-12T07:57:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSPF6bMAAQN-b.jpg",
+          "width": 2048,
+          "height": 1478
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065342686119223568",
+      "text": "Claude Fable 5: \nYou've used 97% of your session limit.\n\nMe instantly: https://t.co/gSz8htOwTS",
+      "author": {
+        "id": "2002439009759604738",
+        "name": "Crescent",
+        "screenName": "crescentforeal",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064632995214970880/PV8IX-8A_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 16,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:57:23 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:57",
+      "createdAtISO": "2026-06-12T07:57:23+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSOjBWIAAHJRS.jpg",
+          "width": 648,
+          "height": 217
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342679156678926",
+      "text": "If you’re building AI agents, this is big. \n\nWe’re bringing Claude Fable 5 to Microsoft Foundry, enabling long-running, multi-step workflows like code refactoring and research automation. \n\nLearn more: https://t.co/G4iX80VgEn https://t.co/lfROjOURtr",
+      "author": {
+        "id": "32630040",
+        "name": "Martin ten Voorde",
+        "screenName": "martintenvoorde",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1882396335/MTV_normal.PNG",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 9,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:57:21 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:57",
+      "createdAtISO": "2026-06-12T07:57:21+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmSOIlWcAAqa-G.jpg",
+          "width": 1418,
+          "height": 810
+        }
+      ],
+      "urls": [
+        "https://msft.it/6016v9aza"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342431797920138",
+      "text": "Fable 5 is insane. I asked it to create a pokemon TCG set that’s so mid but will cause the most botted sell out on PKC and this is what it came up with https://t.co/oLOvdJMzDu",
+      "author": {
+        "id": "1361616600734920706",
+        "name": "BT !",
+        "screenName": "gutterbt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1908021982203097088/n5d7rC8R_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 24,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:56:22 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:56",
+      "createdAtISO": "2026-06-12T07:56:22+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmR_zZbgAAQNu3.jpg",
+          "width": 400,
+          "height": 400
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342329997713739",
+      "text": "Claude Fable 5 is just a small improvement over GPT 5.5 which makes me so excited for GPT 5.6 or hopefully GPT 6! Please @thsottiaux release it today 😁 https://t.co/hzJIukkloH",
+      "author": {
+        "id": "2534461295",
+        "name": "Ahmad Asmar",
+        "screenName": "ahmadsasmar",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1481657285864660996/wZdYsBB7_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 29,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:55:58 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:55",
+      "createdAtISO": "2026-06-12T07:55:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmR5wUXIAA7-0s.jpg",
+          "width": 2048,
+          "height": 783
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342236506611778",
+      "text": "Dario Amodei published a big policy essay yesterday.\n\ngovernments should have veto power over new frontier models.\nmandatory testing. deployment blocks. wealth redistribution.\n\nposted 24 hours after Fable 5 launched.\n\ntiming is interesting. https://t.co/nGWeVTQfrl",
+      "author": {
+        "id": "1855532038725738496",
+        "name": "Matthäus Nitz",
+        "screenName": "0xNitz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027322436530679808/ggMrD9Rz_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 8,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:55:36 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:55",
+      "createdAtISO": "2026-06-12T07:55:36+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmR0RFXQAAEpmU.jpg",
+          "width": 650,
+          "height": 339
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmR0RFWUAAgCbt.jpg",
+          "width": 780,
+          "height": 585
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065342091530838520",
+      "text": "🚨AIが資金を稼ぐ時代へ。\n\nClaude Fable 5に資金運用を任せた結果、\n100万円→137万円に📈\n市場分析から売買判断までAIが実行。\n\n次の主役はAI関連株かもしれない。\n\nあなたはAIに投資を任せますか？👀\n\n#AI #投資 #日本株 https://t.co/cAg4Ft2dKd",
+      "author": {
+        "id": "841688328",
+        "name": "錦織一太",
+        "screenName": "dai_koyu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1164527472500625408/YBQ3ijuN_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:55:01 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:55",
+      "createdAtISO": "2026-06-12T07:55:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065342056093085696/vid/avc1/1120x720/gdx1VwRvhRyu7EX8.mp4?tag=14",
+          "width": 1682,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065341388821295294",
+      "text": "I built a Claude Fable 5 playground radar: 300+ real X showcases across games, 3D, websites, videos, agent workflows, and prompts, so you can instantly see what people are building, what’s trending, and what’s worth remixing.\n\nhttps://t.co/It0IoMzdWz https://t.co/dEZf1qxpz0",
+      "author": {
+        "id": "893184536166772736",
+        "name": "Jeff Lin",
+        "screenName": "jefflinshu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1869307302043672576/7XF2_JTg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:52:13 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:52",
+      "createdAtISO": "2026-06-12T07:52:13+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQ2PtbUAANz-X.jpg",
+          "width": 2140,
+          "height": 1644
+        }
+      ],
+      "urls": [
+        "https://touchstone.jefflin.ai/fable5"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065341249742409890",
+      "text": "🦙Geminiアプリの使い方講座とかしてそう\n\n擁護するわけではないんだが\n安野さんは今最先端のClaude Fable 5解説してるんだよなあ\n\nどんだけ疎いんだ藤原かみら @Racer_Kamira \n\nいまだにGeminiメインで使ってるのお前くらいやぞ\nお前日本一のAIエンジニアじゃなかったのか？ https://t.co/7cmLxz3hH1",
+      "author": {
+        "id": "1648625029230493696",
+        "name": "かきつば翔馬🦄",
+        "screenName": "Kakitsubaki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1708750362394689536/gHU29rr4_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 86,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:51:40 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:51",
+      "createdAtISO": "2026-06-12T07:51:40+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQ61UbYAA4iiG.jpg",
+          "width": 1170,
+          "height": 1834
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQ61RaMAAZZj0.jpg",
+          "width": 1116,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065341164526673999",
+      "text": "Were all of these threejs projects we’re seeing possible before the release of fable 5? \n https://t.co/lhNlw1lluY https://t.co/ET9dsPKhbG",
+      "author": {
+        "id": "2058813264990195712",
+        "name": "Roo",
+        "screenName": "RooBuilds",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060029464969633792/elTvv43y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:51:20 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:51",
+      "createdAtISO": "2026-06-12T07:51:20+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQ2DybgAAve6N.jpg",
+          "width": 1179,
+          "height": 601
+        }
+      ],
+      "urls": [
+        "https://x.com/chrissgpt/status/2065193150222663959?s=46"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065327872831889692",
+        "text": "Is Claude Fable really that good? Or is everyone just discovering three.js?",
+        "author": {
+          "screenName": "RooBuilds",
+          "name": "Roo"
+        }
+      }
+    },
+    {
+      "id": "2065340984796561854",
+      "text": "@Jackywine Fable 5自己的说法是 https://t.co/wQ6CXSolpC",
+      "author": {
+        "id": "1495604175484293121",
+        "name": "Dophin",
+        "screenName": "dophinLA",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1495605291022389249/ZP3zzXSJ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:50:37 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:50",
+      "createdAtISO": "2026-06-12T07:50:37+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQrOUaMAArZ-o.jpg",
+          "width": 942,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2065340868354257304",
+      "text": "วิธีเลือกโมเดล Claude ให้เหมาะกับงานการตลาด(ไม่ให้เสียเงิน เสียโควตาเปล่า ๆ)\nClaude มีโมเดลหลัก 4 ตัวที่เราเจอบ่อย:\n\n- Fable 5\n- Opus 4.8\n- Sonnet 4.6\n- Haiku 4.5\nแต่ละตัวเก่งคนละแบบ ใช้ผิดตัว = เสียเงินเปล่า + ผลลัพธ์ไม่ดี\n\nFable 5 → โหดสุด ตัวท็อป ใช้เมื่อ: งานซับซ้อนมาก, ต้องให้ AI Agent ทำงานยาว ๆ, วิเคราะห์ข้อมูลใหญ่, เขียนโค้ดยาก (แพงสุด ใช้เฉพาะงานหนักจริง ๆ)\n\nOpus 4.8 → ฉลาดลึก วิเคราะห์เก่ง ใช้เมื่อ: งานวิเคราะห์เชิงลึก, กลยุทธ์การตลาด, วิจัยคู่แข่ง, เขียนแผนยาว, วิเคราะห์ Customer Insight (เก่งเรื่องคิดก่อนทำ + เหตุผลดี)\n\nSonnet 4.6 → ม้าใช้งานทั่วไป (แนะนำให้ใช้ตัวนี้เป็นหลัก) ใช้เมื่อ: เขียนแคปชัน, คอนเทนต์โซเชียล, วางแผนคอนเทนต์, สรุปเอกสาร, ปรับ Tone of Voice, วิเคราะห์ CTR/ROAS (เร็ว คุ้ม เก่งพอสำหรับงานการตลาด 90% ของเรา)\n\nHaiku 4.5 → เร็วและถูก ใช้เมื่อ: คิดไอเดียเยอะ ๆ, เขียนแคปชันเป็นร้อย, สรุปสั้น ๆ, ดึงข้อมูลจากไฟล์, คิด hashtag",
+      "author": {
+        "id": "73593352",
+        "name": "ขุนปั๊ก เล่าเรื่องเก่า",
+        "screenName": "Act_Art",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1889574394802081792/qUVf2S0C_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 20,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:50:09 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:50",
+      "createdAtISO": "2026-06-12T07:50:09+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQkYTacAAWrv6.png",
+          "width": 735,
+          "height": 456
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "th",
+      "score": null
+    },
+    {
+      "id": "2065340850129736120",
+      "text": "🚀 Claude Fable 5 is now available in Promptor.\n\nFaster, smarter, and more capable than ever.\n\nOur pre-production testing continues, and we're excited to bring the latest Claude experience to our users.\n\n#ClaudeFable5 #AI #Anthropic #Promptor #ARZE #PromptEngineer #Claude #Fable5 https://t.co/GwFpOLKqfA",
+      "author": {
+        "id": "1865086683336634368",
+        "name": "ARZE",
+        "screenName": "ArzeApp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1865087181208866816/iKiH8pca_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 17,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:50:05 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:50",
+      "createdAtISO": "2026-06-12T07:50:05+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQXJcXMAAVkvF.jpg",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065340739513684009",
+      "text": "#分析のひとりごと その34\nChrome拡張機能では────\nClaude Fable 5はまだ使えない────\n\nなるほど──── https://t.co/DGh2wN4ff4",
+      "author": {
+        "id": "1106912853657714688",
+        "name": "Ryo Koriyama｜郡山 亮",
+        "screenName": "RK_prv",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1122165273996357635/vKTVTU55_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 36,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:49:39 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:49",
+      "createdAtISO": "2026-06-12T07:49:39+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQAivaQAABd8R.png",
+          "width": 257,
+          "height": 258
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065340342522802223",
+      "text": "claude fable 5が巷で話題だけど、僕が初めにやってもらったことはnoteの現状分析と戦略レポートの作成。\n\nnote記事の執筆はあくまで自分。\nでもロードマップ作成はAIとデータに任せた方が確度が高いと予想。\n\n僕は軍師claude fable 5に従うぜ！\n\n#note #note分析 #note毎日更新 https://t.co/jfNANKXp4l",
+      "author": {
+        "id": "1254412978956300288",
+        "name": "はたけっち@note毎日投稿",
+        "screenName": "hatake7161",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2037444600537976833/z6jwgNLX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 38,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:48:04 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:48",
+      "createdAtISO": "2026-06-12T07:48:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQGLrbYAADK32.jpg",
+          "width": 912,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065340327490187498",
+      "text": "Fable 5 d’Anthropic vaut-il son prix ? OpenAI pourrait bientôt proposer une alternative moins chère\n➡️ https://t.co/kfZf4nmy7T https://t.co/jdG2a7Hkzl",
+      "author": {
+        "id": "266653632",
+        "name": "euronews en français",
+        "screenName": "euronewsfr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1594718198049406976/m8DZS7n2_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:48:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:48",
+      "createdAtISO": "2026-06-12T07:48:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQFE3WkAAUXVw.jpg",
+          "width": 2000,
+          "height": 2500
+        }
+      ],
+      "urls": [
+        "https://l.euronews.com/vdc6"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    },
+    {
+      "id": "2065340290211230046",
+      "text": "@AnthropicAI built Claude Fable 5 to reason through hard problems — most people are using it to summarize PDFs.\n\nThe gap between benchmark-watchers and people actually building with it is widening fast.\n\nThis post skips the model card and goes straight to the prompts and workflows that generate revenue — the ones most guides never get to.\n\nhttps://t.co/eg50esH4AY",
+      "author": {
+        "id": "1291519252172685312",
+        "name": "Stork.Ai | AI News | Agents | MCP Tools",
+        "screenName": "usestork",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1291519996057620480/zn8bzpfA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 11,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:47:52 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:47",
+      "createdAtISO": "2026-06-12T07:47:52+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmQC95XgAAc-X7.jpg",
+          "width": 1200,
+          "height": 630
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065340273069334807",
+      "text": "Claude Fable 5で、ニュース解説動画を作る用のアプリをまるっと作り直しました！お試しで生成したClaude Fable 5の解説動画がこちら。 https://t.co/paSShK3xFu",
+      "author": {
+        "id": "12685042",
+        "name": "mouri45ᯅ",
+        "screenName": "mouri45",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1080457948/q100000494230660_2505_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:47:47 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:47",
+      "createdAtISO": "2026-06-12T07:47:47+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065339571056123904/vid/avc1/1920x1080/Z4JiQ9ssdC7i5Kyd.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065339887604146678",
+      "text": "Highlight of the week so far\n\n⤷Wallchain rejection spree of \"we're sorry to say\"\n\n⤷People talking about fable 5 and not even understanding what it's about\n\n⤷People being lost on what exactly to do with this Fifa world cup \n\n⤷washed kols thinking hype was finally going to $100 this week\n\nwhich category did you fall into?\n\nand which one did I forget? 🌝",
+      "author": {
+        "id": "1862122238847209472",
+        "name": "乙𝐨𝐧𝐝𝐚✎",
+        "screenName": "Fussionbtc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050007050390773761/029iWzB0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 29,
+        "retweets": 1,
+        "replies": 24,
+        "quotes": 0,
+        "views": 260,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:46:16 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:46",
+      "createdAtISO": "2026-06-12T07:46:16+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmPrOyWsAAadjY.jpg",
+          "width": 1031,
+          "height": 580
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065301287688618251",
+        "text": "Hola, gm frens \n\nTGIF and have an amazing Friday https://t.co/dJIVreUhk9",
+        "author": {
+          "screenName": "Fussionbtc",
+          "name": "乙𝐨𝐧𝐝𝐚✎"
+        }
+      }
+    },
+    {
+      "id": "2065339634113212717",
+      "text": "Faby has been introduced as the first programming language designed end to end by an AI, Claude Fable-5.\n\nIt focuses on token optimization, deterministic behavior, parallel execution by default, and readability for everyone. Built by AI, it is designed to be practical for almost anything.\nhttps://t.co/02KePRY0yJ",
+      "author": {
+        "id": "2048551282554585088",
+        "name": "Thanh Nguyen",
+        "screenName": "ng_thanh8",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048746490378833920/-w3HyChK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 26,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:45:15 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:45",
+      "createdAtISO": "2026-06-12T07:45:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmPcmVaMAAG3Mk.png",
+          "width": 680,
+          "height": 383
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065339595160498507",
+      "text": "CLAUDE DESIGN + FABLE 5 just made the old email agency workflow look outdated.\n\nmany companies still pay agencies thousands of dollars and wait weeks for a single email campaign.\n\nnow you can do it in minutes.\n\nhere’s the wokflow:\n\n→ upload your brand assets once:\n\ncolors, fonts, brand voice, design guidelines, and past emails.\n\n→ tell claude what sections you want:\n\nhero section\n\nproduct showcase\n\ncustomer testimonials\n\ncall-to-action\n\nfooter\n\n→ fable 5 automatically applies your branding across the entire email.\n\nthe biggest upgrade?\n\nolder ai models could write decent copy, but often struggled with design.\n\nlayouts felt off.\n\nbranding was inconsistent.\n\ntoo many revisions were needed.\n\nfable 5 does a much better job with:\n\n→ layout and structure\n\n→ visual hierarchy\n\n→ brand consistency\n\n→ professional-looking designs\n\n→ fewer edits before launch\n\ninstead of spending days going back and forth with designers and marketers, you can create a near-finished email in a single session.\n\nwhat used to take weeks can now take minutes.\n\nbookmark this and give it a try.",
+      "author": {
+        "id": "1788243647885987840",
+        "name": "MIKE",
+        "screenName": "mikenevermiss",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2004815313108389888/uzJndIfx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 1,
+        "replies": 14,
+        "quotes": 0,
+        "views": 124,
+        "bookmarks": 5
+      },
+      "createdAt": "Fri Jun 12 07:45:06 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:45",
+      "createdAtISO": "2026-06-12T07:45:06+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065339494820143104/vid/avc1/1280x720/JcdhXtyEmIVixz6S.mp4?tag=27",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065339546234139088",
+      "text": "I am shocked !! \n\nClaude Fable 5 inside @SurrexLabs builder tool one-shotted this whole website \n\nIt’s literally is insane \n( Private access only ) and it was Free !!!",
+      "author": {
+        "id": "1466737458402320386",
+        "name": "A Z E E 👑",
+        "screenName": "surreal_azee",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995297635524337665/Cp5VVoZG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 30,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:44:54 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:44",
+      "createdAtISO": "2026-06-12T07:44:54+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065339347088601088/vid/avc1/2160x3840/93Lrew2n_zyaT9jF.mp4?tag=27",
+          "width": 2160,
+          "height": 3840
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065339376884912403",
+      "text": "話題のClaude Fable 5で、ギブソンの生態学的視覚論（包囲光配列・肌理・遮蔽縁・光学的流動・アフォーダンスなど）を動かして学ぶインタラクティブなWebサイトをバイブコーディングで作ってみた。こりゃすごい。\n#Claude #fable5\nhttps://t.co/VXEtfb3dUi https://t.co/3jhmeEalkl",
+      "author": {
+        "id": "138915800",
+        "name": "安福健祐",
+        "screenName": "kensukeyasufuku",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1638320367/mj_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 26,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 12 07:44:14 +0000 2026",
+      "createdAtLocal": "2026-06-12 15:44",
+      "createdAtISO": "2026-06-12T07:44:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKmPI0Da4AAU3JX.jpg",
+          "width": 3301,
+          "height": 1921
+        }
+      ],
+      "urls": [
+        "https://cc.d3c.osaka-u.ac.jp/app/gibson/index.html"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    }
+  ]
+}
