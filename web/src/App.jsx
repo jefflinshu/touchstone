@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Check, CircleHelp, Globe2, Heart, Loader2, LogOut, Monitor, Moon, Star, Sun, User } from 'lucide-react'
+import { Check, ExternalLink, Globe2, Heart, Loader2, LogOut, Menu, Monitor, Moon, Sun, User } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import ProfilePage from './components/ProfilePage.jsx'
@@ -171,6 +171,7 @@ const goProject = (project) => navigate(`/p/${encodeURIComponent(project)}`)
 const goUser = (email, tab) => navigate(`/u/${encodeURIComponent(email)}${tab ? `?tab=${encodeURIComponent(tab)}` : ''}`)
 const goHome = () => navigate('/')
 const goFable5 = () => navigate('/fable5')
+const X1_URL = 'https://x-1.dev'
 
 function getAnalyticsPage(route) {
   if (route.page === 'fable5') return { path: '/fable5', title: 'Fable 5' }
@@ -190,7 +191,6 @@ export default function App() {
   const [auth, setAuth] = useState({ loaded: false, email: null, name: null, picture: null })
   const [loggingIn, setLoggingIn] = useState(false)
   const [users, setUsers] = useState({})
-  const [stars, setStars] = useState(null)
   const route = useRoute()
   // 新手指南：首次访问展示；有 CLI 未就绪时每个新会话再提醒一次
   const [showGuide, setShowGuide] = useState(() => {
@@ -203,8 +203,14 @@ export default function App() {
       setShowGuide(false)
       return
     }
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('guide') === '0') return
     if (window.matchMedia?.('(max-width: 640px)').matches) return
-    if (agents.some((a) => a.health?.ready === false) && !sessionStorage.getItem('ts:guide:dismissed')) {
+    if (
+      agents.some((a) => a.health?.ready === false) &&
+      !localStorage.getItem('ts:guide:dismissed') &&
+      !sessionStorage.getItem('ts:guide:dismissed')
+    ) {
       setShowGuide(true)
     }
   }, [agents, route.page])
@@ -279,13 +285,6 @@ export default function App() {
     } catch {}
     setAuth({ loaded: true, email: null, name: null, picture: null })
     trackEvent('logout')
-  }, [])
-
-  useEffect(() => {
-    fetch('/api/repo')
-      .then((r) => r.json())
-      .then((d) => setStars(typeof d.stars === 'number' ? d.stars : null))
-      .catch(() => {})
   }, [])
 
   const saveProfile = useCallback(
@@ -499,25 +498,57 @@ export default function App() {
               </span>
             </span>
           </a>
-          <div className="ml-auto flex items-center gap-2.5 sm:gap-4">
+          <nav className="ml-2 hidden items-center gap-1 rounded-md border border-white/8 bg-white/[0.025] p-1 md:flex">
             <button
               type="button"
               onClick={goFable5}
-              className="hidden cursor-pointer font-mono text-[10px] tracking-[0.18em] text-white/42 uppercase transition-colors hover:text-white sm:inline"
+              className={`h-7 cursor-pointer rounded px-2.5 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+                route.page === 'fable5'
+                  ? 'bg-acid text-black'
+                  : 'text-white/48 hover:bg-white/6 hover:text-white'
+              }`}
             >
               Fable 5
             </button>
-            <button
-              type="button"
-              title={t('nav.guideTitle')}
-              onClick={() => {
-                setShowGuide(true)
-                trackEvent('guide_open')
-              }}
-              className="cursor-pointer text-white/25 transition-colors hover:text-white"
+            <a
+              href={X1_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-7 items-center gap-1 rounded px-2.5 font-mono text-[10px] tracking-[0.16em] text-white/48 uppercase transition-colors hover:bg-white/6 hover:text-white"
             >
-              <CircleHelp className="h-3.5 w-3.5" />
-            </button>
+              x-1.dev
+              <ExternalLink className="h-3 w-3 opacity-55" />
+            </a>
+          </nav>
+          <div className="ml-auto flex items-center gap-2.5 sm:gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  type="button"
+                  title="Menu"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white md:hidden"
+                >
+                  <Menu className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[180px] font-mono text-[11px]">
+                <DropdownMenuItem
+                  onSelect={() => {
+                    goFable5()
+                    trackEvent('nav_fable5_mobile')
+                  }}
+                  className={route.page === 'fable5' ? 'bg-acid/15 text-acid focus:bg-acid/15 focus:text-acid' : ''}
+                >
+                  Fable 5
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href={X1_URL} target="_blank" rel="noreferrer">
+                    x-1.dev
+                    <ExternalLink className="ml-auto h-3.5 w-3.5" />
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             {active > 0 && (
               <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-acid uppercase">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
@@ -532,12 +563,6 @@ export default function App() {
               title="GitHub"
             >
               <GithubIcon className="h-4 w-4" />
-              {stars !== null && (
-                <span className="flex items-center gap-0.5 font-mono text-[11px] tabular-nums">
-                  <Star className="h-3 w-3" />
-                  {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars}
-                </span>
-              )}
             </a>
             {auth.loaded &&
               (auth.email ? (
