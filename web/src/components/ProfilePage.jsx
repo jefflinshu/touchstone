@@ -1,22 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, ExternalLink, Heart, Pencil, Loader2, Check, X } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Eye, Heart, Layers3, Pencil, Loader2, Check, X } from 'lucide-react'
 import Avatar, { displayName } from './Avatar.jsx'
-import ProjectCard from './ProjectCard.jsx'
 import { Button } from '@/components/ui/button'
 import { Input, Textarea } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, FAVORITES_CHANGED_EVENT, LIKED_PROJECTS_KEY, readFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases } from '@/lib/fable5Data'
 import { useI18n } from '@/i18n.jsx'
-
-function Stat({ label, value, accent }) {
-  return (
-    <div>
-      <div className={`font-pixel text-xl ${accent ? 'text-acid' : 'text-white'}`}>{value}</div>
-      <div className="mt-0.5 font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">{label}</div>
-    </div>
-  )
-}
 
 function EditForm({ profile, onSave, onCancel }) {
   const { t } = useI18n()
@@ -65,6 +55,75 @@ function EditForm({ profile, onSave, onCancel }) {
   )
 }
 
+function projectInitials(name) {
+  return String(name || '?')
+    .split(/[-_\s]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase()
+}
+
+function ProductCard({ group: g, views, likes, onOpen }) {
+  const { t } = useI18n()
+  const previewRun = g.runs.find((r) => r.preview && r.status === 'done') || g.runs.find((r) => r.preview)
+  const category = g.category || g.runs.find((r) => r.category)?.category
+  const done = g.runs.filter((r) => r.status === 'done').length
+
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className="group cursor-pointer overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] text-left transition-all hover:-translate-y-0.5 hover:border-white/25"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-black">
+        {previewRun ? (
+          <img
+            src={`/api/runs/${previewRun.id}/preview`}
+            alt={`${g.project} preview`}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-white/[0.03]">
+            <span className="pixel-cycle font-pixel text-3xl text-white/24">{projectInitials(g.project)}</span>
+          </div>
+        )}
+        <span className="absolute top-3 left-3 flex h-10 w-10 items-center justify-center rounded-md border border-white/12 bg-black/70 font-pixel text-[15px] text-white shadow-lg backdrop-blur">
+          {projectInitials(g.project)}
+        </span>
+      </div>
+      <div className="p-4">
+        <div className="flex min-w-0 items-start gap-3">
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-[15px] font-semibold tracking-tight text-white">{g.project}</div>
+            {category && (
+              <div className="mt-1 font-mono text-[10px] tracking-[0.14em] text-white/35 uppercase">{category}</div>
+            )}
+          </div>
+          <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 text-white/35 transition-colors group-hover:text-white" />
+        </div>
+        <div className="mt-4 flex items-center gap-4 border-t border-white/8 pt-3 font-mono text-[10px] text-white/35">
+          <span className="flex items-center gap-1">
+            <Layers3 className="h-3 w-3" />
+            {done || g.runs.length}
+          </span>
+          <span className="flex items-center gap-1">
+            <Heart className="h-3 w-3" />
+            {likes || 0}
+          </span>
+          <span className="ml-auto flex items-center gap-1">
+            <Eye className="h-3 w-3" />
+            {views || 0}
+          </span>
+        </div>
+      </div>
+    </button>
+  )
+}
+
 function FableFavoriteCard({ item }) {
   const thumb = item.mediaThumbUrl || item.mediaUrls?.[0]
   return (
@@ -110,7 +169,6 @@ export default function ProfilePage({
   onSaveProfile,
   onBack,
   onOpenProject,
-  onOpenUser,
 }) {
   const { t } = useI18n()
   const [editing, setEditing] = useState(false)
@@ -169,71 +227,56 @@ export default function ProfilePage({
   const likesReceived =
     myRuns.reduce((s, r) => s + (r.likes || 0), 0) +
     myGroups.reduce((s, g) => s + (projectLikes[g.project] || 0), 0)
+  const name = displayName(email, users)
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 pb-16">
       <Button variant="outline" size="sm" onClick={onBack} className="font-mono text-[10px] tracking-[0.15em] uppercase">
         <ArrowLeft className="h-3 w-3" /> {t('common.back')}
       </Button>
 
-      <div className="mt-5 flex flex-col gap-6 lg:flex-row">
-        {/* 左侧：资料卡 */}
-        <aside className="w-full shrink-0 lg:w-[300px]">
-          <div className="sticky top-20 rounded-lg border border-white/10 bg-white/[0.02] p-5">
-            <div className="flex items-center gap-4">
-              <Avatar email={email} picture={profile.picture} className="h-16 w-16 text-2xl" />
-              <div className="min-w-0">
-                <div className="truncate text-lg font-semibold tracking-tight">{displayName(email, users)}</div>
-                <div className="truncate font-mono text-[11px] text-white/35">{email}</div>
-              </div>
-            </div>
-
-            {editing ? (
-              <EditForm
-                profile={profile}
-                onSave={async (p) => {
-                  await onSaveProfile(p)
-                  setEditing(false)
-                }}
-                onCancel={() => setEditing(false)}
-              />
-            ) : (
-              <>
-                <p className="mt-4 text-[13px] leading-6 whitespace-pre-wrap text-white/70">
-                  {profile.bio || <span className="text-white/25">{isMe ? t('profile.emptyBioMe') : t('profile.emptyBioOther')}</span>}
-                </p>
-                {isMe && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setEditing(true)}
-                    className="mt-4 font-mono text-[10px] tracking-[0.15em] uppercase"
-                  >
-                    <Pencil className="h-3 w-3" /> {t('profile.edit')}
-                  </Button>
-                )}
-              </>
-            )}
-
-            <div className="mt-5 grid grid-cols-3 gap-3 border-t border-white/8 pt-4">
-              <Stat label={t('profile.cases')} value={myGroups.length} />
-              <Stat label={t('profile.runs')} value={myRuns.length} />
-              <Stat
-                label={
-                  <span className="flex items-center gap-1">
-                    <Heart className="h-2.5 w-2.5" /> {t('common.likes')}
-                  </span>
-                }
-                value={likesReceived}
-                accent
-              />
+      <section className="mt-6 flex flex-col gap-5 border-b border-white/8 pb-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex min-w-0 items-center gap-4">
+          <Avatar email={email} picture={profile.picture} className="h-16 w-16 text-2xl" />
+          <div className="min-w-0">
+            <h1 className="pixel-cycle truncate font-pixel text-[36px] leading-none tracking-[0.08em] text-white sm:text-[48px]">
+              {name}
+            </h1>
+            {profile.bio && <p className="mt-2 max-w-2xl text-sm leading-6 text-white/60">{profile.bio}</p>}
+            <div className="mt-2 flex flex-wrap gap-3 font-mono text-[10px] tracking-[0.16em] text-white/35 uppercase">
+              <span>{myGroups.length} {t('profile.cases')}</span>
+              <span>{myRuns.length} {t('profile.runs')}</span>
+              <span>{likesReceived} {t('common.likes')}</span>
             </div>
           </div>
-        </aside>
+        </div>
+        {isMe && !editing && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setEditing(true)}
+            className="w-fit font-mono text-[10px] tracking-[0.15em] uppercase"
+          >
+            <Pencil className="h-3 w-3" /> {t('profile.edit')}
+          </Button>
+        )}
+      </section>
 
-        {/* 右侧：参与和收藏的 cases */}
-        <main className="min-w-0 flex-1">
-          <div className="mb-4 flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase">
+      {editing && (
+        <div className="mt-5 max-w-xl rounded-lg border border-white/10 bg-white/[0.02] p-4">
+          <EditForm
+            profile={profile}
+            onSave={async (p) => {
+              await onSaveProfile(p)
+              setEditing(false)
+            }}
+            onCancel={() => setEditing(false)}
+          />
+        </div>
+      )}
+
+      <main className="mt-6 min-w-0">
+        <div className="mb-4 flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase">
             <button
               type="button"
               onClick={() => setTab('created')}
@@ -259,44 +302,40 @@ export default function ProfilePage({
               </button>
             )}
             <span className="h-px flex-1 bg-white/8" />
-          </div>
-          {tab === 'created' ? (
-            myGroups.length === 0 ? (
-              <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-                {t('profile.noCases')}
-              </div>
-            ) : (
-              <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
-                {myGroups.map((g) => (
-                  <ProjectCard
-                    key={g.project}
-                    group={g}
-                    views={views[g.project]}
-                    likes={projectLikes[g.project]}
-                    users={users}
-                    onOpen={() => onOpenProject(g.project)}
-                    onOpenUser={onOpenUser}
-                  />
-                ))}
-              </div>
-            )
-          ) : favoriteCount === 0 ? (
+        </div>
+        {tab === 'created' ? (
+          myGroups.length === 0 ? (
+            <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
+              {t('profile.noCases')}
+            </div>
+          ) : (
+            <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
+              {myGroups.map((g) => (
+                <ProductCard
+                  key={g.project}
+                  group={g}
+                  views={views[g.project]}
+                  likes={projectLikes[g.project]}
+                  onOpen={() => onOpenProject(g.project)}
+                />
+              ))}
+            </div>
+          )
+        ) : favoriteCount === 0 ? (
             <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
               {t('profile.noFavorites')}
             </div>
           ) : (
             <div className="flex flex-col gap-8">
               {favoriteGroups.length > 0 && (
-                <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+                <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
                   {favoriteGroups.map((g) => (
-                    <ProjectCard
+                    <ProductCard
                       key={g.project}
                       group={g}
                       views={views[g.project]}
                       likes={projectLikes[g.project]}
-                      users={users}
                       onOpen={() => onOpenProject(g.project)}
-                      onOpenUser={onOpenUser}
                     />
                   ))}
                 </div>
@@ -310,8 +349,7 @@ export default function ProfilePage({
               )}
             </div>
           )}
-        </main>
-      </div>
+      </main>
     </div>
   )
 }

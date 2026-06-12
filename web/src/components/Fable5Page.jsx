@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowDownAZ, ArrowUpAZ, Bookmark, Check, Copy, ExternalLink, Eye, Heart, ImageOff, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
+import { ArrowDownAZ, ArrowUpAZ, Bookmark, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
@@ -55,7 +55,8 @@ const SORT_OPTIONS = [
   { key: 'replies', labelKey: 'fable.sort.replies' },
 ]
 
-const SHARD_LOAD_STEP = 2
+const SHARD_LOAD_STEP = 1
+const INITIAL_PRIORITY_IMAGES = 6
 const CATEGORY_ORDER = ['games', 'apps', 'websites', 'videos', '3d', 'design', 'agents', 'prompts', 'code', 'research', 'news', 'safety', 'experiments']
 
 function sortValue(item, sortKey) {
@@ -86,10 +87,42 @@ function MediaPlaceholder({ label = 'no preview from source' }) {
   )
 }
 
-function MediaBlock({ item }) {
+function LoadingCard() {
+  return (
+    <article className="h-[460px] overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f]">
+      <div className="h-[210px] animate-pulse bg-white/8" />
+      <div className="space-y-4 p-4">
+        <div className="flex items-center gap-3">
+          <div className="h-9 w-9 rounded-full bg-white/8" />
+          <div className="min-w-0 flex-1 space-y-2">
+            <div className="h-3 w-32 rounded bg-white/8" />
+            <div className="h-2 w-20 rounded bg-white/6" />
+          </div>
+          <div className="h-8 w-8 rounded-md bg-white/6" />
+        </div>
+        <div className="space-y-2 pt-2">
+          <div className="h-4 w-11/12 rounded bg-white/8" />
+          <div className="h-4 w-8/12 rounded bg-white/8" />
+          <div className="h-3 w-full rounded bg-white/6" />
+          <div className="h-3 w-9/12 rounded bg-white/6" />
+        </div>
+        <div className="h-6 w-20 rounded border border-white/8 bg-white/5" />
+        <div className="mt-10 h-px bg-white/8" />
+        <div className="flex gap-4">
+          <div className="h-3 w-12 rounded bg-white/6" />
+          <div className="h-3 w-12 rounded bg-white/6" />
+          <div className="ml-auto h-3 w-16 rounded bg-white/6" />
+        </div>
+      </div>
+    </article>
+  )
+}
+
+function MediaBlock({ item, priority = false }) {
   const { t } = useI18n()
   const [playing, setPlaying] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
   const [videoFailed, setVideoFailed] = useState(false)
   const videoUrl = item.media === 'video' ? item.mediaUrls?.find((url) => /\.mp4(\?|$)/i.test(url)) : ''
   const remoteImageUrl = item.mediaUrls?.find((url) => !/\.mp4(\?|$)/i.test(url))
@@ -125,13 +158,22 @@ function MediaBlock({ item }) {
   return (
     <div className="relative h-[210px] shrink-0 overflow-hidden bg-black">
       {showImage ? (
-        <img
-          src={imageUrl}
-          alt={`${item.title} by ${item.author}`}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
-          onError={() => setImageFailed(true)}
-        />
+        <>
+          {!imageLoaded && <div className="absolute inset-0 animate-pulse bg-white/8" />}
+          <img
+            src={imageUrl}
+            alt={`${item.title} by ${item.author}`}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchPriority={priority ? 'high' : 'auto'}
+            className={cn(
+              'h-full w-full object-cover transition duration-300 hover:scale-[1.02]',
+              imageLoaded ? 'opacity-100' : 'opacity-0'
+            )}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageFailed(true)}
+          />
+        </>
       ) : (
         <MediaPlaceholder label={videoUrl ? t('fable.videoPreviewUnavailable') : t('fable.noPreview')} />
       )}
@@ -163,7 +205,7 @@ function MediaBlock({ item }) {
   )
 }
 
-function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
+function ShowcaseCard({ item, index, favorite, copied, authLoaded, loginRequired, loggingIn, onToggleFavorite, onCopy }) {
   const { t, language } = useI18n()
   const [avatarFailed, setAvatarFailed] = useState(false)
   const hasPrompt = Boolean(item.prompt?.trim())
@@ -171,8 +213,11 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
   const summary = item.summary?.length ? item.summary : []
 
   return (
-    <article className="flex h-[460px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-colors hover:border-white/25">
-      <MediaBlock item={item} />
+    <article
+      className="flex h-[460px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-colors hover:border-white/25"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '460px' }}
+    >
+      <MediaBlock item={item} priority={index < INITIAL_PRIORITY_IMAGES} />
 
       <div className="flex min-h-0 flex-1 flex-col p-4">
         <div className="flex h-10 shrink-0 items-start gap-3">
@@ -183,6 +228,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
                   src={item.avatarUrl}
                   alt={item.author}
                   loading="lazy"
+                  decoding="async"
                   className="h-9 w-9 shrink-0 rounded-full object-cover"
                   onError={() => setAvatarFailed(true)}
                 />
@@ -203,13 +249,14 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
             <button
               type="button"
               onClick={() => onToggleFavorite(item.id)}
-              title={favorite ? t('fable.unfavorite') : t('fable.favorite')}
+              title={!authLoaded ? t('common.loading') : loginRequired ? t('task.errorLogin') : favorite ? t('fable.unfavorite') : t('fable.favorite')}
+              disabled={!authLoaded || loggingIn}
               className={cn(
-                'flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border transition-colors',
+                'flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border transition-colors disabled:cursor-wait disabled:opacity-70',
                 favorite ? 'border-rose-400/35 bg-rose-400/10 text-rose-300' : 'border-white/10 text-white/40 hover:text-white'
               )}
             >
-              <Heart className={cn('h-3.5 w-3.5', favorite && 'fill-rose-300')} />
+              {(!authLoaded || (loggingIn && loginRequired)) ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Heart className={cn('h-3.5 w-3.5', favorite && 'fill-rose-300')} />}
             </button>
             <a
               href={item.sourceUrl}
@@ -268,7 +315,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
   )
 }
 
-export default function Fable5Page({ onBack }) {
+export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLogin, loggingIn = false }) {
   const { t } = useI18n()
   const [items, setItems] = useState(null)
   const [index, setIndex] = useState(null)
@@ -356,6 +403,11 @@ export default function Fable5Page({ onBack }) {
   }, [items, scene, query, sortKey, sortDirection])
 
   const toggleFavorite = (id) => {
+    if (!authLoaded) return
+    if (!authEmail) {
+      onLogin?.()
+      return
+    }
     setFavorites((prev) => {
       const next = new Set(prev)
       next.has(id) ? next.delete(id) : next.add(id)
@@ -439,16 +491,21 @@ export default function Fable5Page({ onBack }) {
       </section>
 
       <div id="showcases" className="mt-5 grid scroll-mt-32 gap-4 [grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]">
-        {filtered.map((item) => (
+        {filtered.map((item, itemIndex) => (
           <ShowcaseCard
             key={item.id}
             item={item}
-            favorite={favorites.has(item.id)}
+            index={itemIndex}
+            favorite={Boolean(authEmail) && favorites.has(item.id)}
             copied={copiedId === item.id}
+            authLoaded={authLoaded}
+            loginRequired={authLoaded && !authEmail}
+            loggingIn={loggingIn}
             onToggleFavorite={toggleFavorite}
             onCopy={copy}
           />
         ))}
+        {!items && !loadError && Array.from({ length: 9 }, (_, index) => <LoadingCard key={index} />)}
       </div>
 
       {items && canLoadMore && (
@@ -464,9 +521,9 @@ export default function Fable5Page({ onBack }) {
         </div>
       )}
 
-      {!items && (
+      {!items && loadError && (
         <div className="mt-6 rounded-lg border border-dashed border-white/12 py-16 text-center font-mono text-xs tracking-[0.18em] text-white/30 uppercase">
-          {loadError ? t('common.failedToLoad', { error: loadError }) : t('common.loadingShowcases')}
+          {t('common.failedToLoad', { error: loadError })}
         </div>
       )}
 

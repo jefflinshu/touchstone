@@ -591,7 +591,7 @@ export default function App() {
 
       <div className="mx-auto max-w-[1400px] px-6 pb-28">
         {route.page === 'fable5' ? (
-          <Fable5Page onBack={goHome} />
+          <Fable5Page onBack={goHome} authLoaded={auth.loaded} authEmail={auth.email} onLogin={login} loggingIn={loggingIn} />
         ) : route.page === 'project' ? (
           currentGroup ? (
             <ProjectPage

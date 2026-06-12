@@ -1214,13 +1214,35 @@ app.use(
   })
 )
 
+function setPublicAssetCacheHeaders(res, filePath) {
+  const normalized = filePath.split(path.sep).join('/')
+  if (normalized.includes('/fable5-media/') || normalized.includes('/fable5-avatars/')) {
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+    return
+  }
+  if (normalized.endsWith('/fable5-data/index.json')) {
+    res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=1800, stale-while-revalidate=86400')
+    return
+  }
+  if (normalized.includes('/fable5-data/')) {
+    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800')
+  }
+}
+
+function setDistCacheHeaders(res, filePath) {
+  const normalized = filePath.split(path.sep).join('/')
+  if (normalized.includes('/assets/')) {
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+  }
+}
+
 // web/public 优先于 dist：fable5 数据/媒体由脚本直接写入 public，更新后无需重新构建
-app.use(express.static(path.join(__dirname, 'web', 'public'), { index: false, maxAge: '5m' }))
+app.use(express.static(path.join(__dirname, 'web', 'public'), { index: false, maxAge: '5m', setHeaders: setPublicAssetCacheHeaders }))
 
 // 生产模式：托管前端构建产物
 const distDir = path.join(__dirname, 'web', 'dist')
 if (fs.existsSync(distDir)) {
-  app.use(express.static(distDir, { index: false }))
+  app.use(express.static(distDir, { index: false, setHeaders: setDistCacheHeaders }))
   app.get(/^\/(?!api|ws|workspace|avatars).*/, (req, res) => {
     const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8')
     res.type('html').send(renderSeoHtml(indexHtml, seoForPath(req)))
