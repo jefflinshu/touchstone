@@ -7,6 +7,7 @@ import { Input, Textarea } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, FAVORITES_CHANGED_EVENT, LIKED_PROJECTS_KEY, readFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases } from '@/lib/fable5Data'
+import { useI18n } from '@/i18n.jsx'
 
 function Stat({ label, value, accent }) {
   return (
@@ -18,6 +19,7 @@ function Stat({ label, value, accent }) {
 }
 
 function EditForm({ profile, onSave, onCancel }) {
+  const { t } = useI18n()
   const [name, setName] = useState(profile.name || '')
   const [picture, setPicture] = useState(profile.picture || '')
   const [bio, setBio] = useState(profile.bio || '')
@@ -39,24 +41,24 @@ function EditForm({ profile, onSave, onCancel }) {
   return (
     <div className="mt-4 flex flex-col gap-3">
       <label className="flex flex-col gap-1.5">
-        <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">昵称</span>
-        <Input value={name} maxLength={40} onChange={(e) => setName(e.target.value)} placeholder="昵称" />
+        <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">{t('profile.nickname')}</span>
+        <Input value={name} maxLength={40} onChange={(e) => setName(e.target.value)} placeholder={t('profile.nickname')} />
       </label>
       <label className="flex flex-col gap-1.5">
-        <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">头像 URL</span>
+        <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">{t('profile.avatarUrl')}</span>
         <Input value={picture} onChange={(e) => setPicture(e.target.value)} placeholder="https://…" />
       </label>
       <label className="flex flex-col gap-1.5">
-        <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">Bio</span>
-        <Textarea rows={3} value={bio} maxLength={500} onChange={(e) => setBio(e.target.value)} placeholder="一句话介绍自己…" />
+        <span className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">{t('profile.bio')}</span>
+        <Textarea rows={3} value={bio} maxLength={500} onChange={(e) => setBio(e.target.value)} placeholder={t('profile.bioPlaceholder')} />
       </label>
       {error && <span className="font-mono text-xs text-red-400">{error}</span>}
       <div className="flex items-center gap-2">
         <Button size="sm" disabled={saving} onClick={save} className="font-mono text-[10px] tracking-[0.15em] uppercase">
-          {saving ? <Loader2 className="h-3 w-3 animate-spin" /> : <Check className="h-3 w-3" />} Save
+          {saving ? <Loader2 className="h-3 w-3 animate-spin" /> : <Check className="h-3 w-3" />} {t('common.save')}
         </Button>
         <Button size="sm" variant="outline" onClick={onCancel} className="font-mono text-[10px] tracking-[0.15em] uppercase">
-          <X className="h-3 w-3" /> Cancel
+          <X className="h-3 w-3" /> {t('common.cancel')}
         </Button>
       </div>
     </div>
@@ -110,6 +112,7 @@ export default function ProfilePage({
   onOpenProject,
   onOpenUser,
 }) {
+  const { t } = useI18n()
   const [editing, setEditing] = useState(false)
   const [tab, setTab] = useState(initialTab === 'favorites' ? 'favorites' : 'created')
   const [favoriteVersion, setFavoriteVersion] = useState(0)
@@ -170,7 +173,7 @@ export default function ProfilePage({
   return (
     <div className="mt-6">
       <Button variant="outline" size="sm" onClick={onBack} className="font-mono text-[10px] tracking-[0.15em] uppercase">
-        <ArrowLeft className="h-3 w-3" /> Back
+        <ArrowLeft className="h-3 w-3" /> {t('common.back')}
       </Button>
 
       <div className="mt-5 flex flex-col gap-6 lg:flex-row">
@@ -197,7 +200,7 @@ export default function ProfilePage({
             ) : (
               <>
                 <p className="mt-4 text-[13px] leading-6 whitespace-pre-wrap text-white/70">
-                  {profile.bio || <span className="text-white/25">{isMe ? '还没有 bio，点击 Edit 介绍一下自己' : 'No bio yet'}</span>}
+                  {profile.bio || <span className="text-white/25">{isMe ? t('profile.emptyBioMe') : t('profile.emptyBioOther')}</span>}
                 </p>
                 {isMe && (
                   <Button
@@ -206,19 +209,19 @@ export default function ProfilePage({
                     onClick={() => setEditing(true)}
                     className="mt-4 font-mono text-[10px] tracking-[0.15em] uppercase"
                   >
-                    <Pencil className="h-3 w-3" /> Edit Profile
+                    <Pencil className="h-3 w-3" /> {t('profile.edit')}
                   </Button>
                 )}
               </>
             )}
 
             <div className="mt-5 grid grid-cols-3 gap-3 border-t border-white/8 pt-4">
-              <Stat label="Cases" value={myGroups.length} />
-              <Stat label="Runs" value={myRuns.length} />
+              <Stat label={t('profile.cases')} value={myGroups.length} />
+              <Stat label={t('profile.runs')} value={myRuns.length} />
               <Stat
                 label={
                   <span className="flex items-center gap-1">
-                    <Heart className="h-2.5 w-2.5" /> Likes
+                    <Heart className="h-2.5 w-2.5" /> {t('common.likes')}
                   </span>
                 }
                 value={likesReceived}
@@ -239,7 +242,7 @@ export default function ProfilePage({
                 tab === 'created' ? 'border-acid bg-acid text-black' : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
               )}
             >
-              Created <span className={tab === 'created' ? 'text-black/60' : 'text-white/70'}>{myGroups.length}</span>
+              {t('profile.created')} <span className={tab === 'created' ? 'text-black/60' : 'text-white/70'}>{myGroups.length}</span>
             </button>
             {isMe && (
               <button
@@ -252,7 +255,7 @@ export default function ProfilePage({
                     : 'border-emerald-400/25 text-emerald-300 hover:border-emerald-400/60 hover:text-emerald-200'
                 )}
               >
-                Favorites <span className={tab === 'favorites' ? 'text-black/60' : 'text-emerald-200/70'}>{favoriteCount}</span>
+                {t('common.favorites')} <span className={tab === 'favorites' ? 'text-black/60' : 'text-emerald-200/70'}>{favoriteCount}</span>
               </button>
             )}
             <span className="h-px flex-1 bg-white/8" />
@@ -260,7 +263,7 @@ export default function ProfilePage({
           {tab === 'created' ? (
             myGroups.length === 0 ? (
               <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-                No cases yet
+                {t('profile.noCases')}
               </div>
             ) : (
               <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
@@ -279,7 +282,7 @@ export default function ProfilePage({
             )
           ) : favoriteCount === 0 ? (
             <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-              No favorites yet
+              {t('profile.noFavorites')}
             </div>
           ) : (
             <div className="flex flex-col gap-8">

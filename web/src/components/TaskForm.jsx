@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import AgentIcon from './AgentIcon.jsx'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/i18n.jsx'
 
 let uid = 0
 
@@ -39,12 +40,13 @@ function ModelPicker({ agent, value, onChange }) {
 
 // CLI 未就绪：点击警告图标弹出配置引导（不再常驻展示）
 function HealthHint({ agent }) {
+  const { t } = useI18n()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          title="需要配置，点击查看"
+          title={t('task.needsConfigTitle')}
           className="flex h-full cursor-pointer items-center text-amber-400/90 outline-none transition-colors hover:text-amber-300"
         >
           <TriangleAlert className="h-3 w-3" />
@@ -52,16 +54,17 @@ function HealthHint({ agent }) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-[280px] p-3">
         <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-amber-400 uppercase">
-          {agent.name} 需要配置
+          {t('task.needsConfig', { name: agent.name })}
         </p>
         <p className="mt-2 text-xs leading-5 text-white/75">{agent.health?.fix}</p>
-        <p className="mt-1.5 text-[11px] leading-5 text-white/40">配置完成后刷新页面即可</p>
+        <p className="mt-1.5 text-[11px] leading-5 text-white/40">{t('task.refreshAfterConfig')}</p>
       </DropdownMenuContent>
     </DropdownMenu>
   )
 }
 
 export default function TaskForm({ agents, onSubmit, user, onLogin }) {
+  const { t } = useI18n()
   const [prompt, setPrompt] = useState('')
   const [runners, setRunners] = useState([])
   const [publish, setPublish] = useState(false)
@@ -81,15 +84,15 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
     e.preventDefault()
     setError('')
     if (!prompt.trim()) {
-      setError('先描述一下你的想法吧')
+      setError(t('task.errorPrompt'))
       return
     }
     if (runners.length === 0) {
-      setError('请至少添加一个 Agent')
+      setError(t('task.errorAgent'))
       return
     }
     if (!user) {
-      setError('请先登录 Google 账号')
+      setError(t('task.errorLogin'))
       onLogin?.()
       return
     }
@@ -114,7 +117,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
         <Textarea
           rows={3}
           className="border-0 bg-transparent px-1 py-1 text-sm focus:bg-transparent"
-          placeholder="想做点什么？描述你的想法，多个 AI Agent 会同时实现，跑完直接对比效果"
+          placeholder={t('task.placeholder')}
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
@@ -158,7 +161,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button type="button" variant="outline" size="sm" title="添加 runner" className="h-8 w-8 p-0">
+              <Button type="button" variant="outline" size="sm" title={t('task.addRunner')} className="h-8 w-8 p-0">
                 <Plus className="h-3.5 w-3.5" />
               </Button>
             </DropdownMenuTrigger>
@@ -196,30 +199,30 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
                 >
                   {publish && <Check className="h-2.5 w-2.5" strokeWidth={3.5} />}
                 </span>
-                <span className={publish ? 'text-white/80' : 'text-white/40'}>发布到社区</span>
+                <span className={publish ? 'text-white/80' : 'text-white/40'}>{t('task.publish')}</span>
               </label>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button
                     type="button"
-                    title="发布到社区意味着什么？"
+                    title={t('task.publishHelpTitle')}
                     className="cursor-pointer text-white/25 outline-none transition-colors hover:text-white"
                   >
                     <CircleHelp className="h-3 w-3" />
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-[280px] p-3">
-                  <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-acid uppercase">发布到社区（可选）</p>
+                  <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-acid uppercase">{t('task.publishHelpHeading')}</p>
                   <p className="mt-2 text-xs leading-5 text-white/70">
-                    勾选后，作品完成会自动 commit 并上传到公开的 GitHub 社区仓库，出现在首页供大家浏览、点赞。
+                    {t('task.publishHelpBody')}
                   </p>
-                  <p className="mt-1.5 text-xs leading-5 text-white/45">不勾选则只保存在你本地，随时可以再跑一次发布。</p>
+                  <p className="mt-1.5 text-xs leading-5 text-white/45">{t('task.publishHelpFoot')}</p>
                 </DropdownMenuContent>
               </DropdownMenu>
             </span>
             <Button disabled={busy} className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase">
               {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
-              {busy ? 'Naming' : 'Run'}
+              {busy ? t('task.naming') : t('task.run')}
               {!busy && <ArrowRight className="h-3.5 w-3.5" />}
             </Button>
           </div>

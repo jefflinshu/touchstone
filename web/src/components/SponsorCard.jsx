@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Heart, Mail, Copy, Check, X } from 'lucide-react'
 import { Dialog, DialogTrigger, DialogClose, DialogContent, DialogTitle } from '@/components/ui/dialog'
+import { useI18n } from '@/i18n.jsx'
 
 const EMAIL = 'service@curisaas.com'
 
@@ -35,6 +36,7 @@ function PixelWord({ rows, px, className }) {
 }
 
 export default function SponsorCard() {
+  const { t } = useI18n()
   const [copied, setCopied] = useState(false)
   const copyEmail = () => {
     navigator.clipboard.writeText(EMAIL)
@@ -47,13 +49,13 @@ export default function SponsorCard() {
       <DialogTrigger asChild>
         <button
           type="button"
-          title="赞助支持 Touchstone"
+          title={t('sponsor.title')}
           className="group cursor-pointer rounded-lg border border-white/12 bg-white/[0.02] px-5 py-4 text-left transition-colors hover:border-acid/60 hover:bg-acid/[0.04]"
         >
           <PixelWord rows={SPONSOR_ROWS} px={5} className="text-acid/80 transition-colors group-hover:text-acid" />
           <div className="mt-3 flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase transition-colors group-hover:text-white/70">
             <Heart className="h-3 w-3 text-acid/70" />
-            求赞助
+            {t('sponsor.short')}
           </div>
         </button>
       </DialogTrigger>
@@ -67,7 +69,7 @@ export default function SponsorCard() {
             className="inline-grid text-acid [filter:drop-shadow(0_0_6px_rgba(212,255,79,0.35))]"
           />
           <DialogTitle className="mt-4 font-pixel text-base tracking-[0.15em] text-white">
-            SUPPORT TOUCHSTONE<span className="text-acid">_</span>
+            {t('sponsor.title')}<span className="text-acid">_</span>
           </DialogTitle>
           <DialogClose asChild>
             <button
@@ -81,9 +83,7 @@ export default function SponsorCard() {
 
         <div className="px-6 py-5">
           <p className="text-center text-[13px] leading-6 text-white/65">
-            如果 Touchstone 对你有帮助，欢迎赞助支持持续开发，
-            <br />
-            或来信交流合作想法。
+            {t('sponsor.body')}
           </p>
 
           {/* 邮箱：复制 + mailto */}
@@ -96,20 +96,20 @@ export default function SponsorCard() {
               className="flex h-full cursor-pointer items-center gap-1.5 border-l border-white/10 px-3 py-2.5 font-mono text-[10px] tracking-[0.15em] text-white/50 uppercase transition-colors hover:bg-white/5 hover:text-white"
             >
               {copied ? <Check className="h-3 w-3 text-acid" /> : <Copy className="h-3 w-3" />}
-              {copied ? 'Copied' : 'Copy'}
+              {copied ? t('common.copied') : t('common.copy')}
             </button>
           </div>
 
           <a
-            href={`mailto:${EMAIL}?subject=${encodeURIComponent('赞助 / 合作 Touchstone')}`}
+            href={`mailto:${EMAIL}?subject=${encodeURIComponent(t('sponsor.emailSubject'))}`}
             className="mt-3 flex h-9 items-center justify-center gap-2 rounded-md bg-acid font-mono text-[11px] font-bold tracking-[0.15em] text-black uppercase transition-opacity hover:opacity-85"
           >
             <Heart className="h-3.5 w-3.5" />
-            联系我
+            {t('sponsor.contact')}
           </a>
 
           <p className="mt-4 text-center font-mono text-[10px] tracking-[0.2em] text-white/25 uppercase">
-            Every pixel counts
+            {t('sponsor.footer')}
           </p>
         </div>
       </DialogContent>

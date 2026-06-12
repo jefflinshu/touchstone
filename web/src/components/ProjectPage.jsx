@@ -5,6 +5,7 @@ import AgentIcon from './AgentIcon.jsx'
 import { ProjectLikeButton, CategoryTag } from './ProjectCard.jsx'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/i18n.jsx'
 
 // 推荐小卡：只有缩略图+名字，整卡一个点击
 function MiniProjectCard({ group: g, onOpen }) {
@@ -73,6 +74,7 @@ export default function ProjectPage({
   onDelete,
   onFetchLog,
 }) {
+  const { t, language } = useI18n()
   const [layout, setLayout] = useState('2')
   const [hidden, setHidden] = useState(() => new Set())
 
@@ -109,7 +111,7 @@ export default function ProjectPage({
     <div className="mt-6">
       <div className="mb-5 flex items-center gap-3">
         <Button variant="outline" size="sm" onClick={onBack} className="font-mono text-[10px] tracking-[0.15em] uppercase">
-          <ArrowLeft className="h-3 w-3" /> Back
+          <ArrowLeft className="h-3 w-3" /> {t('common.back')}
         </Button>
         <h1 className="font-pixel text-xl">{project}</h1>
         <CategoryTag category={category} />
@@ -132,7 +134,7 @@ export default function ProjectPage({
           <div className="flex overflow-hidden rounded-md border border-white/12">
             <button
               type="button"
-              title="上一个项目（←）"
+              title={t('project.prev')}
               disabled={!prevProject}
               onClick={() => onOpenProject?.(prevProject)}
               className="flex h-8 w-8 cursor-pointer items-center justify-center text-white/60 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-default disabled:opacity-25"
@@ -142,7 +144,7 @@ export default function ProjectPage({
             <span className="w-px bg-white/10" />
             <button
               type="button"
-              title="下一个项目（→）"
+              title={t('project.next')}
               disabled={!nextProject}
               onClick={() => onOpenProject?.(nextProject)}
               className="flex h-8 w-8 cursor-pointer items-center justify-center text-white/60 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-default disabled:opacity-25"
@@ -158,7 +160,7 @@ export default function ProjectPage({
             onClick={() => copyLink(location.href)}
           >
             {linkCopied ? <Check className="h-3 w-3 text-acid" /> : <Share2 className="h-3 w-3" />}
-            {linkCopied ? 'Copied' : 'Share'}
+            {linkCopied ? t('common.copied') : t('common.share')}
           </Button>
         </div>
       </div>
@@ -169,22 +171,22 @@ export default function ProjectPage({
         <aside className="w-full shrink-0 lg:w-[300px]">
           <div className="sticky top-20 rounded-lg border border-white/10 bg-white/[0.02]">
             <div className="flex items-center justify-between border-b border-white/8 px-4 py-2.5">
-              <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">Prompt</span>
+              <span className="font-mono text-[10px] tracking-[0.2em] text-white/35 uppercase">{t('common.prompt')}</span>
               <button
                 type="button"
                 onClick={() => copyPrompt(prompt)}
                 className="flex cursor-pointer items-center gap-1 font-mono text-[10px] tracking-wider text-white/45 uppercase transition-colors hover:text-white"
               >
                 {promptCopied ? <Check className="h-3 w-3 text-acid" /> : <Copy className="h-3 w-3" />}
-                {promptCopied ? 'Copied' : 'Copy'}
+                {promptCopied ? t('common.copied') : t('common.copy')}
               </button>
             </div>
             <p className="max-h-[50vh] overflow-auto px-4 py-3.5 text-[13px] leading-6 whitespace-pre-wrap text-white/75">
               {prompt}
             </p>
             <div className="border-t border-white/8 px-4 py-3 font-mono text-[10px] leading-5 tracking-wider text-white/30 uppercase">
-              {latest && <div>Created {new Date(latest.createdAt).toLocaleString('en-GB')}</div>}
-              <div>{new Set(runs.map((r) => r.agentName)).size} agents · {runs.length} runs</div>
+              {latest && <div>{t('common.created')} {new Date(latest.createdAt).toLocaleString(language)}</div>}
+              <div>{t('project.agentsRuns', { agents: new Set(runs.map((r) => r.agentName)).size, runs: runs.length })}</div>
             </div>
           </div>
         </aside>
@@ -232,7 +234,7 @@ export default function ProjectPage({
           </div>
           {visibleRuns.length === 0 && (
             <div className="rounded-lg border border-dashed border-white/12 py-16 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-              All runners hidden
+              {t('project.allHidden')}
             </div>
           )}
         </main>
@@ -242,7 +244,7 @@ export default function ProjectPage({
       {recos.length > 0 && (
         <div className="mt-12">
           <div className="mb-3 flex items-center gap-4 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
-            <span>More like this</span>
+            <span>{t('project.moreLikeThis')}</span>
             <span className="h-px flex-1 bg-white/8" />
           </div>
           <div className="flex flex-wrap gap-3">

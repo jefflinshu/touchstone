@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Check, CircleHelp, Heart, Loader2, LogOut, Monitor, Moon, Star, Sun, User } from 'lucide-react'
+import { Check, CircleHelp, Globe2, Heart, Loader2, LogOut, Monitor, Moon, Star, Sun, User } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import ProfilePage from './components/ProfilePage.jsx'
@@ -17,16 +17,14 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
+import { useI18n } from './i18n.jsx'
 
 const LOG_CAP = 30000
-const SITE_TITLE = 'Touchstone · AI Coding Arena'
-const SITE_DESCRIPTION =
-  'Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。'
 const THEME_STORAGE_KEY = 'touchstone-theme-mode'
 const THEME_OPTIONS = [
-  { value: 'auto', label: 'Auto mood', icon: Monitor },
-  { value: 'light', label: 'Light mood', icon: Sun },
-  { value: 'dark', label: 'Dark mood', icon: Moon },
+  { value: 'auto', labelKey: 'theme.auto', icon: Monitor },
+  { value: 'light', labelKey: 'theme.light', icon: Sun },
+  { value: 'dark', labelKey: 'theme.dark', icon: Moon },
 ]
 
 function resolveTheme(mode) {
@@ -63,7 +61,7 @@ function upsertCanonical(href) {
   el.setAttribute('href', href)
 }
 
-function setPageSeo({ title, description, canonicalPath = '/', imagePath = '/fable5-media/meta_alchemist-2064431279383433646.jpg', type = 'website' }) {
+function setPageSeo({ title, description, canonicalPath = '/', imagePath = '/brand/touchstone-og.svg', type = 'website' }) {
   const origin = window.location.origin
   const canonical = new URL(canonicalPath, origin).href
   const image = new URL(imagePath, origin).href
@@ -105,20 +103,40 @@ function GoogleIcon({ className }) {
 }
 
 function ThemeMenuItems({ themeMode, resolvedTheme, onChange }) {
+  const { t } = useI18n()
   return (
     <>
-      {THEME_OPTIONS.map(({ value, label, icon: Icon }) => (
+      {THEME_OPTIONS.map(({ value, labelKey, icon: Icon }) => (
         <DropdownMenuItem key={value} onSelect={() => onChange(value)}>
           <Icon className="h-3.5 w-3.5" />
-          <span className="flex-1">{label}</span>
+          <span className="flex-1">{t(labelKey)}</span>
           {themeMode === value && <Check className="h-3.5 w-3.5 text-acid" />}
         </DropdownMenuItem>
       ))}
       {themeMode === 'auto' && (
         <div className="px-2 py-1 font-mono text-[9px] tracking-[0.16em] text-white/30 uppercase">
-          Now: {resolvedTheme}
+          {t('common.now')}: {resolvedTheme}
         </div>
       )}
+    </>
+  )
+}
+
+function LanguageMenuItems() {
+  const { language, languages, setLanguage, t } = useI18n()
+  return (
+    <>
+      <div className="px-2 py-1 font-mono text-[9px] tracking-[0.16em] text-white/30 uppercase">
+        {t('common.language')}
+      </div>
+      {languages.map((item) => (
+        <DropdownMenuItem key={item.code} onSelect={() => setLanguage(item.code)}>
+          <Globe2 className="h-3.5 w-3.5" />
+          <span className="flex-1">{item.nativeName}</span>
+          <span className="text-white/30">{item.name}</span>
+          {language === item.code && <Check className="h-3.5 w-3.5 text-acid" />}
+        </DropdownMenuItem>
+      ))}
     </>
   )
 }
@@ -162,6 +180,7 @@ function getAnalyticsPage(route) {
 }
 
 export default function App() {
+  const { t, language } = useI18n()
   const [agents, setAgents] = useState([])
   const [runs, setRuns] = useState([])
   const [views, setViews] = useState({})
@@ -397,8 +416,7 @@ export default function App() {
     if (route.page === 'fable5') {
       setPageSeo({
         title: 'Claude Fable 5 Prompts & Showcases · Touchstone',
-        description:
-          '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。',
+        description: t('seo.fableDescription'),
         canonicalPath: '/fable5',
         type: 'website',
       })
@@ -406,10 +424,10 @@ export default function App() {
     }
     if (route.page === 'project' && currentGroup) {
       const latest = currentGroup.runs[currentGroup.runs.length - 1]
-      const prompt = latest?.prompt ? `Prompt: ${latest.prompt.slice(0, 120)}` : '查看这个 AI coding case 的多模型作品对比。'
+      const prompt = latest?.prompt ? `${t('common.prompt')}: ${latest.prompt.slice(0, 120)}` : t('seo.projectFallback')
       setPageSeo({
         title: `${currentGroup.project} · Touchstone Case`,
-        description: `${prompt}${latest?.prompt?.length > 120 ? '...' : ''} ${currentGroup.runs.length} runs across ${new Set(currentGroup.runs.map((r) => r.agentName)).size} agents.`,
+        description: `${prompt}${latest?.prompt?.length > 120 ? '...' : ''} ${t('project.agentsRuns', { agents: new Set(currentGroup.runs.map((r) => r.agentName)).size, runs: currentGroup.runs.length })}.`,
         canonicalPath: `/p/${encodeURIComponent(currentGroup.project)}`,
         type: 'article',
       })
@@ -420,18 +438,18 @@ export default function App() {
       const name = profile.name || route.email
       setPageSeo({
         title: `${name} · Touchstone Profile`,
-        description: profile.bio || `查看 ${name} 在 Touchstone 发布和参与的 AI coding cases。`,
+        description: profile.bio || t('seo.profileFallback', { name }),
         canonicalPath: `/u/${encodeURIComponent(route.email)}`,
         type: 'profile',
       })
       return
     }
     setPageSeo({
-      title: SITE_TITLE,
-      description: SITE_DESCRIPTION,
+      title: t('seo.siteTitle'),
+      description: t('seo.siteDescription'),
       canonicalPath: '/',
     })
-  }, [route, currentGroup, users])
+  }, [route, currentGroup, users, t, language])
 
   // 推荐：同分类优先 → 热度（赞×3+浏览）→ 最新，排除当前项目
   const recos = useMemo(() => {
@@ -461,12 +479,25 @@ export default function App() {
               e.preventDefault()
               goHome()
             }}
-            className="pixel-cycle font-pixel text-[15px] tracking-[0.2em] text-white"
+            className="group flex min-w-0 items-center gap-2.5"
+            aria-label="Touchstone by jefflin.ai"
           >
-            TOUCHSTONE<span className="text-acid">_</span>
+            <img
+              src="/brand/touchstone-mark.svg"
+              alt=""
+              className="h-7 w-7 shrink-0 rounded-[7px] shadow-[0_0_18px_rgba(212,255,79,0.16)]"
+            />
+            <span className="min-w-0">
+              <span className="pixel-cycle block font-pixel text-[15px] leading-none tracking-[0.2em] text-white">
+                TOUCHSTONE<span className="text-acid">_</span>
+              </span>
+              <span className="mt-1 block font-mono text-[8px] leading-none tracking-[0.26em] text-acid/70 uppercase">
+                jefflin.ai
+              </span>
+            </span>
           </a>
           <span className="mt-px font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase">
-            AI Coding Arena
+            {t('nav.subtitle')}
           </span>
           <div className="ml-auto flex items-center gap-4">
             <button
@@ -478,7 +509,7 @@ export default function App() {
             </button>
             <button
               type="button"
-              title="新手指南 / 本地环境检测"
+              title={t('nav.guideTitle')}
               onClick={() => {
                 setShowGuide(true)
                 trackEvent('guide_open')
@@ -490,7 +521,7 @@ export default function App() {
             {active > 0 && (
               <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-acid uppercase">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
-                {active} running
+                {t('nav.running', { count: active })}
               </span>
             )}
             <a
@@ -519,16 +550,18 @@ export default function App() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem onSelect={() => goUser(auth.email)}>
-                      <User className="h-3.5 w-3.5" /> 个人主页
+                      <User className="h-3.5 w-3.5" /> {t('nav.profile')}
                     </DropdownMenuItem>
                     <DropdownMenuItem className="text-emerald-300 focus:text-emerald-200" onSelect={() => goUser(auth.email, 'favorites')}>
-                      <Heart className="h-3.5 w-3.5 fill-emerald-400/20" /> 我的收藏
+                      <Heart className="h-3.5 w-3.5 fill-emerald-400/20" /> {t('nav.myFavorites')}
                     </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <LanguageMenuItems />
                     <DropdownMenuSeparator />
                     <ThemeMenuItems themeMode={themeMode} resolvedTheme={resolvedTheme} onChange={changeThemeMode} />
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onSelect={logout}>
-                      <LogOut className="h-3.5 w-3.5" /> 退出登录
+                      <LogOut className="h-3.5 w-3.5" /> {t('nav.signOut')}
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -541,12 +574,12 @@ export default function App() {
                   className="h-7 gap-2 font-mono text-[10px] tracking-[0.15em] uppercase"
                 >
                   {loggingIn ? <Loader2 className="h-3 w-3 animate-spin" /> : <GoogleIcon className="h-3 w-3" />}
-                  {loggingIn ? '等待浏览器授权' : 'Sign in'}
+                  {loggingIn ? t('nav.waitingAuth') : t('nav.signIn')}
                 </Button>
               ))}
             <span
               className={`h-1.5 w-1.5 rounded-full ${wsOk ? 'bg-acid shadow-[0_0_6px_rgba(212,255,79,0.9)]' : 'bg-red-500'}`}
-              title={wsOk ? 'live' : 'disconnected'}
+              title={wsOk ? t('nav.live') : t('nav.disconnected')}
             />
           </div>
         </div>
@@ -574,7 +607,7 @@ export default function App() {
             />
           ) : (
             <div className="mt-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-              {runs.length === 0 ? <Loader2 className="mx-auto h-5 w-5 animate-spin" /> : 'Project not found'}
+              {runs.length === 0 ? <Loader2 className="mx-auto h-5 w-5 animate-spin" /> : t('home.projectNotFound')}
             </div>
           )
         ) : route.page === 'user' ? (
@@ -596,9 +629,9 @@ export default function App() {
             <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
               <div>
                 <h1 className="font-pixel text-[32px] leading-[1.18] text-white sm:text-[42px]">
-                  ONE PROMPT.
+                  {t('home.heroOne')}
                   <br />
-                  <span className="text-acid">EVERY AGENT.</span>
+                  <span className="text-acid">{t('home.heroTwo')}</span>
                 </h1>
               </div>
               <SponsorCard />
@@ -629,7 +662,7 @@ export default function App() {
 
             {filteredGroups.length === 0 ? (
               <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-pixel text-sm tracking-[0.2em] text-white/30 uppercase">
-                No runs yet
+                {t('home.noRuns')}
               </div>
             ) : (
               <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">

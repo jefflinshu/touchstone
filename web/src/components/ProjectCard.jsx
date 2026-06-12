@@ -4,6 +4,7 @@ import Avatar, { displayName } from './Avatar.jsx'
 import AgentIcon from './AgentIcon.jsx'
 import { cn } from '@/lib/utils'
 import { LIKED_PROJECTS_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
+import { useI18n } from '@/i18n.jsx'
 
 const getLikedProjects = () => {
   return readFavoriteSet(LIKED_PROJECTS_KEY)
@@ -11,6 +12,7 @@ const getLikedProjects = () => {
 
 // 项目（case）级点赞，乐观更新 + 服务器广播校准
 export function ProjectLikeButton({ project, likes, className }) {
+  const { t } = useI18n()
   const [liked, setLiked] = useState(() => getLikedProjects().has(project))
   const [count, setCount] = useState(likes || 0)
 
@@ -35,7 +37,7 @@ export function ProjectLikeButton({ project, likes, className }) {
     <button
       type="button"
       onClick={toggle}
-      title={liked ? '取消点赞' : '点赞这个 case'}
+      title={liked ? t('project.unlike') : t('project.like')}
       className={cn(
         'flex cursor-pointer items-center gap-1 font-mono text-[11px] tabular-nums transition-colors',
         liked ? 'text-rose-400' : 'text-white/35 hover:text-rose-300',
@@ -63,6 +65,7 @@ export function CategoryTag({ category, className }) {
 }
 
 export default function ProjectCard({ group: g, views, likes, users, onOpen, onOpenUser }) {
+  const { t } = useI18n()
   const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
   const done = g.runs.filter((r) => r.status === 'done').length
   const failed = g.runs.length - running - done
@@ -150,7 +153,7 @@ export default function ProjectCard({ group: g, views, likes, users, onOpen, onO
             </span>
           )}
           <span className="ml-auto flex shrink-0 items-center gap-3">
-            <span className="text-[10px] tracking-wider text-white/35 uppercase">{g.runs.length} runs</span>
+            <span className="text-[10px] tracking-wider text-white/35 uppercase">{t('project.runsCount', { count: g.runs.length })}</span>
             {running > 0 && (
               <span className="flex items-center gap-1.5 text-acid">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" /> {running}

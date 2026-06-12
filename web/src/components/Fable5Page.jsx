@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
+import { useI18n } from '@/i18n.jsx'
 
 function getFavorites() {
   return readFavoriteSet(FABLE5_FAVORITES_KEY)
@@ -47,11 +48,11 @@ function SceneChip({ label, count, active, onClick }) {
 }
 
 const SORT_OPTIONS = [
-  { key: 'date', label: 'Created' },
-  { key: 'score', label: 'Showcase' },
-  { key: 'likes', label: 'Likes' },
-  { key: 'bookmarks', label: 'Favorites' },
-  { key: 'replies', label: 'Comments' },
+  { key: 'date', labelKey: 'fable.sort.created' },
+  { key: 'score', labelKey: 'fable.sort.score' },
+  { key: 'likes', labelKey: 'fable.sort.likes' },
+  { key: 'bookmarks', labelKey: 'fable.sort.bookmarks' },
+  { key: 'replies', labelKey: 'fable.sort.replies' },
 ]
 
 const SHARD_LOAD_STEP = 2
@@ -86,6 +87,7 @@ function MediaPlaceholder({ label = 'no preview from source' }) {
 }
 
 function MediaBlock({ item }) {
+  const { t } = useI18n()
   const [playing, setPlaying] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
   const [videoFailed, setVideoFailed] = useState(false)
@@ -97,8 +99,8 @@ function MediaBlock({ item }) {
   if (!imageUrl && !videoUrl) {
     return (
       <div className="relative h-[210px] shrink-0 overflow-hidden bg-black">
-        <MediaPlaceholder label={item.media === 'text' ? 'text-only post' : 'no preview from source'} />
-        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label="Open source post" />
+        <MediaPlaceholder label={item.media === 'text' ? t('fable.textOnly') : t('fable.noPreview')} />
+        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
       </div>
     )
   }
@@ -131,21 +133,21 @@ function MediaBlock({ item }) {
           onError={() => setImageFailed(true)}
         />
       ) : (
-        <MediaPlaceholder label={videoUrl ? 'video preview unavailable' : 'no preview from source'} />
+        <MediaPlaceholder label={videoUrl ? t('fable.videoPreviewUnavailable') : t('fable.noPreview')} />
       )}
       {videoUrl ? (
         <button
           type="button"
           onClick={() => setPlaying(true)}
           className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/10 transition-colors hover:bg-black/25"
-          title="Play video"
+          title={t('fable.playVideo')}
         >
           <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-black/55 text-white shadow-lg backdrop-blur">
             <Play className="ml-0.5 h-5 w-5 fill-white" />
           </span>
         </button>
       ) : (
-        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label="Open source post" />
+        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
       )}
       {videoFailed && (
         <a
@@ -154,7 +156,7 @@ function MediaBlock({ item }) {
           rel="noreferrer"
           className="absolute right-2 bottom-2 rounded bg-black/70 px-2 py-1 font-mono text-[10px] text-white/70"
         >
-          open source
+          {t('common.openSource')}
         </a>
       )}
     </div>
@@ -162,6 +164,7 @@ function MediaBlock({ item }) {
 }
 
 function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
+  const { t, language } = useI18n()
   const [avatarFailed, setAvatarFailed] = useState(false)
   const hasPrompt = Boolean(item.prompt?.trim())
   const metrics = item.metrics || {}
@@ -191,7 +194,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
               <div className="min-w-0">
                 <div className="truncate text-sm font-medium text-white">{item.author}</div>
                 <div className="mt-0.5 truncate font-mono text-[10px] tracking-[0.12em] text-white/35 uppercase">
-                  {item.handle} · {new Date(item.date).toLocaleDateString('en-GB')}
+                  {item.handle} · {new Date(item.date).toLocaleDateString(language)}
                 </div>
               </div>
             </div>
@@ -200,7 +203,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
             <button
               type="button"
               onClick={() => onToggleFavorite(item.id)}
-              title={favorite ? '取消收藏' : '收藏'}
+              title={favorite ? t('fable.unfavorite') : t('fable.favorite')}
               className={cn(
                 'flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border transition-colors',
                 favorite ? 'border-rose-400/35 bg-rose-400/10 text-rose-300' : 'border-white/10 text-white/40 hover:text-white'
@@ -212,7 +215,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
               href={item.sourceUrl}
               target="_blank"
               rel="noreferrer"
-              title="原帖"
+              title={t('common.sourcePost')}
               className="flex h-8 w-8 items-center justify-center rounded-md border border-white/10 text-white/40 transition-colors hover:text-white"
             >
               <ExternalLink className="h-3.5 w-3.5" />
@@ -233,7 +236,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
               className="inline-flex h-6 shrink-0 cursor-pointer items-center gap-1 rounded border border-emerald-400/25 bg-emerald-400/5 px-2 font-mono text-[10px] tracking-[0.12em] text-emerald-300 uppercase"
             >
               {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-              {copied ? 'copied' : 'prompt'}
+              {copied ? t('fable.promptCopied') : t('fable.prompt')}
             </button>
           </div>
         )}
@@ -266,6 +269,7 @@ function ShowcaseCard({ item, favorite, copied, onToggleFavorite, onCopy }) {
 }
 
 export default function Fable5Page({ onBack }) {
+  const { t } = useI18n()
   const [items, setItems] = useState(null)
   const [index, setIndex] = useState(null)
   const [loadedShardCount, setLoadedShardCount] = useState(0)
@@ -375,7 +379,7 @@ export default function Fable5Page({ onBack }) {
           href="#showcases"
           className="inline-flex h-9 items-center gap-2 rounded-md border border-acid/30 bg-acid/10 px-3 font-mono text-[10px] tracking-[0.16em] text-acid uppercase transition-colors hover:bg-acid/15"
         >
-          Showcase
+          {t('common.showcase')}
           <span className="text-acid/60">{items ? `${n(filtered.length)}/${n(totalCount || items.length)}` : '...'}</span>
         </a>
       </section>
@@ -389,14 +393,14 @@ export default function Fable5Page({ onBack }) {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search"
+                placeholder={t('common.search')}
                 className="h-9 w-full rounded-md border border-white/10 bg-black/30 pr-3 pl-9 text-sm text-white outline-none placeholder:text-white/24 focus:border-white/25"
               />
             </label>
             <div className="grid grid-cols-[auto_minmax(0,170px)_36px] items-center gap-2">
-              <span className="font-mono text-[10px] tracking-[0.16em] whitespace-nowrap text-white/32 uppercase">Sort by</span>
+              <span className="font-mono text-[10px] tracking-[0.16em] whitespace-nowrap text-white/32 uppercase">{t('common.sortBy')}</span>
               <label className="sr-only" htmlFor="fable-sort">
-                Sort showcases
+                {t('common.sortBy')}
               </label>
               <select
                 id="fable-sort"
@@ -406,14 +410,14 @@ export default function Fable5Page({ onBack }) {
               >
                 {SORT_OPTIONS.map((option) => (
                   <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
-                    {option.label}
+                    {t(option.labelKey)}
                   </option>
                 ))}
               </select>
               <button
                 type="button"
                 onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
-                title={sortDirection === 'asc' ? '升序' : '降序'}
+                title={sortDirection === 'asc' ? 'ascending' : 'descending'}
                 className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-black/30 text-white/50 transition-colors hover:border-white/25 hover:text-white"
               >
                 {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
@@ -422,9 +426,9 @@ export default function Fable5Page({ onBack }) {
           </div>
           {scenes.length > 0 && (
             <div className="mt-2">
-              <div className="mb-1.5 font-mono text-[10px] tracking-[0.16em] text-white/32 uppercase">Categories</div>
+              <div className="mb-1.5 font-mono text-[10px] tracking-[0.16em] text-white/32 uppercase">{t('common.categories')}</div>
               <div className="flex flex-wrap gap-1.5">
-                <SceneChip label="all" count={items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
+                <SceneChip label={t('common.all')} count={items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
                 {scenes.map(([key, count]) => (
                   <SceneChip key={key} label={key} count={count} active={scene === key} onClick={() => setScene(key)} />
                 ))}
@@ -455,20 +459,20 @@ export default function Fable5Page({ onBack }) {
             disabled={loadingMore}
             className="h-10 cursor-pointer rounded-md border border-white/12 bg-white/5 px-4 font-mono text-[11px] tracking-[0.14em] text-white/60 uppercase transition-colors hover:border-white/25 hover:text-white disabled:cursor-wait disabled:opacity-50"
           >
-            {loadingMore ? 'Loading...' : `Load more ${n(items.length)}/${n(totalCount || items.length)}`}
+            {loadingMore ? t('common.loading') : t('fable.loadMore', { loaded: n(items.length), total: n(totalCount || items.length) })}
           </button>
         </div>
       )}
 
       {!items && (
         <div className="mt-6 rounded-lg border border-dashed border-white/12 py-16 text-center font-mono text-xs tracking-[0.18em] text-white/30 uppercase">
-          {loadError ? `failed to load showcases — ${loadError}` : 'loading showcases…'}
+          {loadError ? t('common.failedToLoad', { error: loadError }) : t('common.loadingShowcases')}
         </div>
       )}
 
       {items && filtered.length === 0 && (
         <div className="mt-6 rounded-lg border border-dashed border-white/12 py-16 text-center font-mono text-xs tracking-[0.18em] text-white/30 uppercase">
-          No matching posts
+          {t('common.noMatchingPosts')}
         </div>
       )}
     </main>

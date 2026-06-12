@@ -16,14 +16,15 @@ import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui
 import { Button } from '@/components/ui/button'
 import AgentIcon from './AgentIcon.jsx'
 import { cn } from '@/lib/utils'
+import { useI18n } from '@/i18n.jsx'
 
 const STATUS = {
-  pending: { label: 'QUEUED', dot: 'bg-white/40', text: 'text-white/40' },
-  running: { label: 'RUNNING', dot: 'bg-acid pulse-dot', text: 'text-acid' },
-  done: { label: 'DONE', dot: 'bg-emerald-400', text: 'text-emerald-400' },
-  failed: { label: 'FAILED', dot: 'bg-red-500', text: 'text-red-400' },
-  stopped: { label: 'STOPPED', dot: 'bg-white/40', text: 'text-white/40' },
-  interrupted: { label: 'INTERRUPTED', dot: 'bg-red-500/60', text: 'text-red-400/70' },
+  pending: { labelKey: 'run.status.pending', dot: 'bg-white/40', text: 'text-white/40' },
+  running: { labelKey: 'run.status.running', dot: 'bg-acid pulse-dot', text: 'text-acid' },
+  done: { labelKey: 'run.status.done', dot: 'bg-emerald-400', text: 'text-emerald-400' },
+  failed: { labelKey: 'run.status.failed', dot: 'bg-red-500', text: 'text-red-400' },
+  stopped: { labelKey: 'run.status.stopped', dot: 'bg-white/40', text: 'text-white/40' },
+  interrupted: { labelKey: 'run.status.interrupted', dot: 'bg-red-500/60', text: 'text-red-400/70' },
 }
 
 // 虚拟视口：作品按桌面尺寸渲染后整体缩放，保证内容完整可见
@@ -47,11 +48,12 @@ function previewUrlOf(run) {
 const fmtTokens = (n) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 100000 ? 0 : 1)}k` : String(n))
 
 function Metrics({ metrics }) {
+  const { t } = useI18n()
   if (!metrics) return null
   return (
     <>
       {metrics.toolCalls != null && (
-        <span className="flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums" title="工具调用 / 回合数">
+        <span className="flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums" title={t('common.toolCalls')}>
           <Wrench className="h-3 w-3" />
           {metrics.toolCalls}
         </span>
@@ -59,7 +61,7 @@ function Metrics({ metrics }) {
       {metrics.tokens != null && (
         <span
           className="flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums"
-          title={`token 消耗 ${metrics.tokens.toLocaleString()}${metrics.costUsd != null ? ` · $${metrics.costUsd.toFixed(3)}` : ''}`}
+          title={t('common.tokenCost', { tokens: metrics.tokens.toLocaleString(), cost: metrics.costUsd != null ? ` · $${metrics.costUsd.toFixed(3)}` : '' })}
         >
           <Coins className="h-3 w-3" />
           {fmtTokens(metrics.tokens)}
@@ -79,6 +81,7 @@ const getLiked = () => {
 }
 
 function LikeButton({ run }) {
+  const { t } = useI18n()
   const [liked, setLiked] = useState(() => getLiked().has(run.id))
   const [count, setCount] = useState(run.likes || 0)
 
@@ -103,7 +106,7 @@ function LikeButton({ run }) {
     <button
       type="button"
       onClick={toggle}
-      title={liked ? '取消点赞' : '点赞'}
+      title={liked ? t('run.unlike') : t('run.like')}
       className={cn(
         'flex cursor-pointer items-center gap-1 font-mono text-[11px] tabular-nums transition-colors',
         liked ? 'text-rose-400' : 'text-white/35 hover:text-rose-300'
@@ -145,6 +148,7 @@ function ScaledPreview({ url, frameKey }) {
 }
 
 export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
+  const { t } = useI18n()
   const [showLog, setShowLog] = useState(false)
   const [showFull, setShowFull] = useState(false)
   const [frameKey, setFrameKey] = useState(0)
@@ -196,7 +200,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
               <Loader2 className="h-5 w-5 animate-spin text-white/25" />
             ) : (
               <span className="font-mono text-[11px] tracking-wider text-white/25 uppercase">
-                {run.status === 'failed' ? run.error || 'no output' : 'no output'}
+                {run.status === 'failed' ? run.error || t('common.noOutput') : t('common.noOutput')}
               </span>
             )}
           </div>
@@ -209,13 +213,13 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
         >
           {previewUrl && (
             <>
-              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title="fullscreen" onClick={() => setShowFull(true)}>
+              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title={t('common.fullscreen')} onClick={() => setShowFull(true)}>
                 <Maximize2 className="h-3.5 w-3.5" />
               </Button>
-              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title="reload" onClick={() => setFrameKey((k) => k + 1)}>
+              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title={t('common.reload')} onClick={() => setFrameKey((k) => k + 1)}>
                 <RotateCw className="h-3.5 w-3.5" />
               </Button>
-              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title="open" asChild={false} onClick={() => window.open(previewUrl, '_blank')}>
+              <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur" title={t('common.open')} asChild={false} onClick={() => window.open(previewUrl, '_blank')}>
                 <ExternalLink className="h-3.5 w-3.5" />
               </Button>
             </>
@@ -224,13 +228,13 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
             variant="ghost"
             size="icon"
             className={cn('bg-black/70 backdrop-blur', showLog && 'text-acid')}
-            title="log"
+            title={t('common.log')}
             onClick={() => setShowLog((s) => !s)}
           >
             <Terminal className="h-3.5 w-3.5" />
           </Button>
           {isLive ? (
-            <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur hover:text-red-400" title="stop" onClick={() => onStop(run.id)}>
+            <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur hover:text-red-400" title={t('common.stop')} onClick={() => onStop(run.id)}>
               <Square className="h-3.5 w-3.5" />
             </Button>
           ) : (
@@ -238,8 +242,8 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
               variant="ghost"
               size="icon"
               className="bg-black/70 backdrop-blur hover:text-red-400"
-              title="delete"
-              onClick={() => confirm(`Delete ${run.folder}?`) && onDelete(run.id)}
+              title={t('common.delete')}
+              onClick={() => confirm(t('project.deleteConfirm', { folder: run.folder })) && onDelete(run.id)}
             >
               <Trash2 className="h-3.5 w-3.5" />
             </Button>
@@ -252,7 +256,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
         <AgentIcon agentId={run.agentId} color={run.color} className="h-4 w-4" />
         <span className="truncate text-[13px] font-medium">{run.agentName}</span>
         {model && (
-          <span className="truncate font-mono text-[11px] text-white/35" title={run.model ? 'specified' : 'default'}>
+          <span className="truncate font-mono text-[11px] text-white/35" title={run.model ? t('common.specified') : t('common.default')}>
             {model}
           </span>
         )}
@@ -262,7 +266,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
           <span className="font-mono text-[11px] text-white/35 tabular-nums">{elapsed(run)}</span>
           <span className={cn('flex items-center gap-1.5 font-mono text-[10px] tracking-[0.15em]', st.text)}>
             <span className={cn('h-1.5 w-1.5 rounded-full', st.dot)} />
-            {st.label}
+            {t(st.labelKey)}
           </span>
         </span>
       </footer>
@@ -273,7 +277,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
           ref={logRef}
           className="m-0 max-h-56 overflow-auto border-t border-white/8 bg-black/60 p-3.5 font-mono text-[11px] leading-relaxed break-all whitespace-pre-wrap text-white/55"
         >
-          {log || 'no output yet'}
+          {log || t('common.noOutputYet')}
         </pre>
       )}
 
@@ -288,7 +292,7 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
               <span className="font-mono text-[11px] text-white/25">/ {run.project}</span>
               <div className="ml-auto flex items-center gap-1.5">
                 <Button variant="outline" size="sm" className="font-mono text-[10px] tracking-wider uppercase" onClick={() => window.open(previewUrl, '_blank')}>
-                  <ExternalLink className="h-3 w-3" /> Open
+                  <ExternalLink className="h-3 w-3" /> {t('common.open')}
                 </Button>
                 <DialogClose asChild>
                   <Button variant="ghost" size="icon">
