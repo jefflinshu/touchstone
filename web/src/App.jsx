@@ -195,13 +195,15 @@ export default function App() {
   // 新手指南：首次访问展示；有 CLI 未就绪时每个新会话再提醒一次
   const [showGuide, setShowGuide] = useState(() => {
     const params = new URLSearchParams(window.location.search)
-    return route.page !== 'fable5' && params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
+    const isMobile = window.matchMedia?.('(max-width: 640px)').matches
+    return route.page !== 'fable5' && !isMobile && params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
   })
   useEffect(() => {
     if (route.page === 'fable5') {
       setShowGuide(false)
       return
     }
+    if (window.matchMedia?.('(max-width: 640px)').matches) return
     if (agents.some((a) => a.health?.ready === false) && !sessionStorage.getItem('ts:guide:dismissed')) {
       setShowGuide(true)
     }

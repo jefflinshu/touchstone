@@ -15,7 +15,7 @@ function CmdLine({ cmd }) {
   const [copied, setCopied] = useState(false)
   return (
     <div className="mt-1.5 flex items-center overflow-hidden rounded border border-white/10 bg-black/30">
-      <code className="flex-1 truncate px-2 py-1 font-mono text-[11px] text-white/70">{cmd}</code>
+      <code className="min-w-0 flex-1 truncate px-2 py-1 font-mono text-[11px] text-white/70">{cmd}</code>
       <button
         type="button"
         onClick={() => {
@@ -38,15 +38,15 @@ function AgentStatus({ agent }) {
   const install = agent.install || {}
   return (
     <div className="rounded-md border border-white/10 bg-white/[0.02] px-3.5 py-3">
-      <div className="flex items-center gap-2">
+      <div className="flex min-w-0 items-center gap-2">
         <AgentIcon agentId={agent.id} color={agent.color} className="h-4 w-4" />
-        <span className="text-[13px] font-medium whitespace-nowrap">{agent.name}</span>
+        <span className="min-w-0 truncate text-[13px] font-medium">{agent.name}</span>
         {ready ? (
-          <span className="ml-auto flex items-center gap-1 font-mono text-[10px] tracking-[0.15em] text-acid uppercase">
+          <span className="ml-auto flex shrink-0 items-center gap-1 font-mono text-[10px] tracking-[0.15em] text-acid uppercase">
             <Check className="h-3 w-3" /> {t('common.ready')}
           </span>
         ) : (
-          <span className="ml-auto flex items-center gap-1 font-mono text-[10px] tracking-[0.15em] text-amber-400 uppercase">
+          <span className="ml-auto flex shrink-0 items-center gap-1 font-mono text-[10px] tracking-[0.15em] text-amber-400 uppercase">
             <TriangleAlert className="h-3 w-3" /> {h.installed ? t('guide.notLoggedIn') : t('guide.notInstalled')}
           </span>
         )}
@@ -78,9 +78,9 @@ export default function GuideCard({ agents, open, onOpenChange }) {
   const readyCount = agents.filter((a) => a.health?.ready !== false).length
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="w-[760px] max-w-[calc(100vw-32px)] rounded-xl p-0">
-        <div className="flex items-center justify-between border-b border-white/8 px-6 py-4">
-          <DialogTitle className="font-pixel text-sm tracking-[0.15em] text-white">
+      <DialogContent className="max-h-[calc(100dvh-24px)] w-[760px] max-w-[calc(100vw-24px)] overflow-hidden rounded-xl p-0">
+        <div className="flex items-center justify-between border-b border-white/8 px-4 py-3 sm:px-6 sm:py-4">
+          <DialogTitle className="font-pixel text-xs tracking-[0.15em] text-white sm:text-sm">
             {t('guide.title')}<span className="text-acid">_</span>
           </DialogTitle>
           <DialogClose asChild>
@@ -93,7 +93,7 @@ export default function GuideCard({ agents, open, onOpenChange }) {
           </DialogClose>
         </div>
 
-        <div className="flex max-h-[72vh] flex-col gap-6 overflow-auto p-6 sm:flex-row sm:gap-8">
+        <div className="flex max-h-[calc(100dvh-84px)] flex-col gap-5 overflow-auto p-4 sm:max-h-[72vh] sm:flex-row sm:gap-8 sm:p-6">
           {/* 左：本地 CLI 环境（动态检测） */}
           <div className="min-w-0 flex-1">
             <h2 className="font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase">{t('guide.localEnv')}</h2>
@@ -139,7 +139,7 @@ export default function GuideCard({ agents, open, onOpenChange }) {
               <Button
                 type="button"
                 onClick={() => onOpenChange(false)}
-                className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase"
+                className="h-9 w-full font-mono text-[11px] font-bold tracking-[0.15em] uppercase sm:h-8 sm:w-auto"
               >
                 {t('guide.startUsing')}
               </Button>
