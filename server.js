@@ -1842,11 +1842,11 @@ function setPublicAssetCacheHeaders(res, filePath) {
     return
   }
   if (normalized.endsWith('/fable5-data/index.json')) {
-    res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=1800, stale-while-revalidate=86400')
+    res.setHeader('Cache-Control', 'no-store')
     return
   }
   if (normalized.includes('/fable5-data/')) {
-    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800')
+    res.setHeader('Cache-Control', 'no-store')
   }
 }
 

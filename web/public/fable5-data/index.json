@@ -1,7 +1,7 @@
 {
   "updatedAt": "2026-06-12",
-  "lastFetchedAt": "2026-06-12T09:52:50.817Z",
-  "cliStatus": "Loaded 1727 locally archived X posts from 8 fetch runs; collection now has 304 source-linked cards and 586 creator profiles.",
+  "lastFetchedAt": "2026-06-12T10:30:19.073Z",
+  "cliStatus": "Loaded 1727 locally archived X posts from 8 fetch runs; collection now has 718 source-linked cards and 586 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
     "launch-2026-06-08-to-2026-06-12-target500",
@@ -12,32 +12,32 @@
     "today-2026-06-12-latest-target500",
     "incremental-2026-06-11-to-2026-06-12-q0"
   ],
-  "total": 304,
+  "total": 718,
   "shards": [
     {
       "date": "2026-06-12",
       "file": "2026-06-12.json",
-      "count": 18
+      "count": 161
     },
     {
       "date": "2026-06-11",
       "file": "2026-06-11.json",
-      "count": 73
+      "count": 220
     },
     {
       "date": "2026-06-10",
       "file": "2026-06-10.json",
-      "count": 139
+      "count": 226
     },
     {
       "date": "2026-06-09",
       "file": "2026-06-09.json",
-      "count": 67
+      "count": 101
     },
     {
       "date": "2026-06-08",
       "file": "2026-06-08.json",
-      "count": 7
+      "count": 10
     }
   ]
 }

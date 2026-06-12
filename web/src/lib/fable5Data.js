@@ -1,5 +1,10 @@
 const DATA_BASE = '/fable5-data'
 
+function cacheBustedUrl(path, version = '') {
+  const suffix = version ? `?v=${encodeURIComponent(version)}` : `?t=${Date.now()}`
+  return `${DATA_BASE}/${path}${suffix}`
+}
+
 export function showcaseScore(metrics = {}) {
   return (
     Number(metrics.likes || 0) * 3 +
@@ -17,7 +22,7 @@ const shardCache = new Map()
 export function loadFable5Index() {
   if (!indexPending) {
     indexPending = (async () => {
-      const res = await fetch(`${DATA_BASE}/index.json`)
+      const res = await fetch(cacheBustedUrl('index.json'), { cache: 'no-store' })
       if (!res.ok) throw new Error(`fable5 index: HTTP ${res.status}`)
       return res.json()
     })().catch((err) => {
@@ -28,27 +33,28 @@ export function loadFable5Index() {
   return indexPending
 }
 
-async function loadShard(shard) {
-  if (!shardCache.has(shard.file)) {
+async function loadShard(shard, version = '') {
+  const cacheKey = `${version}:${shard.file}`
+  if (!shardCache.has(cacheKey)) {
     shardCache.set(
-      shard.file,
+      cacheKey,
       (async () => {
-        const res = await fetch(`${DATA_BASE}/${shard.file}`)
+        const res = await fetch(cacheBustedUrl(shard.file, version), { cache: 'no-store' })
         if (!res.ok) throw new Error(`fable5 shard ${shard.file}: HTTP ${res.status}`)
         return res.json()
       })().catch((err) => {
-        shardCache.delete(shard.file)
+        shardCache.delete(cacheKey)
         throw err
       })
     )
   }
-  return shardCache.get(shard.file)
+  return shardCache.get(cacheKey)
 }
 
 export async function loadFable5Showcases({ start = 0, count = 2 } = {}) {
   const index = await loadFable5Index()
   const selected = (index.shards || []).slice(start, start + count)
-  const shards = await Promise.all(selected.map(loadShard))
+  const shards = await Promise.all(selected.map((shard) => loadShard(shard, index.lastFetchedAt || index.updatedAt || '')))
   const items = shards.flat()
   items.sort(
     (a, b) =>

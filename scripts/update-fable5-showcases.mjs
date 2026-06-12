@@ -15,7 +15,7 @@ let previousShardFiles = []
 
 function usage() {
   console.error(
-    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit 500] [--cache-assets 1|0] [--cache-media 1|0]'
+    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit N] [--cache-assets 1|0] [--cache-media 1|0]'
   )
   process.exit(1)
 }
@@ -706,7 +706,8 @@ function toShowcase(post, sourceRun, generatedAt, options = {}) {
 }
 
 const args = parseArgs(process.argv.slice(2))
-const limit = Math.max(1, Math.min(Number(args.limit ?? 500), 1000))
+const explicitLimit = args.limit != null
+const limit = explicitLimit ? Math.max(1, Math.min(Number(args.limit), 5000)) : Number.POSITIVE_INFINITY
 const cacheMedia = flag(args['cache-media'], true)
 CACHE_ASSETS = args['cache-assets'] !== '0'
 

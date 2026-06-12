@@ -100,10 +100,26 @@ function localizedShowcaseCopy(item, translation) {
 function MediaPlaceholder({ label }) {
   const { t } = useI18n()
   return (
-    <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] bg-[length:18px_18px]">
-      <div className="flex flex-col items-center gap-2 px-4 text-center text-white/28">
-        <ImageOff className="h-6 w-6" />
+    <div className="flex h-full w-full items-center justify-center bg-[#111113] bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.09)_1px,transparent_0)] bg-[length:18px_18px]">
+      <div className="flex flex-col items-center gap-2 px-4 text-center text-white/36">
+        <ImageOff className="h-6 w-6 text-white/30" />
         <span className="font-mono text-[10px] tracking-[0.18em] uppercase">{label || t('fable.noPreview')}</span>
+      </div>
+    </div>
+  )
+}
+
+function MediaLoadingOverlay() {
+  const { t } = useI18n()
+  return (
+    <div className="absolute inset-0 overflow-hidden bg-[#0d0d10]">
+      <div className="absolute inset-0 animate-pulse bg-[linear-gradient(110deg,rgba(255,255,255,0.04),rgba(255,255,255,0.10),rgba(255,255,255,0.04))]" />
+      <div className="absolute inset-y-0 -left-1/3 w-1/2 animate-[pulse_1.6s_ease-in-out_infinite] bg-white/10 blur-2xl" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-3 py-1.5 font-mono text-[10px] tracking-[0.14em] text-white/55 uppercase shadow-lg backdrop-blur">
+          <Loader2 className="h-3.5 w-3.5 animate-spin text-acid" />
+          {t('fable.loadingCover')}
+        </div>
       </div>
     </div>
   )
@@ -181,7 +197,7 @@ function MediaBlock({ item, priority = false }) {
     <div className="relative h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
       {showImage ? (
         <>
-          {!imageLoaded && <div className="absolute inset-0 animate-pulse bg-white/8" />}
+          {!imageLoaded && <MediaLoadingOverlay />}
           <img
             src={imageUrl}
             alt={`${item.title} by ${item.author}`}

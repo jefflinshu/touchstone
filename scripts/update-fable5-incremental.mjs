@@ -103,7 +103,7 @@ const creatorBatchSize = Math.max(0, Number(args['creator-batch-size'] ?? 6))
 const max = Math.max(5, Math.min(Number(args.max ?? 35), 100))
 const target = Math.max(5, Math.min(Number(args.target ?? 120), 500))
 const minLikes = Math.max(0, Number(args['min-likes'] ?? 0))
-const updateLimit = Math.max(1, Math.min(Number(args['update-limit'] ?? 304), 1000))
+const updateLimit = args['update-limit'] == null ? '' : String(Math.max(1, Math.min(Number(args['update-limit']), 5000)))
 const mode = args.mode === 'top' ? 'top' : 'latest'
 const skipCreatorFetch = args['skip-creators'] === '1'
 const cacheAssets = args['cache-assets'] === '0' ? '0' : '1'
@@ -167,7 +167,12 @@ if (creators.length) {
   ])
 }
 
-runNode(['scripts/update-fable5-showcases.mjs', '--limit', String(updateLimit), '--cache-assets', cacheAssets])
+runNode([
+  'scripts/update-fable5-showcases.mjs',
+  ...(updateLimit ? ['--limit', updateLimit] : []),
+  '--cache-assets',
+  cacheAssets,
+])
 
 const nextState = {
   ...state,
