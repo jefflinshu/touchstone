@@ -1,0 +1,14 @@
+[Unit]
+Description=Touchstone AI Coding Arena
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/touchstone
+EnvironmentFile=/opt/touchstone/.env
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

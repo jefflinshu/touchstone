@@ -1,11 +1,89 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
-import { Folder, Loader2, Eye } from 'lucide-react'
+import { Check, CircleHelp, Heart, Loader2, LogOut, Monitor, Moon, Star, Sun, User } from 'lucide-react'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
+import ProfilePage from './components/ProfilePage.jsx'
+import Fable5Page from './components/Fable5Page.jsx'
+import ProjectCard from './components/ProjectCard.jsx'
+import SponsorCard from './components/SponsorCard.jsx'
+import GuideCard from './components/GuideCard.jsx'
+import Avatar from './components/Avatar.jsx'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { trackEvent, trackPageView } from '@/lib/analytics'
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from '@/components/ui/dropdown-menu'
 
 const LOG_CAP = 30000
+const SITE_TITLE = 'Touchstone · AI Coding Arena'
+const SITE_DESCRIPTION =
+  'Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。'
+const THEME_STORAGE_KEY = 'touchstone-theme-mode'
+const THEME_OPTIONS = [
+  { value: 'auto', label: 'Auto mood', icon: Monitor },
+  { value: 'light', label: 'Light mood', icon: Sun },
+  { value: 'dark', label: 'Dark mood', icon: Moon },
+]
+
+function resolveTheme(mode) {
+  if (mode !== 'auto') return mode
+  const hour = new Date().getHours()
+  return hour >= 7 && hour < 19 ? 'light' : 'dark'
+}
+
+function getStoredThemeMode() {
+  try {
+    const value = localStorage.getItem(THEME_STORAGE_KEY)
+    return THEME_OPTIONS.some((option) => option.value === value) ? value : 'auto'
+  } catch {
+    return 'auto'
+  }
+}
+
+function upsertMeta(selector, attrs) {
+  let el = document.head.querySelector(selector)
+  if (!el) {
+    el = document.createElement('meta')
+    document.head.appendChild(el)
+  }
+  for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value)
+}
+
+function upsertCanonical(href) {
+  let el = document.head.querySelector('link[rel="canonical"]')
+  if (!el) {
+    el = document.createElement('link')
+    el.setAttribute('rel', 'canonical')
+    document.head.appendChild(el)
+  }
+  el.setAttribute('href', href)
+}
+
+function setPageSeo({ title, description, canonicalPath = '/', imagePath = '/fable5-media/meta_alchemist-2064431279383433646.jpg', type = 'website' }) {
+  const origin = window.location.origin
+  const canonical = new URL(canonicalPath, origin).href
+  const image = new URL(imagePath, origin).href
+  document.title = title
+  upsertMeta('meta[name="description"]', { name: 'description', content: description })
+  upsertMeta('meta[property="og:title"]', { property: 'og:title', content: title })
+  upsertMeta('meta[property="og:description"]', { property: 'og:description', content: description })
+  upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonical })
+  upsertMeta('meta[property="og:image"]', { property: 'og:image', content: image })
+  upsertMeta('meta[property="og:type"]', { property: 'og:type', content: type })
+  upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: title })
+  upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: description })
+  upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: image })
+  upsertCanonical(canonical)
+}
+
+function navigate(path) {
+  window.history.pushState(null, '', path)
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
 
 function GithubIcon({ className }) {
   return (
@@ -26,65 +104,134 @@ function GoogleIcon({ className }) {
   )
 }
 
-function Avatar({ email, picture, className }) {
-  const [broken, setBroken] = useState(false)
-  if (picture && !broken) {
-    return (
-      <img
-        src={picture}
-        alt=""
-        referrerPolicy="no-referrer"
-        onError={() => setBroken(true)}
-        className={cn('rounded-full object-cover', className)}
-      />
-    )
-  }
+function ThemeMenuItems({ themeMode, resolvedTheme, onChange }) {
   return (
-    <span className={cn('flex items-center justify-center rounded-full bg-white/10 font-mono uppercase text-white/70', className)}>
-      {(email || '?')[0]}
-    </span>
+    <>
+      {THEME_OPTIONS.map(({ value, label, icon: Icon }) => (
+        <DropdownMenuItem key={value} onSelect={() => onChange(value)}>
+          <Icon className="h-3.5 w-3.5" />
+          <span className="flex-1">{label}</span>
+          {themeMode === value && <Check className="h-3.5 w-3.5 text-acid" />}
+        </DropdownMenuItem>
+      ))}
+      {themeMode === 'auto' && (
+        <div className="px-2 py-1 font-mono text-[9px] tracking-[0.16em] text-white/30 uppercase">
+          Now: {resolvedTheme}
+        </div>
+      )}
+    </>
   )
 }
 
-const displayName = (email, users) => users?.[email]?.name || (email ? email.split('@')[0] : '')
-
-// 极简 hash 路由：'#/'' 首页，'#/p/<project>' 详情页
+// 极简路由：支持 hash route，也允许 /fable5 直接打开
 function useRoute() {
-  const [hash, setHash] = useState(location.hash)
+  const [loc, setLoc] = useState({ hash: location.hash, pathname: location.pathname, search: location.search })
   useEffect(() => {
-    const onChange = () => setHash(location.hash)
+    const onChange = () => setLoc({ hash: location.hash, pathname: location.pathname, search: location.search })
     window.addEventListener('hashchange', onChange)
-    return () => window.removeEventListener('hashchange', onChange)
+    window.addEventListener('popstate', onChange)
+    return () => {
+      window.removeEventListener('hashchange', onChange)
+      window.removeEventListener('popstate', onChange)
+    }
   }, [])
-  const m = hash.match(/^#\/p\/(.+)$/)
-  return m ? { page: 'project', project: decodeURIComponent(m[1]) } : { page: 'home' }
+  const hash = loc.hash
+  if (hash === '#/fable5') return { page: 'fable5' }
+  let m = hash.match(/^#\/p\/(.+)$/)
+  if (m) return { page: 'project', project: decodeURIComponent(m[1]) }
+  m = hash.match(/^#\/u\/(.+)$/)
+  if (m) return { page: 'user', email: decodeURIComponent(m[1]) }
+  if (loc.pathname === '/fable5') return { page: 'fable5' }
+  m = loc.pathname.match(/^\/p\/([^/]+)\/?$/)
+  if (m) return { page: 'project', project: decodeURIComponent(m[1]) }
+  m = loc.pathname.match(/^\/u\/([^/]+)\/?$/)
+  if (m) return { page: 'user', email: decodeURIComponent(m[1]), tab: new URLSearchParams(loc.search).get('tab') || 'created' }
+  return { page: 'home' }
 }
 
-const goProject = (project) => (location.hash = `#/p/${encodeURIComponent(project)}`)
-const goHome = () => (location.hash = '#/')
+const goProject = (project) => navigate(`/p/${encodeURIComponent(project)}`)
+const goUser = (email, tab) => navigate(`/u/${encodeURIComponent(email)}${tab ? `?tab=${encodeURIComponent(tab)}` : ''}`)
+const goHome = () => navigate('/')
+const goFable5 = () => navigate('/fable5')
+
+function getAnalyticsPage(route) {
+  if (route.page === 'fable5') return { path: '/fable5', title: 'Fable 5' }
+  if (route.page === 'project') return { path: '/p/:project', title: 'Project detail' }
+  if (route.page === 'user') return { path: route.tab ? `/u/:user?tab=${route.tab}` : '/u/:user', title: 'User profile' }
+  return { path: '/', title: 'Home' }
+}
 
 export default function App() {
   const [agents, setAgents] = useState([])
   const [runs, setRuns] = useState([])
   const [views, setViews] = useState({})
+  const [projectLikes, setProjectLikes] = useState({})
   const [logs, setLogs] = useState({})
   const [wsOk, setWsOk] = useState(false)
   const [auth, setAuth] = useState({ loaded: false, email: null, name: null, picture: null })
   const [loggingIn, setLoggingIn] = useState(false)
   const [users, setUsers] = useState({})
+  const [stars, setStars] = useState(null)
+  // 新手指南：首次访问展示；有 CLI 未就绪时每个新会话再提醒一次
+  const [showGuide, setShowGuide] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
+  })
+  useEffect(() => {
+    if (agents.some((a) => a.health?.ready === false) && !sessionStorage.getItem('ts:guide:dismissed')) {
+      setShowGuide(true)
+    }
+  }, [agents])
+  const dismissGuide = useCallback(() => {
+    setShowGuide(false)
+    localStorage.setItem('ts:guide:dismissed', '1')
+    sessionStorage.setItem('ts:guide:dismissed', '1')
+    trackEvent('guide_dismiss')
+  }, [])
+  const [themeMode, setThemeMode] = useState(getStoredThemeMode)
+  const [resolvedTheme, setResolvedTheme] = useState(() => resolveTheme(getStoredThemeMode()))
   const wsRef = useRef(null)
   const route = useRoute()
+
+  useEffect(() => {
+    trackPageView(getAnalyticsPage(route))
+  }, [route.page, route.project, route.email, route.tab])
+
+  const changeThemeMode = useCallback((mode) => {
+    setThemeMode(mode)
+    trackEvent('theme_change', { theme_mode: mode })
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, mode)
+    } catch {}
+  }, [])
+
+  useEffect(() => {
+    const apply = () => {
+      const next = resolveTheme(themeMode)
+      setResolvedTheme(next)
+      document.documentElement.dataset.theme = next
+      document.documentElement.dataset.themeMode = themeMode
+      document.documentElement.style.colorScheme = next
+      upsertMeta('meta[name="theme-color"]', { name: 'theme-color', content: next === 'light' ? '#f7f7f2' : '#09090b' })
+    }
+    apply()
+    const timer = themeMode === 'auto' ? setInterval(apply, 60 * 1000) : null
+    return () => {
+      if (timer) clearInterval(timer)
+    }
+  }, [themeMode])
 
   const refresh = useCallback(async () => {
     const r = await fetch('/api/runs').then((r) => r.json())
     setRuns(r.runs)
     setViews(r.views || {})
+    setProjectLikes(r.projectLikes || {})
     setUsers(r.users || {})
   }, [])
 
   const applyAuth = useCallback((d) => {
     setAuth({ loaded: true, email: d.email || null, name: d.name || null, picture: d.picture || null })
-    if (d.email) setUsers((prev) => ({ ...prev, [d.email]: { name: d.name, picture: d.picture } }))
+    if (d.email) setUsers((prev) => ({ ...prev, [d.email]: { ...prev[d.email], name: d.name, picture: d.picture, bio: d.bio } }))
   }, [])
 
   useEffect(() => {
@@ -97,15 +244,41 @@ export default function App() {
   const login = useCallback(async () => {
     if (loggingIn) return
     setLoggingIn(true)
+    trackEvent('login_start', { method: 'google' })
+    window.location.assign(`/api/auth/login?returnTo=${encodeURIComponent(`${window.location.pathname}${window.location.search}${window.location.hash}`)}`)
+  }, [loggingIn])
+
+  const logout = useCallback(async () => {
     try {
-      const d = await fetch('/api/auth/login', { method: 'POST' }).then((r) => r.json())
-      applyAuth(d)
-    } catch {
-      // 保持未登录状态
-    } finally {
-      setLoggingIn(false)
-    }
-  }, [loggingIn, applyAuth])
+      await fetch('/api/auth/logout', { method: 'POST' })
+    } catch {}
+    setAuth({ loaded: true, email: null, name: null, picture: null })
+    trackEvent('logout')
+  }, [])
+
+  useEffect(() => {
+    fetch('/api/repo')
+      .then((r) => r.json())
+      .then((d) => setStars(typeof d.stars === 'number' ? d.stars : null))
+      .catch(() => {})
+  }, [])
+
+  const saveProfile = useCallback(
+    async (p) => {
+      const res = await fetch('/api/users/me', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(p),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        throw new Error(err.error || 'failed')
+      }
+      const d = await res.json()
+      applyAuth({ ...d, loggedIn: true })
+    },
+    [applyAuth]
+  )
 
   useEffect(() => {
     fetch('/api/agents')
@@ -145,6 +318,10 @@ export default function App() {
           setRuns((prev) => prev.filter((r) => r.id !== msg.runId))
         } else if (msg.type === 'view') {
           setViews((prev) => ({ ...prev, [msg.project]: msg.views }))
+        } else if (msg.type === 'projectLike') {
+          setProjectLikes((prev) => ({ ...prev, [msg.project]: msg.likes }))
+        } else if (msg.type === 'user') {
+          setUsers((prev) => ({ ...prev, [msg.email]: msg.profile }))
         }
       }
       ws.onclose = () => {
@@ -162,6 +339,10 @@ export default function App() {
   }, [refresh])
 
   const submitTask = useCallback(async (payload) => {
+    trackEvent('task_submit', {
+      runner_count: Array.isArray(payload.runners) ? payload.runners.length : undefined,
+      publish: Boolean(payload.publish),
+    })
     const res = await fetch('/api/tasks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -172,7 +353,10 @@ export default function App() {
       throw new Error(err.error || 'failed')
     }
     const data = await res.json()
-    if (data.project) goProject(data.project)
+    if (data.project) {
+      trackEvent('task_created')
+      goProject(data.project)
+    }
   }, [])
 
   const stopRun = useCallback(async (id) => {
@@ -199,26 +383,110 @@ export default function App() {
       project,
       runs: [...list].sort((a, b) => (a.createdAt < b.createdAt ? -1 : 1)),
       latest: list.reduce((m, r) => (r.createdAt > m ? r.createdAt : m), ''),
+      category: list.find((r) => r.category)?.category || 'other',
     }))
     arr.sort((a, b) => (a.latest > b.latest ? -1 : 1))
     return arr
   }, [runs])
 
   const active = runs.filter((r) => r.status === 'running' || r.status === 'pending').length
-  const currentGroup = route.page === 'project' ? groups.find((g) => g.project === route.project) : null
+  const currentIdx = route.page === 'project' ? groups.findIndex((g) => g.project === route.project) : -1
+  const currentGroup = currentIdx >= 0 ? groups[currentIdx] : null
+
+  useEffect(() => {
+    if (route.page === 'fable5') {
+      setPageSeo({
+        title: 'Claude Fable 5 Prompts & Showcases · Touchstone',
+        description:
+          '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。',
+        canonicalPath: '/fable5',
+        type: 'website',
+      })
+      return
+    }
+    if (route.page === 'project' && currentGroup) {
+      const latest = currentGroup.runs[currentGroup.runs.length - 1]
+      const prompt = latest?.prompt ? `Prompt: ${latest.prompt.slice(0, 120)}` : '查看这个 AI coding case 的多模型作品对比。'
+      setPageSeo({
+        title: `${currentGroup.project} · Touchstone Case`,
+        description: `${prompt}${latest?.prompt?.length > 120 ? '...' : ''} ${currentGroup.runs.length} runs across ${new Set(currentGroup.runs.map((r) => r.agentName)).size} agents.`,
+        canonicalPath: `/p/${encodeURIComponent(currentGroup.project)}`,
+        type: 'article',
+      })
+      return
+    }
+    if (route.page === 'user') {
+      const profile = users[route.email] || {}
+      const name = profile.name || route.email
+      setPageSeo({
+        title: `${name} · Touchstone Profile`,
+        description: profile.bio || `查看 ${name} 在 Touchstone 发布和参与的 AI coding cases。`,
+        canonicalPath: `/u/${encodeURIComponent(route.email)}`,
+        type: 'profile',
+      })
+      return
+    }
+    setPageSeo({
+      title: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      canonicalPath: '/',
+    })
+  }, [route, currentGroup, users])
+
+  // 推荐：同分类优先 → 热度（赞×3+浏览）→ 最新，排除当前项目
+  const recos = useMemo(() => {
+    if (!currentGroup) return []
+    const score = (g) => (projectLikes[g.project] || 0) * 3 + (views[g.project] || 0)
+    const others = groups.filter((g) => g.project !== currentGroup.project)
+    const same = others.filter((g) => g.category === currentGroup.category)
+    const rest = others.filter((g) => g.category !== currentGroup.category)
+    same.sort((a, b) => score(b) - score(a))
+    rest.sort((a, b) => score(b) - score(a))
+    return [...same, ...rest].slice(0, 3)
+  }, [currentGroup, groups, projectLikes, views])
+
+  // 首页分类筛选
+  const [catFilter, setCatFilter] = useState('all')
+  const categories = useMemo(() => [...new Set(groups.map((g) => g.category))], [groups])
+  const filteredGroups = catFilter === 'all' ? groups : groups.filter((g) => g.category === catFilter)
 
   return (
     <>
       <div className="bg-arena" />
       <header className="sticky top-0 z-40 border-b border-white/8 bg-[#09090b]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-4 px-6">
-          <a href="#/" className="font-mono text-[15px] font-bold tracking-[0.25em] text-white">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault()
+              goHome()
+            }}
+            className="pixel-cycle font-pixel text-[15px] tracking-[0.2em] text-white"
+          >
             TOUCHSTONE<span className="text-acid">_</span>
           </a>
           <span className="mt-px font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase">
             AI Coding Arena
           </span>
           <div className="ml-auto flex items-center gap-4">
+            <button
+              type="button"
+              onClick={goFable5}
+              className="hidden cursor-pointer font-mono text-[10px] tracking-[0.18em] text-white/42 uppercase transition-colors hover:text-white sm:inline"
+            >
+              Fable 5
+            </button>
+            <button
+              type="button"
+              title="新手指南 / 本地环境检测"
+              onClick={() => {
+                setShowGuide(true)
+                trackEvent('guide_open')
+              }}
+              className="cursor-pointer text-white/25 transition-colors hover:text-white"
+            >
+              <CircleHelp className="h-3.5 w-3.5" />
+            </button>
             {active > 0 && (
               <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-acid uppercase">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
@@ -229,19 +497,41 @@ export default function App() {
               href="https://github.com/jefflinshu/touchstone"
               target="_blank"
               rel="noreferrer"
-              className="text-white/40 transition-colors hover:text-white"
+              className="flex items-center gap-1.5 text-white/40 transition-colors hover:text-white"
               title="GitHub"
             >
               <GithubIcon className="h-4 w-4" />
+              {stars !== null && (
+                <span className="flex items-center gap-0.5 font-mono text-[11px] tabular-nums">
+                  <Star className="h-3 w-3" />
+                  {stars >= 1000 ? `${(stars / 1000).toFixed(1)}k` : stars}
+                </span>
+              )}
             </a>
             {auth.loaded &&
               (auth.email ? (
-                <span className="flex items-center gap-2" title={auth.email}>
-                  <Avatar email={auth.email} picture={auth.picture} className="h-5 w-5 text-[10px]" />
-                  <span className="hidden font-mono text-[11px] text-white/45 sm:inline">
-                    {auth.name || auth.email.split('@')[0]}
-                  </span>
-                </span>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-2 outline-none transition-opacity hover:opacity-80">
+                    <Avatar email={auth.email} picture={auth.picture} className="h-5 w-5 text-[10px]" />
+                    <span className="hidden font-mono text-[11px] text-white/45 sm:inline">
+                      {auth.name || auth.email.split('@')[0]}
+                    </span>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem onSelect={() => goUser(auth.email)}>
+                      <User className="h-3.5 w-3.5" /> 个人主页
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="text-emerald-300 focus:text-emerald-200" onSelect={() => goUser(auth.email, 'favorites')}>
+                      <Heart className="h-3.5 w-3.5 fill-emerald-400/20" /> 我的收藏
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <ThemeMenuItems themeMode={themeMode} resolvedTheme={resolvedTheme} onChange={changeThemeMode} />
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onSelect={logout}>
+                      <LogOut className="h-3.5 w-3.5" /> 退出登录
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ) : (
                 <Button
                   variant="outline"
@@ -263,12 +553,20 @@ export default function App() {
       </header>
 
       <div className="mx-auto max-w-[1400px] px-6 pb-28">
-        {route.page === 'project' ? (
+        {route.page === 'fable5' ? (
+          <Fable5Page onBack={goHome} />
+        ) : route.page === 'project' ? (
           currentGroup ? (
             <ProjectPage
               project={currentGroup.project}
               runs={currentGroup.runs}
               logs={logs}
+              likes={projectLikes[currentGroup.project]}
+              category={currentGroup.category}
+              prevProject={groups[currentIdx - 1]?.project}
+              nextProject={groups[currentIdx + 1]?.project}
+              recos={recos}
+              onOpenProject={goProject}
               onBack={goHome}
               onStop={stopRun}
               onDelete={deleteRun}
@@ -279,108 +577,84 @@ export default function App() {
               {runs.length === 0 ? <Loader2 className="mx-auto h-5 w-5 animate-spin" /> : 'Project not found'}
             </div>
           )
+        ) : route.page === 'user' ? (
+          <ProfilePage
+            email={route.email}
+            groups={groups}
+            users={users}
+            views={views}
+            projectLikes={projectLikes}
+            authEmail={auth.email}
+            initialTab={route.tab}
+            onSaveProfile={saveProfile}
+            onBack={goHome}
+            onOpenProject={goProject}
+            onOpenUser={goUser}
+          />
         ) : (
           <>
-            <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} loggingIn={loggingIn} />
-
-            <div className="mt-10 mb-4 flex items-center gap-6 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
-              <span>
-                Projects <span className="text-white/70">{groups.length}</span>
-              </span>
-              <span>
-                Runs <span className="text-white/70">{runs.length}</span>
-              </span>
-              <span>
-                Active <span className={active ? 'text-acid' : 'text-white/70'}>{active}</span>
-              </span>
-              <span className="h-px flex-1 bg-white/8" />
+            <div className="mt-14 flex flex-wrap items-center justify-between gap-6">
+              <div>
+                <h1 className="font-pixel text-[32px] leading-[1.18] text-white sm:text-[42px]">
+                  ONE PROMPT.
+                  <br />
+                  <span className="text-acid">EVERY AGENT.</span>
+                </h1>
+              </div>
+              <SponsorCard />
             </div>
 
-            {groups.length === 0 ? (
-              <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
+            <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} />
+
+            <div className="mt-10 mb-4 flex flex-wrap items-center gap-1.5">
+              {['all', ...categories].map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  onClick={() => {
+                    setCatFilter(c)
+                    trackEvent('category_filter', { category: c })
+                  }}
+                  className={`cursor-pointer rounded-full border px-3 py-1 font-mono text-[10px] tracking-[0.15em] uppercase transition-colors ${
+                    catFilter === c
+                      ? 'border-acid bg-acid text-black'
+                      : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
+                  }`}
+                >
+                  {c}
+                </button>
+              ))}
+              <span className="ml-2 h-px flex-1 bg-white/8" />
+            </div>
+
+            {filteredGroups.length === 0 ? (
+              <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-pixel text-sm tracking-[0.2em] text-white/30 uppercase">
                 No runs yet
               </div>
             ) : (
               <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
-                {groups.map((g) => {
-                  const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
-                  const done = g.runs.filter((r) => r.status === 'done').length
-                  const failed = g.runs.length - running - done
-                  const contributors = [...new Set(g.runs.map((r) => r.user).filter(Boolean))]
-                  return (
-                    <button
-                      key={g.project}
-                      type="button"
-                      onClick={() => goProject(g.project)}
-                      className={cn(
-                        'group cursor-pointer rounded-lg border bg-[#0c0c0f] p-4 text-left transition-all hover:-translate-y-0.5',
-                        running ? 'border-acid/30' : 'border-white/10 hover:border-white/30'
-                      )}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <Folder className={cn('h-4 w-4 shrink-0', running ? 'text-acid' : 'text-white/40 group-hover:text-acid/70')} />
-                        <span className="truncate text-[15px] font-semibold tracking-tight">{g.project}</span>
-                      </div>
-                      <div className="mt-3 flex items-center gap-1.5">
-                        {[...new Map(g.runs.map((r) => [r.agentId, r.color])).values()].map((c, i) => (
-                          <span key={i} className="h-2 w-2 rounded-full" style={{ background: c }} />
-                        ))}
-                        <span className="ml-1 font-mono text-[10px] tracking-wider text-white/35 uppercase">
-                          {g.runs.length} runs
-                        </span>
-                        <span className="ml-auto flex items-center gap-1 font-mono text-[11px] text-white/35 tabular-nums">
-                          <Eye className="h-3 w-3" />
-                          {views[g.project] || 0}
-                        </span>
-                      </div>
-                      <div className="mt-3 flex items-center gap-3 font-mono text-[11px] tabular-nums">
-                        {contributors.length > 0 ? (
-                          <span className="flex min-w-0 flex-1 items-center gap-1.5" title={contributors.join(', ')}>
-                            <span className="flex shrink-0 -space-x-1.5">
-                              {contributors.slice(0, 3).map((e) => (
-                                <Avatar
-                                  key={e}
-                                  email={e}
-                                  picture={users[e]?.picture}
-                                  className="h-4 w-4 text-[8px] ring-2 ring-[#0c0c0f]"
-                                />
-                              ))}
-                            </span>
-                            <span className="truncate text-[10px] text-white/45">
-                              {displayName(contributors[0], users)}
-                              {contributors.length > 1 && ` +${contributors.length - 1}`}
-                            </span>
-                          </span>
-                        ) : (
-                          <span className="min-w-0 flex-1" />
-                        )}
-                        {running > 0 && (
-                          <span className="flex items-center gap-1.5 text-acid">
-                            <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" /> {running}
-                          </span>
-                        )}
-                        {done > 0 && (
-                          <span className="flex items-center gap-1.5 text-emerald-400">
-                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {done}
-                          </span>
-                        )}
-                        {failed > 0 && (
-                          <span className="flex items-center gap-1.5 text-red-400/80">
-                            <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" /> {failed}
-                          </span>
-                        )}
-                        <span className="shrink-0 text-white/25">
-                          {new Date(g.latest).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
-                        </span>
-                      </div>
-                    </button>
-                  )
-                })}
+                {filteredGroups.map((g) => (
+                  <ProjectCard
+                    key={g.project}
+                    group={g}
+                    views={views[g.project]}
+                    likes={projectLikes[g.project]}
+                    users={users}
+                    onOpen={() => goProject(g.project)}
+                    onOpenUser={goUser}
+                  />
+                ))}
               </div>
             )}
           </>
         )}
       </div>
+
+      <GuideCard
+        agents={agents}
+        open={showGuide}
+        onOpenChange={(o) => (o ? setShowGuide(true) : dismissGuide())}
+      />
     </>
   )
 }

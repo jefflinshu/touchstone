@@ -1,0 +1,5167 @@
+[
+  {
+    "id": "milesdeutscher-2064882870037225762",
+    "title": "Guide to prompting Fable 5 autonomous workflows",
+    "author": "Miles Deutscher",
+    "handle": "@milesdeutscher",
+    "sourceUrl": "https://x.com/milesdeutscher/status/2064882870037225762",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "946 likes · 119 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "agents",
+      "prompts",
+      "code",
+      "research",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Anthropic posted a FULL GUIDE on how to prompt Fable 5 (Mythos).\n\nClaude Fable 5 is not meant to be prompted like any other model.\n\nIt's meant to run autonomously.\n\nHere's exactly how to enable Fable to do work for you with minimal manual intervention:\n\n1. Effort selection\n\nAnthropic recommends using High for most tasks and Xhigh only for complex workflows.\n\nLow/medium: quick questions, basic research\nHigh: default for most work\nXhigh: complex builds, multi-step analysis\nUltracode: full autonomous orchestration\n\n2. /loop prompting\n\nUse /loop prompts to kick Fable off to complete full tasks.\n\n/loop <time interval> + <goal>\n\n3. Tell it WHY, not just what (context)\n\nFable can't perform on instructions alone. It needs context to make decisions on its own.\n\nAnthropic's exact prompting structure:\n\n\"I'm working on [larger task] for [who it's for]. They need [what the output enables]. With that in mind: [your actual request].\"\n\n4. Keep prompts short (instructions)\n\nCounterintuitive but critical.\n\nOver-engineering your prompts on Fable 5 degrades output. You're constraining a model that would have figured it out on its own.\n\n4. Tell it when to stop and check in during runs\n\n\"Pause for me only when the work genuinely requires my input: a destructive action, a real scope change, or something only I can provide. Otherwise, keep going and report back when done.\"\n\n5. Build it a memory system\n\nFable performs best when it can record lessons from its previous loops.\n\nGive it a markdown file and this instruction:\n\n\"Store one lesson per file with a one-line summary at the top. Record corrections and confirmed approaches. Don't save what the repo or chat history already records.\"\n\nThe optimal general prompt structure:\n\n\"Goal: I'm working on [larger task] for [who it's for]. They need [what the output enables].\n\nRequest: [your specific ask in one sentence]\n\nOutput format: [exactly how you want it]\n\nConstraints: [what must not happen].\"\n\nOne last thing - your old prompts may actually work against you.\n\nSkills and project instructions built for Opus 4.8 may produce worse results on Fable.\n\nBookmark this to actually maximize your Fable workflows.",
+    "metrics": {
+      "likes": 946,
+      "reposts": 119,
+      "replies": 44,
+      "quotes": 6,
+      "views": 82080,
+      "bookmarks": 2045
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064882814068371456/vid/avc1/1230x720/R8twuKgi3BCloovS.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Anthropic posted a FULL GUIDE on how to prompt Fable 5 (Mythos)"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "tutorial",
+        "unverified-claim"
+      ],
+      "domain": [
+        "ecommerce",
+        "education"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/milesdeutscher-2064882870037225762.jpg",
+    "avatarUrl": "/fable5-avatars/milesdeutscher.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2043255869513601025/wFHeLjZX_normal.jpg",
+    "categories": [
+      "3d",
+      "agents",
+      "prompts",
+      "code",
+      "research"
+    ]
+  },
+  {
+    "id": "daniel_mac8-2065066247448821841",
+    "title": "Autonomous agent workflow for Fable 5",
+    "author": "Dan McAteer",
+    "handle": "@daniel_mac8",
+    "sourceUrl": "https://x.com/daniel_mac8/status/2065066247448821841",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "1,106 likes · 42 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "agents",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "This is the best way to use Claude Fable in Claude Code without immediately hitting your limits.\n\n1. Model set to Fable 5\n2. Reasoning on Max\n3. Instruct Claude to run a dynamic workflow where:\n3a. Fable is the orchestrator\n3b. Opus does the reasoning heavy phases\n\nFable is so overpowered that you don't need its intelligence for every step. \n\nLet it orchestrate Opus or even Sonnet.",
+    "metrics": {
+      "likes": 1106,
+      "reposts": 42,
+      "replies": 64,
+      "quotes": 12,
+      "views": 107408,
+      "bookmarks": 1888
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065066133925834752/vid/avc1/2110x1436/DdFxIhmMMuf3TcVO.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:18:46.239Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Instruct Claude to run a dynamic workflow where"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/daniel_mac8-2065066247448821841.jpg",
+    "avatarUrl": "/fable5-avatars/daniel_mac8.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1972999017551249408/kNdZGnUv_normal.jpg",
+    "categories": [
+      "3d",
+      "agents",
+      "code"
+    ]
+  },
+  {
+    "id": "nicbstme-2064926406530998573",
+    "title": "design an extremely detailed HTML map of San Francisco so I can explain the...",
+    "author": "Nicolas Bustamante",
+    "handle": "@nicbstme",
+    "sourceUrl": "https://x.com/nicbstme/status/2064926406530998573",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "892 likes · 47 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "design",
+      "research"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "We are entering the age of just-in-time software. Some of my coworkers are visiting San Francisco this week, so I asked Claude Fable to design an extremely detailed HTML map of San Francisco so I can explain the city to them.\n\nThe HTML is wild. It has all the street names, their exact dimensions, the relief of the city, the fog, the sun exposure etc.\n\nEverything it real. I was super surprised but it went and found the city's actual data, then built a cartographic engine around it. So I have: \n\n- Every street from the SF Public Works centerline survey: 15,905 segments, 2,502 named streets, 54,989 surveyed vertices, with the official address ranges per block\n- The relief from 14,151 municipal elevation contour points, interpolated into a 168,000-vertex terrain model\n- 9,672 buildings with lidar-measured heights from an SF Planning study\n- Every Muni Metro line, the cable cars and BART from the official GTFS feed: real route shapes, real 10-minute headways, real speeds. 76 little trams move on the map at their scheduled pace, and the K dims when it passes under 175 meters of Twin Peaks because it knows the tunnel portals (wtf!)\n- Fog modeled as marine-layer advection over the terrain, calibrated on NREL satellite irradiance and a decade of ASOS weather observations.\n\nClaude did totally overkilled stuff like the fog model's 50% line landed at longitude -122.437 which is... Divisadero Street (every San Franciscan knows the fog stops there)\n\nThe whole thing is one self-contained HTML file, 1.2 MB, with a WebGL engine. No libraries, no API calls, no network. It runs offline forever.\n\nWe talk about scaling and benchmarks all day. Sometimes the bitter lesson is simpler: give the machine real data and real verification loops, and it builds you the city.\n\nI'm spending the evening exploring the map; it's too good!",
+    "metrics": {
+      "likes": 892,
+      "reposts": 47,
+      "replies": 49,
+      "quotes": 8,
+      "views": 87988,
+      "bookmarks": 677
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064923967824281600/vid/avc1/3014x1714/deJXyWRQ6lTzUoZq.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "I was super surprised but it went and found the city's actual data, then built a cartographic engine around it"
+    ],
+    "facets": {
+      "artifactType": "agent-loop",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "threejs"
+      ],
+      "risk": [
+        "benchmark-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/nicbstme-2064926406530998573.jpg",
+    "avatarUrl": "/fable5-avatars/nicbstme.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1859460270613200898/thqbDVjW_normal.jpg",
+    "categories": [
+      "3d",
+      "design",
+      "research"
+    ]
+  },
+  {
+    "id": "higgsfield_ai-2064897496091140376",
+    "title": "excels at scriptwriting",
+    "author": "Higgsfield AI 🧩",
+    "handle": "@higgsfield_ai",
+    "sourceUrl": "https://x.com/higgsfield_ai/status/2064897496091140376",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "930 likes · 101 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "agents",
+      "research"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 excels at scriptwriting. \n\nWe just paired it with the Higgsfield MCP and the results are stunning.\n\nHere is a comparison with Opus 4.8: https://t.co/MHXtlCb2MW",
+    "metrics": {
+      "likes": 930,
+      "reposts": 101,
+      "replies": 76,
+      "quotes": 15,
+      "views": 72459,
+      "bookmarks": 444
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064897038693924864/vid/avc1/1920x1080/inLQOSurxD09GMOg.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "The post says they paired it with the Higgsfield MCP and the results are stunning"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "mcp",
+        "higgsfield"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/higgsfield_ai-2064897496091140376.jpg",
+    "avatarUrl": "/fable5-avatars/higgsfield_ai.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1906739239183630336/907a7JTU_normal.jpg",
+    "categories": [
+      "videos",
+      "agents",
+      "research"
+    ]
+  },
+  {
+    "id": "oluwaphilemon1-2064890154741866567",
+    "title": "Tutorial for animated award-winning websites",
+    "author": "FHILY👑",
+    "handle": "@oluwaphilemon1",
+    "sourceUrl": "https://x.com/oluwaphilemon1/status/2064890154741866567",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "434 likes · 53 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "design",
+      "prompts",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Opus 4.8 Is Insane but Claude Fable 5 is 🤯\n\nA 12-min tutorial on how | Build 3D Websites in Minutes with Al (0 Design + 0 Coding) https://t.co/ThVQ39asMy",
+    "metrics": {
+      "likes": 434,
+      "reposts": 53,
+      "replies": 6,
+      "quotes": 2,
+      "views": 33779,
+      "bookmarks": 563
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064411294355091457/vid/avc1/3324x2160/T3_Rs_bT1Yyt94kW.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "A 12-min tutorial on how | Build 3D Websites in Minutes with Al (0 Design + 0 Coding)"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "tutorial"
+      ],
+      "domain": [
+        "web-design",
+        "education"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/oluwaphilemon1-2064890154741866567.jpg",
+    "avatarUrl": "/fable5-avatars/oluwaphilemon1.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+    "categories": [
+      "3d",
+      "design",
+      "prompts"
+    ]
+  },
+  {
+    "id": "marclou-2065029898243318093",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Marc Lou",
+    "handle": "@marclou",
+    "sourceUrl": "https://x.com/marclou/status/2065029898243318093",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "media": "video",
+    "heat": "732 likes · 14 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "websites",
+      "web",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I asked Claude Fable 5 to build a game on top of my web analytics API.\n\nIt made DataEmpire: Every visitor to your site is a villager. They chop trees 🌳 build houses 🏠  and turn a campfire 🔥🏕️ into an empire as your traffic grows.\n\nThe Age of Legends unlocks at 1M visitors. Only 2 of my startups made it (ShipFast & TrustMRR).\n\nDemo: https://t.co/jYi5pSi2ew\n\nIf you have a @DataFast_ account, you can replay your own site's history.",
+    "metrics": {
+      "likes": 732,
+      "reposts": 14,
+      "replies": 108,
+      "quotes": 13,
+      "views": 37721,
+      "bookmarks": 241
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065029846326214656/vid/avc1/1224x720/1xPi4OuvyaA-cIHq.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-11T16:01:29.453Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "recent-week-2026-06-05-to-2026-06-11",
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "mediaThumbUrl": "/fable5-media/marclou-2065029898243318093.jpg",
+    "summary": [
+      "The author asked Claude Fable 5 to build a game on top of my web analytics API"
+    ],
+    "scene": "games",
+    "avatarUrl": "/fable5-avatars/marclou.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2059062507923472384/n3Zl7nhZ_normal.jpg",
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "analytics",
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "categories": [
+      "games",
+      "websites"
+    ]
+  },
+  {
+    "id": "rileybrown-2064931283403178354",
+    "title": "it with built with Fable 5",
+    "author": "Riley Brown",
+    "handle": "@rileybrown",
+    "sourceUrl": "https://x.com/rileybrown/status/2064931283403178354",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "video",
+    "heat": "439 likes · 27 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "prompt",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Today i'm Open Sourcing \"Rilable\" \nThe iOS app that builds Web apps and iOS Apps.\n\nI built it with Fable 5 in 10 prompts. \n(~ $210 in tokens on API pricing)\n\nAll apps are built with Claude Models, and every app spins up a sandbox (Exactly like Lovable) using @daytonaio. Database is @convex. The app allows you to build apps that have AI features for this it uses @vercel AI gateway, and iOS apps are using @chorus_agent iOS skill \n\n(All links below)",
+    "metrics": {
+      "likes": 439,
+      "reposts": 27,
+      "replies": 39,
+      "quotes": 5,
+      "views": 47108,
+      "bookmarks": 465
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064927609977176064/vid/avc1/3340x2160/V7oFAQ45ZKOuaz8x.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "The iOS app that builds Web apps and iOS Apps"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/rileybrown-2064931283403178354.jpg",
+    "avatarUrl": "/fable5-avatars/rileybrown.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1898571530956873728/JALEVTSb_normal.jpg",
+    "categories": [
+      "apps"
+    ]
+  },
+  {
+    "id": "higgsfield_ai-2064872661365494180",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Higgsfield AI 🧩",
+    "handle": "@higgsfield_ai",
+    "sourceUrl": "https://x.com/higgsfield_ai/status/2064872661365494180",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "media": "video",
+    "heat": "452 likes · 57 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "agents",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 + Higgsfield MCP built a full webcam-controlled fruit slicing game from a single prompt.\n\nFable 5 is much more capable than anyone could have expected. https://t.co/De4HZDfQCa",
+    "metrics": {
+      "likes": 452,
+      "reposts": 57,
+      "replies": 46,
+      "quotes": 2,
+      "views": 45794,
+      "bookmarks": 190
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064872272847114240/vid/avc1/1080x1920/6Ebdo_y9Yh2sG046.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T16:01:29.453Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "recent-week-2026-06-05-to-2026-06-11",
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "mediaThumbUrl": "/fable5-media/higgsfield_ai-2064872661365494180.jpg",
+    "summary": [
+      "Claude Fable 5 + Higgsfield MCP built a full webcam-controlled fruit slicing game from a single prompt"
+    ],
+    "scene": "games",
+    "avatarUrl": "/fable5-avatars/higgsfield_ai.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1906739239183630336/907a7JTU_normal.jpg",
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [
+        "mcp",
+        "higgsfield"
+      ],
+      "risk": []
+    },
+    "categories": [
+      "games",
+      "agents",
+      "prompts"
+    ]
+  },
+  {
+    "id": "evanluthra-2064966897683341378",
+    "title": "Tutorial for animated award-winning websites",
+    "author": "Evan Luthra",
+    "handle": "@evanluthra",
+    "sourceUrl": "https://x.com/evanluthra/status/2064966897683341378",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "306 likes · 16 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "videos",
+      "prompts",
+      "web",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "WOW!!\n\nTHIS GUY RECORDED A VIDEO SHOWING HOW TO MAKE $2,000 WORTH OF WEBSITE USING CLAUDE FABLE 5, IN JUST 12 MINUTES!!!\n\nBOOKMARK IT: https://t.co/RIrk8xaYkv",
+    "metrics": {
+      "likes": 306,
+      "reposts": 16,
+      "replies": 24,
+      "quotes": 0,
+      "views": 34463,
+      "bookmarks": 255
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064696366903762944/vid/avc1/3324x2160/5kzXdn5nDeaxKfbH.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "THIS GUY RECORDED A VIDEO SHOWING HOW TO MAKE $2,000 WORTH OF WEBSITE USING CLAUDE FABLE 5, IN JUST 12 MINUTES"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "motion-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "web-design"
+      ],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/evanluthra-2064966897683341378.jpg",
+    "avatarUrl": "/fable5-avatars/evanluthra.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1760869429120835584/L-RB4uQ1_normal.jpg",
+    "categories": [
+      "websites",
+      "videos",
+      "prompts"
+    ]
+  },
+  {
+    "id": "hieudinh_-2064924881750536440",
+    "title": "App prototype built with Fable 5",
+    "author": "Hieu Dinh",
+    "handle": "@hieudinh_",
+    "sourceUrl": "https://x.com/hieudinh_/status/2064924881750536440",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "image",
+    "heat": "206 likes · 4 reposts",
+    "tags": [
+      "fable5",
+      "apps"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable can generate an entire app in one shot.\nBut great products are still shaped by human taste, judgment, and attention to detail. https://t.co/U6ftb5d9IQ",
+    "metrics": {
+      "likes": 206,
+      "reposts": 4,
+      "replies": 13,
+      "quotes": 0,
+      "views": 31528,
+      "bookmarks": 183
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKgWO1vboAAic1U.jpg",
+      "https://pbs.twimg.com/media/HKgWO1pbUAA8Tdz.jpg",
+      "https://pbs.twimg.com/media/HKgWO1jbQAAX2wy.jpg",
+      "https://pbs.twimg.com/media/HKgWO1jaEAARotu.jpg"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Claude Fable can generate an entire app in one shot"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "image",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/hieudinh_-2064924881750536440.jpg",
+    "avatarUrl": "/fable5-avatars/hieudinh_.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1969592013868974084/-io8_jw0_normal.jpg",
+    "categories": [
+      "apps"
+    ]
+  },
+  {
+    "id": "vincentlogic-2064953273367593069",
+    "title": "D CAD model built with Fable 5",
+    "author": "Vincent | 信号＞噪音",
+    "handle": "@vincentlogic",
+    "sourceUrl": "https://x.com/vincentlogic/status/2064953273367593069",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "192 likes · 29 reposts",
+    "tags": [
+      "fable5",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "有人用 Claude Fable 5 设计了一个 QDD 执行器（机器人关节），30 分钟搞定。\n\n看这爆炸图、这齿轮啮合动画...\n这不是简单的 3D 建模，是带完整运动仿真和碰撞检测的 CAD 设计。\n\n关键数据：\n⏱️ 耗时：30 分钟\n💰 Token 消耗：40 万\n🔧 输出：完整的 STEP 文件 + 动画验证\n\n以前做这种精密机械设计：\n- SolidWorks/Fusion 360 建模（几小时）\n- 手动装配、调参数（半天）\n- 运动仿真、查干涉（又半天）\n\n现在 AI 一次性全搞定，连齿轮比都算好了。\n\n机械工程师们，你们还好吗？😂",
+    "metrics": {
+      "likes": 192,
+      "reposts": 29,
+      "replies": 15,
+      "quotes": 0,
+      "views": 13433,
+      "bookmarks": 136
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064953086075142144/vid/avc1/3724x2160/2Uts-jBpZmhvK_Fh.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "这不是简单的 3D 建模，是带完整运动仿真和碰撞检测的 CAD 设计。"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/vincentlogic-2064953273367593069.jpg",
+    "avatarUrl": "/fable5-avatars/vincentlogic.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2010360210008023040/tDA3CwgH_normal.jpg",
+    "categories": [
+      "3d"
+    ]
+  },
+  {
+    "id": "rosebud_ai-2064980165784916137",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "Rosebud AI",
+    "handle": "@rosebud_ai",
+    "sourceUrl": "https://x.com/rosebud_ai/status/2064980165784916137",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "116 likes · 8 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "videos",
+      "3d",
+      "prompts",
+      "code",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 killed 3D character animators. Your simplified game dev tech stack:\n\nprompt → Hunyuan3D/Meshy/Tripo (glb)\nglb → Claude (rig + skin weights + animation clips)\nClaude → prompts and edits the game code itself  (localhost)\nlocalhost → Rosebud (manage the assets, edit, and host via public link)",
+    "metrics": {
+      "likes": 116,
+      "reposts": 8,
+      "replies": 38,
+      "quotes": 3,
+      "views": 18425,
+      "bookmarks": 160
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064977193835311105/vid/avc1/1436x1170/REPRLkNcte0fjd6D.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:18:46.239Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Fable 5 killed 3D character animators"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "motion-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/rosebud_ai-2064980165784916137.jpg",
+    "avatarUrl": "/fable5-avatars/rosebud_ai.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1907570380774191107/SBEj6xWB_normal.jpg",
+    "categories": [
+      "games",
+      "videos",
+      "3d",
+      "prompts",
+      "code"
+    ]
+  },
+  {
+    "id": "oluwaphilemon1-2064993321265566175",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "FHILY👑",
+    "handle": "@oluwaphilemon1",
+    "sourceUrl": "https://x.com/oluwaphilemon1/status/2064993321265566175",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "90 likes · 6 reposts",
+    "tags": [
+      "fable5",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "How I build with Claude Fable 5\n\n1. Three.js = rotate and explore any product in 3D in the browser\n\n2. Color swatches = swap a material value to change the model live\n\n3. CSS radial-gradient = premium spotlight glow zero images\n\n4. GSAP ScrollTrigger = scroll turns one screen into a full story\n\n5. Monospace fonts = signal precision and luxury instantly\n\n6. AudioContext = ambient sound toggle in one call\n\nSave this",
+    "metrics": {
+      "likes": 90,
+      "reposts": 6,
+      "replies": 1,
+      "quotes": 3,
+      "views": 7461,
+      "bookmarks": 118
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064993258204209152/vid/avc1/720x1280/tKHN-omQVBi8VSFd.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "How I build with Claude Fable 5"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/oluwaphilemon1-2064993321265566175.jpg",
+    "avatarUrl": "/fable5-avatars/oluwaphilemon1.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+    "categories": [
+      "3d"
+    ]
+  },
+  {
+    "id": "pankajkumar_dev-2064941888990593416",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Pankaj Kumar",
+    "handle": "@pankajkumar_dev",
+    "sourceUrl": "https://x.com/pankajkumar_dev/status/2064941888990593416",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "125 likes · 9 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I asked Claude Fable 5 to build a Super Mario Nintendo style game.\nIt cost around 2 million tokens.\nIt did a really good job in a single shot. Right now, it's the best model I have used. https://t.co/yY3BK6Bqhq",
+    "metrics": {
+      "likes": 125,
+      "reposts": 9,
+      "replies": 13,
+      "quotes": 7,
+      "views": 23825,
+      "bookmarks": 37
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064941000028807169/vid/avc1/3324x2160/5zjb19ypQmsMrJ8g.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "The author asked Claude Fable 5 to build a Super Mario Nintendo style game"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "copyright"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/pankajkumar_dev-2064941888990593416.jpg",
+    "avatarUrl": "/fable5-avatars/pankajkumar_dev.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1890456101507985409/OfN0Ljnv_normal.jpg",
+    "categories": [
+      "games",
+      "3d"
+    ]
+  },
+  {
+    "id": "nature-2065084390288363617",
+    "title": "Calling all researchers using Anthropic's AI model Claude: how are you using...",
+    "author": "nature",
+    "handle": "@nature",
+    "sourceUrl": "https://x.com/nature/status/2065084390288363617",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "text",
+    "heat": "87 likes · 14 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "research"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Calling all researchers using Anthropic's AI model Claude: how are you using the new Claude Fable 5 model in your research? \n\nWe want to hear about the most impressive things it's built for your research projects or left you asking what the fuss is all about. Can it do things you couldn't do before? Let us know.",
+    "metrics": {
+      "likes": 87,
+      "reposts": 14,
+      "replies": 24,
+      "quotes": 8,
+      "views": 10672,
+      "bookmarks": 40
+    },
+    "mediaUrls": [],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "We want to hear about the most impressive things it's built for your research projects or left you asking what the fuss is all about"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "text",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "",
+    "avatarUrl": "/fable5-avatars/nature.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1808863282091991040/EzGcmXyr_normal.jpg",
+    "categories": [
+      "3d",
+      "research"
+    ]
+  },
+  {
+    "id": "chetaslua-2065078650077417843",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "Chetaslua",
+    "handle": "@chetaslua",
+    "sourceUrl": "https://x.com/chetaslua/status/2065078650077417843",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "122 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "3d",
+      "prompts",
+      "prompt",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "prompted",
+    "prompt": "make a threejs website masterpiece simulation of what you want that will make a awe experience for everyone who sees it",
+    "note": "Prompt text was extracted from the original post. Verify any hidden follow-up steps before treating it as a tutorial.",
+    "originalText": "Fable 5 is first time we dont need any skills or harness for better website \n\nprompt : make a threejs website masterpiece simulation of what you want that will make a awe experience for everyone who sees it https://t.co/AkkHHtJgTr",
+    "metrics": {
+      "likes": 122,
+      "reposts": 3,
+      "replies": 8,
+      "quotes": 1,
+      "views": 6779,
+      "bookmarks": 45
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065078491545243648/vid/avc1/1920x1080/1xAqppjt0hFxRec9.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "Fable 5 is first time we dont need any skills or harness for better website"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "3d-gen"
+      ],
+      "evidence": [
+        "prompted"
+      ],
+      "domain": [
+        "web-design"
+      ],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/chetaslua-2065078650077417843.jpg",
+    "avatarUrl": "/fable5-avatars/chetaslua.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1926364057004646400/z3oD9QyB_normal.jpg",
+    "categories": [
+      "websites",
+      "3d",
+      "prompts"
+    ]
+  },
+  {
+    "id": "notjazii-2065039864266187106",
+    "title": "Website or web app built with Fable 5",
+    "author": "J A Z I I",
+    "handle": "@notjazii",
+    "sourceUrl": "https://x.com/notjazii/status/2065039864266187106",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "110 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I asked Claude Fable 5 to make me something cool\n\nso it made this in just a few minutes\n\nit’s for my personal site, which i’m working on right now\n\nguess how many tokens it used? https://t.co/ukHkKPIsPf",
+    "metrics": {
+      "likes": 110,
+      "reposts": 0,
+      "replies": 73,
+      "quotes": 2,
+      "views": 4857,
+      "bookmarks": 9
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065036565450244096/vid/avc1/1920x1080/jX0kGHCIv8WmhDUz.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "so it made this in just a few minutes"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/notjazii-2065039864266187106.jpg",
+    "avatarUrl": "/fable5-avatars/notjazii.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2038373395142791168/_YD5LzNM_normal.jpg",
+    "categories": [
+      "websites"
+    ]
+  },
+  {
+    "id": "vikktorrrre-2065061251739247021",
+    "title": "App prototype built with Fable 5",
+    "author": "Veee",
+    "handle": "@vikktorrrre",
+    "sourceUrl": "https://x.com/vikktorrrre/status/2065061251739247021",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "media": "image",
+    "heat": "118 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "this is what happens when you try to run claude code and claude deisgn on fable 5 simultaneously \n\nfml https://t.co/LApnG1nUkL",
+    "metrics": {
+      "likes": 118,
+      "reposts": 0,
+      "replies": 71,
+      "quotes": 1,
+      "views": 3097,
+      "bookmarks": 2
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKiSQpQWUAAxq_b.jpg"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "this is what happens when you try to run claude code and claude deisgn on fable 5 simultaneously"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "image",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/vikktorrrre-2065061251739247021.jpg",
+    "avatarUrl": "/fable5-avatars/vikktorrrre.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012714142877044736/_6qWAbnU_normal.jpg",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "id": "cjzafir-2065104422762684745",
+    "title": "I'm burning 50% less weekly Claude Code limits now",
+    "author": "CJ Zafir",
+    "handle": "@cjzafir",
+    "sourceUrl": "https://x.com/cjzafir/status/2065104422762684745",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "media": "image",
+    "heat": "75 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I'm burning 50% less weekly Claude Code limits now.\n\n1. Install OpenAI Codex plugin inside Claude Code\n\n2. Then use: \n&gt; Claude Fable 5 high for planning\n&gt; Codex 5.5 xhigh for execution (using Codex plan, no API)\n&gt; Claude Fable 5 max for review\n\nThat's it. It works. https://t.co/mCjNgjuauW",
+    "metrics": {
+      "likes": 75,
+      "reposts": 3,
+      "replies": 7,
+      "quotes": 2,
+      "views": 2525,
+      "bookmarks": 75
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKi416qbMAE8HSR.png"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Install OpenAI Codex plugin inside Claude Code"
+    ],
+    "facets": {
+      "artifactType": "image",
+      "medium": "image",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/cjzafir-2065104422762684745.jpg",
+    "avatarUrl": "/fable5-avatars/cjzafir.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1782802003078299648/q3bQeEyp_normal.jpg",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "id": "yanliudesign-2064897069513634041",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "Yan Liu",
+    "handle": "@yanliudesign",
+    "sourceUrl": "https://x.com/yanliudesign/status/2064897069513634041",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "84 likes · 4 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "3d",
+      "design",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Made this animation video with Claude Fable 5 in Claude Design. \n\nIt takes some back-and-forth with nudges and tweaks (also new ideas popping up as I was creating), but the speed and output quality are wild.\n\nThe sequence: chasing a star → through a doorway → tumbling down stairs → dissolving into a star field → city reveal.",
+    "metrics": {
+      "likes": 84,
+      "reposts": 4,
+      "replies": 7,
+      "quotes": 0,
+      "views": 4393,
+      "bookmarks": 64
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064896872775577600/vid/avc1/3486x2160/RqmM6gBy9bqGUJxC.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Made this animation video with Claude Fable 5 in Claude Design"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/yanliudesign-2064897069513634041.jpg",
+    "avatarUrl": "/fable5-avatars/yanliudesign.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2023498751017717760/j1DzJs7E_normal.jpg",
+    "categories": [
+      "videos",
+      "3d",
+      "design"
+    ]
+  },
+  {
+    "id": "shuigvn-2064958913297141877",
+    "title": "Minecraft-style game built with one prompt",
+    "author": "DUC",
+    "handle": "@shuigvn",
+    "sourceUrl": "https://x.com/shuigvn/status/2064958913297141877",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "87 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Mọi người dùng đừng ghen tị với Claude Fable 5, Codex vẫn rất tuyệt vời miễn là bạn sử dụng đúng phương pháp!\n\nTôi đã tạo ra hai cảnh 3D động với Codex, tàu lượn siêu tốc Minecraft và một cảnh hoạt hình phong cách dễ thương. Chỉ cần một mẹo rất đơn giản và sau đó bật chế độ Plan và chế độ mục tiêu cùng lúc, Codex sẽ đạt được mục tiêu.\n\nVí dụ: \"Hãy tạo một trò chơi cuộn như Minecraft, cảnh quay rất phức tạp và sôi động. Sau khi hoàn thành từng giai đoạn quan trọng, việc xác minh hình ảnh và tự sửa lỗi phải được thực hiện bằng trình duyệt tích hợp cho đến khi tất cả các điều kiện giao hàng được đáp ứng.\"\n\nCuối cùng cũng làm một số điều chỉnh tinh tế đơn giản, bạn sẽ có được kết quả tốt như vậy.",
+    "metrics": {
+      "likes": 87,
+      "reposts": 0,
+      "replies": 90,
+      "quotes": 0,
+      "views": 1021,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064958655372619776/vid/avc1/566x808/3ck_OMzgVWWLBDYF.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Tôi đã tạo ra hai cảnh 3D động với Codex, tàu lượn siêu tốc Minecraft và một cảnh hoạt hình phong cách dễ thương"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "copyright"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/shuigvn-2064958913297141877.jpg",
+    "avatarUrl": "/fable5-avatars/shuigvn.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1985786505919676416/0XxmAmO3_normal.jpg",
+    "categories": [
+      "games",
+      "3d"
+    ]
+  },
+  {
+    "id": "roundtablespace-2065022480159486295",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2065022480159486295",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "91 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "3d",
+      "design"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "SOMEONE ASKED CLAUDE FABLE 5 TO DESIGN A QDD ACTUATOR\n\n30 MINUTES LATER IT HAD BUILT THE MODEL, ANIMATED THE GEARBOX, AND VALIDATED COLLISIONS ON ITS OWN\n\n https://t.co/VSrYclmvA6",
+    "metrics": {
+      "likes": 91,
+      "reposts": 3,
+      "replies": 14,
+      "quotes": 2,
+      "views": 45542,
+      "bookmarks": 23
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064882605015883776/vid/avc1/3724x2160/80Q9lcCFbNPX4J7N.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "MINUTES LATER IT HAD BUILT THE MODEL, ANIMATED THE GEARBOX, AND VALIDATED COLLISIONS ON ITS OWN"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2065022480159486295.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "videos",
+      "3d",
+      "design"
+    ]
+  },
+  {
+    "id": "firecrawl-2065104942856020281",
+    "title": "Claude Fable 5 availability update",
+    "author": "Firecrawl",
+    "handle": "@firecrawl",
+    "sourceUrl": "https://x.com/firecrawl/status/2065104942856020281",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "agents",
+    "media": "video",
+    "heat": "67 likes · 10 reposts",
+    "tags": [
+      "fable5",
+      "agents",
+      "code",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Introducing Prometheus, an experimental Forward Deployed Agent for web data.\n\nDescribe the web data you need and it writes Firecrawl code to collect it. Run it yourself or let us host and automatically maintain it as pages change. \n\nTry it with Claude Fable 5 for free this week! https://t.co/DF9ZLUNTOX",
+    "metrics": {
+      "likes": 67,
+      "reposts": 10,
+      "replies": 7,
+      "quotes": 5,
+      "views": 3496,
+      "bookmarks": 44
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/ext_tw_video/2065104889261289472/pu/vid/avc1/1366x720/EmUGLXvCyq2BZBAl.mp4?tag=12"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Introducing Prometheus, an experimental Forward Deployed Agent for web data"
+    ],
+    "facets": {
+      "artifactType": "agent-loop",
+      "medium": "video",
+      "capability": [
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/firecrawl-2065104942856020281.jpg",
+    "avatarUrl": "/fable5-avatars/firecrawl.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2034360486867951616/pa7H6cYB_normal.png",
+    "categories": [
+      "agents",
+      "code",
+      "news"
+    ]
+  },
+  {
+    "id": "gippp69-2065006424032182618",
+    "title": "Short video generated from a few prompts",
+    "author": "Gipp 🦅",
+    "handle": "@gippp69",
+    "sourceUrl": "https://x.com/gippp69/status/2065006424032182618",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "78 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "videos",
+      "prompts",
+      "code",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE FABLE 5 WRITES A FLAWLESS SUPER MARIO REMAKE IN REAL TIME\n\ntwo years ago asking an AI to write a game meant getting broken code, mismatched assets, and infinite loops of syntax errors\n\ntoday a single prompt inside an IDE gets you a pixel-perfect, playable 1985 Super Mario Bros. remake -> physics, power-ups, secrets, and audio included\n\nthe context windows exploded, the reasoning matured, and LLMs stopped just guessing code and started architecting software\n\nin the video below, a developer tests a fan remake fully generated by Claude Fable 5: from standard Mario failing to a goomba, to dynamic power-ups like the Super Mushroom and Fire Flower clearing World 1-1 with zero bugs\n\nhow it handles sprite physics, hidden underground pipe zones, and accurate collision detection is broken down below ↓",
+    "metrics": {
+      "likes": 78,
+      "reposts": 0,
+      "replies": 40,
+      "quotes": 0,
+      "views": 5576,
+      "bookmarks": 35
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065006284580020224/vid/avc1/1280x720/bxNXujZMWAr7W_vc.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "two years ago asking an AI to write a game meant getting broken code, mismatched assets, and infinite loops of syntax errors"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "motion-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "copyright"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/gippp69-2065006424032182618.jpg",
+    "avatarUrl": "/fable5-avatars/gippp69.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2027054297456750592/GyRDR4PD_normal.jpg",
+    "categories": [
+      "games",
+      "videos",
+      "prompts",
+      "code"
+    ]
+  },
+  {
+    "id": "roundtablespace-2064894134725353723",
+    "title": "CLAUDE DESIGN + FABLE 5 JUST ELIMINATED THE NEED TO PAY AN AGENCY $4K A MONTH...",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2064894134725353723",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "design",
+    "media": "video",
+    "heat": "72 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "design",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE DESIGN + FABLE 5 JUST ELIMINATED THE NEED TO PAY AN AGENCY $4K A MONTH FOR EMAIL CAMPAIGNS THAT TAKE 2 WEEKS\n\nload your brand system once, prompt section by section, and Fable 5 nails the layout, hierarchy, and brand details that older models fumbled, with the finished email ready to hand off in minutes.\n\nhttps://t.co/xefOTb3GqJ",
+    "metrics": {
+      "likes": 72,
+      "reposts": 3,
+      "replies": 13,
+      "quotes": 0,
+      "views": 36176,
+      "bookmarks": 42
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064749196989927424/vid/avc1/1280x720/AYK3eElyATH_538L.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "load your brand system once, prompt section by section, and Fable 5 nails the layout, hierarchy, and brand details that older models fumbled, with the finished email..."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2064894134725353723.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "design",
+      "prompts"
+    ]
+  },
+  {
+    "id": "bloggersarvesh-2065093143301894180",
+    "title": "made millionaires” this year than the last decade combined. don't bookmark...",
+    "author": "Sarvesh Shrivastava",
+    "handle": "@bloggersarvesh",
+    "sourceUrl": "https://x.com/bloggersarvesh/status/2065093143301894180",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "experiments",
+    "media": "video",
+    "heat": "36 likes · 29 reposts",
+    "tags": [
+      "fable5",
+      "experiments"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "my wife thinks i'm obsessed...but I will keep repeating this.\n\nClaude + SEO is going to create more “self made millionaires” this year than the last decade combined.\n\ndon't bookmark this if it crosses your timeline.\n\njust paste this entire thing into Claude Fable 5.\n\nthank me later.",
+    "metrics": {
+      "likes": 36,
+      "reposts": 29,
+      "replies": 11,
+      "quotes": 0,
+      "views": 8606,
+      "bookmarks": 33
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065093051723452416/vid/avc1/1280x720/0_7-c6aTLoqRUiCz.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "my wife thinks i'm obsessed...but I will keep repeating this"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/bloggersarvesh-2065093143301894180.jpg",
+    "avatarUrl": "/fable5-avatars/bloggersarvesh.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1830586354184429568/mryh4j-d_normal.jpg",
+    "categories": [
+      "experiments"
+    ]
+  },
+  {
+    "id": "roundtablespace-2064871485173375200",
+    "title": "Autonomous agent workflow for Fable 5",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2064871485173375200",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "76 likes · 4 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "agents",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE FABLE ONE-SHOTTED A FULL CITY BLOCK SIMULATOR WITH MULTI-AGENT TRAFFIC, LIVE DETECTION, AND A DAY TO NIGHT CYCLE\n\nno iterations, no fixes, just one prompt and a complete working simulation, the gap between idea and execution keeps collapsing.\n\nhttps://t.co/FTl5oAUUfl",
+    "metrics": {
+      "likes": 76,
+      "reposts": 4,
+      "replies": 14,
+      "quotes": 0,
+      "views": 49525,
+      "bookmarks": 15
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064523291872604160/vid/avc1/1440x1080/g5EqXOiyLOrlZ6UG.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "no iterations, no fixes, just one prompt and a complete working simulation, the gap between idea and execution keeps collapsing"
+    ],
+    "facets": {
+      "artifactType": "agent-loop",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "automation"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2064871485173375200.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "games",
+      "3d",
+      "agents",
+      "prompts"
+    ]
+  },
+  {
+    "id": "socialwithaayan-2065065615468179592",
+    "title": "what??",
+    "author": "Muhammad Ayan",
+    "handle": "@socialwithaayan",
+    "sourceUrl": "https://x.com/socialwithaayan/status/2065065615468179592",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "design",
+    "media": "video",
+    "heat": "39 likes · 23 reposts",
+    "tags": [
+      "fable5",
+      "design",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "what??\n\nPerceptis just put a consulting-grade presentation engine inside Claude.\n\none conversation. one prompt. fully editable PowerPoint deck.\n\nno templates. no formatting. no leaving Claude.\n\nthis is insane.. 👇 https://t.co/G5jJrtQrjk",
+    "metrics": {
+      "likes": 39,
+      "reposts": 23,
+      "replies": 17,
+      "quotes": 1,
+      "views": 13009,
+      "bookmarks": 19
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065065558840848384/vid/avc1/1228x720/IyeSASnjcMSB3giB.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Perceptis just put a consulting-grade presentation engine inside Claude"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/socialwithaayan-2065065615468179592.jpg",
+    "avatarUrl": "/fable5-avatars/socialwithaayan.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2020385471701086209/wK66uFBP_normal.jpg",
+    "categories": [
+      "design",
+      "prompts"
+    ]
+  },
+  {
+    "id": "roundtablespace-2065007380778430706",
+    "title": "MADE CAD A LOT MORE ACCESSIBLE",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2065007380778430706",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "81 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE FABLE 5 MIGHT HAVE JUST MADE CAD A LOT MORE ACCESSIBLE\n\n https://t.co/RvcTihuhq8",
+    "metrics": {
+      "likes": 81,
+      "reposts": 1,
+      "replies": 10,
+      "quotes": 0,
+      "views": 50581,
+      "bookmarks": 14
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064876044046508032/vid/avc1/2956x2160/YT0YV7ozCrHXhgza.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "CLAUDE FABLE 5 MIGHT HAVE JUST MADE CAD A LOT MORE ACCESSIBLE"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2065007380778430706.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "3d"
+    ]
+  },
+  {
+    "id": "roundtablespace-2065090428098220458",
+    "title": "Watch these 5 UI/UX - One Shot Attempts made by Claude Mythos",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2065090428098220458",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "design",
+    "media": "video",
+    "heat": "73 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "design"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Watch these 5 UI/UX - One Shot Attempts made by Claude Mythos\n\nhttps://t.co/9ueSkTsFbc",
+    "metrics": {
+      "likes": 73,
+      "reposts": 1,
+      "replies": 7,
+      "quotes": 0,
+      "views": 51962,
+      "bookmarks": 22
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Watch these 5 UI/UX - One Shot Attempts made by Claude Mythos"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2065090428098220458.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "design"
+    ]
+  },
+  {
+    "id": "shao__meng-2064870367190270441",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "meng shao",
+    "handle": "@shao__meng",
+    "sourceUrl": "https://x.com/shao__meng/status/2064870367190270441",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "image",
+    "heat": "40 likes · 12 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "design",
+      "agents",
+      "code",
+      "news",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 实现零传统编辑的 Launch 视频生产：Remotion + FFmpeg + Figma MCP 端到端实践\n\n来自 Claude Code 核心开发者 @trq212 的又一次高质量分享：他全程未打开任何传统视频编辑软件，仅通过提示驱动 Claude Fable 5 生成代码、调用工具、迭代优化，最终产出 4K、3 分钟成品视频。\nhttps://t.co/d9Koyi0UPM\n\n# 核心流程与关键步骤（高度结构化、可复现）\n\n原材料准备：17 个拍摄 take（约 25GB Sony S-Log3 4K 原片），分为 4 个场景（Intro、Thought Partner、Goals & Verification、Be More Ambitious）。\n\nStep 01：转录与理解\n· 一条完整提示启动整个流程：要求使用 ElevenLabs / Whisper（本地 M4 Max 运行）对所有视频进行逐词时间戳转录。\n· Claude 生成 JSON 格式的详细转录，支持精确到帧的定位（即使 Whisper 误听名字如 “Thariq” 为 “Sark”，时间戳仍准确）。\n\nStep 02-03：智能选片与剪辑决策\n· Claude 作为子 agent 逐场景分析所有 take，挑选最佳版本（优先零 ums、完整脚本、干净结尾）。\n· 输出 final-edit.json（EDL 编辑决策列表），包含每个 clip 的起止时间、候选 take、详细选片理由。\n· 直接用 FFmpeg 执行 JSON，实现精确拼接（第一版可在几分钟内生成可观看的 2:50 粗剪）。Claude 还会自验证转录结果（“zero ums”）。\n\nStep 04：颜色分级（Color Grading）\n· 从 S-Log3 平面原片出发，Claude 手写多个 .cube LUT（7 个自定义 LUT，如 neutral_cool_desat、warm_filmic 等）。\n· 通过提示迭代生成示例，作者选择后应用 FFmpeg 编码。突出代理在专业视觉任务中的潜力（虽有色域专家指出可能存在细微 gamma/管理问题，但整体可用）。\n\nStep 05-08：图形叠加与设计迭代（Remotion + Figma MCP）\n· 输入 11 张静态设计 PNG（interludes/overlays）。\n· Claude 将 PNG 重构为 Remotion React 组件（JSX），每个文字、颜色、动画均为可提示参数。\n· 定义全局 timing knobs（6 个关键帧参数）和 cue sheet（基于转录词时间戳精确对齐叠加，如在 “right” 一词出现帧上触发动画）。\n· 通过 Figma MCP 导出为真实 Figma 文件，支持设计团队审阅/调整滑块。\n· 设计反馈转回提示 → Claude 更新代码 → 重新渲染，实现高效 code <-> Figma 往返。\n\n最终渲染：npx remotion render 生成 3840×2160@24fps、4334 帧、653MB 成品。\nClaude 会先逐帧截图自审，再全渲染。整个过程在几天内完成（主要在 Jun 6-9），凌晨 6:24 交付。\n\n底层架构（“The edit is text”）\n· 整个项目是一个代码仓库：转录 JSON、final-edit.json、LUT 文件、Remotion 组件、anim.tsx。\n· 无时间线、无项目文件，一切可 diff、可 grep、可提示修改。\n· 强调 agent 协作哲学：“Treat Claude like a thoughtful partner” — 给出清晰目标、验证方法，保持雄心。\n· 结果：从 raw 文件夹到成品，agent 承担绝大部分“中间劳动”，作者主要提供 taste 和最终把关。",
+    "metrics": {
+      "likes": 40,
+      "reposts": 12,
+      "replies": 1,
+      "quotes": 0,
+      "views": 5019,
+      "bookmarks": 52
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKfkpLLa0AAw8TT.jpg"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Claude Fable 5 实现零传统编辑的 Launch 视频生产：Remotion + FFmpeg + Figma MCP 端到端实践"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "image",
+      "capability": [
+        "design-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "mcp",
+        "claude-code",
+        "react"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/shao__meng-2064870367190270441.jpg",
+    "avatarUrl": "/fable5-avatars/shao__meng.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2009826888072736772/faZAxCvC_normal.jpg",
+    "categories": [
+      "videos",
+      "design",
+      "agents",
+      "code",
+      "news"
+    ]
+  },
+  {
+    "id": "luffycallz-2064917441294066067",
+    "title": "coin, all by itself 9oCLXH4KVfxNiLRhYaV289gJ2pF9fsYWN59BhffLpump created with Fable...",
+    "author": "Luffy",
+    "handle": "@luffycallz",
+    "sourceUrl": "https://x.com/luffycallz/status/2064917441294066067",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "47 likes · 19 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I managed to make the 1st real pumpfun deploy by the new Claude Fable 5 deploy\n\nAll proof on the video\n\nIt created a wallet, choose the name, the ticker, generated an image and created the coin, all by itself\n\n9oCLXH4KVfxNiLRhYaV289gJ2pF9fsYWN59BhffLpump https://t.co/Ktpxu6o5zX",
+    "metrics": {
+      "likes": 47,
+      "reposts": 19,
+      "replies": 24,
+      "quotes": 3,
+      "views": 5698,
+      "bookmarks": 4
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064917090977320960/vid/avc1/1910x1080/X2wxlq6_UGqy5IY9.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "I managed to make the 1st real pumpfun deploy by the new Claude Fable 5 deploy"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "motion-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/luffycallz-2064917441294066067.jpg",
+    "avatarUrl": "/fable5-avatars/luffycallz.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1944907058274254849/JXRYoZcn_normal.jpg",
+    "categories": [
+      "videos"
+    ]
+  },
+  {
+    "id": "igus_ai-2065092366852075882",
+    "title": "empire built with Fable 5",
+    "author": "gus",
+    "handle": "@igus_ai",
+    "sourceUrl": "https://x.com/igus_ai/status/2065092366852075882",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "video",
+    "heat": "52 likes · 14 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "prompts",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "3 terminal commands + 1 prompt = a $24,818/month clipping page run by Claude Fable 5\n\nno team. no editors. no clipping army.\n\nthe backstory makes it even crazier:\n\nIman Gadzhi got clipped to 100M views in ONE month. he paid thousands of clippers to do it. then he bought Whop, the platform that pays them.\n\nhe built an empire on human clippers.\n\nand AI just made all of them obsolete.\n\nthe article breaks down a dormant fan page with 80K subs that still pulls 173K views a week. YouTube values it at $32/month.\n\nthe real number? $24,818/month.\n\nthe setup:\n\n• Claude Fable 5 runs the whole operation\n• Vugola cuts the clips\n• Postiz posts them on autopilot\n• 3 terminal commands and 1 prompt.\n\nthat’s it.\n\nand the timing is insane: Fable 5 just launched and it’s FREE on paid plans until June 22.\n\nmost people will read this and do nothing.\n\nsave it.\n\nthen read the article below for the full step-by-step, every command, every tool, the real math 👇",
+    "metrics": {
+      "likes": 52,
+      "reposts": 14,
+      "replies": 7,
+      "quotes": 0,
+      "views": 2598,
+      "bookmarks": 20
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065092134382817280/vid/avc1/720x1280/jAJVrhdxbWh85do6.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "terminal commands + 1 prompt = a $24,818/month clipping page run by Claude Fable 5"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/igus_ai-2065092366852075882.jpg",
+    "avatarUrl": "/fable5-avatars/igus_ai.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2041450156508286976/3Q2tIQab_normal.jpg",
+    "categories": [
+      "apps",
+      "prompts"
+    ]
+  },
+  {
+    "id": "shuigvn-2064911738995462569",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "DUC",
+    "handle": "@shuigvn",
+    "sourceUrl": "https://x.com/shuigvn/status/2064911738995462569",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "60 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "videos",
+      "agents",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Một creator Hàn vừa đăng demo Claude Fable 5 tạo ra một game kiểu Vampire Survivors gần như chỉ từ một câu lệnh tiếng Anh\n\nĐiểm đáng nói không phải là giao diện đẹp hay hiệu ứng mượt, mà là nó có đủ menu, asset, gameplay loop và logic tương tác cơ bản. Tức là AI đang đi từ tạo ảnh, tạo video sang dựng prototype có thể chơi được\n\nNếu demo này đúng như tác giả mô tả, thì đây là tín hiệu khá lớn cho tương lai của indie game và rapid prototyping. Làm game sẽ không biến mất, nhưng bước từ ý tưởng sang bản thử nghiệm có thể ngắn đi rất nhiều",
+    "metrics": {
+      "likes": 60,
+      "reposts": 0,
+      "replies": 64,
+      "quotes": 0,
+      "views": 1183,
+      "bookmarks": 2
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064909855098646528/vid/avc1/1280x720/6qj-g5c_V0cTQvtF.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "Một creator Hàn vừa đăng demo Claude Fable 5 tạo ra một game kiểu Vampire Survivors gần như chỉ từ một câu lệnh tiếng Anh"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "motion-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/shuigvn-2064911738995462569.jpg",
+    "avatarUrl": "/fable5-avatars/shuigvn.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1985786505919676416/0XxmAmO3_normal.jpg",
+    "categories": [
+      "games",
+      "videos",
+      "agents"
+    ]
+  },
+  {
+    "id": "roundtablespace-2064909234454794503",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2064909234454794503",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "66 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "prompts",
+      "code",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE FABLE 5 BUILT A FULL RELAXING DRIVING GAME FROM SCRATCH WITH BEAUTIFUL SCENERY AND SOLID CONTROLS IN ONE PROMPT\n\ncomplete with that satisfying car feel, one person went from idea to cruising around a playable game without writing a single line of code themselves.\n\nhttps://t.co/AXV4cAk3Jz",
+    "metrics": {
+      "likes": 66,
+      "reposts": 1,
+      "replies": 8,
+      "quotes": 1,
+      "views": 40376,
+      "bookmarks": 13
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064729695304695808/vid/avc1/1920x1080/ptj9ubkRo1qsCed3.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "CLAUDE FABLE 5 BUILT A FULL RELAXING DRIVING GAME FROM SCRATCH WITH BEAUTIFUL SCENERY AND SOLID CONTROLS IN ONE PROMPT"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2064909234454794503.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "games",
+      "prompts",
+      "code"
+    ]
+  },
+  {
+    "id": "md_kasif_uddin-2064960048946982982",
+    "title": "Claude Fable 5",
+    "author": "Kasif",
+    "handle": "@md_kasif_uddin",
+    "sourceUrl": "https://x.com/md_kasif_uddin/status/2064960048946982982",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "agents",
+    "media": "video",
+    "heat": "60 likes · 5 reposts",
+    "tags": [
+      "fable5",
+      "agents",
+      "code",
+      "research"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5:\n\n✅ Writes production code\n✅ Conducts deep research\n✅ Executes multi-step tasks\n✅ Plans over long time horizons\n✅ Solves complex reasoning problems\n⬜ Runs a Fortune 500 company\n\nWe're not there yet.\n\nBut for the first time, it doesn't feel impossible. https://t.co/9wKzvrnnd1",
+    "metrics": {
+      "likes": 60,
+      "reposts": 5,
+      "replies": 42,
+      "quotes": 0,
+      "views": 1695,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/ext_tw_video/2064959983369015296/pu/vid/avc1/1280x720/WqyRLA67cmvOG1BZ.mp4?tag=25"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Plans over long time horizons"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/md_kasif_uddin-2064960048946982982.jpg",
+    "avatarUrl": "/fable5-avatars/md_kasif_uddin.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1974036683369959424/qGBfyYFi_normal.jpg",
+    "categories": [
+      "agents",
+      "code",
+      "research"
+    ]
+  },
+  {
+    "id": "beamnxw-2064991069964493104",
+    "title": "more cohesive and stable fluid volume Opus exhibited large gaps near the walls...",
+    "author": "beamnxw ./",
+    "handle": "@beamnxw",
+    "sourceUrl": "https://x.com/beamnxw/status/2064991069964493104",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "58 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "research",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 was tested against Opus 4.8 on physics simulation tasks\n\nBoth models received the same prompts and were tasked with generating standalone HTML5 simulations without using third-party libraries:\n\n→ Chaotic double pendulum\n→ Galton board\n→ Water in a rotating drum (WCSPH)\n\nGeneration costs:\n\n• Fable 5 - $3.35, 68.7k tokens, 14 min 47 sec\n• Opus 4.8 - $0.93, 38.9k tokens, 8 min 10 sec\n\nFable demonstrated its most notable advantage in the water simulation. The model created a more cohesive and stable fluid volume\n\nOpus exhibited large gaps near the walls, with individual particles scattering across the scene, and the fluid itself was less stable",
+    "metrics": {
+      "likes": 58,
+      "reposts": 3,
+      "replies": 20,
+      "quotes": 0,
+      "views": 5477,
+      "bookmarks": 20
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064809807576461312/vid/avc1/1592x1080/_1mXXZSi03gvrsER.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "Claude Fable 5 was tested against Opus 4.8 on physics simulation tasks"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/beamnxw-2064991069964493104.jpg",
+    "avatarUrl": "/fable5-avatars/beamnxw.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1990891982382653440/rxXgNf2G_normal.jpg",
+    "categories": [
+      "3d",
+      "research"
+    ]
+  },
+  {
+    "id": "aianddesign-2064868507662352748",
+    "title": "Claude Fable 5 availability update",
+    "author": "⭕ AI & Design (Marco)",
+    "handle": "@aianddesign",
+    "sourceUrl": "https://x.com/aianddesign/status/2064868507662352748",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "news",
+    "media": "video",
+    "heat": "56 likes · 10 reposts",
+    "tags": [
+      "fable5",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Introducing Rotatron for Super Nintendo (SNES). The super addictive puzzler.\n\nHaters gonna hate, I'm sure. But it's coming. Still optimizing, polishing.\n\nClaude Fable 5 made it happen. Some challenging bits here, experially rotating the hexagons and getting the spaceships right. As you'll see even @elonmusk's Starship is represented :)",
+    "metrics": {
+      "likes": 56,
+      "reposts": 10,
+      "replies": 8,
+      "quotes": 1,
+      "views": 2315,
+      "bookmarks": 10
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064868099011256321/vid/avc1/1920x1080/4V_PoO6YUodliEIZ.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Claude Fable 5 made it happen"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/aianddesign-2064868507662352748.jpg",
+    "avatarUrl": "/fable5-avatars/aianddesign.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2036894106463723524/PuUJq0VR_normal.jpg",
+    "categories": [
+      "news"
+    ]
+  },
+  {
+    "id": "daniel_z1909-2065077328628044224",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "Daniel",
+    "handle": "@daniel_z1909",
+    "sourceUrl": "https://x.com/daniel_z1909/status/2065077328628044224",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "42 likes · 6 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "🛫 A complete Airbus-class turbofan — fully parametric, animated, built entirely in the browser.\n\nCreated in confBuild with Claude Fable 5:\n\n⚙️ Real internals — 7-stage compressor, annular combustor, 4 turbine stages\n🌀 Two-spool animation: HP & LP shafts at real differential speed\n🔥 Flow lines & exhaust react live to the N1 lever\n📐 Dimensions on sliders — everything recalculates exactly\n📄 Export to STEP, auto-generate technical drawings\n\nEvery chamfer and bore: calculated, not painted.\n\n#CAD #Engineering #Turbofan #Aerospace #confBuild #AI",
+    "metrics": {
+      "likes": 42,
+      "reposts": 6,
+      "replies": 3,
+      "quotes": 3,
+      "views": 2441,
+      "bookmarks": 31
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065077132884070400/vid/avc1/3840x2144/pIYlb4G1Kl31rXSw.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "\udeeb A complete Airbus-class turbofan — fully parametric, animated, built entirely in the browser"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "react"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/daniel_z1909-2065077328628044224.jpg",
+    "avatarUrl": "/fable5-avatars/daniel_z1909.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1080499315741769729/uNt3MRIl_normal.jpg",
+    "categories": [
+      "videos",
+      "3d"
+    ]
+  },
+  {
+    "id": "ecom_amin-2065070392553726233",
+    "title": "Fable 5 compared with opus 4",
+    "author": "Amin",
+    "handle": "@ecom_amin",
+    "sourceUrl": "https://x.com/ecom_amin/status/2065070392553726233",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "image",
+    "heat": "29 likes · 10 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "3d",
+      "design",
+      "agents",
+      "prompts",
+      "research",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "i've been testing the new claude fable 5 to run our clients' entire google ads operation inside 1 chat since it launched...\n\nand it has been absolutely COOKING\n\nso i've decided to document the ENTIRE new system we're using to cook with it...\n\n(with an emphasis on what's NEW about this mythos class model)\n\nhere's what's included inside the guide:\n\n→ the four-tool stack setup (fable 5 wired into claude cowork for autonomous research, the google ads MCP to read and change your live account, and higgsfield + chatgpt images 2.0 + seedance 2.0 for creative. one connected setup, not a chatbot you copy-paste out of)\n\n→ system 1, competitive funnel reconstruction (research competitor ads in the google transparency center then hand fable 5 the screenshots and it rebuilds the full funnel from the images alone, customized to your product. all with a 4x improve in AI vision, front-end design quality and coding capabilities compared to opus 4.8)\n\n→ system 2, AI creative production at scale (one brief generates shopping, demand gen, youtube shorts and search assets across the connected tools. what took a full creative team 2-3 weeks now happens in one session at $0 beyond api cost. all from a research flow 10 times better than before)\n\n→ system 3, root-cause ad fatigue analysis (the exact prompt that connects fable 5 to your live account and traces a rising CPA to its single upstream cause across impression share, auction insights, search terms, quality score and creative data. finds in 10 minutes what took opus 4.8 hours, with a 3x increase in data analyst capabilities)\n\n→ system 4, autonomous bidding optimization (smart-bidding graduation at the 30-conversion threshold, geo bid adjustments off real data, negative keywords and budget reallocation, all pushed live with your approval)\n\n→ (BONUS) the single-session workflow (the exact monday-morning sequence we run: research, funnel rebuild, creative generation, and a root-cause fix, all inside one fable 5 session. the equivalent of a full agency team's week. but worse than us obviously lol)\n\nall backed by $20M+ generated through google ads for 50+ ecom brands\n\nlike + comment \"FABLE\" and i'll send EVERYTHING over\n\n(must be following + RT for priority access)",
+    "metrics": {
+      "likes": 29,
+      "reposts": 10,
+      "replies": 27,
+      "quotes": 0,
+      "views": 1611,
+      "bookmarks": 24
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKiaMtbb0AA2LYz.jpg"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "(with an emphasis on what's NEW about this mythos class model)"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "image",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "tutorial",
+        "benchmark-claim"
+      ],
+      "domain": [
+        "ecommerce",
+        "marketing",
+        "education"
+      ],
+      "tech": [
+        "mcp",
+        "higgsfield"
+      ],
+      "risk": [
+        "benchmark-claim",
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/ecom_amin-2065070392553726233.jpg",
+    "avatarUrl": "/fable5-avatars/ecom_amin.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1985826713075331072/4AWZ7f1y_normal.jpg",
+    "categories": [
+      "apps",
+      "3d",
+      "design",
+      "agents",
+      "prompts",
+      "research"
+    ]
+  },
+  {
+    "id": "aashatwt-2064973740354818074",
+    "title": "Guide to prompting Fable 5 autonomous workflows",
+    "author": "aasha",
+    "handle": "@aashatwt",
+    "sourceUrl": "https://x.com/aashatwt/status/2064973740354818074",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "51 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "design",
+      "agents",
+      "prompts",
+      "research",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "how to prompt claude fable 5:\n\nfor the last two years we kept making prompts longer\n\n>more instructions\n>more prompt hacks\n\nthat is starting to change\n\nanthropic recently published a guide for claude fable 5.\n\n>many prompting techniques that worked on older models can actually reduce performance on fable\n\ninstead of telling the model exactly what to do, anthropic recommends giving it more room to think and explore\n\nat its simplest, a good fable prompt looks like this:\n\n>clear goal\n>relevant context\n>constraints\n>access to tools\n>a way to verify success\n>notice what is missing\n>there is no 30-step framework\n>there is no \"act as a xyz expert\"\n\nanother interesting recommendation from anthropic:\n\ninstead of spending effort telling the model exactly how to think, spend more effort helping it check its work\n\nverification beats instruction\nevaluation beats micromanagement\nfeedback beats prompt hacks\nfor years we focused on prompt engineering\n\nfable 5 points toward :\n\n>context engineering\n>agent engineering\n>environment design\n\nanthropic published a guide on prompting fable 5.\ncheck it out :",
+    "metrics": {
+      "likes": 51,
+      "reposts": 1,
+      "replies": 9,
+      "quotes": 0,
+      "views": 2874,
+      "bookmarks": 30
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064973676588711936/vid/avc1/1900x1080/0wo2YoG9kB-1XfEF.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "how to prompt claude fable 5"
+    ],
+    "facets": {
+      "artifactType": "agent-loop",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "tutorial"
+      ],
+      "domain": [
+        "education"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/aashatwt-2064973740354818074.jpg",
+    "avatarUrl": "/fable5-avatars/aashatwt.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1878012880177532928/jRU9o7dG_normal.jpg",
+    "categories": [
+      "3d",
+      "design",
+      "agents",
+      "prompts",
+      "research"
+    ]
+  },
+  {
+    "id": "0x3b33-2064948399300825439",
+    "title": "Three app prototypes built from one prompt",
+    "author": "Pyro",
+    "handle": "@0x3b33",
+    "sourceUrl": "https://x.com/0x3b33/status/2064948399300825439",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "media": "text",
+    "heat": "70 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "code",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Code Fable 5 is insane\n\nI know NOTHING about coding. ZERO. and it just built 3 fully functioning web apps in 30 minutes    \n\nhttp://localhost:3000/\nhttp://localhost:3001/    \nhttp://localhost:3002/\n\ncheck them out!",
+    "metrics": {
+      "likes": 70,
+      "reposts": 1,
+      "replies": 13,
+      "quotes": 0,
+      "views": 2677,
+      "bookmarks": 3
+    },
+    "mediaUrls": [],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "and it just built 3 fully functioning web apps in 30 minutes"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "text",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "",
+    "avatarUrl": "/fable5-avatars/0x3b33.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1806722203293040640/95tc0xFV_normal.jpg",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "id": "thebuggeddev-2064968106104275008",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "The Bugged Dev",
+    "handle": "@thebuggeddev",
+    "sourceUrl": "https://x.com/thebuggeddev/status/2064968106104275008",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "58 likes · 2 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I seriously underestimated Claude Fable 5, but it is absolutely insane 🤯\n\nNot bait and not trying to farm views. It literally one shotted the entire 3D HOLE IT game using @threejs",
+    "metrics": {
+      "likes": 58,
+      "reposts": 2,
+      "replies": 3,
+      "quotes": 0,
+      "views": 8196,
+      "bookmarks": 17
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064967564661489664/vid/avc1/2938x1766/1e0HvncJg5Qq5n0J.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "It literally one shotted the entire 3D HOLE IT game using @threejs"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/thebuggeddev-2064968106104275008.jpg",
+    "avatarUrl": "/fable5-avatars/thebuggeddev.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1956770434260910080/xVO3sbPP_normal.jpg",
+    "categories": [
+      "games",
+      "3d"
+    ]
+  },
+  {
+    "id": "roundtablespace-2065060228878770399",
+    "title": "Fable 5 benchmark results compared with other models",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2065060228878770399",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "research",
+    "media": "video",
+    "heat": "54 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "research"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE FABLE 5 JUST DESTROYED AN AMUSEMENT PARK BENCHMARK AND THE RESULTS LOOK RIDICULOUSLY GOOD\n\n https://t.co/SadWOlplL2",
+    "metrics": {
+      "likes": 54,
+      "reposts": 1,
+      "replies": 10,
+      "quotes": 1,
+      "views": 33531,
+      "bookmarks": 7
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064685438292672512/vid/avc1/3024x1720/Pv62Ncv60gGKG3Wj.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "CLAUDE FABLE 5 JUST DESTROYED AN AMUSEMENT PARK BENCHMARK AND THE RESULTS LOOK RIDICULOUSLY GOOD"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "benchmark-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": [
+        "benchmark-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2065060228878770399.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "research"
+    ]
+  },
+  {
+    "id": "arcads_ai-2065046759743635529",
+    "title": "D CAD model built with Fable 5",
+    "author": "arcads AI",
+    "handle": "@arcads_ai",
+    "sourceUrl": "https://x.com/arcads_ai/status/2065046759743635529",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "agents",
+    "media": "video",
+    "heat": "32 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "agents"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 + Arcads MCP is too powerful\n\n&gt; Connect your Meta Ads to Claude\n&gt; Analyze the data\n&gt; Generate winning ads in minutes\n\nArcads MCP live today for all arcads users https://t.co/JIQTaePo20",
+    "metrics": {
+      "likes": 32,
+      "reposts": 0,
+      "replies": 4,
+      "quotes": 1,
+      "views": 4975,
+      "bookmarks": 37
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065045821276487680/vid/avc1/1920x1080/p3zuSpLaSAaG7jnx.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:18:46.239Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Fable 5 + Arcads MCP is too powerful"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "marketing"
+      ],
+      "tech": [
+        "mcp"
+      ],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/arcads_ai-2065046759743635529.jpg",
+    "avatarUrl": "/fable5-avatars/arcads_ai.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1989090608049270784/DAEkeJkP_normal.jpg",
+    "categories": [
+      "agents"
+    ]
+  },
+  {
+    "id": "shedoesai-2065068617398702217",
+    "title": "Creating presentations used to take hours",
+    "author": "Gunhild Johanne Reumert | AI Tools & News",
+    "handle": "@shedoesai",
+    "sourceUrl": "https://x.com/shedoesai/status/2065068617398702217",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "design",
+    "media": "video",
+    "heat": "29 likes · 14 reposts",
+    "tags": [
+      "fable5",
+      "design",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Creating presentations used to take hours.\n\nNow it takes one prompt.\n\nClaude plans the deck.\n\nPicsart designs it.\n\nYou export it.\n\nDone.\n\nHere's the process:👇 https://t.co/ehW6oAX2oW",
+    "metrics": {
+      "likes": 29,
+      "reposts": 14,
+      "replies": 5,
+      "quotes": 0,
+      "views": 17673,
+      "bookmarks": 6
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065068266138292224/vid/avc1/1080x1920/bmtI_RyBHb6dt2P1.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Creating presentations used to take hours. Now it takes one prompt. Claude plans the deck. Picsart designs it. You export it. Done. Here's the process:👇"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/shedoesai-2065068617398702217.jpg",
+    "avatarUrl": "/fable5-avatars/shedoesai.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2055981086413381632/U0eA6XKi_normal.jpg",
+    "categories": [
+      "design",
+      "prompts"
+    ]
+  },
+  {
+    "id": "wesroth-2064980962937909438",
+    "title": "working product while the customer was still explaining the workflow built with...",
+    "author": "Wes Roth",
+    "handle": "@wesroth",
+    "sourceUrl": "https://x.com/wesroth/status/2064980962937909438",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "agents",
+    "media": "video",
+    "heat": "47 likes · 4 reposts",
+    "tags": [
+      "fable5",
+      "agents"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "A new Claude Mythos/Fable shows how fast agentic software development is getting.\n\nDuring a customer call, Claude reportedly listened in the background, understood the requested features, and built a working product while the customer was still explaining the workflow.\n\nThe best sales call may soon end with:\n\n“Here is the version you just described.”",
+    "metrics": {
+      "likes": 47,
+      "reposts": 4,
+      "replies": 1,
+      "quotes": 0,
+      "views": 5842,
+      "bookmarks": 14
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064856649983205376/vid/avc1/1360x1256/tIad5sM7F-FG36Ns.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "A new Claude Mythos/Fable shows how fast agentic software development is getting"
+    ],
+    "facets": {
+      "artifactType": "codebase",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "automation"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "marketing"
+      ],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/wesroth-2064980962937909438.jpg",
+    "avatarUrl": "/fable5-avatars/wesroth.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1905477529013813251/RST2MxqV_normal.jpg",
+    "categories": [
+      "agents"
+    ]
+  },
+  {
+    "id": "aionlydeveloper-2064863353227579519",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "AI Developer",
+    "handle": "@aionlydeveloper",
+    "sourceUrl": "https://x.com/aionlydeveloper/status/2064863353227579519",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "41 likes · 2 reposts",
+    "tags": [
+      "fable5",
+      "games"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 🤯\n\nInsane ONE SHOT!\n\nIt made Watermelon Game 2, I did not tell it to make this, just told it to make a viral game.\n\nThis changes everything honestly, I have an even more insane 1 Shot, but too shared to show😳 https://t.co/gSiUFzoACD",
+    "metrics": {
+      "likes": 41,
+      "reposts": 2,
+      "replies": 7,
+      "quotes": 0,
+      "views": 5045,
+      "bookmarks": 18
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064863163611545600/vid/avc1/1920x1080/ppLRfKLakT4GUn80.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "It made Watermelon Game 2, I did not tell it to make this, just told it to make a viral game"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/aionlydeveloper-2064863353227579519.jpg",
+    "avatarUrl": "/fable5-avatars/aionlydeveloper.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1992817711857143808/axqsDryb_normal.jpg",
+    "categories": [
+      "games"
+    ]
+  },
+  {
+    "id": "wongmjane-2064916044268052489",
+    "title": "If you don’t live in SF, you can now try “SF Founder Simulator” to experience...",
+    "author": "Jane Manchun Wong",
+    "handle": "@wongmjane",
+    "sourceUrl": "https://x.com/wongmjane/status/2064916044268052489",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "44 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "games"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "If you don’t live in SF, you can now try “SF Founder Simulator” to experience what it’s like living here and interacting with every SF archetype in person\n\nhttps://t.co/7uMSWmoqd4\n(created using Claude Fable 5 within 30 minutes) https://t.co/avZffWHb2f",
+    "metrics": {
+      "likes": 44,
+      "reposts": 3,
+      "replies": 2,
+      "quotes": 0,
+      "views": 4306,
+      "bookmarks": 16
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064914381864132608/vid/avc1/1920x1080/3GxXIluu3wcGbySk.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "(created using Claude Fable 5 within 30 minutes)"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/wongmjane-2064916044268052489.jpg",
+    "avatarUrl": "/fable5-avatars/wongmjane.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2001468039167180800/fQLK2MWx_normal.png",
+    "categories": [
+      "games"
+    ]
+  },
+  {
+    "id": "toolfolio-2064960467647557961",
+    "title": "Open-source shader and pattern generator",
+    "author": "ToolFolio",
+    "handle": "@toolfolio",
+    "sourceUrl": "https://x.com/toolfolio/status/2064960467647557961",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "video",
+    "heat": "23 likes · 4 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "web",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Someone built and open-sourced a shader generator for websites \n\nIt's called Lumenshaders, generate beautiful shader backgrounds, patterns, videos, and GIFs for websites, posters, and creative projects.\n\nBuilt with Claude Fable 5\nhttps://t.co/HvcZX3lpo3",
+    "metrics": {
+      "likes": 23,
+      "reposts": 4,
+      "replies": 2,
+      "quotes": 0,
+      "views": 1381,
+      "bookmarks": 34
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064774903182553088/vid/avc1/1920x1080/L5E-HICAyXrBt0wd.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "It's called Lumenshaders, generate beautiful shader backgrounds, patterns, videos, and GIFs for websites, posters, and creative projects"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "web-design"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/toolfolio-2064960467647557961.jpg",
+    "avatarUrl": "/fable5-avatars/toolfolio.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2009598862592270336/Gdooec7a_normal.jpg",
+    "categories": [
+      "apps"
+    ]
+  },
+  {
+    "id": "vincentlogic-2064921358359011684",
+    "title": "只用了一个提示词（One Prompt），直接手搓了一个完整的驾驶游戏《Dusk Drive》。",
+    "author": "Vincent | 信号＞噪音",
+    "handle": "@vincentlogic",
+    "sourceUrl": "https://x.com/vincentlogic/status/2064921358359011684",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "prompts",
+    "media": "video",
+    "heat": "31 likes · 4 reposts",
+    "tags": [
+      "fable5",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 只用了一个提示词（One Prompt），直接手搓了一个完整的驾驶游戏《Dusk Drive》。\n\n看这低多边形（Low-poly）画风、这极光下的雪地漂移...\n说是独立游戏工作室做出来的我都信。\n\n但最恐怖的是：\n开发者一行代码都没写（Zero Human Editing）。\n从想法到可玩版本，中间没有任何人工干预。\n\n这已经不是“辅助编程”了，这是直接把“游戏引擎”给吞并了啊。\n\n大家觉得这画质和手感，能上架 Steam 卖钱吗？",
+    "metrics": {
+      "likes": 31,
+      "reposts": 4,
+      "replies": 4,
+      "quotes": 0,
+      "views": 5750,
+      "bookmarks": 23
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064920696745254912/vid/avc1/1920x1080/n92iMAW5-Py1gbJK.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "看这低多边形（Low-poly）画风、这极光下的雪地漂移"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/vincentlogic-2064921358359011684.jpg",
+    "avatarUrl": "/fable5-avatars/vincentlogic.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2010360210008023040/tDA3CwgH_normal.jpg",
+    "categories": [
+      "prompts"
+    ]
+  },
+  {
+    "id": "zhodonx-2065096912001180124",
+    "title": "built its own CAD editor and then designed inside it. the demos i’ve seen are...",
+    "author": "zhod",
+    "handle": "@zhodonx",
+    "sourceUrl": "https://x.com/zhodonx/status/2065096912001180124",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "video",
+    "heat": "42 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "3d",
+      "prompts",
+      "research",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Every few weeks it’s a new funeral.\n\n> Artists are cooked. \n> Programmers are cooked.\n\nand now, mechanical engineers.\n\nIt’s been less than 48 hours since Fable 5 dropped and people are already rawdogging it through Adam straight into Fusion.\n\n- A working V8 in minutes.\n- A full 747 from one prompt.\n\nThe model even built its own CAD editor and then designed inside it.\n\nthe demos i’ve seen are genuinely crazy, & the reactions have been the same.\n\nbut here’s what we miss every time we doom-market AI:\n\nAI wasn’t built originally to replace anyone’s work but to genuinely amplify it.\n\nwhat got automated here for example is the clicking: the repetitive edits, the grunt work across 40 files.\n\nWhat didn’t get automated is the judgment: stress analysis, tolerances, certification, and real life working conditions.\n\nAdam’s own founder has said they’re targeting the boring repetitive stuff, and not precisely for it to do the job better than its engineers.\n\nSo does leaning on it make you less technical?\n\nDepends how you use it.\n\nIf you skip the thinking & let it carry you, you’d definitely lose the plot.\n\nIf we it to move faster on what we collectively already understand, we just get better.\n\nThe tool doesn’t get to decide which.\n\nWe do.",
+    "metrics": {
+      "likes": 42,
+      "reposts": 1,
+      "replies": 29,
+      "quotes": 0,
+      "views": 576,
+      "bookmarks": 2
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065095448315015168/vid/avc1/1280x720/36NPZXsITTNHQdXl.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "AI wasn’t built originally to replace anyone’s work but to genuinely amplify it"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "react"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/zhodonx-2065096912001180124.jpg",
+    "avatarUrl": "/fable5-avatars/zhodonx.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1884865789217361920/40zfF4GA_normal.jpg",
+    "categories": [
+      "apps",
+      "3d",
+      "prompts",
+      "research"
+    ]
+  },
+  {
+    "id": "majidmanzarpour-2065065340510281888",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Majid Manzarpour",
+    "handle": "@majidmanzarpour",
+    "sourceUrl": "https://x.com/majidmanzarpour/status/2065065340510281888",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "34 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "agents"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Hey @claudeai Fable 5, build a starship dogfighting game with @threejs @tripoai @ElevenLabs @NanoBanana using my game director agent skills https://t.co/hpPSJnSIp5",
+    "metrics": {
+      "likes": 34,
+      "reposts": 3,
+      "replies": 2,
+      "quotes": 0,
+      "views": 3219,
+      "bookmarks": 23
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065065185346306050/vid/avc1/3024x1964/TFdQcrgfc7Pltw5j.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Hey @claudeai Fable 5, build a starship dogfighting game with @threejs @tripoai @ElevenLabs @NanoBanana using my game director agent skills"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/majidmanzarpour-2065065340510281888.jpg",
+    "avatarUrl": "/fable5-avatars/majidmanzarpour.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+    "categories": [
+      "games",
+      "3d",
+      "agents"
+    ]
+  },
+  {
+    "id": "0x_fokki-2065060824478076943",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Fokki",
+    "handle": "@0x_fokki",
+    "sourceUrl": "https://x.com/0x_fokki/status/2065060824478076943",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "35 likes · 2 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "videos",
+      "prompts",
+      "code",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "prompted",
+    "prompt": "glider over a fantasy world, castle on the horizon, glassmorphism HUD floating in the air.\n\n> Fable 5 wrote every line of code: 81 minutes.\n> he uploaded one HTML file: 60 seconds.\n\nstudios charge $10,000 for a game interface that takes three weeks.\nhe quotes $1,500 and delivers before the agency sends a proposal.\n\nhe spent six months building interfaces by hand. they landed $2,400 in clients.\nthe prompted version made $13,400.\n\nthe demo is the video below 👇",
+    "note": "Prompt text was extracted from the original post. Verify any hidden follow-up steps before treating it as a tutorial.",
+    "originalText": "🚨a 19-year-old made $13,400 last month building game interfaces for brands\n\nhis secret leaked to everyone today\n\nanthropic shipped Fable 5\n\nhe gave it one prompt: glider over a fantasy world, castle on the horizon, glassmorphism HUD floating in the air.\n\n> Fable 5 wrote every line of code: 81 minutes.\n> he uploaded one HTML file: 60 seconds.\n\nstudios charge $10,000 for a game interface that takes three weeks.\nhe quotes $1,500 and delivers before the agency sends a proposal.\n\nhe spent six months building interfaces by hand. they landed $2,400 in clients.\nthe prompted version made $13,400.\n\nthe demo is the video below 👇",
+    "metrics": {
+      "likes": 35,
+      "reposts": 2,
+      "replies": 12,
+      "quotes": 0,
+      "views": 1737,
+      "bookmarks": 16
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065056299243454465/vid/avc1/1280x720/KDIb6SWRKFnIgPVn.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "a 19-year-old made $13,400 last month building game interfaces for brands Prompt: \"glider over a fantasy world, castle on the horizon, glassmorphism HUD floating i"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "motion-gen"
+      ],
+      "evidence": [
+        "prompted",
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/0x_fokki-2065060824478076943.jpg",
+    "avatarUrl": "/fable5-avatars/0x_fokki.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2058811986180194304/b_xYlbny_normal.jpg",
+    "categories": [
+      "games",
+      "videos",
+      "prompts",
+      "code"
+    ]
+  },
+  {
+    "id": "noisyb0y1-2064970594118967756",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "Noisy",
+    "handle": "@noisyb0y1",
+    "sourceUrl": "https://x.com/noisyb0y1/status/2064970594118967756",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "25 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "ONE PROMPT IN CLAUDE FABLE 5 AND YOUR BUSINESS BECOMES A LIVING 3D CITY\n\nwarehouse, packing, drones between buildings, orders flying across the entire city in real time\n\nevery building is a department of your company, every drone is a real order, and every house has an AI assistant that knows everything about your product\n\n42 deliveries in a day, average time 12 minutes, $651 in revenue - all visible in real time right on the screen\n\nI built this in one evening and already show it to clients instead of boring slides\n\nnobody has done this before because just a few days ago it would have been impossible\n\nfull breakdown on how to build this for your own business in the article below",
+    "metrics": {
+      "likes": 25,
+      "reposts": 3,
+      "replies": 10,
+      "quotes": 1,
+      "views": 2102,
+      "bookmarks": 20
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064969728884371456/vid/avc1/2172x1080/eH8TniDnPd9zc4KQ.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "ONE PROMPT IN CLAUDE FABLE 5 AND YOUR BUSINESS BECOMES A LIVING 3D CITY"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "ecommerce"
+      ],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/noisyb0y1-2064970594118967756.jpg",
+    "avatarUrl": "/fable5-avatars/noisyb0y1.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2026302540434767872/rtRKmitd_normal.jpg",
+    "categories": [
+      "3d",
+      "prompts"
+    ]
+  },
+  {
+    "id": "datachaz-2065051902522593495",
+    "title": "website (prompt by @bogdan_qclay) one-shotted with Fable 5",
+    "author": "Charly Wargnier",
+    "handle": "@datachaz",
+    "sourceUrl": "https://x.com/datachaz/status/2065051902522593495",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "26 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "prompts",
+      "prompt",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "HOLY SH*T\n\nClaude Fable 5 perfectly one-shotted this website 🤯\n\n(prompt by @bogdan_qclay) https://t.co/KMlJowMyan",
+    "metrics": {
+      "likes": 26,
+      "reposts": 3,
+      "replies": 5,
+      "quotes": 0,
+      "views": 4873,
+      "bookmarks": 22
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065051847401095169/vid/avc1/960x720/RmFZuPV4G7TXMIFI.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-11T16:44:50.510Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "recent-2026-06-11-to-2026-06-12",
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "recent-week-2026-06-05-to-2026-06-11",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "SH*T Claude Fable 5 perfectly one-shotted this website 🤯 (prompt by @bogdan_qclay)"
+    ],
+    "mediaThumbUrl": "/fable5-media/datachaz-2065051902522593495.jpg",
+    "avatarUrl": "/fable5-avatars/datachaz.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1967672234056523776/FoFd2843_normal.jpg",
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "web-design"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "categories": [
+      "websites",
+      "prompts"
+    ]
+  },
+  {
+    "id": "angeldot_-2065109957314314714",
+    "title": "No way this guy just leaked the method for free\udc80",
+    "author": "angel",
+    "handle": "@angeldot_",
+    "sourceUrl": "https://x.com/angeldot_/status/2065109957314314714",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "30 likes · 5 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "prompts",
+      "prompt",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "No way this guy just leaked the method for free💀\n\nmost gurus would sell this as a $997 course.\n\ninstead, the full playbook for a $24,818/month clipping page run by Claude Fable 5 is sitting in a free article:\n\n→ Vugola for the clips\n→ Postiz for the posting\n→ Fable 5 running everything\n\n3 terminal commands. 1 prompt. zero employees.\n\nmeanwhile Iman Gadzhi paid an ARMY of clippers to hit 100M views and then bought Whop to pay them.\n\nthat entire business model just died.\n\nFable 5 is free on paid plans until June 22, so the timing couldn’t be better.\n\nstep-by-step guide below 👇",
+    "metrics": {
+      "likes": 30,
+      "reposts": 5,
+      "replies": 6,
+      "quotes": 0,
+      "views": 689,
+      "bookmarks": 13
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065109761977196544/vid/avc1/720x1280/eZ0ORB1y0NVZfccu.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "recent-2026-06-11-to-2026-06-12"
+    ],
+    "summary": [
+      "that entire business model just died"
+    ],
+    "facets": {
+      "artifactType": "prompt-pack",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "tutorial"
+      ],
+      "domain": [
+        "education"
+      ],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/angeldot_-2065109957314314714.jpg",
+    "avatarUrl": "/fable5-avatars/angeldot_.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2042194820643291136/a7VPl8re_normal.jpg",
+    "categories": [
+      "3d",
+      "prompts"
+    ]
+  },
+  {
+    "id": "sowmay_jain-2065060160968737049",
+    "title": "interactive teardown site so you can explode the mechanism built with Fable 5",
+    "author": "Sowmay Jain",
+    "handle": "@sowmay_jain",
+    "sourceUrl": "https://x.com/sowmay_jain/status/2065060160968737049",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "38 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "design",
+      "prompts",
+      "prompt",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "asked claude fable 5 to design a peptide injector pen\n\nit researched iso 11608 specs, modeled all 11 components, then built an interactive teardown site so you can explode the mechanism in your browser\n\n~$8 / one prompt for the pen, one for the site https://t.co/tJ3Dz1BkoV",
+    "metrics": {
+      "likes": 38,
+      "reposts": 3,
+      "replies": 6,
+      "quotes": 1,
+      "views": 1952,
+      "bookmarks": 7
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065059665113911296/vid/avc1/2940x1734/1Xf0UiDhFjVyPa6S.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "~$8 / one prompt for the pen, one for the site"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/sowmay_jain-2065060160968737049.jpg",
+    "avatarUrl": "/fable5-avatars/sowmay_jain.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1913108638136188929/nDTYdWob_normal.jpg",
+    "categories": [
+      "websites",
+      "design",
+      "prompts"
+    ]
+  },
+  {
+    "id": "chorus_agent-2065077460434108573",
+    "title": "Fable 5 is now in Chorus",
+    "author": "Chorus.com",
+    "handle": "@chorus_agent",
+    "sourceUrl": "https://x.com/chorus_agent/status/2065077460434108573",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "image",
+    "heat": "31 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 is now in Chorus.\n\nIn iMessage use /model\n\nThe easiest way to add Claude Code to iMessage, just became the most powerful. https://t.co/DrEeXpetjP",
+    "metrics": {
+      "likes": 31,
+      "reposts": 3,
+      "replies": 3,
+      "quotes": 1,
+      "views": 9206,
+      "bookmarks": 13
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKihAVYW8AAS0DU.jpg"
+    ],
+    "firstSeenAt": "2026-06-11T17:18:46.239Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "The easiest way to add Claude Code to iMessage, just became the most powerful"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "image",
+      "capability": [
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/chorus_agent-2065077460434108573.jpg",
+    "avatarUrl": "/fable5-avatars/chorus_agent.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2062189496746098688/dRWVlFGx_normal.png",
+    "categories": [
+      "3d",
+      "code"
+    ]
+  },
+  {
+    "id": "aiverseplay-2065064004373090711",
+    "title": "CLAUDE CODE GERÇEKTEN ÇILDIRMIŞ",
+    "author": "AIVersePlay",
+    "handle": "@aiverseplay",
+    "sourceUrl": "https://x.com/aiverseplay/status/2065064004373090711",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "27 likes · 2 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "code",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE CODE GERÇEKTEN ÇILDIRMIŞ!\n\nClaude Fable 5 az önce video içerik üretim oyununu tamamen değiştirdi.\n\nArtık tek bir komutla:\n\nYouTube videolarını analiz ediyor.\n\n Viral olabilecek anları buluyor.\n\n Dikkat çeken altyazılar ekliyor.\n\nKonuşmacıyı otomatik kadraja alıyor.\n\n İçeriği Tiktok, reels ve shortsa uyarlıyor.\n\nGönderileri planlayıp yayınlıyor.\n\nBir zamanlar bunların her biri ayrı bir yazılım gerektiriyordu.\n\nŞimdi ise tek bir yapay zeka hepsini tek başına yapabiliyor.\n\nBu sadece bir güncelleme değil.\n\nVideo editörlüğünün geleceği yeniden yazılıyor.\n\nVe çoğu insan bunun ne kadar büyük bir değişim olduğunu henüz fark etmiş değil.",
+    "metrics": {
+      "likes": 27,
+      "reposts": 2,
+      "replies": 7,
+      "quotes": 0,
+      "views": 1059,
+      "bookmarks": 18
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064999223066558464/vid/avc1/1280x828/_j1TDQ6t7riV2xie.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Claude Fable 5 az önce video içerik üretim oyununu tamamen değiştirdi"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "motion-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "marketing"
+      ],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/aiverseplay-2065064004373090711.jpg",
+    "avatarUrl": "/fable5-avatars/aiverseplay.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2058143936405753856/fkwX7SAC_normal.jpg",
+    "categories": [
+      "videos",
+      "code"
+    ]
+  },
+  {
+    "id": "oluwaphilemon1-2064940105802907685",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "FHILY👑",
+    "handle": "@oluwaphilemon1",
+    "sourceUrl": "https://x.com/oluwaphilemon1/status/2064940105802907685",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "24 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "3d",
+      "agents",
+      "code",
+      "prompt",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I used Claude Fable 5 built a 3D product website with Claude Code\n\nGenerate an image of a product with the Magnific MCP, and convert it into a 3D model.\n\nDownload that model and give it to Fable 5 to develop an interactive page with.\n\nHere's the final result + prompts: https://t.co/ZoYTmKkIvd",
+    "metrics": {
+      "likes": 24,
+      "reposts": 3,
+      "replies": 3,
+      "quotes": 2,
+      "views": 2341,
+      "bookmarks": 18
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064940030351560704/vid/avc1/1280x720/XC9vrup_2x9wyvSW.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "I used Claude Fable 5 built a 3D product website with Claude Code"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "web-design"
+      ],
+      "tech": [
+        "mcp",
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/oluwaphilemon1-2064940105802907685.jpg",
+    "avatarUrl": "/fable5-avatars/oluwaphilemon1.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+    "categories": [
+      "websites",
+      "3d",
+      "agents",
+      "code"
+    ]
+  },
+  {
+    "id": "tz_2022-2065049269027975400",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "Tz",
+    "handle": "@tz_2022",
+    "sourceUrl": "https://x.com/tz_2022/status/2065049269027975400",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "18 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "终于知道声场的振动是如何在 3D 空间中运动变化，进而在一个 2D 平面上形成特定纹理的了！！\n\n（由 Claude Fable 5 生成的可视化前端） https://t.co/DejCJQ8zTb",
+    "metrics": {
+      "likes": 18,
+      "reposts": 3,
+      "replies": 5,
+      "quotes": 0,
+      "views": 3905,
+      "bookmarks": 21
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064838856684539904/vid/avc1/720x720/__PHGNQdUyKty6fh.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "终于知道声场的振动是如何在 3D 空间中运动变化，进而在一个 2D 平面上形成特定纹理的了！！"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/tz_2022-2065049269027975400.jpg",
+    "avatarUrl": "/fable5-avatars/tz_2022.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1579478276287905794/7-2NGiY3_normal.jpg",
+    "categories": [
+      "3d"
+    ]
+  },
+  {
+    "id": "polydao-2065085041378480545",
+    "title": "App prototype built with Fable 5",
+    "author": "Mr. Buzzoni",
+    "handle": "@polydao",
+    "sourceUrl": "https://x.com/polydao/status/2065085041378480545",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "apps",
+    "media": "video",
+    "heat": "32 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "design",
+      "agents",
+      "prompts",
+      "code",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Anthropic's CEO: \"coding is going away first. then all of software engineering\"\n\nhere's what nobody's ready for:\n\nwhen anyone can ship an app in 24 hours, code stops being the moat. design does.\n\nthe solo devs clearing $10,000-100,000/mo right now all have one thing in common - their apps look like products, not AI slop\n\nthe difference isn't a better prompt. it's working inside a design system the AI respects:\n\n> brief, then vocabulary, then flow - before a single pixel gets generated\n> the AI reads your design system instead of inventing a new one every time\n> Claude Fable 5 or Opus 4.8 building from 6 markdown files while you make the taste calls\n\nAI didn't replace the designer. it deleted everyone who skipped the brief.\n\nfull workflow in the article below 👇",
+    "metrics": {
+      "likes": 32,
+      "reposts": 0,
+      "replies": 7,
+      "quotes": 0,
+      "views": 907,
+      "bookmarks": 12
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065079840533835776/vid/avc1/1920x1080/kCXp4RxiBfSkvcJH.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "when anyone can ship an app in 24 hours, code stops being the moat"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "marketing"
+      ],
+      "tech": [],
+      "risk": [
+        "benchmark-claim",
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/polydao-2065085041378480545.jpg",
+    "avatarUrl": "/fable5-avatars/polydao.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2022077728359682048/UWClPPZX_normal.jpg",
+    "categories": [
+      "apps",
+      "design",
+      "agents",
+      "prompts",
+      "code"
+    ]
+  },
+  {
+    "id": "oluwaphilemon1-2065012656889581939",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "FHILY👑",
+    "handle": "@oluwaphilemon1",
+    "sourceUrl": "https://x.com/oluwaphilemon1/status/2065012656889581939",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "23 likes · 2 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "3d",
+      "design",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Made this animation video with Claude Fable 5 in Claude Design. \n\nIt takes some back-and-forth with nudges and tweaks (also new ideas popping up as I was creating but the speed and output quality are wild.\n\nThe sequence: chasing a star → through a doorway → tumbling down stairs → dissolving into a star field → city reveal.",
+    "metrics": {
+      "likes": 23,
+      "reposts": 2,
+      "replies": 0,
+      "quotes": 2,
+      "views": 2065,
+      "bookmarks": 18
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065012519530332160/vid/avc1/1160x718/YIzvluUqB1wdk3YF.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Made this animation video with Claude Fable 5 in Claude Design"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/oluwaphilemon1-2065012656889581939.jpg",
+    "avatarUrl": "/fable5-avatars/oluwaphilemon1.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+    "categories": [
+      "videos",
+      "3d",
+      "design"
+    ]
+  },
+  {
+    "id": "rewind02-2065078299471024566",
+    "title": "Short video generated from a few prompts",
+    "author": "rewind",
+    "handle": "@rewind02",
+    "sourceUrl": "https://x.com/rewind02/status/2065078299471024566",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "24 likes · 5 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "websites",
+      "videos",
+      "3d",
+      "design",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 built a fully interactive 3D website from a single prompt in just 13 min\n\ni was watching the demo, and one moment actually made me pause the video:\n\n\"this is probably the best website I've ever generated from a single prompt.\"\n\nmost designers still pay developers for animations that Fable can generate in 10 minutes\n\nthey think they're using AI for design\n\nin reality, they're probably using only 10% of what's actually possible\n\nthree.js. GSAP. Custom 3D assets. playable browser games. all generated from a text prompt\n\nthis replaces an entire stack of tools you've been using for years\n\nfull breakdown of all 7 websites, plus a guide to building a mini-game with Fable 5, is 👇",
+    "metrics": {
+      "likes": 24,
+      "reposts": 5,
+      "replies": 6,
+      "quotes": 0,
+      "views": 552,
+      "bookmarks": 10
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065078216805474304/vid/avc1/640x360/mf57B3BeDKA6-BWP.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Fable 5 built a fully interactive 3D website from a single prompt in just 13 min"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "tutorial",
+        "unverified-claim"
+      ],
+      "domain": [
+        "web-design",
+        "game-dev",
+        "education"
+      ],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/rewind02-2065078299471024566.jpg",
+    "avatarUrl": "/fable5-avatars/rewind02.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2036190950545084416/aHeLH6m__normal.jpg",
+    "categories": [
+      "games",
+      "websites",
+      "videos",
+      "3d",
+      "design",
+      "prompts"
+    ]
+  },
+  {
+    "id": "claudecode_ut-2064950762351059086",
+    "title": "【最新】",
+    "author": "東大ClaudeCode研究所",
+    "handle": "@claudecode_ut",
+    "sourceUrl": "https://x.com/claudecode_ut/status/2064950762351059086",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "media": "video",
+    "heat": "23 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "【最新】\nClaude Code 開発チームが\n「Fable 5 で、自分たちの仕事が変わった」と語る動画を公開した。\nhttps://t.co/vKSXcCBAdP\n\nFable 5 で変わったのは、確認する対象だ。\n「正しく作れたか」を確認していた仕事が\n「正しいものを作っているか」を確認する仕事になった。\n\n3つの変化：\n\n・Fable 5 は数時間、自律稼働してテストまで回す。人間の役割は「確認」から「方向づけとセットアップ」に変わった\n・制約より文脈を渡すほうが、Claude の判断精度が上がる。「この機能は1ヶ月後に消えるかもしれない」と伝えるだけで変わる\n・実装前に Claude をインタビュー相手として使い、スペックを固める。作り直しが激減する\n\n公式チームが「自分たちの仕事の構造が変わった」と証言している。\n\nエンジニアの重心が「正しく実装する」から「何を作るかを決める」に移っている。",
+    "metrics": {
+      "likes": 23,
+      "reposts": 0,
+      "replies": 2,
+      "quotes": 0,
+      "views": 7493,
+      "bookmarks": 21
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064397545754025984/vid/avc1/3840x2160/oLfxrBsbm6NDwmSJ.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "「Fable 5 で、自分たちの仕事が変わった」と語る動画を公開した。"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/claudecode_ut-2064950762351059086.jpg",
+    "avatarUrl": "/fable5-avatars/claudecode_ut.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2045968105172766720/_u891Zxq_normal.jpg",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "id": "mannybernabe-2065086032756826379",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Manny Bernabe",
+    "handle": "@mannybernabe",
+    "sourceUrl": "https://x.com/mannybernabe/status/2065086032756826379",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "25 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 test drive (literally 😅) on Replit. One prompt. A 3D infinite city driving game.\n\n17 minutes later: all the game mechanics, custom branding, fluid movement, real world physics. One shot! 🤯\n\nExceptional model. Go try it today. https://t.co/PMKqsYgc8T",
+    "metrics": {
+      "likes": 25,
+      "reposts": 3,
+      "replies": 6,
+      "quotes": 0,
+      "views": 4197,
+      "bookmarks": 11
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065085107413635072/vid/avc1/1920x1080/HqPstbtaeFw3RFNZ.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "A 3D infinite city driving game"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/mannybernabe-2065086032756826379.jpg",
+    "avatarUrl": "/fable5-avatars/mannybernabe.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1687156446511710220/6t1y2wMU_normal.jpg",
+    "categories": [
+      "games",
+      "3d",
+      "prompts"
+    ]
+  },
+  {
+    "id": "nitinthisside_-2064987804086755359",
+    "title": "Three app prototypes built from one prompt",
+    "author": "Nitin.nn",
+    "handle": "@nitinthisside_",
+    "sourceUrl": "https://x.com/nitinthisside_/status/2064987804086755359",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "media": "text",
+    "heat": "31 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "code",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Code Fable 5 is insane.\n\ni know literally NOTHING about coding. ZERO. and i just built 3 fully functioning web apps in 30 minutes.    \n\nhttp://localhost:3000/\nhttp://localhost:5000/    \nhttp://localhost:8000/\n\ncheck it out.",
+    "metrics": {
+      "likes": 31,
+      "reposts": 0,
+      "replies": 19,
+      "quotes": 0,
+      "views": 2006,
+      "bookmarks": 2
+    },
+    "mediaUrls": [],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "and i just built 3 fully functioning web apps in 30 minutes"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "text",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "",
+    "avatarUrl": "/fable5-avatars/nitinthisside_.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2050932210644238336/V18L-ofX_normal.jpg",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "id": "claudecode_ut-2064992282475139153",
+    "title": "Autonomous agent workflow for Fable 5",
+    "author": "東大ClaudeCode研究所",
+    "handle": "@claudecode_ut",
+    "sourceUrl": "https://x.com/claudecode_ut/status/2064992282475139153",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "media": "video",
+    "heat": "24 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "【最新】\nFable 5 が Hyperagent で動き始めた😱\n目標を渡すだけで数時間ひとりで作業し、出力を自分で評価・改善する。人が触らなくても完結する👇\n\nhttps://t.co/YaW7uA27nS\n\n・NASA のデータで太陽系の全小惑星を可視化\n・100 エーカーのスポーツ施設の設計図を生成\n・技術 PDF から NASA コントロールパネルを再現\n\nClaude Code で作業を一つずつ頼む段階から、目標を渡して結果を受け取るフェーズへ。Fable 5 が見せているのは、その移行がすでに始まっているという事実だ。",
+    "metrics": {
+      "likes": 24,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 5260,
+      "bookmarks": 18
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064407893022019584/vid/avc1/1920x1080/qxmVcG-u2v4zzKjH.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "目標を渡すだけで数時間ひとりで作業し、出力を自分で評価・改善する。人が触らなくても完結する"
+    ],
+    "facets": {
+      "artifactType": "agent-loop",
+      "medium": "video",
+      "capability": [
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/claudecode_ut-2064992282475139153.jpg",
+    "avatarUrl": "/fable5-avatars/claudecode_ut.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2045968105172766720/_u891Zxq_normal.jpg",
+    "categories": [
+      "code"
+    ]
+  },
+  {
+    "id": "n01ennn-2065105963472826588",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "NO1ennn",
+    "handle": "@n01ennn",
+    "sourceUrl": "https://x.com/n01ennn/status/2065105963472826588",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "22 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "code",
+      "news",
+      "prompt",
+      "limits"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CHINESE DEVELOPER ASKED CLAUDE FABLE 5 TO BUILD A GAME. IT MADE TESLA’S ROADSTER FLYING TO MARS\n\nTesla Roadster. Cybertruck. Model S. Tesla Semi. pick your vehicle. launch sequence. T-minus countdown. rocket clears atmosphere. stage separation. cruising to Mars. dodge asteroids\n\none HTML file. no game engine. no assets. no code written by hand\n\nsix prompts. one evening. fully playable browser game\n\nsame skill gamification agencies sell for $3,000-8,000. Claude Fable 5 builds it in hours. you just describe what you want.",
+    "metrics": {
+      "likes": 22,
+      "reposts": 1,
+      "replies": 9,
+      "quotes": 0,
+      "views": 212,
+      "bookmarks": 13
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065105730256986112/vid/avc1/576x1024/rr7NxuyLBtTwBt9Z.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "recent-2026-06-11-to-2026-06-12"
+    ],
+    "summary": [
+      "CHINESE DEVELOPER ASKED CLAUDE FABLE 5 TO BUILD A GAME"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "marketing",
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "safety",
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/n01ennn-2065105963472826588.jpg",
+    "avatarUrl": "/fable5-avatars/n01ennn.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2042704855702147072/Scs1uqIO_normal.jpg",
+    "categories": [
+      "games",
+      "3d",
+      "code",
+      "news"
+    ]
+  },
+  {
+    "id": "vedu_boi-2065086404158431710",
+    "title": "One prompt and got this",
+    "author": "VeduBoi",
+    "handle": "@vedu_boi",
+    "sourceUrl": "https://x.com/vedu_boi/status/2065086404158431710",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "prompts",
+    "media": "video",
+    "heat": "26 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 is just insane\nOne prompt and got this https://t.co/37RwDCqfgI",
+    "metrics": {
+      "likes": 26,
+      "reposts": 1,
+      "replies": 8,
+      "quotes": 0,
+      "views": 1111,
+      "bookmarks": 7
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065086278140612608/vid/avc1/1280x720/cNfF9-rm3r3DIZZW.mp4?tag=27",
+      "https://pbs.twimg.com/media/HKipEuabIAAYEI5.jpg"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Fable 5 is just insane One prompt and got this"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/vedu_boi-2065086404158431710.jpg",
+    "avatarUrl": "/fable5-avatars/vedu_boi.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1826891073601277952/OiRrVLoY_normal.jpg",
+    "categories": [
+      "prompts"
+    ]
+  },
+  {
+    "id": "asteri_eth-2064955767770243419",
+    "title": "Minecraft-style game built with one prompt",
+    "author": "Asteri",
+    "handle": "@asteri_eth",
+    "sourceUrl": "https://x.com/asteri_eth/status/2064955767770243419",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "28 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "prompts",
+      "code",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "\"MAKE A POKÉMON CLONE\" 1 HOUR LATER: 8,000 LINES OF READY-TO-USE CODE\n\nClaude 5 Fable. One prompt. One shot\n\nAll 151 first-generation Pokémon. Real sprites, sounds, evolutions, base stats, catch rates\n\n> No iterations\n> No commands\n>No edits\n\nMinecraft, GTA, Pokémon these no longer take six months to develop\n\nIt’s a prompt and an hour’s wait",
+    "metrics": {
+      "likes": 28,
+      "reposts": 0,
+      "replies": 8,
+      "quotes": 0,
+      "views": 581,
+      "bookmarks": 7
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/ext_tw_video/2064955694177030144/pu/vid/avc1/764x598/cqwYizHcQAvNRkxi.mp4?tag=25"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "It’s a prompt and an hour’s wait"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "copyright",
+        "market-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/asteri_eth-2064955767770243419.jpg",
+    "avatarUrl": "/fable5-avatars/asteri_eth.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2022637969216327680/I0P63zlc_normal.jpg",
+    "categories": [
+      "games",
+      "prompts",
+      "code"
+    ]
+  },
+  {
+    "id": "claudecode_lab-2064944141570920886",
+    "title": "Prompt-driven motion or animation demo",
+    "author": "Claude Code研究所|スパルタClaude Code塾",
+    "handle": "@claudecode_lab",
+    "sourceUrl": "https://x.com/claudecode_lab/status/2064944141570920886",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "videos",
+    "media": "video",
+    "heat": "23 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "videos",
+      "design",
+      "agents"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "【動画編集もClaudeで自動化】\n\nFable 5によって働き方がどの程度変わったのかを紹介した動画、\nやはりFable 5によって最初から最後まで編集されていました。\nこれを無制限で使えるAnthropic社員が羨ましい！\n\n以下が詳細です↓\n\n人間がやったのは、17テイク・25GBの撮影素材が入ったフォルダを渡しただけ。\nどの動画がどのシーンに対応するかすら教えていない。\n\nそこから Fable 5 がやったこと：\n・Whisper で全テイクを文字起こし\n・「えーと」が少ないベストテイクをシーンごとに自動選別\n・採用クリップと開始/終了時刻をまとめた編集用JSONを生成\n・FFmpeg で結合\n・カラーグレーディングのコードを自分で書いて適用\n・Remotion で字幕やUIをビートに合わせて合成\n・Figma MCP でデザインチームの修正を動画へ反映\n・npx remotion render で最終レンダリング\n\n編集ソフトもタイムラインも一切触らず、全部「コード」で完結しています。\n動画編集がエンジニアリングのタスクになっています。\n\nhttps://t.co/1Kquy8FhUw\n\nhttps://t.co/BdcPAdcINU",
+    "metrics": {
+      "likes": 23,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 3198,
+      "bookmarks": 15
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064825703275859968/vid/avc1/1740x1080/L8R-kjmE84hGeMrO.mp4?tag=27",
+      "https://video.twimg.com/amplify_video/2064397545754025984/vid/avc1/3840x2160/oLfxrBsbm6NDwmSJ.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Fable 5によって働き方がどの程度変わったのかを紹介した動画、"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "mcp"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/claudecode_lab-2064944141570920886.jpg",
+    "avatarUrl": "/fable5-avatars/claudecode_lab.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2047553749867216896/_SKwpHqG_normal.jpg",
+    "categories": [
+      "videos",
+      "design",
+      "agents"
+    ]
+  },
+  {
+    "id": "sarah___fan-2064889362333274473",
+    "title": "Landing page generated with Fable 5",
+    "author": "Sarah Fan",
+    "handle": "@sarah___fan",
+    "sourceUrl": "https://x.com/sarah___fan/status/2064889362333274473",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "media": "video",
+    "heat": "29 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "websites",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 can one shot a landing page but can it do a pirouette 🙂‍↔️ https://t.co/PihD6RdR0f",
+    "metrics": {
+      "likes": 29,
+      "reposts": 0,
+      "replies": 6,
+      "quotes": 0,
+      "views": 1256,
+      "bookmarks": 5
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064889302845403136/vid/avc1/1052x1452/EWeOTzR-ef98jTKZ.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Fable 5 can one shot a landing page but can it do a pirouette 🙂‍↔️"
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "one-shot"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "web-design"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/sarah___fan-2064889362333274473.jpg",
+    "avatarUrl": "/fable5-avatars/sarah___fan.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1895206582327353346/mns2ln9B_normal.jpg",
+    "categories": [
+      "websites"
+    ]
+  },
+  {
+    "id": "microsoft365-2065101753670864929",
+    "title": "Claude Fable 5 availability update",
+    "author": "Microsoft 365",
+    "handle": "@microsoft365",
+    "sourceUrl": "https://x.com/microsoft365/status/2065101753670864929",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "text",
+    "heat": "24 likes · 3 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "More model choice. More ways to match the model to the work in Microsoft 365 Copilot—grounded in your work context with Work IQ. \n\nToday, we’re introducing Anthropic's Claude Fable 5—designed to support longer, more complex work across knowledge tasks, coding, and visual reasoning. Available in Copilot Cowork (Frontier), with private preview available today in Excel and PowerPoint.\n\nLearn more: https://t.co/mhtKmgqzcH",
+    "metrics": {
+      "likes": 24,
+      "reposts": 3,
+      "replies": 2,
+      "quotes": 1,
+      "views": 1686,
+      "bookmarks": 5
+    },
+    "mediaUrls": [],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "More ways to match the model to the work in Microsoft 365 Copilot—grounded in your work context with Work IQ"
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "text",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "",
+    "avatarUrl": "/fable5-avatars/microsoft365.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1865178293189939200/j_4BnVj1_normal.png",
+    "categories": [
+      "3d",
+      "news"
+    ]
+  },
+  {
+    "id": "m090009-2065061001314414821",
+    "title": "Asked Fable 5 to use react-native-livechart the new charts library by...",
+    "author": "Meltohamy 𓂆",
+    "handle": "@m090009",
+    "sourceUrl": "https://x.com/m090009/status/2065061001314414821",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "experiments",
+    "media": "video",
+    "heat": "22 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "experiments"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Asked Fable 5 to use react-native-livechart the new charts library by @brandtnewlabs  and to display live mic loudness using react-native-audio-api. I was impressed, more by the library as it really delivered a smooth result, even when it was not created for that. https://t.co/UAN9kdSXAB",
+    "metrics": {
+      "likes": 22,
+      "reposts": 1,
+      "replies": 2,
+      "quotes": 0,
+      "views": 967,
+      "bookmarks": 7
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065060908267692032/vid/avc1/1080x2346/8AljWLATP2FXn1j1.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "I was impressed, more by the library as it really delivered a smooth result, even when it was not created for that"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "react"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/m090009-2065061001314414821.jpg",
+    "avatarUrl": "/fable5-avatars/m090009.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2060083168699670528/arEOmkeU_normal.jpg",
+    "categories": [
+      "experiments"
+    ]
+  },
+  {
+    "id": "xikhar-2065100341134406060",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Shikhar",
+    "handle": "@xikhar",
+    "sourceUrl": "https://x.com/xikhar/status/2065100341134406060",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "22 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "games"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable 5 cooked with this experiment! Game Dev isn't safe anymore. \n\n- Procedural World Generation\n- Day/Night Cycle\n- Dynamic Weather\n- Runs in a browser using WebGPU\n\nIt cooked my last few credits as well, so I couldn't make it better. https://t.co/Tlv40PhfcJ",
+    "metrics": {
+      "likes": 22,
+      "reposts": 1,
+      "replies": 5,
+      "quotes": 0,
+      "views": 718,
+      "bookmarks": 5
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/ext_tw_video/2065099059048873984/pu/vid/avc1/1108x720/iOyH-DNXP75dJPjd.mp4?tag=25"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Fable 5 cooked with this experiment"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/xikhar-2065100341134406060.jpg",
+    "avatarUrl": "/fable5-avatars/xikhar.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2008508643868872704/Xk0BZcVF_normal.jpg",
+    "categories": [
+      "games"
+    ]
+  },
+  {
+    "id": "jacobrodri_-2065102074363154484",
+    "title": "Minecraft-style game built with one prompt",
+    "author": "Jacob Rodri",
+    "handle": "@jacobrodri_",
+    "sourceUrl": "https://x.com/jacobrodri_/status/2065102074363154484",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "18 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "games"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I just built a GTA x Minecraft game for iphone in 20 min\n\nMy simple stack: rork max + claude fable 5 https://t.co/X0GV5aPw2A",
+    "metrics": {
+      "likes": 18,
+      "reposts": 1,
+      "replies": 8,
+      "quotes": 0,
+      "views": 1803,
+      "bookmarks": 6
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065101981413261313/vid/avc1/1080x1080/LTZhge-EMnBXiC4V.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-latest-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "My simple stack: rork max + claude fable 5"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "copyright"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/jacobrodri_-2065102074363154484.jpg",
+    "avatarUrl": "/fable5-avatars/jacobrodri_.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1854668321909850112/rN99eiEX_normal.jpg",
+    "categories": [
+      "games"
+    ]
+  },
+  {
+    "id": "idovmamane-2064992868457198064",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Idov Mamane",
+    "handle": "@idovmamane",
+    "sourceUrl": "https://x.com/idovmamane/status/2064992868457198064",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "23 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "games"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 is making game studios panic🚨\n\nOne person can now build what used to take entire teams\n\nINSANE! https://t.co/5toCsmWuUB",
+    "metrics": {
+      "likes": 23,
+      "reposts": 0,
+      "replies": 12,
+      "quotes": 0,
+      "views": 433,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064992599321333760/vid/avc1/1706x896/Xnj00sGJR7BOunNy.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-12T00:14:14.427Z",
+    "fetchRuns": [
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "Claude Fable 5 is making game studios panic"
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/idovmamane-2064992868457198064.jpg",
+    "avatarUrl": "/fable5-avatars/idovmamane.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2052906577309437953/YJvdhlyw_normal.jpg",
+    "categories": [
+      "games"
+    ]
+  }
+]

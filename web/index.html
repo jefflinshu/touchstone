@@ -3,7 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Touchstone · 多模型试金石</title>
+    <title>Touchstone · AI Coding Arena</title>
+    <meta
+      name="description"
+      content="Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。"
+    />
+    <meta name="application-name" content="Touchstone" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="canonical" href="/" />
+    <meta property="og:site_name" content="Touchstone" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Touchstone · AI Coding Arena" />
+    <meta
+      property="og:description"
+      content="用同一个 prompt 对比多个 AI coding agent 的真实产出，浏览可交互作品、提示词和 Fable 5 社区案例。"
+    />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/fable5-media/meta_alchemist-2064431279383433646.jpg" />
+    <meta property="og:image:alt" content="Touchstone AI coding showcase" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Touchstone · AI Coding Arena" />
+    <meta
+      name="twitter:description"
+      content="用同一个 prompt 对比多个 AI coding agent 的真实产出，浏览可交互作品、提示词和 Fable 5 社区案例。"
+    />
+    <meta name="twitter:image" content="/fable5-media/meta_alchemist-2064431279383433646.jpg" />
+    <script>
+      ;(() => {
+        const key = 'touchstone-theme-mode'
+        const valid = new Set(['auto', 'light', 'dark'])
+        let mode = 'auto'
+        try {
+          const stored = localStorage.getItem(key)
+          if (valid.has(stored)) mode = stored
+        } catch {}
+        const hour = new Date().getHours()
+        const theme = mode === 'auto' ? (hour >= 7 && hour < 19 ? 'light' : 'dark') : mode
+        document.documentElement.dataset.theme = theme
+        document.documentElement.dataset.themeMode = mode
+        document.documentElement.style.colorScheme = theme
+      })()
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Touchstone",
+        "description": "Touchstone 是一个多模型 AI coding 作品对比平台。",
+        "inLanguage": "zh-CN"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

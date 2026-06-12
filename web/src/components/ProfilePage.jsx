@@ -1,14 +1,17 @@
-import { useMemo, useState } from 'react'
-import { ArrowLeft, Heart, Pencil, Loader2, Check, X } from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
+import { ArrowLeft, ExternalLink, Heart, Pencil, Loader2, Check, X } from 'lucide-react'
 import Avatar, { displayName } from './Avatar.jsx'
 import ProjectCard from './ProjectCard.jsx'
 import { Button } from '@/components/ui/button'
 import { Input, Textarea } from '@/components/ui/input'
+import { cn } from '@/lib/utils'
+import { FABLE5_FAVORITES_KEY, FAVORITES_CHANGED_EVENT, LIKED_PROJECTS_KEY, readFavoriteSet } from '@/lib/favorites'
+import { loadFable5Showcases } from '@/lib/fable5Data'
 
 function Stat({ label, value, accent }) {
   return (
     <div>
-      <div className={`font-mono text-xl font-bold tabular-nums ${accent ? 'text-acid' : 'text-white'}`}>{value}</div>
+      <div className={`font-pixel text-xl ${accent ? 'text-acid' : 'text-white'}`}>{value}</div>
       <div className="mt-0.5 font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">{label}</div>
     </div>
   )
@@ -60,10 +63,72 @@ function EditForm({ profile, onSave, onCancel }) {
   )
 }
 
-export default function ProfilePage({ email, groups, users, views, projectLikes, authEmail, onSaveProfile, onBack, onOpenProject, onOpenUser }) {
+function FableFavoriteCard({ item }) {
+  const thumb = item.mediaThumbUrl || item.mediaUrls?.[0]
+  return (
+    <a
+      href={item.sourceUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="group overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-all hover:-translate-y-0.5 hover:border-white/25"
+    >
+      <div className="aspect-[16/10] overflow-hidden border-b border-white/8 bg-black">
+        {thumb && (
+          <img
+            src={thumb}
+            alt={item.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        )}
+      </div>
+      <div className="p-4">
+        <div className="flex items-start gap-2">
+          <div className="min-w-0 flex-1">
+            <div className="line-clamp-2 text-[15px] leading-6 font-medium text-white/90">{item.title}</div>
+            <div className="mt-1 truncate font-mono text-[10px] tracking-[0.12em] text-white/35 uppercase">
+              {item.author}
+            </div>
+          </div>
+          <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 text-white/35 transition-colors group-hover:text-white" />
+        </div>
+      </div>
+    </a>
+  )
+}
+
+export default function ProfilePage({
+  email,
+  groups,
+  users,
+  views,
+  projectLikes,
+  authEmail,
+  initialTab = 'created',
+  onSaveProfile,
+  onBack,
+  onOpenProject,
+  onOpenUser,
+}) {
   const [editing, setEditing] = useState(false)
+  const [tab, setTab] = useState(initialTab === 'favorites' ? 'favorites' : 'created')
+  const [favoriteVersion, setFavoriteVersion] = useState(0)
   const profile = users[email] || {}
   const isMe = authEmail === email
+
+  useEffect(() => {
+    setTab(isMe && initialTab === 'favorites' ? 'favorites' : 'created')
+  }, [initialTab, email, isMe])
+
+  useEffect(() => {
+    const onChange = () => setFavoriteVersion((v) => v + 1)
+    window.addEventListener(FAVORITES_CHANGED_EVENT, onChange)
+    window.addEventListener('storage', onChange)
+    return () => {
+      window.removeEventListener(FAVORITES_CHANGED_EVENT, onChange)
+      window.removeEventListener('storage', onChange)
+    }
+  }, [])
 
   // 该用户参与过的项目（case）
   const myGroups = useMemo(
@@ -74,6 +139,29 @@ export default function ProfilePage({ email, groups, users, views, projectLikes,
     () => groups.flatMap((g) => g.runs).filter((r) => r.user === email),
     [groups, email]
   )
+  const favoriteProjectNames = useMemo(() => readFavoriteSet(LIKED_PROJECTS_KEY), [favoriteVersion])
+  const favoriteFableIds = useMemo(() => readFavoriteSet(FABLE5_FAVORITES_KEY), [favoriteVersion])
+  const favoriteGroups = useMemo(
+    () => groups.filter((g) => favoriteProjectNames.has(g.project)),
+    [groups, favoriteProjectNames]
+  )
+  const [fableShowcases, setFableShowcases] = useState([])
+  useEffect(() => {
+    if (favoriteFableIds.size === 0) return undefined
+    let alive = true
+    loadFable5Showcases({ count: Number.MAX_SAFE_INTEGER }).then(
+      ({ items }) => alive && setFableShowcases(items),
+      () => {}
+    )
+    return () => {
+      alive = false
+    }
+  }, [favoriteFableIds])
+  const favoriteFableItems = useMemo(
+    () => fableShowcases.filter((item) => favoriteFableIds.has(item.id)),
+    [fableShowcases, favoriteFableIds]
+  )
+  const favoriteCount = favoriteGroups.length + favoriteFableItems.length
   // 获赞 = 自己 run 的赞 + 参与项目的 case 赞
   const likesReceived =
     myRuns.reduce((s, r) => s + (r.likes || 0), 0) +
@@ -140,31 +228,83 @@ export default function ProfilePage({ email, groups, users, views, projectLikes,
           </div>
         </aside>
 
-        {/* 右侧：参与的 cases */}
+        {/* 右侧：参与和收藏的 cases */}
         <main className="min-w-0 flex-1">
-          <div className="mb-4 flex items-center gap-6 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
-            <span>
-              Cases <span className="text-white/70">{myGroups.length}</span>
-            </span>
+          <div className="mb-4 flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase">
+            <button
+              type="button"
+              onClick={() => setTab('created')}
+              className={cn(
+                'cursor-pointer rounded-full border px-3 py-1 transition-colors',
+                tab === 'created' ? 'border-acid bg-acid text-black' : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
+              )}
+            >
+              Created <span className={tab === 'created' ? 'text-black/60' : 'text-white/70'}>{myGroups.length}</span>
+            </button>
+            {isMe && (
+              <button
+                type="button"
+                onClick={() => setTab('favorites')}
+                className={cn(
+                  'cursor-pointer rounded-full border px-3 py-1 transition-colors',
+                  tab === 'favorites'
+                    ? 'border-emerald-400 bg-emerald-400 text-black'
+                    : 'border-emerald-400/25 text-emerald-300 hover:border-emerald-400/60 hover:text-emerald-200'
+                )}
+              >
+                Favorites <span className={tab === 'favorites' ? 'text-black/60' : 'text-emerald-200/70'}>{favoriteCount}</span>
+              </button>
+            )}
             <span className="h-px flex-1 bg-white/8" />
           </div>
-          {myGroups.length === 0 ? (
+          {tab === 'created' ? (
+            myGroups.length === 0 ? (
+              <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
+                No cases yet
+              </div>
+            ) : (
+              <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+                {myGroups.map((g) => (
+                  <ProjectCard
+                    key={g.project}
+                    group={g}
+                    views={views[g.project]}
+                    likes={projectLikes[g.project]}
+                    users={users}
+                    onOpen={() => onOpenProject(g.project)}
+                    onOpenUser={onOpenUser}
+                  />
+                ))}
+              </div>
+            )
+          ) : favoriteCount === 0 ? (
             <div className="rounded-lg border border-dashed border-white/12 py-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
-              No cases yet
+              No favorites yet
             </div>
           ) : (
-            <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
-              {myGroups.map((g) => (
-                <ProjectCard
-                  key={g.project}
-                  group={g}
-                  views={views[g.project]}
-                  likes={projectLikes[g.project]}
-                  users={users}
-                  onOpen={() => onOpenProject(g.project)}
-                  onOpenUser={onOpenUser}
-                />
-              ))}
+            <div className="flex flex-col gap-8">
+              {favoriteGroups.length > 0 && (
+                <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+                  {favoriteGroups.map((g) => (
+                    <ProjectCard
+                      key={g.project}
+                      group={g}
+                      views={views[g.project]}
+                      likes={projectLikes[g.project]}
+                      users={users}
+                      onOpen={() => onOpenProject(g.project)}
+                      onOpenUser={onOpenUser}
+                    />
+                  ))}
+                </div>
+              )}
+              {favoriteFableItems.length > 0 && (
+                <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+                  {favoriteFableItems.map((item) => (
+                    <FableFavoriteCard key={item.id} item={item} />
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </main>

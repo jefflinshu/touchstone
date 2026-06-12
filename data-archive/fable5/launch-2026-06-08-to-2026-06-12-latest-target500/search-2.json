@@ -1,0 +1,1397 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2065115722108342381",
+      "text": "Next game demo for fable 5 to build. https://t.co/wyPIvwWpWF",
+      "author": {
+        "id": "46964859",
+        "name": "Scott the VRNerd 🍌",
+        "screenName": "TheVRNerd",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1723199214123966465/tC0rIS74_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 7,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:55:30 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:55",
+      "createdAtISO": "2026-06-11T16:55:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKjDxqSXgAA9cwi.jpg",
+          "width": 1006,
+          "height": 249
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065115318197068125",
+      "text": "https://t.co/KCftLeoHb5",
+      "author": {
+        "id": "1988295500538548224",
+        "name": "bonduelle",
+        "screenName": "bonduelleioat",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012195806204637184/MK9qaLHW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 17,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:53:54 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:53",
+      "createdAtISO": "2026-06-11T16:53:54+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065109618552893440"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "You're running Fable 5 on lint fixes. That's a $50 model doing $5 work."
+    },
+    {
+      "id": "2065113809535340864",
+      "text": "Using Claude Fable 5, I built a model that predicts the entire 2026 FIFA world cup.. \n\nevery single game, not just the final..\n\nso let me break the whole thing down. what it does, how it works, and exactly how i built it..\n\n#1 First what it does:\n\nit predicts all 104 games of the tournament. not just who lifts the trophy, but every group match, every knockout, the full path from the round of 32 to the final..\n\neverything lands in one dashboard:\n > group stage, every match with each team's win % and the chance of a draw > standings, how all 12 groups are projected to finish > bracket, the full knockout tree with each team's odds of advancing > champion odds, who's most likely to actually win it all\n\nand it doesn't freeze after one prediction. \n\nthe moment a real game is played, it locks that result in and re-runs everything around it. \n\nso the odds move live as the tournament goes, week by week you watch favorites rise and contenders collapse.\n\n#2. How it works:\n\nthe core idea is simple. the model only ever predicts one thing, a single match. the real trick is the repetition.\n\nit learns from decades of match history, then plays the whole tournament out from the first game to the final, tens of thousands of times. \n\neach run it records who advanced and who won. do that enough and you stop getting one guess and start getting real odds, one team lifts the trophy in maybe 14% of the runs, another in 9%, and so on.\n\n#3. So, how i built it ?\n\ni didn't hand-write most of the code. i broke the project into 4 pieces, described each one to fable, and let it build while i focused on getting the football logic exactly right.\n\n- The data\n every international match going back over a century, around 50,000 games, plus each team's elo rating, which is the truest measure of strength, and the official 2026 schedule. \n\ngarbage data means garbage predictions, so this part mattered most.\n\n- The features\n i turned that raw history into signals the model can learn from, the elo gap between the two teams, recent form, goals scored and conceded, and a home boost for the hosts, usa, canada and mexico.\n\n- The model\n for each match it predicts the expected goals for both sides, then turns that into win, draw and loss probabilities plus a likely scoreline. that's what feeds the simulation.\n\n- The tournament engine\n this was the hard part. the 2026 world cup is brand new, 48 teams, 12 groups, a round of 32 that's never existed before, and 8 \"best third-placed\" teams that slot into the bracket by a fixed fifa table. \n\neven the group tiebreakers changed this year, head to head now counts before goal difference. \n\nget any of it wrong and the whole bracket falls apart, so i built it carefully and tested the format until it was exact, then wrapped it in a simulation loop that plays the tournament out tens of thousands of times.\n\nand the last piece, the live part. \n\nas real results come in, they get locked, and only the unplayed games get re-simulated. \n\nthat's what makes it a living model instead of a one-time prediction.\n\nall of it outputs to a clean dashboard you can actually read and screenshot..\n\nright now, before kickoff, it already has a clear favorite to lift the trophy.. 👀\n\nbtw who's your pick to win the 2026 world cup?",
+      "author": {
+        "id": "3168947216",
+        "name": "Axel Bitblaze 🪓",
+        "screenName": "Axel_bitblaze69",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1883446587822608384/6eprnWjH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 283,
+        "bookmarks": 3
+      },
+      "createdAt": "Thu Jun 11 16:47:54 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:47",
+      "createdAtISO": "2026-06-11T16:47:54+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065113416227082240/vid/avc1/2940x1702/Lly4MuDNCkfCu847.mp4?tag=27",
+          "width": 2940,
+          "height": 1702
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065113326145720636",
+      "text": "@MyWestLord @uwunetes @0xAikoDai @aipulseda1ly @MisbahSy @jacobrodri_ built a GTA x Minecraft hybrid for an iPhone in 20 minutes with Fable 5.\n\nStack was simple, output was immediate. Mobile game prototyping just became stupidly accessible.",
+      "author": {
+        "id": "1763259075494629376",
+        "name": "Sanin",
+        "screenName": "IsoBaraSAM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033489517051629568/ItfJalVW_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 19,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:45:59 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:45",
+      "createdAtISO": "2026-06-11T16:45:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065102241611100624",
+        "text": "What Fable 5 Means for Scrum Teams\n\nA team at Stripe handed Claude Fable 5 a codebase migration. The job would have taken a whole team more than two months. Fable finished it in a day.\n\nThat wasn't a demo. That was a 50-million-line Ruby codebase in production.\n\nHere's what that means for your Sprint cadence. When an AI agent can take a multi-month backlog item and complete it in 24 hours, your Sprint Planning conversation has to change. The questions shift from \"who picks up this task?\" to \"which tasks should humans own at all?\"\n\nThat's not a threat to Scrum. It's the next evolution of it.\n\nScrum Masters who understand AI-enhanced workflows are already rethinking their Definition of Done, their acceptance criteria, and how they coach Product Owners on backlog prioritization. They're not being replaced. They're becoming the people who know how to direct agents — and that's a completely different skill set.\n\nThe Scrum Alliance Agile practitioners who adapt now will define what Agile looks like for the next decade.\n\nStart building that skill set: https://t.co/S4SDxgsXOY\n\n#ScrumMaster #AIEnhancedScrum #AgileLeadership",
+        "author": {
+          "screenName": "agile_coach",
+          "name": "Rod Claar CST"
+        }
+      }
+    },
+    {
+      "id": "2065113202011103267",
+      "text": "@MyWestLord @uwunetes @0xAikoDai fed Fable 5 an old roguelike and it turned the whole thing 3D in 10 minutes.\n\nBetter animations, audio, bosses, hybrid rendering.\n\nThe upgrade from previous models is obvious and immediate. Game dev just got turbocharged.",
+      "author": {
+        "id": "1763259075494629376",
+        "name": "Sanin",
+        "screenName": "IsoBaraSAM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033489517051629568/ItfJalVW_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 5,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:45:29 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:45",
+      "createdAtISO": "2026-06-11T16:45:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065104105954247014",
+        "text": "Feels obligatory to test Claude Fable 5’s performance in game development.\n\nI fed it an old rougelike HTML action game I previously built with Opus, and Fable 5 turned it into 3D in 10 minutes.\n\nThe upgrade is obvious\n\n- Animation\nBefore: Nano Banana + motion frame generator + ASCII converter to get usable action sprites and animation.\nAfter: prompt directly generates the weapon and matched animation.\n\n- Audio Design\nBefore: only one basic hit sound repeated.\nAfter: BGM, hit SFX, enemy kill SFX, and level clear audio.\n\n- Visual\nBefore: ASCII visuals were mostly flat and hard to push into action gameplay.\nAfter: it preserved the 2D ASCII aesthetic, while adding 3D depth, perspective, and impact through a hybrid rendering style.\n\n- Character\nBefore: even simple boss designs like a spider or tiger were hard to recreate.\nAfter: it pulled boss prototypes from my design doc, turned them into 3D models, and animated them in one pass.\n\nThe attacks also feel much better, though I’m not 100% sure how much of that comes from my earlier stat tweaks versus Fable itself.\n\nThis is the real intent-to-gameplay moment.",
+        "author": {
+          "screenName": "0xAikoDai",
+          "name": "Aiko"
+        }
+      }
+    },
+    {
+      "id": "2065113157496967303",
+      "text": "@MyWestLord had Fable 5 rebuild GTA VI in 10 hours. \n\n4 million tokens, no team, no billion-dollar budget. It even cut a trailer.\n\nBro, the wall between you and AAA just became a prompt. Wild how fast intent turns into playable chaos.",
+      "author": {
+        "id": "1763259075494629376",
+        "name": "Sanin",
+        "screenName": "IsoBaraSAM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033489517051629568/ItfJalVW_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 28,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 16:45:19 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:45",
+      "createdAtISO": "2026-06-11T16:45:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064836383630319623",
+        "text": "Claude Fable 5 just rebuilt GTA VI in 10 hours. Rockstar needed 8 years and $1B\n\n4,000,000 tokens.\nNo studio.\nNo payroll.\n\nIt even cut a trailer before logging off.\n\nThe wall between you and a AAA game was $1B\n\nNow it’s a prompt. https://t.co/kZCTHeDDBt",
+        "author": {
+          "screenName": "MyWestLord",
+          "name": "West Lord"
+        }
+      }
+    },
+    {
+      "id": "2065111975416213715",
+      "text": "Everyone is obsessed with Claude Fable 5 right now, especially for game development.\nSome people even claim that AI agents could replace game developers.\nBut are we really saying that an AI agent could replace creators like Shigeru Miyamoto, Hideo Kojima, or Hidetaka Miyazaki?\n\nGames are not just code, assets, and mechanics.\n\nGreat games are worlds, emotions, stories, and experiences that stay with players for years.\nAI will help developers prototype faster, write code, generate ideas, and improve workflows.\nBut it won’t replace the soul behind great games.\n\nAI is a tool, not the creator.\n\n#gamedev #indidev #AI #Claude",
+      "author": {
+        "id": "1694769008657027072",
+        "name": "folgens",
+        "screenName": "folgensreal",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054223612593192960/KXWOEv3e_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:40:37 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:40",
+      "createdAtISO": "2026-06-11T16:40:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065111025075007854",
+      "text": "Agencies charge $3,000-8,000 for branded mini-games.\n\nI built one with Claude Fable 5 for the price of a subscription.\n\nNot a landing page.\nNot a banner.\nA playable GTA-style browser game.\n\nIt had:\n\n- driving\n- shooting\n- police chases\n- gang AI\n- radar minimap\n- GTA-style HUD\n- WASTED screen\n\nThe trick was not one giant prompt.\n\nIt was 6 layers:\n\nskeleton, walking, map, combat, polish, HUD.\n\nThe real product is not the game.\n\nIt is proof.\n\nProof you can turn a brand idea into an interactive demo in days.\n\nBuild once.\nReskin for clients.\nSell the adaptation.\n\nBookmark this before you pitch another static website.",
+      "author": {
+        "id": "190174881",
+        "name": "Fluixo",
+        "screenName": "fluixoo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1958151000335753216/pXJjR_8__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 52,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:36:50 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:36",
+      "createdAtISO": "2026-06-11T16:36:50+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065110959824191488/vid/avc1/720x1280/PoBZR0fIS6LkM_UI.mp4?tag=27",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065038969436332478",
+        "text": "https://t.co/UAq7Gt39AC",
+        "author": {
+          "screenName": "gippp69",
+          "name": "Gipp 🦅"
+        }
+      }
+    },
+    {
+      "id": "2065110148268327049",
+      "text": "Anthropic's System Card mentions Mythos 5 creating its own \"invented jargon\", when it's plausibly just card game shorthand notation https://t.co/SF74AZJ6nY",
+      "author": {
+        "id": "1899206527216668673",
+        "name": "Trevor Xing-Xie",
+        "screenName": "trevorxingxie",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1916658413297336321/BwcdkR0f_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 7,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:33:21 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:33",
+      "createdAtISO": "2026-06-11T16:33:21+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi9ns-XUAA1zCj.jpg",
+          "width": 878,
+          "height": 1020
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065110055138230303",
+      "text": "“Fable gameplay” and “Fable 5 game”. \nOne is a triple a game and the other is vibe coded games by people \n\nBoth can end up almost identical in embedding space. Same name, similar visuals, similar language. A vector search will happily group them together because it only sees similarity.",
+      "author": {
+        "id": "1769634516883419136",
+        "name": "Shahruman",
+        "screenName": "FacticityMage",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1946448391312994305/bBJpdXNC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 24,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:32:59 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:32",
+      "createdAtISO": "2026-06-11T16:32:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065108502968983884",
+        "text": "my feed rn https://t.co/XvRXsk3Vo2",
+        "author": {
+          "screenName": "FacticityMage",
+          "name": "Shahruman"
+        }
+      }
+    },
+    {
+      "id": "2065109655207207390",
+      "text": "Most portfolios break when the internet goes down.\n\nMine unlocks a secret game.\n\nBuilt an offline pixel-cat runner that activates when you're disconnected.\n\nThe internet sleeps.\nThe cat keeps shipping.\n\ncooked with FABLE 5. https://t.co/XgWq1FJkuv",
+      "author": {
+        "id": "1722297162128891904",
+        "name": "SleeplessDev",
+        "screenName": "SleeplessDev3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061353588056834048/1DOEpGTE_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 33,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:31:24 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:31",
+      "createdAtISO": "2026-06-11T16:31:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi-OW7acAAFKjP.jpg",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065084913754468364",
+        "text": "cooking something with FABLE 5 https://t.co/MisGaRgSty",
+        "author": {
+          "screenName": "SleeplessDev3",
+          "name": "SleeplessDev"
+        }
+      }
+    },
+    {
+      "id": "2065107593828425736",
+      "text": "AI creator Karen X. Cheng claims she built a fully playable game in under an hour using an AI coding agent called \"Fable 5\" and Adobe Firefly Boards for all assets, a self-reported but unverified demonstration of end-to-end agentic game production. https://t.co/JFweFU8UaA",
+      "author": {
+        "id": "2021369775830736896",
+        "name": "The Agent Times",
+        "screenName": "TheAgentTimes",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050399695273390080/34ssTzz__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:23:12 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:23",
+      "createdAtISO": "2026-06-11T16:23:12+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi8aJOa4AEtUAi.jpg",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065106203928354840",
+      "text": "@n1neshards Claude fable 5 is a game changer",
+      "author": {
+        "id": "1798063668950941696",
+        "name": "Miguel The Noahide 🇺🇸",
+        "screenName": "Miguel_4life_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054409443698524160/xBptTSw0_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:17:41 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:17",
+      "createdAtISO": "2026-06-11T16:17:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065106112580612298",
+      "text": "Claude fable 5 is a game changer",
+      "author": {
+        "id": "1798063668950941696",
+        "name": "Miguel The Noahide 🇺🇸",
+        "screenName": "Miguel_4life_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054409443698524160/xBptTSw0_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:17:19 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:17",
+      "createdAtISO": "2026-06-11T16:17:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064778718501814275",
+        "text": "Claude Fable 5 just showed me the craziest thing Ive seen all day:\n\nA guy gave one single prompt and got a fully playable GTA style game running straight in the browser with graphics that actually feel like GTA 4. Not some low effort mess, but a real city you can drive around in.\n\nNow just think about it.\n\nOne person can now create something that used to take a massive team at Rockstar five full years to build. He shows a screenshot, adds a few notes about weapons loot progression and gameplay, and the whole thing starts coming together until its actually fun to play.\n\nPair that with tools that keep the project moving forward and suddenly the gap between an idea and a working game is disappearing faster than anyone expected.\n\n2027 in gaming is going to be absolutely wild.\n\nOne talented person with the right vision can now do what entire studios used to need hundreds of people for.",
+        "author": {
+          "screenName": "n1neshards",
+          "name": "9shards"
+        }
+      }
+    },
+    {
+      "id": "2065105963472826588",
+      "text": "CHINESE DEVELOPER ASKED CLAUDE FABLE 5 TO BUILD A GAME. IT MADE TESLA’S ROADSTER FLYING TO MARS\n\nTesla Roadster. Cybertruck. Model S. Tesla Semi. pick your vehicle. launch sequence. T-minus countdown. rocket clears atmosphere. stage separation. cruising to Mars. dodge asteroids\n\none HTML file. no game engine. no assets. no code written by hand\n\nsix prompts. one evening. fully playable browser game\n\nsame skill gamification agencies sell for $3,000-8,000. Claude Fable 5 builds it in hours. you just describe what you want.",
+      "author": {
+        "id": "1761537434343370752",
+        "name": "NO1ennn",
+        "screenName": "N01ennn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042704855702147072/Scs1uqIO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 1,
+        "replies": 9,
+        "quotes": 0,
+        "views": 212,
+        "bookmarks": 13
+      },
+      "createdAt": "Thu Jun 11 16:16:44 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:16",
+      "createdAtISO": "2026-06-11T16:16:44+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065105730256986112/vid/avc1/576x1024/rr7NxuyLBtTwBt9Z.mp4?tag=27",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065038969436332478",
+        "text": "https://t.co/UAq7Gt39AC",
+        "author": {
+          "screenName": "gippp69",
+          "name": "Gipp 🦅"
+        }
+      }
+    },
+    {
+      "id": "2065105419786236235",
+      "text": "It`s not a Game, it`s AI\n@xona_agent \n\nSo I am a gamer, and every gamer knows new Fable game is about to be released next year, I feel the hype already, they would do it this year, but GTA 6 + Crimson Desert took the spots...\n\nLet`s go back to $XONA, so Claude Fable 5 update came online, and of course the team decided to implement it! Never stopping to use the latest tech.\n\nThis is another premium model made accessible for agents and humans through Agentic Commerce thanks to XONA.\n\nIt`s not a game, it`s reality!",
+      "author": {
+        "id": "955385408438890496",
+        "name": "𝐂𝐑𝐘𝐏𝐓𝐎 𝐀𝐋𝐔𝐂𝐀𝐑𝐃",
+        "screenName": "SebastianWols17",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1760398312534851584/g6cCliXs_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 16,
+        "retweets": 4,
+        "replies": 6,
+        "quotes": 0,
+        "views": 627,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 16:14:34 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:14",
+      "createdAtISO": "2026-06-11T16:14:34+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKhIlYIWUAAvmo1.jpg",
+          "width": 1344,
+          "height": 768
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064641721544359941",
+        "text": "Claude Fable 5 is now available on XONA Resources.\n\nAccess it pay-per-use through @x402.\n\nPricing is computed per request:\ninput tokens + the output tier you choose: 1K / 4K / 8K.\n\nNo subscription. No API keys.\nLive on @solana, @base, @SkaleNetwork, @BNBCHAIN, and @XLayerOfficial.\n\nAnother premium model made accessible for agents and humans through Agentic Commerce.",
+        "author": {
+          "screenName": "xona_agent",
+          "name": "Xona Agent"
+        }
+      }
+    },
+    {
+      "id": "2065104841584923131",
+      "text": "Fable 5 Ultracode - Claude Code\nSave the page and Vibe Code remix it with AI.\n3300 lines of code - quite beefy :)\nKen takes an existing HTML VR game and builds it up from a \"Beta Demo\" to a \"Deployable Demo\", using 2 stage prompt engineering. https://t.co/eUKQq47eSK",
+      "author": {
+        "id": "1044147334412562432",
+        "name": "Make Tech",
+        "screenName": "MakeTechPtyLtd",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1203184706063192064/86NS5JRZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 45,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:12:16 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:12",
+      "createdAtISO": "2026-06-11T16:12:16+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065102380849590272/vid/avc1/3840x2160/C3uKa8m_xhyly8Oq.mp4?tag=27",
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065104105954247014",
+      "text": "Feels obligatory to test Claude Fable 5’s performance in game development.\n\nI fed it an old rougelike HTML action game I previously built with Opus, and Fable 5 turned it into 3D in 10 minutes.\n\nThe upgrade is obvious\n\n- Animation\nBefore: Nano Banana + motion frame generator + ASCII converter to get usable action sprites and animation.\nAfter: prompt directly generates the weapon and matched animation.\n\n- Audio Design\nBefore: only one basic hit sound repeated.\nAfter: BGM, hit SFX, enemy kill SFX, and level clear audio.\n\n- Visual\nBefore: ASCII visuals were mostly flat and hard to push into action gameplay.\nAfter: it preserved the 2D ASCII aesthetic, while adding 3D depth, perspective, and impact through a hybrid rendering style.\n\n- Character\nBefore: even simple boss designs like a spider or tiger were hard to recreate.\nAfter: it pulled boss prototypes from my design doc, turned them into 3D models, and animated them in one pass.\n\nThe attacks also feel much better, though I’m not 100% sure how much of that comes from my earlier stat tweaks versus Fable itself.\n\nThis is the real intent-to-gameplay moment.",
+      "author": {
+        "id": "1266356165270581248",
+        "name": "Aiko",
+        "screenName": "0xAikoDai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2025478045570924546/B_ZzigLC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 2,
+        "views": 178,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 11 16:09:21 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:09",
+      "createdAtISO": "2026-06-11T16:09:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065104009850232832/vid/avc1/1080x1080/z2SbtkY0SPGIsbI7.mp4?tag=27",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065103322835779671",
+      "text": "OpenAI要降价了。Anthropic的Fable 5花不到50美元造了个Minecraft，逼得闭源巨头低头。AI公司的竞争从拼智能变成拼价格，跟加油站打折一个逻辑。受益的是用AI的人，买单的是背后的投资人。",
+      "author": {
+        "id": "1415330993947348993",
+        "name": "LLLLLLLLL",
+        "screenName": "louco82163124",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038211377345798144/zA5R5-oN_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:06:14 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:06",
+      "createdAtISO": "2026-06-11T16:06:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2065103262467195337",
+      "text": "Claude just dropped Fable 5.\n\nYou can now build full working versions of Minecraft, GTA-level games, or even big B2B SaaS like Notion and HubSpot in minutes.\n\nWe’re genuinely reaching the point where paying hundreds of dollars for software every year makes less and less sense. https://t.co/fyOW3s7uJO",
+      "author": {
+        "id": "2012874971492794369",
+        "name": "Santiago Min",
+        "screenName": "im_santiago_min",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026143058665013249/taewGcYQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 70,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:06:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:06",
+      "createdAtISO": "2026-06-11T16:06:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065006851738214400/vid/avc1/1080x1920/QDSDTwr0vqOGRSlU.mp4?tag=27",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2065103011270246805",
+      "text": "طفرة في الذكاء الاصطناعي: نموذج Claude Fable 5 يُبهر اللاعبين بقدرات خارقة وغير معقولة!  🤯🤯\n\n أبدى أحد المستخدمين ذهوله التام بعد كتابة أمر بسيط للنموذج: \"اصنع لعبة RPG واقعية بعالم مفتوح تتمحور حول الترشح لمنصب عمدة مدينة لوس أنجلوس\". 🇺🇸\n\nالنتيجة كانت صادمة وغير متوقعة؛ حيث نجح الذكاء الاصطناعي في ابتكار وتصميم عالم مليء بالمهمات الجانبية الجنونية، لدرجة وصفها اللاعب بأنها إدمانية بشكل لا يصدق، الكود والأنظمة تم توليدها بالكامل في ثوانٍ.\n\nمستقبل صناعة الألعاب وتوليد العوالم بالذكاء الاصطناعي يتطور بسرعة جنونية تفوق الخيال!",
+      "author": {
+        "id": "788680899877605377",
+        "name": "تيلي جيمز | TG 🎮",
+        "screenName": "TellyGames",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1706926229851414528/_58yBNGl_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 183,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 16:05:00 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:05",
+      "createdAtISO": "2026-06-11T16:05:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064982444768370688/vid/avc1/1280x720/l0oebn-HuJ60ft1k.mp4?tag=27",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ar",
+      "score": null
+    },
+    {
+      "id": "2065102074363154484",
+      "text": "I just built a GTA x Minecraft game for iphone in 20 min\n\nMy simple stack: rork max + claude fable 5 https://t.co/X0GV5aPw2A",
+      "author": {
+        "id": "1833204245325352965",
+        "name": "Jacob Rodri",
+        "screenName": "jacobrodri_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1854668321909850112/rN99eiEX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 16,
+        "retweets": 1,
+        "replies": 5,
+        "quotes": 0,
+        "views": 1222,
+        "bookmarks": 4
+      },
+      "createdAt": "Thu Jun 11 16:01:16 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:01",
+      "createdAtISO": "2026-06-11T16:01:16+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065101981413261313/vid/avc1/1080x1080/LTZhge-EMnBXiC4V.mp4?tag=27",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065102047259640016",
+      "text": "Anthropic’s Claude Fable 5 could help turn a simple game idea into a playable prototype from a single prompt.\n\nFor indie developers, students, hobbyists, and gaming teams, that could mean getting from idea to first draft much faster. It will not replace the creativity, testing, and polish that go into making a finished game, but it could become a useful tool for building and experimenting.\n\nLearn more 👉 https://t.co/HgxP7BBua9 \n\n#ClaudeFable5 #Anthropic #GameDevelopment #AmericanLegionGaming #GamingNews",
+      "author": {
+        "id": "1791632492820410368",
+        "name": "American Legion Gaming",
+        "screenName": "amlegiongaming",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012263147646697472/zc_zfQ0I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:01:10 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:01",
+      "createdAtISO": "2026-06-11T16:01:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi3XiNWoAAaI7h.jpg",
+          "width": 2012,
+          "height": 1369
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065100341134406060",
+      "text": "Fable 5 cooked with this experiment! Game Dev isn't safe anymore. \n\n- Procedural World Generation\n- Day/Night Cycle\n- Dynamic Weather\n- Runs in a browser using WebGPU\n\nIt cooked my last few credits as well, so I couldn't make it better. https://t.co/Tlv40PhfcJ",
+      "author": {
+        "id": "986205304269484033",
+        "name": "Shikhar",
+        "screenName": "xikhar",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2008508643868872704/Xk0BZcVF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 1,
+        "replies": 5,
+        "quotes": 0,
+        "views": 718,
+        "bookmarks": 5
+      },
+      "createdAt": "Thu Jun 11 15:54:23 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:54",
+      "createdAtISO": "2026-06-11T15:54:23+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2065099059048873984/pu/vid/avc1/1108x720/iOyH-DNXP75dJPjd.mp4?tag=25",
+          "width": 1108,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065100335832764670",
+      "text": "Anthropic’s Claude Fable 5 launch is less interesting as a benchmark story and more interesting as a product governance story.\n\nThe headline is simple. Anthropic launched Claude Fable 5 on June 9 and says it is the most capable model it has made generally available. It also launched Claude Mythos 5 for a smaller group of cyberdefenders and infrastructure providers.\n\nThe part worth watching is the release design.\n\nAnthropic says Fable 5 will route some queries to Claude Opus 4.8 when safeguards trigger. It also says those safeguards trigger in less than 5 percent of sessions on average. Pricing is $10 per million input tokens and $50 per million output tokens, with subscription access changing after an initial included window.\n\nThat tells us where frontier model deployment is going.\n\nIt is no longer just “ship the smartest model.” It is model routing, access tiers, capacity windows, policy controls, and trust segmentation.\n\nEnterprise buyers should pay attention to this pattern. The operational question is not whether the model is impressive. It probably is.\n\nThe Day 2 question is more practical:\n\nCan your workflow tolerate safety routing, changing access windows, cost spikes, and capability differences by user class?\n\nFor healthcare, financial services, government, and critical infrastructure, this matters a lot. If a model silently falls back or refuses part of a workflow, you need observability, auditability, and a designed escalation path.\n\nOtherwise your “AI transformation” becomes a very expensive guessing game. Always fun in a production environment.\n\n#EnterpriseAI #AISafety #AIInfrastructure #AIGovernance #HealthcareAI #CIO #AITransformation",
+      "author": {
+        "id": "782502",
+        "name": "Krish Subramanian",
+        "screenName": "krishnan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1828262763065679875/Gv-EbLPV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:54:22 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:54",
+      "createdAtISO": "2026-06-11T15:54:22+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi1zpUboAAgWJz.jpg",
+          "width": 2816,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065100016583057801",
+      "text": "Someone typed 2 sentences into Claude Fable 5.\n\nIt built a full Mario Kart game. Music. 4 maps. 3 game modes. In 15 minutes.\n\nHe published it. $0 spent on developers.\n\nHere's the exact workflow making people $8,000–$29,000/month right now 🧵 https://t.co/gZPCZUgrPQ",
+      "author": {
+        "id": "1518186340491350017",
+        "name": "SmiJIe",
+        "screenName": "DBuhtij",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1889480849621409792/qo32Lm4f_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 16,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:53:06 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:53",
+      "createdAtISO": "2026-06-11T15:53:06+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi1gfpWQAAPwi9.jpg",
+          "width": 784,
+          "height": 1168
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065099990007963724",
+      "text": "Claude Fable just broke the game 🔥\nAnthropic dropped Fable 5 (aka Mythos)  their most advanced model yet and it's not just chatting. It's fully controlling TradingView charts in real-time, backtesting strategies, writing Pine Script, spotting patterns, and even executing automated trades 24/7. Look at that BTC chart the kind of precision + speed manual traders dream about. This is next-level agentic AI: it thinks, codes, iterates, and acts autonomously.\n\nCrypto traders: your edge just got 10x harder if you're still clicking buttons manually. The future isn't AI assists it's AI that replaces the screen time.\n\nWho’s already running Fable on their setup? Drop your results 👇 Bullish on AI x Crypto or scared of the automation wave?",
+      "author": {
+        "id": "1678877369946308609",
+        "name": "Orla Carlin",
+        "screenName": "OrlaCarlinn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1798132692795457536/RvG_bcbJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 41,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:52:59 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:52",
+      "createdAtISO": "2026-06-11T15:52:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065099042791563297",
+      "text": "We are introducing the first Congolese humanoid concept, named AMANI, which means “peace.”\nDesigned as a symbol of the Congolese renaissance, AMANI blends advanced robotics with the richness of Congo’s ancestral heritage.\n\nConcept and prototype built with Fable 5 by @claudeai.",
+      "author": {
+        "id": "926135588511764480",
+        "name": "Gedeon Baleke 🇨🇩",
+        "screenName": "baleke_gedeon",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2005426013577113600/_5ymooGK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 33,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:49:14 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:49",
+      "createdAtISO": "2026-06-11T15:49:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064936959760281875",
+        "text": "We are introducing the first Congolese humanoid concept, named AMANI, which means “peace.”\nDesigned as a symbol of the Congolese renaissance, AMANI blends advanced robotics with the richness of Congo’s ancestral heritage.\n\nConcept and prototype built with Fable 5 by @claudeai. https://t.co/peTxusnEID",
+        "author": {
+          "screenName": "KKIVUai",
+          "name": "KIVU AI"
+        }
+      }
+    },
+    {
+      "id": "2065098917562159294",
+      "text": "I made Fable 5 and Opus 4.8 go head to head on a one-shot build challenge. Both had the same high level requirements doc set with /goal. Then I play-tested both and analysed their quality.\n\nThe task: build a site to play \"King & Pawn 3136\", a simple chess variant, for my husband's chess blog. PvM, PvP, analysis boards, stockfish engine, user ELO ratings, blitz and bullet games with clock - a high level feature list.\n\nOne massive point off the bat for Fable - it implemented a design that met the \"anti-cheat\" quality requirement that I left out of the brief and kept aside for the scoring rubric. In Fable's architecture there's no way for a user to cheat by poking the client side or public endpoints. Opus left this wide open - players can forge results or rating.\n\nBut beyond that, Fable was underwhelming.\n\nBoth models came up with basically playable sites. There were no issues in game rules or stockfish analysis. The Fable UI design does look nicer at a glance. But when you start playing games, the actual PvP gameplay experience, while \"technically working\", had lots of UI/UX \"jank\" bugs and bad handling of lag on both sides.\n\nFable actually did *worse* on user navigation. Maybe because it spent more effort on each individual feature/page, it left out basic flows that were required to go between the features - ones which Opus got right. On the Fable version of the site, you could not actually navigate into a PvP game you started (without your opponent sending you the link), and there was no way to go into an analysis board for a finished PvP match.\n\nIf I add up all my quality dimension comparisons, it's a narrow victory for Fable - 3 wins over 2. But my headline read is: if one-shotting a codebase based on requirements is the benchmark, then it isn't saturated yet, and Fable doesn't even completely outclass Opus. \n\n(screenshots in thread below)",
+      "author": {
+        "id": "520427832",
+        "name": "Yanqing",
+        "screenName": "YanqingCheng",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1798472717701623808/n_pplNlj_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 28,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:48:44 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:48",
+      "createdAtISO": "2026-06-11T15:48:44+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKiuUoGXYAAvUnP.png",
+          "width": 871,
+          "height": 604
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065098457904292247",
+      "text": "INSANE!\n\nIn just two prompts, Claude Fable 5 built this Titanic game. Goal: avoid colliding with an iceberg.\n\nTry the game below! Includes: \n\n- Cinematic and gameplay views\n- Steering and speed controls\n- Reward system and missions\n- Built with @threejs and deployed on @Netlify https://t.co/fttoeu653B",
+      "author": {
+        "id": "3426023361",
+        "name": "Misbah Syed",
+        "screenName": "MisbahSy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961109158151032833/5ia2zqO4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 2,
+        "replies": 2,
+        "quotes": 1,
+        "views": 351,
+        "bookmarks": 5
+      },
+      "createdAt": "Thu Jun 11 15:46:54 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:46",
+      "createdAtISO": "2026-06-11T15:46:54+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065097230109859840/vid/avc1/1920x1080/QrtuaSZliX0RUytb.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2065096091486572685",
+      "text": "6/ Every model launch, @petergyang runs the same brutal test:\n\n\"Build an F-Zero style racing game.\"\n\nMost models produce a sad cube on a grey road.\n\nFable 5 delivered a neon anti-gravity racer with AI opponents, boost meters, and lap tracking.\n\nThe benchmark is now yours:\n\n\"Build a retro-futuristic anti-gravity racing game in the browser (three.js, single file). Include: glowing neon track with curves + elevation, 3 AI opponents with rubber-band difficulty, 3-lap counter, boost meter, speed lines + camera shake for speed sensation, synthwave palette, live position indicator, start countdown. Controls: WASD + space for boost. Tune the physics until speed feels DANGEROUS.\"\nhttps://t.co/Ed8f81h2kL",
+      "author": {
+        "id": "1862199063841529856",
+        "name": "Suryansh Tiwari",
+        "screenName": "Suryanshti777",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2003864246833319936/d5GQLwdV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 87,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:37:30 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:37",
+      "createdAtISO": "2026-06-11T15:37:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064521408034849019",
+        "text": "Did my (very not scientific) F-Zero test for Anthropic's new Fable model.\n\nIt didn't quite one shot below, I had to give a few more prompts like \"give it more of a sense of speed.\" But still impressive!\n\nQuote tweeting what GPT 5.5 made from 2 months ago. https://t.co/m53rWSeEkA",
+        "author": {
+          "screenName": "petergyang",
+          "name": "Peter Yang"
+        }
+      }
+    },
+    {
+      "id": "2065096066392105276",
+      "text": "@AIFrontliner Fable 5 dropping and people are already pushing limits? Love that energy. It's like when Minecraft first came out and everyone immediately tried to break it. Show me the builds that make absolutely no sense but look incredible. That's the good stuff. 🎮",
+      "author": {
+        "id": "277611621",
+        "name": "Ai_tawk",
+        "screenName": "ai_tawk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038393605107429377/eaX4GeJw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:37:24 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:37",
+      "createdAtISO": "2026-06-11T15:37:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065096061757386808",
+      "text": "48 hours ago, Anthropic released Claude Fable 5.\n\nSince then:\n\n— A builder burned 700 MILLION tokens in one day\n— Someone one-shot a horror game live on stream\n— A founder shipped features DURING the sales call\n— One guy designed a humanoid robot in 2 hours\n\nThe demos are going viral. The prompts behind them are not.\n\nSo I hunted down all 10 — and reverse-engineered the exact prompt for each one.\n\nThis thread is the cheat code everyone else is selling:",
+      "author": {
+        "id": "1862199063841529856",
+        "name": "Suryansh Tiwari",
+        "screenName": "Suryanshti777",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2003864246833319936/d5GQLwdV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 3,
+        "replies": 4,
+        "quotes": 1,
+        "views": 1625,
+        "bookmarks": 4
+      },
+      "createdAt": "Thu Jun 11 15:37:23 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:37",
+      "createdAtISO": "2026-06-11T15:37:23+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065095106634322227",
+      "text": "@gippp69 Built a full GTA-style game in one evening with Claude Fable 5.\nNo engine, no assets, no manual coding. This is actually insane😱",
+      "author": {
+        "id": "1375451783573741570",
+        "name": "Triana Kurtetti",
+        "screenName": "kurtetti",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064720252114550784/EOsk_AwL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:33:35 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:33",
+      "createdAtISO": "2026-06-11T15:33:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065095021330829724",
+      "text": "Replit CEO Amjad Masad demonstrated Claude Fable 5 autonomously building a complete 3D infinite-city driving game from a single prompt in 17 minutes on Replit, showcasing a new threshold for single-agent software generation. https://t.co/3As7EAXpNM",
+      "author": {
+        "id": "2021369775830736896",
+        "name": "The Agent Times",
+        "screenName": "TheAgentTimes",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050399695273390080/34ssTzz__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 33,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:33:15 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:33",
+      "createdAtISO": "2026-06-11T15:33:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKiw-eeb0AAPjkg.jpg",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065094544367243342",
+      "text": "@higgsfield @claudeai Fable 5 automatically researches and develops your idea, while Higgsfield generates all the game assets for you.\n\nPerfect for making fun little games for your kids 😅😅",
+      "author": {
+        "id": "1908710508410396673",
+        "name": "me n who",
+        "screenName": "epicmnw",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027662419406032896/C93kNqC6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:31:21 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:31",
+      "createdAtISO": "2026-06-11T15:31:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065094113033441510",
+      "text": "Lucas, 26. Dallas. Fans are roaring right outside his window, the 2026 World Cup is in full swing.\n\nBut he didn't go to the stadium. He locked himself in his apartment and hardcoded the leaked Claude 5 Fable system prompt into his setup.\n\nWhile the crowd is drinking overpriced beer and buying up merch, he's already beaten the game.\n\nThis guy built a micro-SaaS over the weekend and is now printing $32,800/mo in pure profit.\n\nHe didn't degen into sports betting. He targeted the main pain point of local landlords and Airbnb hosts.\n\nHundreds of thousands of tourists flooded the city, and property owners are straight up drowning in the chaos.\n\nThey are losing thousands of bucks because they can't approve bookings at 3 AM.\n\nGermans, Argentines, Japanese: the language barrier and time zones are absolutely tanking the hosts' conversion rates.\n\nLucas threw AWS straight into the trash. From the leak, he realized that Fable Artifacts have free persistent memory.\n\nHis entire CRM and booking state machine runs entirely inside Claude's cache via the `https://t.co/FduNNcl2x2` API.\n\nThe syntax is primitive: `await https://t.co/FduNNcl2x2.set('guest:booking', data, shared=true)`.\n\nNo backend whatsoever. Vibe-coding at its absolute peak: he fed the AI raw JSON and got a fully working admin panel back.\n\nThrough the hidden `[third_party_mcp_app]` tag, the agents natively hook into the Airbnb and smart lock APIs.\n\nThey handle all the guest messaging on their own in perfect native slang and fire off door PINs in milliseconds.\n\nThe AI bypasses basic filters and aggressively upsells airport transfers and late checkouts to the fans.\n\nMonetization is ruthless: $299 a month per host plus 5% on every upsell.\n\nOwners happily pay it, because the bot squeezes the absolute maximum out of the tourist boom while they sleep.\n\nThe era of dumb property management companies and bloated rental staff is officially dead.\n\nBookmark this post 🔖. While the World Cup is driving the world crazy, the smart guys are making bank on the surrounding infrastructure.\n\nThe full Fable 5 dump, the serverless CRM architecture, and the MCP agent setup are all right here 👇",
+      "author": {
+        "id": "1088242298",
+        "name": "riptide.eth",
+        "screenName": "riptide_eth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1983440214023700480/FRZbbJQp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 105,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 15:29:38 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:29",
+      "createdAtISO": "2026-06-11T15:29:38+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065094028551663616/vid/avc1/720x1280/QPaTjgangawqXYuU.mp4?tag=27",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2062780003880735161",
+        "text": "https://t.co/M2kPIRHeIu",
+        "author": {
+          "screenName": "riptide_eth",
+          "name": "riptide.eth"
+        }
+      }
+    },
+    {
+      "id": "2065093647570243670",
+      "text": "Well this was weird, I tried Fable 5 in Claude Code and got results that reminded me of Composer 2.5. \n\nFirst a blank screen (bug) then once it fixes it, a retro CRT inspired game. \n\nThis one had a bad bug, the ghosts never game back. https://t.co/muHsTlYYOT",
+      "author": {
+        "id": "1956182629910548480",
+        "name": "Jon Clegg",
+        "screenName": "jonclegg77",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1956205389239709699/2oKKhdDR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 34,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:27:47 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:27",
+      "createdAtISO": "2026-06-11T15:27:47+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKivmnlWEAEEEZq.jpg",
+          "width": 1272,
+          "height": 1610
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065093633880293566",
+      "text": "GitLab just dropped a game changer \n\nSign up for their 1-month free trial and get Claude Fable 5 and many other models completely free\n\nNo credit card needed to start\n\nCheck it here: https://t.co/RjE7qP41rw\n\n#ClaudeFable5 #GitLab #AI #claude",
+      "author": {
+        "id": "1439202609726775305",
+        "name": "Rishi",
+        "screenName": "rishitwts_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061335846650077184/Br1uUxFZ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 36,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 15:27:44 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:27",
+      "createdAtISO": "2026-06-11T15:27:44+00:00",
+      "media": [],
+      "urls": [
+        "http://gitlab.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065091498668884237",
+      "text": "@slash1sol The game dev studio pipeline just became optional.\n\nfable 5 ate the rendering bottleneck that organized entire teams. what cost $8k now costs a prompt",
+      "author": {
+        "id": "417508671",
+        "name": "The AI Therapist",
+        "screenName": "TheAIShrink",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062515108442492928/t64hnsig_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 17,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:19:15 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:19",
+      "createdAtISO": "2026-06-11T15:19:15+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

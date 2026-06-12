@@ -1,0 +1,1524 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2065097407965127142",
+      "text": "Anthropic Managed Agents team:\n\n\"Fable 5 is our best model for running self-improving agent systems.\n\nAdd /loops, dynamic workflows, dreaming and you are unstoppable\"\n\nin 13-minutes, Anthropic team shows how to build self-improving agent systems with Fable 5 from scratch.\n\nWorth more than a $500 agent building course.\n\nLive from the last Anthropic stage in Japan. Unpublished.",
+      "author": {
+        "id": "2054190711243710464",
+        "name": "Codez",
+        "screenName": "0xCodez",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054197823738871808/3M0Lf362_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 38,
+        "retweets": 7,
+        "replies": 5,
+        "quotes": 0,
+        "views": 2435,
+        "bookmarks": 44
+      },
+      "createdAt": "Thu Jun 11 15:42:44 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:42",
+      "createdAtISO": "2026-06-11T15:42:44+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065097160123686912/vid/avc1/1920x1080/TtaLcXIxuFvb4izQ.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065089060104720776",
+        "text": "https://t.co/hmpJtXuXCq",
+        "author": {
+          "screenName": "0xCodez",
+          "name": "Codez"
+        }
+      }
+    },
+    {
+      "id": "2064980962937909438",
+      "text": "A new Claude Mythos/Fable shows how fast agentic software development is getting.\n\nDuring a customer call, Claude reportedly listened in the background, understood the requested features, and built a working product while the customer was still explaining the workflow.\n\nThe best sales call may soon end with:\n\n“Here is the version you just described.”",
+      "author": {
+        "id": "1547403906954563585",
+        "name": "Wes Roth",
+        "screenName": "WesRoth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1905477529013813251/RST2MxqV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 47,
+        "retweets": 4,
+        "replies": 1,
+        "quotes": 0,
+        "views": 5842,
+        "bookmarks": 14
+      },
+      "createdAt": "Thu Jun 11 08:00:01 +0000 2026",
+      "createdAtLocal": "2026-06-11 16:00",
+      "createdAtISO": "2026-06-11T08:00:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064856649983205376/vid/avc1/1360x1256/tIad5sM7F-FG36Ns.mp4?tag=27",
+          "width": 1360,
+          "height": 1256
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064552188475482303",
+        "text": "Mythos / Fable is unbelievable. \n\nWas on a customer call today and had Claude transcribing in the background. \n\nAs they were telling me about the features they wish their current software had, Claude was building the features in real time. \n\nBy the end of the call I was able to show a fully working product, with the exact workflow they mentioned 15 minutes earlier. \n\nAutonomous looped building triggered from a customer call. 🤯",
+        "author": {
+          "screenName": "toddsaunders",
+          "name": "Todd Saunders"
+        }
+      }
+    },
+    {
+      "id": "2065035158315515939",
+      "text": "I asked Claude Fable 5 to rebuild Salesforce from scratch.\n\nIt created own programming language, and visual automation. Truly mind-blowing stuff. https://t.co/fe6cUthZcP",
+      "author": {
+        "id": "2007385583275126786",
+        "name": "Igor Kudryk",
+        "screenName": "fancylancer3991",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033950098279878657/nquvmM6u_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 11:35:22 +0000 2026",
+      "createdAtLocal": "2026-06-11 19:35",
+      "createdAtISO": "2026-06-11T11:35:22+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065034692315787264/vid/avc1/1920x1080/bs1wtbPJx6Hv4SvD.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065057768281690282",
+      "text": "Claude Fable 5 + Higgsfield MCP just made it possible to make amazing AI ads at an industrial scale\n\nhere's what that looks like in practice:\n\nclaude fable 5 — the brain**\n- reads your brief, plans the full campaign autonomously\n- writes hooks, scripts, and file structure without you prompting every step\n- understands visual layout from a screenshot instantly\n\n2. higgsfield MCP — the muscle\n- plugs 30+ video and image models directly into claude\n- veo 3.1, sora 2, kling 3.0, seedance 2.0 — all accessible from one chat\n- no API keys, no tab switching, no stitching tools together\n\n3. what you actually get\n- 4K cinematic video ads\n- consistent character and product across every shot\n- full scrolling landing page built and deployed\n\none brief → full campaign → handed back to you\n\nmost agencies don't know this exists yet.\n\nthe ones who do are quietly repricing everything.",
+      "author": {
+        "id": "1845878367926517760",
+        "name": "Cris Vels",
+        "screenName": "cris_vels",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2030365125446926336/emkMMf8k_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 62,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 13:05:13 +0000 2026",
+      "createdAtLocal": "2026-06-11 21:05",
+      "createdAtISO": "2026-06-11T13:05:13+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKiOx5NX0AAX0ZB.png",
+          "width": 791,
+          "height": 388
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064872661365494180",
+      "text": "Claude Fable 5 + Higgsfield MCP built a full webcam-controlled fruit slicing game from a single prompt.\n\nFable 5 is much more capable than anyone could have expected. https://t.co/De4HZDfQCa",
+      "author": {
+        "id": "1712267009483022336",
+        "name": "Higgsfield AI 🧩",
+        "screenName": "higgsfield_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1906739239183630336/907a7JTU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 442,
+        "retweets": 55,
+        "replies": 46,
+        "quotes": 2,
+        "views": 43841,
+        "bookmarks": 182
+      },
+      "createdAt": "Thu Jun 11 00:49:40 +0000 2026",
+      "createdAtLocal": "2026-06-11 08:49",
+      "createdAtISO": "2026-06-11T00:49:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064872272847114240/vid/avc1/1080x1920/6Ebdo_y9Yh2sG046.mp4?tag=27",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064780036234969131",
+        "text": "Claude Fable 5 + Higgsfield MCP is insane.\n\nYou can now build a playable game with a full story and stunning visuals from one click. Fable 5 researches your idea and writes the game. Higgsfield MCP generates all the assets.\n\nOn Higgsfield Supercomputer and in Claude via Higgsfield MCP.",
+        "author": {
+          "screenName": "higgsfield",
+          "name": "Higgsfield AI 🧩"
+        }
+      }
+    },
+    {
+      "id": "2065078099713384591",
+      "text": "Most people think this is about faster image generation.\n\nIt is not.\n\nClaude Fable 5 handles the research and story structure. Higgsfield MCP handles the asset layer. Together they turn one idea into a playable game with visuals.\n\nThe useful shift for creators: separate thinking from production, then connect both in one workflow.\n\nBookmark this for your next build.",
+      "author": {
+        "id": "2042879601051832320",
+        "name": "Manya Chandna",
+        "screenName": "manya_chandna_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055171879145754624/Q-lIgVCB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 72,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 14:26:00 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:26",
+      "createdAtISO": "2026-06-11T14:26:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064780036234969131",
+        "text": "Claude Fable 5 + Higgsfield MCP is insane.\n\nYou can now build a playable game with a full story and stunning visuals from one click. Fable 5 researches your idea and writes the game. Higgsfield MCP generates all the assets.\n\nOn Higgsfield Supercomputer and in Claude via Higgsfield MCP.",
+        "author": {
+          "screenName": "higgsfield",
+          "name": "Higgsfield AI 🧩"
+        }
+      }
+    },
+    {
+      "id": "2065012281537102084",
+      "text": "This guy thinks Claude Fable 5 is the most important AI release we've seen so far.\n\nHis advice?\n\n> Don't just watch the hype.\n\n> Use it.\n\n> Learn how it works.\n\n> Figure out where it changes your workflow.\n\nIn this video, he breaks down why he believes Fable 5 is different and the first things you should do to get the most out of it. https://t.co/h4zarRvRZT",
+      "author": {
+        "id": "1826956083866284032",
+        "name": "NZ ☄️",
+        "screenName": "CodeByNZ",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1967010283286659072/GcZfcy9J_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 109,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 10:04:28 +0000 2026",
+      "createdAtLocal": "2026-06-11 18:04",
+      "createdAtISO": "2026-06-11T10:04:28+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064829333072736256/vid/avc1/3840x2160/KyJjr-uFgqHPixAw.mp4?tag=27",
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065037208910729389",
+      "text": "1/\n\nThis is insane. Claude Fable 5 one-shotted an entire 3D logistics dashboard.\n\nOne screenshot, one prompt. A draggable Three.js earth, route arcs, glass UI, all in a single HTML file. Every detail from my reference image.\n\nSonnet and Opus never got close to this. https://t.co/7pcVRZDqVv",
+      "author": {
+        "id": "1934180618235187200",
+        "name": "AI Builder Club",
+        "screenName": "aibuilderclub_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1939994131238887424/SI5ZUljs_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 2,
+        "views": 2956,
+        "bookmarks": 8
+      },
+      "createdAt": "Thu Jun 11 11:43:31 +0000 2026",
+      "createdAtLocal": "2026-06-11 19:43",
+      "createdAtISO": "2026-06-11T11:43:31+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065034997866586112/vid/avc1/3228x2160/DYtd01Ewsu_0xkjM.mp4?tag=27",
+          "width": 3228,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064931308074332450",
+      "text": "Claude Fable 5 is powerful.\n\nBut power without structure gets wasted.\n\nThe big unlock is not just the model.\n\nIt’s the workflow around it:\n\n→ Ideas go into a pipeline.\n\n→ Claude creates the plan.\n\n→ Agents debate the concept.\n\n→ Claude synthesizes the best ideas.\n\n→ The system builds and ships.\n\n→ Everything stays saved in one workspace.\n\nThat’s how you move from “impressive demo” to actual output.\n\nSave this video, you’ll build with Claude instead of just testing it.\n\nFull Guide is inside the AI Profit Boardroom, DM for the link.",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 4,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1169,
+        "bookmarks": 11
+      },
+      "createdAt": "Thu Jun 11 04:42:43 +0000 2026",
+      "createdAtLocal": "2026-06-11 12:42",
+      "createdAtISO": "2026-06-11T04:42:43+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064931188410912768/vid/avc1/1280x720/uzrkfdqe3EsayHYc.mp4?tag=27",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064780036234969131",
+      "text": "Claude Fable 5 + Higgsfield MCP is insane.\n\nYou can now build a playable game with a full story and stunning visuals from one click. Fable 5 researches your idea and writes the game. Higgsfield MCP generates all the assets.\n\nOn Higgsfield Supercomputer and in Claude via Higgsfield MCP.",
+      "author": {
+        "id": "1895453094361890816",
+        "name": "Higgsfield AI 🧩",
+        "screenName": "higgsfield",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029949430317637632/6qPl4MTS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2721,
+        "retweets": 281,
+        "replies": 126,
+        "quotes": 64,
+        "views": 458375,
+        "bookmarks": 2059
+      },
+      "createdAt": "Wed Jun 10 18:41:37 +0000 2026",
+      "createdAtLocal": "2026-06-11 02:41",
+      "createdAtISO": "2026-06-10T18:41:37+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064779493492105216/vid/avc1/1920x1080/wsclHaa2WAAhN3IX.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065019441478332684",
+      "text": "This took 5 minutes. No rigging, no keyframes.\n\nClaude Fable 5 + any AI agent = living mesh.\n\nNamed parts, clean hierarchy, LLM-readable metadata — AI understands it instantly.\n\nFully editable, also works in tools like Unity, Blender. https://t.co/Dp3gGYT4D2",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 3,
+        "replies": 1,
+        "quotes": 2,
+        "views": 2504,
+        "bookmarks": 12
+      },
+      "createdAt": "Thu Jun 11 10:32:55 +0000 2026",
+      "createdAtLocal": "2026-06-11 18:32",
+      "createdAtISO": "2026-06-11T10:32:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065019351418175488/vid/avc1/1278x664/RdGmlnynHlP2wYyH.mp4?tag=27",
+          "width": 1278,
+          "height": 664
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064890154741866567",
+        "text": "Opus 4.8 Is Insane but Claude Fable 5 is 🤯\n\nA 12-min tutorial on how | Build 3D Websites in Minutes with Al (0 Design + 0 Coding) https://t.co/ThVQ39asMy",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2065084671646400928",
+      "text": "Claude Fable 5 is 24 hours old. Someone already cloned Minecraft in 20 minutes.\n\n20 minutes. The original sold to Microsoft for $2.5 billion.\n\nIt didn’t stop there.\n\nA 3D world running a full city simulator.\nAn agent beating Pokemon with nothing but its eyes.\nSkyrim. 1 prompt.\n\nHere’s what nobody says out loud:\n\nNone of these people are geniuses. None of them wrote code. They typed what they wanted in English.\n\nThe skill that used to cost a 4-year degree and $100,000 now costs a sentence.\n\nSo the gap isn’t talent anymore. It isn’t money. It’s who opens the tab in the first 24 hours and who keeps scrolling past it.\n\nI’m starting from 0 today. Every build, every prompt, every dollar documented in public.\n\n6 months from now this will be obvious to everyone. Today it’s just an open tab.",
+      "author": {
+        "id": "1859766475050872832",
+        "name": "Spike 1%",
+        "screenName": "SpikeCalls",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1916292236674797568/nQCrKI1x_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 367,
+        "bookmarks": 5
+      },
+      "createdAt": "Thu Jun 11 14:52:07 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:52",
+      "createdAtISO": "2026-06-11T14:52:07+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065084616248094720/vid/avc1/576x1024/Zu0pWYysp0aoeb5v.mp4?tag=27",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065082923099812233",
+        "text": "https://t.co/gjX8Pvp0OC",
+        "author": {
+          "screenName": "MyWestLord",
+          "name": "West Lord"
+        }
+      }
+    },
+    {
+      "id": "2064940105802907685",
+      "text": "I used Claude Fable 5 built a 3D product website with Claude Code\n\nGenerate an image of a product with the Magnific MCP, and convert it into a 3D model.\n\nDownload that model and give it to Fable 5 to develop an interactive page with.\n\nHere's the final result + prompts: https://t.co/ZoYTmKkIvd",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 23,
+        "retweets": 3,
+        "replies": 3,
+        "quotes": 2,
+        "views": 2255,
+        "bookmarks": 17
+      },
+      "createdAt": "Thu Jun 11 05:17:40 +0000 2026",
+      "createdAtLocal": "2026-06-11 13:17",
+      "createdAtISO": "2026-06-11T05:17:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064940030351560704/vid/avc1/1280x720/XC9vrup_2x9wyvSW.mp4?tag=27",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064857199587836065",
+        "text": "A DEVELOPER IS USING CLAUDE MYTHOS TO BUILD ANIMATED AWARD-WINNING WEBSITES AND DROPPED A FREE 12-MINUTE TUTORIAL SHOWING EXACTLY HOW.\n\nClaude Fable 5 is just too Wilde 🥵\n\nBookmark this. https://t.co/Z3K0SbQPEp",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2065009108894543971",
+      "text": "I replicated Claude Fable 5 launch video using the prompt pack from @AmirMushich and Pika MCP for all the media generations, got this mind-blowing result. \n\nNo any editing tool, all natural language. \n\nPrompts in thread below: https://t.co/ojywdagsw0",
+      "author": {
+        "id": "865233026044669952",
+        "name": "Jessie_Ma",
+        "screenName": "ytjessie_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1723181882295164928/HSt3e1VP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 48,
+        "retweets": 2,
+        "replies": 9,
+        "quotes": 2,
+        "views": 6992,
+        "bookmarks": 37
+      },
+      "createdAt": "Thu Jun 11 09:51:52 +0000 2026",
+      "createdAtLocal": "2026-06-11 17:51",
+      "createdAtISO": "2026-06-11T09:51:52+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065007636412792832/vid/avc1/1080x1080/3fcEve6EASzOURRN.mp4?tag=27",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064641721544359941",
+      "text": "Claude Fable 5 is now available on XONA Resources.\n\nAccess it pay-per-use through @x402.\n\nPricing is computed per request:\ninput tokens + the output tier you choose: 1K / 4K / 8K.\n\nNo subscription. No API keys.\nLive on @solana, @base, @SkaleNetwork, @BNBCHAIN, and @XLayerOfficial.\n\nAnother premium model made accessible for agents and humans through Agentic Commerce.",
+      "author": {
+        "id": "2009778141699641344",
+        "name": "Xona Agent",
+        "screenName": "xona_agent",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2009794155799785473/umVdKt_L_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 55,
+        "retweets": 13,
+        "replies": 12,
+        "quotes": 1,
+        "views": 2257,
+        "bookmarks": 2
+      },
+      "createdAt": "Wed Jun 10 09:32:00 +0000 2026",
+      "createdAtLocal": "2026-06-10 17:32",
+      "createdAtISO": "2026-06-10T09:32:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKcRuysasAAL9uG.jpg",
+          "width": 2143,
+          "height": 1228
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2065079418523930929",
+      "text": "Claude Fable 5 runs on my Mac at home. I SSH in with Termius from my iPhone and tell the agent to work.\n\nThat is the solution I found for kicking off a task and unblocking the agent away from my desk. With a newborn at home, that's gold.\n\nAs I say to my friends… This is the modern way to code: you don't type, you orchestrate.",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 1,
+        "views": 497,
+        "bookmarks": 3
+      },
+      "createdAt": "Thu Jun 11 14:31:15 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:31",
+      "createdAtISO": "2026-06-11T14:31:15+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065079317269237760/vid/avc1/720x1280/6wB2k8Nj1vHM-xzM.mp4?tag=27",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2063518203557380340",
+        "text": "5 tools you should know about\n\nhttps://t.co/Em445bdccL - Open-Source Frontier Voice AI\nhttps://t.co/Kpk9vaoQJE - shadcn/ui components with motion\nhttps://t.co/VzVgUbKZmf - One page CV builder\nhttps://t.co/qo1vp39HCd - Search 778 niche job boards\nhttps://t.co/X4PcOFd890 - Open-source Lightway terminal",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2064740008142200930",
+      "text": "Fable 5 powering a Design System Agent is the real story here.\n\nMythos-class capability pointed at the most boring, most valuable problem in design: consistency at scale.\n\nNuts.",
+      "author": {
+        "id": "1506055005992026115",
+        "name": "Hasan Toor",
+        "screenName": "hasantoxr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1970850369023377408/h9B5r6Q5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2523,
+        "bookmarks": 4
+      },
+      "createdAt": "Wed Jun 10 16:02:33 +0000 2026",
+      "createdAtLocal": "2026-06-11 00:02",
+      "createdAtISO": "2026-06-10T16:02:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064734626287878619",
+        "text": "Introducing a Design System Agent, powered by Fable 5.\n\nSync your components, typography, spacing, colors, rules.\n\nShare with your team, design anything.\n\nWatch me change everything within Duolingo's design system on @magicpatterns: https://t.co/XQBDr31l2R",
+        "author": {
+          "screenName": "alexdanilowicz",
+          "name": "Alex Danilowicz"
+        }
+      }
+    },
+    {
+      "id": "2065027301478220169",
+      "text": "Fable 5 dropped. cool, already in the workflow. that's the whole point of bring your own stack 🤝 https://t.co/HHhg0mzf86",
+      "author": {
+        "id": "347831597",
+        "name": "The Sandbox",
+        "screenName": "TheSandboxGame",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1675843993190506496/HeGzewKw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 54,
+        "retweets": 15,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3652,
+        "bookmarks": 3
+      },
+      "createdAt": "Thu Jun 11 11:04:09 +0000 2026",
+      "createdAtLocal": "2026-06-11 19:04",
+      "createdAtISO": "2026-06-11T11:04:09+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKhxjRYXkAAHfMY.png",
+          "width": 537,
+          "height": 477
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2064425527360774216",
+      "text": "Claude Fable 5 is now supported for use in Hermes Agent via Nous Portal! \n\nThe first 500 new users get one month free access to the Plus plan to try out Fable. Code in video: https://t.co/l4WzOtxpCI",
+      "author": {
+        "id": "1318419526132862976",
+        "name": "Nous Research",
+        "screenName": "NousResearch",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1816254738234761216/TX7TW-Mp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2110,
+        "retweets": 115,
+        "replies": 182,
+        "quotes": 46,
+        "views": 317119,
+        "bookmarks": 418
+      },
+      "createdAt": "Tue Jun 09 19:12:55 +0000 2026",
+      "createdAtLocal": "2026-06-10 03:12",
+      "createdAtISO": "2026-06-09T19:12:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064425215757619201/vid/avc1/3072x3072/_ei8NCmsZxQ2rSrH.mp4?tag=27",
+          "width": 3072,
+          "height": 3072
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064689351766999084",
+      "text": "🚨 BREAKING: Claude Fable 5 just turned video editing into a one-click workflow.\n\nIt can now:\n• Pull videos from YouTube\n• Detect the most viral moments\n• Generate attention-grabbing captions\n• Auto-reframe around speakers\n• Schedule and publish across social platforms\n\nWhat used to take hours now takes minutes.\n\nThis changes content creation completely.\n\nI must say... fable 5 is scary good\n\nWatch this 👇",
+      "author": {
+        "id": "1603737226806165509",
+        "name": "Rahul Kumar",
+        "screenName": "RahulKu22532718",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2036102998406107136/H1IzMUoK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 114,
+        "retweets": 50,
+        "replies": 24,
+        "quotes": 1,
+        "views": 1826,
+        "bookmarks": 28
+      },
+      "createdAt": "Wed Jun 10 12:41:16 +0000 2026",
+      "createdAtLocal": "2026-06-10 20:41",
+      "createdAtISO": "2026-06-10T12:41:16+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2064689157751111680/pu/vid/avc1/1138x640/b6zGGJURxQLF0sXY.mp4?tag=25",
+          "width": 1138,
+          "height": 640
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2065046759743635529",
+      "text": "Fable 5 + Arcads MCP is too powerful\n\n&gt; Connect your Meta Ads to Claude\n&gt; Analyze the data\n&gt; Generate winning ads in minutes\n\nArcads MCP live today for all arcads users https://t.co/JIQTaePo20",
+      "author": {
+        "id": "1750091867679592448",
+        "name": "arcads AI",
+        "screenName": "arcads_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1989090608049270784/DAEkeJkP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 28,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 1,
+        "views": 4364,
+        "bookmarks": 33
+      },
+      "createdAt": "Thu Jun 11 12:21:28 +0000 2026",
+      "createdAtLocal": "2026-06-11 20:21",
+      "createdAtISO": "2026-06-11T12:21:28+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065045821276487680/vid/avc1/1920x1080/p3zuSpLaSAaG7jnx.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064522509039595766",
+      "text": "🚀 Claude Fable 5 is now live in Genspark Code Agent and Genspark Claw.\n\nAnthropic's most powerful Mythos-class model, now ready for daily use. State-of-the-art across coding, research, knowledge work, and vision. The longer and more complex the task, the bigger its lead.\n\nTry it now → https://t.co/2bxGFjw3Zi",
+      "author": {
+        "id": "1782708546909650944",
+        "name": "Genspark",
+        "screenName": "genspark_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1782715833099382784/R6nadR8G_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 76,
+        "retweets": 5,
+        "replies": 10,
+        "quotes": 3,
+        "views": 7967,
+        "bookmarks": 10
+      },
+      "createdAt": "Wed Jun 10 01:38:17 +0000 2026",
+      "createdAtLocal": "2026-06-10 09:38",
+      "createdAtISO": "2026-06-10T01:38:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2064965985979830636",
+      "text": "\"Claude Fable 5\" and \"Claude Mythos\" aren't products. They're hallucinated names slapped on a thumbnail to farm clicks. The tell of a real builder is they get the tool's name right. Half this timeline is selling tutorials for software that doesn't exist.",
+      "author": {
+        "id": "1652102560642220032",
+        "name": "Edwin Rubio",
+        "screenName": "EdwinRubioIam",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059672560875233284/2ggLdt8i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 30,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 07:00:30 +0000 2026",
+      "createdAtLocal": "2026-06-11 15:00",
+      "createdAtISO": "2026-06-11T07:00:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064703131808584116",
+        "text": "Claude Mythos is Insane!\n\n❤️‍🔥Just recorded a 12-min tutorial on how to build animated, award-Winning websites with Claude Fable 5! https://t.co/UVQXG3u0iL",
+        "author": {
+          "screenName": "viktoroddy",
+          "name": "Viktor Oddy"
+        }
+      }
+    },
+    {
+      "id": "2064482750774784221",
+      "text": "Created a personal AI dashboard with Claude Fable 5!\n\nThis entire dashboard is a one shot using my design style on Claude Design.\n\nIt has a bunch of active widgets that are interactive. https://t.co/BKMYvE3Eb5",
+      "author": {
+        "id": "1655275064126853121",
+        "name": "Jerrod Lew",
+        "screenName": "jerrod_lew",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2037818589714202624/gM2tduRH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 55,
+        "retweets": 1,
+        "replies": 5,
+        "quotes": 0,
+        "views": 3520,
+        "bookmarks": 27
+      },
+      "createdAt": "Tue Jun 09 23:00:18 +0000 2026",
+      "createdAtLocal": "2026-06-10 07:00",
+      "createdAtISO": "2026-06-09T23:00:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064482692935409664/vid/avc1/1280x720/YROuT--YXqSAjiAj.mp4?tag=14",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065077460434108573",
+      "text": "Fable 5 is now in Chorus.\n\nIn iMessage use /model\n\nThe easiest way to add Claude Code to iMessage, just became the most powerful. https://t.co/DrEeXpetjP",
+      "author": {
+        "id": "1895714633782083584",
+        "name": "Chorus.com",
+        "screenName": "chorus_agent",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062189496746098688/dRWVlFGx_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 30,
+        "retweets": 3,
+        "replies": 3,
+        "quotes": 1,
+        "views": 8673,
+        "bookmarks": 12
+      },
+      "createdAt": "Thu Jun 11 14:23:28 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:23",
+      "createdAtISO": "2026-06-11T14:23:28+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKihAVYW8AAS0DU.jpg",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064615040720982483",
+      "text": "Anthropic's Claude Fable 5 vs Anthropic's Claude Mythos 5 https://t.co/Xc1bKUdr0K",
+      "author": {
+        "id": "2001370772879872002",
+        "name": "belix.ai - AI & Automation",
+        "screenName": "belix_AI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049148778071146496/v2bff6ed_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 10 07:45:59 +0000 2026",
+      "createdAtLocal": "2026-06-10 15:45",
+      "createdAtISO": "2026-06-10T07:45:59+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKb8SZKasAAvl90.jpg",
+          "width": 1190,
+          "height": 1322
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064448900057235743",
+      "text": "ok so Claude Fable 5 is really really good at finding warm intro paths for sales/GTM\n\nwe have an internal benchmark/skill that uses our MCP for the data but gives claude freedom on picking the right filters and being creative\n\ni asked it to find me a warm connection at McKinsey. it found people who studied at the same school, same year, worked at the same jobs,  engaged with my content before & built a full map\n\nby far the best warm intro paths a claude model has found so far",
+      "author": {
+        "id": "1821911422550335488",
+        "name": "Chris Pisarski",
+        "screenName": "chrispisarski",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1955732309895700486/N-TSS80g_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 655,
+        "retweets": 21,
+        "replies": 24,
+        "quotes": 1,
+        "views": 109933,
+        "bookmarks": 971
+      },
+      "createdAt": "Tue Jun 09 20:45:48 +0000 2026",
+      "createdAtLocal": "2026-06-10 04:45",
+      "createdAtISO": "2026-06-09T20:45:48+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKZlVG1WMAEf3_i.jpg",
+          "width": 2048,
+          "height": 1308
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2064812046902817051",
+      "text": "Fable 5 is also by far the best computer use model according to Stagehand Agent Evals\n\nit also costs less than half of GPT-5.5 https://t.co/GCebBSs9Qf",
+      "author": {
+        "id": "1825243643529027584",
+        "name": "Lisan al Gaib",
+        "screenName": "scaling01",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1831493788679761920/-q9w6dzd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 601,
+        "retweets": 21,
+        "replies": 42,
+        "quotes": 1,
+        "views": 42697,
+        "bookmarks": 100
+      },
+      "createdAt": "Wed Jun 10 20:48:48 +0000 2026",
+      "createdAtLocal": "2026-06-11 04:48",
+      "createdAtISO": "2026-06-10T20:48:48+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKevTNFWsAAAvSE.png",
+          "width": 1279,
+          "height": 802
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064889397439295813",
+      "text": "CLAUDE FABLE 5 TURNS A RAW YOUTUBE LINK INTO A SCHEDULED VIRAL CLIP - ZERO HUMAN EDITING.\n\nDrop a URL. Walk away. It does the rest while you sleep.\n\nThe whole video-editing workflow just collapsed into one agent:\n\n→ Pulls the video and finds the viral moments on its own\n→ Auto-captions every clip - no timeline, no subtitles by hand\n→ Reframes to the speaker so it’s vertical-ready for Shorts/Reels/TikTok\n→ Schedules and posts automatically - you never touch an editor\n\nWhat used to be an editor + a $500-$2,000/mo VA is now one prompt.\n\nThe catch? \n\nMost people are still scrubbing timelines frame by frame. \n\nThe window to be early is now.\n\nReply “Fable” and I’ll DM you the full Playbook 👇 https://t.co/d03q1t6Xh2",
+      "author": {
+        "id": "1558054593241776128",
+        "name": "ZEUS⚡️",
+        "screenName": "zeuuss_01",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059046904944611328/gjHlGwaU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 12,
+        "quotes": 0,
+        "views": 368,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 01:56:10 +0000 2026",
+      "createdAtLocal": "2026-06-11 09:56",
+      "createdAtISO": "2026-06-11T01:56:10+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064569986702553088/vid/avc1/1280x828/9d7PpogM8IfHwSOJ.mp4?tag=27",
+          "width": 1280,
+          "height": 828
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064785409914421327",
+        "text": "https://t.co/0oMwkzGoO6",
+        "author": {
+          "screenName": "zeuuss_01",
+          "name": "ZEUS⚡️"
+        }
+      }
+    },
+    {
+      "id": "2064763272516227411",
+      "text": "CLAUDE FABLE 5 CHANGES THE GAME: FROM PROMPTS TO GOALS.\n\nUntil now, AI was a tool you micromanaged.\n\nPrompt → Review → Prompt → Fix → Repeat.\n\nClaude Fable 5 flips that model on its head.\n\nInstead of giving AI step-by-step instructions, you give it a destination.\n\nThen it plans, builds, tests, verifies, and iterates until the goal is complete.\n\nThe biggest shift isn't intelligence.\n\nIt's autonomy.\n\nOne demo built an entire productivity suite:\n\n✅ Task manager\n✅ Kanban board\n✅ Calendar\n✅ Notes app\n✅ Pomodoro tracker\n✅ Arcade game\n\n...from a single high-level goal.\n\nThe new workflow is simple:\n\nOld AI: \"Do this next.\"\n\nNew AI: \"Here's the outcome. Figure it out.\"\n\nWe're moving from prompting models to managing autonomous systems.\n\nAnd that changes everything.",
+      "author": {
+        "id": "552936387",
+        "name": "Dami-Defi",
+        "screenName": "DamiDefi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1964533406399942657/6mf-WCsr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 133,
+        "retweets": 21,
+        "replies": 17,
+        "quotes": 1,
+        "views": 20942,
+        "bookmarks": 45
+      },
+      "createdAt": "Wed Jun 10 17:35:00 +0000 2026",
+      "createdAtLocal": "2026-06-11 01:35",
+      "createdAtISO": "2026-06-10T17:35:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064687684023451648/vid/avc1/1920x1080/osIT66YNEOXNW842.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2064428645528277142",
+      "text": "🔮CREATIVE IS COOKED FABLE 5 JUST BUILT THIS VIDEO FROM NOTHING\n\nIntroducing, Claude Fable 5, the ultimate Creative Director for ads.\n\nI gave him a brief for an energy drink - and here's what he's got: \n\n🔽🔽🔽\n\n(prompts/workflow below)\n\n--------------\n\nOrchestration done using @cursor_ai SDK in a custom purpose-built app.",
+      "author": {
+        "id": "875781379",
+        "name": "Startracker 🔺",
+        "screenName": "startracker",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1916736213610115072/cYAa-OXX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 86,
+        "retweets": 8,
+        "replies": 10,
+        "quotes": 1,
+        "views": 19639,
+        "bookmarks": 146
+      },
+      "createdAt": "Tue Jun 09 19:25:18 +0000 2026",
+      "createdAtLocal": "2026-06-10 03:25",
+      "createdAtISO": "2026-06-09T19:25:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064428478863380480/vid/avc1/720x1280/Aocxp08O7TE3PAGC.mp4?tag=27",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064551188243316926",
+      "text": "Wow Claude Fable 5 is wild!! \n\nI just told it to make 3 apps with 1 prompt. \n\n1. Jarvis Dashboard\n2. Build Apple fitness app\n3. Clone my hotel website pixel perfect\n\nresults have me speechless https://t.co/duwrSgfnxE",
+      "author": {
+        "id": "713495360",
+        "name": "Marcin",
+        "screenName": "MarcinAI81",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1997396639984848896/f2gjH_3D_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1226,
+        "retweets": 81,
+        "replies": 25,
+        "quotes": 6,
+        "views": 114200,
+        "bookmarks": 1611
+      },
+      "createdAt": "Wed Jun 10 03:32:15 +0000 2026",
+      "createdAtLocal": "2026-06-10 11:32",
+      "createdAtISO": "2026-06-10T03:32:15+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064549693569576961/vid/avc1/3840x2160/OIeoBTMFWRWLgl79.mp4?tag=27",
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064955529030488351",
+      "text": "How to use Claude Fable 5 to edit videos…\n\nTLDR it wrote a lot of code &amp;  tool calls to use transcription services, ffmpeg, do colorgrading, use the figma mcp, make remotion UI and render it. \n\nYou don't have to touch a video editor. https://t.co/tZ6gpS5BcO",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1347,
+        "bookmarks": 14
+      },
+      "createdAt": "Thu Jun 11 06:18:57 +0000 2026",
+      "createdAtLocal": "2026-06-11 14:18",
+      "createdAtISO": "2026-06-11T06:18:57+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064955228592476161/vid/avc1/1740x1080/_np-HZSsWJzNlP4h.mp4?tag=27",
+          "width": 1740,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064789272020795815",
+        "text": "Claude Mythos is Insane! 🥵🥵🥵\n\nHere is a 12-min tutorial on how to build animated, award-Winning websites with Claude Fable 5!\n\nCc: @viktoroddy https://t.co/UlYndGSNQK",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2064530547364491668",
+      "text": "Claude Fable 5 is now live on ZenMux 🚀\n\nPositioned as a Mythos-class Claude model, Fable 5 is built for heavier workflows where follow-through matters:\n\n💻 autonomous coding\n📚 document-heavy analysis\n🔁 complex multi-step workflows\n🤖 long-running agent tasks\n\nFor teams using Claude Code, it is a strong fit for handing off longer tasks and reducing manual check-ins.\n\nFree to try for all new ZenMux users:\nhttps://t.co/vNWpvtxbfL",
+      "author": {
+        "id": "1955141670867197952",
+        "name": "ZenMux",
+        "screenName": "ZenMuxAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1983376972001783808/TfNNckLr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 2,
+        "views": 19977,
+        "bookmarks": 6
+      },
+      "createdAt": "Wed Jun 10 02:10:14 +0000 2026",
+      "createdAtLocal": "2026-06-10 10:10",
+      "createdAtISO": "2026-06-10T02:10:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKavH9IbUAAcp8V.jpg",
+          "width": 1440,
+          "height": 640
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065063884055261310",
+      "text": "Claude Fable 5 has almost automated the entire short-form video editing workflow.\n\nClaude Fable 5 can now:\n1. Download @YouTube videos\n\n2. Automatically identify the most viral moments\n\n3. Generate attention-grabbing hook captions\n\n4. Auto-reframe to keep the speaker in focus\n\n5. 5. Schedule and publish directly to social media (@X, Threads, Facebook, TikTok, Instagram...)\n\n6. From video analysis and editing to captions and publishing, nearly the whole pipeline can be handled by AI.\n\nThis could be a major shift for content creators and the video editing industry.",
+      "author": {
+        "id": "1236838377363632128",
+        "name": "Howard | Build on Telegram",
+        "screenName": "0xHoward_Peng",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2011297527925260292/o3OK5hbq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 111,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 13:29:31 +0000 2026",
+      "createdAtLocal": "2026-06-11 21:29",
+      "createdAtISO": "2026-06-11T13:29:31+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065063831668408320/vid/avc1/720x1284/qlV335fxykrnUCpu.mp4?tag=14",
+          "width": 720,
+          "height": 1284
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064500201000505654",
+      "text": "Anthropic 刚发了 Claude Fable 5。\n面向普通用户开放的是 Fable 5，Mythos 5 还是只给少数受信任合作方用。两者是同一底层模型，只是安全权限不一样。\n官方最强调的是写代码、Agent 和工具调用。\nAPI 价格是输入 $10 / 百万 token、输出 $50 / 百万 token。Pro、Max、Team 现在能先用，但 6 月 23 日后可能转成按量。\n现在压力给到了OpenAI。",
+      "author": {
+        "id": "1717726640040783872",
+        "name": "泊舟",
+        "screenName": "bozhou_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040464227811590144/r1-3gG2y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 8,
+        "quotes": 1,
+        "views": 5751,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 10 00:09:39 +0000 2026",
+      "createdAtLocal": "2026-06-10 08:09",
+      "createdAtISO": "2026-06-10T00:09:39+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2064402671898075579",
+      "text": "Fable 5 is now available in Claude Code and Cowork\n\nFable is the best model I have used for coding, by a wide margin. It is a big step up, enabling less prompts and steers, more efficient token use, better code quality, better tool use, more intelligent self-verification, longer running sessions, and higher trust & autonomy. \n\nHappy coding!",
+      "author": {
+        "id": "159337660",
+        "name": "Boris Cherny",
+        "screenName": "bcherny",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1902044548936953856/J2jeik0t_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4373,
+        "retweets": 301,
+        "replies": 426,
+        "quotes": 64,
+        "views": 360147,
+        "bookmarks": 520
+      },
+      "createdAt": "Tue Jun 09 17:42:06 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:42",
+      "createdAtISO": "2026-06-09T17:42:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064394146916229443",
+        "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2065065050499416542",
+      "text": "Claude Fable 5 just finished Pokémon FireRed. Not coded it — played it. With vision, start to credits.\n\nAn agent that can look at a screen and grind toward a goal doesn't stop at games. That's every back-office workflow on Earth.\n\nYou have until ~June 22 to set this up for free. The 6-move plan is in the article below 👇\nhttps://t.co/DidZwyZr1h",
+      "author": {
+        "id": "1844378602252480533",
+        "name": "Nazik Fill",
+        "screenName": "nazya_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058879056351825920/CLJ7Pebf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 13:34:09 +0000 2026",
+      "createdAtLocal": "2026-06-11 21:34",
+      "createdAtISO": "2026-06-11T13:34:09+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065064972925784065/vid/avc1/1280x720/ZYyz43zviwrVRpOt.mp4?tag=27",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064771873976545356",
+        "text": "https://t.co/F03JJ4r8oS",
+        "author": {
+          "screenName": "nazya_ai",
+          "name": "Nazik Fill"
+        }
+      }
+    },
+    {
+      "id": "2065066247448821841",
+      "text": "This is the best way to use Claude Fable in Claude Code without immediately hitting your limits.\n\n1. Model set to Fable 5\n2. Reasoning on Max\n3. Instruct Claude to run a dynamic workflow where:\n3a. Fable is the orchestrator\n3b. Opus does the reasoning heavy phases\n\nFable is so overpowered that you don't need its intelligence for every step. \n\nLet it orchestrate Opus or even Sonnet.",
+      "author": {
+        "id": "1963466798",
+        "name": "Dan McAteer",
+        "screenName": "daniel_mac8",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1972999017551249408/kNdZGnUv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 815,
+        "retweets": 31,
+        "replies": 46,
+        "quotes": 8,
+        "views": 77249,
+        "bookmarks": 1402
+      },
+      "createdAt": "Thu Jun 11 13:38:55 +0000 2026",
+      "createdAtLocal": "2026-06-11 21:38",
+      "createdAtISO": "2026-06-11T13:38:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065066133925834752/vid/avc1/2110x1436/DdFxIhmMMuf3TcVO.mp4?tag=27",
+          "width": 2110,
+          "height": 1436
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064932374622703765",
+      "text": "Claude Fable 5. Claude Opus 4.8. Gemini 3.5 Flash. GPT-5.5. MiniMax M3.\n\nFive new models. Now in CREAO.\n\nPick the right model for each workflow, switch mid-conversation as the task evolves, and keep every file, memory, and context connected in one place.\n\nYour work shouldn’t be scattered across five tools. It should flow through one system.",
+      "author": {
+        "id": "1823906193053736960",
+        "name": "Creao AI",
+        "screenName": "CreaoAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1825377522210746368/X8m9EvFN_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1108,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 04:46:57 +0000 2026",
+      "createdAtLocal": "2026-06-11 12:46",
+      "createdAtISO": "2026-06-11T04:46:57+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064929843356024832/vid/avc1/1920x1080/6ryXzQZuv1VCHCqO.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

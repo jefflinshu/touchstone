@@ -1,9 +1,40 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, Copy, Check, Share2, LayoutGrid } from 'lucide-react'
+import { ArrowLeft, Copy, Check, Share2, ChevronLeft, ChevronRight, Folder } from 'lucide-react'
 import RunCard from './RunCard.jsx'
 import AgentIcon from './AgentIcon.jsx'
+import { ProjectLikeButton, CategoryTag } from './ProjectCard.jsx'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+
+// 推荐小卡：只有缩略图+名字，整卡一个点击
+function MiniProjectCard({ group: g, onOpen }) {
+  const previewRun = g.runs.find((r) => r.preview && r.status === 'done') || g.runs.find((r) => r.preview)
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className="group w-[180px] shrink-0 cursor-pointer overflow-hidden rounded-md border border-white/10 bg-[#0c0c0f] text-left transition-colors hover:border-white/35"
+    >
+      <div className="aspect-[16/10] overflow-hidden border-b border-white/8 bg-black">
+        {previewRun ? (
+          <img
+            src={`/api/runs/${previewRun.id}/preview`}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <Folder className="h-4 w-4 text-white/15" />
+          </div>
+        )}
+      </div>
+      <div className="truncate px-2.5 py-2 text-xs font-medium text-white/80 group-hover:text-white">
+        {g.project}
+      </div>
+    </button>
+  )
+}
 
 const LAYOUTS = [
   { key: 'auto', label: 'Auto' },
@@ -27,7 +58,21 @@ function useCopy() {
 // 本会话内同一项目只计一次浏览
 const viewedProjects = new Set()
 
-export default function ProjectPage({ project, runs, logs, onBack, onStop, onDelete, onFetchLog }) {
+export default function ProjectPage({
+  project,
+  runs,
+  logs,
+  likes,
+  category,
+  prevProject,
+  nextProject,
+  recos = [],
+  onOpenProject,
+  onBack,
+  onStop,
+  onDelete,
+  onFetchLog,
+}) {
   const [layout, setLayout] = useState('2')
   const [hidden, setHidden] = useState(() => new Set())
 
@@ -36,6 +81,17 @@ export default function ProjectPage({ project, runs, logs, onBack, onStop, onDel
     viewedProjects.add(project)
     fetch(`/api/projects/${encodeURIComponent(project)}/view`, { method: 'POST' }).catch(() => {})
   }, [project])
+
+  // 方向键在项目之间左右切换（输入框聚焦时不响应）
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.target.closest?.('input, textarea, [contenteditable]')) return
+      if (e.key === 'ArrowLeft' && prevProject) onOpenProject?.(prevProject)
+      if (e.key === 'ArrowRight' && nextProject) onOpenProject?.(nextProject)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [prevProject, nextProject, onOpenProject])
   const [promptCopied, copyPrompt] = useCopy()
   const [linkCopied, copyLink] = useCopy()
 
@@ -55,22 +111,60 @@ export default function ProjectPage({ project, runs, logs, onBack, onStop, onDel
         <Button variant="outline" size="sm" onClick={onBack} className="font-mono text-[10px] tracking-[0.15em] uppercase">
           <ArrowLeft className="h-3 w-3" /> Back
         </Button>
-        <h1 className="text-xl font-semibold tracking-tight">{project}</h1>
-        <span className="font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
-          {runs.length} runs
-        </span>
-        <Button
-          variant="outline"
-          size="sm"
-          className="ml-auto font-mono text-[10px] tracking-[0.15em] uppercase"
-          onClick={() => copyLink(location.href)}
-        >
-          {linkCopied ? <Check className="h-3 w-3 text-acid" /> : <Share2 className="h-3 w-3" />}
-          {linkCopied ? 'Copied' : 'Share'}
-        </Button>
+        <h1 className="font-pixel text-xl">{project}</h1>
+        <CategoryTag category={category} />
+        <div className="ml-auto flex items-center gap-2">
+          <div className="flex overflow-hidden rounded-md border border-white/12">
+            {LAYOUTS.map((l) => (
+              <button
+                key={l.key}
+                type="button"
+                onClick={() => setLayout(l.key)}
+                className={cn(
+                  'cursor-pointer px-3 py-1.5 font-mono text-[10px] tracking-wider uppercase transition-colors',
+                  layout === l.key ? 'bg-acid text-black' : 'text-white/45 hover:text-white'
+                )}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+          <div className="flex overflow-hidden rounded-md border border-white/12">
+            <button
+              type="button"
+              title="上一个项目（←）"
+              disabled={!prevProject}
+              onClick={() => onOpenProject?.(prevProject)}
+              className="flex h-8 w-8 cursor-pointer items-center justify-center text-white/60 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-default disabled:opacity-25"
+            >
+              <ChevronLeft className="h-3.5 w-3.5" />
+            </button>
+            <span className="w-px bg-white/10" />
+            <button
+              type="button"
+              title="下一个项目（→）"
+              disabled={!nextProject}
+              onClick={() => onOpenProject?.(nextProject)}
+              className="flex h-8 w-8 cursor-pointer items-center justify-center text-white/60 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-default disabled:opacity-25"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
+          <ProjectLikeButton project={project} likes={likes} className="px-1.5" />
+          <Button
+            variant="outline"
+            size="sm"
+            className="font-mono text-[10px] tracking-[0.15em] uppercase"
+            onClick={() => copyLink(location.href)}
+          >
+            {linkCopied ? <Check className="h-3 w-3 text-acid" /> : <Share2 className="h-3 w-3" />}
+            {linkCopied ? 'Copied' : 'Share'}
+          </Button>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-6 lg:flex-row">
+      {/* 主内容撑满首屏，推荐区需轻微滚动才出现，不挤占 showcase 空间 */}
+      <div className="flex min-h-[calc(100vh-180px)] flex-col gap-6 lg:flex-row">
         {/* 左侧：提示词 */}
         <aside className="w-full shrink-0 lg:w-[300px]">
           <div className="sticky top-20 rounded-lg border border-white/10 bg-white/[0.02]">
@@ -97,26 +191,7 @@ export default function ProjectPage({ project, runs, logs, onBack, onStop, onDel
 
         {/* 右侧：作品宫格 */}
         <main className="min-w-0 flex-1">
-          <div className="mb-4 flex flex-wrap items-center gap-3">
-            <span className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
-              <LayoutGrid className="h-3 w-3" /> Layout
-            </span>
-            <div className="flex overflow-hidden rounded-md border border-white/12">
-              {LAYOUTS.map((l) => (
-                <button
-                  key={l.key}
-                  type="button"
-                  onClick={() => setLayout(l.key)}
-                  className={cn(
-                    'cursor-pointer px-3 py-1 font-mono text-[10px] tracking-wider uppercase transition-colors',
-                    layout === l.key ? 'bg-acid text-black' : 'text-white/45 hover:text-white'
-                  )}
-                >
-                  {l.label}
-                </button>
-              ))}
-            </div>
-            <span className="mx-1 h-4 w-px bg-white/10" />
+          <div className="mb-4 flex flex-wrap items-center gap-2">
             {runs.map((r) => {
               const on = !hidden.has(r.id)
               return (
@@ -162,6 +237,21 @@ export default function ProjectPage({ project, runs, logs, onBack, onStop, onDel
           )}
         </main>
       </div>
+
+      {/* 推荐：同分类优先 → 热度 → 最新 */}
+      {recos.length > 0 && (
+        <div className="mt-12">
+          <div className="mb-3 flex items-center gap-4 font-mono text-[10px] tracking-[0.18em] text-white/30 uppercase">
+            <span>More like this</span>
+            <span className="h-px flex-1 bg-white/8" />
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {recos.map((g) => (
+              <MiniProjectCard key={g.project} group={g} onOpen={() => onOpenProject?.(g.project)} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

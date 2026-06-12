@@ -1,0 +1,7 @@
+tunnel: touchstone-jefflin-ai
+credentials-file: /etc/cloudflared/touchstone-jefflin-ai.json
+
+ingress:
+  - hostname: touchstone.jefflin.ai
+    service: http://localhost:3000
+  - service: http_status:404

@@ -27,6 +27,29 @@ npm run setup   # one-time: install deps + build the web UI
 npm start       # http://localhost:3000
 ```
 
+Google sign-in uses a standard OAuth 2.0 Web application client. In Google Cloud Console, create an OAuth client with:
+
+- Application type: `Web application`
+- Authorized redirect URI: `http://localhost:3000/api/auth/callback` for local development, or `https://touchstone.jefflin.ai/api/auth/callback` in production
+
+Then start the server with:
+
+```bash
+GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... npm start
+```
+
+If the public URL is behind a proxy or differs from the request host, also set `PUBLIC_BASE_URL=https://touchstone.jefflin.ai` or `GOOGLE_REDIRECT_URI=https://touchstone.jefflin.ai/api/auth/callback`.
+
+For the `touchstone.jefflin.ai` migration checklist, see [`docs/deploy-touchstone-jefflin-ai.md`](docs/deploy-touchstone-jefflin-ai.md).
+
+GA4 analytics is optional. Create a GA4 Web data stream, then build the web UI with:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX npm run build
+```
+
+The app sends SPA page views and lightweight product events. User/profile and project routes are reported with sanitized paths like `/u/:user` and `/p/:project` so email addresses and project names are not sent to GA.
+
 Prerequisites: Node.js 20+, plus whichever CLIs you want in the arena:
 
 | CLI | Install | First-time auth |
@@ -88,6 +111,29 @@ Everything runs on your machine — your prompts and API usage stay local unless
 npm run setup   # 一次性：安装依赖 + 构建前端
 npm start       # http://localhost:3000
 ```
+
+Google 登录使用标准 OAuth 2.0 Web application client。请在 Google Cloud Console 创建 OAuth client：
+
+- Application type：`Web application`
+- Authorized redirect URI：本地开发填 `http://localhost:3000/api/auth/callback`，生产环境填 `https://touchstone.jefflin.ai/api/auth/callback`
+
+启动服务时传入：
+
+```bash
+GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... npm start
+```
+
+如果公网访问地址经过代理，或和请求 Host 不一致，再设置 `PUBLIC_BASE_URL=https://touchstone.jefflin.ai` 或 `GOOGLE_REDIRECT_URI=https://touchstone.jefflin.ai/api/auth/callback`。
+
+`touchstone.jefflin.ai` 迁移清单见 [`docs/deploy-touchstone-jefflin-ai.md`](docs/deploy-touchstone-jefflin-ai.md)。
+
+GA4 数据分析是可选配置。创建 GA4 Web data stream 后，构建前端时传入：
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX npm run build
+```
+
+应用会发送 SPA 页面浏览和轻量产品事件。用户页和项目页会上报脱敏路径，例如 `/u/:user`、`/p/:project`，避免把邮箱或项目名传给 GA。
 
 前置条件：Node.js 20+，以及你想参赛的 CLI：
 

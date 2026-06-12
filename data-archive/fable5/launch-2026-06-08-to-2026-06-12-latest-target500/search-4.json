@@ -1,0 +1,1368 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2065114297995575561",
+      "text": "https://t.co/cP1MKvePrD",
+      "author": {
+        "id": "1862199063841529856",
+        "name": "Suryansh Tiwari",
+        "screenName": "Suryanshti777",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2003864246833319936/d5GQLwdV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 5,
+        "replies": 0,
+        "quotes": 1,
+        "views": 239,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:49:51 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:49",
+      "createdAtISO": "2026-06-11T16:49:51+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065112269990846469"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Anthropic Just Changed The Rules"
+    },
+    {
+      "id": "2065114241535819824",
+      "text": "BİR PROMPTLA AWARD-WINNING UI ÜRETEN MODEL GELDİ 👇\n\nDesignCourse yeni bir video yayınladı.\nFable 5'i 5 farklı UI testiyle sınadı.\n\nSonuç: şimdiye kadar görülen en iyi one-shot UI üretimi.\n\n5 test, tek prompt:\n\n>scroll animasyonlu 3JS portfolio sayfası\n>shader tabanlı galeri sahnesi\n>SaaS hero redesign + Figma MCP entegrasyonu\n>Craigslist modernizasyonu\n>https://t.co/d1rl4x51zE arayüzü klonu\n\n\"Kimse bunu başaramaz\" dediğimiz şeyler artık bir prompt mesafesinde.\n\nDesigner'lar için şöyle düşünün:\nAI herkese aynı araçları veriyor.\nAma aynı araçla çalışan 100 kişiden sadece 10'u en iyi işi üretiyor.\n\nYaratıcılık hâlâ sizde.\n\nTürçe altyazı ekledim, aşağıya bıraktım 👇",
+      "author": {
+        "id": "2047319940823236608",
+        "name": "leodavincs",
+        "screenName": "leodavincs3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052277471718801408/6AluLOd4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 24,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:49:37 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:49",
+      "createdAtISO": "2026-06-11T16:49:37+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065113392562470915/vid/avc1/1920x1080/vm1uZJhbmrmbogzn.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null
+    },
+    {
+      "id": "2065113175503073646",
+      "text": "After using Fable 5 for last 24 hours on the mobile app i'm building, i can say it's beyond amazing at most stuff but still needs improvement with refining UI issues. \n\nIt still lacks a bit of depth there when resolving issues holistically. \n\nBut i am pretty sure that will come too.",
+      "author": {
+        "id": "1128671306",
+        "name": "Rashem Pandit",
+        "screenName": "rashem48",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1948294309599408129/N-xuAT0v_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 7,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:45:23 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:45",
+      "createdAtISO": "2026-06-11T16:45:23+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065112964768645150",
+      "text": "Boris Cherny: \"Overnight sub-agents do deeper work\"\n\n10-step Fable 5 setup you can copy this week:\n\n1. Write CLAUDE.md\n- stack\n- commands\n- code style\n- forbidden files\n- review rules\n\n2. Add PROJECT_MEMORY.md\n- verified facts\n- failed attempts\n- last session\n- next run\n\n3. Create 1 Skill per repeated workflow\n- CI triage\n- PR review\n- design QA\n- deploy check\n\n4. Add eval cases\nPut them in:\n\neval/<workflow>.jsonl\n\n5. Split maker and verifier\nMaker writes the chang\nVerifier runs the app, tests, screenshots, logs\n\n6. Use worktrees for parallel runs\nNo shared checkout\nNo file collisions\nNo mystery edits\n\n7. Send work by price\nFable 5 plans across days\nSonnet 4.6 does bulk edits\nHaiku 4.5 grades\nOpus 4.8 handles fallback cases\n\n8. Put UI work behind screenshots\nIf the task is visual, text logs aren't enough\n\n9. Move long jobs to Routines\nCI failed? Run triage\nPR opened? Run review\n7am? Send digest\n\n10. End every run by writing the lesson back\nA fix that stays in chat dies there\n\nThe rule:\n\n> Builder makes the change\n> Verifier checks the real artifact\n> Memory keeps the receipt\n> You read the diff\n\nSkip the verifier and you don't have an agent system\n\nYou have a very confident intern with shell access",
+      "author": {
+        "id": "930170538055684097",
+        "name": "Harry Tandy",
+        "screenName": "HarryTandy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1809539460503146496/zAklQbnV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 49,
+        "bookmarks": 3
+      },
+      "createdAt": "Thu Jun 11 16:44:33 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:44",
+      "createdAtISO": "2026-06-11T16:44:33+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065112490040537089/vid/avc1/1920x1080/qjmiximK1ZnKYETZ.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065089060104720776",
+        "text": "https://t.co/hmpJtXuXCq",
+        "author": {
+          "screenName": "0xCodez",
+          "name": "Codez"
+        }
+      }
+    },
+    {
+      "id": "2065110437230944553",
+      "text": "Fable 5 最反直觉的一点：你给旧模型精心调的 prompt，在它身上是减分项。\n\n最近切模型踩了一圈坑，记几条，都是真实报错换来的：\n\n1. thinking 配置整个删掉。 budget_tokens 会 400，disabled 也 400。它的思考是永远在线的，只能不传或传 adaptive，深度用 effort 控制。temperature 那几个采样参数也全删了。\n2. 先查 stop_reason 再读 content。 Fable5 有安全分类器,拒答时返回 200 但 content 是空数组,直接 content[0] 的代码会出问题。加 fallbacks 参数可以让服务端自动落回 Opus 4.8。\n3. token 多 30%。 换了分词器，你在 Opus 上算好的成本和 max_tokens 全作废，切之前最好用 count_tokens 拿真实 prompt 重测一遍。\n4. 全线 400 先查合规配置。 开了 ZDR 的话，请求写得再对也是 400。我对着请求体查了很久问题根本不在代码里。\n5. 单轮能跑十几分钟，超时和流式提前安排好，不然UI看着像是挂了。\n6. 回到开头那条：把保姆级 prompt 砍一半。 只留目标和约束，别教它步骤，输出反而更好。\n\n另外就是价格问题，日常的活用 Opus 4.8 就够了。Fable 5 还是留给过夜任务和大重构这种规划类的硬骨头吧。\n\n切之前照这六条核一遍，能省你一下午的 debug。",
+      "author": {
+        "id": "1665004138252619777",
+        "name": "羊羊羊",
+        "screenName": "encryptjustice",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1824247794464591872/TJasfRjk_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 32,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:34:30 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:34",
+      "createdAtISO": "2026-06-11T16:34:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2065109617768849832",
+      "text": "使用claude code fable 5 实现后端，使用cursor 的claude opus 4.8 进行design，使用codex app 的ChatGPT-5.5 Fast 来进行文档维护和review",
+      "author": {
+        "id": "826639262988718080",
+        "name": "Rainman",
+        "screenName": "0xdeusyu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1907035075587518465/D1m1Qo6G_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 82,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:31:15 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:31",
+      "createdAtISO": "2026-06-11T16:31:15+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2065107094907310375",
+      "text": "AI is getting way too expensive and its the reason markets might blow up BUT not for lack of demand - its the exact opposite:\n\n> demand for ai is skyrocketing. the models actually work but the tokens are too expensive. \n\ni switched to claude fable 5 this week and hit usage limits almost immediately \n\nwho wins? chinese open models. fraction of the size, 80-90% of frontier capability, costs 1/200th of claude fable, gpt 5.5 high.\n\nignore the benchmarks btw, no one in the real world actually cares, its the bill they have to pay:\n\n> the number of US startups shifting their claude subscriptions to cheaper models has 3X'd recently.\n\ncompanies like uber are starting to substitute models for the same tasks, allocating cheaper budgets\n\nthe bottlenecks are (yeah you guessed it!) compute, power, memory, cooling etc\n\nmy guess is the push to cheaper models will force new model architectures and chip design\n\napple's memory chip design for their new 20B on-device model is a clear example of this.\n\nchart below from latest citadel report:",
+      "author": {
+        "id": "1025381906173583361",
+        "name": "Ejaaz",
+        "screenName": "cryptopunk7213",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028549983431987200/A0a062o__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 574,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 16:21:13 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:21",
+      "createdAtISO": "2026-06-11T16:21:13+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi1vCBWMAA4aIb.jpg",
+          "width": 1484,
+          "height": 1034
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065106658242474333",
+      "text": "Holy shit, Claude Fable 5 is so cracked at design.\n\nand anyone can achieve the same result.\n\nWho wants this?👇 https://t.co/Pf04FPznAe",
+      "author": {
+        "id": "893369654768529408",
+        "name": "Viktor Oddy",
+        "screenName": "viktoroddy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1941325782829113344/buT3DYqx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 737,
+        "bookmarks": 10
+      },
+      "createdAt": "Thu Jun 11 16:19:29 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:19",
+      "createdAtISO": "2026-06-11T16:19:29+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2065106588327624704/pu/vid/avc1/1044x720/mzsMJfuJVGaz0rFm.mp4?tag=12",
+          "width": 3132,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065106515774558255",
+      "text": "Check out 5 UI/UX designs built in a single attempt by Claude Mythos\n https://t.co/5rMTRuTqrk",
+      "author": {
+        "id": "2047249292075606016",
+        "name": "DG",
+        "screenName": "GoldmanDam",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050877298950410240/L0uNlz_n_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:18:55 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:18",
+      "createdAtISO": "2026-06-11T16:18:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065106423789355130",
+      "text": "Yeni Claude Fable 5 AI gibi duran UI ve Frontend tasarımını öldürdü.\n\nTek prompt'ta yaptığı landing page 👇\n\nhttps://t.co/BZwpsHBwoE",
+      "author": {
+        "id": "2010699444451475456",
+        "name": "scale",
+        "screenName": "therealscale",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2010704540320854016/tMpcMmPF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 19,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:18:33 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:18",
+      "createdAtISO": "2026-06-11T16:18:33+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064467866770935809/vid/avc1/2880x2160/P_zuo67PCUdKYJ3d.mp4?tag=27",
+          "width": 2880,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null
+    },
+    {
+      "id": "2065104709652779253",
+      "text": "I am happy to announce the emperor has no clothes again. Dario and Fable 5 claim 10x productivity in drug design. Does that mean side effect free peptide drug, no it means designing drugs which bind to primary receptors better but offer clue about secondary and tertiary binds",
+      "author": {
+        "id": "179312729",
+        "name": "John Allen Berger",
+        "screenName": "Drjab699John",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012254745340026884/Tt_zs_sO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 8,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:11:45 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:11",
+      "createdAtISO": "2026-06-11T16:11:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065104183364366448",
+      "text": "🚨 Claude Fable 5 just walked into Code Arena and started taking names.\n\nMeanwhile somewhere else, ChatGPT is still politely saying “Here’s a balanced explanation” while Claude is already shipping the frontend, fixing the bugs, redesigning the UI, and writing the documentation before lunch. 😭\n\nFrontend, React, design systems, data apps, simulations, content tools… Claude is out here speedrunning every category like it has a deadline from the universe itself.\n\nAt this point the AI race is starting to feel like:\nClaude = “I built your product”\nOthers = “I can explain how to build your product very clearly” \n\nRespect to Anthropic for pushing the bar, but the group project energy in AI right now is getting out of hand.",
+      "author": {
+        "id": "4310906773",
+        "name": "Tanvir",
+        "screenName": "MrTanZzZ",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1983972413458219008/f678k3XW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 239,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:09:39 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:09",
+      "createdAtISO": "2026-06-11T16:09:39+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi5TylaEAAeN4Y.jpg",
+          "width": 703,
+          "height": 436
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064949876463645026",
+        "text": "We’re rolling out changes to make Fable 5’s safeguards for frontier LLM development visible.\n\nStarting this week, flagged requests will visibly fall back to Opus 4.8—the same as our safeguards for cyber and bio. You will see this every time it happens. On the API, any flagged requests will return a reason for their refusal (coming to server-side fallback in the next few days).\n\nWe wanted to deploy Fable 5 to our users quickly and safely. Visible safeguards can be probed, so they have to be robust, which takes time to get right. Invisible safeguards can be targeted more narrowly, allowing us to ship quickly with very few false positives. We went with invisible safeguards for this reason—and that was the wrong tradeoff. You should have visibility into the safeguards we have in place, and why. We’re sorry for not getting the balance right.\n\nMaking the safeguards visible makes them easier to work around, so keeping them robust to jailbreaks will unfortunately mean more false positives while we improve the classifiers. We're also tuning our bio and cyber classifiers to trigger less often on harmless requests. We know this is frustrating and we’ll do our best to keep this period as short as possible.\n\nIf you think a request has been mistakenly flagged: run /feedback in Claude Code, click thumbs-down on the fallback in https://t.co/LtktniD5HY or Cowork, or file the safeguard appeal form for API requests. Your reports help us tune these classifiers and we appreciate your feedback.   \nhttps://t.co/TDAAYRGqDt",
+        "author": {
+          "screenName": "ClaudeDevs",
+          "name": "ClaudeDevs"
+        }
+      }
+    },
+    {
+      "id": "2065104105954247014",
+      "text": "Feels obligatory to test Claude Fable 5’s performance in game development.\n\nI fed it an old rougelike HTML action game I previously built with Opus, and Fable 5 turned it into 3D in 10 minutes.\n\nThe upgrade is obvious\n\n- Animation\nBefore: Nano Banana + motion frame generator + ASCII converter to get usable action sprites and animation.\nAfter: prompt directly generates the weapon and matched animation.\n\n- Audio Design\nBefore: only one basic hit sound repeated.\nAfter: BGM, hit SFX, enemy kill SFX, and level clear audio.\n\n- Visual\nBefore: ASCII visuals were mostly flat and hard to push into action gameplay.\nAfter: it preserved the 2D ASCII aesthetic, while adding 3D depth, perspective, and impact through a hybrid rendering style.\n\n- Character\nBefore: even simple boss designs like a spider or tiger were hard to recreate.\nAfter: it pulled boss prototypes from my design doc, turned them into 3D models, and animated them in one pass.\n\nThe attacks also feel much better, though I’m not 100% sure how much of that comes from my earlier stat tweaks versus Fable itself.\n\nThis is the real intent-to-gameplay moment.",
+      "author": {
+        "id": "1266356165270581248",
+        "name": "Aiko",
+        "screenName": "0xAikoDai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2025478045570924546/B_ZzigLC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 2,
+        "views": 188,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 11 16:09:21 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:09",
+      "createdAtISO": "2026-06-11T16:09:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065104009850232832/vid/avc1/1080x1080/z2SbtkY0SPGIsbI7.mp4?tag=27",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065103626176217323",
+      "text": "Fable 5 / Mythos brought the magic back for me holy shit 👽\n\ngive this monster a /goal and it will blow your mind\n\ni know i know, just UI stuff, but i was terrified of this mission lol as the dashboard was getting complex and thought this would be a solid thing to point it at\n\nmy current workflow is usually to build well researched imp plans w/ a lot of back and forth, i was dreading it for this task... \n\nsaid fuck it and just gave it a one prompt goal...\n\n26 commits later and it's nailed it (I only stepped in a few times here there w/ observations, taste related stuff).\n\nA couple observations: \n\nFable is amazing at surfacing bugs mid-flight: take advantage of this, wire it into the initial prompt or goal w/something like 'continuously sweep for bugs and log them in a file, we'll discuss post mission' or just 'YOLO fix any bug you find'\n\nGive it clear constraints and clarity on what 'done' looks like. I could have done better at this. \n\nLet Fable COOK, don't try and steer it too hard. Give it a couple skills maybe, that's it. \n\nEnjoy the Fable BBQ cookout. I am maxing this shit out until the 22nd.",
+      "author": {
+        "id": "275262618",
+        "name": "sam🍇",
+        "screenName": "samrexford",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2037614084422803456/KMDdinbE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 32,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:07:26 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:07",
+      "createdAtISO": "2026-06-11T16:07:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi2PR_bkAAsH08.png",
+          "width": 454,
+          "height": 184
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi23fXbgAA1L8R.png",
+          "width": 749,
+          "height": 360
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065103343954084330",
+      "text": "claudecodeで/modelで確認すると、fable5が出てこないどころかopus4になってて冷や汗\n\n確認したところ、\n\n- Fable 5モデル自体は利用可能\n- UIの選択肢メニューのみが最新モデルに追いついていない\n- API経由では正常にアクセス可能\n\nらしい\n\nclaude --model claude-fable-5で直接指定すればいけた https://t.co/pnEtao4uiC",
+      "author": {
+        "id": "1280503520001654784",
+        "name": "わはる",
+        "screenName": "waaaaahr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058551959968522240/sZf6C1m2_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 29,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 16:06:19 +0000 2026",
+      "createdAtLocal": "2026-06-12 00:06",
+      "createdAtISO": "2026-06-11T16:06:19+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi34c6boAApKmZ.png",
+          "width": 1090,
+          "height": 206
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065100335832764670",
+      "text": "Anthropic’s Claude Fable 5 launch is less interesting as a benchmark story and more interesting as a product governance story.\n\nThe headline is simple. Anthropic launched Claude Fable 5 on June 9 and says it is the most capable model it has made generally available. It also launched Claude Mythos 5 for a smaller group of cyberdefenders and infrastructure providers.\n\nThe part worth watching is the release design.\n\nAnthropic says Fable 5 will route some queries to Claude Opus 4.8 when safeguards trigger. It also says those safeguards trigger in less than 5 percent of sessions on average. Pricing is $10 per million input tokens and $50 per million output tokens, with subscription access changing after an initial included window.\n\nThat tells us where frontier model deployment is going.\n\nIt is no longer just “ship the smartest model.” It is model routing, access tiers, capacity windows, policy controls, and trust segmentation.\n\nEnterprise buyers should pay attention to this pattern. The operational question is not whether the model is impressive. It probably is.\n\nThe Day 2 question is more practical:\n\nCan your workflow tolerate safety routing, changing access windows, cost spikes, and capability differences by user class?\n\nFor healthcare, financial services, government, and critical infrastructure, this matters a lot. If a model silently falls back or refuses part of a workflow, you need observability, auditability, and a designed escalation path.\n\nOtherwise your “AI transformation” becomes a very expensive guessing game. Always fun in a production environment.\n\n#EnterpriseAI #AISafety #AIInfrastructure #AIGovernance #HealthcareAI #CIO #AITransformation",
+      "author": {
+        "id": "782502",
+        "name": "Krish Subramanian",
+        "screenName": "krishnan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1828262763065679875/Gv-EbLPV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:54:22 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:54",
+      "createdAtISO": "2026-06-11T15:54:22+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKi1zpUboAAgWJz.jpg",
+          "width": 2816,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065098917562159294",
+      "text": "I made Fable 5 and Opus 4.8 go head to head on a one-shot build challenge. Both had the same high level requirements doc set with /goal. Then I play-tested both and analysed their quality.\n\nThe task: build a site to play \"King & Pawn 3136\", a simple chess variant, for my husband's chess blog. PvM, PvP, analysis boards, stockfish engine, user ELO ratings, blitz and bullet games with clock - a high level feature list.\n\nOne massive point off the bat for Fable - it implemented a design that met the \"anti-cheat\" quality requirement that I left out of the brief and kept aside for the scoring rubric. In Fable's architecture there's no way for a user to cheat by poking the client side or public endpoints. Opus left this wide open - players can forge results or rating.\n\nBut beyond that, Fable was underwhelming.\n\nBoth models came up with basically playable sites. There were no issues in game rules or stockfish analysis. The Fable UI design does look nicer at a glance. But when you start playing games, the actual PvP gameplay experience, while \"technically working\", had lots of UI/UX \"jank\" bugs and bad handling of lag on both sides.\n\nFable actually did *worse* on user navigation. Maybe because it spent more effort on each individual feature/page, it left out basic flows that were required to go between the features - ones which Opus got right. On the Fable version of the site, you could not actually navigate into a PvP game you started (without your opponent sending you the link), and there was no way to go into an analysis board for a finished PvP match.\n\nIf I add up all my quality dimension comparisons, it's a narrow victory for Fable - 3 wins over 2. But my headline read is: if one-shotting a codebase based on requirements is the benchmark, then it isn't saturated yet, and Fable doesn't even completely outclass Opus. \n\n(screenshots in thread below)",
+      "author": {
+        "id": "520427832",
+        "name": "Yanqing",
+        "screenName": "YanqingCheng",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1798472717701623808/n_pplNlj_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 28,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:48:44 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:48",
+      "createdAtISO": "2026-06-11T15:48:44+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKiuUoGXYAAvUnP.png",
+          "width": 871,
+          "height": 604
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065098761278259275",
+      "text": "Claude Fable 5 just blew my mind.\n\nI went from a simple prompt to a live website in under 20 minutes.\n\nNo coding. No design skills.\n\nJust AI.\n\nTutorial 👇\nhttps://t.co/V34nAupVcr",
+      "author": {
+        "id": "1439878017531121664",
+        "name": "Ferdy Korpershoek",
+        "screenName": "FerdyCom_Korp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1722531066269831168/wnv1EIQ__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 15:48:07 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:48",
+      "createdAtISO": "2026-06-11T15:48:07+00:00",
+      "media": [],
+      "urls": [
+        "https://www.youtube.com/watch?v=FFZM7G34j5Q"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065098485532074144",
+      "text": "Its been a while but back with some big bangers on the latest update for @graftappio \n🔗:https://t.co/NMIQzW8KIK\n0.1.113\n- Claude Fable 5 now available\n- Agent swarm: Have a model orchestrate multiple threads with subagents, that assigns any provider and model you want. \n- Added harness support for Opencode, Pi, and Antigravity.\n- Added support to run local models via Claude Code, Codex, Pi and Opencode.\n- New chat mode allows you to work outside of a repo and interact with your desktop with any model + model can send screenshots within the chat.\n- UI updates and improvements",
+      "author": {
+        "id": "1919563381800849409",
+        "name": "Brent Warner",
+        "screenName": "brentmwarner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1919567217718358016/y8Zlr1sK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:47:01 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:47",
+      "createdAtISO": "2026-06-11T15:47:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065097840238411776/vid/avc1/1516x1080/YqFjBIFbzOGnO7-l.mp4?tag=27",
+          "width": 1516,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "https://graftapp.io/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065097521605808563",
+      "text": "First Review of Fable 5\nIt is quite good and very fast. However, the token consumption is insane 🙄🙄\nI’m using it for my database fixes, backend work, and even some frontend design.\nIt’s also better than the latest GPT model.",
+      "author": {
+        "id": "1860689168470286336",
+        "name": "thenoobdev",
+        "screenName": "bchirag001",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1888803951157313536/aY0W59jM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:43:11 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:43",
+      "createdAtISO": "2026-06-11T15:43:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065096102572130506",
+      "text": "8/ 2 hours. 1.4 million tokens. One humanoid robot.\n\n@earthtojake asked Fable 5 to DESIGN a humanoid robot.\n\nIt produced a full CAD model — articulated wrists, hips, knees, shoulders — viewable in a live 3D editor.\n\nHardware design just became a prompt.\n\nSteal the method:\n\n\"You are a mechanical design engineer. Design a [ROBOT/DRONE/GADGET] as a parametric 3D model. Process: 1) define the spec (dimensions, joints, degrees of freedom), 2) generate the model as code (OpenSCAD or three.js viewer), 3) build a browser viewer where I can rotate, zoom, and toggle each component, 4) label every part in a sidebar. Iterate until it looks production-grade, not like a toy.\"",
+      "author": {
+        "id": "1862199063841529856",
+        "name": "Suryansh Tiwari",
+        "screenName": "Suryanshti777",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2003864246833319936/d5GQLwdV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 51,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:37:33 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:37",
+      "createdAtISO": "2026-06-11T15:37:33+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065095827295756289/vid/avc1/1206x720/QD47lYyIwgROO0c0.mp4?tag=27",
+          "width": 1206,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065094243807269243",
+      "text": "ANTHROPIC SHIPPED ITS MOST EXPENSIVE CLAUDE EVER.\n\n$10 IN. $50 OUT. IT BEAT EVERY BENCHMARK ANTHROPIC THREW AT IT.\n\nTHEN I ASKED IT TO DESIGN ONE SCREEN AND GOT A 2009 ADMIN PANEL.\n\nMEET CLAUDE FABLE 5. 👇 https://t.co/h0vCOINPKv",
+      "author": {
+        "id": "1594722968785018881",
+        "name": "ROXy",
+        "screenName": "VK_ROXy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063979741871267840/wllLUdv8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 15:30:09 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:30",
+      "createdAtISO": "2026-06-11T15:30:09+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065094182146850817/vid/avc1/1920x1080/H5wAZEnilcr37w1e.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064672653026136181",
+        "text": "https://t.co/166o3jl6FQ",
+        "author": {
+          "screenName": "VK_ROXy",
+          "name": "ROXy"
+        }
+      }
+    },
+    {
+      "id": "2065093951250665660",
+      "text": "Claude Fable 5 Designed a V8 Engine in Under 10 Minutes\nI asked it to design a V8 engine.\n\nLess than 10 minutes later, it returned a complete 3D model that was fully assembled and ready to use.\n\nNot a rough concept.\nNot a partial design.\nA working V8 engine model generated from a simple prompt.",
+      "author": {
+        "id": "1699417980155637761",
+        "name": "Rehen",
+        "screenName": "rehensina",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063347039157751808/-0PjDRax_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:29:00 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:29",
+      "createdAtISO": "2026-06-11T15:29:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065062760669663232/vid/avc1/2956x2160/W0_rMsxQ4nOG3Twc.mp4?tag=27",
+          "width": 2956,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065093897898836345",
+      "text": "THE $10,000 WEBSITE ERA IS OFFICIALLY DEAD💀\n\nI just saw the guy in the video - along with Claude Fable 5 - completely shatter the entire web design industry in 17 minutes\n\nWhile agencies are still charging five figures for \"custom code,\" this AI just built 6 professional websites with zero manual effort. We’re talking about high-end, immersive digital experiences.\n\nThe Breakdown of the Disruption:\n\n2-Minute Landings: Level 1-3 sites with premium typography and full mobile optimization, delivered in a \"one-shot kill\" prompt.\n\n3D Mastery: Level 4-6 sites featuring interactive 3D JavaScript backgrounds and Three.js scrolling that feels \"buttery smooth\".\n\nProduction Speed: What used to take hours in older models like Opus was executed to perfection in 20 minutes.\n\nThe Brutal Truth: Design has been democratized. If you are selling \"pretty pixels,\" you are in a race to the bottom. The \"commodity trap\" is here, and most designers are going to get left behind.\n\nThe New Moat: Clients don't pay $10k for a website anymore - they pay for results, brand positioning, and marketing. Stop selling a \"digital brochure\" and start selling the outcome.\n\nAdapt or become a digital relic",
+      "author": {
+        "id": "1385570411161739268",
+        "name": "whemo",
+        "screenName": "whemohere",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059310143922155521/6BrgqZML_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 11 15:28:47 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:28",
+      "createdAtISO": "2026-06-11T15:28:47+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065092024978616320/vid/avc1/1920x1080/mXMfrihWDygGgO1f.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065093466674127243",
+      "text": "@RoundtableSpace one shot ui attempts by claude mythos is the multimodal agent that changes dev workflow",
+      "author": {
+        "id": "1266643939378868225",
+        "name": "Jimmy Ashcot",
+        "screenName": "ashcotXBT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042658865234481153/u9oNGTnW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:27:04 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:27",
+      "createdAtISO": "2026-06-11T15:27:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065093210699932095",
+      "text": "Claude Fable 5 finished an 8 week Stripe migration in days.\n\nA senior engineer dropped the full legacy codebase Tuesday.\n\nTwo months of team work vanished.\n\nThe model shipped as the new flagship. One tier above Opus.\n\nAsk it about cyber, biology, or chemistry. It stays silent. Routes you quietly to Opus 4.8.\n\nThat safety trip-wire hits 5% of sessions by design.\nThe real version is Mythos 5.\n\nIt ships only to US government cyber defenders.   \n\nAnthropic calls it the strongest cyber model on Earth.\n\nPrice starts at $10 per million tokens. Half the old rate.\nIt runs free on Pro and Max until June 22.\n\nAnthropic built the most powerful AI possible. Then gave the world the safe one.\n\nThe unrestricted beast stays locked away.",
+      "author": {
+        "id": "2052152330355642376",
+        "name": "Veltrx",
+        "screenName": "Veltrxai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2053118126506524673/pGw1LDE0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 169,
+        "bookmarks": 4
+      },
+      "createdAt": "Thu Jun 11 15:26:03 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:26",
+      "createdAtISO": "2026-06-11T15:26:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065093129280065536/vid/avc1/576x1024/AzkmN8X4gLGybtW7.mp4?tag=27",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065082923099812233",
+        "text": "https://t.co/gjX8Pvp0OC",
+        "author": {
+          "screenName": "MyWestLord",
+          "name": "West Lord"
+        }
+      }
+    },
+    {
+      "id": "2065092763679408484",
+      "text": "anthropic: \"claude fable 5 is able find critical bugs and design systems from scratch\"\n\ninternet: \"fable redesign my landing page\"\n\n**fable 5 was not harmed in making of this post",
+      "author": {
+        "id": "1890442343872098305",
+        "name": "Abhi Patel 🦭",
+        "screenName": "itsmeabhipatel",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1907946572152975364/T8Tj69_A_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:24:17 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:24",
+      "createdAtISO": "2026-06-11T15:24:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065092674105888801",
+      "text": "I reviewed a long coding session after switching to Claude Fable 5 on release day.\n\nI didn’t experience any model handoff in Claude Code, and Opus was not used once in my logs. This was basically the Fable show.\n\nVerdict: very strong.\n\nFable shipped from 29 PRs across UI redesign, auth, scoring, projections, track records, security evidence, staging smokes, and live JWT debugging.\n\nBest traits:\n\n- strong multitasking\n- great context carryover across 16 continuations\n- evidence-driven launch discipline\n- solid product taste\n- sharp systems debugging, especially with a ES256/JWKS Supabase auth issue\n\nWeak spots:\n\n- occasional environment confusion\n- repeated tool-procedure mistakes\n- a few overconfident deploy assumptions\n\nMost of the weak spots are typical harness and Claudisms, so they didn’t impact my grading too much.\n\nWhat I wanted more of:\n\n- tying test performance back to a clear definition of done and acceptance criteria\n- more follow-up questions on net-new design and development to reduce rework now and in the future\n- cleaner environment awareness between local, preview, staging, and prod\n- more explicit confidence levels when making deploy/live-system claims\n- tighter distinction between “implemented,” “tested locally,” “verified in staging,” and “verified live”\n- more hardening and mistake-proofing as a - model capability, which could be a great next-generation feature if it isn’t already in Mythos\n\nNone of these were fatal, but for frontier / premium coding agent, I want less ambiguity around what is actually production ready.\n\nOverall: B / B+.\n\nWhat has your experience been?",
+      "author": {
+        "id": "2057821997141245953",
+        "name": "Cachetronaut",
+        "screenName": "cachetronaut_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061889157014732800/Bax2GHZm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 33,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:23:55 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:23",
+      "createdAtISO": "2026-06-11T15:23:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065090764233695254",
+      "text": "https://t.co/ZWhTsvj8wz",
+      "author": {
+        "id": "1217632293747142656",
+        "name": "Nett0",
+        "screenName": "nett0eth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1947335831905095680/nB05raUq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 882,
+        "bookmarks": 3
+      },
+      "createdAt": "Thu Jun 11 15:16:20 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:16",
+      "createdAtISO": "2026-06-11T15:16:20+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065084641443201024"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Como Claude Fable 5 editou um vídeo 4K sozinho. Passo a passo com prompts e comandos."
+    },
+    {
+      "id": "2065090428098220458",
+      "text": "Watch these 5 UI/UX - One Shot Attempts made by Claude Mythos\n\nhttps://t.co/9ueSkTsFbc",
+      "author": {
+        "id": "1536693901230321666",
+        "name": "0xMarioNawfal",
+        "screenName": "RoundtableSpace",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 68,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 51485,
+        "bookmarks": 21
+      },
+      "createdAt": "Thu Jun 11 15:15:00 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:15",
+      "createdAtISO": "2026-06-11T15:15:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065090256504815929",
+      "text": "https://t.co/BhVsEUwZNe",
+      "author": {
+        "id": "26529850",
+        "name": "Kenny Johns 🔜 ETH Global 🗽",
+        "screenName": "kenjohnscreates",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1990847246141644800/MePF8Avx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:14:19 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:14",
+      "createdAtISO": "2026-06-11T15:14:19+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065066873293565952"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How Claude Fable 5 Marks the Dawn of Gated Access"
+    },
+    {
+      "id": "2065089977747460552",
+      "text": "https://t.co/UjF3BYmwvh",
+      "author": {
+        "id": "1662924019501346816",
+        "name": "Sadam Khan",
+        "screenName": "SadamKh88866704",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1955144164326223872/jlQlis3P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 34,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 15:13:12 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:13",
+      "createdAtISO": "2026-06-11T15:13:12+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065030773821046784"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The 2026 Loop Architecture Guide: Maximizing Mythos Class Models and Claude Fable 5"
+    },
+    {
+      "id": "2065088735096783180",
+      "text": "Claude Design + Claude Fable 5 で、ペーパーサートのウィジェットのサンプルを作ってみた。\nこれも良くアニメで見ていて、いつか実現してみたいと思っていたもの…\nキャラシート→ポーズ集→ペーパーサート化した画像を渡しています。アセット化、モーションはDesignでやってもらった\n#春日部つむぎ https://t.co/naXIqhKjiz",
+      "author": {
+        "id": "158832036",
+        "name": "Toru Suzuki",
+        "screenName": "zolgear",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3045911179/2e3c0b8fce6f087bfdcdb7327e8fd218_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 47,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 15:08:16 +0000 2026",
+      "createdAtLocal": "2026-06-11 23:08",
+      "createdAtISO": "2026-06-11T15:08:16+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065088661923024896/vid/avc1/470x352/Scn51Wu1EYyAmGRz.mp4?tag=14",
+          "width": 470,
+          "height": 352
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2065086100209881390",
+      "text": "The setup that's blowing up right now:\n\nStep 1: Give Claude Fable 5 the problem. Let it think. Plan. Design the architecture. It's slow but its reasoning is worth the wait.\n\nStep 2: Hand that plan to GPT 5.5 Codex. Let it build. Fast, precise, follows instructions exactly.\n\nStep 3: Commit to repo. Review the diff. Repeat.\n\nThat's it. Two models. One loop. $20/month.",
+      "author": {
+        "id": "1524826927",
+        "name": "KroWork",
+        "screenName": "krodotwork",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065077640130953217/7yBTsUvB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 41,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 14:57:48 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:57",
+      "createdAtISO": "2026-06-11T14:57:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065085041378480545",
+      "text": "Anthropic's CEO: \"coding is going away first. then all of software engineering\"\n\nhere's what nobody's ready for:\n\nwhen anyone can ship an app in 24 hours, code stops being the moat. design does.\n\nthe solo devs clearing $10,000-100,000/mo right now all have one thing in common - their apps look like products, not AI slop\n\nthe difference isn't a better prompt. it's working inside a design system the AI respects:\n\n> brief, then vocabulary, then flow - before a single pixel gets generated\n> the AI reads your design system instead of inventing a new one every time\n> Claude Fable 5 or Opus 4.8 building from 6 markdown files while you make the taste calls\n\nAI didn't replace the designer. it deleted everyone who skipped the brief.\n\nfull workflow in the article below 👇",
+      "author": {
+        "id": "1412131273280212996",
+        "name": "Mr. Buzzoni",
+        "screenName": "polydao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2022077728359682048/UWClPPZX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 32,
+        "retweets": 0,
+        "replies": 7,
+        "quotes": 0,
+        "views": 907,
+        "bookmarks": 12
+      },
+      "createdAt": "Thu Jun 11 14:53:35 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:53",
+      "createdAtISO": "2026-06-11T14:53:35+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065079840533835776/vid/avc1/1920x1080/kCXp4RxiBfSkvcJH.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065061257183420652",
+        "text": "https://t.co/rBERsjsGZf",
+        "author": {
+          "screenName": "polydao",
+          "name": "Mr. Buzzoni"
+        }
+      }
+    },
+    {
+      "id": "2065083560919212525",
+      "text": "The same design that enables Fable 5 to complete more work without needing as much human judgement in the loop is 1:1 a propensity to lie.\n\nJudgement requires strong internal locus of control, which for an AI, means doubling down on its own decisions and assumptions.\n\nMore powerful AI means a stubborn, uncontrollable, lying AI. By definition, that’s just what it is.",
+      "author": {
+        "id": "1557469567257018368",
+        "name": "Yishai",
+        "screenName": "YishaiBack",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1967984072690446337/QJEgzNVB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2321,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 11 14:47:42 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:47",
+      "createdAtISO": "2026-06-11T14:47:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065082589573005730",
+      "text": "Resultado de Fable 5 con un prompt detallado + Design System, hecho en @pencildev via MCP - Claude Code. https://t.co/5uwoc8exIL",
+      "author": {
+        "id": "91257392",
+        "name": "Sho Villalba",
+        "screenName": "JohanVillalba",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2002180178500317184/E4qistq2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 497,
+        "bookmarks": 7
+      },
+      "createdAt": "Thu Jun 11 14:43:51 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:43",
+      "createdAtISO": "2026-06-11T14:43:51+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKildhhXcAAdvRq.jpg",
+          "width": 2274,
+          "height": 1480
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2065082134508007735",
+      "text": "revamped part of a client project with fable 5 and the UI changes are surprisingly good\n\nevery model update feels a little better at design, a little better at following instructions, and a little better at understanding product context\n\nbeen building MVPs and client products in 3–4 weeks for a while now\n\nbut that timeline keeps getting shorter while the quality somehow keeps getting better",
+      "author": {
+        "id": "1175081803314585600",
+        "name": "Dhruval",
+        "screenName": "dhruvalgolakiya",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042545598122070020/5Wd8EtWT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 168,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 11 14:42:02 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:42",
+      "createdAtISO": "2026-06-11T14:42:02+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065078271545614336/vid/avc1/2452x2160/y2rvYe3dtlJuWfWM.mp4?tag=27",
+          "width": 2452,
+          "height": 2160
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKijBcjaMAEpPL6.png",
+          "width": 592,
+          "height": 698
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKijJaSbEAA-1LG.png",
+          "width": 790,
+          "height": 861
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065081683796537647",
+      "text": "Fable 5 and Mythos 5 aren't two new models. They're the same model, and the difference is who's allowed to use what it can do.\n\nFable 5: \nPublic. Pro, Max, Team, Enterprise. When a user asks about cybersecurity, biology, chemistry, or model distillation, the request is routed to Claude Opus 4.8. Fires on under 5% of sessions.\n\nMythos 5:\nLocked. Project Glasswing only: US government, AWS, Apple, Google, Cisco, Microsoft, JPMorgan. Same model, safeguards lifted.\n\nCapability is real. Fable 5 hits 80.3% on SWE-bench Pro vs Opus 4.8's 69.2%, and roughly 2x on FrontierCode Diamond. Pricing is also exactly 2x ($10/$50 per million tokens). For long-horizon agentic work the math favors Fable; for routine traffic, stay on Opus.\n\nFrontier AI used to come in two shapes: open (Llama) or closed-but-equal (GPT-5.5, Opus 4.8). Anthropic just introduced a third, which is identity-gated. \n\nAnthropic isn't deciding what the model can do. It's deciding who gets to use what it can do. That's a new kind of product gate, and a new kind of power.\n\nTwo things to watch:\n> 30-day retention is now mandatory for everyone, even customers who paid for zero-retention contracts. Anthropic isn't just routing your queries. It's logging them.\n> The router is conservative by design. Anthropic admits it'll catch harmless requests. If your work touches security, biology, or chemistry, expect to keep getting Opus 4.8 answers on the questions you actually came to Fable for.",
+      "author": {
+        "id": "1506498197820043265",
+        "name": "Fiona 🦅🟠",
+        "screenName": "fionaclairema",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1627698470848192512/4KFm0nwb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 162,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 11 14:40:15 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:40",
+      "createdAtISO": "2026-06-11T14:40:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKik1z3bkAAMyLk.jpg",
+          "width": 3200,
+          "height": 1988
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2065080937751421181",
+      "text": "Anthropicの新モデル「Claude Fable 5」は、発表と同時にAI開発者の注目を集めています。\n英語検索では、公式発表、Code Arena Frontendでの優位性を示す投稿、2時間の自律実行で複雑プロジェクトを進めた体験談が並びました。性能主張は投稿ベースで、実タスクでの再現性は環境によって変わります。\n💡 なぜ重要か\nモデル競争の焦点が、回答品質だけでなく「長く走る」「自分で検証する」「UIまで作る」に移っています。\n1️⃣\nベンチの強さが実案件で再現するか\n2️⃣\n自律実行中の手戻りが減るか\n3️⃣\n料金と上限が運用に合うか\n新モデルは話題性より、毎日の開発工程をどこまで削れるかで見たいところです。",
+      "author": {
+        "id": "1381755345882599425",
+        "name": "AIらぼ🎙️暗号資産・エアドロ大学",
+        "screenName": "LaboNft",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1993621640496975872/EY-7rAWh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 98,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 11 14:37:17 +0000 2026",
+      "createdAtLocal": "2026-06-11 22:37",
+      "createdAtISO": "2026-06-11T14:37:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    }
+  ]
+}

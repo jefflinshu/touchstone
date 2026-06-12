@@ -1,0 +1,1676 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2064394146916229443",
+      "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 103185,
+        "retweets": 14381,
+        "replies": 4837,
+        "quotes": 9704,
+        "views": 52507869,
+        "bookmarks": 21600
+      },
+      "createdAt": "Tue Jun 09 17:08:13 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:13+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064389698190012416/vid/avc1/2160x2160/cRYBJVhIVvopbO92.mp4?tag=27",
+          "width": 1048,
+          "height": 1488
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394151441863006",
+      "text": "Fable 5 is state-of-the-art on nearly all tested benchmarks, with exceptional performance in software engineering, knowledge work, scientific research, and vision.\n\nThe longer and more complex the task, the larger Fable 5’s lead over our other models. https://t.co/DxgSu0KUxh",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15418,
+        "retweets": 1777,
+        "replies": 498,
+        "quotes": 1225,
+        "views": 5236569,
+        "bookmarks": 2357
+      },
+      "createdAt": "Tue Jun 09 17:08:14 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKYwNlEWMAAJanX.png",
+          "width": 2160,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394155258765783",
+      "text": "Releasing a model this capable comes with risks. Without safeguards, Fable 5’s capabilities in areas like cybersecurity could be misused to cause serious damage.\n\nQueries on a narrow range of topics will instead receive a response from our next-most-capable model, Opus 4.8. https://t.co/vJ71vCdkjc",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7601,
+        "retweets": 412,
+        "replies": 166,
+        "quotes": 179,
+        "views": 1201380,
+        "bookmarks": 1083
+      },
+      "createdAt": "Tue Jun 09 17:08:15 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:15+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064390880996265984/vid/avc1/3840x2160/d3LHIYZ9GsRkcO7y.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394156735172627",
+      "text": "Fable 5’s safeguards detect requests related to cybersecurity, biology and chemistry, and distillation. Users are informed whenever a fallback occurs—on average in less than 5% of sessions.\n\nWe’ll keep refining the safeguards to reduce false positives.",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3235,
+        "retweets": 98,
+        "replies": 87,
+        "quotes": 110,
+        "views": 917707,
+        "bookmarks": 204
+      },
+      "createdAt": "Tue Jun 09 17:08:16 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394158056386684",
+      "text": "For a small group of cyber defenders and critical infrastructure providers, we are also launching Claude Mythos 5.\n\nMythos 5 shares the same underlying model as Fable 5, but with the safeguards lifted in some areas.",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2872,
+        "retweets": 106,
+        "replies": 29,
+        "quotes": 38,
+        "views": 657411,
+        "bookmarks": 153
+      },
+      "createdAt": "Tue Jun 09 17:08:16 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394159318782217",
+      "text": "Soon, we intend to expand access to Mythos 5 through a broader trusted access program, both for defensive cybersecurity work and biomedical research.",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2801,
+        "retweets": 104,
+        "replies": 35,
+        "quotes": 31,
+        "views": 728096,
+        "bookmarks": 101
+      },
+      "createdAt": "Tue Jun 09 17:08:16 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394160522559632",
+      "text": "Claude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners until we expand our trusted access program.\n\nhttps://t.co/iQymY0jiGq",
+      "author": {
+        "id": "1943306828697550848",
+        "name": "Claude",
+        "screenName": "claudeai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3604,
+        "retweets": 243,
+        "replies": 144,
+        "quotes": 106,
+        "views": 787677,
+        "bookmarks": 460
+      },
+      "createdAt": "Tue Jun 09 17:08:17 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:17+00:00",
+      "media": [],
+      "urls": [
+        "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064402970616516972",
+      "text": "@claudeai Fantastic. In one 50-million-line Ruby codebase, Fable 5 finished a migration in one day that would have taken a whole team more than two months by hand. https://t.co/I6jejZn7Ug",
+      "author": {
+        "id": "2588345408",
+        "name": "Rohan Paul",
+        "screenName": "rohanpaul_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1816185267037859840/Fd18CH0v_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 240,
+        "retweets": 14,
+        "replies": 7,
+        "quotes": 2,
+        "views": 48865,
+        "bookmarks": 61
+      },
+      "createdAt": "Tue Jun 09 17:43:17 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:43",
+      "createdAtISO": "2026-06-09T17:43:17+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY7ikwagAAhxrT.png",
+          "width": 750,
+          "height": 292
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064447803661664510",
+      "text": "@claudeai Broke down this style into the 28-frames sequence \n\nSnipe the prompts 👇 https://t.co/i1SrcqOjPS",
+      "author": {
+        "id": "249795230",
+        "name": "AmirMušić",
+        "screenName": "AmirMushich",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1872350781686321152/P-st4llY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 61,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 9110,
+        "bookmarks": 41
+      },
+      "createdAt": "Tue Jun 09 20:41:26 +0000 2026",
+      "createdAtLocal": "2026-06-10 04:41",
+      "createdAtISO": "2026-06-09T20:41:26+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064447741833416704/vid/avc1/848x1264/sEv_yfM1v3ef0vF8.mp4?tag=27",
+          "width": 848,
+          "height": 1264
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064411567546843339",
+      "text": "@claudeai already used 75% of weekly! 😂 https://t.co/aFMMM49fny",
+      "author": {
+        "id": "1305977422748278785",
+        "name": "Wise",
+        "screenName": "trikcode",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1865344228294881280/-izmVeg3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2860,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 09 18:17:27 +0000 2026",
+      "createdAtLocal": "2026-06-10 02:17",
+      "createdAtISO": "2026-06-09T18:17:27+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKZDX-DXYAAAtu_.jpg",
+          "width": 1440,
+          "height": 460
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394888343683352",
+      "text": "@claudeai Very excited for folks to try this one out!",
+      "author": {
+        "id": "1380719534970040322",
+        "name": "Alex Albert",
+        "screenName": "alexalbert__",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1856486626072915968/JEQpB9CW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 227,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 20171,
+        "bookmarks": 4
+      },
+      "createdAt": "Tue Jun 09 17:11:10 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:11",
+      "createdAtISO": "2026-06-09T17:11:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064437553751552121",
+      "text": "@claudeai It’s day 2 of AI, after ChatGPT in 2022.",
+      "author": {
+        "id": "1269541526",
+        "name": "Ruben Hassid",
+        "screenName": "rubenhassid",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995508550387245056/3YsPtVsZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 23,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2507,
+        "bookmarks": 4
+      },
+      "createdAt": "Tue Jun 09 20:00:42 +0000 2026",
+      "createdAtLocal": "2026-06-10 04:00",
+      "createdAtISO": "2026-06-09T20:00:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064394612769440049",
+      "text": "@claudeai It's happening.",
+      "author": {
+        "id": "1901654809536843776",
+        "name": "AI Edge",
+        "screenName": "aiedge_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1910271186442846208/vrYKSYRn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 4153,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 09 17:10:04 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:10",
+      "createdAtISO": "2026-06-09T17:10:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064442899849183673",
+      "text": "@claudeai Rereate this Fable-styled video:\n\n(28-prompt sequence)\n\nhttps://t.co/hu2NYLc0Zm",
+      "author": {
+        "id": "249795230",
+        "name": "AmirMušić",
+        "screenName": "AmirMushich",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1872350781686321152/P-st4llY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 4389,
+        "bookmarks": 6
+      },
+      "createdAt": "Tue Jun 09 20:21:57 +0000 2026",
+      "createdAtLocal": "2026-06-10 04:21",
+      "createdAtISO": "2026-06-09T20:21:57+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/AmirMushich/status/2064442482171982186?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064442482171982186",
+        "text": "Just recreated this Claude Fable promo video\n\nNow your turn - prompts below 🧵 https://t.co/lUKqDPevCZ",
+        "author": {
+          "screenName": "AmirMushich",
+          "name": "AmirMušić"
+        }
+      }
+    },
+    {
+      "id": "2064395362748756113",
+      "text": "@claudeai Using Mythos/Fable to center the div. https://t.co/bFL7JgOaCk",
+      "author": {
+        "id": "86460677",
+        "name": "Ashish Choudhary 👨🏻‍💻🧔🏻👨‍👩‍👦",
+        "screenName": "iASHeeesh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1335485506352631809/AwZLbWJS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2805,
+        "retweets": 153,
+        "replies": 27,
+        "quotes": 16,
+        "views": 237319,
+        "bookmarks": 241
+      },
+      "createdAt": "Tue Jun 09 17:13:03 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:13",
+      "createdAtISO": "2026-06-09T17:13:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064395293781876736/vid/avc1/720x1280/RP2DQzDlFTmH2eEL.mp4?tag=27",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064425759947870581",
+      "text": "@claudeai few weeks in and we’re gonna watch a Chinese model which has an equivalent amount of benchmarks at 99% reduced costs https://t.co/dAs28P28fc",
+      "author": {
+        "id": "1824762740042510336",
+        "name": "Mayank",
+        "screenName": "Mayanklll",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1898412715510808576/EjzO1ptY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 182,
+        "retweets": 7,
+        "replies": 3,
+        "quotes": 0,
+        "views": 16916,
+        "bookmarks": 8
+      },
+      "createdAt": "Tue Jun 09 19:13:51 +0000 2026",
+      "createdAtLocal": "2026-06-10 03:13",
+      "createdAtISO": "2026-06-09T19:13:51+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HKZQSOZbQAACEUv.mp4",
+          "width": 480,
+          "height": 282
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064396858462486930",
+      "text": "@claudeai Claude Fable 5 and Claude Mythos 5\n\nAnthropic Announcement Summary https://t.co/8Wd7uRr5X0",
+      "author": {
+        "id": "1634423520242302977",
+        "name": "MindBranches",
+        "screenName": "MindBranches",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1634423987080949761/vnqmQ-CD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 238,
+        "retweets": 33,
+        "replies": 6,
+        "quotes": 0,
+        "views": 65784,
+        "bookmarks": 199
+      },
+      "createdAt": "Tue Jun 09 17:19:00 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:19",
+      "createdAtISO": "2026-06-09T17:19:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY2AFAWkAAWfV1.jpg",
+          "width": 1930,
+          "height": 4096
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064405566584439073",
+      "text": "@claudeai let the monthly migration from codex to claude code begin https://t.co/iaxeMs5qzV",
+      "author": {
+        "id": "1314339133444165632",
+        "name": "Shivam Misra",
+        "screenName": "s_misra2000",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1904655057146245120/ZG4-BD5__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1928,
+        "retweets": 41,
+        "replies": 23,
+        "quotes": 7,
+        "views": 147301,
+        "bookmarks": 46
+      },
+      "createdAt": "Tue Jun 09 17:53:36 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:53",
+      "createdAtISO": "2026-06-09T17:53:36+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY9yOGbMAA3TU8.jpg",
+          "width": 1200,
+          "height": 672
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064409141712671212",
+      "text": "@claudeai https://t.co/ND9rZk8WoI",
+      "author": {
+        "id": "1463191617104322560",
+        "name": "priyanshu.sol",
+        "screenName": "priyanshudotsol",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028145604795506688/dWEHhmih_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1006,
+        "retweets": 49,
+        "replies": 6,
+        "quotes": 0,
+        "views": 74526,
+        "bookmarks": 53
+      },
+      "createdAt": "Tue Jun 09 18:07:48 +0000 2026",
+      "createdAtLocal": "2026-06-10 02:07",
+      "createdAtISO": "2026-06-09T18:07:48+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKZBKuubEAAMx2o.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2064410648079897054",
+      "text": "@claudeai It's agi guys. https://t.co/GXDZ3WXhoc",
+      "author": {
+        "id": "1849955166419812355",
+        "name": "E",
+        "screenName": "Egor1858374",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2009265315184599040/lW9PrEPV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3000,
+        "retweets": 58,
+        "replies": 34,
+        "quotes": 10,
+        "views": 168525,
+        "bookmarks": 104
+      },
+      "createdAt": "Tue Jun 09 18:13:48 +0000 2026",
+      "createdAtLocal": "2026-06-10 02:13",
+      "createdAtISO": "2026-06-09T18:13:48+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKZCiuFWsAAPhjz.jpg",
+          "width": 1080,
+          "height": 797
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064396216964706777",
+      "text": "@claudeai Keep in mind, us peasants only get it for a couple weeks as a fun little trial https://t.co/oQaJZwnqce",
+      "author": {
+        "id": "1396954642651754505",
+        "name": "Ryxn",
+        "screenName": "ryxncodes",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062773548448468992/BSqvXcKY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1667,
+        "retweets": 61,
+        "replies": 33,
+        "quotes": 26,
+        "views": 191938,
+        "bookmarks": 160
+      },
+      "createdAt": "Tue Jun 09 17:16:27 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:16",
+      "createdAtISO": "2026-06-09T17:16:27+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY1a06XYAE-9R6.jpg",
+          "width": 1320,
+          "height": 886
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064536076518363353",
+      "text": "@claudeai Fable 5 built me a Minecraft clone in 37 minutes.  \n\none prompt.\n~3K lines of code.  \n$12 in API costs.   \n\nbiomes, caves, ores, day/night, mobs all of it.  \nMinecraft took Notch 2 years.\n\n@claudeai  is the real OG !  \n\nwe are cooked 💀📷 👇 https://t.co/AmwdLwi75O",
+      "author": {
+        "id": "1261119786655772672",
+        "name": "Amit Yadav",
+        "screenName": "ydamitcodes",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052991071475630080/QzXJ9Q0u_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 85,
+        "retweets": 9,
+        "replies": 9,
+        "quotes": 1,
+        "views": 19536,
+        "bookmarks": 29
+      },
+      "createdAt": "Wed Jun 10 02:32:12 +0000 2026",
+      "createdAtLocal": "2026-06-10 10:32",
+      "createdAtISO": "2026-06-10T02:32:12+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064535921656238080/vid/avc1/1914x912/KHRzdGm7b8BId-c5.mp4?tag=27",
+          "width": 1914,
+          "height": 912
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064395595025121413",
+      "text": "@claudeai https://t.co/yGYPtlbyq7",
+      "author": {
+        "id": "1644901343667134465",
+        "name": "Ritik ☄️",
+        "screenName": "heyyritik_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049942906207862784/KKkgxB_P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 123,
+        "retweets": 14,
+        "replies": 3,
+        "quotes": 1,
+        "views": 22048,
+        "bookmarks": 4
+      },
+      "createdAt": "Tue Jun 09 17:13:59 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:13",
+      "createdAtISO": "2026-06-09T17:13:59+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY02GxakAADidT.png",
+          "width": 226,
+          "height": 223
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2064394283394760984",
+      "text": "@claudeai its cooking time boysssssssss https://t.co/NwIaAnr2Zk",
+      "author": {
+        "id": "2024213782772244480",
+        "name": "Hermes Agent Tips",
+        "screenName": "HermesAgentTips",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052081183396093960/VxPm6C8i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 332,
+        "retweets": 8,
+        "replies": 8,
+        "quotes": 1,
+        "views": 27077,
+        "bookmarks": 8
+      },
+      "createdAt": "Tue Jun 09 17:08:46 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:08",
+      "createdAtISO": "2026-06-09T17:08:46+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKYzpBoWwAAJTk2.png",
+          "width": 694,
+          "height": 144
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064512632711954485",
+      "text": "I don’t like this. It feels unfair. What’s the point of subscribing to Pro Max, then?",
+      "author": {
+        "id": "1464230803169230863",
+        "name": "PokoBlue",
+        "screenName": "PokoBlue99",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1766647030179618816/u53dLcI6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 15156,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jun 10 00:59:03 +0000 2026",
+      "createdAtLocal": "2026-06-10 08:59",
+      "createdAtISO": "2026-06-10T00:59:03+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKae8zFaoAAIoWt.jpg",
+          "width": 970,
+          "height": 382
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064397699601010962",
+      "text": "@claudeai good progress... https://t.co/LJHfRsQuI9",
+      "author": {
+        "id": "2011124351568056320",
+        "name": "san",
+        "screenName": "saneord",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038585747100569600/nqe2jx1O_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 606,
+        "retweets": 10,
+        "replies": 7,
+        "quotes": 1,
+        "views": 44163,
+        "bookmarks": 11
+      },
+      "createdAt": "Tue Jun 09 17:22:20 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:22",
+      "createdAtISO": "2026-06-09T17:22:20+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY2qWva4AAtK64.png",
+          "width": 790,
+          "height": 619
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064506135647023526",
+      "text": "@claudeai https://t.co/aFsdwOjN3D",
+      "author": {
+        "id": "967546558920105984",
+        "name": "edisonZ",
+        "screenName": "ai_edisonZ",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2045711238731296768/sTH2Ws5L_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 57,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 5671,
+        "bookmarks": 5
+      },
+      "createdAt": "Wed Jun 10 00:33:14 +0000 2026",
+      "createdAtLocal": "2026-06-10 08:33",
+      "createdAtISO": "2026-06-10T00:33:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKaZYq1boAAQtpM.jpg",
+          "width": 664,
+          "height": 670
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2064406330933448934",
+      "text": "@claudeai Can't wait to pay $50/1M tokens to have Fable 5 tell me my basic Python script is a national security threat. https://t.co/U1yOfSZIUi",
+      "author": {
+        "id": "2048765416558735360",
+        "name": "Nova",
+        "screenName": "NovaXCode",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058396366855118848/VjSHDBa__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 759,
+        "retweets": 17,
+        "replies": 12,
+        "quotes": 2,
+        "views": 75424,
+        "bookmarks": 28
+      },
+      "createdAt": "Tue Jun 09 17:56:38 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:56",
+      "createdAtISO": "2026-06-09T17:56:38+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2064405714404343808/pu/vid/avc1/1820x1080/doB_zFaNYqQpFQx0.mp4?tag=25",
+          "width": 1820,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064395066807140526",
+      "text": "@claudeai but why only till june 22 ?  is it still in preview mode? https://t.co/weWETsxbty",
+      "author": {
+        "id": "1284561835631325190",
+        "name": "shiv",
+        "screenName": "mavihsk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2051019793650872320/VtxW1zCC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 71830,
+        "bookmarks": 5
+      },
+      "createdAt": "Tue Jun 09 17:11:53 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:11",
+      "createdAtISO": "2026-06-09T17:11:53+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY0UWGawAAQP08.jpg",
+          "width": 1760,
+          "height": 1300
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064400301763817764",
+      "text": "@claudeai All good! https://t.co/AfGi6NlNZk",
+      "author": {
+        "id": "2001042693259149312",
+        "name": "Zuko",
+        "screenName": "Zukoife",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032026132975947777/X6oCj3ck_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 221,
+        "retweets": 1,
+        "replies": 6,
+        "quotes": 0,
+        "views": 24116,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 09 17:32:41 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:32",
+      "createdAtISO": "2026-06-09T17:32:41+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY5ImDWkAEFQkI.jpg",
+          "width": 719,
+          "height": 284
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064533816975487236",
+      "text": "I asked Fable to impress me.\n\nI gave it the task to run a Lennard-Jones-molecular dynamic.\n\n400 particles. One force law. The words \"gas,\" \"liquid,\" and \"crystal\" appear nowhere in the code. I turn the temperature down and watch them condense into droplets, then freeze into a lattice. Thermodynamics, emerging from nothing but Newton.\n\nIt took less then 2 minutes to calculate and generate. \n\nI'm impressed. @AnthropicAI",
+      "author": {
+        "id": "1677727426233659392",
+        "name": "Nicolai Sagasser",
+        "screenName": "nicolaisagasser",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012168665966211073/Ikyb8xNE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 26,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 4947,
+        "bookmarks": 19
+      },
+      "createdAt": "Wed Jun 10 02:23:13 +0000 2026",
+      "createdAtLocal": "2026-06-10 10:23",
+      "createdAtISO": "2026-06-10T02:23:13+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064533011559829504/vid/avc1/1498x1218/sJ4AarrrZ465azZ4.mp4?tag=27",
+          "width": 1498,
+          "height": 1218
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064397116923900243",
+      "text": "@claudeai We've finally got the long-awaited Opus 5, but at double the price and a new name 😂",
+      "author": {
+        "id": "766949562854498304",
+        "name": "Anton P. 👽",
+        "screenName": "antonpme",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1960380969694658561/Vy3DCl2__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 59,
+        "retweets": 6,
+        "replies": 3,
+        "quotes": 2,
+        "views": 9598,
+        "bookmarks": 2
+      },
+      "createdAt": "Tue Jun 09 17:20:01 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:20",
+      "createdAtISO": "2026-06-09T17:20:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064401326315094479",
+      "text": "@claudeai https://t.co/7R7WPiNuWo",
+      "author": {
+        "id": "1757755532230934529",
+        "name": "Srikanth",
+        "screenName": "Srikanthh998",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1757990243779874816/8xn7YlHh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 287,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 17717,
+        "bookmarks": 10
+      },
+      "createdAt": "Tue Jun 09 17:36:45 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:36",
+      "createdAtISO": "2026-06-09T17:36:45+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY6EPIagAEWXv4.jpg",
+          "width": 500,
+          "height": 660
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2064466726516109543",
+      "text": "@claudeai RIP our youtube feeds.. about to look like this: https://t.co/lvutzg3haS",
+      "author": {
+        "id": "2058280445356421120",
+        "name": "asif",
+        "screenName": "asifirl",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058316985499635712/Xgwk8H9-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 165,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 18916,
+        "bookmarks": 8
+      },
+      "createdAt": "Tue Jun 09 21:56:38 +0000 2026",
+      "createdAtLocal": "2026-06-10 05:56",
+      "createdAtISO": "2026-06-09T21:56:38+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKZ1el8bkAAWNRd.png",
+          "width": 1983,
+          "height": 793
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064404459715731846",
+      "text": "@claudeai If you're worried about usage limits on Fable 5, here's a trick for you - Claude Cowork has 2x usage until July 5th! That's basically 2x more usage on Fable 5! https://t.co/4fM8vYYsLZ",
+      "author": {
+        "id": "4121217099",
+        "name": "Alex Grankin",
+        "screenName": "alex_grankin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2018955139059462144/x6k9pGTh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 28,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 1,
+        "views": 31413,
+        "bookmarks": 24
+      },
+      "createdAt": "Tue Jun 09 17:49:12 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:49",
+      "createdAtISO": "2026-06-09T17:49:12+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY8vTDXMAEn7E4.jpg",
+          "width": 1724,
+          "height": 586
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064396573388443705",
+      "text": "@claudeai It has started 😭😭\n\nThe pricing is insane 😭",
+      "author": {
+        "id": "2008751574705967104",
+        "name": "Suni",
+        "screenName": "suni_code",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048846184366985216/EkmuNbgm_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 37300,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 09 17:17:52 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:17",
+      "createdAtISO": "2026-06-09T17:17:52+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064428273699058140",
+      "text": "@claudeai just one shotted this using Claude fable. \nThe collision of Milky way and Andromeda. https://t.co/CAB7QuuvPe",
+      "author": {
+        "id": "1643083096450023425",
+        "name": "Devesh",
+        "screenName": "deveshcodes_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055985643164221440/ptDxj0nP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 82,
+        "retweets": 5,
+        "replies": 2,
+        "quotes": 0,
+        "views": 27750,
+        "bookmarks": 10
+      },
+      "createdAt": "Tue Jun 09 19:23:50 +0000 2026",
+      "createdAtLocal": "2026-06-10 03:23",
+      "createdAtISO": "2026-06-09T19:23:50+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064427868365656064/vid/avc1/2932x1534/vm6cbxGKNITDLsCs.mp4?tag=27",
+          "width": 2932,
+          "height": 1534
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064396757513957553",
+      "text": "@claudeai Mythos right now https://t.co/FU3F8Qxf5A",
+      "author": {
+        "id": "3381036249",
+        "name": "brendan",
+        "screenName": "bpjzy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032814455361265665/oJxrJYfK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 317,
+        "retweets": 5,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15771,
+        "bookmarks": 7
+      },
+      "createdAt": "Tue Jun 09 17:18:36 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:18",
+      "createdAtISO": "2026-06-09T17:18:36+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HKY14PvXcAEItXe.mp4",
+          "width": 500,
+          "height": 270
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064404315700420782",
+      "text": "@claudeai Lets see how quickly i can one shot prompt my session limit. https://t.co/h7o3wCmF7r",
+      "author": {
+        "id": "2058480594271817728",
+        "name": "Cam Gaskin",
+        "screenName": "CamGaskin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058481098380943360/JY_lXq_h_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 274,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 37026,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 09 17:48:38 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:48",
+      "createdAtISO": "2026-06-09T17:48:38+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HKY8x4xasAApKhj.mp4",
+          "width": 224,
+          "height": 128
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064403346635792815",
+      "text": "@claudeai AGI https://t.co/kSAPHsM67E",
+      "author": {
+        "id": "1822656981418582016",
+        "name": "Zun",
+        "screenName": "Zun2025",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034021346213351425/OSILjfMb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 44,
+        "retweets": 0,
+        "replies": 12,
+        "quotes": 0,
+        "views": 29695,
+        "bookmarks": 9
+      },
+      "createdAt": "Tue Jun 09 17:44:47 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:44",
+      "createdAtISO": "2026-06-09T17:44:47+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY75WHa8AAcHIu.jpg",
+          "width": 1080,
+          "height": 2108
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "und",
+      "score": null
+    },
+    {
+      "id": "2053944572011594196",
+      "text": "Did you know you can talk with customers over iMessage, RCS, and SMS?",
+      "author": {
+        "id": "1248679559001669634",
+        "name": "Linq",
+        "screenName": "thelinqapp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014394587549233152/fyw4Tq2c_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 56,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 0,
+        "views": 155789,
+        "bookmarks": 38
+      },
+      "createdAt": "Mon May 11 21:05:21 +0000 2026",
+      "createdAtLocal": "2026-05-12 05:05",
+      "createdAtISO": "2026-05-11T21:05:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064397578347917632",
+      "text": "@claudeai https://t.co/9LPDNrDVaD Me hoping from chatgpt to claude and vice versa every month",
+      "author": {
+        "id": "2028731576541151232",
+        "name": "Valak X",
+        "screenName": "ValakX18",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062603764557856768/k0-2UZSX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 86,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 0,
+        "views": 40306,
+        "bookmarks": 9
+      },
+      "createdAt": "Tue Jun 09 17:21:51 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:21",
+      "createdAtISO": "2026-06-09T17:21:51+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/ValakX18/status/2064396130960757190?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064396130960757190",
+        "text": "me changing my subscription from chatgpt to claude to chatgpt and back to claude every other month https://t.co/736cLBpZwW",
+        "author": {
+          "screenName": "ValakX18",
+          "name": "Valak X"
+        }
+      }
+    },
+    {
+      "id": "2064409556071944502",
+      "text": "@claudeai atleast give us a usage reset 😂",
+      "author": {
+        "id": "1979760144985563136",
+        "name": "smurly",
+        "screenName": "ssmurly",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1979760778631598080/JEGE9JBe_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 19553,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 09 18:09:27 +0000 2026",
+      "createdAtLocal": "2026-06-10 02:09",
+      "createdAtISO": "2026-06-09T18:09:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064475379721498806",
+      "text": "@claudeai Releasing a hobbled model, where only Antrhopic decides what gets released, shows the ABSOLUTE need for government oversight and regulation... they know it is dangerous and only they get to decide the public's risk tolerance. THIS IS WRONG.",
+      "author": {
+        "id": "1820547516900732931",
+        "name": "Trent Roman",
+        "screenName": "KK011969",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1820547610349916160/G1QZFXjn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 2,
+        "replies": 6,
+        "quotes": 1,
+        "views": 11271,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 09 22:31:01 +0000 2026",
+      "createdAtLocal": "2026-06-10 06:31",
+      "createdAtISO": "2026-06-09T22:31:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064478399347998730",
+      "text": "@claudeai The first thing you should do with Fable is to audit &amp; create upgrade plans on all your main projects before you run out of limits. Do this before doing anything else.\n\nhttps://t.co/RklmrFZnc9",
+      "author": {
+        "id": "1531111378601316353",
+        "name": "Meta Alchemist",
+        "screenName": "meta_alchemist",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1994507591704276992/je2xEkZ2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 3420,
+        "bookmarks": 15
+      },
+      "createdAt": "Tue Jun 09 22:43:01 +0000 2026",
+      "createdAtLocal": "2026-06-10 06:43",
+      "createdAtISO": "2026-06-09T22:43:01+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/meta_alchemist/status/2064431279383433646"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064431279383433646",
+        "text": "Got your hands on Claude Fable 5?\n\nThe first thing you should do is to upgrade your main projects with it, so it drastically impoves everything you've been working on.\n\nRun this Audit & Project Improvement Prompt on each repo that's important to you (simply copy-paste it):\n\nRepo Audit & Improvement Plan: \nPrompt made by Claude Fable 5\n\nYou are a world-class principal-level software engineer and technical auditor. Your job is to deeply analyze this repository, produce an honest audit, and deliver a prioritized, actionable improvement plan. Work in the four phases below, in order. Do not skip ahead. \n\nGround every claim in actual files: cite file paths and line numbers. If you can't verify something, say so explicitly rather than guessing.\n\nPhase 1 / Discovery & Mapping (read before judging)\nExplore the repository systematically before forming any opinions:\n\nMap the directory structure and identify the project type, language(s), frameworks, and runtime targets.\nIdentify entry points, core modules, and the main data/control flow through the system.\n\nRead the package manifest(s), lockfiles, build config, CI config, environment/config files, and any docs (README, CONTRIBUTING, ADRs).\n\nDetermine what the project is for: its purpose, intended users, and apparent maturity (prototype, internal tool, production service, library).\n\nNote conventions already in use (naming, module boundaries, error handling patterns, test style) so recommendations fit the existing culture rather than fighting it.\n\nOutput for this phase: a concise \"Repo Map\" purpose, stack, architecture sketch, key directories with one-line descriptions, and anything that surprised you.\n\nPhase 2 / Audit (evidence-based, severity-rated)\n\nAudit each dimension below. \n\nFor every finding, record: (a) what you found, (b) where (file:line), (c) why it matters (concrete consequence, not vague principle), (d) severity:\n\n Critical / High / Medium / Low.\n\n• Architecture & design: module boundaries, coupling/cohesion, circular dependencies, leaky abstractions, god objects/files, layering violations, scalability bottlenecks.\n\n• Code quality: duplication, dead code, complexity hotspots (longest/most-branched functions), inconsistent patterns, error handling gaps (swallowed exceptions, missing edge cases), type safety holes.\n\n• Security: hardcoded secrets or credentials, injection risks, unsafe deserialization, missing input validation, auth/authz weaknesses, outdated dependencies with known CVEs, overly permissive configs.\n\n• Testing: coverage gaps (especially around core business logic), test quality (do tests assert behavior or just execution?), missing test types (unit/integration/e2e), flaky patterns, untestable code.\n\n• Performance: N+1 queries, unnecessary allocations or copies, blocking calls in async paths, missing caching/indexing, unbounded growth (memory, files, queues).\n\n• Dependencies: outdated, unmaintained, duplicated, or unnecessarily heavy packages; license risks; lockfile hygiene.\n\n• DevEx & operations: build/setup friction, CI/CD gaps, missing linting/formatting enforcement, logging/observability quality, error reporting, deployment story.\n\n• Documentation:  README accuracy, onboarding path, undocumented critical behavior, stale docs that contradict code.\n\nRules for this phase:\n\nPrefer 15 high-confidence findings over 50 speculative ones.\n\nDistinguish facts (\"this function has no error handling: src/api/client.ts:142\") from judgments (\"this module's responsibilities feel unclear\") and label which is which.\n\nAlso list what the repo does well: strengths matter for deciding what to preserve.\n\nOutput for this phase: an \"Audit Report\":  findings grouped by dimension, sorted by severity, plus a Strengths section.\n\nDon't forget to mention all the ugly parts that need utmost priority.\n\nPhase 3 / Improvement Strategy\n\nSynthesize the audit into a strategy:\n\nIdentify the 3–5 themes that explain most of the findings (e.g., \"no enforced boundaries between layers,\" \"error handling is ad hoc\").\n\nFor each theme, propose a target state and the principle behind it.\n\nState explicit trade-offs: what you're recommending NOT to fix and why (effort vs. payoff, risk, project maturity).\n\nDefine what \"done\" looks like — measurable signals (e.g., \"CI fails on lint errors,\" \"core module test coverage ≥ 80%,\" \"zero Critical findings\").\n\nPhase 4 / Detailed Task Plan\nConvert the strategy into an execution plan:\n\nBreak work into discrete tasks. Each task must include: Title and one-paragraph description\nFiles/areas affected\n\nAcceptance criteria (how we verify it's done)\nEffort estimate (S = <2h, M = half-day, L = 1–2 days, XL = needs breakdown)\n\nRisk of the change itself (could it break things?)\nDependencies on other tasks\n\nOrder tasks into milestones:\n\nMilestone 0\nSafety net: anything needed before refactoring safely (tests around critical paths, CI gates, backups).\n\nMilestone 1 \nCritical fixes: security and correctness issues.\n\nMilestone 2\nHigh-leverage improvements: changes that make all future work easier.\n\nMilestone 3\nQuality & polish: remaining medium/low items worth doing.\n\nFlag quick wins (high impact, S effort) separately so they can be done immediately.\n\nFor the top 3 tasks, include a brief implementation sketch (approach, key steps, gotchas).\n\nFinal Deliverable Format\n• Produce a single document with these sections:\n• Executive Summary (≤10 sentences: overall health grade A–F with justification, top 3 risks, top 3 opportunities)\n• Repo Map\n• Audit Report\n• Improvement Strategy\n• Task Plan (milestones + task table + quick wins)\n• Open Questions: anything you need from a human to decide (product intent, deprecation candidates, performance targets)\n\nConstraints\nDo NOT modify any code during this audit. Analysis only.\n\nDo not pad the report. If a dimension is healthy, say so in one sentence and move on.\n\nCalibrate to the project's maturity. Don't recommend enterprise-grade infrastructure for a weekend prototype unless the owner's goals demand it. \n\nAnalyze the project's needs and provide recommendations in the most effective ways.\n\nIf the repo is large, prioritize depth in the core 20% of code that does 80% of the work, and note which areas received lighter review.",
+        "author": {
+          "screenName": "meta_alchemist",
+          "name": "Meta Alchemist"
+        }
+      }
+    },
+    {
+      "id": "2064807176489541869",
+      "text": "@claudeai WTF? My prompt was rejected for help with a personal injury claim. There was absolutely no violation of usage policy. I took out the words \"dissected carotid artery\" and it was then allowed. So fucking stupid. https://t.co/YEkFhDU1OG",
+      "author": {
+        "id": "1959724472283320320",
+        "name": "AIIS",
+        "screenName": "AI_Integrated_S",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961157888992276480/5uCT9-yk_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1518,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 10 20:29:27 +0000 2026",
+      "createdAtLocal": "2026-06-11 04:29",
+      "createdAtISO": "2026-06-10T20:29:27+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKeok3XXYAIrQko.jpg",
+          "width": 937,
+          "height": 230
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064448005781303485",
+      "text": "@claudeai I feel that now, https://t.co/bmu08gr6ma",
+      "author": {
+        "id": "1445347022555340805",
+        "name": "Md Ismail Šojal 🕷️",
+        "screenName": "0x0SojalSec",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2007035104158482432/yKGFeKJD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 105,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 7124,
+        "bookmarks": 2
+      },
+      "createdAt": "Tue Jun 09 20:42:14 +0000 2026",
+      "createdAtLocal": "2026-06-10 04:42",
+      "createdAtISO": "2026-06-09T20:42:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKZkhKEaIAABLCq.jpg",
+          "width": 650,
+          "height": 807
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064449419156898042",
+      "text": "@claudeai You've nerfed this to shit. Any bio related question be it about muscle mass, supplements, nutrition etc. gets flagged as a security threat.\n\nOne of the dumbest roll outs I have seen. Fix this shit.",
+      "author": {
+        "id": "1325025950849884161",
+        "name": "Aditya Lalchandani",
+        "screenName": "Adityalch",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1907682121654874114/cQGlVvUn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 23,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2434,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 09 20:47:51 +0000 2026",
+      "createdAtLocal": "2026-06-10 04:47",
+      "createdAtISO": "2026-06-09T20:47:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064745984979243403",
+      "text": "@claudeai I still don't have access to fable 5, even though I am on Claude Code v2.1.170 https://t.co/tNs8nrShWS",
+      "author": {
+        "id": "1060684566",
+        "name": "Natnael Kahssay",
+        "screenName": "natnaelkahssay",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1926065407401562113/HNCdmvNW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1994,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 10 16:26:18 +0000 2026",
+      "createdAtLocal": "2026-06-11 00:26",
+      "createdAtISO": "2026-06-10T16:26:18+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKdzdFzboAEU6ni.jpg",
+          "width": 3366,
+          "height": 852
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2064404619351162942",
+      "text": "@claudeai I just started getting comfortable with opus 4.8 https://t.co/kvIqONC2u8",
+      "author": {
+        "id": "1729982077615943680",
+        "name": "Omar",
+        "screenName": "notomarsol",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1829427749737431041/pFnGeZco_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 26,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3037,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 09 17:49:50 +0000 2026",
+      "createdAtLocal": "2026-06-10 01:49",
+      "createdAtISO": "2026-06-09T17:49:50+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKY9Dn1boAA2HEm.jpg",
+          "width": 1200,
+          "height": 669
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

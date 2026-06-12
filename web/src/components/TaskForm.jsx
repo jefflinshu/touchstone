@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Loader2, ArrowRight, Plus, X, Check, ChevronDown, TriangleAlert } from 'lucide-react'
+import { Loader2, ArrowRight, Plus, X, Check, ChevronDown, TriangleAlert, CircleHelp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
 import {
@@ -19,9 +19,9 @@ function ModelPicker({ agent, value, onChange }) {
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          className="flex h-full cursor-pointer items-center gap-1 border-l border-white/10 px-2 font-mono text-[11px] text-white/55 outline-none transition-colors hover:text-white"
+          className="flex h-full max-w-[180px] cursor-pointer items-center gap-1 border-l border-white/10 px-2 font-mono text-[11px] whitespace-nowrap text-white/55 outline-none transition-colors hover:text-white"
         >
-          {value}
+          <span className="truncate">{value}</span>
           <ChevronDown className="h-3 w-3 opacity-50" />
         </button>
       </DropdownMenuTrigger>
@@ -80,8 +80,12 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    if (!prompt.trim() || runners.length === 0) {
-      setError('required')
+    if (!prompt.trim()) {
+      setError('先描述一下你的想法吧')
+      return
+    }
+    if (runners.length === 0) {
+      setError('请至少添加一个 Agent')
       return
     }
     if (!user) {
@@ -110,7 +114,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
         <Textarea
           rows={3}
           className="border-0 bg-transparent px-1 py-1 text-sm focus:bg-transparent"
-          placeholder="描述任务…（项目名自动生成）"
+          placeholder="想做点什么？描述你的想法，多个 AI Agent 会同时实现，跑完直接对比效果"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
@@ -127,9 +131,13 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
                 key={r.key}
                 className="flex h-8 items-center overflow-hidden rounded-md border border-white/15 bg-white/[0.04]"
               >
-                <span className="flex h-full items-center gap-1.5 pl-2.5 text-xs font-medium">
+                <span
+                  title={a.name}
+                  className="flex h-full shrink-0 items-center gap-1.5 pl-2.5 text-xs font-medium whitespace-nowrap"
+                >
                   <AgentIcon agentId={a.id} color={a.color} className="h-3.5 w-3.5" />
-                  {a.name}
+                  {/* 图标已标识 CLI，名称去掉 Code/CLI 后缀更紧凑 */}
+                  {a.name.replace(/\s+(Code|CLI)$/i, '')}
                   {!ready && <HealthHint agent={a} />}
                 </span>
                 <ModelPicker
@@ -172,26 +180,43 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
 
           <div className="ml-auto flex items-center gap-3">
             {error && <span className="font-mono text-xs text-red-400">{error}</span>}
-            <label
-              title="勾选后作品完成将自动 commit 并上传到公开的 GitHub 社区仓库；不勾选则只保存在本地"
-              className="flex cursor-pointer items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase select-none"
-            >
-              <input
-                type="checkbox"
-                checked={publish}
-                onChange={(e) => setPublish(e.target.checked)}
-                className="sr-only"
-              />
-              <span
-                className={cn(
-                  'flex h-3.5 w-3.5 items-center justify-center rounded-[3px] border transition-colors',
-                  publish ? 'border-acid bg-acid text-black' : 'border-white/25'
-                )}
-              >
-                {publish && <Check className="h-2.5 w-2.5" strokeWidth={3.5} />}
-              </span>
-              <span className={publish ? 'text-white/80' : 'text-white/40'}>同意发布到社区</span>
-            </label>
+            <span className="flex items-center gap-1">
+              <label className="flex cursor-pointer items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase select-none">
+                <input
+                  type="checkbox"
+                  checked={publish}
+                  onChange={(e) => setPublish(e.target.checked)}
+                  className="sr-only"
+                />
+                <span
+                  className={cn(
+                    'flex h-3.5 w-3.5 items-center justify-center rounded-[3px] border transition-colors',
+                    publish ? 'border-acid bg-acid text-black' : 'border-white/25'
+                  )}
+                >
+                  {publish && <Check className="h-2.5 w-2.5" strokeWidth={3.5} />}
+                </span>
+                <span className={publish ? 'text-white/80' : 'text-white/40'}>发布到社区</span>
+              </label>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    title="发布到社区意味着什么？"
+                    className="cursor-pointer text-white/25 outline-none transition-colors hover:text-white"
+                  >
+                    <CircleHelp className="h-3 w-3" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-[280px] p-3">
+                  <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-acid uppercase">发布到社区（可选）</p>
+                  <p className="mt-2 text-xs leading-5 text-white/70">
+                    勾选后，作品完成会自动 commit 并上传到公开的 GitHub 社区仓库，出现在首页供大家浏览、点赞。
+                  </p>
+                  <p className="mt-1.5 text-xs leading-5 text-white/45">不勾选则只保存在你本地，随时可以再跑一次发布。</p>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </span>
             <Button disabled={busy} className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase">
               {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
               {busy ? 'Naming' : 'Run'}

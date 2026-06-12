@@ -15,9 +15,136 @@ const DATA_DIR = path.join(__dirname, 'data')
 const REGISTRY_FILE = path.join(DATA_DIR, 'runs.json')
 const AGENTS_FILE = path.join(__dirname, 'agents.json')
 const PORT = process.env.PORT || 3000
+const SITE_NAME = 'Touchstone'
+const SITE_DESCRIPTION =
+  'Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。'
+const DEFAULT_SOCIAL_IMAGE = '/fable5-media/meta_alchemist-2064431279383433646.jpg'
 
 fs.mkdirSync(RUNS_DIR, { recursive: true })
 fs.mkdirSync(DATA_DIR, { recursive: true })
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+function escapeXml(value) {
+  return escapeHtml(value).replace(/'/g, '&apos;')
+}
+
+function cleanText(value, max = 180) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, max)
+}
+
+function requestOrigin(req) {
+  const proto = req.get('x-forwarded-proto') || req.protocol || 'http'
+  return `${proto}://${req.get('host')}`
+}
+
+function publicPath(pathname) {
+  return pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
+}
+
+function latestIso(list) {
+  return list.reduce((max, item) => {
+    const at = item.endedAt || item.createdAt || ''
+    return at > max ? at : max
+  }, '')
+}
+
+function seoForPath(req) {
+  const origin = requestOrigin(req)
+  let pathname = publicPath(req.path || '/')
+  let title = `${SITE_NAME} · AI Coding Arena`
+  let description = SITE_DESCRIPTION
+  let type = 'WebSite'
+
+  if (pathname === '/fable5') {
+    title = 'Claude Fable 5 Prompts & Showcases · Touchstone'
+    description = '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。'
+    type = 'CollectionPage'
+  } else {
+    const projectMatch = pathname.match(/^\/p\/([^/]+)$/)
+    const userMatch = pathname.match(/^\/u\/([^/]+)$/)
+    if (projectMatch) {
+      const project = decodeURIComponent(projectMatch[1])
+      const projectRuns = runs.filter((r) => r.project === project)
+      const latest = projectRuns[projectRuns.length - 1]
+      title = `${project} · Touchstone Case`
+      const prompt = latest?.prompt ? `Prompt: ${cleanText(latest.prompt, 120)}` : '查看这个 AI coding case 的多模型作品对比。'
+      description = `${prompt}${latest?.prompt?.length > 120 ? '...' : ''} ${projectRuns.length || ''} runs across ${
+        new Set(projectRuns.map((r) => r.agentName)).size || 'multiple'
+      } agents.`.trim()
+      type = 'CreativeWork'
+    } else if (userMatch) {
+      const email = decodeURIComponent(userMatch[1])
+      const profile = users[email] || {}
+      const name = profile.name || email
+      title = `${name} · Touchstone Profile`
+      description = cleanText(profile.bio, 180) || `查看 ${name} 在 Touchstone 发布和参与的 AI coding cases。`
+      type = 'ProfilePage'
+    }
+  }
+
+  const canonical = `${origin}${pathname}`
+  const image = `${origin}${DEFAULT_SOCIAL_IMAGE}`
+  return {
+    title,
+    description,
+    canonical,
+    image,
+    type,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': type,
+      name: title,
+      description,
+      url: canonical,
+      image,
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: origin },
+    },
+  }
+}
+
+function replaceMeta(html, selector, attrs) {
+  const attrString = Object.entries(attrs)
+    .map(([key, value]) => `${key}="${escapeHtml(value)}"`)
+    .join(' ')
+  const tag = `<meta ${attrString} />`
+  const pattern =
+    selector.kind === 'name'
+      ? new RegExp(`<meta[^>]+name=["']${selector.value}["'][^>]*>`, 'i')
+      : new RegExp(`<meta[^>]+property=["']${selector.value}["'][^>]*>`, 'i')
+  return pattern.test(html) ? html.replace(pattern, tag) : html.replace('</head>', `    ${tag}\n  </head>`)
+}
+
+function renderSeoHtml(html, seo) {
+  let out = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(seo.title)}</title>`)
+  out = replaceMeta(out, { kind: 'name', value: 'description' }, { name: 'description', content: seo.description })
+  out = replaceMeta(out, { kind: 'property', value: 'og:title' }, { property: 'og:title', content: seo.title })
+  out = replaceMeta(out, { kind: 'property', value: 'og:description' }, { property: 'og:description', content: seo.description })
+  out = replaceMeta(out, { kind: 'property', value: 'og:url' }, { property: 'og:url', content: seo.canonical })
+  out = replaceMeta(out, { kind: 'property', value: 'og:image' }, { property: 'og:image', content: seo.image })
+  out = replaceMeta(out, { kind: 'property', value: 'og:type' }, { property: 'og:type', content: seo.type === 'CreativeWork' ? 'article' : seo.type === 'ProfilePage' ? 'profile' : 'website' })
+  out = replaceMeta(out, { kind: 'name', value: 'twitter:title' }, { name: 'twitter:title', content: seo.title })
+  out = replaceMeta(out, { kind: 'name', value: 'twitter:description' }, { name: 'twitter:description', content: seo.description })
+  out = replaceMeta(out, { kind: 'name', value: 'twitter:image' }, { name: 'twitter:image', content: seo.image })
+  const canonicalTag = `<link rel="canonical" href="${escapeHtml(seo.canonical)}" />`
+  out = /<link[^>]+rel=["']canonical["'][^>]*>/i.test(out)
+    ? out.replace(/<link[^>]+rel=["']canonical["'][^>]*>/i, canonicalTag)
+    : out.replace('</head>', `    ${canonicalTag}\n  </head>`)
+  const jsonLd = `<script type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`
+  return /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i.test(out)
+    ? out.replace(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i, jsonLd)
+    : out.replace('</head>', `    ${jsonLd}\n  </head>`)
+}
 
 // ---------- 配置与注册表 ----------
 
@@ -258,6 +385,67 @@ function publicRun(r) {
   return { ...rest, likes: stats.likes[r.id] || 0 }
 }
 
+// ---------- 作品截图（folder 卡片缩略图，本机 Chrome headless，无额外依赖） ----------
+const CHROME_PATHS = [
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  '/Applications/Chromium.app/Contents/MacOS/Chromium',
+]
+const chromeBin = CHROME_PATHS.find((p) => fs.existsSync(p))
+const PREVIEW_FILE = '.touchstone-preview.png'
+
+const previewPath = (run) => path.join(RUNS_DIR, run.folder, PREVIEW_FILE)
+
+// 截图串行队列，避免同时拉起多个 Chrome
+let shotQueue = Promise.resolve()
+function capturePreview(run) {
+  if (!chromeBin || !run.entry) return
+  shotQueue = shotQueue
+    .then(
+      () =>
+        new Promise((resolve) => {
+          const out = previewPath(run)
+          const folderPath = run.folder.split('/').map(encodeURIComponent).join('/')
+          const url = `http://localhost:${PORT}/workspace/${folderPath}/${run.entry}`
+          execFile(
+            chromeBin,
+            [
+              '--headless=new',
+              '--disable-gpu',
+              '--hide-scrollbars',
+              '--window-size=1280,800',
+              '--virtual-time-budget=6000',
+              `--screenshot=${out}`,
+              url,
+            ],
+            { timeout: 45000 },
+            () => {
+              if (fs.existsSync(out)) {
+                run.preview = true
+                saveRegistry()
+                broadcast({ type: 'run', run: publicRun(run) })
+              }
+              resolve()
+            }
+          )
+        })
+    )
+    .catch(() => {})
+}
+
+// ---------- 任务分类（vibe coding 方向：ui/game/3d/viz/tool/ios/other） ----------
+const CATEGORIES = ['ui', 'game', '3d', 'viz', 'tool', 'ios', 'other']
+
+function classifyHeuristic(prompt) {
+  const p = (prompt || '').toLowerCase()
+  if (/game|游戏|贪吃蛇|俄罗斯方块|snake|tetris|puzzle|arcade|关卡|得分|player/.test(p)) return 'game'
+  if (/three\.?js|webgl|shader|\b3d\b|三维|立体场景/.test(p)) return '3d'
+  if (/chart|图表|可视化|dashboard|仪表盘|数据分析|\bviz\b|plot/.test(p)) return 'viz'
+  if (/\bios\b|swiftui|swift|iphone|ipad|安卓|android/.test(p)) return 'ios'
+  if (/工具|converter|转换器|计算器|calculator|todo|清单|生成器|generator/.test(p)) return 'tool'
+  if (/页面|界面|\bui\b|landing|网站|website|组件|动画|时钟|clock|css|卡片|海报/.test(p)) return 'ui'
+  return 'other'
+}
+
 // ---------- Git 自动提交 ----------
 // 任务完成后把该项目的作品 commit 进仓库（agents.json defaults.git 可关闭），
 // 队列串行执行，避免并发任务争抢 git index
@@ -363,7 +551,10 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     fs.appendFileSync(logFile, `\n[touchstone] 进程退出，exit code = ${code}\n`)
     saveRegistry()
     broadcast({ type: 'run', run: publicRun(run) })
-    if (run.status === 'done' && run.publish) autoCommitRun(run)
+    if (run.status === 'done') {
+      capturePreview(run)
+      if (run.publish) autoCommitRun(run)
+    }
   })
 
   proc.on('error', (err) => {
@@ -374,6 +565,16 @@ function startRun(run, agent, prompt, timeoutMinutes) {
 // ---------- API ----------
 
 app.use(express.json({ limit: '1mb' }))
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    ok: true,
+    service: 'touchstone',
+    baseUrl: oauthBaseUrl(req),
+    googleOAuthConfigured: googleOAuthReady(),
+    uptime: Math.round(process.uptime()),
+  })
+})
 
 app.get('/api/agents', (req, res) => {
   const cfg = loadAgentsConfig()
@@ -393,22 +594,34 @@ app.get('/api/agents', (req, res) => {
 // ---------- 项目自动命名 ----------
 // 优先 Anthropic API（haiku，便宜快），无 API key 时回退 claude CLI，最后回退时间戳名
 const NAMING_PROMPT = (prompt) =>
-  `为下面的编程任务起一个 2-4 个英文单词的 kebab-case 短名（如 bouncing-ball-hexagon），只输出名字本身，不要任何其他文字：\n${prompt.slice(0, 500)}`
+  `为下面的编程任务起一个 2-4 个英文单词的 kebab-case 短名（如 bouncing-ball-hexagon），并从 [${CATEGORIES.join(', ')}] 中选一个最贴切的分类。只输出一行 JSON（不要 markdown 代码块），形如 {"name":"bouncing-ball-hexagon","category":"ui"}：\n${prompt.slice(0, 500)}`
 
 const cleanName = (raw) =>
   slugify(
     (raw || '').trim().split('\n').filter(Boolean).pop()?.toLowerCase().replace(/[^a-z0-9 _-]/g, '').trim() || ''
   ).slice(0, 40)
 
+// 解析命名输出：优先 JSON（name+category），失败回退纯文本名
+function parseNaming(raw) {
+  try {
+    const m = String(raw || '').match(/\{[\s\S]*\}/)
+    if (m) {
+      const j = JSON.parse(m[0])
+      return { name: cleanName(j.name), category: CATEGORIES.includes(j.category) ? j.category : null }
+    }
+  } catch {}
+  return { name: cleanName(raw), category: null }
+}
+
 const anthropic = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null
 
 async function nameViaApi(prompt) {
   const msg = await anthropic.messages.create({
     model: 'claude-haiku-4-5',
-    max_tokens: 64,
+    max_tokens: 128,
     messages: [{ role: 'user', content: NAMING_PROMPT(prompt) }],
   })
-  return cleanName(msg.content.find((b) => b.type === 'text')?.text)
+  return parseNaming(msg.content.find((b) => b.type === 'text')?.text)
 }
 
 function nameViaCli(prompt) {
@@ -429,35 +642,38 @@ function nameViaCli(prompt) {
       proc.stdout.on('data', (d) => (out += d))
       const timer = setTimeout(() => {
         proc.kill('SIGKILL')
-        done('')
+        done({ name: '', category: null })
       }, 25000)
       proc.on('close', () => {
         clearTimeout(timer)
-        done(cleanName(out))
+        done(parseNaming(out))
       })
-      proc.on('error', () => done(''))
+      proc.on('error', () => done({ name: '', category: null }))
     } catch {
-      done('')
+      done({ name: '', category: null })
     }
   })
 }
 
 async function autoNameProject(prompt) {
-  let name = ''
+  let res = { name: '', category: null }
   if (anthropic) {
     try {
-      name = await nameViaApi(prompt)
+      res = await nameViaApi(prompt)
     } catch (err) {
       console.error('[naming] API 失败，回退 CLI：', err?.message)
     }
   }
-  if (name.length < 2) name = await nameViaCli(prompt)
-  if (name.length < 2) {
+  if (res.name.length < 2) {
+    const cli = await nameViaCli(prompt)
+    res = { name: cli.name, category: cli.category || res.category }
+  }
+  if (res.name.length < 2) {
     const d = new Date()
     const p = (n) => String(n).padStart(2, '0')
-    name = `task-${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`
+    res.name = `task-${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`
   }
-  return name
+  return res
 }
 
 // ---------- 本地 CLI 健康检查 ----------
@@ -511,8 +727,15 @@ function agentHealth(agent) {
   }
 }
 
-// ---------- Google 登录（复用本机 gcloud CLI 凭据，gemini CLI 作回退） ----------
-let authCache = { at: 0, email: null }
+// ---------- Google 登录（标准 OAuth 2.0 Web flow） ----------
+const SESSION_FILE = path.join(DATA_DIR, 'session.json')
+let session = { sessions: {}, oauthStates: {} }
+if (fs.existsSync(SESSION_FILE)) {
+  try {
+    session = { sessions: {}, oauthStates: {}, ...JSON.parse(fs.readFileSync(SESSION_FILE, 'utf8')) }
+  } catch {}
+}
+const saveSession = () => fs.writeFileSync(SESSION_FILE, JSON.stringify(session, null, 2))
 
 // 用户资料（头像/昵称），发布者信息展示在 folder 卡片上
 const USERS_FILE = path.join(DATA_DIR, 'users.json')
@@ -522,94 +745,229 @@ if (fs.existsSync(USERS_FILE)) {
     users = JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'))
   } catch {}
 }
+const saveUsers = () => fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
 
-// 用 gcloud 的 access token 调 userinfo 拿头像；curl 走系统代理环境变量
-function fetchProfile() {
+// Google 头像直链浏览器端常被网络环境拦截；服务端经代理（curl 读系统代理变量）
+// 下载缓存到本地，前端改用本站 /avatars/ 地址
+const AVATARS_DIR = path.join(DATA_DIR, 'avatars')
+fs.mkdirSync(AVATARS_DIR, { recursive: true })
+app.use('/avatars', express.static(AVATARS_DIR, { maxAge: '7d' }))
+
+function localizeAvatar(email, url) {
   return new Promise((resolve) => {
-    execFile('gcloud', ['auth', 'print-access-token'], { timeout: 15000 }, (err, token) => {
-      if (err) return resolve(null)
-      execFile(
-        'curl',
-        ['-s', '--max-time', '10', '-H', `Authorization: Bearer ${String(token).trim()}`,
-          'https://www.googleapis.com/oauth2/v2/userinfo'],
-        (err2, out) => {
-          if (err2) return resolve(null)
-          try {
-            const j = JSON.parse(out)
-            if (j.email) {
-              users[j.email] = { name: j.name || j.email.split('@')[0], picture: j.picture || null }
-              fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
-              return resolve(users[j.email])
-            }
-          } catch {}
-          resolve(null)
-        }
-      )
+    if (!url || !url.includes('googleusercontent.com')) return resolve(url)
+    const file = `${crypto.createHash('sha1').update(url).digest('hex')}.img`
+    const abs = path.join(AVATARS_DIR, file)
+    const local = `/avatars/${file}`
+    if (fs.existsSync(abs) && fs.statSync(abs).size > 0) return resolve(local)
+    execFile('curl', ['-s', '--max-time', '15', '-o', abs, url], (err) => {
+      if (!err && fs.existsSync(abs) && fs.statSync(abs).size > 0) return resolve(local)
+      fs.rmSync(abs, { force: true })
+      resolve(url)
     })
   })
 }
 
-function geminiAccount() {
-  try {
-    const j = JSON.parse(fs.readFileSync(path.join(os.homedir(), '.gemini', 'google_accounts.json'), 'utf8'))
-    return j.active || null
-  } catch {
-    return null
+// 旧数据迁移：把已存的 Google 直链头像换成本地缓存
+for (const [email, u] of Object.entries(users)) {
+  if (u?.picture?.includes('googleusercontent.com')) {
+    localizeAvatar(email, u.picture).then((p) => {
+      if (p !== u.picture) {
+        users[email].picture = p
+        saveUsers()
+        broadcast({ type: 'user', email, profile: users[email] })
+      }
+    })
   }
 }
 
-function getGoogleAccount(force = false) {
-  if (!force && Date.now() - authCache.at < 30000) return Promise.resolve(authCache.email)
-  return new Promise((resolve) => {
-    execFile(
-      'gcloud',
-      ['auth', 'list', '--filter=status:ACTIVE', '--format=json'],
-      { timeout: 10000 },
-      (err, stdout) => {
-        let email = null
-        if (!err) {
-          try {
-            email = JSON.parse(stdout)[0]?.account || null
-          } catch {}
-        }
-        if (!email) email = geminiAccount()
-        authCache = { at: Date.now(), email }
-        resolve(email)
-      }
-    )
+const GOOGLE_OAUTH_SCOPES = ['openid', 'email', 'profile']
+const SESSION_COOKIE = 'touchstone_session'
+const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 30
+
+function parseCookies(req) {
+  return Object.fromEntries(
+    String(req.headers.cookie || '')
+      .split(';')
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((part) => {
+        const idx = part.indexOf('=')
+        if (idx === -1) return [part, '']
+        return [part.slice(0, idx), decodeURIComponent(part.slice(idx + 1))]
+      })
+  )
+}
+
+function cookieSecure(req) {
+  return (req.get('x-forwarded-proto') || req.protocol) === 'https'
+}
+
+function setSessionCookie(req, res, sid) {
+  const attrs = [`${SESSION_COOKIE}=${encodeURIComponent(sid)}`, 'HttpOnly', 'SameSite=Lax', 'Path=/', `Max-Age=${SESSION_MAX_AGE_SECONDS}`]
+  if (cookieSecure(req)) attrs.push('Secure')
+  res.setHeader('Set-Cookie', attrs.join('; '))
+}
+
+function clearSessionCookie(req, res) {
+  const attrs = [`${SESSION_COOKIE}=`, 'HttpOnly', 'SameSite=Lax', 'Path=/', 'Max-Age=0']
+  if (cookieSecure(req)) attrs.push('Secure')
+  res.setHeader('Set-Cookie', attrs.join('; '))
+}
+
+function oauthBaseUrl(req) {
+  return process.env.PUBLIC_BASE_URL || process.env.BASE_URL || requestOrigin(req)
+}
+
+function googleRedirectUri(req) {
+  return process.env.GOOGLE_REDIRECT_URI || new URL('/api/auth/callback', oauthBaseUrl(req)).href
+}
+
+function googleOAuthReady() {
+  return !!process.env.GOOGLE_CLIENT_ID && !!process.env.GOOGLE_CLIENT_SECRET
+}
+
+function localReturnTo(value) {
+  if (typeof value !== 'string') return '/'
+  if (!value.startsWith('/') || value.startsWith('//') || value.includes('\\')) return '/'
+  return value
+}
+
+function cleanupAuthState() {
+  const cutoff = Date.now() - 10 * 60 * 1000
+  for (const [state, item] of Object.entries(session.oauthStates || {})) {
+    if (!item?.createdAt || item.createdAt < cutoff) delete session.oauthStates[state]
+  }
+}
+
+function currentSession(req) {
+  const sid = parseCookies(req)[SESSION_COOKIE]
+  if (!sid) return null
+  const data = session.sessions?.[sid]
+  if (!data?.email) return null
+  return { sid, ...data }
+}
+
+function getGoogleAccount(req) {
+  return Promise.resolve(currentSession(req)?.email || null)
+}
+
+async function fetchGoogleProfile(accessToken) {
+  const r = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+    headers: { Authorization: `Bearer ${accessToken}` },
   })
+  if (!r.ok) throw new Error(`Google userinfo failed: ${r.status}`)
+  const j = await r.json()
+  if (!j.email) throw new Error('Google userinfo response did not include email')
+  const picture = await localizeAvatar(j.email, j.picture || null)
+  users[j.email] = {
+    ...users[j.email],
+    name: j.name || users[j.email]?.name || j.email.split('@')[0],
+    picture,
+  }
+  saveUsers()
+  return { email: j.email, ...users[j.email] }
+}
+
+async function exchangeGoogleCode(req, code) {
+  const body = new URLSearchParams({
+    code,
+    client_id: process.env.GOOGLE_CLIENT_ID,
+    client_secret: process.env.GOOGLE_CLIENT_SECRET,
+    redirect_uri: googleRedirectUri(req),
+    grant_type: 'authorization_code',
+  })
+  const r = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body,
+  })
+  const j = await r.json().catch(() => ({}))
+  if (!r.ok) throw new Error(j.error_description || j.error || `Google token exchange failed: ${r.status}`)
+  return j
 }
 
 app.get('/api/auth/me', async (req, res) => {
-  const email = await getGoogleAccount()
-  if (email && !users[email]) await fetchProfile()
-  res.json({ loggedIn: !!email, email, ...(users[email] || {}) })
+  const cur = currentSession(req)
+  const profile = cur?.email ? users[cur.email] || { name: cur.name, picture: cur.picture } : {}
+  res.json({ loggedIn: !!cur, email: cur?.email || null, ...profile })
 })
 
-// 拉起 gcloud 的浏览器 OAuth 流程，等用户在浏览器里完成授权后返回
-let loginProc = null
-app.post('/api/auth/login', async (req, res) => {
-  if (!checkInstalled('gcloud')) {
-    return res.status(400).json({
-      error: '未检测到 gcloud CLI。安装：brew install google-cloud-sdk；或在终端运行 gemini 完成 Google 登录',
-    })
+app.get('/api/auth/login', (req, res) => {
+  if (!googleOAuthReady()) {
+    return res.status(500).type('text/plain; charset=utf-8').send(
+      [
+        'Google OAuth 未配置。',
+        '请先创建 Web application OAuth client，并设置环境变量：',
+        `GOOGLE_REDIRECT_URI=${googleRedirectUri(req)}`,
+        'GOOGLE_CLIENT_ID=...',
+        'GOOGLE_CLIENT_SECRET=...',
+      ].join('\n')
+    )
   }
-  if (!loginProc) {
-    loginProc = spawn('gcloud', ['auth', 'login', '--brief', '--quiet'], {
-      stdio: 'ignore',
-      env: process.env,
-    })
-    const clear = () => (loginProc = null)
-    loginProc.on('close', clear)
-    loginProc.on('error', clear)
+  cleanupAuthState()
+  const state = crypto.randomBytes(24).toString('base64url')
+  session.oauthStates[state] = { createdAt: Date.now(), returnTo: localReturnTo(req.query.returnTo) }
+  saveSession()
+  const url = new URL('https://accounts.google.com/o/oauth2/v2/auth')
+  url.searchParams.set('client_id', process.env.GOOGLE_CLIENT_ID)
+  url.searchParams.set('redirect_uri', googleRedirectUri(req))
+  url.searchParams.set('response_type', 'code')
+  url.searchParams.set('scope', GOOGLE_OAUTH_SCOPES.join(' '))
+  url.searchParams.set('state', state)
+  url.searchParams.set('prompt', 'select_account')
+  res.redirect(url.href)
+})
+
+app.post('/api/auth/login', (req, res) => {
+  res.json({ authUrl: `/api/auth/login?returnTo=${encodeURIComponent(localReturnTo(req.body?.returnTo))}` })
+})
+
+app.get('/api/auth/callback', async (req, res) => {
+  const state = typeof req.query.state === 'string' ? req.query.state : ''
+  const pending = session.oauthStates?.[state]
+  delete session.oauthStates?.[state]
+  saveSession()
+  if (!pending) return res.status(400).type('text/plain; charset=utf-8').send('Google OAuth state 无效或已过期，请重新登录。')
+  if (req.query.error) return res.status(400).type('text/plain; charset=utf-8').send(`Google OAuth 失败：${req.query.error}`)
+  try {
+    const token = await exchangeGoogleCode(req, String(req.query.code || ''))
+    const profile = await fetchGoogleProfile(token.access_token)
+    const sid = crypto.randomBytes(32).toString('base64url')
+    session.sessions[sid] = { email: profile.email, name: profile.name, picture: profile.picture, createdAt: Date.now() }
+    saveSession()
+    setSessionCookie(req, res, sid)
+    res.redirect(pending.returnTo || '/')
+  } catch (err) {
+    console.error('[auth] Google OAuth callback failed:', err)
+    res.status(500).type('text/plain; charset=utf-8').send(`Google OAuth 回调失败：${err?.message || err}`)
   }
-  const deadline = Date.now() + 180000
-  while (loginProc && Date.now() < deadline) {
-    await new Promise((r) => setTimeout(r, 1500))
+})
+
+app.post('/api/auth/logout', (req, res) => {
+  const sid = parseCookies(req)[SESSION_COOKIE]
+  if (sid) delete session.sessions?.[sid]
+  saveSession()
+  clearSessionCookie(req, res)
+  res.json({ loggedIn: false })
+})
+
+// GitHub stars：服务端经代理拉取，缓存 1 小时
+const GITHUB_REPO = 'jefflinshu/touchstone'
+let repoCache = { at: 0, stars: null }
+app.get('/api/repo', (req, res) => {
+  if (repoCache.stars !== null && Date.now() - repoCache.at < 3600000) {
+    return res.json({ repo: GITHUB_REPO, stars: repoCache.stars })
   }
-  const email = await getGoogleAccount(true)
-  if (email) await fetchProfile()
-  res.json({ loggedIn: !!email, email, ...(users[email] || {}) })
+  execFile('curl', ['-s', '--max-time', '10', `https://api.github.com/repos/${GITHUB_REPO}`], (err, out) => {
+    if (!err) {
+      try {
+        const n = JSON.parse(out).stargazers_count
+        if (typeof n === 'number') repoCache = { at: Date.now(), stars: n }
+      } catch {}
+    }
+    res.json({ repo: GITHUB_REPO, stars: repoCache.stars })
+  })
 })
 
 app.post('/api/tasks', async (req, res) => {
@@ -618,14 +976,18 @@ app.post('/api/tasks', async (req, res) => {
   if (!prompt || !Array.isArray(runners) || runners.length === 0) {
     return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
   }
-  const user = await getGoogleAccount()
+  const user = await getGoogleAccount(req)
   if (!user) {
     return res.status(401).json({ error: '请先登录 Google 账号' })
   }
   const cfg = loadAgentsConfig()
+  let category = null
   if (!project || !String(project).trim()) {
-    project = await autoNameProject(prompt)
+    const named = await autoNameProject(prompt)
+    project = named.name
+    category = named.category
   }
+  if (!category) category = classifyHeuristic(prompt)
   // 交付要求强制附加：网站展示依赖 index.html
   const finalPrompt = prompt + cfg.defaults.artifactHint
   const batchId = crypto.randomUUID()
@@ -656,6 +1018,7 @@ app.post('/api/tasks', async (req, res) => {
       status: 'pending',
       publish: !!publish,
       user,
+      category,
       createdAt: new Date().toISOString(),
     }
     runs.unshift(run)
@@ -682,17 +1045,18 @@ app.post('/api/projects/:project/like', (req, res) => {
 
 // 登录用户修改自己的昵称 / bio / 头像
 app.post('/api/users/me', async (req, res) => {
-  const email = await getGoogleAccount()
+  const email = await getGoogleAccount(req)
   if (!email) return res.status(401).json({ error: '请先登录 Google 账号' })
   const { name, bio, picture } = req.body || {}
   const cur = users[email] || {}
+  const nextPicture = typeof picture === 'string' ? picture.trim() || null : cur.picture || null
   users[email] = {
     ...cur,
     name: typeof name === 'string' && name.trim() ? name.trim().slice(0, 40) : cur.name || email.split('@')[0],
     bio: typeof bio === 'string' ? bio.trim().slice(0, 500) : cur.bio || '',
-    picture: typeof picture === 'string' ? picture.trim() || null : cur.picture || null,
+    picture: await localizeAvatar(email, nextPicture),
   }
-  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
+  saveUsers()
   broadcast({ type: 'user', email, profile: users[email] })
   res.json({ email, ...users[email] })
 })
@@ -713,6 +1077,15 @@ app.post('/api/runs/:id/like', (req, res) => {
   saveStats()
   broadcast({ type: 'run', run: publicRun(run) })
   res.json({ likes: stats.likes[run.id] })
+})
+
+app.get('/api/runs/:id/preview', (req, res) => {
+  const run = runs.find((r) => r.id === req.params.id)
+  if (!run) return res.status(404).json({ error: 'not found' })
+  const f = previewPath(run)
+  if (!fs.existsSync(f)) return res.status(404).json({ error: 'no preview' })
+  res.setHeader('Cache-Control', 'no-store')
+  res.type('png').send(fs.readFileSync(f))
 })
 
 app.get('/api/runs/:id/log', (req, res) => {
@@ -768,6 +1141,57 @@ app.delete('/api/runs/:id', (req, res) => {
   res.json({ ok: true })
 })
 
+app.get('/robots.txt', (req, res) => {
+  const origin = requestOrigin(req)
+  res.type('text/plain; charset=utf-8').send(
+    [
+      'User-agent: *',
+      'Allow: /',
+      'Disallow: /api/',
+      'Disallow: /workspace/',
+      'Disallow: /avatars/',
+      `Sitemap: ${origin}/sitemap.xml`,
+      '',
+    ].join('\n')
+  )
+})
+
+app.get('/sitemap.xml', (req, res) => {
+  const origin = requestOrigin(req)
+  const urls = [
+    { loc: `${origin}/`, priority: '1.0', changefreq: 'daily', lastmod: latestIso(runs) },
+    { loc: `${origin}/fable5`, priority: '0.9', changefreq: 'weekly', lastmod: latestIso(runs) },
+  ]
+  const projects = new Map()
+  for (const run of runs) {
+    const existing = projects.get(run.project)
+    if (!existing || (run.createdAt || '') > (existing.createdAt || '')) projects.set(run.project, run)
+  }
+  for (const [project, run] of projects) {
+    urls.push({
+      loc: `${origin}/p/${encodeURIComponent(project)}`,
+      priority: '0.8',
+      changefreq: 'weekly',
+      lastmod: run.endedAt || run.createdAt,
+    })
+  }
+  for (const [email, profile] of Object.entries(users)) {
+    urls.push({
+      loc: `${origin}/u/${encodeURIComponent(email)}`,
+      priority: '0.5',
+      changefreq: 'monthly',
+      lastmod: profile.updatedAt || latestIso(runs.filter((r) => r.user === email)),
+    })
+  }
+  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
+    .map(
+      (u) =>
+        `  <url>\n    <loc>${escapeXml(u.loc)}</loc>${u.lastmod ? `\n    <lastmod>${escapeXml(u.lastmod.slice(0, 10))}</lastmod>` : ''}\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
+    )
+    .join('\n')}\n</urlset>\n`
+  res.type('application/xml; charset=utf-8').send(body)
+})
+
 // 作品静态托管，供 iframe 预览与文件下载
 app.use(
   '/workspace',
@@ -779,15 +1203,28 @@ app.use(
   })
 )
 
+// web/public 优先于 dist：fable5 数据/媒体由脚本直接写入 public，更新后无需重新构建
+app.use(express.static(path.join(__dirname, 'web', 'public'), { index: false, maxAge: '5m' }))
+
 // 生产模式：托管前端构建产物
 const distDir = path.join(__dirname, 'web', 'dist')
 if (fs.existsSync(distDir)) {
-  app.use(express.static(distDir))
-  app.get(/^\/(?!api|ws|workspace).*/, (req, res) => {
-    res.sendFile(path.join(distDir, 'index.html'))
+  app.use(express.static(distDir, { index: false }))
+  app.get(/^\/(?!api|ws|workspace|avatars).*/, (req, res) => {
+    const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8')
+    res.type('html').send(renderSeoHtml(indexHtml, seoForPath(req)))
   })
 }
 
 httpServer.listen(PORT, () => {
   console.log(`Touchstone server: http://localhost:${PORT}`)
+  // 回填：旧 run 的分类与缩略图（截图需要服务已就绪）
+  for (const r of runs) {
+    if (!r.category) r.category = classifyHeuristic(r.prompt)
+    if (r.status === 'done' && r.entry) {
+      r.preview = fs.existsSync(previewPath(r))
+      if (!r.preview) capturePreview(r)
+    }
+  }
+  saveRegistry()
 })

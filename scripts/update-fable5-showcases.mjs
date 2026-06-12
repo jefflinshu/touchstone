@@ -1,0 +1,807 @@
+import { execFileSync } from 'node:child_process'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { basename, dirname, join, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const ROOT = resolve(__dirname, '..')
+const OUT_DIR = join(ROOT, 'web', 'public', 'fable5-data')
+const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'fable5')
+const PUBLIC_MEDIA_DIR = join(ROOT, 'web', 'public', 'fable5-media')
+const PUBLIC_AVATAR_DIR = join(ROOT, 'web', 'public', 'fable5-avatars')
+let CACHE_ASSETS = true
+let previousShardFiles = []
+
+function usage() {
+  console.error(
+    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit 500] [--cache-assets 1|0] [--cache-media 1|0]'
+  )
+  process.exit(1)
+}
+
+function parseArgs(argv) {
+  const args = {}
+  for (let i = 0; i < argv.length; i += 1) {
+    const token = argv[i]
+    if (!token.startsWith('--')) continue
+    const key = token.slice(2)
+    const value = argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[++i] : '1'
+    args[key] = value
+  }
+  return args
+}
+
+function flag(value, fallback = false) {
+  if (value == null) return fallback
+  return ['1', 'true', 'yes', 'y'].includes(String(value).trim().toLowerCase())
+}
+
+function slugify(input) {
+  return (
+    String(input || '')
+      .toLowerCase()
+      .replace(/https?:\/\/\S+/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 54) || 'fable5-post'
+  )
+}
+
+function titleFromText(text) {
+  const clean = cleanText(text)
+  const lower = clean.toLowerCase()
+
+  if (/introducing|generally available|rolling out|now available|now live/.test(lower)) return 'Claude Fable 5 availability update'
+  if (/12-min|12 min|tutorial/.test(lower) && /animated|website|award/.test(lower)) return 'Tutorial for animated award-winning websites'
+  if (/full guide|prompting structure|how to prompt|old prompts may/.test(lower)) return 'Guide to prompting Fable 5 autonomous workflows'
+  if (/repo audit|project improvement|audit .*prompt|prompt made/.test(lower)) return 'Repo audit and improvement prompt'
+  if (/changed how we work|claude code team/.test(lower)) return 'How the Claude Code team works with Fable 5'
+  if (/3 fully functioning web apps|3 apps with 1 prompt|make 3 apps/.test(lower)) return 'Three app prototypes built from one prompt'
+  if (/ship my first ios app/.test(lower)) return 'iOS app shipped from one prompt'
+  if (/shader|pattern images|pattern videos|pattern.*gifs/.test(lower)) return 'Open-source shader and pattern generator'
+  if (isComparisonText(lower)) return comparisonTitle(clean)
+  if (/higgsfield/.test(lower) && /playable game|story|visuals/.test(lower)) return 'Playable story game with Higgsfield MCP'
+  if (/liquid glass|glass liquid/.test(lower)) return 'Liquid-glass UI experiment'
+  if (/landing page/.test(lower)) return 'Landing page generated with Fable 5'
+  if (/league of legends|champion design/.test(lower)) return 'League of Legends champion kit designed in one prompt'
+  if (/made this video in (?:five|5) prompts|created this video with couple of prompts|single prompt.*vid[eé]o|vid[eé]o.*single prompt/.test(lower)) return 'Short video generated from a few prompts'
+  if (/motion design|motion|animation|animated|cinematic/.test(lower)) return 'Prompt-driven motion or animation demo'
+  if (/game|minecraft|skyrim|pokemon|mario|monopoly|gta|call of duty|rpg|tower defense/.test(lower)) return gameTitle(clean)
+  if (/three\.?js|webgl|3d|cad|fusion|voxel|walkable|spatial/.test(lower)) return spatialTitle(clean)
+  const direct = concreteTitle(clean)
+  if (direct) return direct
+  if (/website|web app|site|portfolio|hero/.test(lower)) return 'Website or web app built with Fable 5'
+  if (/app|mobile|ios|android|dashboard|saas/.test(lower)) return 'App prototype built with Fable 5'
+  if (/agent|subagent|autonomous|loop|orchestrat|memory|decides next/.test(lower)) return 'Autonomous agent workflow for Fable 5'
+  if (/workflow|automation|pipeline|orders|warehouse|sales call|customer|posting loop/.test(lower)) return 'Automated workflow built around Fable 5'
+  if (/safety|guardrail|refus|cyber|biology|bio|chemistry|abuse|policy|copyright|deepfake|fraud|scam/.test(lower)) return 'Fable 5 safety or policy discussion'
+
+  return titleFromSentence(informativeSentences(text)[0] || clean) || 'Fable 5 post'
+}
+
+function cleanText(text) {
+  return String(text || '')
+    .replace(/&amp;/g, '&')
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function cleanLine(text) {
+  return String(text || '')
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/[❤️‍🔥🔥🤯💥🚀👀👇⬇️📣📢🚨✅]/g, '')
+    .replace(/^\s*(?:\d+[.)/-]?|[-*•>]+)\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function trimPunctuation(text) {
+  return String(text || '').replace(/^[\s"'“”‘’.,:;!-]+|[\s"'“”‘’.,:;!-]+$/g, '').trim()
+}
+
+function limitText(text, max = 150) {
+  const clean = trimPunctuation(String(text || '').replace(/\s+/g, ' '))
+  if (clean.length <= max) return clean
+  const sliced = clean.slice(0, max + 1)
+  return trimPunctuation(sliced.slice(0, Math.max(sliced.lastIndexOf(' '), max - 24))) + '...'
+}
+
+function informativeSentences(text) {
+  const normalized = String(text || '')
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/\r/g, '\n')
+  const pieces = normalized
+    .split(/\n+|(?<=[.!?。！？])\s+/)
+    .map(cleanLine)
+    .filter(Boolean)
+    .filter((line) => !/^(wow|holy|insane|unbelievable|mind blown|speechless|ok so|nah|wtf)\b[!. ]*$/i.test(line))
+    .filter((line) => !/^claude (?:fable|mythos).{0,24}(?:insane|wild|crazy|unbelievable)[!. ]*$/i.test(line))
+    .filter((line) => !/\b(?:insane|crazy|wild|unbelievable|mind blown)\b/i.test(line) || /\b(?:build|built|create|created|made|make|recreated|designed|implemented|generated|prompt|tutorial|benchmark|workflow)\b/i.test(line))
+    .filter((line) => !/^bookmark this|^save this|^thread\b|^here'?s/i.test(line))
+    .filter((line) => !/^(?:it'?s?\s+over|it\s+over|rip\b|gg\b|is this over)/i.test(line))
+  return pieces
+}
+
+function titleFromSentence(sentence) {
+  const line = trimPunctuation(cleanLine(sentence))
+    .replace(/^i\s+(?:just\s+)?/i, '')
+    .replace(/^we\s+(?:just\s+)?/i, '')
+    .replace(/^claude fable 5\s+(?:just\s+)?/i, '')
+  if (!line) return ''
+  return limitText(line, 78)
+}
+
+function concreteTitle(clean) {
+  const source = cleanLine(clean)
+  const promptBuild = source.match(/prompt:\s*["'“”]?(?:build|create|make)\s+(.{3,90}?)(?:["'“”]|$|[.!?])/i)
+  if (promptBuild) {
+    const phrase = normalizeTitlePhrase(promptBuild[1])
+    if (validTitlePhrase(phrase)) return limitText(`${phrase} prompt`, 84)
+  }
+
+  const patterns = [
+    { re: /\b(?:recreated|rebuilt|cloned)\s+(?:the\s+)?(.{3,90}?)(?:\s+in\s+(?:one|1)\s+prompt|[.!?]|$)/i, suffix: 'recreated with Fable 5' },
+    { re: /\bone[- ]?shotted\s+(?:this\s+|a\s+|an\s+|the\s+)?(.{3,90}?)(?:[.!?]|$)/i, suffix: 'one-shotted with Fable 5' },
+    { re: /\bbuilt\s+(?:a\s+|an\s+|the\s+|my\s+)?(.{3,90}?)(?:\s+(?:with|using|from|in|on|for)\b|[.!?]|$)/i, suffix: 'built with Fable 5' },
+    { re: /\bcreated\s+(?:a\s+|an\s+|the\s+|this\s+)?(.{3,90}?)(?:\s+(?:with|using|from|in|on|for)\b|[.!?]|$)/i, suffix: 'created with Fable 5' },
+    { re: /\bmade\s+(?:a\s+|an\s+|the\s+|this\s+)?(.{3,90}?)(?:\s+(?:with|using|from|in|on|for)\b|[.!?]|$)/i, suffix: 'made with Fable 5' },
+  ]
+  for (const { re, suffix } of patterns) {
+    const match = source.match(re)
+    const phrase = normalizeTitlePhrase(match?.[1] || '')
+    if (validTitlePhrase(phrase)) return limitText(`${phrase} ${suffix}`, 84)
+  }
+  return ''
+}
+
+function normalizeTitlePhrase(text) {
+  return trimPunctuation(text)
+    .replace(/[👇👉]+/g, '')
+    .replace(/\b(?:with|using|from|in|on|for|by)\s*$/i, '')
+    .replace(/\b(?:claude|fable|mythos)(?:\s+\d+)?\b/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function validTitlePhrase(phrase) {
+  const lower = String(phrase || '').toLowerCase()
+  if (phrase.length < 4 || phrase.length > 95) return false
+  if (/^(safe|with|using|from|in|on|for|by|it|this|that|everything|anything)$/i.test(phrase)) return false
+  if (/^(with|using|from|in|on|for|by)\b/.test(lower)) return false
+  if (/\b(?:insane|crazy|wild|unbelievable|holy shit|wtf)\b/.test(lower)) return false
+  if (!/[a-z0-9]/i.test(phrase)) return false
+  return true
+}
+
+function comparisonTitle(clean) {
+  if (/swe-bench|frontiercode|benchmark/i.test(clean)) return 'Fable 5 benchmark results compared with other models'
+  const match = clean.match(/\bcompared?\s+(?:it\s+)?(?:with|to)\s+(.{3,90}?)(?:[.!?]|$)/i)
+  if (match) return limitText(`Fable 5 compared with ${trimPunctuation(match[1])}`, 84)
+  return 'Fable 5 comparison with other models'
+}
+
+function spatialTitle(clean) {
+  if (/3d-printable|browser-based CAD|built-in AI copilot/i.test(clean)) return '3D-printable CAD editor with an AI copilot'
+  if (/cad|fusion|boeing/i.test(clean)) return titleFromSentence(clean.match(/(?:built|created|designs?|made).{0,110}/i)?.[0] || '3D CAD model built with Fable 5')
+  if (/kyoto|neighborhood|walkable/i.test(clean)) return 'Walkable 3D Kyoto neighborhood in Three.js'
+  if (/black hole|ray-traced/i.test(clean)) return 'Ray-traced black hole simulation in WebGL'
+  if (/formula 1|drifting donut/i.test(clean)) return '3D Formula 1 drifting simulation'
+  return '3D or WebGL prototype built with Fable 5'
+}
+
+function gameTitle(clean) {
+  if (/skyrim/i.test(clean)) return 'Skyrim-style game recreated from one prompt'
+  if (/pokemon|firered/i.test(clean)) return 'Pokemon FireRed run driven by screenshots'
+  if (/monopoly/i.test(clean)) return 'AI-lab Monopoly clone with multiplayer rules'
+  if (/minecraft/i.test(clean)) return 'Minecraft-style game built with one prompt'
+  if (/gta 2/i.test(clean)) return 'GTA 2 clone built in two hours'
+  if (/call of duty/i.test(clean)) return 'Call of Duty-style clone one-shotted with Fable 5'
+  if (/poolrooms|backrooms|horror/i.test(clean)) return 'Browser horror game generated from one prompt'
+  if (/billiards/i.test(clean)) return '3D billiards prototype with spin and drag'
+  return 'Playable game prototype built with Fable 5'
+}
+
+function similarToTitle(line, title) {
+  const words = (value) =>
+    new Set(
+      String(value || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .split(/\s+/)
+        .filter((word) => word.length > 3 && !['claude', 'fable', 'with', 'from', 'this', 'that'].includes(word))
+    )
+  const a = words(line)
+  const b = words(title)
+  if (!a.size || !b.size) return false
+  const overlap = [...a].filter((word) => b.has(word)).length
+  return overlap / Math.min(a.size, b.size) >= 0.55
+}
+
+function isComparisonText(lower) {
+  return /\b(compare|compared|benchmark)\b/.test(lower) || /\b(?:fable|claude|opus|gpt|model)\b.{0,40}\bvs\.?\b.{0,40}\b(?:fable|claude|opus|gpt|model)\b/.test(lower)
+}
+
+function actionSummaryFromText(text, media = 'text') {
+  const clean = cleanText(text)
+  const lower = clean.toLowerCase()
+  const sentences = informativeSentences(text)
+  const title = titleFromText(text)
+  const primary =
+    sentences.find((line) => {
+      const value = line.toLowerCase()
+      return (
+        value.length > 28 &&
+        !similarToTitle(line, title) &&
+        /\b(build|built|created|made|recreated|designed|tutorial|prompt|compared|implemented|generated|available|workflow|benchmark|game|website|app|video|3d|ui|mcp|model)\b/i.test(value)
+      )
+    }) ||
+    sentences.find((line) => line.length > 28 && !similarToTitle(line, title)) ||
+    clean
+
+  let description = primary
+    .replace(/^i asked/i, 'The author asked')
+    .replace(/^i gave/i, 'The author gave')
+    .replace(/^i just/i, 'The author says they')
+    .replace(/^we just/i, 'The post says they')
+    .replace(/^it just/i, 'The post says it')
+    .replace(/^now you can/i, 'Shows a workflow where you can')
+    .replace(/^(?:wow|holy(?: shit)?|unbelievable|mind blown|speechless)[^a-z0-9]+/i, '')
+    .replace(/^claude (?:fable|mythos)[^.!?]{0,40}\b(?:insane|crazy|wild|unbelievable)[!.\s]*/i, '')
+    .replace(/\b(?:🤯|🔥|❤️‍🔥|💥|🚀|👇|⬇️|👀)\b/g, '')
+
+  if (/prompt:\s*["'“”]?([^"'“”\n.]{3,80})/i.test(text)) {
+    const prompt = trimPunctuation(text.match(/prompt:\s*["'“”]?([^"'“”\n.]{3,80})/i)?.[1] || '')
+    if (prompt && !description.toLowerCase().includes(prompt.toLowerCase())) description += ` Prompt: "${prompt}".`
+  }
+  return limitText(description, 165)
+}
+
+function summaryFromText(text, media = 'text') {
+  const description = actionSummaryFromText(text, media)
+  return [description]
+}
+
+function tagsFor(text) {
+  const lower = String(text || '').toLowerCase()
+  const tags = ['fable5', ...categoriesFor(text)]
+  if (/prompt/.test(lower)) tags.push('prompt')
+  if (/site|website|landing|web app/.test(lower)) tags.push('web')
+  if (/video|demo|clip/.test(lower)) tags.push('demo')
+  if (/guardrail|refus|risk|cyber|bio/.test(lower)) tags.push('limits')
+  return [...new Set(tags)].slice(0, 8)
+}
+
+const CATEGORY_ORDER = [
+  'games',
+  'apps',
+  'websites',
+  'videos',
+  '3d',
+  'design',
+  'agents',
+  'prompts',
+  'code',
+  'research',
+  'safety',
+  'news',
+  'experiments',
+]
+
+function categoriesFor(text) {
+  const lower = String(text || '').toLowerCase()
+  const categories = []
+  const add = (category, pattern) => {
+    if (pattern.test(lower)) categories.push(category)
+  }
+
+  add('games', /\b(?:game|playable|minecraft|skyrim|pokemon|mario|monopoly|gta|horror|rpg|tower defense|unity|levels|wasd|driving|simulator)\b/)
+  add('apps', /\b(?:app|mobile|ios|android|dashboard|saas|tool|editor|playground|visualizer|generator|calculator)\b/)
+  add('websites', /\b(?:website|landing|site|web app|portfolio|hero section|product page|threejs website)\b/)
+  add('videos', /\b(?:video|motion|animation|animated|cinematic|clip|remotion|ffmpeg|lottie|scriptwriting)\b/)
+  add('3d', /\b(?:3d|three\.?js|threejs|webgl|blender|model|voxel|spatial|cad|fusion|robot|map|city|walkable|parametric)\b/)
+  add('design', /\b(?:design|ui|ux|figma|liquid glass|glass liquid|portfolio|presentation|deck|email campaign|photoshop)\b/)
+  add('agents', /\b(?:agent|subagent|autonomous|loop|orchestrat|workflow|automation|pipeline|mcp|browser use|multi-step)\b/)
+  add('prompts', /\b(?:prompt|prompting|tutorial|guide|playbook|step-by-step|cheat sheet|prompt pack|prompts below|how to|method)\b/)
+  add('code', /\b(?:code|codebase|repo|repository|refactor|debug|migration|software engineering|pull request|claude code|audit)\b/)
+  add('research', /\b(?:research|benchmark|eval|evaluation|compare|compared|comparison|vs\b|versus|analysis|deep dive|tested against|physics simulation|study|paper)\b/)
+  add('safety', /\b(?:safety|guardrail|refus|risk|cyber|biology|bio|chemistry|abuse|policy|copyright|deepfake|fraud|scam|exploit|vulnerability)\b/)
+  add('news', /\b(?:launch|released|available today|now available|now live|announcing|introducing|rolling out|integrated|support)\b/)
+
+  const unique = [...new Set(categories)].sort((a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b))
+  return unique.length ? unique : ['experiments']
+}
+
+function sceneFor(text) {
+  return categoriesFor(text)[0] || 'experiments'
+}
+
+function artifactTypeFor(text, media) {
+  const lower = String(text || '').toLowerCase()
+  if (/game|minecraft|skyrim|pokemon|mario|rpg|playable/.test(lower)) return 'game'
+  if (/website|landing|web app|site/.test(lower)) return 'website'
+  if (/app|mobile|ios|android|dashboard|saas/.test(lower)) return 'app'
+  if (/video|motion|animation|animated|cinematic/.test(lower)) return 'video'
+  if (/repo|repository|codebase|migration|refactor|debug|pull request/.test(lower)) return 'codebase'
+  if (/agent|subagent|loop|autonomous/.test(lower)) return 'agent-loop'
+  if (/prompt pack|full prompt|cheat sheet|playbook|tutorial|guide/.test(lower)) return 'prompt-pack'
+  if (/3d|three\.?js|webgl|blender|model|voxel|spatial/.test(lower)) return '3d-scene'
+  return media === 'video' ? 'video' : media === 'image' ? 'image' : 'case-study'
+}
+
+function uniqueMatches(lower, pairs) {
+  return pairs.filter(([pattern]) => pattern.test(lower)).map(([, value]) => value)
+}
+
+function facetFields(post, media) {
+  const text = String(post?.text || post?.originalText || '')
+  const lower = text.toLowerCase()
+  const capability = uniqueMatches(lower, [
+    [/\bone[- ]?(prompt|shot)|one shotted|one-shotted/, 'one-shot'],
+    [/\brefactor|migration|audit|debug/, 'code-improvement'],
+    [/\bdesign|ui|ux|figma|liquid glass|glass liquid/, 'design-gen'],
+    [/\bmotion|animation|animated|video|cinematic/, 'motion-gen'],
+    [/\b3d|three\.?js|webgl|blender|model|voxel/, '3d-gen'],
+    [/\bautomation|workflow|pipeline|agent|loop|orchestrat/, 'automation'],
+  ])
+  const tech = uniqueMatches(lower, [
+    [/\bthree\.?js|threejs|webgl/, 'threejs'],
+    [/\bblender/, 'blender'],
+    [/\bmcp\b/, 'mcp'],
+    [/\bmanim\b/, 'manim'],
+    [/\bhiggsfield/, 'higgsfield'],
+    [/\bhyperframe/, 'hyperframe'],
+    [/\bclaude code/, 'claude-code'],
+    [/\breact|nextjs|next\.js/, 'react'],
+  ])
+  const risk = uniqueMatches(lower, [
+    [/\bsafety|guardrail|refus|cyber|biology|chemistry/, 'safety'],
+    [/\bcopyright|clone|recreated|pokemon|mario|skyrim|minecraft|gta/, 'copyright'],
+    [/\bbenchmark|compare|compared|vs\b|versus/, 'benchmark-claim'],
+    [/\$\d|\brevenue|month|sales|leads|ads|shorts/, 'market-claim'],
+  ])
+  const domain = uniqueMatches(lower, [
+    [/\becommerce|shop|store|orders/, 'ecommerce'],
+    [/\banalytics|dashboard|metrics/, 'analytics'],
+    [/\bmarketing|ads|vsl|shorts|leads|sales/, 'marketing'],
+    [/\bportfolio|landing|website|hero/, 'web-design'],
+    [/\bgame|minecraft|skyrim|pokemon|mario|rpg/, 'game-dev'],
+    [/\beducation|tutorial|guide|course/, 'education'],
+  ])
+  const evidence = []
+  if (extractPrompt(text)) evidence.push('prompted')
+  if (/tutorial|guide|playbook|cheat sheet|full prompt|prompt pack/.test(lower)) evidence.push('tutorial')
+  if (isComparisonText(lower)) evidence.push('benchmark-claim')
+  if (/one prompt|one-shot|one shotted|one-shotted|built|made|created|recreated|designed/.test(lower)) evidence.push('unverified-claim')
+  if (!evidence.length) evidence.push('commentary')
+
+  return {
+    artifactType: artifactTypeFor(text, media),
+    medium: media,
+    capability: [...new Set(capability)],
+    evidence: [...new Set(evidence)],
+    domain: [...new Set(domain)],
+    tech: [...new Set(tech)],
+    risk: [...new Set(risk)],
+  }
+}
+
+function scoreMetrics(metrics = {}) {
+  return (
+    Number(metrics.likes || 0) * 3 +
+    Number(metrics.reposts || 0) * 6 +
+    Number(metrics.replies || 0) * 2 +
+    Number(metrics.quotes || 0) * 4 +
+    Number(metrics.bookmarks || 0) * 3 +
+    Number(metrics.views || 0) / 1000
+  )
+}
+
+function tierFor(score) {
+  if (score >= 12000) return 'A'
+  if (score >= 5000) return 'B'
+  if (score >= 1600) return 'C'
+  return 'D'
+}
+
+const KEYWORDS = [
+  'one prompt',
+  'prompt',
+  'game',
+  'website',
+  'landing page',
+  '3d',
+  'mcp',
+  'tutorial',
+  'build',
+  'demo',
+  'comparison',
+  'physics',
+  'mobile',
+  'multiplayer',
+]
+
+function keywordHits(text) {
+  const lower = String(text || '').toLowerCase()
+  return KEYWORDS.filter((keyword) => lower.includes(keyword))
+}
+
+function mediaKind(post) {
+  const media = Array.isArray(post.media) ? post.media : []
+  if (media.some((item) => /video|animated/i.test(item.type))) return 'video'
+  if (media.length) return 'image'
+  return 'text'
+}
+
+function loadInputBatches(args) {
+  if (args.input) {
+    const inputPath = resolve(ROOT, args.input)
+    const posts = JSON.parse(readFileSync(inputPath, 'utf8'))
+    if (!Array.isArray(posts)) throw new Error(`Expected array in ${inputPath}`)
+    return [{ inputPath, sourceRun: basename(dirname(inputPath)), posts }]
+  }
+
+  const archiveRoot = resolve(ROOT, args['archive-root'] || ARCHIVE_ROOT)
+  if (!existsSync(archiveRoot)) throw new Error(`Archive root does not exist: ${archiveRoot}`)
+
+  const batches = readdirSync(archiveRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => {
+      const inputPath = join(archiveRoot, entry.name, 'window-posts.json')
+      if (!existsSync(inputPath)) return null
+      const posts = JSON.parse(readFileSync(inputPath, 'utf8'))
+      if (!Array.isArray(posts)) throw new Error(`Expected array in ${inputPath}`)
+      return { inputPath, sourceRun: entry.name, posts }
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.sourceRun.localeCompare(b.sourceRun))
+
+  if (!batches.length) throw new Error(`No window-posts.json files found under ${archiveRoot}`)
+  return batches
+}
+
+function promptStatus(text) {
+  return extractPrompt(text) ? 'prompted' : 'commentary'
+}
+
+function extractPrompt(text) {
+  const raw = String(text || '').trim()
+  const match = raw.match(/(?:^|\n|\s)prompt\s*:\s*([“"']?[\s\S]+)$/i)
+  if (!match) return ''
+  return match[1].replace(/https?:\/\/t\.co\/\S+/g, '').trim()
+}
+
+function promptFromPost(post) {
+  return extractPrompt(post.text)
+}
+
+function linkedItems(post) {
+  return [
+    ...(Array.isArray(post.threadItems) ? post.threadItems : []),
+    ...(Array.isArray(post.replies) ? post.replies : []),
+    ...(Array.isArray(post.comments) ? post.comments : []),
+    ...(Array.isArray(post.raw?.threadItems) ? post.raw.threadItems : []),
+    ...(Array.isArray(post.raw?.replies) ? post.raw.replies : []),
+  ]
+}
+
+function looksLikeThreadIndex(text) {
+  const lower = cleanText(text).toLowerCase()
+  return (
+    /(?:^|\s)(?:🧵|thread|mega thread|megathread)(?:\s|$)/i.test(text) ||
+    /\bhere (?:are|is)\b.*\b(?:things|examples|demos|builds|people)\b/.test(lower) ||
+    /\b(?:wildest|best|top|coolest)\b.*\b(?:things|examples|demos|builds)\b/.test(lower) ||
+    /\b(?:roundup|collection|curated|compilation)\b/.test(lower)
+  )
+}
+
+function hasCaseEvidence(post) {
+  const text = String(post?.text || post?.fullText || post?.full_text || '')
+  const lower = cleanText(text).toLowerCase()
+  const media = Array.isArray(post?.media) ? post.media : []
+  const hasBuildLanguage =
+    /\b(?:prompt|built|made|created|recreated|designed|one-shotted|one shot|one prompt|game|website|web app|ui|ux|motion|animation|video|css|3d|mcp|code|migration|prototype|compare|compared|versus|benchmark)\b/.test(
+      lower
+    )
+  if (media.length && hasBuildLanguage) return true
+  if (extractPrompt(text)) return true
+  if (/\b(?:built|made|created|recreated|designed|one-shotted|one prompt)\b/.test(lower) && !looksLikeThreadIndex(text)) return true
+  return false
+}
+
+function isShowcaseCandidate(post) {
+  if (!post?.url || !post?.author || !post?.text) return false
+  if (looksLikeThreadIndex(post.text)) return false
+  if (hasCaseEvidence(post)) return true
+  return linkedItems(post).some(hasCaseEvidence)
+}
+
+function normalizeExistingItem(item) {
+  const text = item.originalText || item.title || ''
+  const media = item.media || 'text'
+  return {
+    ...item,
+    title: titleFromText(text),
+    summary: summaryFromText(text, media),
+    scene: sceneFor(text),
+    categories: categoriesFor(text),
+    tags: tagsFor(text),
+    facets: facetFields({ ...item, text }, media),
+  }
+}
+
+function heat(post) {
+  const m = post.metrics || {}
+  const likes = Number(m.likes || 0)
+  const reposts = Number(m.reposts || 0)
+  if (likes || reposts) return `${likes.toLocaleString()} likes · ${reposts.toLocaleString()} reposts`
+  return 'X post'
+}
+
+function cacheMediaPreview(item) {
+  if (!CACHE_ASSETS) return item
+  const remoteUrl = item.mediaUrls?.[0]
+  if (!remoteUrl) return item
+  mkdirSync(PUBLIC_MEDIA_DIR, { recursive: true })
+  const fileName = `${item.id}.jpg`
+  const abs = join(PUBLIC_MEDIA_DIR, fileName)
+  const publicPath = `/fable5-media/${fileName}`
+  if (existsSync(abs)) return { ...item, mediaThumbUrl: publicPath }
+
+  try {
+    if (item.media === 'video' || /\.mp4(\?|$)/i.test(remoteUrl)) {
+      execFileSync(
+        'ffmpeg',
+        ['-y', '-hide_banner', '-loglevel', 'error', '-ss', '00:00:01', '-i', remoteUrl, '-frames:v', '1', '-q:v', '4', abs],
+        { cwd: ROOT, timeout: 12_000, stdio: ['ignore', 'ignore', 'pipe'] }
+      )
+    } else {
+      execFileSync('curl', ['-L', '--fail', '--max-time', '12', '-o', abs, remoteUrl], {
+        cwd: ROOT,
+        stdio: ['ignore', 'ignore', 'pipe'],
+      })
+    }
+    if (existsSync(abs)) return { ...item, mediaThumbUrl: publicPath }
+  } catch (error) {
+    return { ...item, mediaCacheError: error instanceof Error ? error.message : String(error) }
+  }
+  return item
+}
+
+function cacheAvatar(item, post) {
+  if (!CACHE_ASSETS) return item
+  const remoteUrl = post.raw?.author?.profileImageUrl || post.authorProfileImageUrl || ''
+  if (!remoteUrl) return item
+  mkdirSync(PUBLIC_AVATAR_DIR, { recursive: true })
+  const fileName = `${item.handle.replace(/^@/, '').toLowerCase()}.jpg`
+  const abs = join(PUBLIC_AVATAR_DIR, fileName)
+  const publicPath = `/fable5-avatars/${fileName}`
+  if (existsSync(abs)) return { ...item, avatarUrl: publicPath, sourceAvatarUrl: remoteUrl }
+  try {
+    execFileSync('curl', ['-L', '--fail', '--max-time', '10', '-o', abs, remoteUrl], {
+      cwd: ROOT,
+      stdio: ['ignore', 'ignore', 'pipe'],
+    })
+    if (existsSync(abs)) return { ...item, avatarUrl: publicPath, sourceAvatarUrl: remoteUrl }
+  } catch (error) {
+    return { ...item, sourceAvatarUrl: remoteUrl, avatarCacheError: error instanceof Error ? error.message : String(error) }
+  }
+  return { ...item, sourceAvatarUrl: remoteUrl }
+}
+
+function toShowcase(post, sourceRun, generatedAt, options = {}) {
+  const status = promptStatus(post.text)
+  const item = {
+    id: `${post.author}-${slugify(post.id || post.url || post.text)}`,
+    title: titleFromText(post.text),
+    author: post.authorName || post.author,
+    handle: `@${post.author}`,
+    sourceUrl: post.url,
+    date: post.date || String(post.createdAtISO || '').slice(0, 10),
+    kind: 'showcase',
+    scene: sceneFor(post.text),
+    categories: categoriesFor(post.text),
+    media: mediaKind(post),
+    heat: heat(post),
+    tags: tagsFor(post.text),
+    verification: `Fetched from X via twitter-cli from ${post.sourceMode || 'search'}; original author and post URL preserved.`,
+    promptStatus: status,
+    prompt: promptFromPost(post),
+    note:
+      status === 'prompted'
+        ? 'Prompt text was extracted from the original post. Verify any hidden follow-up steps before treating it as a tutorial.'
+        : 'Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.',
+    originalText: post.text,
+    metrics: post.metrics || {},
+    mediaUrls: Array.isArray(post.media) ? post.media.map((item) => item.url).filter(Boolean) : [],
+    firstSeenAt: generatedAt,
+    lastFetchedAt: generatedAt,
+    fetchRuns: [sourceRun],
+  }
+  item.summary = summaryFromText(post.text, item.media)
+  item.facets = facetFields(post, item.media)
+  if (!options.cacheMedia) return item
+  return cacheAvatar(cacheMediaPreview(item), post)
+}
+
+const args = parseArgs(process.argv.slice(2))
+const limit = Math.max(1, Math.min(Number(args.limit ?? 500), 1000))
+const cacheMedia = flag(args['cache-media'], true)
+CACHE_ASSETS = args['cache-assets'] !== '0'
+
+const generatedAt = new Date().toISOString()
+const batches = loadInputBatches(args)
+const allPosts = batches.flatMap((batch) => batch.posts)
+let existingShowcases = []
+try {
+  const index = JSON.parse(readFileSync(join(OUT_DIR, 'index.json'), 'utf8'))
+  for (const shard of index.shards || []) {
+    if (shard.file) previousShardFiles.push(shard.file)
+    const items = JSON.parse(readFileSync(join(OUT_DIR, shard.file), 'utf8'))
+    if (Array.isArray(items)) existingShowcases.push(...items)
+  }
+} catch {}
+
+const candidateByUrl = new Map()
+for (const batch of batches) {
+  for (const post of batch.posts) {
+    if (!isShowcaseCandidate(post)) continue
+    const prev = candidateByUrl.get(post.url)
+    const fetchRuns = [...new Set([...(prev?.fetchRuns || []), batch.sourceRun])]
+    if (!prev || scoreMetrics(post.metrics || {}) > scoreMetrics(prev.metrics || {})) {
+      candidateByUrl.set(post.url, { ...post, fetchRuns, sourceRun: batch.sourceRun })
+    } else {
+      prev.fetchRuns = fetchRuns
+    }
+  }
+}
+
+const selected = [...candidateByUrl.values()]
+  .sort((a, b) => {
+    const scoreA = scoreMetrics(a.metrics || {})
+    const scoreB = scoreMetrics(b.metrics || {})
+    return scoreB - scoreA || String(b.date || '').localeCompare(String(a.date || ''))
+  })
+  .slice(0, limit)
+  .map((post) => {
+    const item = toShowcase(post, post.sourceRun, generatedAt, { cacheMedia })
+    item.fetchRuns = post.fetchRuns || item.fetchRuns
+    return item
+  })
+
+const byUrl = new Map()
+const existingByUrl = new Map()
+for (const item of existingShowcases) {
+  if (item?.sourceUrl) existingByUrl.set(item.sourceUrl, normalizeExistingItem(item))
+}
+for (const item of selected) {
+  const prev = byUrl.get(item.sourceUrl) || existingByUrl.get(item.sourceUrl)
+  byUrl.set(item.sourceUrl, {
+    ...prev,
+    ...item,
+    firstSeenAt: prev?.firstSeenAt || item.firstSeenAt,
+    lastFetchedAt: generatedAt,
+    fetchRuns: [...new Set([...(prev?.fetchRuns || []), ...(item.fetchRuns || [])])],
+    mediaThumbUrl: item.mediaThumbUrl || prev?.mediaThumbUrl || '',
+  })
+}
+
+const collection = [...byUrl.values()].sort((a, b) => {
+  const scoreA = scoreMetrics(a.metrics || {})
+  const scoreB = scoreMetrics(b.metrics || {})
+  return scoreB - scoreA || String(b.date || '').localeCompare(String(a.date || ''))
+}).slice(0, limit)
+
+const creators = new Map()
+const keywords = new Map()
+for (const post of allPosts) {
+  if (!isShowcaseCandidate(post)) continue
+
+  const metrics = post.metrics || {}
+  const score = scoreMetrics(metrics)
+  const key = post.author
+  if (key) {
+    const cur = creators.get(key) || {
+      handle: `@${post.author}`,
+      name: post.authorName || post.author,
+      url: `https://x.com/${post.author}`,
+      posts: 0,
+      likes: 0,
+      reposts: 0,
+      replies: 0,
+      quotes: 0,
+      views: 0,
+      bookmarks: 0,
+      score: 0,
+      topPostUrl: post.url,
+      topPostText: post.text,
+    }
+    cur.posts += 1
+    cur.likes += Number(metrics.likes || 0)
+    cur.reposts += Number(metrics.reposts || 0)
+    cur.replies += Number(metrics.replies || 0)
+    cur.quotes += Number(metrics.quotes || 0)
+    cur.views += Number(metrics.views || 0)
+    cur.bookmarks += Number(metrics.bookmarks || 0)
+    if (score > scoreMetrics({ likes: cur.topLikes || 0, reposts: cur.topReposts || 0, replies: cur.topReplies || 0, quotes: cur.topQuotes || 0, bookmarks: cur.topBookmarks || 0, views: cur.topViews || 0 })) {
+      cur.topPostUrl = post.url
+      cur.topPostText = post.text
+      cur.topLikes = Number(metrics.likes || 0)
+      cur.topReposts = Number(metrics.reposts || 0)
+      cur.topReplies = Number(metrics.replies || 0)
+      cur.topQuotes = Number(metrics.quotes || 0)
+      cur.topBookmarks = Number(metrics.bookmarks || 0)
+      cur.topViews = Number(metrics.views || 0)
+    }
+    cur.score += score
+    creators.set(key, cur)
+  }
+
+  for (const keyword of keywordHits(post.text)) {
+    const cur = keywords.get(keyword) || { keyword, posts: 0, score: 0, likes: 0, views: 0 }
+    cur.posts += 1
+    cur.score += score
+    cur.likes += Number(metrics.likes || 0)
+    cur.views += Number(metrics.views || 0)
+    keywords.set(keyword, cur)
+  }
+}
+
+const creatorPool = [...creators.values()]
+  .map((creator) => ({
+    ...creator,
+    score: Math.round(creator.score),
+    tier: tierFor(creator.score),
+    topPostText: String(creator.topPostText || '').replace(/\s+/g, ' ').slice(0, 140),
+  }))
+  .sort((a, b) => b.score - a.score)
+
+const keywordSignals = [...keywords.values()]
+  .map((item) => ({ ...item, score: Math.round(item.score), avgScore: Math.round(item.score / item.posts) }))
+  .sort((a, b) => b.score - a.score)
+
+function writeJsonIfChanged(filePath, value) {
+  const next = JSON.stringify(value, null, 2) + '\n'
+  try {
+    if (readFileSync(filePath, 'utf8') === next) return false
+  } catch {}
+  writeFileSync(filePath, next)
+  return true
+}
+
+mkdirSync(OUT_DIR, { recursive: true })
+const shardMap = new Map()
+for (const item of collection) {
+  const day = item.date || String(item.firstSeenAt || '').slice(0, 10) || 'unknown'
+  if (!shardMap.has(day)) shardMap.set(day, [])
+  shardMap.get(day).push(item)
+}
+const shardList = [...shardMap.keys()]
+  .sort((a, b) => {
+    if (a === 'unknown') return 1
+    if (b === 'unknown') return -1
+    return b.localeCompare(a)
+  })
+  .map((day) => ({ date: day, file: `${day}.json`, count: shardMap.get(day).length }))
+const changedShards = shardList.filter((shard) => writeJsonIfChanged(join(OUT_DIR, shard.file), shardMap.get(shard.date)))
+const activeShardFiles = new Set(shardList.map((shard) => shard.file))
+for (const file of previousShardFiles) {
+  if (activeShardFiles.has(file)) continue
+  rmSync(join(OUT_DIR, file), { force: true })
+}
+writeJsonIfChanged(join(OUT_DIR, 'creators.json'), { creatorPool, keywordSignals })
+writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
+  updatedAt: generatedAt.slice(0, 10),
+  lastFetchedAt: generatedAt,
+  cliStatus: `Loaded ${allPosts.length} locally archived X posts from ${batches.length} fetch runs; collection now has ${collection.length} source-linked cards and ${creatorPool.length} creator profiles.`,
+  sourceRun: 'local-archive',
+  fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
+  total: collection.length,
+  shards: shardList,
+})
+console.log(`Loaded ${allPosts.length} archived posts from ${batches.length} runs`)
+console.log(`Merged ${selected.length} local showcase candidates into ${collection.length} total cards and ${creatorPool.length} creators at ${OUT_DIR}`)
+console.log(`Shards: ${shardList.map((s) => `${s.date}(${s.count})`).join(' ')}; rewrote ${changedShards.length} shard file(s)`)
