@@ -78,12 +78,18 @@ function compareShowcases(a, b, sortKey, sortDirection) {
   )
 }
 
-function MediaPlaceholder({ label = 'no preview from source' }) {
+function categoryLabel(t, key) {
+  const label = t(`fable.category.${key}`)
+  return label === `fable.category.${key}` ? key : label
+}
+
+function MediaPlaceholder({ label }) {
+  const { t } = useI18n()
   return (
     <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)] bg-[length:18px_18px]">
       <div className="flex flex-col items-center gap-2 px-4 text-center text-white/28">
         <ImageOff className="h-6 w-6" />
-        <span className="font-mono text-[10px] tracking-[0.18em] uppercase">{label}</span>
+        <span className="font-mono text-[10px] tracking-[0.18em] uppercase">{label || t('fable.noPreview')}</span>
       </div>
     </div>
   )
@@ -167,7 +173,7 @@ function MediaBlock({ item, priority = false }) {
             alt={`${item.title} by ${item.author}`}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"
-            fetchPriority={priority ? 'high' : 'auto'}
+            fetchpriority={priority ? 'high' : 'auto'}
             className={cn(
               'h-full w-full object-cover transition duration-300 hover:scale-[1.02]',
               imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -504,7 +510,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
               <button
                 type="button"
                 onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
-                title={sortDirection === 'asc' ? 'ascending' : 'descending'}
+                title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
                 className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-black/30 text-white/50 transition-colors hover:border-white/25 hover:text-white"
               >
                 {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
@@ -517,7 +523,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
               <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
                 <SceneChip label={t('common.all')} count={totalCount || items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
                 {scenes.map(([key, count]) => (
-                  <SceneChip key={key} label={key} count={count} active={scene === key} onClick={() => setScene(key)} />
+                  <SceneChip key={key} label={categoryLabel(t, key)} count={count} active={scene === key} onClick={() => setScene(key)} />
                 ))}
               </div>
             </div>

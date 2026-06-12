@@ -508,7 +508,7 @@ export default function App() {
                   : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
               }`}
             >
-              Fable 5
+              {t('nav.fable5')}
             </button>
             <a
               href={X1_URL}
@@ -539,7 +539,7 @@ export default function App() {
                   }}
                   className={route.page === 'fable5' ? 'bg-acid/15 text-acid focus:bg-acid/15 focus:text-acid' : ''}
                 >
-                  Fable 5
+                  {t('nav.fable5')}
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href={X1_URL} target="_blank" rel="noreferrer">
@@ -564,6 +564,20 @@ export default function App() {
             >
               <GithubIcon className="h-4 w-4" />
             </a>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  type="button"
+                  title={t('common.language')}
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white"
+                >
+                  <Globe2 className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-[190px] font-mono text-[11px]">
+                <LanguageMenuItems />
+              </DropdownMenuContent>
+            </DropdownMenu>
             {auth.loaded &&
               (auth.email ? (
                 <DropdownMenu>
@@ -580,8 +594,6 @@ export default function App() {
                     <DropdownMenuItem className="text-emerald-300 focus:text-emerald-200" onSelect={() => goUser(auth.email, 'favorites')}>
                       <Heart className="h-3.5 w-3.5 fill-emerald-400/20" /> {t('nav.myFavorites')}
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <LanguageMenuItems />
                     <DropdownMenuSeparator />
                     <ThemeMenuItems themeMode={themeMode} resolvedTheme={resolvedTheme} onChange={changeThemeMode} />
                     <DropdownMenuSeparator />
