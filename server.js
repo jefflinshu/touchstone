@@ -631,6 +631,93 @@ function parseNaming(raw) {
 }
 
 const anthropic = process.env.ANTHROPIC_API_KEY ? new Anthropic() : null
+const FABLE5_TRANSLATION_LANGUAGES = new Set(['en', 'zh', 'ja', 'es', 'ko', 'fr', 'de'])
+const FABLE5_TRANSLATION_MODEL = 'claude-haiku-4-5'
+const FABLE5_TRANSLATION_BATCH_LIMIT = 20
+
+function normalizeFable5TranslationLanguage(value) {
+  const code = String(value || '').toLowerCase().split('-')[0]
+  return FABLE5_TRANSLATION_LANGUAGES.has(code) ? code : 'en'
+}
+
+function cleanFable5TranslationField(value, max = 320) {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, max)
+}
+
+function fable5TranslationSourceHash(item) {
+  return crypto
+    .createHash('sha1')
+    .update(JSON.stringify([cleanFable5TranslationField(item.title), cleanFable5TranslationField(item.summary)]))
+    .digest('hex')
+}
+
+function getCachedFable5Translation(language, item) {
+  const entry = fable5Translations?.[language]?.[item.id]
+  if (!entry) return null
+  if (entry.sourceHash !== fable5TranslationSourceHash(item)) return null
+  return {
+    title: cleanFable5TranslationField(entry.title) || cleanFable5TranslationField(item.title),
+    summary: cleanFable5TranslationField(entry.summary) || cleanFable5TranslationField(item.summary),
+  }
+}
+
+function setCachedFable5Translation(language, item, translation) {
+  const next = {
+    sourceHash: fable5TranslationSourceHash(item),
+    title: cleanFable5TranslationField(translation.title) || cleanFable5TranslationField(item.title),
+    summary: cleanFable5TranslationField(translation.summary) || cleanFable5TranslationField(item.summary),
+    updatedAt: new Date().toISOString(),
+  }
+  if (!fable5Translations[language]) fable5Translations[language] = {}
+  fable5Translations[language][item.id] = next
+  return next
+}
+
+function parseFable5Translations(raw, items) {
+  const fallback = Object.fromEntries(
+    items.map((item) => [
+      item.id,
+      { title: cleanFable5TranslationField(item.title), summary: cleanFable5TranslationField(item.summary) },
+    ])
+  )
+  try {
+    const match = String(raw || '').match(/\[[\s\S]*\]/)
+    if (!match) return fallback
+    const parsed = JSON.parse(match[0])
+    if (!Array.isArray(parsed)) return fallback
+    for (const entry of parsed) {
+      const id = String(entry?.id || '').trim()
+      if (!fallback[id]) continue
+      fallback[id] = {
+        title: cleanFable5TranslationField(entry.title) || fallback[id].title,
+        summary: cleanFable5TranslationField(entry.summary) || fallback[id].summary,
+      }
+    }
+  } catch {}
+  return fallback
+}
+
+function buildFable5TranslationPrompt(language, items) {
+  return [
+    `Translate each showcase card into ${language}.`,
+    'Keep product names, handles, model names, and technical acronyms unchanged when appropriate.',
+    'Return only one JSON array. No markdown.',
+    'Each item must be {"id":"...","title":"...","summary":"..."}.',
+    'If the source is already natural in the target language, keep it.',
+    'Keep title concise and summary to one short sentence.',
+    '',
+    JSON.stringify(
+      items.map((item) => ({
+        id: item.id,
+        title: cleanFable5TranslationField(item.title),
+        summary: cleanFable5TranslationField(item.summary),
+      }))
+    ),
+  ].join('\n')
+}
 
 async function nameViaApi(prompt) {
   const msg = await anthropic.messages.create({
@@ -670,6 +757,58 @@ function nameViaCli(prompt) {
       done({ name: '', category: null })
     }
   })
+}
+
+async function translateFable5BatchViaApi(language, items) {
+  const msg = await anthropic.messages.create({
+    model: FABLE5_TRANSLATION_MODEL,
+    max_tokens: 2000,
+    messages: [{ role: 'user', content: buildFable5TranslationPrompt(language, items) }],
+  })
+  return parseFable5Translations(msg.content.find((block) => block.type === 'text')?.text, items)
+}
+
+function translateFable5BatchViaCli(language, items) {
+  return new Promise((resolve) => {
+    let settled = false
+    const done = (value) => {
+      if (!settled) {
+        settled = true
+        resolve(value)
+      }
+    }
+    try {
+      const proc = spawn('claude', ['-p', buildFable5TranslationPrompt(language, items), '--model', 'haiku'], {
+        env: process.env,
+        stdio: ['ignore', 'pipe', 'ignore'],
+      })
+      let out = ''
+      proc.stdout.on('data', (chunk) => (out += chunk))
+      const timer = setTimeout(() => {
+        proc.kill('SIGKILL')
+        done(parseFable5Translations('', items))
+      }, 45000)
+      proc.on('close', () => {
+        clearTimeout(timer)
+        done(parseFable5Translations(out, items))
+      })
+      proc.on('error', () => done(parseFable5Translations('', items)))
+    } catch {
+      done(parseFable5Translations('', items))
+    }
+  })
+}
+
+async function translateFable5Batch(language, items) {
+  if (!items.length) return {}
+  if (anthropic) {
+    try {
+      return await translateFable5BatchViaApi(language, items)
+    } catch (err) {
+      console.error('[fable5 translation] API 失败，回退 CLI：', err?.message)
+    }
+  }
+  return translateFable5BatchViaCli(language, items)
 }
 
 async function autoNameProject(prompt) {
@@ -766,6 +905,15 @@ if (fs.existsSync(FABLE5_FAVORITES_FILE)) {
   } catch {}
 }
 const saveFable5Favorites = () => fs.writeFileSync(FABLE5_FAVORITES_FILE, JSON.stringify(fable5Favorites, null, 2))
+
+const FABLE5_TRANSLATIONS_FILE = path.join(DATA_DIR, 'fable5-translations.json')
+let fable5Translations = {}
+if (fs.existsSync(FABLE5_TRANSLATIONS_FILE)) {
+  try {
+    fable5Translations = JSON.parse(fs.readFileSync(FABLE5_TRANSLATIONS_FILE, 'utf8'))
+  } catch {}
+}
+const saveFable5Translations = () => fs.writeFileSync(FABLE5_TRANSLATIONS_FILE, JSON.stringify(fable5Translations, null, 2))
 
 function sanitizeFavoriteIds(ids) {
   if (!Array.isArray(ids)) return []
@@ -1083,6 +1231,44 @@ app.post('/api/fable5/favorites/:id', async (req, res) => {
   fable5Favorites[email] = sanitizeFavoriteIds([...current])
   saveFable5Favorites()
   res.json({ favorite, favorites: fable5Favorites[email] })
+})
+
+app.post('/api/fable5/translations', async (req, res) => {
+  const language = normalizeFable5TranslationLanguage(req.body?.language)
+  const rawItems = Array.isArray(req.body?.items) ? req.body.items : []
+  const items = rawItems
+    .slice(0, FABLE5_TRANSLATION_BATCH_LIMIT)
+    .map((item) => ({
+      id: String(item?.id || '').trim(),
+      title: cleanFable5TranslationField(item?.title),
+      summary: cleanFable5TranslationField(item?.summary),
+    }))
+    .filter((item) => item.id && (item.title || item.summary))
+
+  if (!items.length) return res.json({ language, translations: {} })
+
+  const translations = {}
+  const pending = []
+  for (const item of items) {
+    const cached = getCachedFable5Translation(language, item)
+    if (cached) translations[item.id] = cached
+    else pending.push(item)
+  }
+
+  if (pending.length) {
+    const resolved = await translateFable5Batch(language, pending)
+    for (const item of pending) {
+      const translated = resolved[item.id] || {
+        title: cleanFable5TranslationField(item.title),
+        summary: cleanFable5TranslationField(item.summary),
+      }
+      const cached = setCachedFable5Translation(language, item, translated)
+      translations[item.id] = { title: cached.title, summary: cached.summary }
+    }
+    saveFable5Translations()
+  }
+
+  res.json({ language, translations })
 })
 
 // 项目（case）级点赞

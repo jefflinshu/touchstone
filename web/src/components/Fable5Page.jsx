@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowDownAZ, ArrowUpAZ, Bookmark, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
@@ -59,6 +59,7 @@ const SORT_OPTIONS = [
 const INITIAL_SHARD_LOAD_COUNT = 4
 const SHARD_LOAD_STEP = 2
 const INITIAL_PRIORITY_IMAGES = 6
+const TRANSLATION_BATCH_SIZE = 12
 const CATEGORY_ORDER = ['games', 'apps', 'websites', 'videos', '3d', 'design', 'agents', 'prompts', 'code', 'research', 'news', 'safety', 'experiments']
 
 function sortValue(item, sortKey) {
@@ -81,6 +82,19 @@ function compareShowcases(a, b, sortKey, sortDirection) {
 function categoryLabel(t, key) {
   const label = t(`fable.category.${key}`)
   return label === `fable.category.${key}` ? key : label
+}
+
+function chunkList(list, size) {
+  const out = []
+  for (let index = 0; index < list.length; index += size) out.push(list.slice(index, index + size))
+  return out
+}
+
+function localizedShowcaseCopy(item, translation) {
+  return {
+    title: translation?.title?.trim() || item.title,
+    summary: translation?.summary?.trim() ? [translation.summary.trim()] : item.summary?.length ? item.summary : [],
+  }
 }
 
 function MediaPlaceholder({ label }) {
@@ -213,12 +227,13 @@ function MediaBlock({ item, priority = false }) {
   )
 }
 
-function ShowcaseCard({ item, index, favorite, copied, authLoaded, loginRequired, loggingIn, onToggleFavorite, onCopy }) {
+function ShowcaseCard({ item, index, translation, favorite, copied, authLoaded, loginRequired, loggingIn, onToggleFavorite, onCopy }) {
   const { t, language } = useI18n()
   const [avatarFailed, setAvatarFailed] = useState(false)
   const hasPrompt = Boolean(item.prompt?.trim())
   const metrics = item.metrics || {}
-  const summary = item.summary?.length ? item.summary : []
+  const copy = localizedShowcaseCopy(item, translation)
+  const summary = copy.summary
 
   return (
     <article
@@ -279,7 +294,7 @@ function ShowcaseCard({ item, index, favorite, copied, authLoaded, loginRequired
         </div>
 
         <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 block h-[104px] shrink-0 overflow-hidden">
-          <h2 className="line-clamp-2 text-[15px] leading-6 font-medium text-white/90">{item.title}</h2>
+          <h2 className="line-clamp-2 text-[15px] leading-6 font-medium text-white/90">{copy.title}</h2>
           {summary[0] && <p className="mt-1 line-clamp-3 text-[13px] leading-5 text-white/55">{summary[0]}</p>}
         </a>
 
@@ -324,7 +339,7 @@ function ShowcaseCard({ item, index, favorite, copied, authLoaded, loginRequired
 }
 
 export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLogin, loggingIn = false }) {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
   const [items, setItems] = useState(null)
   const [index, setIndex] = useState(null)
   const [loadedShardCount, setLoadedShardCount] = useState(0)
@@ -336,6 +351,9 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   const [sortDirection, setSortDirection] = useState('desc')
   const [favorites, setFavorites] = useState(() => getFavorites())
   const [copiedId, copy] = useCopy()
+  const [translationsByLanguage, setTranslationsByLanguage] = useState({})
+  const translationsByLanguageRef = useRef({})
+  const translationInflight = useRef(new Set())
 
   useEffect(() => {
     if (!authEmail) {
@@ -419,7 +437,67 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
     })
   }, [items])
 
+  useEffect(() => {
+    translationsByLanguageRef.current = translationsByLanguage
+  }, [translationsByLanguage])
+
+  useEffect(() => {
+    if (!items?.length) return undefined
+    let cancelled = false
+    const controllers = []
+    const languageTranslations = translationsByLanguageRef.current[language] || {}
+    const pendingItems = items
+      .map((item) => ({
+        id: item.id,
+        title: item.title || '',
+        summary: item.summary?.[0] || '',
+      }))
+      .filter((item) => item.id && (item.title || item.summary))
+      .filter((item) => !languageTranslations[item.id] && !translationInflight.current.has(`${language}:${item.id}`))
+
+    if (!pendingItems.length) return undefined
+
+    ;(async () => {
+      for (const batch of chunkList(pendingItems, TRANSLATION_BATCH_SIZE)) {
+        if (cancelled) break
+        const keys = batch.map((item) => `${language}:${item.id}`)
+        keys.forEach((key) => translationInflight.current.add(key))
+        const controller = new AbortController()
+        controllers.push(controller)
+        try {
+          const res = await fetch('/api/fable5/translations', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            signal: controller.signal,
+            body: JSON.stringify({ language, items: batch }),
+          })
+          if (!res.ok) throw new Error(`translation HTTP ${res.status}`)
+          const data = await res.json()
+          if (cancelled) break
+          setTranslationsByLanguage((current) => {
+            const next = {
+              ...current,
+              [language]: { ...(current[language] || {}), ...(data.translations || {}) },
+            }
+            translationsByLanguageRef.current = next
+            return next
+          })
+        } catch (err) {
+          if (!(cancelled || err?.name === 'AbortError')) console.error('[fable5 translation] failed:', err)
+        } finally {
+          keys.forEach((key) => translationInflight.current.delete(key))
+        }
+      }
+    })()
+
+    return () => {
+      cancelled = true
+      controllers.forEach((controller) => controller.abort())
+    }
+  }, [items, language])
+
   const filtered = useMemo(() => {
+    const languageTranslations = translationsByLanguage[language] || {}
     let list = items || []
     if (scene !== 'all') {
       list = list.filter((item) => {
@@ -430,13 +508,13 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
     const q = query.trim().toLowerCase()
     if (q) {
       list = list.filter((item) =>
-        `${item.author} ${item.handle} ${item.originalText} ${item.scene || ''} ${(item.categories || []).join(' ')} ${(item.tags || []).join(' ')}`
+        `${item.author} ${item.handle} ${languageTranslations[item.id]?.title || ''} ${languageTranslations[item.id]?.summary || ''} ${item.title || ''} ${(item.summary || []).join(' ')} ${item.originalText} ${item.scene || ''} ${(item.categories || []).join(' ')} ${(item.tags || []).join(' ')}`
           .toLowerCase()
           .includes(q)
       )
     }
     return [...list].sort((a, b) => compareShowcases(a, b, sortKey, sortDirection))
-  }, [items, scene, query, sortKey, sortDirection])
+  }, [items, scene, query, sortKey, sortDirection, language, translationsByLanguage])
 
   const toggleFavorite = (id) => {
     if (!authLoaded) return
@@ -537,6 +615,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
             key={item.id}
             item={item}
             index={itemIndex}
+            translation={translationsByLanguage[language]?.[item.id]}
             favorite={Boolean(authEmail) && favorites.has(item.id)}
             copied={copiedId === item.id}
             authLoaded={authLoaded}
