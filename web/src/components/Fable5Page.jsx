@@ -459,7 +459,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
 
   return (
     <main className="pb-20">
-      <section className="mt-7 flex flex-wrap items-center justify-between gap-4 sm:mt-10 sm:gap-5">
+      <section className="mt-7 sm:mt-10">
         <button type="button" onClick={onBack} className="cursor-pointer text-left">
           <span className="flex items-center gap-3">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
@@ -468,13 +468,6 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
             <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">FABLE 5</span>
           </span>
         </button>
-        <a
-          href="#showcases"
-          className="inline-flex h-9 items-center gap-2 rounded-md border border-acid/30 bg-acid/10 px-3 font-mono text-[10px] tracking-[0.16em] text-acid uppercase transition-colors hover:bg-acid/15"
-        >
-          {t('common.showcase')}
-          <span className="text-acid/60">{items ? `${n(filtered.length)}/${n(totalCount || items.length)}` : '...'}</span>
-        </a>
       </section>
 
       <section className="sticky top-14 z-30 mt-5 py-3 sm:mt-6">
