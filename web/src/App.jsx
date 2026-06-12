@@ -504,8 +504,8 @@ export default function App() {
               onClick={goFable5}
               className={`h-7 cursor-pointer rounded px-2.5 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'fable5'
-                  ? 'bg-acid text-black'
-                  : 'text-white/48 hover:bg-white/6 hover:text-white'
+                  ? 'border border-acid bg-acid text-black'
+                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
               }`}
             >
               Fable 5
@@ -514,7 +514,7 @@ export default function App() {
               href={X1_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex h-7 items-center gap-1 rounded px-2.5 font-mono text-[10px] tracking-[0.16em] text-white/48 uppercase transition-colors hover:bg-white/6 hover:text-white"
+              className="flex h-7 items-center gap-1 rounded border border-transparent px-2.5 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-white/8 hover:text-white"
             >
               x-1.dev
               <ExternalLink className="h-3 w-3 opacity-55" />
