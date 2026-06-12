@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000
 const SITE_NAME = 'Touchstone'
 const SITE_DESCRIPTION =
   'Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。'
-const DEFAULT_SOCIAL_IMAGE = '/fable5-media/meta_alchemist-2064431279383433646.jpg'
+const DEFAULT_SOCIAL_IMAGE = '/brand/touchstone-og.svg'
 
 fs.mkdirSync(RUNS_DIR, { recursive: true })
 fs.mkdirSync(DATA_DIR, { recursive: true })
