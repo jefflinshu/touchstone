@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Touchstone by jefflin.ai">
+  <defs>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0v42" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#d4ff4f" stop-opacity=".26"/>
+      <stop offset="65%" stop-color="#d4ff4f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(92 128)">
+    <rect width="150" height="150" rx="34" fill="#09090b" stroke="#ffffff" stroke-opacity=".16" stroke-width="2"/>
+    <path d="M75 12 138 75 75 138 12 75 75 12Z" fill="#d4ff4f"/>
+    <path d="M75 31 119 75 75 119 31 75 75 31Z" fill="#09090b"/>
+    <path d="M75 48 102 75 75 102 48 75 75 48Z" fill="#e8e8ec"/>
+    <path d="M75 62 88 75 75 88 62 75 75 62Z" fill="#09090b"/>
+    <path d="M75 18v33M75 99v33M18 75h33M99 75h33" stroke="#09090b" stroke-width="9" stroke-linecap="square"/>
+  </g>
+  <text x="286" y="205" fill="#e8e8ec" font-family="Inter, Arial, sans-serif" font-size="84" font-weight="800" letter-spacing="7">TOUCHSTONE</text>
+  <text x="294" y="260" fill="#d4ff4f" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700" letter-spacing="9">JEFFLIN.AI</text>
+  <text x="94" y="415" fill="#ffffff" fill-opacity=".84" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">One prompt. Every agent.</text>
+  <text x="96" y="472" fill="#ffffff" fill-opacity=".48" font-family="'JetBrains Mono', monospace" font-size="24" letter-spacing="3">AI CODING ARENA · REAL OUTPUT COMPARISON</text>
+  <path d="M94 535h1012" stroke="#d4ff4f" stroke-opacity=".72" stroke-width="2"/>
+</svg>

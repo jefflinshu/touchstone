@@ -1,0 +1,22 @@
+{
+  "name": "Touchstone by jefflin.ai",
+  "short_name": "Touchstone",
+  "description": "AI coding arena for comparing real output from multiple agents.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/brand/touchstone-mark.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
