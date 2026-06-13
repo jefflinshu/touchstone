@@ -56,8 +56,8 @@ const SORT_OPTIONS = [
   { key: 'replies', labelKey: 'fable.sort.replies' },
 ]
 
-const INITIAL_SHARD_LOAD_COUNT = 4
-const SHARD_LOAD_STEP = 2
+const INITIAL_SHARD_LOAD_COUNT = 1
+const SHARD_LOAD_STEP = 1
 const INITIAL_PRIORITY_IMAGES = 6
 const TRANSLATION_BATCH_SIZE = 12
 const CATEGORY_ORDER = ['games', 'apps', 'websites', 'videos', '3d', 'design', 'agents', 'prompts', 'code', 'research', 'news', 'safety', 'experiments']
