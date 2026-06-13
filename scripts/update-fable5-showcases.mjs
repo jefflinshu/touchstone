@@ -15,7 +15,7 @@ let previousShardFiles = []
 
 function usage() {
   console.error(
-    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit N] [--cache-assets 1|0] [--cache-media 1|0]'
+    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
   )
   process.exit(1)
 }
@@ -580,6 +580,7 @@ function hasCaseEvidence(post) {
   const text = String(post?.text || post?.fullText || post?.full_text || '')
   const lower = cleanText(text).toLowerCase()
   const media = Array.isArray(post?.media) ? post.media : []
+  if (post?.sourceMode === 'seed-tweet' && media.length && /\b(?:claude|fable|mythos)\b/i.test(text)) return true
   const hasBuildLanguage =
     /\b(?:prompt|built|made|created|recreated|designed|one-shotted|one shot|one prompt|game|website|web app|ui|ux|motion|animation|video|css|3d|mcp|code|migration|prototype|compare|compared|versus|benchmark)\b/.test(
       lower
@@ -592,6 +593,7 @@ function hasCaseEvidence(post) {
 
 function isShowcaseCandidate(post) {
   if (!post?.url || !post?.author || !post?.text) return false
+  if (post.sourceMode === 'seed-conversation' && !/\b(?:claude|fable|mythos)\b/i.test(post.text)) return false
   if (looksLikeThreadIndex(post.text)) return false
   if (hasCaseEvidence(post)) return true
   return linkedItems(post).some(hasCaseEvidence)
@@ -709,6 +711,7 @@ const args = parseArgs(process.argv.slice(2))
 const explicitLimit = args.limit != null
 const limit = explicitLimit ? Math.max(1, Math.min(Number(args.limit), 5000)) : Number.POSITIVE_INFINITY
 const cacheMedia = flag(args['cache-media'], true)
+const cacheFrom = String(args['cache-from'] || '')
 CACHE_ASSETS = args['cache-assets'] !== '0'
 
 const generatedAt = new Date().toISOString()
@@ -746,7 +749,8 @@ const selected = [...candidateByUrl.values()]
   })
   .slice(0, limit)
   .map((post) => {
-    const item = toShowcase(post, post.sourceRun, generatedAt, { cacheMedia })
+    const shouldCacheMedia = cacheMedia && (!cacheFrom || String(post.date || '') >= cacheFrom)
+    const item = toShowcase(post, post.sourceRun, generatedAt, { cacheMedia: shouldCacheMedia })
     item.fetchRuns = post.fetchRuns || item.fetchRuns
     return item
   })

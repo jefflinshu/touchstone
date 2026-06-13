@@ -107,6 +107,7 @@ const updateLimit = args['update-limit'] == null ? '' : String(Math.max(1, Math.
 const mode = args.mode === 'top' ? 'top' : 'latest'
 const skipCreatorFetch = args['skip-creators'] === '1'
 const cacheAssets = args['cache-assets'] === '0' ? '0' : '1'
+const cacheFrom = args['cache-from'] || to
 
 const state = readJson(STATE_FILE, { queryOffset: 0, creatorOffset: 0, runs: [] })
 const allQueries = readQueries()
@@ -172,6 +173,8 @@ runNode([
   ...(updateLimit ? ['--limit', updateLimit] : []),
   '--cache-assets',
   cacheAssets,
+  '--cache-from',
+  cacheFrom,
 ])
 
 const nextState = {

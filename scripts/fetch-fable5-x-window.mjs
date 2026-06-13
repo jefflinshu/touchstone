@@ -297,6 +297,13 @@ function collectSeedConversation(seed, index) {
       .filter(Boolean)
 
     const root = items[0]
+    if (root) {
+      collected.push({
+        ...root,
+        sourceMode: 'seed-tweet',
+        sourceSeed: seed,
+      })
+    }
     for (const item of items.slice(1)) {
       if (root?.author && item.author === root.author) continue
       collected.push({
