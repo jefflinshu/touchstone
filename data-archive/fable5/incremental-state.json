@@ -1,6 +1,6 @@
 {
-  "queryOffset": 0,
-  "creatorOffset": 1,
+  "queryOffset": 2,
+  "creatorOffset": 7,
   "runs": [
     {
       "at": "2026-06-12T08:23:09.627Z",
@@ -23,17 +23,55 @@
       "mode": "latest",
       "max": 5,
       "target": 5
+    },
+    {
+      "at": "2026-06-13T06:51:05.753Z",
+      "from": "2026-06-12",
+      "to": "2026-06-13",
+      "queryCount": 5,
+      "creators": [
+        "meta_alchemist",
+        "viktoroddy",
+        "ann_nnng",
+        "alexprokhorov",
+        "spoobsv1",
+        "higgsfield"
+      ],
+      "mode": "latest",
+      "max": 35,
+      "target": 140
+    },
+    {
+      "at": "2026-06-13T06:51:05.753Z",
+      "from": "2026-06-12",
+      "to": "2026-06-13",
+      "queryCount": 0,
+      "creators": [
+        "claudeai"
+      ],
+      "mode": "latest",
+      "max": 50,
+      "target": 50,
+      "note": "official case-library thread plus linked seed tweets"
     }
   ],
-  "lastRunAt": "2026-06-12T08:23:41.163Z",
+  "lastRunAt": "2026-06-13T06:51:05.753Z",
   "lastWindow": {
-    "from": "2026-06-11",
-    "to": "2026-06-12"
+    "from": "2026-06-12",
+    "to": "2026-06-13"
   },
   "lastSelection": {
-    "queries": [],
+    "queries": [
+      "incremental core query batch q0"
+    ],
     "creators": [
-      "claudedevs"
+      "meta_alchemist",
+      "viktoroddy",
+      "ann_nnng",
+      "alexprokhorov",
+      "spoobsv1",
+      "higgsfield",
+      "claudeai-official-case-library"
     ]
   }
 }

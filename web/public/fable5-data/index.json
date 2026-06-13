@@ -1,23 +1,32 @@
 {
-  "updatedAt": "2026-06-12",
-  "lastFetchedAt": "2026-06-12T10:30:19.073Z",
-  "cliStatus": "Loaded 1727 locally archived X posts from 8 fetch runs; collection now has 718 source-linked cards and 586 creator profiles.",
+  "updatedAt": "2026-06-13",
+  "lastFetchedAt": "2026-06-13T06:53:05.514Z",
+  "cliStatus": "Loaded 1950 locally archived X posts from 12 fetch runs; collection now has 793 source-linked cards and 651 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
     "launch-2026-06-08-to-2026-06-12-target500",
     "launch-2026-06-08-to-2026-06-12-broad-top-target500",
+    "official-claudeai-2026-06-12-to-2026-06-13",
     "recent-week-2026-06-05-to-2026-06-11",
+    "official-claudeai-case-library-2026-06-12",
     "launch-2026-06-08-to-2026-06-12-latest-target500",
     "recent-2026-06-11-to-2026-06-12",
+    "incremental-2026-06-12-to-2026-06-13-creators1",
     "today-2026-06-12-latest-target500",
+    "incremental-2026-06-12-to-2026-06-13-q0",
     "incremental-2026-06-11-to-2026-06-12-q0"
   ],
-  "total": 718,
+  "total": 793,
   "shards": [
+    {
+      "date": "2026-06-13",
+      "file": "2026-06-13.json",
+      "count": 65
+    },
     {
       "date": "2026-06-12",
       "file": "2026-06-12.json",
-      "count": 161
+      "count": 166
     },
     {
       "date": "2026-06-11",
@@ -27,12 +36,12 @@
     {
       "date": "2026-06-10",
       "file": "2026-06-10.json",
-      "count": 226
+      "count": 228
     },
     {
       "date": "2026-06-09",
       "file": "2026-06-09.json",
-      "count": 101
+      "count": 104
     },
     {
       "date": "2026-06-08",

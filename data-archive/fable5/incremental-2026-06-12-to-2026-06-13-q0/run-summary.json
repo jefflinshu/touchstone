@@ -1,0 +1,21 @@
+{
+  "from": "2026-06-12",
+  "to": "2026-06-13",
+  "mode": "latest",
+  "officialOnly": false,
+  "withReplies": false,
+  "maxReplies": 12,
+  "minViews": 0,
+  "target": 140,
+  "queries": [
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\"))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (prompt OR prompts OR \"copy prompt\" OR tutorial OR guide))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media)",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (game OR playable OR prototype OR minecraft OR skyrim OR pokemon OR mario OR rpg OR \"tower defense\"))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (website OR \"landing page\" OR \"web app\" OR frontend OR react OR nextjs OR threejs))"
+  ],
+  "candidates": 140,
+  "conversationFetchFailures": 0,
+  "failedHandles": 0,
+  "generatedAt": "2026-06-13T06:39:13.068Z"
+}
