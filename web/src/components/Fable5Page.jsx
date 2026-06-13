@@ -454,6 +454,24 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
     return () => observer.disconnect()
   }, [canLoadMore, loadingMore, loadedShardCount])
 
+  useEffect(() => {
+    if (!canLoadMore || loadingMore) return undefined
+    let ticking = false
+    const maybeLoadMore = () => {
+      ticking = false
+      const remaining = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight)
+      if (remaining < 1200) loadMore()
+    }
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      window.requestAnimationFrame(maybeLoadMore)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    maybeLoadMore()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [canLoadMore, loadingMore, loadedShardCount])
+
   const scenes = useMemo(() => {
     if (Array.isArray(index?.categoryCounts) && index.categoryCounts.length) {
       return index.categoryCounts.map((item) => [item.key, item.count])
