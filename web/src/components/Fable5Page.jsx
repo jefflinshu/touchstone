@@ -375,6 +375,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   const [translationsByLanguage, setTranslationsByLanguage] = useState({})
   const translationsByLanguageRef = useRef({})
   const translationInflight = useRef(new Set())
+  const autoLoadRef = useRef(null)
 
   useEffect(() => {
     if (!authEmail) {
@@ -439,6 +440,19 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
       }
     )
   }
+
+  useEffect(() => {
+    const target = autoLoadRef.current
+    if (!target || !canLoadMore || loadingMore) return undefined
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) loadMore()
+      },
+      { rootMargin: '900px 0px' }
+    )
+    observer.observe(target)
+    return () => observer.disconnect()
+  }, [canLoadMore, loadingMore, loadedShardCount])
 
   const scenes = useMemo(() => {
     if (Array.isArray(index?.categoryCounts) && index.categoryCounts.length) {
@@ -676,7 +690,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
       </div>
 
       {items && canLoadMore && (
-        <div className="mt-6 flex justify-center">
+        <div ref={autoLoadRef} className="mt-6 flex justify-center">
           <button
             type="button"
             onClick={loadMore}

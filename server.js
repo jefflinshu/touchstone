@@ -1842,11 +1842,11 @@ function setPublicAssetCacheHeaders(res, filePath) {
     return
   }
   if (normalized.endsWith('/fable5-data/index.json')) {
-    res.setHeader('Cache-Control', 'no-store')
+    res.setHeader('Cache-Control', 'no-store, must-revalidate')
     return
   }
   if (normalized.includes('/fable5-data/')) {
-    res.setHeader('Cache-Control', 'no-store')
+    res.setHeader('Cache-Control', 'no-store, must-revalidate')
   }
 }
 
@@ -1866,6 +1866,7 @@ if (fs.existsSync(distDir)) {
   app.use(express.static(distDir, { index: false, setHeaders: setDistCacheHeaders }))
   app.get(/^\/(?!api|ws|workspace|avatars).*/, (req, res) => {
     const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8')
+    res.setHeader('Cache-Control', 'no-store, must-revalidate')
     res.type('html').send(renderSeoHtml(indexHtml, seoForPath(req)))
   })
 }
