@@ -846,6 +846,15 @@ const keywordSignals = [...keywords.values()]
   .map((item) => ({ ...item, score: Math.round(item.score), avgScore: Math.round(item.score / item.posts) }))
   .sort((a, b) => b.score - a.score)
 
+function sortCategoryCounts(entries) {
+  return entries.sort((a, b) => {
+    const ai = CATEGORY_ORDER.indexOf(a[0])
+    const bi = CATEGORY_ORDER.indexOf(b[0])
+    if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+    return b[1] - a[1]
+  })
+}
+
 function writeJsonIfChanged(filePath, value) {
   const next = JSON.stringify(value, null, 2) + '\n'
   try {
@@ -875,7 +884,13 @@ for (const file of previousShardFiles) {
   if (activeShardFiles.has(file)) continue
   rmSync(join(OUT_DIR, file), { force: true })
 }
+const categoryCounts = new Map()
+for (const item of collection) {
+  const categories = Array.isArray(item.categories) && item.categories.length ? item.categories : [item.scene || 'other']
+  for (const key of categories) categoryCounts.set(key, (categoryCounts.get(key) || 0) + 1)
+}
 writeJsonIfChanged(join(OUT_DIR, 'creators.json'), { creatorPool, keywordSignals })
+writeJsonIfChanged(join(OUT_DIR, 'featured.json'), collection.slice(0, 24))
 writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   updatedAt: generatedAt.slice(0, 10),
   lastFetchedAt: generatedAt,
@@ -883,6 +898,7 @@ writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   sourceRun: 'local-archive',
   fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
   total: collection.length,
+  categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
   shards: shardList,
 })
 console.log(`Loaded ${allPosts.length} archived posts from ${batches.length} runs`)

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowDownAZ, ArrowUpAZ, Bookmark, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
-import { loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
+import { loadFable5Featured, loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
 import { trackEvent } from '@/lib/analytics'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
 import { useI18n } from '@/i18n.jsx'
@@ -56,7 +56,6 @@ const SORT_OPTIONS = [
   { key: 'replies', labelKey: 'fable.sort.replies' },
 ]
 
-const INITIAL_SHARD_LOAD_COUNT = 1
 const SHARD_LOAD_STEP = 1
 const INITIAL_PRIORITY_IMAGES = 6
 const TRANSLATION_BATCH_SIZE = 12
@@ -88,6 +87,12 @@ function chunkList(list, size) {
   const out = []
   for (let index = 0; index < list.length; index += size) out.push(list.slice(index, index + size))
   return out
+}
+
+function mergeShowcaseItems(current, nextItems) {
+  const byId = new Map((current || []).map((item) => [item.id, item]))
+  for (const item of nextItems) byId.set(item.id, item)
+  return [...byId.values()]
 }
 
 function localizedShowcaseCopy(item, translation) {
@@ -401,7 +406,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
 
   useEffect(() => {
     let alive = true
-    loadFable5Showcases({ start: 0, count: INITIAL_SHARD_LOAD_COUNT }).then(
+    loadFable5Featured().then(
       ({ index: nextIndex, items: nextItems, loadedShards }) => {
         if (!alive) return
         setIndex(nextIndex)
@@ -424,11 +429,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
     setLoadingMore(true)
     loadFable5Showcases({ start: loadedShardCount, count: SHARD_LOAD_STEP }).then(
       ({ items: nextItems, loadedShards }) => {
-        setItems((current) => {
-          const byId = new Map((current || []).map((item) => [item.id, item]))
-          for (const item of nextItems) byId.set(item.id, item)
-          return [...byId.values()]
-        })
+        setItems((current) => mergeShowcaseItems(current, nextItems))
         setLoadedShardCount((count) => count + loadedShards)
         setLoadingMore(false)
       },
@@ -440,6 +441,9 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   }
 
   const scenes = useMemo(() => {
+    if (Array.isArray(index?.categoryCounts) && index.categoryCounts.length) {
+      return index.categoryCounts.map((item) => [item.key, item.count])
+    }
     const counts = new Map()
     for (const item of items || []) {
       const categories = Array.isArray(item.categories) && item.categories.length ? item.categories : [item.scene || 'other']
@@ -451,7 +455,34 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
       if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
       return b[1] - a[1]
     })
-  }, [items])
+  }, [index, items])
+
+  useEffect(() => {
+    if (!items || !index || loadedShardCount >= totalShardCount) return undefined
+    if (scene === 'all' && !query.trim()) return undefined
+    let cancelled = false
+    setLoadingMore(true)
+    ;(async () => {
+      let start = loadedShardCount
+      try {
+        while (!cancelled && start < totalShardCount) {
+          const { items: nextItems, loadedShards } = await loadFable5Showcases({ start, count: SHARD_LOAD_STEP })
+          if (cancelled) return
+          setItems((current) => mergeShowcaseItems(current, nextItems))
+          start += loadedShards
+          setLoadedShardCount(start)
+          if (!loadedShards) break
+        }
+      } catch (err) {
+        if (!cancelled) setLoadError(String(err?.message || err))
+      } finally {
+        if (!cancelled) setLoadingMore(false)
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [scene, query, index])
 
   useEffect(() => {
     translationsByLanguageRef.current = translationsByLanguage

@@ -63,3 +63,15 @@ export async function loadFable5Showcases({ start = 0, count = 2 } = {}) {
   )
   return { index, items, loadedShards: selected.length }
 }
+
+export async function loadFable5Featured() {
+  const index = await loadFable5Index()
+  try {
+    const res = await fetch(cacheBustedUrl('featured.json', index.lastFetchedAt || index.updatedAt || ''), { cache: 'no-store' })
+    if (!res.ok) throw new Error(`fable5 featured: HTTP ${res.status}`)
+    const items = await res.json()
+    return { index, items: Array.isArray(items) ? items : [], loadedShards: 0 }
+  } catch {
+    return loadFable5Showcases({ start: 0, count: 1 })
+  }
+}
