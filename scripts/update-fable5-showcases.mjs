@@ -10,6 +10,7 @@ const OUT_DIR = join(ROOT, 'web', 'public', 'fable5-data')
 const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'fable5')
 const PUBLIC_MEDIA_DIR = join(ROOT, 'web', 'public', 'fable5-media')
 const PUBLIC_AVATAR_DIR = join(ROOT, 'web', 'public', 'fable5-avatars')
+const CHUNK_SIZE = 24
 let CACHE_ASSETS = true
 let previousShardFiles = []
 
@@ -865,6 +866,8 @@ function writeJsonIfChanged(filePath, value) {
 }
 
 mkdirSync(OUT_DIR, { recursive: true })
+const CHUNK_DIR = join(OUT_DIR, 'chunks')
+mkdirSync(CHUNK_DIR, { recursive: true })
 const shardMap = new Map()
 for (const item of collection) {
   const day = item.date || String(item.firstSeenAt || '').slice(0, 10) || 'unknown'
@@ -884,6 +887,18 @@ for (const file of previousShardFiles) {
   if (activeShardFiles.has(file)) continue
   rmSync(join(OUT_DIR, file), { force: true })
 }
+const chunkList = []
+for (let index = 0; index < collection.length; index += CHUNK_SIZE) {
+  const chunk = collection.slice(index, index + CHUNK_SIZE)
+  const file = `chunks/${String(chunkList.length).padStart(3, '0')}.json`
+  writeJsonIfChanged(join(OUT_DIR, file), chunk)
+  chunkList.push({ file, count: chunk.length })
+}
+const activeChunkFiles = new Set(chunkList.map((chunk) => basename(chunk.file)))
+for (const entry of readdirSync(CHUNK_DIR, { withFileTypes: true })) {
+  if (!entry.isFile() || !entry.name.endsWith('.json')) continue
+  if (!activeChunkFiles.has(entry.name)) rmSync(join(CHUNK_DIR, entry.name), { force: true })
+}
 const categoryCounts = new Map()
 for (const item of collection) {
   const categories = Array.isArray(item.categories) && item.categories.length ? item.categories : [item.scene || 'other']
@@ -899,6 +914,7 @@ writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
   total: collection.length,
   categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
+  chunks: chunkList,
   shards: shardList,
 })
 console.log(`Loaded ${allPosts.length} archived posts from ${batches.length} runs`)

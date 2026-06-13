@@ -53,7 +53,7 @@ async function loadShard(shard, version = '') {
 
 export async function loadFable5Showcases({ start = 0, count = 2 } = {}) {
   const index = await loadFable5Index()
-  const selected = (index.shards || []).slice(start, start + count)
+  const selected = (index.chunks?.length ? index.chunks : index.shards || []).slice(start, start + count)
   const shards = await Promise.all(selected.map((shard) => loadShard(shard, index.lastFetchedAt || index.updatedAt || '')))
   const items = shards.flat()
   items.sort(
@@ -70,7 +70,7 @@ export async function loadFable5Featured() {
     const res = await fetch(cacheBustedUrl('featured.json', index.lastFetchedAt || index.updatedAt || ''), { cache: 'no-store' })
     if (!res.ok) throw new Error(`fable5 featured: HTTP ${res.status}`)
     const items = await res.json()
-    return { index, items: Array.isArray(items) ? items : [], loadedShards: 0 }
+    return { index, items: Array.isArray(items) ? items : [], loadedShards: index.chunks?.length ? 1 : 0 }
   } catch {
     return loadFable5Showcases({ start: 0, count: 1 })
   }
