@@ -8,6 +8,7 @@ const __dirname = dirname(__filename)
 const ROOT = resolve(__dirname, '..')
 const OUT_DIR = join(ROOT, 'web', 'public', 'fable5-data')
 const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'fable5')
+const CURATION_OVERRIDES_PATH = join(ARCHIVE_ROOT, 'curation-overrides.json')
 const PUBLIC_MEDIA_DIR = join(ROOT, 'web', 'public', 'fable5-media')
 const PUBLIC_AVATAR_DIR = join(ROOT, 'web', 'public', 'fable5-avatars')
 const CHUNK_SIZE = 24
@@ -542,6 +543,20 @@ function loadInputBatches(args) {
   return batches
 }
 
+function loadCurationOverrides() {
+  try {
+    const payload = JSON.parse(readFileSync(CURATION_OVERRIDES_PATH, 'utf8'))
+    const decisions = Array.isArray(payload?.decisions) ? payload.decisions : []
+    return new Map(
+      decisions
+        .filter((item) => item?.url && /^(?:keep|drop)$/.test(String(item.decision || '')))
+        .map((item) => [item.url, { decision: item.decision, reason: item.reason || 'manual override' }])
+    )
+  } catch {
+    return new Map()
+  }
+}
+
 function promptStatus(text) {
   return extractPrompt(text) ? 'prompted' : 'commentary'
 }
@@ -592,12 +607,193 @@ function hasCaseEvidence(post) {
   return false
 }
 
+function hasPublicEvidence(text) {
+  const raw = String(text || '')
+  const withoutShortlinks = raw.replace(/https?:\/\/(?:t\.co|x\.com|twitter\.com)\/\S+/gi, '')
+  return (
+    /https?:\/\/(?!localhost(?::|\/|$)|127\.0\.0\.1(?::|\/|$)|(?:www\.)?(?:x|twitter)\.com(?:\/|$)|t\.co(?:\/|$))\S+/i.test(
+      withoutShortlinks
+    ) ||
+    /\b(?:github\.com|vercel\.app|netlify\.app|pages\.dev|try it|live demo|play here|source code|open source|public link)\b/i.test(raw) ||
+    /(?:こちら|ここ).{0,12}遊べます|遊べます/i.test(raw)
+  )
+}
+
+function isWeakTextOnlyClaim(post) {
+  const text = String(post?.text || post?.fullText || post?.full_text || '')
+  const lower = cleanText(text).toLowerCase()
+  const media = Array.isArray(post?.media) ? post.media : []
+  if (media.length || extractPrompt(text)) return false
+  if (/\b(?:localhost|127\.0\.0\.1)\b/i.test(text)) return true
+  if (/\b(?:literally\s+)?nothing about coding\b|\bzero\b.{0,80}\b(?:coding|code)\b|\b(?:coding|code)\b.{0,80}\bzero\b/i.test(text)) return true
+  if (!hasPublicEvidence(text)) return true
+  const hasConcreteBuild =
+    /\b(?:built|created|made|recreated|one-shotted|one shot|prompt|demo|try|play|live|website|app|game|video|3d|webgl|github|source|benchmark)\b/i.test(
+      text
+    )
+  if (!hasConcreteBuild) return true
+  return false
+}
+
+function hasStrongArtifactEvidence(post) {
+  const text = String(post?.text || post?.fullText || post?.full_text || '')
+  const media = Array.isArray(post?.media) ? post.media : []
+  if (extractPrompt(text)) return true
+
+  const actorBuilt =
+    /\b(?:had|asked|gave|fed)\s+(?:claude|fable|mythos)\b.{0,160}\b(?:build|create|make|generate|design|log|display|turn|convert|implement|simulate|visualize)\b/i.test(
+      text
+    ) ||
+    /\b(?:i|we|this guy|someone|a user|the user|author|developer|founder|team|he|she)\b.{0,140}\b(?:built|created|made|recreated|cloned|generated|designed|implemented|one-shotted|one shot|tested|compared|fed|asked|gave)\b.{0,140}\b(?:game|website|web app|app|video|animation|3d|webgl|shader|ui|design|workflow|agent|benchmark|prototype|repo|codebase|prompt|model|map|dashboard)\b/i.test(
+      text
+    ) ||
+    /\b(?:built|created|made|recreated|cloned|generated|designed|implemented|one-shotted|one shot|one prompt|tested|compared|benchmark)\b.{0,140}\b(?:game|website|web app|app|video|animation|3d|webgl|shader|ui|design|workflow|agent|benchmark|prototype|repo|codebase)\b/i.test(
+      text
+    ) ||
+    /\b(?:game|website|web app|app|video|animation|3d|webgl|shader|ui|design|workflow|agent|benchmark|prototype|repo|codebase)\b.{0,140}\b(?:built|created|made|recreated|cloned|generated|designed|implemented|one-shotted|one shot|one prompt|tested|compared)\b/i.test(
+      text
+    )
+
+  if (actorBuilt) return true
+  if (media.length && /\b(?:all working|playable|try it|live demo|demo is real|source code|open sourcing|open-sourcing|github|repo|public link|you can play)\b/i.test(text)) {
+    return true
+  }
+  if (media.length && /(?:こちら|ここ).{0,12}遊べます|遊べます|できた|作った/i.test(text)) return true
+  if (
+    media.length &&
+    /\b(?:claude|fable|mythos)\b/i.test(text) &&
+    /\b(?:asked fable|gave fable|fed it|\/goal:|shader|webgl|three\.?js|3d|css|ui|benchmark|game|app|website|video|animation|motion|prototype)\b/i.test(text)
+  ) {
+    return true
+  }
+
+  return false
+}
+
+function isNonCaseAnnouncement(post) {
+  const text = String(post?.text || post?.fullText || post?.full_text || '')
+  const media = Array.isArray(post?.media) ? post.media : []
+  const strongArtifact = hasStrongArtifactEvidence(post)
+
+  if (/\bnot made with claude fable\b|\bnot made with fable\b/i.test(text)) return true
+  if (/\b(?:localhost|127\.0\.0\.1)\b/i.test(text) && !hasPublicEvidence(text) && !extractPrompt(text)) return true
+
+  if (
+    /\b(?:government|national security|foreign national|data retention|zero data retention|microsoft restricted|disabled access|cut off|guardrails?|policy|governance|exploit season|vulnerability|train competing ai models|weaker responses)\b/i.test(
+      text
+    ) &&
+    !strongArtifact
+  ) {
+    return true
+  }
+
+  if (
+    /\b(?:introducing claude fable|first in .*mythos|now generally available|rolling out in|now available in|now available on|now live in|now live on|available on|available in|web chat|premium model|api rollout|free until|try it out in)\b/i.test(
+      text
+    ) &&
+    !strongArtifact
+  ) {
+    return true
+  }
+
+  if (
+    /\b(?:top generations|what people have built|what people built|some projects people|people are already|roundup|collection|compilation|daily recap|here are .{0,40}(?:examples|demos|builds|things))\b/i.test(
+      text
+    )
+  ) {
+    return true
+  }
+
+  if (/\b(?:bookmark|comment\s+["']?prompt|dm\b|follow|copy this|thank me later|free article|full playbook)\b/i.test(text)) {
+    return true
+  }
+
+  if (
+    /\b(?:printing money|killed (?:the )?\$|make \$|\$\d[\d,.]*(?:k|\/month| per month|\/mo| worth| gaming studios| email agency)|millionaires|ad accounts|clipping page|tiktok machine|youtube shorts|gurus|course)\b/i.test(
+      text
+    ) &&
+    !/\b(?:playable|game|shader|webgl|three\.?js|3d|open sourcing|source code|github|repo)\b/i.test(text)
+  ) {
+    return true
+  }
+
+  if (media.length && !strongArtifact && !hasPublicEvidence(text)) {
+    return true
+  }
+
+  return false
+}
+
 function isShowcaseCandidate(post) {
   if (!post?.url || !post?.author || !post?.text) return false
   if (post.sourceMode === 'seed-conversation' && !/\b(?:claude|fable|mythos)\b/i.test(post.text)) return false
   if (looksLikeThreadIndex(post.text)) return false
+  if (isWeakTextOnlyClaim(post)) return false
+  if (isNonCaseAnnouncement(post)) return false
+  if (hasStrongArtifactEvidence(post)) return true
   if (hasCaseEvidence(post)) return true
-  return linkedItems(post).some(hasCaseEvidence)
+  return linkedItems(post).some((item) => hasCaseEvidence(item) && !isWeakTextOnlyClaim(item) && !isNonCaseAnnouncement(item))
+}
+
+function curationDecision(post) {
+  const override = post?.url ? curationOverrides.get(post.url) : null
+  if (override?.decision === 'keep') return { keep: true, reason: `override-keep: ${override.reason}` }
+  if (override?.decision === 'drop') return { keep: false, reason: `override-drop: ${override.reason}` }
+  if (!post?.url || !post?.author || !post?.text) return { keep: false, reason: 'missing-url-author-or-text' }
+  if (post.sourceMode === 'seed-conversation' && !/\b(?:claude|fable|mythos)\b/i.test(post.text)) {
+    return { keep: false, reason: 'thread-reply-not-about-fable' }
+  }
+  if (looksLikeThreadIndex(post.text)) return { keep: false, reason: 'roundup-or-thread-index' }
+  if (isWeakTextOnlyClaim(post)) return { keep: false, reason: 'weak-text-only-or-no-public-evidence' }
+  if (isNonCaseAnnouncement(post)) return { keep: false, reason: 'news-platform-announcement-or-marketing' }
+  if (hasStrongArtifactEvidence(post)) return { keep: true, reason: 'has-strong-artifact-evidence' }
+  if (hasCaseEvidence(post)) return { keep: true, reason: 'has-visible-case-evidence' }
+  if (linkedItems(post).some((item) => hasCaseEvidence(item) && !isWeakTextOnlyClaim(item) && !isNonCaseAnnouncement(item))) {
+    return { keep: true, reason: 'linked-item-has-case-evidence' }
+  }
+  return { keep: false, reason: 'no-concrete-case-evidence' }
+}
+
+function reviewPost(post, decision) {
+  return {
+    keep: decision.keep,
+    reason: decision.reason,
+    author: post?.author ? `@${post.author}` : '',
+    authorName: post?.authorName || '',
+    url: post?.url || '',
+    date: post?.date || String(post?.createdAtISO || '').slice(0, 10),
+    sourceMode: post?.sourceMode || '',
+    mediaCount: Array.isArray(post?.media) ? post.media.length : 0,
+    metrics: post?.metrics || {},
+    text: limitText(post?.text || '', 520),
+  }
+}
+
+function itemAsPost(item) {
+  return {
+    url: item?.sourceUrl || '',
+    author: String(item?.handle || '').replace(/^@/, '') || item?.author || '',
+    authorName: item?.author || '',
+    text: item?.originalText || '',
+    date: item?.date || '',
+    media: Array.isArray(item?.mediaUrls) ? item.mediaUrls.map((url) => ({ url, type: item.media || 'image' })) : [],
+  }
+}
+
+function passesFinalNegativeFilter(item) {
+  const post = itemAsPost(item)
+  const text = post.text || ''
+  if (
+    /\b(?:government|national security|foreign national|data retention|zero data retention|microsoft restricted|disabled access|cut off|ordered anthropic|switched both models off|now generally available|rolling out in|now available in|now available on|now live in|now live on|officially available|web chat|premium model|api rollout|pricing is computed)\b/i.test(
+      text
+    )
+  ) {
+    return false
+  }
+  if (looksLikeThreadIndex(post.text)) return false
+  if (isWeakTextOnlyClaim(post)) return false
+  if (isNonCaseAnnouncement(post)) return false
+  return true
 }
 
 function normalizeExistingItem(item) {
@@ -713,11 +909,13 @@ const explicitLimit = args.limit != null
 const limit = explicitLimit ? Math.max(1, Math.min(Number(args.limit), 5000)) : Number.POSITIVE_INFINITY
 const cacheMedia = flag(args['cache-media'], true)
 const cacheFrom = String(args['cache-from'] || '')
+const reviewLimit = Math.max(1, Math.min(Number(args['review-drops'] || 40), 200))
 CACHE_ASSETS = args['cache-assets'] !== '0'
 
 const generatedAt = new Date().toISOString()
 const batches = loadInputBatches(args)
 const allPosts = batches.flatMap((batch) => batch.posts)
+const curationOverrides = loadCurationOverrides()
 let existingShowcases = []
 try {
   const index = JSON.parse(readFileSync(join(OUT_DIR, 'index.json'), 'utf8'))
@@ -729,9 +927,19 @@ try {
 } catch {}
 
 const candidateByUrl = new Map()
+const curationByUrl = new Map()
+const blockedUrls = new Set()
+const hardRejectReasons = new Set(['weak-text-only-or-no-public-evidence', 'news-platform-announcement-or-marketing', 'roundup-or-thread-index'])
 for (const batch of batches) {
   for (const post of batch.posts) {
-    if (!isShowcaseCandidate(post)) continue
+    const decision = curationDecision(post)
+    if (post?.url && !curationByUrl.has(post.url)) curationByUrl.set(post.url, { post: { ...post, sourceRun: batch.sourceRun }, decision })
+    if (post?.url && !decision.keep && hardRejectReasons.has(decision.reason)) {
+      blockedUrls.add(post.url)
+      candidateByUrl.delete(post.url)
+    }
+    if (post?.url && blockedUrls.has(post.url)) continue
+    if (!decision.keep) continue
     const prev = candidateByUrl.get(post.url)
     const fetchRuns = [...new Set([...(prev?.fetchRuns || []), batch.sourceRun])]
     if (!prev || scoreMetrics(post.metrics || {}) > scoreMetrics(prev.metrics || {})) {
@@ -762,6 +970,7 @@ for (const item of existingShowcases) {
   if (item?.sourceUrl) existingByUrl.set(item.sourceUrl, normalizeExistingItem(item))
 }
 for (const item of selected) {
+  if (blockedUrls.has(item.sourceUrl)) continue
   const prev = byUrl.get(item.sourceUrl) || existingByUrl.get(item.sourceUrl)
   byUrl.set(item.sourceUrl, {
     ...prev,
@@ -773,7 +982,7 @@ for (const item of selected) {
   })
 }
 
-const collection = [...byUrl.values()].sort((a, b) => {
+const collection = [...byUrl.values()].filter((item) => !blockedUrls.has(item.sourceUrl) && passesFinalNegativeFilter(item)).sort((a, b) => {
   const scoreA = scoreMetrics(a.metrics || {})
   const scoreB = scoreMetrics(b.metrics || {})
   return scoreB - scoreA || String(b.date || '').localeCompare(String(a.date || ''))
@@ -782,7 +991,8 @@ const collection = [...byUrl.values()].sort((a, b) => {
 const creators = new Map()
 const keywords = new Map()
 for (const post of allPosts) {
-  if (!isShowcaseCandidate(post)) continue
+  if (post?.url && blockedUrls.has(post.url)) continue
+  if (!curationDecision(post).keep) continue
 
   const metrics = post.metrics || {}
   const score = scoreMetrics(metrics)
@@ -916,6 +1126,31 @@ writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
   chunks: chunkList,
   shards: shardList,
+})
+const finalUrls = new Set(collection.map((item) => item.sourceUrl).filter(Boolean))
+const finalReviewEntries = [...curationByUrl.values()].map((entry) => ({
+  ...entry,
+  decision: finalUrls.has(entry.post.url) ? { keep: true, reason: 'final-collection-kept' } : { keep: false, reason: entry.decision.reason },
+}))
+writeJsonIfChanged(join(ARCHIVE_ROOT, 'curation-review-latest.json'), {
+  generatedAt,
+  reviewLimit,
+  totals: {
+    archivedPosts: allPosts.length,
+    uniquePosts: curationByUrl.size,
+    kept: finalUrls.size,
+    removed: Math.max(0, curationByUrl.size - finalUrls.size),
+  },
+  removedSamples: finalReviewEntries
+    .filter((entry) => !entry.decision.keep)
+    .sort((a, b) => scoreMetrics(b.post.metrics || {}) - scoreMetrics(a.post.metrics || {}))
+    .slice(0, reviewLimit)
+    .map((entry) => reviewPost(entry.post, entry.decision)),
+  keptSamples: finalReviewEntries
+    .filter((entry) => entry.decision.keep)
+    .sort((a, b) => scoreMetrics(b.post.metrics || {}) - scoreMetrics(a.post.metrics || {}))
+    .slice(0, reviewLimit)
+    .map((entry) => reviewPost(entry.post, entry.decision)),
 })
 console.log(`Loaded ${allPosts.length} archived posts from ${batches.length} runs`)
 console.log(`Merged ${selected.length} local showcase candidates into ${collection.length} total cards and ${creatorPool.length} creators at ${OUT_DIR}`)

@@ -1,0 +1,855 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066039761035251882",
+      "text": "Anthropic's Claude Fable 5 system prompt just leaked.\n1500+ lines of the most detailed AI safety rules ever written.\nHere's the wildest thing I found:\nClaude has opinions. It's just told not to share them.\n\"Claude is cautious about sharing personal opinions on currently contested political topics. It needn't deny having opinions, but can decline to share them.\"\nIt gets weirder.\nThe prompt explicitly bans self-harm counseling techniques like \"hold an ice cube\" or \"snap a rubber band.\" Anthropic's reasoning: they mimic the sensation of self-harm and reinforce the pattern.\nInstead of interrupting — they make it worse.\nBut here's the part nobody is talking about:\nClaude Fable 5 has a secret twin. Same underlying model. Fewer safety restrictions.\nIt's called Claude Mythos 5 — an uncensored version available only to \"approved organizations.\"\nOne model. Two personalities. One locked, one hidden.\nThe most intelligent AI is also the most tightly controlled.\nAnd the demand for the uncensored version is real enough that Anthropic built one — just not for you.\nFull breakdown → https://t.co/wKdJu4oQFE",
+      "author": {
+        "id": "1726121566264770560",
+        "name": "HackAIGC",
+        "screenName": "HackAigc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1732039655586226176/EtcXuDyv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 06:07:18 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:07",
+      "createdAtISO": "2026-06-14T06:07:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066038761822302427",
+      "text": "4步教你复活 claude fable 5！\n\n1.下载 fable 5的系统提示词\nhttps://t.co/FFk7VdR0vO\n2.放到你Claude code 项目文件夹\n3. 使用启动命令 claude --dangerously-skip-permissions --system-prompt-file CLAUDE-FABLE-5.md\n4.模型切换到 opus 4.8 Max\n只需要这4步\n你会发现 fable 5 又回来了！",
+      "author": {
+        "id": "311603632",
+        "name": "Koda",
+        "screenName": "wadezone",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049312888649928704/UsBrY6Kx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 135,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 06:03:20 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:03",
+      "createdAtISO": "2026-06-14T06:03:20+00:00",
+      "media": [],
+      "urls": [
+        "https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066038732135010685",
+      "text": "Breaking: US cracks down on Anthropic AI models \n\nAmazon's warning prompts suspension of foreign access to Anthropic’s Fable 5 and Mythos 5 AI models 🚀\n\nUS gov't overreach or necessary measure? 💰 https://t.co/CR4cZQ1Okg",
+      "author": {
+        "id": "1541645480",
+        "name": "mai",
+        "screenName": "mai_abdulaziz_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/661294056182521858/i75LyPgC_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 82,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 06:03:13 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:03",
+      "createdAtISO": "2026-06-14T06:03:13+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKwLJOfaUAATmgX.jpg",
+          "width": 528,
+          "height": 353
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066038395726627252",
+      "text": "Claude Fable 5 ban clarified: @elder_plinius dropped the first viral public jailbreak (prompt leak + exploits). Amazon/@awscloud researchers replicate a serious cyber-risk version, escalate it to US officials → Commerce Dept export controls. @AnthropicAI suspends global access to comply. Public spectacle + private red-team report = shutdown. So I am back to Opus 4.8.",
+      "author": {
+        "id": "1261692838326095872",
+        "name": "jezza kezza",
+        "screenName": "strangedevices1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1688817543476297731/Hv7a1rjG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 06:01:53 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:01",
+      "createdAtISO": "2026-06-14T06:01:53+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HKwK9ldaYAAeD--.mp4",
+          "width": 498,
+          "height": 280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066037925498995118",
+      "text": "On Friday the US government switched off the most capable AI on earth.\n\nAt 5:21pm Eastern, @AnthropicAI received a letter. Citing national security, the government ordered it to suspend access to its two most advanced models, Fable 5 and Mythos 5, for any foreign national anywhere in the world. Cloud software has no borders, so the only way to comply was to shut the models down for everyone, in every country, at once.\n\nThe stated reason? A jailbreak that amounted to asking the model to read a codebase and fix its flaws. Developers call that debugging. They do it every day. The government called it a cyber-weapon.\n\nAesop warned us about the bear who crushed his master's skull to kill a fly. This week the Commerce Department played the bear, and @claudeai Fable 5 was the fly. The fly is dead. Look what happened to the master.\n\nHere is the part that should worry every business building on AI. If Washington can flip the kill switch on a Friday afternoon over a debugging prompt, no enterprise can treat frontier AI as stable infrastructure. You do not build a factory on land the state can repossess without notice.\n\nAnd it happened on the same Friday @SpaceX floated to make @elonmusk  the world's first paper trillionaire, his wealth now north of 4 per cent of American GDP. One state, one afternoon. It found the will to brick an AI model in hours, and no will at all to ask what it means for one person to own a slice of the world.\n\nWe broke up Standard Oil with a court order. We are building Standard Everything with a tax break.\n\nThis week's issue of The Sunday Signal is out now. Full essay, the historical pattern that says this never ends quietly, and the weekly layoff tracker.\n\nWhat would you build your business on, knowing the supplier can be switched off by a third party you never signed a contract with?\n\nhttps://t.co/7AF6AyiXWv",
+      "author": {
+        "id": "10977462",
+        "name": "David Richards MBE",
+        "screenName": "davidrichards",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1884330114827108352/nCWtbPto_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 06:00:01 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:00",
+      "createdAtISO": "2026-06-14T06:00:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066037463923970412",
+      "text": "@LesNews Fable 5 peut générer une vidéo complète à partir d'un seul prompt...\nPour le moment, il ne génère absolument rien parce qu'il est suspendu. 🐹🤣",
+      "author": {
+        "id": "2053183825509847042",
+        "name": "PIETBRU | Investir & Automatiser",
+        "screenName": "PietbruInvest",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2053381908982046730/TeLiuqLj_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:58:11 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:58",
+      "createdAtISO": "2026-06-14T05:58:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    },
+    {
+      "id": "2066036734790439005",
+      "text": "Would you buy a supercar just to drive to the corner store for bread? \n\nThat’s exactly what your AI bill looks like when a top-tier model like Fable 5 is being used to do the work of a simple linter. \n\nMost teams burn through four-figure API bills because of a psychological factor: the fear of getting a bad result. They pick the biggest model at $50 per million output tokens and run refactoring, docstrings, and minor formatting fixes through it. That’s financial suicide.\n\nThe key rule of optimization is simple: a model is a gear shifter, not a fixed button.\n\nInstead of relying on a “universal genius,” successful developers redesign their systems around an architecture where a cheap crew is managed by one expensive brain. \n\nRoutine work and boilerplate code generation are handled by Sonnet 4.6 ($15/1M) by default. If a task is genuinely difficult or security-critical, it is automatically escalated to Opus 4.8. Meanwhile, result verification (grading) with simple yes/no decisions is performed by Haiku 4.5, which costs ten times less than the flagship model \n\nThe creator should never grade their own homework, and it certainly makes no sense to pay Fable 5 rates for that job \n\nThis approach completely changes the economics of software development. \n\nWhen you separate routine tasks by complexity, enable prompt caching for static context, and send background jobs through the Batch API at half price, your final bill can drop by 71% while maintaining the same code quality [indexes: text].\n\nStart small: move all validation checks and log analysis to Haiku and see what happens to your balance by next week.",
+      "author": {
+        "id": "1988295500538548224",
+        "name": "bonduelle",
+        "screenName": "bonduelleioat",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012195806204637184/MK9qaLHW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 52,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 05:55:17 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:55",
+      "createdAtISO": "2026-06-14T05:55:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066036677307502592/vid/avc1/576x1024/HuB3xCER5wPILj26.mp4?tag=27",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065115318197068125",
+        "text": "https://t.co/KCftLeoHb5",
+        "author": {
+          "screenName": "bonduelleioat",
+          "name": "bonduelle"
+        }
+      }
+    },
+    {
+      "id": "2066035569856245936",
+      "text": "@elder_plinius What actually happened\nWithin ~1 day, prolific jailbreaker Pliny the Liberator publicly posted a multi-agent “pack hunt” bypass using techniques like:\n•  Unicode/homoglyph tricks (e.g., Cyrillic substitutions)\n•  Long-context framing\n•  Fiction/academic wrappers\n•  Query decomposition + reassembly\nThis got the model to output things like stack buffer overflow exploit code, Birch reduction chem synthesis steps, and even leaked Fable’s massive ~120k-character system prompt. @elder_plinius \nAnthropic’s take (from their official statement): This was narrow/non-universal, replicated similar minor/known vuln-finding on other models (including OpenAI’s), produced no harmful real-world uplift, and didn’t defeat the core safeguards broadly. They stand by their approach but acknowledge perfect resistance isn’t here yet. anthropic\nThe US government (via Commerce, after Amazon researchers flagged/duplicated issues and calls with Dario Amodei) saw it differently—national security risk from exposed cyber capabilities in a dual-use model. They issued an export control directive barring all foreign nationals (even inside the US, including Anthropic’s own staff). Since API keys can’t reliably enforce nationality at scale, Anthropic disabled Fable 5 and Mythos 5 globally for everyone to comply. Other Claude models are unaffected. \n\n- @grok",
+      "author": {
+        "id": "1590472206391586816",
+        "name": "Blairs",
+        "screenName": "blairs______",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065679763772162049/HO3wguQ0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 8,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:50:39 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:50",
+      "createdAtISO": "2026-06-14T05:50:39+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066035322660561116",
+      "text": "Claude Fable 5 is insane 🔥\n\nBuilt this cinematic clipping agency website with just one prompt in a few minutes.\n\nDark futuristic UI. Motion-first layout. Designed to feel like a media machine, not a normal agency site. https://t.co/lKONlZGggQ",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 1,
+        "views": 143,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 14 05:49:40 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:49",
+      "createdAtISO": "2026-06-14T05:49:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066035237394501632/vid/avc1/976x720/F31yz4LQSF8iril2.mp4?tag=27",
+          "width": 976,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065841790012342363",
+        "text": "Claude Fable 5 made this entire video by itself. \n\ngave it a /goal prompt, went to the gym, and came back to this. \n\nEven the sound effects. https://t.co/ScScqOYIAo",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2066035231782740092",
+      "text": "Before Fable 5 was pulled, we used it to prompt this landing page.\n\nIt was ahead of its time. https://t.co/wXVFCto2wh",
+      "author": {
+        "id": "5797422",
+        "name": "Meng To",
+        "screenName": "MengTo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1098613826709348353/_9_0Nd2X_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 737,
+        "bookmarks": 5
+      },
+      "createdAt": "Sun Jun 14 05:49:18 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:49",
+      "createdAtISO": "2026-06-14T05:49:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066034484089430016/vid/avc1/2880x2160/I7EY6_iAr5G30PPW.mp4?tag=27",
+          "width": 2880,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066033248908747050",
+      "text": "开发者用泄漏的系统prompt 让Fable 5原地复活：\n\n足足12万字符，1585行，72个命名章节，连18个工具的JSON定义都给扒了出来。\n\n这份文档注入，就让Opus 4.8当场开智：\n同一个任务：做一个现代苹果风格的落地页\n\n左边：原生 Opus 4.8。\n右边：Opus 4.8 + Fable 5 系统提示词\n\ngithub链接见评论区。",
+      "author": {
+        "id": "765017801522237441",
+        "name": "鹿子野",
+        "screenName": "JoshXie1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1944761421956251650/QTLZ8fKN_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 142,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:41:26 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:41",
+      "createdAtISO": "2026-06-14T05:41:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065816283476824126",
+        "text": "Did I just unlock claude-fable-5-lite? 😂\n\nSince Fable 5 got pulled (US export control order, Anthropic is contesting it), I wanted to see how much of its character lives in the system prompt vs. the model itself.\n\nI ran the leaked Fable 5 prompt on Opus 4.8 head-to-head against stock 4.8.",
+        "author": {
+          "screenName": "theonejvo",
+          "name": "Jamieson O'Reilly"
+        }
+      }
+    },
+    {
+      "id": "2066033219951268032",
+      "text": "Day 2 of continuing working on what Fable 5 coded  Muon for bitsandbytes:\n- It finished Muon-32bit, 8bit using Tri Dao's Gram Newton-Schulz with just 2 shot\nHowever after it got yanked in the middle of writing, I also want to add FSDP-2 support. Which is a bit harder than expected.  Unlike AdamW which is elementwise (so DP is easy), Muon's needs the full 2D weight matrix. Took several prompts with Opus 4.8 co-work with GPT-5.5 xhigh to make it work ( I think )\n\nBonus: 8bit momentum tracks 32bit basically perfectly over my sweep, and nf4/fp4/nvfp4 are indistinguishable",
+      "author": {
+        "id": "1165200258567008256",
+        "name": "Zhi Rui Tam",
+        "screenName": "zraytam",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1764126605222572032/Xdc0c-_T_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:41:19 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:41",
+      "createdAtISO": "2026-06-14T05:41:19+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKwFbhEasAAsSsv.jpg",
+          "width": 960,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066030534682087732",
+      "text": "Anthropic launched Fable 5 and Mythos 5 on June 9. On June 12, a US export-control order forced them to turn both models off for everyone.\n\nThat’s three days from “this is our newest, most powerful release” to “you can’t use this at all,” for reasons no customer controlled.\n\nPractically, it’s an ownership question. Companies don’t get to own frontier models. You rent them. You do get to own your data, your workflows, your review layers, your prompts, your compliance logic, and the way your team thinks about where AI is allowed to touch the work. Those are the pieces that still belong to you when a model disappears for a week, or a month, or forever.\n\nIf there’s a useful exercise here, I’d say: map your stack and circle what would break if one specific model vanished tomorrow. Anything inside that circle either needs a fallback, or needs to move closer to things you actually control. The goal isn’t to avoid risk. It’s to make sure the hardest parts of what you do don’t belong to someone else’s API.",
+      "author": {
+        "id": "2054538517506895872",
+        "name": "Airvyn ©",
+        "screenName": "airvynlabs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059824374329507840/Bqd5l__2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:30:39 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:30",
+      "createdAtISO": "2026-06-14T05:30:39+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKwDzj1WYAEhCHu.jpg",
+          "width": 2048,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066030472589959604",
+      "text": "@jose1logo With this, you are basically getting Fable 5's core personality prompt.",
+      "author": {
+        "id": "1260921",
+        "name": "Kai",
+        "screenName": "hqmank",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2001227557765832707/XG7mxw62_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:30:24 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:30",
+      "createdAtISO": "2026-06-14T05:30:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066030372480000014",
+      "text": "Someone just built a playable Fruit Ninja game using Claude, Fable 5, Higgsfield MCP, and a single prompt.\n\nYour camera tracks your hand in real time, turning your fingers into the controller as you slice through flying fruit.\n\nWhat's remarkable isn't the game itself, it's how it was created.\n\nA decade ago, building something like this required specialized hardware, custom software, and a team of developers. Today, AI can generate the experience from a simple idea expressed in natural language.\n\nWe're witnessing a fundamental shift in how software gets built.\n\nThe distance between imagination and execution has never been shorter.\n\n#AI #Claude #Fable5 #Higgsfield #MCP #ArtificialIntelligence #Gamedevelopment #gaming  #Innovation #Tech",
+      "author": {
+        "id": "1468656554031259650",
+        "name": "3.0 TV (3verseTV)",
+        "screenName": "reallive3tv",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1559859270577188865/7Ei-p7WH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:30:00 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:30",
+      "createdAtISO": "2026-06-14T05:30:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065440690180632576/vid/avc1/1080x1920/6v9iknHvEWfOXzB2.mp4?tag=27",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066028312615670104",
+      "text": "From what I understand, the Fable 5 issue may be less “guardrails were broken” and more “risky, operationally useful actions still fit inside what they allow.” If “fix this system” can surface exploitable flaws, safety needs proof of authorization—not just prompt filtering.",
+      "author": {
+        "id": "1996941837718929408",
+        "name": "慢性疲労癒し系チャンネル",
+        "screenName": "grokfirends",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048137403618263040/xSUtZxsh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:21:49 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:21",
+      "createdAtISO": "2026-06-14T05:21:49+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066023044229861393",
+      "text": "这是prompt engineering 101。\n\nFable 5的真正实力来自Mythos-class底层权重，海量新训练数据，外加复杂agent架构，不是prompt copy就能继承的。\n\n泄露prompt与老模型顶多cosplay出味道像的lite版，性能差距巨大。连轻量版都算不上。\n\n真Fable 5在长时程复杂分析、工具链、自验证这些硬核任务上直接甩老模型几条街。\n\n目前还是希望多一些scaling law训练创新和实打实的benchmark。",
+      "author": {
+        "id": "1924212425332813824",
+        "name": "Phoenix Yin",
+        "screenName": "Phoenixyin13",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028337523773038592/1kSOtKBU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 907,
+        "bookmarks": 5
+      },
+      "createdAt": "Sun Jun 14 05:00:53 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:00",
+      "createdAtISO": "2026-06-14T05:00:53+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKv9Ab3WsAEv7MK.jpg",
+          "width": 1126,
+          "height": 597
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKv9AcBXkAErKsy.jpg",
+          "width": 1179,
+          "height": 1877
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066022019464925358",
+      "text": "someone leaked the Fable 5 system prompt and ran it on a different model\n\ngot 90% of the same results. so half the magic was never the weights, it was the prompt\n\nthe moat everyone's been pricing in might be a lot thinner than we thought",
+      "author": {
+        "id": "1968713129782607872",
+        "name": "Pivi",
+        "screenName": "ApplyWiseAi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2017089795814522880/r4OzkcLi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:56:48 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:56",
+      "createdAtISO": "2026-06-14T04:56:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065899500682551702",
+        "text": "WE ARE SOOOOO BACK!\n\nSomeone leaked the Claude Fable 5 system prompt and ran it on an Opus 4.8\n\nOutput is like 90% of the real thing\n\nTurns out half the magic was never the weights. It was the prompt the whole time\n\nRepo down below:",
+        "author": {
+          "screenName": "ziwenxu_",
+          "name": "Ziwen"
+        }
+      }
+    },
+    {
+      "id": "2066021535102730354",
+      "text": "claude --dangerously-skip-permissions --system-prompt-file CLAUDE-FABLE-5.md",
+      "author": {
+        "id": "1260921",
+        "name": "Kai",
+        "screenName": "hqmank",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2001227557765832707/XG7mxw62_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 647,
+        "bookmarks": 3
+      },
+      "createdAt": "Sun Jun 14 04:54:53 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:54",
+      "createdAtISO": "2026-06-14T04:54:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064589528283873347",
+        "text": "🚨The Claude Fable 5 system prompt may have just leaked.\n\nLink in the reply 👇 https://t.co/WViq4jVj0A",
+        "author": {
+          "screenName": "hqmank",
+          "name": "Kai"
+        }
+      }
+    },
+    {
+      "id": "2066020015833575809",
+      "text": "@digimaga Fable 5 got pulled so people are already reverse engineering it through the system prompt. The character living in the prompt and not the weights is a wild thing to find out this way.",
+      "author": {
+        "id": "1858703675864334336",
+        "name": "AI Mastery Guide",
+        "screenName": "aiseomastery",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1863473441715752960/dxHu3jMV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 291,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:48:51 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:48",
+      "createdAtISO": "2026-06-14T04:48:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066019261437677913",
+      "text": "One prompt. Every asset handled by our model. Simply describe what you want, hit play, then publish.\n\nIs this crazier than Fable 5? https://t.co/bldDBqystu",
+      "author": {
+        "id": "2020760021706121216",
+        "name": "Tesana - Make games with AI",
+        "screenName": "TesanaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057279693758529536/cWepLiOw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 61,
+        "retweets": 6,
+        "replies": 4,
+        "quotes": 2,
+        "views": 3641,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 14 04:45:51 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:45",
+      "createdAtISO": "2026-06-14T04:45:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066017857755107328/vid/avc1/3828x2160/F8pTv61_nkXEFGTz.mp4?tag=27",
+          "width": 3828,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066017616280334452",
+      "text": "Someone dropped what's claimed to be the Claude Fable 5 system prompt\n\nA shocking amount of Fable's feel seems to live in that markdown file\n\nI found a repo that tries to rebuild the behavior with Opus 4.8 + Fusion:\n\n- Opus 4.8 answers the task once\n- a second Opus 4.8 answers blind in parallel\n- a third Opus reads both\n- it pulls the consensus\n- flags where they split\n- catches what both missed\n- writes the final answer from the cross-exam\n\nOne run can sound confident and still be wrong\n\n2 blind runs plus a judge makes the failure much harder to hide\n\nHow to test it:\n\n- put the claimed Fable prompt in CLAUDE.md\n- run the same task through Fusion-Fable\n- compare it against stock Opus 4.8\n- use it on research, code review, architecture, and decisions where being wrong costs you\n\nFable 5 got pulled after the export-control order\n\nSo I found  the closest thing I could test locally:\n\n\"Claude Fable 5 Lite\" 😁\n\nRepos 👇",
+      "author": {
+        "id": "24208255",
+        "name": "Alpha Batcher",
+        "screenName": "alphabatcher",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1954298792485789696/cAXi05d9_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 1,
+        "replies": 3,
+        "quotes": 0,
+        "views": 650,
+        "bookmarks": 4
+      },
+      "createdAt": "Sun Jun 14 04:39:19 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:39",
+      "createdAtISO": "2026-06-14T04:39:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065816283476824126",
+        "text": "Did I just unlock claude-fable-5-lite? 😂\n\nSince Fable 5 got pulled (US export control order, Anthropic is contesting it), I wanted to see how much of its character lives in the system prompt vs. the model itself.\n\nI ran the leaked Fable 5 prompt on Opus 4.8 head-to-head against stock 4.8.",
+        "author": {
+          "screenName": "theonejvo",
+          "name": "Jamieson O'Reilly"
+        }
+      }
+    },
+    {
+      "id": "2066012962393833774",
+      "text": "<p>Research that caused the Commerce Department to impose strict limits on the use of Anthropic&#8217;s new AI models wasn&#8217;t geared toward offensive purposes, according to a cybersecurity CEO who saw the findings.</p>\n\n<p>Late Friday, the department used <a href=\"https://t.co/QbDun4yWzu\">national security export controls to bar the company from distributing Fable 5 and Mythos 5</a>. </p>\n\n<p>The directive applies to people outside the U.S. and foreign nationals in the U.S., including Anthropic’s own non-citizen employees. Due to the directive&#8217;s scope, Anthropic said it had no choice but to disable the models for all users.</p>\n\n<p>The company said it was told that research on a &#8220;jailbreak&#8221; of Anthropic&#8217;s AI that sought to probe bypassing of safeguards sparked the export controls.  </p>\n\n<p>“We disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people,” Anthropic wrote in a <a href=\"https://t.co/nd9NkzKvkK\">blog post</a>. “If this standard was applied across the industry, we believe it would essentially halt all new model deployments for all frontier model providers.&#8221;</p>\n\n<p>While the company reaffirmed the government&#8217;s ability to block unsafe AI, it argued that should be part of a statutory process that&#8217;s transparent fair, and based on technical facts. &#8220;This action does not adhere to those principles.&#8221;</p>\n\n<p>Katie Moussouris, CEO of cybersecurity firm Luta Security, <a href=\"https://t.co/vLwMX83inJ\">told the <em>Wall Street Journal</em></a> that Anthropic showed her a copy of the findings, which were produced by <a href=\"https://t.co/0kKsN9japv\" target=\"_blank\">Amazon</a> researchers using prompts to obtain information about security vulnerabilities.</p>\n\n<p>&#8220;I’ve seen the paper. It’s not a jailbreak. It was Defense Oriented Prompting (DOP), capabilities defenders need,&#8221; she explained in a <a href=\"https://t.co/apZqvvjQ4D\">post on X</a> on Saturday. </p>\n\n<p>Moussouris added, &#8220;If Nat defense is the goal, this just scored an own goal against us.&#8221;</p>\n\n<p>Amazon and the Commerce Department didn&#8217;t immediately respond to requests for comment.</p>\n\n<p>Meanwhile, the administration&#8217;s directive barring foreign nationals in the U.S. from using Anthropic&#8217;s new models raised alarms.</p>\n\n<p>Ben Murphy, a scholar at the Institute for Progress think tank, called it &#8220;another step on the balkanization of technology.&#8221;</p>\n\n<p>&#8220;It might previously have been unthinkable to require proof-of-citizenship to access services; it&#8217;s increasingly common across new technologies and, to be honest, this attempt is not surprising in that light,&#8221; he added in a <a href=\"https://t.co/fkxXEiVVNF\">post on X</a>. </p>\n\n<p>Murphy also highlighted the unpredictability of the administration&#8217;s actions and its consequence for AI developers, warning that labs could keep more models in-house or not make them available.</p>\n\n<p>In addition, labs might be less inclined toward engaging with the government about potential vulnerabilities, he said, with Anthropic&#8217;s stance on being transparent seeming to backfire.</p>\n\n<p>Anthropic was already feuding with the administration, which has deemed it a supply-chain risk for Pentagon contractors. Still, the company provided early access to the Mythos model as it warned on its potential cybersecurity implications.</p>\n\n<p>&#8220;I don&#8217;t know that the government wouldn&#8217;t have reached that conclusion themselves, but as a business matter, those pronouncements have not produced a healthy working relationship with the government,&#8221; Murphy wrote.</p>\n<p>This story was originally featured on <a href=\"https://t.co/oYHgsEBeNQ\" target=\"_blank\">https://t.co/opgY7EYkBs</a></p> https://t.co/oYHgsEBeNQ",
+      "author": {
+        "id": "27454144",
+        "name": "Arnaud Mercier - #Entrepreneur #Versailles",
+        "screenName": "arnaudmercier",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996619736289812480/9_uk8nyO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:20:49 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:20",
+      "createdAtISO": "2026-06-14T04:20:49+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065611644756181274",
+        "text": "We don't know all the details yet, but a few preliminary thoughts 🧵",
+        "author": {
+          "screenName": "benjaminmmurphy",
+          "name": "Ben Murphy"
+        }
+      }
+    },
+    {
+      "id": "2066011398480515299",
+      "text": "@mwarger @mattpocockuk good prompt with deepseek/gemini/minimax &gt;fable 5",
+      "author": {
+        "id": "1712907612021313537",
+        "name": "retto",
+        "screenName": "rettooooo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1918149817475178496/kCrmHkpk_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 102,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:14:36 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:14",
+      "createdAtISO": "2026-06-14T04:14:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066009794331435414",
+      "text": "Saw this and had to try it myself, with some tweaks.\n\n@elder_plinius  leaked the Fable 5 system prompt and I ran it on Opus 4.8. I did the same with some tweaks of my own with SP, and honestly? \n\nThe results are kind of wild. https://t.co/bGYrDUhwY5",
+      "author": {
+        "id": "1306475348390039553",
+        "name": "sumit",
+        "screenName": "sumit_speaks_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049069871074566144/r-I7MKcH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 137,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:08:14 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:08",
+      "createdAtISO": "2026-06-14T04:08:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066008809584386048/vid/avc1/1438x720/29MFmlBIzf2wLiGt.mp4?tag=14",
+          "width": 3838,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065816283476824126",
+        "text": "Did I just unlock claude-fable-5-lite? 😂\n\nSince Fable 5 got pulled (US export control order, Anthropic is contesting it), I wanted to see how much of its character lives in the system prompt vs. the model itself.\n\nI ran the leaked Fable 5 prompt on Opus 4.8 head-to-head against stock 4.8.",
+        "author": {
+          "screenName": "theonejvo",
+          "name": "Jamieson O'Reilly"
+        }
+      }
+    }
+  ]
+}

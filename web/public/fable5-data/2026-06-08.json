@@ -1,68 +1,5 @@
 [
   {
-    "id": "tyronec__-2063960316950487479",
-    "title": "Editorial interaction design first pass",
-    "author": "Tyrone C.",
-    "handle": "@tyronec__",
-    "sourceUrl": "https://x.com/tyronec__/status/2063960316950487479",
-    "date": "2026-06-08",
-    "kind": "showcase",
-    "scene": "design",
-    "media": "video",
-    "heat": "284 likes · 17 reposts",
-    "tags": [
-      "fable5",
-      "design",
-      "code"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Editorial interaction design first pass\n\nFully made with Claude code https://t.co/EEHD0l2EK8",
-    "metrics": {
-      "likes": 284,
-      "reposts": 17,
-      "replies": 25,
-      "quotes": 1,
-      "views": 18882,
-      "bookmarks": 168
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2063959148954263552/vid/avc1/2340x2160/46OktPLPvOuom3Zn.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
-    ],
-    "summary": [
-      "Summarizes an original X post about editorial interaction design first pass"
-    ],
-    "facets": {
-      "artifactType": "video",
-      "medium": "video",
-      "capability": [
-        "design-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [],
-      "tech": [
-        "claude-code"
-      ],
-      "risk": []
-    },
-    "mediaThumbUrl": "/fable5-media/tyronec__-2063960316950487479.jpg",
-    "avatarUrl": "/fable5-avatars/tyronec__.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1841494074815102976/oPZYQX6v_normal.jpg",
-    "categories": [
-      "design",
-      "code"
-    ]
-  },
-  {
     "id": "spect3ral-2064032133904032215",
     "title": "Prompt-driven motion or animation demo",
     "author": "Ahad Shams",
@@ -99,7 +36,7 @@
       "https://video.twimg.com/amplify_video/2064032015062536192/vid/avc1/1080x1080/gMn-GhsRMq9OlPe6.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
+    "lastFetchedAt": "2026-06-14T06:19:33.772Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -134,81 +71,6 @@
       "3d",
       "agents",
       "prompts"
-    ]
-  },
-  {
-    "id": "hammertime_one-2063968395108942335",
-    "title": "Claude Fable 5 availability update",
-    "author": "hammertime",
-    "handle": "@hammertime_one",
-    "sourceUrl": "https://x.com/hammertime_one/status/2063968395108942335",
-    "date": "2026-06-08",
-    "kind": "showcase",
-    "scene": "games",
-    "media": "video",
-    "heat": "69 likes · 2 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "videos",
-      "3d",
-      "code",
-      "news"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Junior JavaScript devs earn $80K/year this one just gave you a full game engine for free.\n\nthis guy coded Pac-Man from scratch in JavaScript\nno talking, just pure ASMR coding\n\njust do it without Claude Code\n\nand it's harder than it looks:\n\n> built Pac-Man controls from zero\n> used Dijkstra algorithm for ghost movement\n> ghosts pathfind in real time\n> open source - fork it on GitHub\n\nfully manual - that's pretty cool, right?\n\nDijkstra is the same algorithm used in Google Maps for shortest path\nnow it's chasing Pac-Man\n\nthe ghosts still have a bug - sometimes they get stuck in corners\n\nthis is what JavaScript can do in the right hands\n\nhave you ever built a game from scratch?\n\ntimecodes:\n00:00 - Keyboard Check\n00:18 - Creating files\n00:35 - Preparing index.html and introducing assets\n02:12 - Running HTML file\n02:43 - Coding game.js\n04:16 - Creating map[]\n13:20 - drawWalls()\n19:14 - drawWalls() is done\n19:52 - Coding pacman.js\n21:24 - pacman.moveProcess()\n22:03 - directions constants\n22:45 - pacman.moveForwards()\n23:40 - pacman.moveBackwards()\n25:25 - pacman.checkCollision()\n27:25 - pacman.changeAnimation()\n27:59 - createNewPacman()\n29:08 - pacman.draw()\n32:00 - Solving animation bug\n32:23 - Creating event listener for keyboard\n33:00 - Getting keyCodes of wasd and arrow keys\n35:33 - pacman.changeDirectionIfPossible()\n36:42 - Pacman can move now\n37:53 - drawFoods()\n39:38 - https://t.co/ZJMC9MXr5F()\n41:15 - Pacman can eat now\n42:15 - Fix on map\n42:55 - drawScore()\n44:50 - Coding ghost.js\n46:36 - createGhosts()\n50:16 - drawGhosts()\n51:48 - ghost.changeDirectionIfPossible()\n52:33 - ghost.isInRangeOfPacman()\n56:36 - ghost.changeRandomDirection()\n57:05 - ghost.calculateNewDirection()\n59:05 - ghost.addNeighbors() - Helper function for Dijkstra path finder algorithm\n01:04:39 - Solving a bug on path finder function\n01:05:38 - pacman.checkGhostCollision()\n01:07:32 - restartGame()\n01:08:06 - gameOver()\n01:08:27 - drawLives()\n01:11:00 - drawGameOver()\n01:14:03 - drawWin()\n01:15:55 - Completed\n01:16:49 - Drawing range of ghosts\n01:19:25 - Incredible fail :(\n01:21:13 - Winner winner, chicken dinner",
-    "metrics": {
-      "likes": 69,
-      "reposts": 2,
-      "replies": 20,
-      "quotes": 0,
-      "views": 4979,
-      "bookmarks": 42
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2063966197402816512/vid/avc1/1920x1080/8-lg9LktgYhivgL2.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Shows a motion or video generation demo associated with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "design-gen",
-        "motion-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [
-        "claude-code"
-      ],
-      "risk": [
-        "benchmark-claim",
-        "market-claim"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/hammertime_one-2063968395108942335.jpg",
-    "avatarUrl": "/fable5-avatars/hammertime_one.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2029237611601248260/Q9USmnnF_normal.jpg",
-    "categories": [
-      "games",
-      "videos",
-      "3d",
-      "code",
-      "news"
     ]
   },
   {
@@ -247,7 +109,7 @@
       "https://video.twimg.com/amplify_video/2064003268574085120/vid/avc1/720x1280/vGsnZHepVfX8b-nd.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
+    "lastFetchedAt": "2026-06-14T06:19:33.772Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -287,83 +149,6 @@
     ]
   },
   {
-    "id": "antisadh-2063828850728161730",
-    "title": "Playable game prototype built with Fable 5",
-    "author": "Antid",
-    "handle": "@antisadh",
-    "sourceUrl": "https://x.com/antisadh/status/2063828850728161730",
-    "date": "2026-06-08",
-    "kind": "showcase",
-    "scene": "games",
-    "media": "video",
-    "heat": "31 likes · 3 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "apps",
-      "3d",
-      "design",
-      "code"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "A KID ON TIKTOK MADE $2,000 IN A MONTH WITH AI. ONE REPO ON GITHUB SHIPS A BROWSER GAME IN A WEEKEND THAT PULLS $10,000 A MONTH\n\nthe repo is called claude code game studios. it packs 49 agents, 73 skills and 12 hooks into one command. claude becomes a full game studio with director, design, engineering, art, qa and release\n\nthe stack is phaser plus react for the game and next.js plus stripe for billing. infrastructure under $50 a month, 97% margin after stripe takes its cut\n\nthe model that prints money is a 60 second roguelite with daily streaks and a $9.99 premium tier. after 7 days of consecutive play the cost of breaking the streak feels worse than paying the fee\n\n1,000 subscribers at $9.99 lands at $9,990 a month. browser games skip the 30% app store cut and deploy in minutes through vercel\n\nmost people will keep talking about the game they want to build. a few will open the repo this weekend and have something playable by sunday\n\nbookmark this and read the article below",
-    "metrics": {
-      "likes": 31,
-      "reposts": 3,
-      "replies": 5,
-      "quotes": 0,
-      "views": 2967,
-      "bookmarks": 14
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2063828668095627264/vid/avc1/1080x1920/eFZIMVSyLrGzO7SG.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Describes an agentic workflow around Claude Fable 5, focused on game-building rather than a simple chat response."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "design-gen",
-        "3d-gen",
-        "automation"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [
-        "ecommerce",
-        "game-dev"
-      ],
-      "tech": [
-        "claude-code",
-        "react"
-      ],
-      "risk": [
-        "market-claim"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/antisadh-2063828850728161730.jpg",
-    "avatarUrl": "/fable5-avatars/antisadh.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2050597482061578240/zWQ8MKWq_normal.jpg",
-    "categories": [
-      "games",
-      "apps",
-      "3d",
-      "design",
-      "code"
-    ]
-  },
-  {
     "id": "rejoiceitua-2064048804127498528",
     "title": "Website or web app built with Fable 5",
     "author": "UI & UX and Ai with Rejoice",
@@ -398,7 +183,7 @@
       "https://video.twimg.com/amplify_video/2064048479882690561/vid/avc1/1080x1920/jKDAQlfbs4Z-oQcq.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
+    "lastFetchedAt": "2026-06-14T06:19:33.772Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -468,7 +253,7 @@
       "https://video.twimg.com/amplify_video/2063944343925170176/vid/avc1/1208x718/an-sWN9v9AkKOXZj.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
+    "lastFetchedAt": "2026-06-14T06:19:33.772Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -501,66 +286,6 @@
       "design",
       "prompts"
     ]
-  },
-  {
-    "id": "rockzailab-2063916929853874411",
-    "title": "Higgsfield MCPとClaudeを連携させると、ウェブサイトや画像・動画の作成だけでなく、制作した...",
-    "author": "Rockzheart.AI.ART",
-    "handle": "@rockzailab",
-    "sourceUrl": "https://x.com/rockzailab/status/2063916929853874411",
-    "date": "2026-06-08",
-    "kind": "showcase",
-    "scene": "agents",
-    "categories": [
-      "agents"
-    ],
-    "media": "video",
-    "heat": "24 likes · 3 reposts",
-    "tags": [
-      "fable5",
-      "agents"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Higgsfield MCPとClaudeを連携させると、ウェブサイトや画像・動画の作成だけでなく、制作した動画の評価や改善ポイントの提案までしてくれるので、すごく参考になります✨ https://t.co/dLuFHXJad0",
-    "metrics": {
-      "likes": 24,
-      "reposts": 3,
-      "replies": 0,
-      "quotes": 0,
-      "views": 1152,
-      "bookmarks": 8
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2063916354403782656/vid/avc1/1202x1022/qKRCLYik6TURsq8g.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Describes an agentic workflow around Claude Fable 5, focused on agentic automation rather than a simple chat response."
-    ],
-    "facets": {
-      "artifactType": "video",
-      "medium": "video",
-      "capability": [],
-      "evidence": [
-        "commentary"
-      ],
-      "domain": [],
-      "tech": [
-        "mcp",
-        "higgsfield"
-      ],
-      "risk": []
-    },
-    "mediaThumbUrl": "/fable5-media/rockzailab-2063916929853874411.jpg",
-    "avatarUrl": "/fable5-avatars/rockzailab.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1973799317074018304/1Kb9aCN9_normal.jpg"
   },
   {
     "id": "peshala1996-2064002761599897757",
@@ -599,7 +324,7 @@
       "https://video.twimg.com/amplify_video/2058023086621097984/vid/avc1/1280x720/B4_-Ik0lJ_aBvrni.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
+    "lastFetchedAt": "2026-06-14T06:19:33.772Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -624,64 +349,6 @@
     "mediaCacheError": "Command failed: ffmpeg -y -hide_banner -loglevel error -ss 00:00:01 -i https://video.twimg.com/amplify_video/2058023086621097984/vid/avc1/1280x720/B4_-Ik0lJ_aBvrni.mp4?tag=14 -frames:v 1 -q:v 4 /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/peshala1996-2064002761599897757.jpg\n[in#0 @ 0x87cc1c000] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://video.twimg.com/amplify_video/2058023086621097984/vid/avc1/1280x720/B4_-Ik0lJ_aBvrni.mp4?tag=14.\nError opening input files: Server returned 5XX Server Error reply\n",
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2020110078070910979/Psr87Dx5_normal.jpg",
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/peshala1996.jpg https://pbs.twimg.com/profile_images/2020110078070910979/Psr87Dx5_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": ""
-  },
-  {
-    "id": "aiibe-2063998615656227098",
-    "title": "This is fun to make",
-    "author": "Souk Syp.",
-    "handle": "@aiibe",
-    "sourceUrl": "https://x.com/aiibe/status/2063998615656227098",
-    "date": "2026-06-08",
-    "kind": "showcase",
-    "scene": "experiments",
-    "categories": [
-      "experiments"
-    ],
-    "media": "video",
-    "heat": "X post",
-    "tags": [
-      "fable5",
-      "experiments"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "This is fun to make. A teaser of Spider Nua (umami) made with Claude, GPT image 2 and Seedance 2.0 Plus via Artcraft. https://t.co/2A9Gurrsqu",
-    "metrics": {
-      "likes": 0,
-      "reposts": 0,
-      "replies": 1,
-      "quotes": 0,
-      "views": 44,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2063997414604730368/vid/avc1/1280x720/zJ51Me6lX0rY6gyR.mp4?tag=14"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-13T07:54:33.023Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
-    ],
-    "summary": [
-      "Summarizes an original X post about this is fun to make"
-    ],
-    "facets": {
-      "artifactType": "video",
-      "medium": "video",
-      "capability": [],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [],
-      "tech": [],
-      "risk": []
-    },
-    "mediaCacheError": "Command failed: ffmpeg -y -hide_banner -loglevel error -ss 00:00:01 -i https://video.twimg.com/amplify_video/2063997414604730368/vid/avc1/1280x720/zJ51Me6lX0rY6gyR.mp4?tag=14 -frames:v 1 -q:v 4 /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/aiibe-2063998615656227098.jpg\n[in#0 @ 0xc11010000] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://video.twimg.com/amplify_video/2063997414604730368/vid/avc1/1280x720/zJ51Me6lX0rY6gyR.mp4?tag=14.\nError opening input files: Server returned 5XX Server Error reply\n",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2017255573658419200/0jRYIqUX_normal.jpg",
-    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/aiibe.jpg https://pbs.twimg.com/profile_images/2017255573658419200/0jRYIqUX_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
     "mediaThumbUrl": ""
   }
 ]

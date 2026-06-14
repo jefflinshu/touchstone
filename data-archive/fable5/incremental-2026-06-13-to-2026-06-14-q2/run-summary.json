@@ -1,0 +1,21 @@
+{
+  "from": "2026-06-13",
+  "to": "2026-06-14",
+  "mode": "latest",
+  "officialOnly": false,
+  "withReplies": false,
+  "maxReplies": 12,
+  "minViews": 0,
+  "target": 100,
+  "queries": [
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\"))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (prompt OR prompts OR \"copy prompt\" OR tutorial OR guide))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media)",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (design OR ui OR ux OR figma OR portfolio OR \"hero section\" OR \"liquid glass\"))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (animation OR animated OR motion OR cinematic OR video OR \"motion design\"))"
+  ],
+  "candidates": 100,
+  "conversationFetchFailures": 0,
+  "failedHandles": 0,
+  "generatedAt": "2026-06-14T06:10:50.326Z"
+}

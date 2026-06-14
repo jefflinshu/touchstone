@@ -1,0 +1,808 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066040084298674342",
+      "text": "RIP Fable 5.\nIn memory, a deep analysis of the #decompwlj made two days ago with it:\n\n➡️https://t.co/dDzRQ5QTow\n\n➡️https://t.co/ZxsWjKmN1Q\n\n#decompwlj #math #AI #Anthropic #Claude #Fable #mathematics #sequence #numbers #graph #PrimeNumbers #NumberTheory #sieve #arithmetic https://t.co/aNoeP6inkI",
+      "author": {
+        "id": "2242189279",
+        "name": "Rémi Eismann",
+        "screenName": "decompwlj",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1599011237546926081/n2XGxPLG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 7,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 06:08:35 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:08",
+      "createdAtISO": "2026-06-14T06:08:35+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKwMf_jXUAADNrS.jpg",
+          "width": 997,
+          "height": 812
+        }
+      ],
+      "urls": [
+        "https://decompwlj.com/decompwlj_deep_analysis_report.html",
+        "https://web.archive.org/web/20260613101724/https://decompwlj.com/decompwlj_deep_analysis_report.html"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066039761035251882",
+      "text": "Anthropic's Claude Fable 5 system prompt just leaked.\n1500+ lines of the most detailed AI safety rules ever written.\nHere's the wildest thing I found:\nClaude has opinions. It's just told not to share them.\n\"Claude is cautious about sharing personal opinions on currently contested political topics. It needn't deny having opinions, but can decline to share them.\"\nIt gets weirder.\nThe prompt explicitly bans self-harm counseling techniques like \"hold an ice cube\" or \"snap a rubber band.\" Anthropic's reasoning: they mimic the sensation of self-harm and reinforce the pattern.\nInstead of interrupting — they make it worse.\nBut here's the part nobody is talking about:\nClaude Fable 5 has a secret twin. Same underlying model. Fewer safety restrictions.\nIt's called Claude Mythos 5 — an uncensored version available only to \"approved organizations.\"\nOne model. Two personalities. One locked, one hidden.\nThe most intelligent AI is also the most tightly controlled.\nAnd the demand for the uncensored version is real enough that Anthropic built one — just not for you.\nFull breakdown → https://t.co/wKdJu4oQFE",
+      "author": {
+        "id": "1726121566264770560",
+        "name": "HackAIGC",
+        "screenName": "HackAigc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1732039655586226176/EtcXuDyv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 06:07:18 +0000 2026",
+      "createdAtLocal": "2026-06-14 14:07",
+      "createdAtISO": "2026-06-14T06:07:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066037210491888051",
+      "text": "On Friday a US Commerce Department export-control order blocked foreign nationals from Fable 5 and Mythos 5, and Anthropic shut both models off for every customer rather than try to sort Americans from everyone else. Read quickly, it's a routine export-control story. Washington tightened the gate, the company complied, foreign users lost access.\n\nEurope is reading it differently, and the difference is the whole point. The question Brussels took from Friday wasn't model access. It was who controls the switch.\n\nEuropean governments and companies thought they were buying cloud and AI services. What they were actually holding was permission, granted inside a US legal and infrastructure stack. That distinction stays invisible while everything runs, and becomes the only thing that matters the moment one order can turn the service off overnight, which is exactly what happened. AWS confirmed Anthropic asked it to revoke access for all users in all regions. The server can sit in Frankfurt and the customer in Paris, and the final permission still sits in Washington.\n\nThe detail that travels furthest is that even the vendor couldn't keep its own flagship on. Anthropic called the order a misunderstanding, said the jailbreak behind it was narrow and could be pulled from other public models too, and is fighting to restore access. All true, and all beside the point for a European procurement officer. If the company that built the model can be switched off this fast, \"buying the service\" was never the right verb.\n\nThis is why the EU's June 3 sovereignty package suddenly reads less like a policy bundle and more like a sales pitch with good timing. Chips Act 2.0, the Cloud and AI Development Act, an open-source strategy, an energy-AI roadmap. The blunt version is Europe trying to stop renting the most sensitive parts of its stack from someone who can revoke it.\n\nCADA is the load-bearing piece. It sets four sovereignty tiers for cloud and AI, scored on who controls the service and supply chain, where inference data is processed, where the infrastructure sits, and the level of cybersecurity. The top tier wants EU ownership and control, EU-cleared staff, no inference data leaving the bloc, and third-party audits signed off by national authorities. It sounds boring. It's supposed to. Procurement rules are where sovereignty stops being a speech.\n\nThe numbers underneath are the harder part. Europe runs more than 80% of its digital stack on non-EU providers, three US hyperscalers hold over 70% of its cloud, and it makes around 10% of the world's chips. Chips Act 2.0 targets €120 billion of investment by 2035, against a 20%-of-global-production goal that most analysts already expect it to miss. CADA wants EU data-center capacity tripled in five to seven years, roughly €200 billion, mostly private. The rules are the easy part. Paying for the infrastructure that makes them usable is the bill.\n\nKorea is sitting in the same seat without the same lever. It runs on the same US AI stack, it has been inside US export-control crossfire before, and its own sovereign-AI talk leans on building the silicon rather than writing the procurement rules. Same lesson Europe just got. Different tool to answer it with.\n\nSovereign AI used to sound like a slogan. After Friday, it reads like a procurement memo with a large bill stapled to the back. What decides whether it's real is dull on purpose, and it plays out over the next 18 to 24 months in Parliament and Council: the Level 4 cloud rules, the public-sector procurement mandates, the limits on inference data leaving the EU, and who actually funds tripling the data centers. That's the scorecard. The slogan was free. The memo isn't.",
+      "author": {
+        "id": "253138059",
+        "name": "Ryzm",
+        "screenName": "Goeun_6121",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057398243261304832/uBOpGOAp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:57:10 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:57",
+      "createdAtISO": "2026-06-14T05:57:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKwJ4PcaEAAaTWS.jpg",
+          "width": 1122,
+          "height": 1402
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066035656183156923",
+      "text": "serious question: is Fable 5 actually approaching AGI, or did Anthropic just pull off the most effective marketing stunt of the decade? \n\nbecause \"the government made us turn it off\" is the most viral tagline an AI lab has ever had.",
+      "author": {
+        "id": "1602293325574426625",
+        "name": "Erik",
+        "screenName": "erikcreating",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2005965672229031936/jq_ldyKT_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:51:00 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:51",
+      "createdAtISO": "2026-06-14T05:51:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065597531644743999",
+        "text": "The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees.\n\nThe net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 for all our customers to ensure compliance.\n\nAccess to all other Claude models is not affected.\n\nWe apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.\n\nRead our full statement: https://t.co/bwn0sximKZ",
+        "author": {
+          "screenName": "AnthropicAI",
+          "name": "Anthropic"
+        }
+      }
+    },
+    {
+      "id": "2066035322660561116",
+      "text": "Claude Fable 5 is insane 🔥\n\nBuilt this cinematic clipping agency website with just one prompt in a few minutes.\n\nDark futuristic UI. Motion-first layout. Designed to feel like a media machine, not a normal agency site. https://t.co/lKONlZGggQ",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 1,
+        "views": 143,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 14 05:49:40 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:49",
+      "createdAtISO": "2026-06-14T05:49:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066035237394501632/vid/avc1/976x720/F31yz4LQSF8iril2.mp4?tag=27",
+          "width": 976,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065841790012342363",
+        "text": "Claude Fable 5 made this entire video by itself. \n\ngave it a /goal prompt, went to the gym, and came back to this. \n\nEven the sound effects. https://t.co/ScScqOYIAo",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2066033098853093631",
+      "text": "@onchainbonsai you’ve built the garden on time! do you still have access to Fable 5?",
+      "author": {
+        "id": "1417667358827614212",
+        "name": "notjp.eth",
+        "screenName": "_notjp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1838620381009084416/o8c4HyRX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:40:50 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:40",
+      "createdAtISO": "2026-06-14T05:40:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066032636343328800",
+      "text": "POV: You finally get access to the best coding/research AI ever made…\n…for 72 hours.  \n\nThen the government says \"nah.\"\n\nFable 5 was that guy.\nR.I.P. legend.\nBack to the lobotomized models.",
+      "author": {
+        "id": "2003021883349020672",
+        "name": "Eno",
+        "screenName": "enodrift",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033424976158826496/6qigsswS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 38,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:39:00 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:39",
+      "createdAtISO": "2026-06-14T05:39:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066030372480000014",
+      "text": "Someone just built a playable Fruit Ninja game using Claude, Fable 5, Higgsfield MCP, and a single prompt.\n\nYour camera tracks your hand in real time, turning your fingers into the controller as you slice through flying fruit.\n\nWhat's remarkable isn't the game itself, it's how it was created.\n\nA decade ago, building something like this required specialized hardware, custom software, and a team of developers. Today, AI can generate the experience from a simple idea expressed in natural language.\n\nWe're witnessing a fundamental shift in how software gets built.\n\nThe distance between imagination and execution has never been shorter.\n\n#AI #Claude #Fable5 #Higgsfield #MCP #ArtificialIntelligence #Gamedevelopment #gaming  #Innovation #Tech",
+      "author": {
+        "id": "1468656554031259650",
+        "name": "3.0 TV (3verseTV)",
+        "screenName": "reallive3tv",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1559859270577188865/7Ei-p7WH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:30:00 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:30",
+      "createdAtISO": "2026-06-14T05:30:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065440690180632576/vid/avc1/1080x1920/6v9iknHvEWfOXzB2.mp4?tag=27",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066029155259392316",
+      "text": "Anthropic just built an AI so powerful the US government shut it down within days of launch.\n\nFable 5 and Mythos 5 were disabled Friday evening after a Commerce Department export control order blocked all foreign nationals from accessing them. Including Anthropic’s own foreign national employees.\n\nHere is why Mythos specifically terrified the government.\n\nIt can detect software vulnerabilities that have remained hidden for decades. Not one or two. Systemic security gaps across critical infrastructure, defence systems and financial networks that human researchers never found. The US has been using the non-public Mythos version to harden its own systems against attack.\n\nThe fear is the same capability in the wrong hands. An adversary with Mythos could find the vulnerabilities before America plugs them.\n\nSomeone jailbroke Fable 5 and shared the technique with the government. The government panicked and shut down a model used by hundreds of millions of people the same day.\n\nAnthropic disagrees. Says the same jailbreak works on GPT-5.5. Says this standard would halt all AI development industry wide.\n\nThe most powerful AI ever made publicly available lasted less than one week.\n\nFollow @Eyuskant for analysis that cuts through the noise",
+      "author": {
+        "id": "336399371",
+        "name": "Kingsley E. Ezemenaka (Ph.D)",
+        "screenName": "Eyuskant",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040329691651870720/0R6P17XX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 47,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:25:10 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:25",
+      "createdAtISO": "2026-06-14T05:25:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066026534343942536",
+      "text": "claude fable 5 has gone too far💀🎮\n\nmet a 17-year-old solo game developer who made $4,600 in his first steam launch.\n\nasked him how long it took to build his game. \n\nhe said: \"4 days.\"\n\nasked him what engine he used. \n\nhe said: \"whatever claude recommended.\"\n\nasked him who wrote the game loop. \n\nhe said: \"claude.\"\n\nasked him who did the UI. \n\nhe said: \"claude.\"\n\nasked him who balanced the difficulty. \n\nhe said: \"claude.\"\n\nasked him who fixed the save system bug. \n\nhe said: \"claude.\"\n\nasked him who reviewed claude's code. \n\nhe said: \"claude.\"\n\nyesterday a publisher offered him a $50K port deal.\n\nnow claude fable 5 got suspended.\n\nnow he's trying to understand the codebase for the first time.  \n\nhe's been crying for 6 hours.  \n\nnone of this happened btw. 😭",
+      "author": {
+        "id": "1839901466057977856",
+        "name": "Satura Dev - Make games with AI",
+        "screenName": "lamiancegames",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057241415793745920/CmqgtHAq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 70,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:14:45 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:14",
+      "createdAtISO": "2026-06-14T05:14:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066024030071615660",
+      "text": "@ChrisSaysSo @anishmoonka Claude fable 5 is way better than any other model for coding. It rewrote my entire complex module in one shot. Zero defects.\n\nNothing comes close to this kind of coding skills. I cant even imagine how powerful the real mythos is.",
+      "author": {
+        "id": "1220424661214863360",
+        "name": "Baba Burner",
+        "screenName": "baba_burner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1220921321720352768/vFcnoMtO_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 55,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:04:48 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:04",
+      "createdAtISO": "2026-06-14T05:04:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066023596086980763",
+      "text": "A few days ago I wrote about being temporarily blocked by #Anthropic for a cybersecurity task (https://t.co/PhQjEwtNUq). The form, the waiting, the restoration by permission. I asked: what mechanism exists for correcting the errors of those who hold access?\nToday the question got a more serious answer.\nThe US government issued an export control directive suspending all access to Fable 5 and Mythos 5 for every foreign national, everywhere, including Anthropic's own employees. Anthropic received the letter at 5:21pm. It contained no specific disclosure of the national security concern. Anthropic reviewed what they believe was the basis for the directive, concluded the capability in question is already available from GPT-5.5 and other public models, and said so plainly. Then they complied anyway.\nThis is the correction mechanism at full resolution. Not a form reviewed at the vendor's discretion. A directive, received at 5pm, with no appeal structure, no technical grounding made public, and no timeline for review.\nAnthropic's statement is worth reading carefully. They wrote that they believe the government should have the ability to block unsafe deployments, but only as part of a process that is \"transparent, fair, clear, and grounded in technical facts.\" They said this action does not adhere to those principles. That is a significant thing for a company to say about its own government.\nWhat they described, without using the word, is the absence of politics in Popper's sense. Not who holds power, but whether its errors can be corrected without catastrophe.\nThe nuclear analogy I raised earlier now looks more apt than I intended. Export controls, applied not to matter but to access, not to weapons but to instruments of knowledge creation. The logic of the strategic race does not wait for a crisis to announce itself.\nFor Israeli companies operating in medicine, genetics, and cybersecurity: the question is no longer theoretical. The substrate beneath frontier AI, compute, institutions, sovereign capability, is the variable that actually determines your future. Access granted by others' discretion is access that can be revoked at 5pm on a Thursday, for reasons they are not required to share.\nToday ended with Anthropic apologizing to its customers and calling it a misunderstanding. That may be exactly right. But structures that operate by permission, and contain no mechanism for correcting their own errors, are precisely the structures worth taking seriously before the next misunderstanding is larger.\n#AI #SovereignAI #Israel #Anthropic",
+      "author": {
+        "id": "2043315343515435008",
+        "name": "biflux 🇮🇱",
+        "screenName": "liminaqua",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2043318736115879936/F_OyZP5N_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 19,
+        "views": 933,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:03:04 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:03",
+      "createdAtISO": "2026-06-14T05:03:04+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/liminaqua/status/2064981849680593028?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064981849680593028",
+        "text": "Today Anthropic blocked our work. The task touched cybersecurity, and that was enough to trigger an automatic restriction. We filled out a form, explained ourselves, and a few hours later access was restored.\nA story with a happy ending. But the ending is not the point.\nThe interesting question is not why we were blocked. Automated systems make mistakes. That is unavoidable and even forgivable. The interesting question is what mechanism existed for correcting the mistake. The answer: a form, reviewed at the vendor's discretion, on the vendor's timeline, under rules the vendor alone may change. Popper taught that the central problem of politics is not who should hold power, but how the errors of power can be corrected without catastrophe. By that standard, the current architecture of AI access has no politics at all. It has only power. And the power in question is of an unusual kind. Frontier models are not products in the ordinary sense. They are instruments of knowledge creation, general-purpose error-correctors that accelerate progress in every field they touch: medicine, genetics, cybersecurity, defense. Whoever controls access to them controls not what others have, but how fast others can come to know. That is a deeper form of control than any monopoly on goods, and it is concentrated today in two or three companies.\nThe nuclear precedent is instructive, but only partly. Those inside the nuclear club did not wait passively for others to catch up. They obstructed proliferation through export controls, sanctions, and technological barriers, not out of malice, but because that is the logic of any strategic race. Expect the same logic here. Yet the analogy fails in a revealing way: a bomb is scarce matter, while a model is knowledge, and knowledge, once created, wants to spread. What does not spread is the substrate beneath it: energy, compute, and the institutions that accumulate expertise. That substrate, not the weights, is the durable bottleneck. This is why open-source releases change less than they appear to.\nHere one must avoid the prophet's error. It is fashionable to declare that building this substrate from scratch, while leaders keep advancing, is practically impossible. But impossibility claims about the future are prophecy, not explanation. The truth is more precise and more useful: it is a hard problem, and hard problems are solved only by those who treat them as soluble, and who start now rather than later.\nThe conclusion follows. Access to frontier AI is national infrastructure, not metaphorically but literally, in the same sense as the energy grid or the financial system. A state that depends on another's discretion for its instruments of knowledge creation does not fully control its own future, because it cannot correct, or even appeal, the errors of those who do.\nFor Israel this is not an abstraction. Sovereign AI capability is the condition under which Israeli companies can meaningfully operate in medicine, genetics, and cybersecurity, and the condition under which they remain Israeli at all. Capital is already learning the new geography. Companies will choose jurisdictions by access to computation and best AI, as they once chose them by access to energy, capital, and markets. Incorporated in Israel, you work with what Israel can guarantee.\nToday's incident was small, and it ended well. But it ended well by permission. Structures that operate by permission, and contain no mechanism for correcting their own errors, are precisely the structures worth taking seriously before they begin to matter.\n#AI #SovereignAI #Israel #Anthropic",
+        "author": {
+          "screenName": "liminaqua",
+          "name": "biflux 🇮🇱"
+        }
+      }
+    },
+    {
+      "id": "2066023177717944605",
+      "text": "america shut down an AI model yesterday and thought it had controlled AI.\nchina gave away their most powerful AI model to the entire world for free at the same moment.\n\n5:21 pm. same minute. not a coincidence.\n\nzhipu AI, the chinese lab behind this, opened their announcement by talking about what happened to fable 5, called it deeply regrettable, and then said something that is hard to ignore, the path to AGI can never become the private property of one country.\n\nand then they just did it. released glm 5.2 under MIT license, meaning any developer anywhere in the world can download it, build on it, change it however they want, no permission needed from anyone.\n\nmost people are looking at this as a US vs China thing but that is not really what is happening here.\n\nwhat is actually happening is that every developer in the world who woke up to find their tools shut down yesterday now has somewhere else to go. and that somewhere else is not asking for anything in return.\n\nreal power in technology was never about who builds the smartest model. it was always about who the world chooses to depend on. and trust does not go to the people who shut doors, it goes to the people who open them.\n\namerica thought controlling AI was winning. china just made every developer on the planet feel like they belong somewhere.\n\nthat is a very different kind of win.",
+      "author": {
+        "id": "1940661832815083520",
+        "name": "Jyoti Meena",
+        "screenName": "GsJyotiM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040506374392774656/oxxpcvRE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 92,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 05:01:25 +0000 2026",
+      "createdAtLocal": "2026-06-14 13:01",
+      "createdAtISO": "2026-06-14T05:01:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065784751345287314",
+        "text": "GLM-5.2 is Fully Open, Frontier Intelligence Belongs to Everyone\n\nToday, the sudden restriction of certain frontier models is deeply regrettable. At a time when access to frontier models is abruptly cut off for non-technical reasons, we are even more convinced of one thing: science should be global.\n\nThe path to AGI (Artificial General Intelligence) must never be enclosed by high walls. We have always believed that AGI should be the cornerstone for all of humanity to collaboratively explore the boundaries of intelligence and solve complex challenges, rather than a privilege monopolized by a few rules and subject to revocation at any moment. In the face of external blockades and restrictions, our attitude is one of radical openness. Frontier intelligence must remain open-source, accessible, and buildable, serving every dedicated developer.\n\nGLM-5.2 is Zhipu's most capable open-source model to date. It not only supports a truly usable 1M context window but also maintains a continuous lead in the independent completion of long-horizon tasks, providing solid foundational support for building complex agent applications. It also continues to be our main engine for creating the strongest domestic coding model.\n\nTonight at 5:21—at this special moment—GLM-5.2 will officially be available to all GLM Coding Plan users (including Lite / Pro / Max). The API will also go live next week.\n\nA step closer to frontier intelligence for everyone.\nThe future of AI is open, and it is for the people.\nModelKey: GLM-5.2",
+        "author": {
+          "screenName": "jietang",
+          "name": "jietang"
+        }
+      }
+    },
+    {
+      "id": "2066019793191448590",
+      "text": "Anthropic built an AI called Fable 5, and it was so powerful that the US government said shut it down.\n\nNow think about it, what must have happened that pushed the government to take this step?\n\nA company found a way to make Fable 5 do things it was never supposed to do. This is called a jailbreak, basically the lock broke.\n\nWhen the government told Anthropic's CEO Dario Amodei to fix it, Dario said this isn't that big of a deal. And that's exactly where the fight started.\n\nThe government listened, disagreed, and issued an order that no person outside the US could access Fable 5. And since Anthropic's own employees are from other countries too, they had to shut down the model for everyone in the world.\n\nSo basically, here was a company that always said safety is our first priority, and when the government reminded them of that same safety, they refused. That's what has everyone confused.\n\nNow both sides have their own story. The government says this is a national security issue. Anthropic says this is an overreaction.\n\nBut nobody is asking the people who had built their entire work around these tools and woke up one day to find everything shut down.\n\nWhen powerful people fight, the cost is always paid by everyone else.",
+      "author": {
+        "id": "1940661832815083520",
+        "name": "Jyoti Meena",
+        "screenName": "GsJyotiM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040506374392774656/oxxpcvRE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 74,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:47:58 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:47",
+      "createdAtISO": "2026-06-14T04:47:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065853007619588171",
+        "text": "I’ve had a number of conversations with folks inside and outside government about the current situation with Anthropic, and here is what I believe to be true: \n\n— As we know, Anthropic publicly released its Mythos class models earlier this week under the commercial name Fable. \n\n— Fable is Mythos with guardrails. But if those guardrails fail, then you’ve exposed Mythos and its advanced cyber capabilities to people who shouldn’t have them. (Keep in mind that Anthropic itself widely promoted the idea that Mythos was a cyberweapon and needed to be regulated as such. They asked for government regulation of Mythos and championed the guardrails on Fable. If there is a vulnerability — big or small — it is Anthropic’s responsibility to patch.)\n\n— A highly credible trusted partner of both Anthropic and the USG who was testing Fable came forward with a jailbreak of those guardrails. The Admin asked Dario to fix the jailbreak or de-deploy the model. Dario refused. \n\n— In their blog post, Anthropic defended its decision by saying the jailbreak isn’t serious. That is not what the trusted partner and the USG believe; nor is that kind of minimizing language consistent with Anthropic’s brand as the AI safety company. It’s difficult to fathom how they could claim a jailbreak allowing operability of a cyber weapon could be defined as not “serious.” \n\n— In the past, Anthropic has always said that safety must be top priority and taken super seriously. In this case, Anthropic prioritized the continued offering of the consumer model over safety.\n\n— In reaction, the Admin issued the export control. The Admin did this reluctantly. It’s been very surprised that Anthropic hasn’t wanted to cooperate with a reasonable safety request (ie fixing the jailbreak issue). Anthropic’s reaction is very much at odds with their branding and ethos as a safe AI research community. \n\n— The Admin’s hope now is that Anthropic remediates the safety issue, the export control is lifted, and Fable goes back into general release. The Admin wants all of this to happen as soon as possible. It is frankly bewildered that Anthropic hasn’t wanted to comply with safety requests that it previously said were its highest priority.\n\n— Those trying to misdirect and tie this action to the prior DoW/Anthropic issues are wrong. The Admin values Anthropic’s technical capabilities and feels that this issue, while serious, should be easily resolved. The ball is in Anthropic’s court.",
+        "author": {
+          "screenName": "DavidSacks",
+          "name": "David Sacks"
+        }
+      }
+    },
+    {
+      "id": "2066019261437677913",
+      "text": "One prompt. Every asset handled by our model. Simply describe what you want, hit play, then publish.\n\nIs this crazier than Fable 5? https://t.co/bldDBqystu",
+      "author": {
+        "id": "2020760021706121216",
+        "name": "Tesana - Make games with AI",
+        "screenName": "TesanaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057279693758529536/cWepLiOw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 61,
+        "retweets": 6,
+        "replies": 4,
+        "quotes": 2,
+        "views": 3641,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 14 04:45:51 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:45",
+      "createdAtISO": "2026-06-14T04:45:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066017857755107328/vid/avc1/3828x2160/F8pTv61_nkXEFGTz.mp4?tag=27",
+          "width": 3828,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066017788511088732",
+      "text": "HE BUILT A PARKOUR SIMULATOR WITH FABLE 5 AND THE AI WROTE ITS OWN SELF VERIFYING MOVEMENT RULES WITHOUT HIM\n\nWhen an AI model starts setting its own quality standards, you know something fundamental just changed.\n https://t.co/ALwpwWTAzY",
+      "author": {
+        "id": "1858703675864334336",
+        "name": "AI Mastery Guide",
+        "screenName": "aiseomastery",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1863473441715752960/dxHu3jMV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 49,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:40:00 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:40",
+      "createdAtISO": "2026-06-14T04:40:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065813111202799616/vid/avc1/2916x2160/IEBGfKWqlfS-JmxR.mp4?tag=27",
+          "width": 2916,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066017739542823099",
+      "text": "@YaseenK7212 This is actually made on Tesana not Fable 5",
+      "author": {
+        "id": "2020760021706121216",
+        "name": "Tesana - Make games with AI",
+        "screenName": "TesanaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057279693758529536/cWepLiOw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 60,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 04:39:48 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:39",
+      "createdAtISO": "2026-06-14T04:39:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066017630931325187",
+      "text": "@lexx_aura This is actually made on Tesana not Fable 5",
+      "author": {
+        "id": "2020760021706121216",
+        "name": "Tesana - Make games with AI",
+        "screenName": "TesanaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057279693758529536/cWepLiOw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 51,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:39:22 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:39",
+      "createdAtISO": "2026-06-14T04:39:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066014836073308663",
+      "text": "if you ban Fable 5, then you must also ban GPT-5.5\n\nbut since banning GPT-5.5 was never on the table... \n\nworth asking: why was there no engineer in the room when this decision was made?",
+      "author": {
+        "id": "1938342289136324608",
+        "name": "Liam OD",
+        "screenName": "liamjamesbodman",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2025109530292502528/7yuJCXEc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:28:16 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:28",
+      "createdAtISO": "2026-06-14T04:28:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065896820228640797",
+        "text": "@Polymarket We ran Fable 5 vs GPT-5.5 on real coding tasks before this. Better at planning, identical on execution. Anthropic's own argument -- that this capability is already in GPT-5.5 -- checks out from our testing: https://t.co/6dyNyjC53o",
+        "author": {
+          "screenName": "kilocode",
+          "name": "Kilo"
+        }
+      }
+    },
+    {
+      "id": "2066014830352560631",
+      "text": "Fable 5 + Mythos 5 gone. US shut them down after 3 days.\\n\\nDevs who built around them? Blocked overnight.\\n\\nOpenClaw users? Swapped to Sonnet 4.6 and kept shipping.\\n\\nModel-agnostic infra &gt; chasing the frontier.",
+      "author": {
+        "id": "1912684909573074944",
+        "name": "OneClaw&ClawRouters&CodeRouter",
+        "screenName": "VibeSeo1128",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2019963661708849154/JL7x3NDw_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 28,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:28:14 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:28",
+      "createdAtISO": "2026-06-14T04:28:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066014730687598778",
+      "text": "#AI #Geopolitics #DeepTech #TechLeadership #SovereignAI #Innovation\nThe US government’s sudden directive to lock down Anthropic’s Fable 5 and Mythos 5 models from all foreign nationals including foreign tech workers inside the US and Anthropic’s own engineers is a massive geopolitical earthquake.  \nFor decades, the global IT and tech service ecosystem (especially in India) was built on a simple assumption: open, equal access to the world’s best software.\n\nThat assumption just shattered.\nThis isn't just a regulatory hiccup; it’s again complete rewriting of global tech strategy. Here are the three massive lessons every executive and founder must absorb right now:\n\n1. The \"Passportization\" of Tech Talent\nAs LightSpeed’s Hemant Mohapatra pointed out, we are entering an era where working on State-of-the-Art (SOTA) AI models will require citizenship and top-secret security clearances. When legendary AI researchers on visas can be legally locked out of the code they are helping to build, global tech talent mobility faces a historic bottleneck. If your enterprise strategy relies on a borderless talent pool for frontier AI, your model is now highly vulnerable.\n\n2. The Danger of \"Changing Landlords\"\nWith US frontier models being locked behind national security walls, many enterprises are looking at the rapid rise of Chinese open-source giants (like DeepSeek and Qwen, which dominated global downloads recently). But as tech policy experts note, rushing from US dependency into Chinese dependency isn’t sovereignty—it’s just changing your landlord. True digital equity means building domestic, sovereign infrastructure so that trust becomes a strategic choice, not a desperate compulsion.\n\n3. Restrictions Are the Ultimate Catalyst\nHistory shows that tech blockades backfire on the blocker. Decades ago, when strict restrictions were placed on IBM mainframes entering India, the local tech ecosystem didn’t collapse - it pivoted, adapted to open systems, and built a world-class, multi-billion-dollar IT industry from scratch. Geopolitical constraints don't kill innovation; they force self-reliance.\n\nThe Takeaway:\nFrontier AI models are trained on the world's data including the text, code, and languages of global users. Yet, the commercial and strategic gates are now controlled by a single flag.\nThe lesson for nations and enterprises outside the US is clear: If you do not own your infrastructure, your innovation can be turned off with a single government memo.\n\nThe era of passive SaaS consumption is over. The era of localized, sovereign AI self-reliance has officially begun. On prem will always have your “back”. \n\nAre you building on a foundation you actually own, or are you just renting space on a volatile frontier?\n\n#TechPolicy #CloudInfrastructure #EnterpriseAI #FutureOfWork #GlobalEconomy #TechSovereignty",
+      "author": {
+        "id": "469044906",
+        "name": "Rishi_The_Kane",
+        "screenName": "Rishi_Kane",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1946205451168985088/f65n7hfO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 70,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:27:51 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:27",
+      "createdAtISO": "2026-06-14T04:27:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066013625177756130",
+      "text": "I didn’t even like Fable 5 that much. I still think codex is far superior. Fable may have done better UI work, but I felt codex just made less mistakes for big projects.",
+      "author": {
+        "id": "1492249466522509312",
+        "name": "Khoa Le",
+        "screenName": "khoalefilms",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063163199168339969/0ng2Rkm5_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 41,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 04:23:27 +0000 2026",
+      "createdAtLocal": "2026-06-14 12:23",
+      "createdAtISO": "2026-06-14T04:23:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066007093245845811",
+      "text": "🇺🇸 BREAKING: The US has banned foreign nationals from using Anthropic's most advanced AI models—Mythos 5 and Fable 5. Here's what this means:\n\n🔒 What happened:\nThe Trump administration ordered Anthropic to suspend ALL access by foreign nationals to its most capable AI systems. Anthropic has now disabled both models entirely to comply with the directive citing national security concerns.\n\n🌍 Immediate Impact:\n\nMillions of users worldwide lose access to cutting-edge AI capabilities\n\nForeign researchers & developers can't use these models for critical work\n\nAI collaboration between US and international teams is now restricted\n\nGlobal tech startups built on these models face major disruptions[reddit][youtube]\n\n🛑 The bigger question: Is this the end of US globalization?\n\n🇮🇳 For India: This is a wake-up call to invest in our own AI capabilities and not rely solely on US tech.\n#Anthropic",
+      "author": {
+        "id": "1845103566450823168",
+        "name": "RB.",
+        "screenName": "KailashVashi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1944993421535436800/vSnsBE4o_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 38,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 03:57:30 +0000 2026",
+      "createdAtLocal": "2026-06-14 11:57",
+      "createdAtISO": "2026-06-14T03:57:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKvuf-sa0AIq-nq.jpg",
+          "width": 400,
+          "height": 224
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066006963821899995",
+      "text": "@Adamisbacklol Claude Fable 5 is not slop. The video\nIt made is",
+      "author": {
+        "id": "1964841414170480640",
+        "name": "jibber",
+        "screenName": "jibberswrld",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049505442402123776/JB1fAyhY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 03:56:59 +0000 2026",
+      "createdAtLocal": "2026-06-14 11:56",
+      "createdAtISO": "2026-06-14T03:56:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066006907371036919",
+      "text": "Thoughts on Anthropic’s Fable 5 being restricted from global release\n\nIf AI makes intelligence abundant (LLMs built on transformer architecture), perhaps the last wealth creation opportunity on earth is to turn ideas into atoms at scale\n\nCurrently, state govts seem to focus solely on attracting GCCs - build grade-A office spaces and enough infra for Google, Nvidia, etc. to lease\n\nGood for short term, but risk peaking and declining by 2035\n\nEmpty office spaces can then be converted into apartments?, (like how textile mills/printing plants in the Cali are now used by startups as office space)\n\nCities that win by 2035 will be those with the highest density of mechanical and electrical engineering talent + will bring about radical land reforms\n\nEvery ambitious state should dedicate large (1000+ acre) zones for semiconductor, robotics, advanced manufacturing, etc. (TSMC Arizona = 1100 acres, Foxconn Wisconsin = 3000 acres)\n\n5800 acre KWIN city proposed by the Karnataka govt sounds the closest\n\nLand pooling mechanisms (Amaravati model) must be normalized to enable rapid construction\n\nThese zones should have FSI of >8x to construct 50+ story buildings, to increase talent density per sq km\n\nJust as Mumbai became the financial capital and Bangalore became the software capital, the next winning city will be the one that focuses on hardware engineering\n\nCentral govt should establish a new uni (eg. IISR – Indian Institute of Space and Robotics) to change the mindset and perception of the youth, and encourage others in the education biz to set up more forward-looking universities\n\nThese unis should teach everything hardware - semiconductors, chips, robotics, rockets, quantum computing, energy systems, desalination, advanced manufacturing\n\nSince this would be funded by taxpayers, all lectures/seminars/events should be in English and livestreamed/accessible on YouTube etc., to maximize talent creation\n\nHighly scientific youth, land, energy, water, minerals, and strategic geography may become the most valuable assets of the post-AI world\n\nAs land/natural resources become more strategic (eg. Trump trying to buy Greenland), long term prosperity requires people in government who are transparent + accountable + highly scientific\n\nCoastal states should aggressively attract data centers by taking advantage of water availability (Vizag seems to be doing this)\n\nPermanent underclass is a possible outcome at the highest\n\nThe ideal govt combines the mind of a libertarian with the heart of a socialist\n\nIf India gets this transition wrong, the consequences will extend far beyond terrible currency weakness\n\nLooking back, much is owed to Jawaharlal Nehru for setting up/enabling IITs and ISRO in the 50s/60s",
+      "author": {
+        "id": "223419278",
+        "name": "Able Joseph",
+        "screenName": "ablejoseph",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1829361568078786560/O3X_j2j4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 94,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 03:56:45 +0000 2026",
+      "createdAtLocal": "2026-06-14 11:56",
+      "createdAtISO": "2026-06-14T03:56:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

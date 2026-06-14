@@ -1,74 +1,74 @@
 {
-  "updatedAt": "2026-06-13",
-  "lastFetchedAt": "2026-06-13T07:54:33.023Z",
-  "cliStatus": "Loaded 1950 locally archived X posts from 12 fetch runs; collection now has 793 source-linked cards and 651 creator profiles.",
+  "updatedAt": "2026-06-14",
+  "lastFetchedAt": "2026-06-14T06:19:33.772Z",
+  "cliStatus": "Loaded 2051 locally archived X posts from 14 fetch runs; collection now has 422 source-linked cards and 356 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
-    "launch-2026-06-08-to-2026-06-12-target500",
-    "launch-2026-06-08-to-2026-06-12-broad-top-target500",
-    "official-claudeai-2026-06-12-to-2026-06-13",
-    "recent-week-2026-06-05-to-2026-06-11",
     "official-claudeai-case-library-2026-06-12",
+    "launch-2026-06-08-to-2026-06-12-broad-top-target500",
+    "recent-week-2026-06-05-to-2026-06-11",
+    "launch-2026-06-08-to-2026-06-12-target500",
     "launch-2026-06-08-to-2026-06-12-latest-target500",
     "recent-2026-06-11-to-2026-06-12",
     "incremental-2026-06-12-to-2026-06-13-creators1",
     "today-2026-06-12-latest-target500",
-    "incremental-2026-06-12-to-2026-06-13-q0",
-    "incremental-2026-06-11-to-2026-06-12-q0"
+    "incremental-2026-06-11-to-2026-06-12-q0",
+    "incremental-2026-06-13-to-2026-06-14-q2",
+    "incremental-2026-06-12-to-2026-06-13-q0"
   ],
-  "total": 793,
+  "total": 422,
   "categoryCounts": [
     {
       "key": "games",
-      "count": 192
+      "count": 145
     },
     {
       "key": "apps",
-      "count": 98
+      "count": 69
     },
     {
       "key": "websites",
-      "count": 76
+      "count": 49
     },
     {
       "key": "videos",
-      "count": 125
+      "count": 98
     },
     {
       "key": "3d",
-      "count": 291
+      "count": 192
     },
     {
       "key": "design",
-      "count": 104
+      "count": 72
     },
     {
       "key": "agents",
-      "count": 171
+      "count": 71
     },
     {
       "key": "prompts",
-      "count": 248
+      "count": 134
     },
     {
       "key": "code",
-      "count": 173
+      "count": 61
     },
     {
       "key": "research",
-      "count": 112
+      "count": 61
     },
     {
       "key": "safety",
-      "count": 43
+      "count": 10
     },
     {
       "key": "news",
-      "count": 63
+      "count": 18
     },
     {
       "key": "experiments",
-      "count": 72
+      "count": 10
     }
   ],
   "chunks": [
@@ -142,103 +142,44 @@
     },
     {
       "file": "chunks/017.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/018.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/019.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/020.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/021.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/022.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/023.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/024.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/025.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/026.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/027.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/028.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/029.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/030.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/031.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/032.json",
-      "count": 24
-    },
-    {
-      "file": "chunks/033.json",
-      "count": 1
+      "count": 14
     }
   ],
   "shards": [
     {
+      "date": "2026-06-14",
+      "file": "2026-06-14.json",
+      "count": 5
+    },
+    {
       "date": "2026-06-13",
       "file": "2026-06-13.json",
-      "count": 65
+      "count": 16
     },
     {
       "date": "2026-06-12",
       "file": "2026-06-12.json",
-      "count": 166
+      "count": 83
     },
     {
       "date": "2026-06-11",
       "file": "2026-06-11.json",
-      "count": 220
+      "count": 115
     },
     {
       "date": "2026-06-10",
       "file": "2026-06-10.json",
-      "count": 228
+      "count": 143
     },
     {
       "date": "2026-06-09",
       "file": "2026-06-09.json",
-      "count": 104
+      "count": 55
     },
     {
       "date": "2026-06-08",
       "file": "2026-06-08.json",
-      "count": 10
+      "count": 5
     }
   ]
 }
