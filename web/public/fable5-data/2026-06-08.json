@@ -346,9 +346,8 @@
       ],
       "risk": []
     },
-    "mediaCacheError": "Command failed: ffmpeg -y -hide_banner -loglevel error -ss 00:00:01 -i https://video.twimg.com/amplify_video/2058023086621097984/vid/avc1/1280x720/B4_-Ik0lJ_aBvrni.mp4?tag=14 -frames:v 1 -q:v 4 /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/peshala1996-2064002761599897757.jpg\n[in#0 @ 0x87cc1c000] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://video.twimg.com/amplify_video/2058023086621097984/vid/avc1/1280x720/B4_-Ik0lJ_aBvrni.mp4?tag=14.\nError opening input files: Server returned 5XX Server Error reply\n",
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2020110078070910979/Psr87Dx5_normal.jpg",
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/peshala1996.jpg https://pbs.twimg.com/profile_images/2020110078070910979/Psr87Dx5_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": ""
+    "mediaThumbUrl": "/fable5-media/peshala1996-2064002761599897757.jpg"
   }
 ]

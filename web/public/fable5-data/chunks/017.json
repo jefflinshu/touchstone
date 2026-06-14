@@ -249,10 +249,9 @@
       "tech": [],
       "risk": []
     },
-    "mediaCacheError": "Command failed: ffmpeg -y -hide_banner -loglevel error -ss 00:00:01 -i https://video.twimg.com/amplify_video/2065309405034196992/vid/avc1/1280x720/5ClphrZ34bKh0_Il.mp4?tag=14 -frames:v 1 -q:v 4 /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/kanfatih-2065311072471363710.jpg\n[in#0 @ 0xac700c000] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://video.twimg.com/amplify_video/2065309405034196992/vid/avc1/1280x720/5ClphrZ34bKh0_Il.mp4?tag=14.\nError opening input files: Server returned 5XX Server Error reply\n",
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1610738097/270718_2187051513508_1163649174_2577882_5620296_n_normal.jpeg",
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/kanfatih.jpg https://pbs.twimg.com/profile_images/1610738097/270718_2187051513508_1163649174_2577882_5620296_n_normal.jpeg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": ""
+    "mediaThumbUrl": "/fable5-media/kanfatih-2065311072471363710.jpg"
   },
   {
     "id": "sinitskim-2065111567314960672",
@@ -383,10 +382,9 @@
       "tech": [],
       "risk": []
     },
-    "mediaCacheError": "Command failed: ffmpeg -y -hide_banner -loglevel error -ss 00:00:01 -i https://video.twimg.com/ext_tw_video/2065344299659616256/pu/vid/avc1/1280x720/nEesnMX8wF6GRfoD.mp4?tag=12 -frames:v 1 -q:v 4 /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/bixxs-2065344317472813187.jpg\n[in#0 @ 0x723008000] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://video.twimg.com/ext_tw_video/2065344299659616256/pu/vid/avc1/1280x720/nEesnMX8wF6GRfoD.mp4?tag=12.\nError opening input files: Server returned 5XX Server Error reply\n",
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1763130666370146304/NMqI_mti_normal.jpg",
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/bixxs.jpg https://pbs.twimg.com/profile_images/1763130666370146304/NMqI_mti_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": ""
+    "mediaThumbUrl": "/fable5-media/bixxs-2065344317472813187.jpg"
   },
   {
     "id": "david1989_zhu-2064937324375572747",
@@ -936,9 +934,8 @@
       ],
       "risk": []
     },
-    "mediaCacheError": "Command failed: ffmpeg -y -hide_banner -loglevel error -ss 00:00:01 -i https://video.twimg.com/amplify_video/2065091917843435523/vid/avc1/1458x918/yaIJshapyC__EaCJ.mp4?tag=27 -frames:v 1 -q:v 4 /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/wall_elearns-2065092164523086099.jpg\n[in#0 @ 0x976c1c000] Error opening input: Server returned 5XX Server Error reply\nError opening input file https://video.twimg.com/amplify_video/2065091917843435523/vid/avc1/1458x918/yaIJshapyC__EaCJ.mp4?tag=27.\nError opening input files: Server returned 5XX Server Error reply\n",
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2055146020342812672/aqWop_6u_normal.jpg",
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/wall_elearns.jpg https://pbs.twimg.com/profile_images/2055146020342812672/aqWop_6u_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": ""
+    "mediaThumbUrl": "/fable5-media/wall_elearns-2065092164523086099.jpg"
   }
 ]
