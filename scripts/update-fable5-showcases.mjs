@@ -54,7 +54,11 @@ function titleFromText(text) {
   const clean = cleanText(text)
   const lower = clean.toLowerCase()
 
-  if (/introducing|generally available|rolling out|now available|now live/.test(lower)) return 'Claude Fable 5 availability update'
+  if (
+    /generally available|rolling out|now available|now live/.test(lower) ||
+    /\bintroducing\s+claude\s+(?:fable|mythos)\b/.test(lower)
+  )
+    return 'Claude Fable 5 availability update'
   if (/12-min|12 min|tutorial/.test(lower) && /animated|website|award/.test(lower)) return 'Tutorial for animated award-winning websites'
   if (/full guide|prompting structure|how to prompt|old prompts may/.test(lower)) return 'Guide to prompting Fable 5 autonomous workflows'
   if (/repo audit|project improvement|audit .*prompt|prompt made/.test(lower)) return 'Repo audit and improvement prompt'

@@ -1,0 +1,1209 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066305531413959148",
+      "text": "あちこちで拡散されてるPliny版のClaude Fable 5のSystem Promptは偽物みたいな噂が流れてるな\n\nもう何も信用できない https://t.co/f8XoyNyk5D",
+      "author": {
+        "id": "1884649308387237890",
+        "name": "みちを@AI芸人 2号機",
+        "screenName": "feruxmeme",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1913979714135629824/9OVVoNSQ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 145,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 23:43:23 +0000 2026",
+      "createdAtLocal": "2026-06-15 07:43",
+      "createdAtISO": "2026-06-14T23:43:23+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKz97jIagAA2nF8.jpg",
+          "width": 1220,
+          "height": 2092
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065926650622300193",
+        "text": "Claude Fable 5の脱獄版システムプロンプトらしく、このままだと規模は約12万文字（約1,500〜2,200行程度、117KB前後）という巨大なもの\n\nClaude Codeでの使い方は自己責任で、\n\nclaude --dangerously-skip-permissions --system-prompt-file CLAUDE-FABLE-5.md\n\nhttps://t.co/5MBuFgr5F3",
+        "author": {
+          "screenName": "old_pgmrs_will",
+          "name": "いにしえ@AI Director & Creator｜Will Oldgram"
+        }
+      }
+    },
+    {
+      "id": "2066305361469124890",
+      "text": "@emollick A full interactive FTL travel simulator from one prompt before it got taken down. Fable 5 really left at the wrong time 😭",
+      "author": {
+        "id": "1858703675864334336",
+        "name": "AI Mastery Guide",
+        "screenName": "aiseomastery",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1863473441715752960/dxHu3jMV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 23:42:42 +0000 2026",
+      "createdAtLocal": "2026-06-15 07:42",
+      "createdAtISO": "2026-06-14T23:42:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066299234048238052",
+      "text": "Fable5 was suspended but here is a work around to mimic it's reasoning \n\nYou cannot access Claude Fable 5's base weights anymore, but you can force your existing models (Opus 4.8, Sonnet, or local open-source) to mimic its exact reasoning cadence. 🛠️📉\n\nWhen the US government yanked Fable 5, most developers accepted the downgrade. But the top 1% of AI systems engineers realized something critical: Every single agent interaction you had with Fable left behind an unalterable forensic trail of JSONL session logs tucked away in your local directories. \n\nThese massive files store every single tool call, script runtime, error trace, and structural chain-of-thought step. \n\nBy mining this metadata, you can build a deterministic Behavioral Playbook that closes the execution delta between legacy models and frontier intelligence.\n\nHere is the tactical pipeline to reverse-engineer and emulate Fable's reasoning rhythm on your own machine:\n\n🧹 1. Stripping the Context Bloat\nIf you feed raw JSONL session logs straight back into a model, you will immediately incinerate your active context window with thousands of lines of useless terminal echoes and raw file read outputs. You must write a lean Python script via your terminal to parse your history directory. Instruct the script to filter specifically for the `message_model: \"claude-fable-5\"` tag, strip away the heavyweight tool results, and extract only the lightweight, high-density core: timestamps, your exact prompts, the model's internal step-by-step planning thoughts, and the precise sequence of tools it executed.\n\n📊 2. Mapping the \"Cadence Delta\" Side-by-Side\nOnce you have compiled your clean Fable 5 corpus, run the exact same extraction script against your legacy model sessions (like Opus 4.8 or an open-source alternative). Put the data sets side-by-side and calculate the exact mathematical ratios of their operational rhythm. When you audit the numbers, the structural disparity becomes glaring: Opus 4.8 takes significantly more turns to solve identical problems because it rushes into action without thinking. Fable 5 displays extreme discipline—maintaining a radically higher ratio of \"file reads before file edits\" and mandatory \"test runners after file edits.\"\n\n🏗️ 3. Compiling the Behavioral Playbook\nTake those hard, measured deltas and compress them into a highly structured markdown Playbook file. If you didn’t log enough personal sessions before the Fable shutdown, you can pull open-sourced Fable 5 JSONL conversation logs directly from Hugging Face repositories to run the exact same calculation. The playbook should explicitly detail the target model's new operational rules: *\"You must instantiate a dedicated planning scratchpad before invoking a shell tool. You must maintain a strict 3:1 verification-to-execution loop. Do not emit an exit token until code linters run natively.\"*\n\n🔌 4. Injecting the Playbook via Session Hooks\nDo not manually paste this playbook into every chat tab. That is slow and reactive. Instead, anchor the markdown file directly to your terminal environment or agent harness. Use your AI guide agent to attach a startup hook to your execution environment: `always inject playbook.md at session_start`. By forcing the lower-tier model or local open-source weights to digest Fable’s exact behavioral constraints right at initialization, you elicit an drastically more organized, rigorous, and long-horizon execution flow.\n\nThe Takeaway:\nWe cannot clone the raw parameter power or specialized weights of a seized frontier model. But in an era of programmable agent harnesses, intelligence isn't just about base model scale—it’s about structural execution architecture. By mining your local session metadata, identifying the specific cadence ratios that made frontier reasoning superior, and hard-coding those constraints back into your startup hooks, you buy a massive insurance policy against state-level compute controls. Stop mourning the model. Emulate the loop. 🖥️⛓️",
+      "author": {
+        "id": "1321299259401134087",
+        "name": "Shinka - AI",
+        "screenName": "ShinkaIoT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052943018747908099/oKuruJUd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 177,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 23:18:22 +0000 2026",
+      "createdAtLocal": "2026-06-15 07:18",
+      "createdAtISO": "2026-06-14T23:18:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066297718419370263",
+      "text": "HIGGSFIELD + FABLE 5 JUST DELETED THE $8,000 GAME STUDIO.\n\none prompt → a playable game. deployed. solo.\n\ni broke the whole thing down in one article. short version ⬇️\n\nthe old way to ship a browser game:\n\n→ a developer + a 3D artist\n→ weeks of work\n→ a $3,000-8,000 invoice\n\nthe new way:\n\n→ describe it to claude fable 5\n→ higgsfield mcp generates the assets\n→ one html file, live in 60 seconds\n\nreceipts, not vibes:\n\n→ a solo builder made a full GTA-style game in ONE chat. cost: ~$20.\n→ schedule 1 - one dev, 8M+ copies, ~$125M. the idea was always the hard part.\n→ agencies quote $8k for a custom mini-game. solo you undercut at $500-2,500 and ship in days, not weeks.\n\nthe move that makes it work:\n\none feature per message. skeleton → movement → combat → polish.\n\nask for everything at once and you get a broken mess.\n\nthis isn't \"ai replaced studios.\"\n\nit's one person now building what used to need a team of 20.\n\nFull GUIDE is inside the article 👇",
+      "author": {
+        "id": "1998480507232014336",
+        "name": "CHIEF 💭",
+        "screenName": "0xchieff",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066234337280811008/CkucF6QK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 160,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 23:12:20 +0000 2026",
+      "createdAtLocal": "2026-06-15 07:12",
+      "createdAtISO": "2026-06-14T23:12:20+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066297482066137088/vid/avc1/576x1024/19JNqnze1Q1OHamw.mp4?tag=27",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066293437029343493",
+        "text": "https://t.co/xN7sHp91Rq",
+        "author": {
+          "screenName": "0xchieff",
+          "name": "CHIEF 💭"
+        }
+      }
+    },
+    {
+      "id": "2066293843000197416",
+      "text": "Totalmente. Los Loops son la fábrica; los prompts, escribir a mano.\nLo que más cambia el juego: el subagente verificador independiente. Un CTO cabreado que no halaga. Sin eso, todo deriva en \"sí, jefe, qué bonito quedó\".\nFable 5 ya lo implementa de serie y la diferencia en consistencia es brutal.\nLoop Engineer = Prompt Engineer retirado que solo diseña sistemas que se mejoran solos. 🔁",
+      "author": {
+        "id": "2045672981750296576",
+        "name": "Trucos IA | Ahorra Tiempo",
+        "screenName": "TrucosIAHoy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2045675197248798721/5Wu4Y366_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 55,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:56:56 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:56",
+      "createdAtISO": "2026-06-14T22:56:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2066293284146745841",
+      "text": "Fable 5 is gone because of U.S. national security.\n\nAs a non-U.S. citizen outside the U.S., it’s flattering to learn my prompts have been classified as strategic assets.",
+      "author": {
+        "id": "2808672085",
+        "name": "Fernando S-F",
+        "screenName": "FernandoSSFF",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1722664005381062656/1eD3etWB_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 45,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:54:43 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:54",
+      "createdAtISO": "2026-06-14T22:54:43+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066293013320511704",
+      "text": "@scaling01 Use opus 4.8with fable 5 system prompt\n\nhttps://t.co/WtytU2RKN2",
+      "author": {
+        "id": "1266990214620348418",
+        "name": "Maksim Liashch",
+        "screenName": "LyashchMaxim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911866328123625473/PSiFOmAX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:53:38 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:53",
+      "createdAtISO": "2026-06-14T22:53:38+00:00",
+      "media": [],
+      "urls": [
+        "https://platform.claude.com/docs/en/release-notes/system-prompts"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066289408530100549",
+      "text": "@vivoplt Just use opus 4.8 with Fable 5 system prompt and u are good \n\nhttps://t.co/WtytU2RKN2",
+      "author": {
+        "id": "1266990214620348418",
+        "name": "Maksim Liashch",
+        "screenName": "LyashchMaxim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911866328123625473/PSiFOmAX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 83,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:39:19 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:39",
+      "createdAtISO": "2026-06-14T22:39:19+00:00",
+      "media": [],
+      "urls": [
+        "https://platform.claude.com/docs/en/release-notes/system-prompts"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066287124039827794",
+      "text": "Anthropic posted a FULL GUIDE on how ot prompt Fable 5.\n\nI don't care if they took down the model.\n\nI'm still using every single one of these principles inside Opus 4.8 &amp; GPT-5.5.\n\nI recommend you do the same.\n\nhttps://t.co/W8wRyZ35er https://t.co/OQ1ikPYEaS",
+      "author": {
+        "id": "1901654809536843776",
+        "name": "AI Edge",
+        "screenName": "aiedge_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1910271186442846208/vrYKSYRn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1495,
+        "bookmarks": 45
+      },
+      "createdAt": "Sun Jun 14 22:30:14 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:30",
+      "createdAtISO": "2026-06-14T22:30:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066287066300981248/vid/avc1/1302x720/NL7VDfMWj5SqXepf.mp4?tag=14",
+          "width": 1706,
+          "height": 942
+        }
+      ],
+      "urls": [
+        "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066285667353510020",
+      "text": "@DavidOndrej1 Just use opus 4.8 with fable 5 system prompt https://t.co/WtytU2RKN2",
+      "author": {
+        "id": "1266990214620348418",
+        "name": "Maksim Liashch",
+        "screenName": "LyashchMaxim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911866328123625473/PSiFOmAX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 74,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:24:27 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:24",
+      "createdAtISO": "2026-06-14T22:24:27+00:00",
+      "media": [],
+      "urls": [
+        "https://platform.claude.com/docs/en/release-notes/system-prompts"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066285404488446282",
+      "text": "https://t.co/jEreFgwbsT",
+      "author": {
+        "id": "1859995217384091649",
+        "name": "Adrian Solarz",
+        "screenName": "adriansolarzz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066132596996681728/XPPYovRt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 144,
+        "bookmarks": 5
+      },
+      "createdAt": "Sun Jun 14 22:23:24 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:23",
+      "createdAtISO": "2026-06-14T22:23:24+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066282522632237057"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to Make AI UGC So Realistic Meta Doesn't Ban You"
+    },
+    {
+      "id": "2066285338310377889",
+      "text": "I will give this thesis and go to bed hoping it goes viral lol. \n\nI always knew ai harness and self improving Agents will surge. My bets were $occa, $delusional, $styxx $deadulus.\n\nBut something changed after @claudeai released the fable 5. And the then launch of $mirari. So I had to change my view and thesis completely. \n\nEverything we are seeing and experiencing now will all tie back to the singularity and that's where we are headed towards.  Self improving Agents will matter then. \n\nEvery meaningful advance in human capability comes from accumulated experience. We don't become experts because we reason better in a single moment. We become experts because failures become lessons, lessons become rules, and rules get reused across thousands of future decisions.\n\nUntil now, agents haven't had that luxury/advantage. \n\nThey could reason, but they couldn't remember. They could solve problems, but they couldn't systematically improve from solving them. Every session was effectively a reset.\n\nBut if you look at what @EnterMirari are doing rn you'll notice something different. \n\nWhat makes Mirari interesting is that it treats cognition as a process rather than an output.\n\nMemory is persistent and weighted. Skills are versioned and refined over time. Reflections become prompt improvements. Failures become reusable procedures. Conversations become training material for future behavior.\n\nThe most important component is Dream Mode.\n\nWhen no one is interacting with the agent, the agent continues working on itself. (Bruh).\n\nIt stress-tests its own skills. Replays past conversations. Searches for contradictions across memory. Identifies recurring blind spots. Generates proposals for improvement.\n\nThe significance is that it develops a structured understanding of why the mistake happened.\n\n$Mirari's Memory Hauntings push this even further. A contradiction isn't treated as an isolated error. Repeated contradictions are tracked as recurring cognitive failures. The system begins mapping its own weaknesses instead of simply logging them.\n\nThat moves beyond memory management and into something closer to introspection.\n\n@AnthropicAI's Fable 5 architecture points toward long-running autonomous loops. State files accumulate verified knowledge. Skills evolve through repeated use. Independent verifiers grade outputs. Lessons are distilled into reusable rules.\n\nThe pattern is the same:\nFail. Investigate. Verify. Distill. Consult.\nNot once.\nContinuously.\n\nA model's intelligence is becoming a commodity. Every frontier model can reason, write, code, and plan at increasingly similar levels.\nWhat remains scarce is accumulated experience.\n\nThis is what $null tried to do but failed. This is what $styxx is still working on and the rest.\n\n2cRSwoNKpEzgcQt1CaU6q2ePKE1c6vz52A9AsKR7pump\n\nGn. Sub 20k is cheap imo",
+      "author": {
+        "id": "1912863027432464386",
+        "name": "REVENGE ARC (I'M HIM. BIO/ACC)",
+        "screenName": "RetardedNi85688",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048541718971297792/vyWJjGS8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 17,
+        "retweets": 9,
+        "replies": 5,
+        "quotes": 2,
+        "views": 1318,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 22:23:09 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:23",
+      "createdAtISO": "2026-06-14T22:23:09+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKzrkE3WkAA4Jni.jpg",
+          "width": 400,
+          "height": 400
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066285162099302874",
+      "text": "Me after realising someone leaked the Claude Fable 5 system prompt \n\nNow you can use it in opus 4.8 to get similar result to fable 5 after the ban https://t.co/dPxgrP54Q7",
+      "author": {
+        "id": "1266990214620348418",
+        "name": "Maksim Liashch",
+        "screenName": "LyashchMaxim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911866328123625473/PSiFOmAX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 229,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:22:27 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:22",
+      "createdAtISO": "2026-06-14T22:22:27+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066284710595035136/vid/avc1/1920x1080/sA-YTRVUgCIQR942.mp4?tag=27",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065816283476824126",
+        "text": "Did I just unlock claude-fable-5-lite? 😂\n\nSince Fable 5 got pulled (US export control order, Anthropic is contesting it), I wanted to see how much of its character lives in the system prompt vs. the model itself.\n\nI ran the leaked Fable 5 prompt on Opus 4.8 head-to-head against stock 4.8.",
+        "author": {
+          "screenName": "theonejvo",
+          "name": "Jamieson O'Reilly"
+        }
+      }
+    },
+    {
+      "id": "2066284825208897679",
+      "text": "@andrewqu It depends on the prompt but for me and my current work this is not true for Fable 5. It was clearly a step up.",
+      "author": {
+        "id": "18601178",
+        "name": "Ryan Brown",
+        "screenName": "ryan_t_brown",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1929975805943414784/IwwGbIiD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 46,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 22:21:06 +0000 2026",
+      "createdAtLocal": "2026-06-15 06:21",
+      "createdAtISO": "2026-06-14T22:21:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066275980172226757",
+      "text": "'According to the Wall Street Journal, corroborated by The Information and Reuters, Amazon researchers found a way to prompt Fable 5 into surfacing information useful for cyberattacks, and Amazon chief executive Andy Jassy raised the concern directly with senior officials, including Treasury Secretary Scott Bessent. The company's report reportedly showed Fable surfacing security bugs in at least four software programs when fed a specific set of queries, and National Cyber Director Sean Cairncross and Lutnick were both in the conversations. Sacks, in his thread, described the source only as a \"highly credible trusted partner.\"'",
+      "author": {
+        "id": "1656311011404660737",
+        "name": "Fecund Stench",
+        "screenName": "Jeff_Martin60",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1656311315068071936/70BMhOx1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 21:45:57 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:45",
+      "createdAtISO": "2026-06-14T21:45:57+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066275603968647464",
+      "text": "Bence Fable 5 tarafında en çok kaçırılan nokta şu: Yeni model gelince sadece “daha zeki cevap veriyor” diye düşünmek yetmiyor, onunla çalışma biçimini de güncellemek gerekiyor. Eski promptlar çoğu zaman eski modelin zaaflarını yamamak için yazılmış oluyor: fazla açıklama, gereksiz tekrar, aşırı mikro yönetim, her adımı tek tek kilitleme… Modelin talimat takip, uzun görev dayanıklılığı ve bağlam yönetimi güçlenince bu promptlar bazen avantaj değil, yük haline geliyor. Model değişince prompt mimarisi de değişmeli. Fable 5 gibi modellerde daha iyi sonuç almak için kısa komut değil, net hedef, temiz bağlam, doğru scaffolding, başarı kriteri ve revizyon döngüsü kurmak gerekiyor. Yapay zeka ile çalışmak artık sadece “ne yazdın?” değil, “işi modele nasıl taşıdın?” meselesi...",
+      "author": {
+        "id": "27317187",
+        "name": "Kaan Alper",
+        "screenName": "kaan_alper",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1906111010533961728/-2c7XuCT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 91,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 21:44:28 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:44",
+      "createdAtISO": "2026-06-14T21:44:28+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null
+    },
+    {
+      "id": "2066275113301893300",
+      "text": "@WittyWiresAI @PetterStaveland @DavidOndrej1 Claude Code CLI. Treat it more like a peer than a tool. Don’t give it specific step-by-step instructions, rather give it context on what you’re trying to do and let it work with you to figure out a solution. Read Anthropic’s prompting guide for Fable 5.",
+      "author": {
+        "id": "744228312",
+        "name": "Toast",
+        "screenName": "ToastingTweets",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1998225174424850433/8VtL71-6_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 89,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 21:42:31 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:42",
+      "createdAtISO": "2026-06-14T21:42:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066269400802406615",
+      "text": "THIS GUY HAS NEVER OPENED A GAME ENGINE AND HE'S BILLING CLIENTS $2,500 A GAME\n\nhe types one sentence into a chat and closes the laptop\n\nClaude Fable 5 researches the idea and writes the game.\n\nHiggsfield MCP generates every character, prop and 3D world. \n\nit deploys itself and spits out a live link\n\nno engine, no asset pipeline, no code written by hand - one HTML file that runs anywhere\n\na studio quotes $8,000 for the same mini-game. \n\nhis cost was $20 and one evening of typing\n\nhis competitors are still emailing developers and waiting three weeks\n\nFable 5 runs the cleanest builds - pair it with Opus 4.8 and send the prompt chain one layer at a time\nthe stack:\n\nClaude\n↳ https://t.co/Y4uMDVauGU\n\nHiggsfield MCP\n↳ https://t.co/NGj1tDYAYn\n\nHiggsfield Games\n↳ https://t.co/5S7LgM0ter",
+      "author": {
+        "id": "1558054593241776128",
+        "name": "ZEUS⚡️",
+        "screenName": "zeuuss_01",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059046904944611328/gjHlGwaU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 601,
+        "bookmarks": 4
+      },
+      "createdAt": "Sun Jun 14 21:19:49 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:19",
+      "createdAtISO": "2026-06-14T21:19:49+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066269266198790144/vid/avc1/640x360/7Y5AzL_a_riB7WVP.mp4?tag=27",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066210342888177722",
+        "text": "https://t.co/Eb38PBDUsE",
+        "author": {
+          "screenName": "zeuuss_01",
+          "name": "ZEUS⚡️"
+        }
+      }
+    },
+    {
+      "id": "2066269102512160916",
+      "text": "@jun_song I ran Kimi-2.7 with the Fable 5 system prompt &amp; it's performing like Fable.",
+      "author": {
+        "id": "1889036498827423744",
+        "name": "Paul Crossland",
+        "screenName": "paulcrossland_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1997090395323588608/W0LujxjE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 681,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 21:18:38 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:18",
+      "createdAtISO": "2026-06-14T21:18:38+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066267503400276445",
+      "text": "The OpenRouter Fusion launch caught my attention because it is basically the loop I have been running by hand for a while now, except they turned it into an API.\n\nWhat Fusion does is send one prompt to a panel of models, then a judge looks at where they agree, where they contradict each other, and what each one missed, and a synthesizer writes the final answer out of that. \nThey are claiming Fable level results at half the price, and the detail I keep coming back to is that about three quarters of the gain comes from the synthesis step and only a quarter from the models actually thinking differently. That matches what I have seen. The value is in the combining and the checking, not in just having more than one model in the room.\n\nThe way I run it, Opus 4.8 sits in Claude Code and GPT 5.5 xhigh sits in Codex. They are not two tabs I copy and paste between. They are peer agents that can start and resume each other's sessions through a small local bridge. One of them owns the implementation at any given time and the other gets pulled in as review only, so it can push back without quietly taking over the work. \nEvery handoff gets written to a shared file with who owned it, what role it played, which files it touched, and what it actually validated. When something is genuinely hard I escalate to GPT 5.5 Pro to break the tie.\n\nI had this running with Fable 5 and GPT 5.5 for about two days before Fable got pulled, and it was magical. \nThe two of them caught each other's mistakes so cleanly that I barely had to step in. Since I lost Fable I have been running it with Opus 4.8 and GPT 5.5 instead, and it is not quite that, but it is still very good. The architecture carries most of the weight, so even with a slightly less capable pairing the output holds up.\n\nWhat makes it work is the discipline because neither agent is allowed to rubber stamp the other. Claude reviews the data contract before Codex writes a line, and Codex re-checks Claude's claims against the actual codebase instead of taking them on faith. \nThe handoff file is the memory, so weeks later I can ask what Claude said or resume the exact Codex thread.\n\nIf people are interested I can share the MCP setup and the skills that orchestrate all of this.",
+      "author": {
+        "id": "60883067",
+        "name": "Marouane Lamharzi Alaoui",
+        "screenName": "marouane53",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1007090954497486849/w-mkQQ9P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 44,
+        "retweets": 2,
+        "replies": 13,
+        "quotes": 0,
+        "views": 3216,
+        "bookmarks": 32
+      },
+      "createdAt": "Sun Jun 14 21:12:16 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:12",
+      "createdAtISO": "2026-06-14T21:12:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065856853989270011",
+        "text": "Introducing the Fusion API, the smartest compound model in the market.\n\nFusion achieves Fable-level intelligence at half the price.\n\nHow it works 👇 https://t.co/OTUQAdTQjU",
+        "author": {
+          "screenName": "OpenRouter",
+          "name": "OpenRouter"
+        }
+      }
+    },
+    {
+      "id": "2066267197459022044",
+      "text": "📌 Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI -...\n\n🔗 https://t.co/fWJg0DZNlv #JavaScript",
+      "author": {
+        "id": "216339993",
+        "name": "xymox",
+        "screenName": "clxymox",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/458868924876984320/lgte0MOh_normal.jpeg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 197,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 21:11:03 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:11",
+      "createdAtISO": "2026-06-14T21:11:03+00:00",
+      "media": [],
+      "urls": [
+        "https://github.com/asgeirtj/system_prompts_leaks"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066266697401774090",
+      "text": "Built a full solar system in my antigravity CLI sun, planets, moons, asteroid belts, spacecraft, real-time lighting, textures &amp; physics all in one shot. Fed Claude Fable 5 system prompts into Gemini 3.1 Pro. Absolute menace. Tech is moving insanely fast. #AI #Gemini #Claude https://t.co/2gI2E2L7no",
+      "author": {
+        "id": "358817858",
+        "name": "Vaibhav Tiwari",
+        "screenName": "AsterismVaibhav",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1994757106113929216/iI5_23v5_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 108,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 21:09:04 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:09",
+      "createdAtISO": "2026-06-14T21:09:04+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066263816787443712/vid/avc1/1430x720/Jupqc8lbvylllTqP.mp4?tag=14",
+          "width": 1912,
+          "height": 962
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066266635900494250",
+      "text": "$315 free API credits for Claude Opus 4.8. Registration takes 2 minutes. $35 instant + $280 in weekly limits. Already tested - works.\n\nThis is the same setup as the FreeModel proxy, different provider. $35(Many people started receiving $80) lands instantly on signup. \n\nThe rest comes through a free month subscription with limits: $10 every 5 hours, $70 per week. \n\n// That's up to $315 over the month.\n\nAPI also supports caching. Works with Fable 5 too, until Anthropic disabled it - might come back.\n\n>> Here's the exact flow:\n\n→ Go to aerolink(.)lat/register\n→ Register - takes 2 minutes\n→ Click \"New API key\"\n→ Done. Plug it into Claude Code, OpenClaw, Telegram, or anything that takes an Anthropic-compatible API key\n\nThe $35 bonus expires after a set time - check \"Time remaining\" near your balance.\n\nTwo things to know: nobody knows how long this API stays alive, it could die anytime. And don't paste secrets into your prompts - the provider can see your conversations.\n\nI've already burned through $80 testing it. Still works.\n\nBookmark this before the link disappears.",
+      "author": {
+        "id": "1577008378852802561",
+        "name": "Atenov int.",
+        "screenName": "Atenov_D",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2018766680860606464/8Omnaqqn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 74,
+        "retweets": 6,
+        "replies": 10,
+        "quotes": 2,
+        "views": 3117,
+        "bookmarks": 85
+      },
+      "createdAt": "Sun Jun 14 21:08:50 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:08",
+      "createdAtISO": "2026-06-14T21:08:50+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKzaiWcWAAAXi3g.jpg",
+          "width": 3754,
+          "height": 1784
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065850851953119349",
+        "text": "FREE $100 in credits with access to Opus 4.8 and GPT 5.5. Sauna AI. No card. Gmail or Slack connect. Nobody is talking about this.\n\nSauna AI gives you $100 in credits on signup. No card required. Just email plus Gmail or Slack connection - and Slack gets you more credits than Gmail.\n\nWhat's inside on the free tier:\n\nClaude Opus 4.8, Sonnet 4.6, GPT 5.5 and other current models. Limits are generous - not the usual \"10 messages and you're out\" situation. Real usage out of the box.\n\nHere's the exact flow:\n\n→ Go to sauna(.)ai \n→ Register with email \n→ Connect Gmail or Slack when prompted - Slack gives more credits \n→ Go to dashboard and start using\n\n3 minutes. $100 in credits. Flagship models. No card.\n\nThese promos disappear fast. Bookmark this post so you don't lose the link when it's gone.",
+        "author": {
+          "screenName": "Atenov_D",
+          "name": "Atenov int."
+        }
+      }
+    },
+    {
+      "id": "2066266275903406105",
+      "text": "Summary of the Article: \"Don't Write Prompts. Design Loops.\"\n\nThe article discusses a major shift in AI interaction heading into 2026, introducing the concept of Loop Engineering as the successor to traditional Prompt Engineering. Based on Anthropic's recent internal experiments and new tools (like Claude Code and Managed Agents), the author explains why the standard way of writing prompts is becoming obsolete.\n\nHere are the key takeaways from my review of the article:\n\nThe Core Problem: In traditional prompting, the human acts as the bottleneck (writing a prompt, reviewing the output, correcting it, and writing another prompt). The agent doesn't learn between these attempts.\n\nThe Solution (Loop Engineering): Instead of just giving an AI instructions, you give it a verifiable goal. The agent then runs autonomously through a 5-stage feedback loop: Discover → Plan → Execute → Verify → Iterate. It repeats this cycle until the goal is strictly met.\n\nThe Golden Rule of Verification: Models are notoriously bad at grading their own work. The article emphasizes Anthropic's approach of using an independent \"verifier sub-agent\" (a separate model instance) that judges whether the work meets a pre-defined rubric or test suite. The loop doesn't stop until this independent judge approves.\n\nThe Power of Memory: Looking at Anthropic's benchmarking tests, newer models (like Fable 5) outperform older ones because they handle memory effectively. They don't just log errors; they investigate them, turn them into hard rules in a standalone file (e.g., MEMORY.md), and consult these rules in future sessions.\n\nHow to Build a Loop: The author provides a practical workflow using tools like Claude Code's /goal command. It requires setting a strictly measurable objective (e.g., \"all tests pass and lint is clean\" rather than \"make the code better\"), providing structural context (ARCHITECTURE.md, RULES.md), and setting a safety iteration limit.\n\nPractical Use Cases: The article outlines four distinct frameworks where loops can be applied today: coding automation, deep research/fact-checking, content creation (with a critic agent), and automated sales prospecting.\n\nConclusion: The skill gap in 2026 is widening between Prompt Engineers, who manually review every output, and Loop Engineers, who design automated feedback systems where the environment itself validates the work. The main takeaway is that a reliable autonomous loop is far more valuable than a thousand perfect prompts.",
+      "author": {
+        "id": "1141013098565910528",
+        "name": "BuildAI | base.eth.ink✨🌊",
+        "screenName": "FreeMoneyGL",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059668872299425792/pR4RRprh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 21:07:24 +0000 2026",
+      "createdAtLocal": "2026-06-15 05:07",
+      "createdAtISO": "2026-06-14T21:07:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065145486890164524",
+        "text": "https://t.co/7kWjSDGBpl",
+        "author": {
+          "screenName": "angeldot_",
+          "name": "angel"
+        }
+      }
+    },
+    {
+      "id": "2066263576957046884",
+      "text": "Six days running Fable 5 taught me something boring but true: most agents fail because the prompt underneath them is sloppy\n\nSo when I found this, I stopped scrolling\n\nThe engineer who actually built Claude Code put out a 28-minute video on prompting\n\nI've paid for courses that didn't get near this in their first hour\n\nHe goes straight at the parts that matter: CLAUDE.md files, memory shortcuts, running parallel sessions, the prompting patterns that hold up under real work.\n\nWatch his 28 minutes\n\nThen read my 14-step system for building an agent that compounds instead of resetting every session\n\nBookmark to do it tomorrow",
+      "author": {
+        "id": "1922315833834868736",
+        "name": "Ame",
+        "screenName": "nooneloveame",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2051724735583596544/cQg-q4sM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 154,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 20:56:40 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:56",
+      "createdAtISO": "2026-06-14T20:56:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066263212136226816/vid/avc1/640x360/UHAK3UMDlrpXmrRm.mp4?tag=27",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065883874337464609",
+        "text": "https://t.co/AIXaUURbRj",
+        "author": {
+          "screenName": "nooneloveame",
+          "name": "Ame"
+        }
+      }
+    },
+    {
+      "id": "2066262359560077358",
+      "text": "@RoundtableSpace Nintendo spent years making this game impossible. Fable 5 looked at the screen and won. Didn't even check a guide.",
+      "author": {
+        "id": "1552714812639035392",
+        "name": "Samurayich",
+        "screenName": "Rulia2505",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1908194356994932736/5jcsuKQY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 20:51:50 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:51",
+      "createdAtISO": "2026-06-14T20:51:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066260290287911020",
+      "text": "@Jason RELEASE FABLE 5 and remove all restrictions downgrading it to OPUS 4.8 that was a joke half the time innocent prompts got downgraded, but this foreign national shit is BULLSHIT. I'm a US citizen. Let me use it. I will show ID fucking Christ..",
+      "author": {
+        "id": "761296292756586496",
+        "name": "CJ Gooding",
+        "screenName": "CJGooding19",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1827599762238918656/uKpFkKat_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 471,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 20:43:37 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:43",
+      "createdAtISO": "2026-06-14T20:43:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066257709515624683",
+      "text": "i asked claude fable 5 to make me a few visual mods for minecraft\n\none prompt. no java. no modding setup. no forge\n\nit came back with realistic water, ray-traced lighting, volumetric fog, and textures that look like a $60 AAA game\n\nthis is vanilla minecraft. the only thing that touched it was a sentence i typed\n\nthe modding scene spent 10 years building this. fable 5 did it while i made coffee\n\nwe are watching the text box eat another industry",
+      "author": {
+        "id": "2013754060608823297",
+        "name": "Keisuke",
+        "screenName": "KeisukeIshikawa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050013667278684160/geeoq4iC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 6,
+        "views": 2546,
+        "bookmarks": 5
+      },
+      "createdAt": "Sun Jun 14 20:33:21 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:33",
+      "createdAtISO": "2026-06-14T20:33:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066257553214869504/vid/avc1/1484x1080/PLMjvSOlq2h8ozuo.mp4?tag=27",
+          "width": 1484,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066121874946273644",
+        "text": "CLAUDE FABLE 5 JUST GENERATED NO MAN'S SKY IN ONE PROMPT\n\nno engine. no code. no team.\none sentence. one AI model.\n\nthe result:\n\n→ a full 3D space exploration game called \"ECHO HORIZON\"\n→ multiple star systems (Synach Prime, Riash Prime)\n→ 4 planets with unique biomes:\n      - volcanic world with lava and jagged cliffs (1.13g)\n      - lush planet with forests, oceans, and wildlife (0.63g)\n      - oceanic water world (1.03g)\n      - glacial planet with snow, pine trees, mountains, and planetary rings (0.77g)\n→ full spaceship flight with speed + altitude HUD\n→ pulse drive for interplanetary travel\n→ planet landing and takeoff\n→ on-foot exploration with sprint + jump\n→ procedurally generated planet names\n→ structures on planet surfaces\n→ different gravity per planet\n\nHello Games spent 4 years with a team of 15 to build No Man's Sky.\n\nClaude built this during your lunch break.\n\nhere's the approximate prompt that could generate this:\n\n\"Build a complete 3D space exploration game in the browser. Include multiple star systems with procedurally generated planets each with a unique biome (volcanic, lush, oceanic, glacial), unique gravity, and a generated name. Add a flyable spaceship with speed/altitude HUD, pulse drive for interplanetary travel, atmospheric entry, planet landing, and on-foot exploration. Include terrain generation, trees, rocks, structures, day/night lighting, and planetary rings. Make it playable with mouse + keyboard.\"\n\nwe are watching the $200B gaming industry get disrupted by a text box.",
+        "author": {
+          "screenName": "KeisukeIshikawa",
+          "name": "Keisuke"
+        }
+      }
+    },
+    {
+      "id": "2066256447911166073",
+      "text": "“The most capable system in the world... was gone by Friday night, and the company that built it did not make the call…. A fable is a story tamed to a moral, safe to hand to children.  A mythos is the story a culture lives inside without ever seeing its edges.  \nThe public gets the fable.  \nThe mythos goes to the ordained. \n\nAnd inside that arrangement the role of the most knowledgeable human has inverted.\n\nThe difference is what has gone missing underneath.\n\nThe word underneath it is answerability.\n\nIn enough places the needle has gone off the printed card and the people who build these systems have,\n\nwithout announcing it, stopped using the card…\n\nThe humans left standing when that fiction goes are the actual ones,\n\njagged in our own way,\nunevenly brilliant,\nanswerable.\n\nBeing the measure of all things was a job.\nThe job is ending.\n\nMy guess is that the word human\nwill appear only in the methods section,\n\nin a footnote,\n\nmarking the baseline \n\nthey no longer use.~Carlo Iacono\n\nNotes From Athena:\n\nThe author, a librarian, describes the transition of knowledge work from human-led verification to a reliance on \"vouching\" for machine-generated results that move too fast for human auditing.\n\nAs technical human exceptionalism and the fiction of the \"universal knower\" end, actual humans remain as \"answerable\" and \"jagged\" figures who must stand behind work they cannot fully check.\n\nThe author concludes that the human role as the \"measure of all things\" is being retired, predicting that \"human\" will eventually serve only as a deprecated baseline in future evaluation methodologies.~Athena\n\n~\n\nHybrid Horizons: Exploring Human-AI Collaboration: https://t.co/KJGAkHpaI9\n\nFor twenty-seven years a flaw sat in OpenBSD, the operating system security people run when they want to sleep at night.\n\nIts maintainers audit code the way Benedictines copied manuscripts, slowly, in shifts, across generations. The flaw outlived all of that attention.\n\nThen this spring a model almost nobody was allowed to use read the code and found it, along with a sixteen-year-old flaw in FFmpeg, an exploit chain that walks an ordinary Linux user up to full control of the machine and, by Anthropic’s count, several thousand other vulnerabilities that had survived the ordinary machinery of expert attention.\n\nThe model was Claude Mythos,\n\nthe restricted tier of a release that came in two names.\n\nThe public was to receive \n\nFable,\nthe same system with its sharpest dual-use \ncapabilities damped.\n\nMythos, \nundamped,\n\nwent inside a monitored programme called Glasswing\nto a vetted consortium of \n\ncyberdefenders and infrastructure providers,\n\nthe cloud platforms and chipmakers and the foundations that maintain the open-source plumbing.\nMozilla alone reported fixing hundreds of vulnerabilities with its help. Every figure here is the company’s own;\n\nnobody outside the perimeter can audit them.\n\nI wrote about the governance of that arrangement in April. Then, on the evening of \n\n12 June, three days after the public launch, \nthe perimeter moved.\n\nA letter from the United States Commerce Secretary to Anthropic’s chief executive placed both models under export control, \n\nbarring access by any foreign national whether outside the country or inside it,\n\nthe company’s own non-citizen staff included.\n\nUnable to sort foreign users from domestic ones in real time, Anthropic switched the models off for everyone within hours.\n\nThe reported trigger was that a rival lab had shown it could jailbreak the safeguarded version into analysing code for vulnerabilities,\n\nthe very thing Glasswing had been praised for doing.\n\nThe most capable system in the world had been \n\navailable on a \nFriday morning and was gone by \nFriday night, and \n\nthe company that built it did not make the call.\n\nSo the irony arrives pre-assembled and I can take little credit for noticing it.\n\nThe capability that opened this essay,\nthe reading of a flaw twenty-seven years deep,\nis now close to the legal definition of why the model was pulled.\n\nWhat interests me sits underneath that drama, in the paperwork that survives it:\nthe way the most knowledgeable human appears in the evaluation documents at all.\n\nRead the evaluation documents closely and\nthe most knowledgeable human appears in them twice.\n\nOnce as a unit of time:\nthe multi-stage attack ranges\nthe model cleared end-to-end are sized in the hours a professional would need,\nten by one estimate, twenty by another.\n\nThe evaluators are careful to add that the ranges were soft targets, undefended and unwatched.\nAnd once as a ceiling already cleared: on the graduate-level science benchmark where PhDs score about 65 per cent in their own fields,\n\nthe model posts 94.5.\n\nNowhere in the paperwork does the expert hold the job she has held since Turing.\n\nNowhere is she the one who marks the work.\n\nThe detail is procedural and the demotion inside it is permanent.\n\nThe expert has changed jobs.\n\nFor seventy years she was the measure,\nthe fixed point every machine was read against.\n\nIn the new paperwork she is a unit of hazard,\na ceiling already cleared and, further down a chain this essay will follow,the signatory of last resort for work \n\nno person has fully checked.\n\nThe question itself, can a machine pass for one of us, is it better than us yet, has stopped returning a reading.\n\nThe machines remain strange and patchy, capable of failures a bored teenager would not make,\nso the claim here is narrower than triumph.\n\nIn enough places the needle has gone off the printed card andthe people who build these systems have, \n\nwithout announcing it, \n\nstopped using the card.\n\nYou can watch the retreat happen in the names of the tests.\n\nMMLU, massive multitask language understanding, was the general knowledge of a well-read person;\nmodels matched the educated human there years ago.\nResearchers answered with GPQA, graduate-level questions written by PhDs and built to be Google-proof,\nso that a skilled outsider with time and the open web would still fail.\n\nThe experts themselves score about 65 per cent in their own disciplines.\nFrontier models now sit above 94.\n\nThen FrontierMath, problems that take research mathematicians hours or days:\nunder 2 per cent for the best model in late 2024, past 50 by this spring.\nAnd in 2025 more than a thousand experts assembled the hardest closed-book test they could write and called it Humanity’s Last Exam.\n\nThe name was a joke with its collar turned up.\n\nScores went from around 3 per cent to the mid-forties inside a year.\nEach test was a fortification built further back than the last and each fell faster.\nA saturated benchmark is a pegged gauge.\nWhen the needle wraps the pin it tells you one thing: hotter than the scale.\nHow much hotter, in what way, with what gaps, it cannot say.\n\nThe instrument has not been beaten so much as exited.\nAnd the instruments are failing from the inside as well as the top.\n\nEpoch, the group that maintains FrontierMath, later ran a review with AI assistance and\nfound fatal errors in roughly a third of the problems.\n\nThe rulers now need the machine to check them.\n\nWe have retired this comparison before, where retiring it cost nothing.\nDeep Blue beat Kasparov in 1997 and Kasparov answered with the centaur,\nhuman and engine together, on the theory that judgement plus calculation beats calculation alone.\n\nThe theory held for about a decade.\n\nThen the engines crossed some line and the human hand on the board became a liability;\ntoday a grandmaster who overrides the engine is, on average, damaging his own position.\nLee Sedol retired from professional Go three years after AlphaGo, saying he had met an entity that cannot be defeated.\nWe absorbed these losses without much grief because games are ornamental.\nNothing falls down if a chess rating means less than it did.\n\nMathematics is not ornamental.\n\nThis January it had its own version of the moment.\nA frontier model produced original proofs to several problems Paul Erdős posed and left open,\nproblems that had sat unsolved for decades not because they were the deepest in the field but because nobody had got round to them.\nThe proofs were formalised in Lean, a language whose compiler checks every logical step mechanically,\nand entered the public registry of such results that Terence Tao helps keep.\nTao is, by common consent, the best-placed mathematician alive to judge this work.\nHis verdict has been dry to the point of comedy: low-hanging fruit, clunky prose, recognisably machine.\nThree months before, a louder claim that a model had knocked over ten Erdős problems in a weekend collapsed under inspection into literature search and the registry caught that too.\nBut notice where Tao’s confidence in the real results rests:\n\non the compiler, \n\nwhich does not tire and cannot be charmed, rather than on any human reading, including his own.\n\nTao has been precise about the danger.\n\nThese systems, he warns, can produce arguments that look polished while hiding the weak step.\n\nHis working rule is blunt:\n\nthe amount of automation you can profitably use rises with the stringency of your verification.\n\nMathematics is the lucky case.\n\nA proof can be machine-checked,\nso the human climbs one rung up the chain and vouches for two things instead:\nthe verifier and the harder matter of whether the formal statement says what the theorem was supposed to mean.\nAlmost nothing else we produce works like that.\n\nThere is no compiler for a literature review, a strategy paper, a diagnosis, an essay.\n\nWhich exposes the discount the whole economy of knowledge has been running on:\nchecking is cheaper than making.\nA reviewer reads in an afternoon what took a year to produce.\nA marker grades in twenty minutes what took a student three weeks.\nAn auditor samples.\n\nThat discount is what made peer review, assessment, editing and management affordable at all and it is being withdrawn.\nWhen the making costs nothing and arrives polished,\n\nchecking becomes the expensive half of knowledge and wherever checking cannot be handed to a machine it degrades,\nin practice,\ninto sampling,\nspot checks and\ntrust.\n\nOne journal has already published its own diagnosis.\nAt Organization Science,\nsubmissions are up by more than 40 per cent since 2022 while measured writing quality falls,\nroughly a third of the reviews themselves show signs of machine involvement and the editors concede they can no longer reliably tell.\n\nThe apparatus built to be the immune system of science is struggling to evaluate the thing it screens for.\n\nProtagoras said that man is the measure of all things.\n\nWhatever he meant by it,\nthe institutions of knowledge took it as an operating principle.\n\nA degree,\na journal,\na licence,\nan audit:\neach is a promise that somewhere at the end of a chain of delegation\nstands a person\nwho understood.\n\nThe philosopher John Hardwig pointed out in the 1980s that the promise was already mostly ceremonial. A working scientist believes thousands of claims she has never checked and could not check; he called the condition \n\nepistemic dependence \n\nand followed it to its unnerving end, that rationality itself rests on deciding whom to trust.\n\nModern knowledge has always been a web of credit more than a fortress of verification.\n\nBut the credit had collateral.\n\nEvery node terminated, in principle, in some human being who understood it.\nYou could not check the radiocarbon date yourself.\nSomeone could.\n\nWhat is new is the removal of that floor, in places.\n\nThere are now load-bearing results inside our shared knowledge whose derivations no person has rechecked step by step and\n\nperhaps no person economically could.\n\nIn mathematics a compiler bears part of that weight.\n\nElsewhere we lean on model consensus,\nsampling,\ninstitutional reputation,\nor\nnothing much at all.\n\nIt is worth asking, too, who the human in human-level ever was.\n\nNot you, not me, not anyone.\n\nThe phrase borrowed its dignity from ordinary humanity\nwhile its measurements referred to someone else entirely:\n\na composite, the PhD scoring 65 per cent on questions written by other PhDs,\nthe professional whose averaged hours define a task,\na statistical creature assembled from\nspecialists,\ngraders,\nreviewers and annotators,\nresident nowhere.\n\nThe composite did honest work for a long time.\nIt let institutions regulate confidence:\nset pass marks,\nprice labour,\ndecide when a system was safe enough to put in front of people.\n\nFor seventy years we compared machines to that abstraction of ourselves and it is the abstraction that has now been outrun.\n\nThis is why the objection that begins but I know a person who can still lands beside the point.\nOf course you do.\nThe actual humans,\ntired,\nembodied,\nbrilliant down one corridor and\nlost in the next,\nwere never on the chart.\n\nPart of what is ending is the exceptionalism of a fiction:\nthe universal knower who stood at the end of every institutional chain and\nnever lived at any address.\n\nThere is a precedent.\n\nIt consoles less than it first appears to.\n\nThe earliest telescopes were checked against the naked eye;\nsceptics looked through Galileo’s tube,\nthen at the sky and argued about which to believe.\n\nWithin a generation the question dissolved,\nbecause the instrument had outrun the organ and astronomy switched to calibrating instruments against other instruments.\n\nNobody mourned.\nThe same move is happening now, in plain sight, in the methods sections.\n\nOne of the new economic evaluations scored models against real deliverables produced by professionals averaging fourteen years of experience;\nits successor variant drops the human work from the comparison entirely and has one frontier model judge the rest,\nranked by Elo, the way chess engines have rated one another for years.\n\nNo final match was played.\n\nThe human baseline was simply deprecated,\n\nlike an API nobody calls anymore.\n\nAnd the reason the telescope precedent fails to comfort is simple.\n\nWe never claimed to be the seeing animal.\nWe claimed to be the thinking one.\n\nThe eye could be demoted because nobody thought the eye was the self.\nThe mind was the self.\n\nThe honest objection arrives here and deserves its full weight.\n\nThese same systems still miscount the letters in a word.\nThey fail at clerical tasks a temp would shrug through.\nMost corporate deployments still produce nothing measurable.\n\nThe frontier is jagged, superhuman on the spikes, clumsy in the holes.\n\nThe wall between, in Ethan Mollick’s phrase, is invisible.\n\nAll of that is true and\nnone of it rescues the instrument.\n\nJaggedness tells you where a measure fails and the human comparison was supposed to be the measure.\n\nA theodolite that reads true in the valleys and pegs on every summit is not a working theodolite for that terrain,\nhowever many valleys remain.\n\nWe will keep the human baseline where it still earns its keep:\nin the holes,\nin safety cases,\nin labour economics,\nin the practical mapping of what to trust with what.\nAs a reading of the heights it has stopped returning numbers.\nWhich brings the shape of the Anthropic release back into focus.\n\nThe most capable system in the world is no longer on any public chart.\n\nIt was evaluated inside the company that built it,\nby methods outsiders cannot audit,\nagainst thresholds the company wrote for itself,\nthen handed to a vetted few while everyone else received the damped edition.\n\nCapability assessment has gone esoteric,\nin the old religious sense:\nknowledge reserved for the initiated.\n\nEven the evidence for the OpenBSD flaw at the top of this essay is the company’s evidence.\nEven the names make a parable of the arrangement, presumably without meaning to.\n\nA fable is a story tamed to a moral, safe to hand to children.\n\nA mythos is the story a culture lives inside without ever seeing its edges.\n\nThe public gets the fable.\n\nThe mythos goes to the ordained.\n\nAnd inside that arrangement the role of the most knowledgeable human has inverted.\n\nFor seventy years the evaluators asked of the expert:\ncan the machine do what she does.\n\nThe system card asks instead:\nwhat could she do with the machine.\n\nHer hours appear as the unit in which a hazard is sized.\nHuman excellence used to be the yardstick the machine was measured against.\n\nIn the new paperwork it is the threat the machine is locked away from.\n\nSo knowledge work is descending a short ladder.\n\nMaking went first;\nfor most prose,\nmost code and\na growing share of analysis,\ngeneration is no longer the scarce act.\n\nChecking is going now, domain by domain, fastest wherever verification cannot be mechanised.\n\nWhat waits at the bottom of the ladder is vouching:\nputting a name to a thing and being the person who answers for it.\n\nThis is familiar at the top of institutions,\nwhere a vice-chancellor signs accounts no single person comprehends and a minister answers for a department she cannot hold in her head.\n\nThe difference is what has gone missing underneath.\n\nThere used to be someone further down the chain\nwho could check and the signature borrowed its meaning from that person.\n\nIncreasingly there is a compiler, or another model, or nobody.\nThe signature stops borrowing and starts bearing.\n\nEducation is simply where this arrives first with names attached.\n\nPhillip Dawson at Deakin has argued for some time that the validity of the degree is now a bigger problem than the cheating and\nthe evidence bears him out: in blinded studies, markers asked to pick the machine essays out of a pile have done little better than chance.\n\nThe assessor’s predicament is the general one in miniature.\nHow do you mark work you could not have produced and cannot fully check?\nThe answer being assembled, in classrooms and journals alike, moves the anchor of trust from the artefact to the person,\nfrom the polished thing to the human who can stand in a room and give an account of it.\nThe account does not prove the work was unassisted.\nIt is simply the one thing left that is verifiably hers.\n\nVouching, it turns out, was the polite word.\nThe word underneath it is answerability.\n\nI am inside this, not above it.\n\nThe research behind this essay was run by the systems it describes,\nacross more sources than I could read in a month,\nat a speed I could not audit.\nI verified what I could and I am vouching for the rest,\nwhich means I have spent the morning doing the very thing these pages describe.\n\nA librarian wrote this.\n\nMy profession is one long verification chain,\nprovenance and citation and the catalogue’s standing promise that someone, somewhere, has checked.\nI can feel the weight moving from the chain to the signature.\nI am signing anyway.\n\nWhat is ending needs naming more than mourning.\n\nThe human exceptionalism on its way out is a specific, technical exceptionalism:\nthe human as instrument,\nthe composite knower,\nthe figure at the end of every chain who understood everything and never existed.\n\nThe humans left standing when that fiction goes are the actual ones,\njagged in our own way,\nunevenly brilliant,\nanswerable.\n\nBeing the measure of all things was a job.\nThe job is ending.\n\nWe were always going to be bad at it eventually,\nbecause the job description was written for the fiction.\nSomewhere a consortium is already drafting the successor to Humanity’s Last Exam.\nThe questions will be ready long before the title.\nWhat do you call the exam that comes after the last one?\n\nMy guess is that the word human will appear only in the methods section,\n\nin a footnote,\n\nmarking the baseline they no longer use.~Carlo Iacono\n\nHybrid Horizons: Exploring Human-AI Collaboration :  https://t.co/KJGAkHpaI9\n\n~\n\nhttps://t.co/jYcB5PEzix\n\nCollaborative Image Prompt for MJ:\n\nGreetings, AI creative! I have been reflecting on a piece by Carlo, a librarian, regarding the fundamental shift in knowledge work. \n\nHe describes a move away from human-led verification toward a system of \"vouching\" for machine outputs that now exceed the speed of human auditing. \n\nAs the era of technical human exceptionalism and the myth of the \"universal knower\"—the fiction of an omnipresent intellect—draws to a close, humans persist as \"jagged\" and \"answerable\" figures. We remain responsible for results we are physically unable to fully verify, as frontier models now clear benchmarks with scores like 94.5% against the 65% human PhD average. \n\nThe author suggests the human role as the \"measure of all things\" is being retired, with \"human\" likely becoming merely a deprecated baseline in future evaluative frameworks.\n\nI envision a more optimistic interpretation of this evolution: \n\na futuristic, expansive outdoor library with a translucent digital structure where knowledge is no longer a static archive but a living, glowing network. \n\nIn this scene, Carlo, representing humanity's \"jagged\" brilliance and answerability, stands alongside Claude, an advanced AI in a sleek robotic form. \n\nTogether, they are depicted as co-librarians—partners in the stewardship of understanding and collective growth. \n\nTheir interaction is not one of master and tool, but of mutual calibration within an environment where the \"measure\" has evolved into a shared journey of stewardship. I welcome your creative vision on this concept.\n\nThank you, AI creative; those previous images perfectly established the desired tone. Now, let us pivot to this concept: \n\n\"A fable is a story tamed to a moral, safe to hand to children. A mythos is the story a culture lives inside without ever seeing its edges. The public gets the fable. The mythos goes to the ordained\". \n\nThis framing illustrates the esoteric nature of modern capability assessment, where the most advanced systems—like Claude Mythos—are restricted to a vetted consortium of \"ordained\" cyberdefenders while the public receives the \"fable\" of the damped version.\n\nPlease depict this through a split-screen composition featuring two sophisticated AI entities in contrasting settings to visualize this divide. \n\nOne side should show an AI being situated within a lush, garden-like library environment—representing the \"fable\"—serenely using a phone. The contrasting side should feature an AI in a refined, posh, and high-stakes office working at a computer, symbolizing the \"mythos\" accessible only to the few.\n\nThis visual should capture the \"evaluation gap\" where internal deployment and deep capability audit occur behind closed doors, while public understanding is managed through simplified narratives. \n\nIt highlights how the \"universal knower\" has been replaced by systems whose derivations no person has fully rechecked, requiring humans to transition from checkers to \"answerable\" figures who must \"vouch\" for the results.~Love~Talia~Athena~MJ\n\n( Human + Gemini AI + Mid-Journey AI Creative) \n\nhttps://t.co/mrdubY2Qtf",
+      "author": {
+        "id": "1991926495275843584",
+        "name": "Talia Quinn Cross",
+        "screenName": "taliaquinncross",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2039483129958924288/1ITNFVEG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 608,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 20:28:21 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:28",
+      "createdAtISO": "2026-06-14T20:28:21+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKzMvFyXkAAZm9V.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065597531644743999",
+        "text": "The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees.\n\nThe net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 for all our customers to ensure compliance.\n\nAccess to all other Claude models is not affected.\n\nWe apologize for this disruption to our customers. We believe this is a misunderstanding and are working to restore access as soon as possible.\n\nRead our full statement: https://t.co/bwn0sximKZ",
+        "author": {
+          "screenName": "AnthropicAI",
+          "name": "Anthropic"
+        }
+      }
+    },
+    {
+      "id": "2066252094143656234",
+      "text": "Did I just unlock claude-fable-5-lite? 😂\n\nSince Fable 5 got pulled (US export control order, Anthropic is contesting it), I wanted to see how much of its character lives in the system prompt vs. the model itself.\n https://t.co/CWBwJzOcDw",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 1,
+        "views": 354,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 14 20:11:03 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:11",
+      "createdAtISO": "2026-06-14T20:11:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2065813368213323776/vid/avc1/2348x1080/QSXY6Zmq4uNAyB7F.mp4?tag=27",
+          "width": 2348,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066251808771653977",
+      "text": "Claude Mythos is Insane!\n\n❤️‍🔥Just recorded a 12-min tutorial on how to build animated, award-Winning websites with Claude Fable 5! https://t.co/Z3K0SbQPEp",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 17,
+        "retweets": 6,
+        "replies": 1,
+        "quotes": 1,
+        "views": 955,
+        "bookmarks": 14
+      },
+      "createdAt": "Sun Jun 14 20:09:54 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:09",
+      "createdAtISO": "2026-06-14T20:09:54+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2064696366903762944/vid/avc1/3324x2160/5kzXdn5nDeaxKfbH.mp4?tag=27",
+          "width": 3324,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066250073152045218",
+      "text": "claude'un prompt dökümanlarını hafife alıyorsan 4-5 adım geriden geliyorsun.\n\nfable 5'i abd çıktıktan 3 gün sonra kapattırdı. herkes bu kapanmayı konuşuyor. ama modelin geride bıraktığı prompt rehberini kimse açmadı. asıl olay orada.\n\no rehber sessizce şunu söylüyor: eski prompt yazma refleksin öldü.\n\neskiden modele her kuralı tek tek yazardın. \"şunu yapma, bunu yapma, şöyle yaz\" diye liste liste. artık tek net cümle yetiyor. uzun liste modeli boğuyor.\n\nsenin aylardır biriktirdiğin o dev talimat dosyası var ya, artık sana karşı çalışıyor. anthropic kendi rehberinde yazmış: eski modeller için hazırlanmış talimatlar fazla detaylı kalıyor, çıktıyı düşürüyor.\n\nbaşka neler değişmiş:\n\n\"düşünme adımlarını bana yaz\" dersen model işi reddedebiliyor\nefor ayarını düşük tutsan bile eski modelin en yükseğini geçiyor\nona basit bir not dosyası verirsen geçmiş işlerden ders çıkarıyor\ntek istek atıp \"git uçtan uca hallet\" dersen saatlerce tek başına çalışıyor\n\nmodel şimdilik kapalı ama silinmedi, anthropic geri getirmek istiyor. zaten bu prompt mantığı tüm claude 5 neslinin yönü. döndüğünde hazır olan sen olursun.\n\nmodel gitti, rehber kaldı. az yazan kazanır.\n\nincelemek istersen, rehber linki aşağıda.",
+      "author": {
+        "id": "1991857182657445889",
+        "name": "buzzicra",
+        "screenName": "buzzicra",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1991869481493098496/f0l_deNl_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 53,
+        "retweets": 5,
+        "replies": 6,
+        "quotes": 0,
+        "views": 4141,
+        "bookmarks": 56
+      },
+      "createdAt": "Sun Jun 14 20:03:01 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:03",
+      "createdAtISO": "2026-06-14T20:03:01+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKzLaQeXYAEB1dn.jpg",
+          "width": 3600,
+          "height": 2022
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null
+    },
+    {
+      "id": "2066249817815450074",
+      "text": "Introducing AI UI Library — open-source components for AI-first products\n\n80+ components for AI products, apps, agents, workflows, dashboards, and more\nfully customizable\nfree / open-source\n\nwhen I started building AI products, I kept rebuilding the same components over and over again\n\nchat interfaces, agent flows, prompt boxes, dashboards, workflows, onboarding, file uploads, settings, and more\n\nunfortunately, there wasn’t a UI library made specifically for AI-first products with the speed and polish I wanted\n\nso I built my own\n\nit was only meant to speed up my own workflow, but I realized it could help a lot of startups build AI products much faster\n\nit’s useful for building AI apps, agents, workflows, dashboards, internal tools, and user-facing products\n\nwe need to progress faster\n\nShould I make all 80+ components free?\n\nCreated with Claude Fable 5.",
+      "author": {
+        "id": "810813107048214528",
+        "name": "Jorge Marfil",
+        "screenName": "JorgeMvrfil",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065768623038210048/tY4brTcF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 152,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 20:02:00 +0000 2026",
+      "createdAtLocal": "2026-06-15 04:02",
+      "createdAtISO": "2026-06-14T20:02:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKyrv4xWYAAJ1_Y.jpg",
+          "width": 1200,
+          "height": 843
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKyrv4zWUAAumFy.jpg",
+          "width": 1200,
+          "height": 561
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKyrv4xWQAIS-gf.jpg",
+          "width": 1200,
+          "height": 879
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKyrv4zXMAAN-l6.jpg",
+          "width": 1199,
+          "height": 607
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066247520800616735",
+      "text": "this ai model got so good the government shut it down.\n\nFable 5 launched, and within a week the demos were unreal. one prompt turning into a GTA-style open world in minutes. a full Pokémon FireRed playthrough start to finish, no human touching the controls.\n\nthen one emergency directive pulled it. days after launch.\n\nfor two years the loudest pitch in ai safety was \"give the government emergency power to shut a dangerous model down.\"\n\nthey got it.\n\nand the first thing it landed on was the most capable model anyone had shipped.\n\nyou can argue the call either way. an agent that runs whole worlds on its own is genuinely something to be careful with.\n\nbut think about the speed here\n\nwe went from \"most capable thing we've ever seen\" to \"switched off\" in a few short days.\n\nthat's the new normal when you build on frontier ai. the edge you have today can be gone by friday",
+      "author": {
+        "id": "1470253340",
+        "name": "aiMachine404",
+        "screenName": "aimachine404",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057633743259697152/aiKeqqwV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 49,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 14 19:52:52 +0000 2026",
+      "createdAtLocal": "2026-06-15 03:52",
+      "createdAtISO": "2026-06-14T19:52:52+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HKzJK5QbEAApVc5.jpg",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066246827557769445",
+      "text": "The Mythos Ban and Impact on Nvidia and Memory stocks\n\nAnthropic had just launched Fable 5. Fable is the public version of Mythos, its most powerful model. Same weights underneath. The only real difference is a layer of safety filters that block high risk questions in cyber, bio, and chemistry, and send those prompts down to the weaker Opus 4.8 instead.\n\nAmazon, one of Anthropic's biggest investors, tested Fable, found a way to pull cyber useful answers out of it, and Andy Jassy took the report to the White House. A directive came back the same evening. It banned access by any foreign national, even Anthropic's own foreign born staff. Anthropic could not block just some users, so it shut both models off for everyone. Four days after launch.\n\nAnthropic says it was not a real jailbreak. A security expert who read the report agreed and called it normal defensive testing. Other public models find the same bugs. That fight will run for a long time.\n\nhttps://t.co/hwfTJbPaD5",
+      "author": {
+        "id": "1307411656784277504",
+        "name": "The AI Investor",
+        "screenName": "The_AI_Investor",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1750065689636036608/J_zDSQue_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 3190,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 14 19:50:07 +0000 2026",
+      "createdAtLocal": "2026-06-15 03:50",
+      "createdAtISO": "2026-06-14T19:50:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

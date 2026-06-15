@@ -1,6 +1,6 @@
 {
-  "queryOffset": 2,
-  "creatorOffset": 7,
+  "queryOffset": 5,
+  "creatorOffset": 15,
   "runs": [
     {
       "at": "2026-06-12T08:23:09.627Z",
@@ -53,25 +53,50 @@
       "max": 50,
       "target": 50,
       "note": "official case-library thread plus linked seed tweets"
+    },
+    {
+      "at": "2026-06-15T00:16:13.553Z",
+      "from": "2026-06-14",
+      "to": "2026-06-14",
+      "queryCount": 6,
+      "creators": [
+        "aaronli",
+        "mcgreenbeats",
+        "chetaslua",
+        "richardzphotoz",
+        "earthtojake",
+        "kail_designs",
+        "oluwaphilemon1",
+        "aurelien_gz"
+      ],
+      "mode": "latest",
+      "max": 35,
+      "target": 160
     }
   ],
-  "lastRunAt": "2026-06-13T06:51:05.753Z",
+  "lastRunAt": "2026-06-15T00:16:13.553Z",
   "lastWindow": {
-    "from": "2026-06-12",
-    "to": "2026-06-13"
+    "from": "2026-06-14",
+    "to": "2026-06-14"
   },
   "lastSelection": {
     "queries": [
-      "incremental core query batch q0"
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\"))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (prompt OR prompts OR \"copy prompt\" OR tutorial OR guide))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media)",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (design OR ui OR ux OR figma OR portfolio OR \"hero section\" OR \"liquid glass\"))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (animation OR animated OR motion OR cinematic OR video OR \"motion design\"))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (3d OR blender OR \"three.js\" OR threejs OR voxel OR model OR scene))"
     ],
     "creators": [
-      "meta_alchemist",
-      "viktoroddy",
-      "ann_nnng",
-      "alexprokhorov",
-      "spoobsv1",
-      "higgsfield",
-      "claudeai-official-case-library"
+      "aaronli",
+      "mcgreenbeats",
+      "chetaslua",
+      "richardzphotoz",
+      "earthtojake",
+      "kail_designs",
+      "oluwaphilemon1",
+      "aurelien_gz"
     ]
   }
 }
