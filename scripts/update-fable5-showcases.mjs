@@ -1081,7 +1081,9 @@ function writeJsonIfChanged(filePath, value) {
 
 mkdirSync(OUT_DIR, { recursive: true })
 const CHUNK_DIR = join(OUT_DIR, 'chunks')
+const PAGE_DIR = join(OUT_DIR, 'pages')
 mkdirSync(CHUNK_DIR, { recursive: true })
+mkdirSync(PAGE_DIR, { recursive: true })
 const shardMap = new Map()
 for (const item of collection) {
   const day = item.date || String(item.firstSeenAt || '').slice(0, 10) || 'unknown'
@@ -1101,17 +1103,26 @@ for (const file of previousShardFiles) {
   if (activeShardFiles.has(file)) continue
   rmSync(join(OUT_DIR, file), { force: true })
 }
-const chunkList = []
+const pageList = []
 for (let index = 0; index < collection.length; index += CHUNK_SIZE) {
-  const chunk = collection.slice(index, index + CHUNK_SIZE)
-  const file = `chunks/${String(chunkList.length).padStart(3, '0')}.json`
-  writeJsonIfChanged(join(OUT_DIR, file), chunk)
-  chunkList.push({ file, count: chunk.length })
+  const page = collection.slice(index, index + CHUNK_SIZE)
+  const fileName = `${String(pageList.length).padStart(3, '0')}.json`
+  const file = `pages/${fileName}`
+  writeJsonIfChanged(join(OUT_DIR, file), page)
+  writeJsonIfChanged(join(CHUNK_DIR, fileName), page)
+  pageList.push({
+    file,
+    count: page.length,
+    fromDate: page[0]?.date || '',
+    toDate: page[page.length - 1]?.date || '',
+  })
 }
-const activeChunkFiles = new Set(chunkList.map((chunk) => basename(chunk.file)))
-for (const entry of readdirSync(CHUNK_DIR, { withFileTypes: true })) {
-  if (!entry.isFile() || !entry.name.endsWith('.json')) continue
-  if (!activeChunkFiles.has(entry.name)) rmSync(join(CHUNK_DIR, entry.name), { force: true })
+const activePageFiles = new Set(pageList.map((page) => basename(page.file)))
+for (const dir of [PAGE_DIR, CHUNK_DIR]) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.endsWith('.json')) continue
+    if (!activePageFiles.has(entry.name)) rmSync(join(dir, entry.name), { force: true })
+  }
 }
 const categoryCounts = new Map()
 for (const item of collection) {
@@ -1128,7 +1139,9 @@ writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
   total: collection.length,
   categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
-  chunks: chunkList,
+  pageSize: CHUNK_SIZE,
+  pages: pageList,
+  chunks: pageList.map(({ file, count, fromDate, toDate }) => ({ file: file.replace(/^pages\//, 'chunks/'), count, fromDate, toDate })),
   shards: shardList,
 })
 const finalUrls = new Set(collection.map((item) => item.sourceUrl).filter(Boolean))

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
-import { loadFable5Featured, loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
+import { loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
 import { trackEvent } from '@/lib/analytics'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
 import { useI18n } from '@/i18n.jsx'
@@ -375,7 +375,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   const { t, language } = useI18n()
   const [items, setItems] = useState(null)
   const [index, setIndex] = useState(null)
-  const [loadedShardCount, setLoadedShardCount] = useState(0)
+  const [loadedPageCount, setLoadedPageCount] = useState(0)
   const [loadError, setLoadError] = useState('')
   const [loadingMore, setLoadingMore] = useState(false)
   const [query, setQuery] = useState('')
@@ -419,12 +419,12 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
 
   useEffect(() => {
     let alive = true
-    loadFable5Featured().then(
-      ({ index: nextIndex, items: nextItems, loadedShards }) => {
+    loadFable5Showcases({ start: 0, count: SHARD_LOAD_STEP }).then(
+      ({ index: nextIndex, items: nextItems, loadedPages }) => {
         if (!alive) return
         setIndex(nextIndex)
         setItems(nextItems)
-        setLoadedShardCount(loadedShards)
+        setLoadedPageCount(loadedPages)
       },
       (err) => alive && setLoadError(String(err?.message || err))
     )
@@ -434,16 +434,16 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   }, [])
 
   const totalCount = index?.total || 0
-  const totalShardCount = index?.shards?.length || 0
-  const canLoadMore = totalShardCount > loadedShardCount
+  const totalPageCount = (index?.pages?.length || index?.chunks?.length || index?.shards?.length || 0)
+  const canLoadMore = totalPageCount > loadedPageCount
 
   const loadMore = () => {
     if (!canLoadMore || loadingMore) return
     setLoadingMore(true)
-    loadFable5Showcases({ start: loadedShardCount, count: SHARD_LOAD_STEP }).then(
-      ({ items: nextItems, loadedShards }) => {
+    loadFable5Showcases({ start: loadedPageCount, count: SHARD_LOAD_STEP }).then(
+      ({ items: nextItems, loadedPages }) => {
         setItems((current) => mergeShowcaseItems(current, nextItems))
-        setLoadedShardCount((count) => count + loadedShards)
+        setLoadedPageCount((count) => count + loadedPages)
         setLoadingMore(false)
       },
       (err) => {
@@ -464,7 +464,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
     )
     observer.observe(target)
     return () => observer.disconnect()
-  }, [canLoadMore, loadingMore, loadedShardCount])
+  }, [canLoadMore, loadingMore, loadedPageCount])
 
   useEffect(() => {
     if (!canLoadMore || loadingMore) return undefined
@@ -482,7 +482,7 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
     window.addEventListener('scroll', onScroll, { passive: true })
     maybeLoadMore()
     return () => window.removeEventListener('scroll', onScroll)
-  }, [canLoadMore, loadingMore, loadedShardCount])
+  }, [canLoadMore, loadingMore, loadedPageCount])
 
   const scenes = useMemo(() => {
     if (Array.isArray(index?.categoryCounts) && index.categoryCounts.length) {
@@ -502,20 +502,20 @@ export default function Fable5Page({ onBack, authLoaded = true, authEmail, onLog
   }, [index, items])
 
   useEffect(() => {
-    if (!items || !index || loadedShardCount >= totalShardCount) return undefined
+    if (!items || !index || loadedPageCount >= totalPageCount) return undefined
     if (scene === 'all' && !query.trim()) return undefined
     let cancelled = false
     setLoadingMore(true)
     ;(async () => {
-      let start = loadedShardCount
+      let start = loadedPageCount
       try {
-        while (!cancelled && start < totalShardCount) {
-          const { items: nextItems, loadedShards } = await loadFable5Showcases({ start, count: SHARD_LOAD_STEP })
+        while (!cancelled && start < totalPageCount) {
+          const { items: nextItems, loadedPages } = await loadFable5Showcases({ start, count: SHARD_LOAD_STEP })
           if (cancelled) return
           setItems((current) => mergeShowcaseItems(current, nextItems))
-          start += loadedShards
-          setLoadedShardCount(start)
-          if (!loadedShards) break
+          start += loadedPages
+          setLoadedPageCount(start)
+          if (!loadedPages) break
         }
       } catch (err) {
         if (!cancelled) setLoadError(String(err?.message || err))

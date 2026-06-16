@@ -33,14 +33,20 @@ export function loadFable5Index() {
   return indexPending
 }
 
-async function loadShard(shard, version = '') {
-  const cacheKey = `${version}:${shard.file}`
+function pageListFromIndex(index) {
+  if (Array.isArray(index.pages) && index.pages.length) return index.pages
+  if (Array.isArray(index.chunks) && index.chunks.length) return index.chunks
+  return index.shards || []
+}
+
+async function loadPage(page, version = '') {
+  const cacheKey = `${version}:${page.file}`
   if (!shardCache.has(cacheKey)) {
     shardCache.set(
       cacheKey,
       (async () => {
-        const res = await fetch(cacheBustedUrl(shard.file, version), { cache: 'no-store' })
-        if (!res.ok) throw new Error(`fable5 shard ${shard.file}: HTTP ${res.status}`)
+        const res = await fetch(cacheBustedUrl(page.file, version), { cache: 'no-store' })
+        if (!res.ok) throw new Error(`fable5 page ${page.file}: HTTP ${res.status}`)
         return res.json()
       })().catch((err) => {
         shardCache.delete(cacheKey)
@@ -53,25 +59,17 @@ async function loadShard(shard, version = '') {
 
 export async function loadFable5Showcases({ start = 0, count = 2 } = {}) {
   const index = await loadFable5Index()
-  const selected = (index.chunks?.length ? index.chunks : index.shards || []).slice(start, start + count)
-  const shards = await Promise.all(selected.map((shard) => loadShard(shard, index.lastFetchedAt || index.updatedAt || '')))
-  const items = shards.flat()
+  const selected = pageListFromIndex(index).slice(start, start + count)
+  const pages = await Promise.all(selected.map((page) => loadPage(page, index.lastFetchedAt || index.updatedAt || '')))
+  const items = pages.flatMap((page) => (Array.isArray(page) ? page : page.items || []))
   items.sort(
     (a, b) =>
       String(b.date || '').localeCompare(String(a.date || '')) ||
       showcaseScore(b.metrics) - showcaseScore(a.metrics)
   )
-  return { index, items, loadedShards: selected.length }
+  return { index, items, loadedPages: selected.length, totalPages: pageListFromIndex(index).length }
 }
 
 export async function loadFable5Featured() {
-  const index = await loadFable5Index()
-  try {
-    const res = await fetch(cacheBustedUrl('featured.json', index.lastFetchedAt || index.updatedAt || ''), { cache: 'no-store' })
-    if (!res.ok) throw new Error(`fable5 featured: HTTP ${res.status}`)
-    const items = await res.json()
-    return { index, items: Array.isArray(items) ? items : [], loadedShards: index.chunks?.length ? 1 : 0 }
-  } catch {
-    return loadFable5Showcases({ start: 0, count: 1 })
-  }
+  return loadFable5Showcases({ start: 0, count: 1 })
 }

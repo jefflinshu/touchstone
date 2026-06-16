@@ -13,6 +13,7 @@
     "fable5:update": "node scripts/update-fable5-showcases.mjs",
     "fable5:update:304": "node scripts/update-fable5-showcases.mjs --limit 304",
     "fable5:update:local": "node scripts/update-fable5-showcases.mjs --cache-assets 0",
+    "fable5:validate": "node scripts/validate-fable5-data.mjs",
     "setup": "npm install && npm --prefix web install && npm --prefix web run build"
   },
   "dependencies": {
