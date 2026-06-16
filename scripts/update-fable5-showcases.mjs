@@ -863,21 +863,58 @@ function cacheMediaPreview(item) {
   const publicPath = `/fable5-media/${fileName}`
   if (existsSync(abs)) return { ...item, mediaThumbUrl: publicPath }
 
+  const browserCurlArgs = ['-L', '--fail', '--retry', '2', '--retry-delay', '1', '-A', 'Mozilla/5.0']
+  const twitterImageCandidates = (url) => {
+    if (!/pbs\.twimg\.com\/media\//i.test(url)) return [url]
+    const base = url.split('?')[0]
+    return [...new Set([`${base}?format=jpg&name=large`, `${base}?format=png&name=large`, url])]
+  }
+
   try {
     if (item.media === 'video' || /\.mp4(\?|$)/i.test(remoteUrl)) {
       execFileSync(
         'ffmpeg',
-        ['-y', '-hide_banner', '-loglevel', 'error', '-ss', '00:00:01', '-i', remoteUrl, '-frames:v', '1', '-q:v', '4', abs],
-        { cwd: ROOT, timeout: 12_000, stdio: ['ignore', 'ignore', 'pipe'] }
+        [
+          '-y',
+          '-hide_banner',
+          '-loglevel',
+          'error',
+          '-user_agent',
+          'Mozilla/5.0',
+          '-ss',
+          '00:00:00.5',
+          '-i',
+          remoteUrl,
+          '-frames:v',
+          '1',
+          '-vf',
+          'scale=1280:-1:force_original_aspect_ratio=decrease,format=yuvj420p',
+          '-q:v',
+          '5',
+          abs,
+        ],
+        { cwd: ROOT, timeout: 25_000, stdio: ['ignore', 'ignore', 'pipe'] }
       )
     } else {
-      execFileSync('curl', ['-L', '--fail', '--max-time', '12', '-o', abs, remoteUrl], {
-        cwd: ROOT,
-        stdio: ['ignore', 'ignore', 'pipe'],
-      })
+      let lastError
+      for (const candidate of twitterImageCandidates(remoteUrl)) {
+        try {
+          execFileSync('curl', [...browserCurlArgs, '--max-time', '30', '-o', abs, candidate], {
+            cwd: ROOT,
+            stdio: ['ignore', 'ignore', 'pipe'],
+          })
+          lastError = null
+          break
+        } catch (error) {
+          lastError = error
+          rmSync(abs, { force: true })
+        }
+      }
+      if (lastError) throw lastError
     }
     if (existsSync(abs)) return { ...item, mediaThumbUrl: publicPath }
   } catch (error) {
+    rmSync(abs, { force: true })
     return { ...item, mediaCacheError: error instanceof Error ? error.message : String(error) }
   }
   return item
@@ -993,7 +1030,8 @@ const selected = [...candidateByUrl.values()]
   })
   .slice(0, limit)
   .map((post) => {
-    const shouldCacheMedia = cacheMedia && (!cacheFrom || String(post.date || '') >= cacheFrom)
+    const postDay = asiaShanghaiDate(post.createdAtISO) || post.date || ''
+    const shouldCacheMedia = cacheMedia && (!cacheFrom || String(postDay) >= cacheFrom)
     const item = toShowcase(post, post.sourceRun, generatedAt, { cacheMedia: shouldCacheMedia })
     item.fetchRuns = post.fetchRuns || item.fetchRuns
     return item
