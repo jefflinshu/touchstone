@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-15",
-  "lastFetchedAt": "2026-06-15T00:18:13.597Z",
-  "cliStatus": "Loaded 2224 locally archived X posts from 16 fetch runs; collection now has 437 source-linked cards and 365 creator profiles.",
+  "updatedAt": "2026-06-16",
+  "lastFetchedAt": "2026-06-16T06:37:07.793Z",
+  "cliStatus": "Loaded 2445 locally archived X posts from 20 fetch runs; collection now has 442 source-linked cards and 370 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
     "official-claudeai-case-library-2026-06-12",
@@ -10,7 +10,9 @@
     "launch-2026-06-08-to-2026-06-12-target500",
     "launch-2026-06-08-to-2026-06-12-latest-target500",
     "recent-2026-06-11-to-2026-06-12",
+    "incremental-2026-06-15-to-2026-06-16-creators15",
     "incremental-2026-06-12-to-2026-06-13-creators1",
+    "incremental-2026-06-15-to-2026-06-16-q5",
     "today-2026-06-12-latest-target500",
     "incremental-2026-06-14-to-2026-06-14-creators7",
     "incremental-2026-06-14-to-2026-06-14-q2",
@@ -18,15 +20,15 @@
     "incremental-2026-06-11-to-2026-06-12-q0",
     "incremental-2026-06-12-to-2026-06-13-q0"
   ],
-  "total": 437,
+  "total": 442,
   "categoryCounts": [
     {
       "key": "games",
-      "count": 146
+      "count": 149
     },
     {
       "key": "apps",
-      "count": 70
+      "count": 71
     },
     {
       "key": "websites",
@@ -34,27 +36,27 @@
     },
     {
       "key": "videos",
-      "count": 103
+      "count": 105
     },
     {
       "key": "3d",
-      "count": 196
+      "count": 200
     },
     {
       "key": "design",
-      "count": 77
+      "count": 78
     },
     {
       "key": "agents",
-      "count": 75
+      "count": 76
     },
     {
       "key": "prompts",
-      "count": 139
+      "count": 141
     },
     {
       "key": "code",
-      "count": 61
+      "count": 62
     },
     {
       "key": "research",
@@ -70,7 +72,7 @@
     },
     {
       "key": "experiments",
-      "count": 12
+      "count": 13
     }
   ],
   "chunks": [
@@ -148,10 +150,15 @@
     },
     {
       "file": "chunks/018.json",
-      "count": 5
+      "count": 10
     }
   ],
   "shards": [
+    {
+      "date": "2026-06-15",
+      "file": "2026-06-15.json",
+      "count": 5
+    },
     {
       "date": "2026-06-14",
       "file": "2026-06-14.json",

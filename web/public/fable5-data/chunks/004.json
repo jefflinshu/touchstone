@@ -1,5 +1,150 @@
 [
   {
+    "id": "epicmnw-2065311091027251222",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "me n who",
+    "handle": "@epicmnw",
+    "sourceUrl": "https://x.com/epicmnw/status/2065311091027251222",
+    "date": "2026-06-12",
+    "kind": "showcase",
+    "scene": "games",
+    "categories": [
+      "games",
+      "3d",
+      "agents",
+      "prompts"
+    ],
+    "media": "video",
+    "heat": "87 likes · 59 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "agents",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "AI can now build multiplayer games from a prompt🎮\n\nHiggsfield Games has been unveiled as a new system that allows users to build and deploy multiplayer games from a single prompt. Powered by Claude Fable 5 and enhanced by Higgsfield MCP, the platform can generate characters, environments, props, and gameplay across both 2D and 3D genres — dramatically lowering the barrier to game development.",
+    "metrics": {
+      "likes": 87,
+      "reposts": 59,
+      "replies": 50,
+      "quotes": 0,
+      "views": 272,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065311015596920832/vid/avc1/1276x720/9CKMVDMgP14X4-VT.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-12T08:09:24.397Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
+    "fetchRuns": [
+      "today-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Introduces a prompt-to-multiplayer-game workflow powered by Claude Fable 5 and Higgsfield MCP."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [
+        "mcp",
+        "higgsfield"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/epicmnw-2065311091027251222.jpg",
+    "avatarUrl": "/fable5-avatars/epicmnw.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2027662419406032896/C93kNqC6_normal.jpg"
+  },
+  {
+    "id": "om_patel5-2064549188671508690",
+    "title": "Call of Duty-style clone one-shotted with Fable 5",
+    "author": "Om Patel",
+    "handle": "@om_patel5",
+    "sourceUrl": "https://x.com/om_patel5/status/2064549188671508690",
+    "date": "2026-06-10",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "134 likes · 7 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "prompted",
+    "prompt": "\"make me a cod zombies clone, single player, and make the shooting feel good\" \n\nwhat came back:\n\n> a working first person shooter in the browser\n> movement and gunplay that feels good to play\n> barely any bugs, most features just worked first try\n> built on three.js with zero engine, zero assets\n\nthe gap between an idea and the actual thing is gone, and vibe coding a whole game is a one sentence problem",
+    "note": "Prompt text was extracted from the original post. Verify any hidden follow-up steps before treating it as a tutorial.",
+    "originalText": "FABLE 5 ONE SHOT A CALL OF DUTY ZOMBIES CLONE FROM A SINGLE LAZY PROMPT\n\nno plan mode and no back and forth with claude\n\njust one prompt, and it built a playable fps with three.js\n\nthe exact prompt: \"make me a cod zombies clone, single player, and make the shooting feel good\" \n\nwhat came back:\n\n> a working first person shooter in the browser\n> movement and gunplay that feels good to play\n> barely any bugs, most features just worked first try\n> built on three.js with zero engine, zero assets\n\nthe gap between an idea and the actual thing is gone, and vibe coding a whole game is a one sentence problem",
+    "metrics": {
+      "likes": 134,
+      "reposts": 7,
+      "replies": 17,
+      "quotes": 8,
+      "views": 16984,
+      "bookmarks": 52
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064548546343325696/vid/avc1/1920x1080/M93vDhF94wjZYnaj.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:32.794Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Shows a playable game prototype attributed to Claude Fable 5, with the post emphasizing one-prompt or one-shot generation."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "prompted",
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [
+        "threejs"
+      ],
+      "risk": [
+        "copyright"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/om_patel5-2064549188671508690.jpg",
+    "avatarUrl": "/fable5-avatars/om_patel5.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1918476395111501824/M9qX-gQP_normal.jpg",
+    "categories": [
+      "games",
+      "3d",
+      "prompts"
+    ]
+  },
+  {
     "id": "oluwaphilemon1-2064993321265566175",
     "title": "3D or WebGL prototype built with Fable 5",
     "author": "FHILY👑",
@@ -31,7 +176,7 @@
       "https://video.twimg.com/amplify_video/2064993258204209152/vid/avc1/720x1280/tKHN-omQVBi8VSFd.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -98,7 +243,7 @@
       "https://video.twimg.com/amplify_video/2064637897056071680/vid/avc1/1080x1920/WMD7oNqQ-A5ghUHE.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -168,7 +313,7 @@
       "https://video.twimg.com/amplify_video/2064585924181389312/vid/avc1/2872x1560/3lWGQtJHyR9HuVSU.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -237,7 +382,7 @@
       "https://video.twimg.com/amplify_video/2065278222112301056/vid/avc1/1858x1834/GKiC8ekbz9qlYecO.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -298,7 +443,7 @@
       "https://video.twimg.com/amplify_video/2064699542067724288/vid/avc1/1280x720/X5gfDPBwdmh1-YWp.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -360,7 +505,7 @@
       "https://video.twimg.com/amplify_video/2064941000028807169/vid/avc1/3324x2160/5zjb19ypQmsMrJ8g.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11"
@@ -429,7 +574,7 @@
       "https://video.twimg.com/amplify_video/2064498577036939264/vid/avc1/2534x1080/GOHx22X4pp4eDyR-.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -496,7 +641,7 @@
       "https://video.twimg.com/amplify_video/2065078491545243648/vid/avc1/1920x1080/1xAqppjt0hFxRec9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -566,7 +711,7 @@
       "https://video.twimg.com/amplify_video/2064798554732781568/vid/avc1/1920x1080/EiRxVEw60htargIy.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -633,7 +778,7 @@
       "https://video.twimg.com/amplify_video/2064640643884802048/vid/avc1/1920x1080/Dd7_AdqqP7JyQF4P.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:06:53.566Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -703,7 +848,7 @@
       "https://video.twimg.com/amplify_video/2064549987812282369/vid/avc1/1144x720/WqTKRgXJ1uJA-aY4.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -763,7 +908,7 @@
       "https://video.twimg.com/amplify_video/2064429557994897408/vid/avc1/1280x720/LtJSTPBY3aWGbwzW.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -829,7 +974,7 @@
       "https://video.twimg.com/amplify_video/2065036565450244096/vid/avc1/1920x1080/jX0kGHCIv8WmhDUz.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-14T06:09:21.996Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -882,7 +1027,7 @@
       "https://video.twimg.com/amplify_video/2064615934875099136/vid/avc1/1148x720/LT95oAkwGyyASFTa.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -942,7 +1087,7 @@
       "https://video.twimg.com/amplify_video/2064577282501754881/vid/avc1/1914x908/5bYNQDO1BNW-lUNE.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1007,7 +1152,7 @@
       "https://video.twimg.com/amplify_video/2064896872775577600/vid/avc1/3486x2160/RqmM6gBy9bqGUJxC.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1069,7 +1214,7 @@
       "https://pbs.twimg.com/media/HKY__l0bMAAWhQ6.jpg"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1129,7 +1274,7 @@
       "https://video.twimg.com/amplify_video/2064563162477723649/vid/avc1/640x480/cBNuM9NlMlUHFO9C.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1194,7 +1339,7 @@
       "https://video.twimg.com/amplify_video/2064958655372619776/vid/avc1/566x808/3ck_OMzgVWWLBDYF.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1260,7 +1405,7 @@
       "https://video.twimg.com/amplify_video/2064882605015883776/vid/avc1/3724x2160/80Q9lcCFbNPX4J7N.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1323,7 +1468,7 @@
       "https://video.twimg.com/amplify_video/2064654918708080640/vid/avc1/1280x696/nQCBVGe7guS5Ig96.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:46.239Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -1388,7 +1533,7 @@
       "https://pbs.twimg.com/media/HKgshRLXYAAJVIH.jpg"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
+    "lastFetchedAt": "2026-06-16T06:37:07.793Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1410,139 +1555,5 @@
       "risk": []
     },
     "mediaThumbUrl": ""
-  },
-  {
-    "id": "gippp69-2065006424032182618",
-    "title": "Short video generated from a few prompts",
-    "author": "Gipp 🦅",
-    "handle": "@gippp69",
-    "sourceUrl": "https://x.com/gippp69/status/2065006424032182618",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "games",
-    "media": "video",
-    "heat": "78 likes · 0 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "videos",
-      "prompts",
-      "code",
-      "prompt",
-      "demo"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "CLAUDE FABLE 5 WRITES A FLAWLESS SUPER MARIO REMAKE IN REAL TIME\n\ntwo years ago asking an AI to write a game meant getting broken code, mismatched assets, and infinite loops of syntax errors\n\ntoday a single prompt inside an IDE gets you a pixel-perfect, playable 1985 Super Mario Bros. remake -> physics, power-ups, secrets, and audio included\n\nthe context windows exploded, the reasoning matured, and LLMs stopped just guessing code and started architecting software\n\nin the video below, a developer tests a fan remake fully generated by Claude Fable 5: from standard Mario failing to a goomba, to dynamic power-ups like the Super Mushroom and Fire Flower clearing World 1-1 with zero bugs\n\nhow it handles sprite physics, hidden underground pipe zones, and accurate collision detection is broken down below ↓",
-    "metrics": {
-      "likes": 78,
-      "reposts": 0,
-      "replies": 40,
-      "quotes": 0,
-      "views": 5576,
-      "bookmarks": 35
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2065006284580020224/vid/avc1/1280x720/bxNXujZMWAr7W_vc.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Shows a playable game prototype attributed to Claude Fable 5, with the post emphasizing one-prompt or one-shot generation."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "motion-gen",
-        "automation"
-      ],
-      "evidence": [
-        "commentary"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [],
-      "risk": [
-        "copyright"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/gippp69-2065006424032182618.jpg",
-    "avatarUrl": "/fable5-avatars/gippp69.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2027054297456750592/GyRDR4PD_normal.jpg",
-    "categories": [
-      "games",
-      "videos",
-      "prompts",
-      "code"
-    ]
-  },
-  {
-    "id": "jessald-2064575145872658529",
-    "title": "3D or WebGL prototype built with Fable 5",
-    "author": "jessald",
-    "handle": "@jessald",
-    "sourceUrl": "https://x.com/jessald/status/2064575145872658529",
-    "date": "2026-06-10",
-    "kind": "showcase",
-    "scene": "3d",
-    "media": "video",
-    "heat": "69 likes · 5 reposts",
-    "tags": [
-      "fable5",
-      "3d"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Told Fable to use WebGL to make a 3D model of a datacenter with camera movements and highlighting to explain the various pieces.\nIt one shotted all of this. https://t.co/2OHZAQ6aYF",
-    "metrics": {
-      "likes": 69,
-      "reposts": 5,
-      "replies": 0,
-      "quotes": 1,
-      "views": 8623,
-      "bookmarks": 52
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064574583953350656/vid/avc1/1238x720/y-S43s2Wjbt61mGp.mp4?tag=14"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-15T00:18:13.597Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
-    ],
-    "summary": [
-      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "3d-scene",
-      "medium": "video",
-      "capability": [
-        "one-shot",
-        "3d-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [],
-      "tech": [
-        "threejs"
-      ],
-      "risk": []
-    },
-    "mediaThumbUrl": "/fable5-media/jessald-2064575145872658529.jpg",
-    "avatarUrl": "/fable5-avatars/jessald.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1602570545031131136/8V5j22al_normal.jpg",
-    "categories": [
-      "3d"
-    ]
   }
 ]

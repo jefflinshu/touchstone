@@ -1,6 +1,6 @@
 {
-  "queryOffset": 5,
-  "creatorOffset": 15,
+  "queryOffset": 9,
+  "creatorOffset": 23,
   "runs": [
     {
       "at": "2026-06-12T08:23:09.627Z",
@@ -72,31 +72,51 @@
       "mode": "latest",
       "max": 35,
       "target": 160
+    },
+    {
+      "at": "2026-06-16T06:35:16.791Z",
+      "from": "2026-06-15",
+      "to": "2026-06-16",
+      "queryCount": 7,
+      "creators": [
+        "venturetwins",
+        "aftermagics",
+        "angrytomtweets",
+        "rileybrown",
+        "bohdanmotion",
+        "designcoursecom",
+        "gmi_cloud",
+        "github"
+      ],
+      "mode": "latest",
+      "max": 35,
+      "target": 180
     }
   ],
-  "lastRunAt": "2026-06-15T00:16:13.553Z",
+  "lastRunAt": "2026-06-16T06:35:16.791Z",
   "lastWindow": {
-    "from": "2026-06-14",
-    "to": "2026-06-14"
+    "from": "2026-06-15",
+    "to": "2026-06-16"
   },
   "lastSelection": {
     "queries": [
       "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\"))",
       "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (prompt OR prompts OR \"copy prompt\" OR tutorial OR guide))",
       "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media)",
-      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (design OR ui OR ux OR figma OR portfolio OR \"hero section\" OR \"liquid glass\"))",
-      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (animation OR animated OR motion OR cinematic OR video OR \"motion design\"))",
-      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (3d OR blender OR \"three.js\" OR threejs OR voxel OR model OR scene))"
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (code OR coding OR repo OR repository OR refactor OR migration OR audit OR debugging))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (mcp OR agent OR workflow OR tool OR automation OR dashboard))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (simulation OR physics OR particles OR traffic OR map OR visualizer))",
+      "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (compare OR compared OR benchmark OR versus OR \"vs Opus\" OR \"vs GPT\"))"
     ],
     "creators": [
-      "aaronli",
-      "mcgreenbeats",
-      "chetaslua",
-      "richardzphotoz",
-      "earthtojake",
-      "kail_designs",
-      "oluwaphilemon1",
-      "aurelien_gz"
+      "venturetwins",
+      "aftermagics",
+      "angrytomtweets",
+      "rileybrown",
+      "bohdanmotion",
+      "designcoursecom",
+      "gmi_cloud",
+      "github"
     ]
   }
 }

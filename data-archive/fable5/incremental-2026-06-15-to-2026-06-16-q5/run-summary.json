@@ -1,0 +1,23 @@
+{
+  "from": "2026-06-15",
+  "to": "2026-06-16",
+  "mode": "latest",
+  "officialOnly": false,
+  "withReplies": false,
+  "maxReplies": 12,
+  "minViews": 0,
+  "target": 180,
+  "queries": [
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\"))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (prompt OR prompts OR \"copy prompt\" OR tutorial OR guide))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media)",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (code OR coding OR repo OR repository OR refactor OR migration OR audit OR debugging))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (mcp OR agent OR workflow OR tool OR automation OR dashboard))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (simulation OR physics OR particles OR traffic OR map OR visualizer))",
+    "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (compare OR compared OR benchmark OR versus OR \"vs Opus\" OR \"vs GPT\"))"
+  ],
+  "candidates": 180,
+  "conversationFetchFailures": 0,
+  "failedHandles": 0,
+  "generatedAt": "2026-06-16T06:33:17.018Z"
+}

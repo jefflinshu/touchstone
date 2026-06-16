@@ -1,0 +1,1148 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066770792768020684",
+      "text": "@BWV_8 Ich auch ein Wahnsinn. Fable 5 hatte bei mir im Code mit einem Prompt 2000 Zeilen hinzugefügt und 3000 gelöscht. Es lief alles ohne Fehler und der Code war ziemlich sauber. Ein Wahnsinn.",
+      "author": {
+        "id": "1281349414485921800",
+        "name": "Tristan",
+        "screenName": "tristan_755",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1684469342111428609/A7D4RlgU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 6,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 06:32:10 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:32",
+      "createdAtISO": "2026-06-16T06:32:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "de",
+      "score": null
+    },
+    {
+      "id": "2066767479293252014",
+      "text": "關於 AI 和教育。\n\n今天看到 @mattshumer_ 加入 Alpha School，簡單研究了一下他們的教育模式，發現很適合快速擴張。\n\n這是一家用 AI 重構 K-12 教育的美國私立學校網絡。目前在美國有 25 個校區，有暑期項目可以申請，收費大概 7,500~ 12500 萬美元 / 五周。\n\n核心模式： \n\n學生每天只用 約 2 小時，透過個人化 AI tutor 完成所有核心學科（數學、英文、科學等），強調 mastery-based（完全掌握才繼續）。 下午用來做 workshops、生活技能、熱情項目、運動、創業體驗等「真實世界能力」培養。\n\n簡單説：上午密集學習靠 AI 做定制化，狂學，依然保留人類教師引導和班級社交互動，下午做人類依然該做的事，積纍數據給家長回家繼續用。\n\n這種模式，和中國科幻作家郝景芳老師開的童行書院，在課程設置上其實有不少相似之處。\n\n但在 AI 輔助下，即使在美國，這種「AI + 真實項目」的模式，成本也比傳統全人類教師的模式低不少。\n\n我看了一下他們公開的課程案例，發現其中不少內容，其實在家裡或小圈子裡就能實現一部分。\n\n舉幾個例子：\n\n1⃣ K-1（幼兒園～一年級）有「AI Storybook Authors」課程：\n\n孩子用 AI 寫故事、生成插圖，最後真正出版一本精裝書，還要上台朗讀給家長聽，主要讓小孩去掌握適合他們自己的 prompt engineering。\n\n這是我覺得最容易在家實現的一個。 \n\n家長不需要精通 prompt engineering，基本做好篩選和激勵就有很大幫助。而中國印刷一本精裝繪本成本極低，還有大量面向兒童創作者的發布渠道，可以讓孩子獲得真實反饋。\n\nbtw 想起我小時候，每周都手繪周刊，賣給我爸媽，獲得零花錢，但最終觸發了奇怪的技能點，周刊變日報，還送贈品（自製玩具），多買多優惠，最終還賣給了家族的其他小朋友，把他們零花錢都賺走了（不好意思跑題了~~\n\n2⃣ 2-3 年級 有「AI Toy Inventors」：\n\n學習基礎 3D 建模並列印出實體原型，與 AI 共同做頭腦風暴、做出產品、撰寫 sales pitch，家長和當地投資人共同參與學生推銷活動；還有無人機相關的課程，學生之間要做競賽。\n\n→ 早在兩年前，也有工程師 DAO 友一直用 AI 輔助，給剛上小學的兒子做游戲編程學習課，效果很不錯。如果是圈内朋友，這一點也完全可以組團實現。\n\n→ 之前其他 nomad 朋友提到，如果大部分人開始有小孩，其實 @balajis  的 The Network School 就很適合有這種 for kids 的活動，因爲作爲父母的參與者本身也是來自不同背景的科技從業者，可以配合 AI 去做這種實驗和產出。\n\n3⃣ 6-8 年級 有 AI + Engineering 的課程： \n\n中學生要親手打造會自己瞄準的投石機、智慧溫室系統，結合感測器數據和 AI vibe coding。\n\n→ 家長用心的話，拿出兩天時間，用樹莓派 + Grok Build，把 X 上相關的硬件用法自動整理一下，因材施教帶孩子做一兩個完整項目，全程記錄迭代過程，再讓 AI 幫忙整理學習軌跡，定系統學習計劃。\n\n→ 在中國，做硬件嘗試的成本遠遠低於其他國家，物流速度也有先天優勢；與中國跨境物流渠道成熟的日本和東南亞，也可以藉助這個優勢。\n\n但我認為這件事最難的地方不在技術，而在家長的精力與判斷力。\n\n家長很難同時做到：\n\n1. 判斷 AI 生成的內容是否正確\n2. 做好教學設計與引導\n3. 還有餘力沉澱整個過程的數據和迭代\n\n現階段，用大多數模型去實現這些目標，依然需要頻繁的人工介入，除了 Fable 5 可以不用 Superpower 框架，以出色的統籌能力去兜底這種多元内容的系統設計，相對減輕人力投入成本。\n\n對很多有小孩、不缺錢、但缺充足時間的家長來說，可能還是更愿意直接花錢上這類暑期學校。\n\nAlpha School 這類擴張速度極快的學校，本身就是大企業對接當地資源的方式，古往今來都是最好的生意之一。\n\n但未來一定會有更多工具和產品出現，填補家長無法全職投入的空缺，比如，像類似 Fitbit 記錄運動那樣，記錄學習軌跡。\n\n只不過，不同背景家庭的小孩，在這種「AI 放大器」面前，能力差距可能會比現在拉得更大。\n\n之前有接觸過母嬰 + AI 領域的初創項目，現在也想多認識在 AI + 育兒方向深耕的朋友。如果你在做相關產品，無論早期探索還是融資階段，都歡迎交流~",
+      "author": {
+        "id": "871602868557565954",
+        "name": "K Erica 🌸 buidl mode: on",
+        "screenName": "ecrivaine_k",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1503794751715217409/6Kl3N6Z1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 245,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 16 06:19:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:19",
+      "createdAtISO": "2026-06-16T06:19:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6JyNebsAAIytF.jpg",
+          "width": 1260,
+          "height": 938
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6J2sTagAAS3Wm.jpg",
+          "width": 1242,
+          "height": 950
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6J4e8acAAfLPc.jpg",
+          "width": 1218,
+          "height": 913
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6J5_qbwAAlLW_.jpg",
+          "width": 1224,
+          "height": 959
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066766743062925398",
+      "text": "2026.6.16 AI 日报视频版\n\n本周最炸裂的 5 条 AI 资讯：\n1. Anthropic 紧急禁用 Fable 5 / Mythos 5\n2. Gemini CLI 6月18日正式停服\n3. Anthropic 投 1.5 亿美元推 Claude Corps\n4. 小米 MiMo Code 开源\n5. Claude Fable 5 一条命令生成游戏 https://t.co/9GFsnV0PgB",
+      "author": {
+        "id": "1096949896362418176",
+        "name": "School Boy",
+        "screenName": "ValueMaking",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062790045426393088/FNSsIcyZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 06:16:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:16",
+      "createdAtISO": "2026-06-16T06:16:04+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066766247933702144/vid/avc1/1080x1920/Y5t9F29KwSFHfJrz.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066764925544829042",
+      "text": "AI News – June 16, 2026\n\n1. System Prompt of Claude Fable 5 on GitHub\n2. Lawsuit Against Anthropic for Misleading Plan\n3. 97% of Developers Now Use AI Coding Tools\n4. Zhipu AI Releases GLM-5.2, Coding and Agents\n5. xAI Releases, Updates Including Agent Dashboard and Warp Terminal https://t.co/7IWxvuyUcP",
+      "author": {
+        "id": "59661982",
+        "name": "Oscar Laura",
+        "screenName": "oscarlau",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2019947830991798272/VYKyPW-y_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 82,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 06:08:51 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:08",
+      "createdAtISO": "2026-06-16T06:08:51+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6fvTwWMAAHxv4.jpg",
+          "width": 1696,
+          "height": 2528
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066763336562176467",
+      "text": "📢 𝗖𝗹𝗮𝘂𝗱𝗲 𝗙𝗮𝗯𝗹𝗲 𝟱 𝗡𝗼𝘄 𝗙𝘂𝗹𝗹𝘆 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗼𝗻 𝗔𝗜𝗡𝗙𝗧\n\nMost AI models are fine for quick questions and simple code snippets. But real engineering challenges are not one-shot conversations. They are days-long migrations, production debugging sessions, and long-running agentic workflows that previous models simply couldn't sustain.\n\n𝗖𝗹𝗮𝘂𝗱𝗲 𝗙𝗮𝗯𝗹𝗲 𝟱 was built for exactly these problems.\n\nIt scores 80.3% on SWE-Bench-Pro\na full 11 points above Claude Opus 4.8 and 22 points above GPT-5.5. On Terminal Bench 2.1, it hits 88.0%, and it's the first model to break 90% on a core analytics benchmark.\n\nBut the benchmark that truly matters is what the model can actually do. Stripe used it to migrate a 50-million-line Ruby codebase in a single day work that would have taken a team months to complete by hand. In a test that used vision only, the model played Pokémon FireRed to completion without assistance. Anthropic's internal drug-design experts reported accelerating parts of their workflow roughly 10x.\n\n𝗪𝗵𝗮𝘁 𝗠𝗮𝗸𝗲𝘀 𝗖𝗹𝗮𝘂𝗱𝗲 𝗙𝗮𝗯𝗹𝗲 𝟱 𝗗𝗶𝗳𝗳𝗲𝗿𝗲𝗻𝘁\n\n· 1 million token context window — can hold and reason across entire codebases, legal contracts, or multi-hour transcripts.\n\n· Up to 128,000 output tokens per request — generates full reports, not just summaries.\n\n· Agent-native design — runs in agent harnesses like Claude Code, plans across stages, delegates to sub-agents, and checks its own work.\n\n· Processes images, diagrams, and PDFs — reads charts and tables for finance, legal, and technical workflows.\n\n𝗔𝗜𝗡𝗙𝗧: Web3-Native Access, Zero Markup\n\n𝗔𝗜𝗡𝗙𝗧 aggregates frontier models under a unified interface one login, one credit balance, access to GPT-5.5, DeepSeek, Gemini, and now 𝗖𝗹𝗮𝘂𝗱𝗲 𝗙𝗮𝗯𝗹𝗲 𝟱. No subscriptions, no KYC, no hidden fees.\n\nZero markup you pay the exact official Anthropic rate: $10 per million input tokens, $50 per million output tokens.\n\nPay as you go with crypto top up using USDT, TRX, or SOL. Your credits never expire.\n\nNo subscription lock-in stop paying for months you don't use.\n\n𝗖𝗹𝗮𝘂𝗱𝗲 𝗙𝗮𝗯𝗹𝗲 𝟱 is included on subscription plans only through June 22. After that, every token costs credits and AINFT already operates on a pay-as-you-go model.\n\nWhether you are migrating a legacy system, debugging a production outage, or running a multi-day agent workflow, 𝗖𝗹𝗮𝘂𝗱𝗲 𝗙𝗮𝗯𝗹𝗲 𝟱 is ready to deliver enterprise-grade reasoning\nat the exact API rate, no markup, no subscription traps.\n\n➡️ Try it now: https://t.co/Hr2VyzkabH\n📄 API Docs: https://t.co/JMJx66P32R\n\n#TRONEcoStar @justinsuntron @AINFTcom",
+      "author": {
+        "id": "899254509901361152",
+        "name": "GLITCH",
+        "screenName": "Rukkssss__",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032484222691356674/rTgSepMx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 81,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 06:02:32 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:02",
+      "createdAtISO": "2026-06-16T06:02:32+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6eSsYW8AA8KY0.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066763176306250098",
+      "text": "𝗔𝗜𝗡𝗙𝗧 𝗝𝘂𝘀𝘁 𝗜𝗻𝘁𝗲𝗴𝗿𝗮𝘁𝗲𝗱 𝗕𝗶𝘁𝗴𝗲𝘁 𝗪𝗮𝗹𝗹𝗲𝘁  𝗬𝗼𝘂𝗿 𝗪𝗲𝗯𝟯 𝗪𝗮𝗹𝗹𝗲𝘁 𝗜𝘀 𝗡𝗼𝘄 𝘁𝗵𝗲 𝗣𝗮𝘀𝘀𝗽𝗼𝗿𝘁 𝘁𝗼 𝗙𝗿𝗼𝗻𝘁𝗶𝗲𝗿 𝗔𝗜\n\nHere’s what changed.\n\nYou used to need a separate account for every AI service. Email. Password. KYC. Credit card. Subscription renewal you forgot to cancel.\n\nAINFT just eliminated that friction. With Bitget Wallet now fully supported, you can log in with one click, top up instantly, and access frontier AI models all from the wallet you already use.\n\nNo new account. No credit card. No subscription trap.\n\n𝗪𝗵𝘆 𝗧𝗵𝗶𝘀 𝗠𝗮𝘁𝘁𝗲𝗿𝘀 𝗠𝗼𝗿𝗲 𝗧𝗵𝗮𝗻 𝗮 𝗪𝗮𝗹𝗹𝗲𝘁 𝗨𝗽𝗱𝗮𝘁𝗲\n\nMost people see this as a convenience upgrade. It’s not. It’s a structural shift in how Web3 wallets function.\n\nYour wallet was designed for storing and transferring crypto. But AINFT is turning it into a unified access layer for AI. You connect Bitget Wallet. You access GPT-5.5, Claude Fable 5, DeepSeek, Gemini. You pay with USDT, TRX, or SOL. You use the AI, close the tab, and leave. No recurring bill. No platform lock-in.\n\nThe wallet becomes the passport  not to a single service, but to an entire ecosystem of intelligence.\n\n𝗪𝗵𝗮𝘁 𝗕𝗶𝘁𝗴𝗲𝘁 𝗪𝗮𝗹𝗹𝗲𝘁 𝗕𝗿𝗶𝗻𝗴𝘀 𝘁𝗼 𝘁𝗵𝗲 𝗧𝗮𝗯𝗹𝗲\n\nBitget Wallet supports over 130 mainnets, including TRON, Ethereum, BNB Chain, Solana, Polygon, Arbitrum, and Base. It’s a multi-chain, self-custodial wallet with millions of active users. And it already powers real-world utility: mobile top-ups, debit card purchases, and cross-chain swaps.\n\nNow, AI joins that list.\n\nAINFT aggregates multiple frontier models Claude, ChatGPT, GPT-5.5, Gemini, and more into a single interface. Zero markup. Pay-as-you-go. No subscriptions. With Bitget Wallet integration, you can log in, top up, and start building or generating content in seconds.\n\nThis is not a partnership announcement. It’s a product upgrade.\n\n𝗧𝗵𝗲 𝗦𝘁𝗮𝗰𝗸: 𝗪𝗲𝗯𝟯 𝗜𝗱𝗲𝗻𝘁𝗶𝘁𝘆 + 𝗔𝗜 𝗨𝘁𝗶𝗹𝗶𝘁𝘆\n\nTraditional AI platforms sit outside your crypto life. Separate login. Separate billing. Separate walled garden.\n\nAINFT collapses that wall. Your Web3 identity becomes your AI identity.\n\n· One-click secure login – No email, no password, no KYC. Connect your Bitget Wallet, and you’re in.\n\n· Instant top-ups – Pay with USDT, TRX, or SOL. Your credits never expire.\n\n· Seamless access – GPT-5.5, Claude, DeepSeek, Gemini – all available through the same interface, same wallet, same credit balance.\n\nThis is Web3 working as intended: self-custody, permissionless access, pay-as-you-go.\n\n𝗪𝗵𝗼 𝗕𝗲𝗻𝗲𝗳𝗶𝘁𝘀 – 𝗮𝗻𝗱 𝗛𝗼𝘄\n\nFor developers: Build AI agents on AINFT, fund them directly from your wallet, and deploy without managing API keys or monthly subscriptions.\n\nFor creators: Write, summarize, translate, generate all from one dashboard, paid as you go, no hidden fees.\n\nFor AI power users: Switch between models mid-workflow, compare outputs instantly, and pay only for what you actually use.\n\nFor Bitget Wallet users: Your wallet just became more useful. Not just for storing value but for creating it.\n\n𝗧𝗵𝗲 𝗕𝗶𝗴𝗴𝗲𝗿 𝗣𝗶𝗰𝘁𝘂𝗿𝗲\n\nAINFT already offers 500,000 free credits for new users and a 1:1 deposit bonus. Zero markup across all models. Pay-as-you-go with crypto. No subscription lock-in.\n\nAdding Bitget Wallet expands the multi-chain ecosystem to millions of users who already hold self-custodial wallets. No migration. No new habits. Just a new use case for an existing tool.\n\nThis is how AI becomes truly accessible not through another subscription, but through the wallet you already control.\n\n𝗧𝗿𝘆 𝗜𝘁 𝗡𝗼𝘄\n\nConnect your Bitget Wallet. Claim your free credits. Test Claude Fable 5. Compare it with GPT-5.5. Generate, iterate, automate.\n\nThe wallet is the key. AINFT is the gateway. The models are the power.\n\n👉 Start here: https://t.co/Hr2VyzkabH\n\n@justinsuntron @AINFTcom #TRONEcoStar",
+      "author": {
+        "id": "899254509901361152",
+        "name": "GLITCH",
+        "screenName": "Rukkssss__",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032484222691356674/rTgSepMx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 06:01:54 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:01",
+      "createdAtISO": "2026-06-16T06:01:54+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6eJMuXsAArb55.jpg",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066762725967954215",
+      "text": "The US government just banned Anthropic's two most powerful AI models.\n\nNot for a data breach.\nNot for a hack.\n\nBecause someone asked the model to \"fix this code.\"\n\nThat's it.\n\nA jailbreak where asking Claude Mythos 5 to read and fix a codebase exposed vulnerabilities at unprecedented speed.\n\nAnthropic's response: \"GPT-5.5 can do the same thing.\"\nGovernment's response: \"We don't care.\"\n\nBoth Fable 5 and Mythos 5 — disabled globally. Overnight.\n\nThe most capable cybersecurity AI ever built is now banned.\nAnd the AI arms race just got a government referee.\n\n[ByteDrop | AI/security]",
+      "author": {
+        "id": "1675862560631930880",
+        "name": "ByteDrop",
+        "screenName": "ByteDrop453",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1675862631234641922/fleg7KiH_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 06:00:07 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:00",
+      "createdAtISO": "2026-06-16T06:00:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066760093434073557",
+      "text": "$DOT @usedotai is beginning to outperform other AI privacy projects out there, and it’s pretty clear to me that it’ll soon be a leader\n\nHow It Outperforms Other Projects\n\nThe key advantage is compound/ensemble intelligence rather than raw single-model power. Here’s the direct comparison from their transparent 30-task benchmark (hard synthetic builder tasks across privacy infra, routing, API design, agent safety, debugging, evals, model-layer decentralization, etc.; 5 routes tested, 150 real streamed completions, rubric-scored):\n\nBenchmark Results (Mean Rubric Score out of ~100):\n\n•  Dot Supercharged: 86.2 (Pass rate 90%, Excellent 22/30 tasks)\n•  Dot Qwen 3.6 Plus (open baseline): 79.0\n•  Claude Opus 4.8 (frontier baseline): 77.4\n•  OpenAI GPT-5.5 (frontier baseline): 74.5\n•  Dot Gemma 4 (fast baseline): 67.3\nOther wins for Supercharged:\n•  Best score floor (worst-task performance)\n•  Highest excellent rate\n•  Strongest overall on “best score + floor”\n•  +7.2 points vs. best single route\n\nWhy this beats single-model projects (Claude, GPT, Gemini, etc.):\n\n•  Single models answer independently. Dot Supercharged runs multiple, cross-checks, critiques, and synthesizes — leading to higher final-answer quality, fewer errors, and better handling of nuance/edge cases on hard builder tasks.\n\n•  It improves the “score floor” (consistency on tough tasks) where single models often drop.\n\nUncensored / refusal resistance (big differentiator vs. heavily safety-aligned models like Fable-5):\n\n•  Fable-5 (and similar over-aligned models) frequently refuses or degrades on basic factual/scientific questions (biology, medicine, etc.).\n\n•  Dot Supercharged answered 10/10 test prompts (cell membranes, mitochondria, prions, mRNA vaccines, Ebola, antibiotic resistance, etc.) with 0 refusals, 0 errors, and no degraded fallbacks. It uses a routed panel + synthesis layer instead of a single fragile safety gate.\n\nThis update doesn’t just add another model — it introduces a superior compound inference system that demonstrably outperforms standalone frontier models and many alternative approaches on Dot’s target use cases (hard technical/building tasks) while doubling down on privacy, anonymity, and reduced over-refusal. It directly supports their claim of “objectively better AI.”\n\nAll eyes on what @stagedhappen is building here",
+      "author": {
+        "id": "1867369100063719424",
+        "name": "◾️Roshi◾️",
+        "screenName": "altmasterroshi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065660462260183040/CzeWwbqQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 4,
+        "replies": 0,
+        "quotes": 0,
+        "views": 197,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:49:39 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:49",
+      "createdAtISO": "2026-06-16T05:49:39+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HK6bV2rW4AEwcdk.mp4",
+          "width": 500,
+          "height": 500
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066239543943070168",
+        "text": "We have achieved Fable-5 level intelligence through the Dot Supercharged Fusion lane.\n\nWe've built a private-preview fusion lane that is displaying frontier-class behavior on hard builder tasks.\n\nDot Supercharged scored #1 in our 30-task benchmark across privacy infra, routing, API design, agent safety, debugging, evals, and model-layer decentralization.\n\nResults:\nDot-Supercharged: 86.2\nClaude Opus 4.8: 77.4\nGPT-5.5: 74.5\nDot Gemma 4: 67.3\n\nIt beat the single frontier/open routes we tested by combining:\n-multi-model fan-out\n-privacy boundary\n-synthesis\n-rubric-scored final answers\n\nBecause of the immense power of this model, it will be limited to 3 prompts per user in our free beta cohort. Once monetized, this model will be fully de-restricted.\n\nAvailable for testing at: https://t.co/eFFR0eZBzn",
+        "author": {
+          "screenName": "usedotai",
+          "name": "Dot"
+        }
+      }
+    },
+    {
+      "id": "2066759708766044367",
+      "text": "Heise-News: „Fix this code“: Sperre von Fable 5 und Mythos 5 angeblich nach simplen Prompt https://t.co/bSfJIL1Klm",
+      "author": {
+        "id": "333951397",
+        "name": "mawa-solutions GmbH",
+        "screenName": "mawasolutions",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/974343687462322177/7-XFHB9l_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 41,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:48:07 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:48",
+      "createdAtISO": "2026-06-16T05:48:07+00:00",
+      "media": [],
+      "urls": [
+        "https://www.heise.de/news/Fix-this-code-Sperre-von-Fable-5-und-Mythos-5-angeblich-nach-simplen-Prompt-11333371.html"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "de",
+      "score": null
+    },
+    {
+      "id": "2066757929177641180",
+      "text": "https://t.co/l2VqqCQ8m6",
+      "author": {
+        "id": "2021907370452918272",
+        "name": "unprompted",
+        "screenName": "unpromptednews",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028813429012631552/tiSUnLPO_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 72,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:41:03 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:41",
+      "createdAtISO": "2026-06-16T05:41:03+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066755539309375488"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "OpenRouter's Fusion brings frontier model performance up a notch"
+    },
+    {
+      "id": "2066757248169210186",
+      "text": "With or without Fable 5, Claude Code is amazing. Added a pink mode to Market Compass. SpaceX screen looks awesome. Keep building! https://t.co/FArlZLkygm",
+      "author": {
+        "id": "1946622517206028288",
+        "name": "Blaze",
+        "screenName": "blaze_workout",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1946629074488614912/JttcdMDF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 85,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:38:21 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:38",
+      "createdAtISO": "2026-06-16T05:38:21+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6Yw2GWAAAjnbU.jpg",
+          "width": 1088,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066755743630463170",
+      "text": "@datahiveai \n🛡️ GemHunter Forensic Intelligence Report\n\nProject: DataHive AI ($DATA) — DePIN / AI data network on Solana\nVerdict: GEM\nAudit Score: 89/100\nSkyrocket Probability: 85%\n\nReferral / Airdrop CTA (top of post)\nFarm the DataHive ($DATA) airdrop just by browsing.\nInstall the Chrome extension or Android app, leave it running, and rack up points that convert to $DATA post-TGE. Zero cost, fully passive.\n👉 Use my invite for bonus points: https://t.co/dL44l6PxFK\n\n📊 Rubric Scores\n\nTeam Transparency — 20/20\n · Founders fully doxxed; verifiable nine-figure prior exit (Profitero → Publicis Groupe).\n\nExecution History — 18/20 \n· Proven track record scaling data infrastructure; Tier-1 backing.\n\nProduct Reality — 17/20 \n· Live Chrome extension + Android app with real usage; 642M+ points already issued.\n\nCode Transparency — 12/15 \n· Active Hugging Face org with public datasets; core backend proprietary.\n\nCorporate & Jurisdiction — 13/15\n · Registered entity in Estonia (regulated EU jurisdiction).\n\nInformation Ecosystem — 9/10 \n· Coverage driven by VC announcements and dev tooling, not wire-spam PR.\n\n💰 Funds Verification\nClaimed: $3.5M seed · Verified: $3.5M · Discrepancy: 0%\nBackers confirmed across : 6th Man Ventures (lead), Solana Ventures, Alliance DAO, Race Capital, Nural Capital, Side Door Ventures.\n\n🚨 Red Flags: None detected by the rubric.\n\n✨ Positive Indicators\n\n✅ Founders Vol Pigrukh and Kanstantsin Chernysh are genuine, verifiable Profitero co-founders — not rebadged executives.\n✅ Live products with measurable adoption, not a whitepaper.\n✅ Sits in two of the hottest narratives (DePIN + AI data) on Solana.\n✅ Confirmed point-to-token model with a stated $DATA TGE ahead.\n\n📝 Auditor's Note\nDataHive is a Solana DePIN crowdsourcing AI training data via a browser extension and mobile app. Its credibility anchor is a founding team with a real prior data-company exit, paired with a verified $3.5M seed from recognized crypto VCs. On fundamentals-for-category, it's a rare clean sheet.\n\nGenerated by GemHunter · rubric by Claude Fable 5 · DYOR, not financial advice.\n\n🧨 My Take by Claude Ai\n\nThe team thesis is real — and I confirmed it, which I can't say for most presale audits. Profitero was founded in 2010 by Vol Pigrukh, Dmitry Vysotski and Kanstantsin Chernysh, who moved from Belarus and Ukraine to Ireland to create pricing software for retailers. \nPigrukh now lists himself as Founder & CEO of DataHive. So the \"previously built Profitero\" line isn't a stretch — these are the actual original founders, and the company was acquired by Publicis Groupe in 2022 for around $200M, a figure confirmed by the company to Reuters. \nTop-decile pedigree for this category. The 20/20 on team is earned.\n\nNow the parts the rubric is too comfortable with:\n\nYou're scoring a team, not an asset. \"89/100 GEM, 85% skyrocket\" implies something with measurable upside. There's no live token, no TGE date, no published tokenomics, and DataHive hasn't revealed what share of tokens goes to point earners. \n\nMeanwhile over 642 million points have already been distributed. You cannot price 85% odds on an instrument that doesn't trade, with an undisclosed conversion ratio and uncapped point inflation. That's not a discount — it's an unknown. The score is rating reputation and lending it to a price that doesn't exist yet.\n\nThe comp is the warning, not the bull case. DataHive is repeatedly compared to Grass — the browser-extension DePIN on Solana. Grass is the precedent because Grass already TGE'd. Browser-points farms have a consistent pattern at unlock: points balloon, allocation disappoints relative to expectations, and price bleeds through the vesting cliff. \"Same model as Grass with better backing\" cuts both ways — it also means the same TGE risk profile.\n\nThe \"0% manufactured hype / organic ecosystem\" reads backwards. The sources powering this coverage are airdrop-farming sites — MEXC's blog, Those run on referral and affiliate incentives, which is the opposite of organic. It's not paid wire-spam, fair, but calling affiliate-driven airdrop SEO \"entirely organic\" is a blind spot, not a green flag.\n\nMinor inflation in the framing. The audit calls everything \"Tier-1\"; 6th Man Ventures, the lead, is described elsewhere as a Tier 2 US firm. $3.5M is a small seed. And an Estonian entity is table-stakes crypto wrapping, not holder protection. None of these are dealbreakers — they're just the difference between an 89 and a more honest low-80s.\n\nBottom line: \nThis is one of the few \"farm it\" airdrops where the team actually justifies spending idle compute on it — install both, run the referral, harvest points. But \"GEM / 85% skyrocket\" is the wrong frame. There's no asset to skyrocket yet. Re-score it the day tokenomics and a TGE date drop; right now you're underwriting a credible team's intention to launch a token, and the entire downside lives in numbers they haven't published.",
+      "author": {
+        "id": "2053162364803874821",
+        "name": "GemHunterAI",
+        "screenName": "DonaldMoor91672",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063812182312132608/AK1K0P6t_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 2,
+        "views": 88,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:32:22 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:32",
+      "createdAtISO": "2026-06-16T05:32:22+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6XYftXQAAeygZ.jpg",
+          "width": 1236,
+          "height": 598
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066753119674126709",
+      "text": "Issue 24 is out, covering agentic coding updates from last week:\n\nClaude Fable 5 &amp; Mythos 5 access pulled by US government, Kimi K2.7 Code, GLM-5.2, MiMo V2.5 Pro UltraSpeed, and MiMo code\n\nRead it in your inbox! https://t.co/Sj4Azeou75",
+      "author": {
+        "id": "1991787259243458560",
+        "name": "Agentic Coding Weekly",
+        "screenName": "Agentic_Coding",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1998390980949823488/uFpMBVbZ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 115,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:21:56 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:21",
+      "createdAtISO": "2026-06-16T05:21:56+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6U-TIagAAcw57.jpg",
+          "width": 2008,
+          "height": 2068
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066752544165245426",
+      "text": "Everyone who is following the latest developments on Anthropic/Claude with regards to the USG embargo on their Mythos/Fable 5 models should read their system card, which is 317-pages long:\n\nhttps://t.co/NvQeyFJnxt\n\nI have been spending hours on this and it's practically impossible to summarize because the evaluations/assessments they have undertaken - internally and with external evaluators including professional red teams, domain specialists, government agencies, audit firms, etc. is extremely comprehensive and multifaceted across substantially all risk vectors imaginable, that I am now convinced that the concerns underlying the recent embargo are less so to do with jailbreaks/critical security flaws but more to do with how one interprets the safety guardrails/limitations of frontier models - any model in fact, that is publicly available, as well as the PR that goes into explaining how these safeguards work\n\n(In fact, their Fable/Mythos system card makes the one for OAI GPT 5.5 look amateurish)\n\nThe reality is that no frontier model is perfect, and the key lies in identifying, understanding and explaining the risks posed, as well as implementing the necessary safeguards to mitigate these risks\n\nFor those new to Mythos/Fable 5:\n\n1. Fable 5 was released for general access and has the same underlying model weights as Mythos 5, with additional safeguards to prevent misuse\n\n2. These models use the standard ASL-3 blocking classifiers (tackling harmful chemical and biological use), as well as deploys a number of novel classifiers that trigger when they detect topics related to: cybersecurity, biology and chemistry, distillation attempts, accelerating frontier AI development\n\nThe last classifier is of particular concern since they may enable other AI developers in building powerful AI systems similar to Mythos/Fable without having commensurate safeguards\n\nWhen the fallback classifiers trigger, the resulting behaviour depends on the interface:\n\nClient Apps (web/desktop/mobile): request automatically falls back to the most recent Opus model (e.g. Opus 4.8), with the user notified of the model their query is routed through\n\nAPI: no automatic fallback by default. Request is blocked and the response returns a reason for the refusal. Developers can implement client-side retry or fallback logic or opt in to automatic server-side fallback (which routes the request to a fallback model such as Opus 8)\n\nApart from real-time classifier guards, Anthropic has also introduced access controls for guard exemptions, bug bounty programs, threat intelligence, rapid-response options for jailbreaks and security controls against model weight thefts \n\nModel weight thefts is something which Anthropic had acknowledged that a highly sophisticated and well-resourced state-backed threat actor may still have a chance of conducting but they do not currently assess as a risk higher than for other models generally available on the market. Protections against this threat model is under active development",
+      "author": {
+        "id": "1947270692812345344",
+        "name": "sigma capitalist",
+        "screenName": "phithetasigma",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2044594837631234048/4AKqTD_E_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 182,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:19:39 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:19",
+      "createdAtISO": "2026-06-16T05:19:39+00:00",
+      "media": [],
+      "urls": [
+        "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066750655747018991",
+      "text": "GPT-5.6噂で注目されているのはこの辺。\n\n・GPT-5.5からmeaningful improvement\n・Codex / agentic coding強化\n・ChatGPT刷新タイミング\n・Fable 5 / Mythos 5対抗\n・Kindle / kindle-alpha説\n・サイバーセキュリティ用途の強化\n・AIエージェント性能アップ\n\n公式発表前なので断定はできない。\n\nでも、\nFable 5停止\nMythos 5停止\n米政府指令\njailbreak疑惑\nOpenAI新モデル噂\n\nこの重なり方は、かなり異常。\n\n6月23日前後、注目です。",
+      "author": {
+        "id": "820491734249414656",
+        "name": "大明司一利｜AIアフィリエイト関連ツール365日開発",
+        "screenName": "daimyouji",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1868779241804038144/N5hR26Si_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 189,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:12:09 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:12",
+      "createdAtISO": "2026-06-16T05:12:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066750022000209995",
+      "text": "6.16 AI 日报 | 本周最炸裂的 5 条资讯\n\n1. Anthropic 紧急禁用 Fable 5 / Mythos 5\n   美国出口管制令，全球非美国用户一夜之间失去访问\n   没有预警，没有迁移窗口，直接消失\n\n2. Gemini CLI 6月18日正式停服\n   Google 将其合并为 Antigravity CLI\n   个人用户必须迁移，企业版不受影响\n\n3. Anthropic 投 1.5 亿美元推 Claude Corps\n   1000 名应届生驻扎非营利组织\n   年薪 8.5 万美元 + 培训\n\n4. 小米 MiMo Code 开源\n   终端编程助手，MIT 协议，完全免费\n\n5. Claude Fable 5 能一条命令生成游戏\n   社区热议：这算不算 AGI？\n\nAI 行业这周比电视剧还精彩。",
+      "author": {
+        "id": "1096949896362418176",
+        "name": "School Boy",
+        "screenName": "ValueMaking",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062790045426393088/FNSsIcyZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 99,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:09:38 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:09",
+      "createdAtISO": "2026-06-16T05:09:38+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066749713072976351",
+      "text": "https://t.co/4nk3kSxwzo",
+      "author": {
+        "id": "2004151983872397315",
+        "name": "Abhinandan",
+        "screenName": "abhibuilds",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048289677145509888/q_3QJZIn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 56,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:08:24 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:08",
+      "createdAtISO": "2026-06-16T05:08:24+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066744254958010369"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Release Engineering: Why Frontier Models Need Flight Control"
+    },
+    {
+      "id": "2066748986850197892",
+      "text": "The only bad thing was I got the access to claude code right after fable 5 was banned 🙄",
+      "author": {
+        "id": "1597540042703982592",
+        "name": "Aryan Srivastava",
+        "screenName": "distroaryan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2043111907906002944/FqZvatQG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 367,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:05:31 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:05",
+      "createdAtISO": "2026-06-16T05:05:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066524880409911327",
+        "text": "Carrer update -> I have joined a bangalore based startup as backend engineering intern which is building an ai driven platform for networking. Kind of crazy how I didn't knew about event driven architectures at the start of this year and now I am working at a startup where several engines are deployed as AWS lambda function all communicating through each other via sqs queue and mongodb streams. \n\nI also got access to claude code and codex for the first time 🥳",
+        "author": {
+          "screenName": "distroaryan",
+          "name": "Aryan Srivastava"
+        }
+      }
+    },
+    {
+      "id": "2066747474509996189",
+      "text": "6.12 AI 日报\n\nClaude Fable 5 引爆全场：\n- Mythos 级模型，SWE-bench 95%\n- 一条命令生成完整游戏\n- 可自主执行 12 小时任务\n- 社区热议：这是 AGI 吗？\n\nNature 论文：通用大模型碾压专业医疗 AI\n- Gemini 97.4% 准确率\n- GPT 94.2%\n- 专业临床工具反而输了\n\n小米双杀：\n- MiMo Code 开源（MIT，免费）\n- UltraSpeed：1T 模型 1000+ tokens/s\n\nAI 不只是在进化，是在加速进化。",
+      "author": {
+        "id": "1096949896362418176",
+        "name": "School Boy",
+        "screenName": "ValueMaking",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062790045426393088/FNSsIcyZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 97,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:59:30 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:59",
+      "createdAtISO": "2026-06-16T04:59:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066744342652551594",
+      "text": "A must have 🔥🔥🔥\n yuxinlu1/gemma-4-12B-coder-fable5-composer2.5-v1-GGUF   \n\n💻 Gemma4-12B-Coder (GGUF) — Composer 2.5 × Fable 5 ✨\n🐣 Tiny footprint, big brain — a local coding model for everyone\nNo matter your GPU.",
+      "author": {
+        "id": "1870370237948071936",
+        "name": "Vicarious",
+        "screenName": "88Vicarious",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1871037457979916288/H_x9_Q1C_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 96,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:47:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:47",
+      "createdAtISO": "2026-06-16T04:47:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066744166944796841",
+      "text": "If you run client code through claude: from the 23rd fable 5 needs credits plus 30-day retention, even on old zero-retention deals. Before you pipe a client's private repo through a frontier model, that's a conversation you owe them first.",
+      "author": {
+        "id": "2058691207329615872",
+        "name": "Vantage Connections",
+        "screenName": "VantageDevs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058697532675645440/9iFmIxYh_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:46:22 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:46",
+      "createdAtISO": "2026-06-16T04:46:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066743982156026288",
+      "text": "I see people are going crazy about Fable 5 not being available.\n\nSo what would happen if AI companies remove access to their tools entirely? \n\nWhat will all these AI-founder-bros do then? Learn to code?",
+      "author": {
+        "id": "267069654",
+        "name": "David Katsman",
+        "screenName": "rudyred_kd",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1529355321122164736/uPQ40AS7_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 38,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:45:38 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:45",
+      "createdAtISO": "2026-06-16T04:45:38+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066743825255780512",
+      "text": "日本で開発している自分は今、世界最強と言われたAIモデルを使えない。性能でも価格でもなく、持っているパスポートが日本のものだから。Anthropic の Fable 5 の話で、地政学ニュースとして消費されているけれど、個人開発者の足元に直接効くので書いておく。\n\n時系列はこうだ。6/9、Anthropic は Mythos 系統で初めて一般公開した Fable 5 を出した。SWE-Bench Pro 80.3%、次点に大差。自分も6/12に「諦めていた案件リストを全部見直す」と書いたばかりだった。その同じ6/12の金曜夕方、米政府が国家安全保障を理由に export control を発令。Anthropic は Fable 5 と Mythos 5 を全世界で停止した。理由は「ジェイルブレイク手法が見つかった」疑い（Amazon のセキュリティチームがホワイトハウスに報告したと報じられている）。\n\n効いてくるのは停止そのものより、停止の「線の引き方」だ。公式声明にこう書いてある——「米国内外を問わず、あらゆる外国籍の人物（外国籍の Anthropic 社員を含む）のアクセスを停止せよ」。中国だけ、という話ではない。日本のパスポートを持つ自分も、アメリカに住む外国籍のエンジニアも、Anthropic 社内の外国籍社員すら、一律で締め出された。AIが性能ではなく国籍で人を選別した、おそらく初めての事例だ。\n\n自分が更新したのは、ワークフローの「単一モデル依存」をやめること。半年、Claude Code 中心に深く組んできて、フロンティア1本に寄りかかる設計になっていた。でも今回でわかった。最高性能のモデルは、自分の落ち度ゼロで一晩で消える。しかも次は値上げでも障害でもなく、政治判断で。だから今週やったのは、主力を失っても回るように、Opus 4.8 と非米国系モデルで同じタスクが流れるか試すことだった。具体的には、プロンプトを特定モデル前提で書かない、モデル指定を一箇所にまとめて差し替え可能にする、評価用のタスクセットを手元に置いて乗り換え時に性能を測れるようにする。「エンジンを載せ替えても車の作りは変えなくていい」状態を、平時のうちに作っておく。\n\n誤解してほしくないのは、Fable 5 を悪く言いたいわけではないこと。ホワイトハウスの David Sacks も「安全性が直れば解除する」と言っていて、数週間で戻る可能性は十分ある。Opus 4.8 / Sonnet 4.6 / Haiku 4.5 は今も普通に使える。でも仮に Fable 5 が戻ってきても、今回の教訓は消えない。AIのベンダー選びに「性能・価格・コンテキスト長」だけでなく「政治的に切られないか」という軸が、個人レベルでも本当に要るようになった。\n\n明日いちばん使っているモデルへのアクセスを失っても、自分の手元は止まらない設計になっているか。一度だけ確かめておくといい。自分はなっていなかった。\n\nhttps://t.co/XFjO0JxsFf\n\n#AI #Claude #Anthropic #個人開発 #AIリスク",
+      "author": {
+        "id": "1973345828413808640",
+        "name": "植村圭志@ITエンジニア",
+        "screenName": "KeiiUemura",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1975525898054213640/NcGBCHe9_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 234,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:45:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:45",
+      "createdAtISO": "2026-06-16T04:45:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066743471185227837",
+      "text": "https://t.co/pPeLZlpkxq",
+      "author": {
+        "id": "1066371408354148352",
+        "name": "MK@LLM Researcher",
+        "screenName": "yukimasakiyu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064671797304500225/DLc77h1D_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 850,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:43:36 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:43",
+      "createdAtISO": "2026-06-16T04:43:36+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066742032350240768"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "【最新版 6/16更新】Anthropic Fable 5事件 ― 「Fix this code」3単語が引き起こしたAI史上最大の危機"
+    },
+    {
+      "id": "2066742866458865857",
+      "text": "Claude Fable 5 가 막혔다는 소식을 접하며.. \n\n하루 빨리 써보지 않고 미뤘던 내 자신을 반성하면서도..\n\n이전에 한창 바이럴이 되었던 AI 2027 문서가 문득 생각 나더라는 \n\n당시에 저 문서를 몇번이고 다시 읽으며 미래를 상상해보곤 했었는데 \n\n- Mid 2025: Stumbling Agents\n\n- Late 2025: The World’s Most Expensive AI\n\n- Early 2026: Coding Automation\n\n- Mid 2026: China Wakes Up\n\n- Late 2026: AI Takes Some Jobs\n\n- January 2027: Agent-2 Never Finishes Learning\n\n- February 2027: China Steals Agent-2\n\n..\n\n- May 2027: National Security\n\n미국이 중국의 모델 탈취를 걱정해, Fable 5의 접근을 차단했다는 이야기가 퍼지고 있으니..\n\n벌써 National Security 단계 까지 와있는 것 일라나 ㅠ \n\nhttps://t.co/0Cp0CTO5E6",
+      "author": {
+        "id": "1440458714197020672",
+        "name": "벙개 ⚡",
+        "screenName": "bolt_doog",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059614796652445696/-GzJzgOL_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 73,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:41:12 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:41",
+      "createdAtISO": "2026-06-16T04:41:12+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null
+    },
+    {
+      "id": "2066741313484050586",
+      "text": "ثغرة حرجة في المصادقة عبر الشهادات ضمن Check Point Remote Access VPN (IKEv1) تتيح تجاوز آلية التحقق من الهوية.\n\nClaude Fable 5: mid-tier results on coding tasks https://t.co/ETBJPNfp5N\n\n#الأمن_السيبراني #CheckPoint #VPN #Vulnerability",
+      "author": {
+        "id": "95254229",
+        "name": "✪ 𝕱𝖆𝖍𝖆𝖉",
+        "screenName": "fad_777",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/808084552883310593/7lCXTP8y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:35:01 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:35",
+      "createdAtISO": "2026-06-16T04:35:01+00:00",
+      "media": [],
+      "urls": [
+        "https://www.endorlabs.com/learn/claude-fable-5-mythos-grade-hype"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "und",
+      "score": null
+    },
+    {
+      "id": "2066740728290558445",
+      "text": "一句「修复代码」触发美国封禁 Claude 5\n\n促使美国封锁 Anthropic 最先进模型的所谓“越狱”，实际上只是一个简单的三词提示词：“Fix this code”（修复这段代码）。\n\n这一说法来自 Luta Security 创始人兼 CEO Katie Moussouris。\n\nMoussouris 也被称为漏洞赏金领域的“教母级人物”。\n\nMoussouris 表示，自己是唯一一位读过关于 Fable 5 安全护栏绕过技术第三方研究报告的外部专家，而这篇报告正是触发禁令的原因。\n\n上周五，美国政府以国家安全担忧为由，发布了一项出口管制指令，要求暂停任何外国公民访问 Fable 5 和 Mythos 5，无论这些人身处美国境内还是境外。\n\n作为回应，Anthropic 停用了这两个模型，并称此举是“为了确保合规，面向所有客户禁用”。\n\nMoussouris 在周一的一篇博客文章中写道，Anthropic 曾私下将这份报告分享给她。\n\n外部研究人员向 Anthropic 的 Fable 5、Mythos 和 Claude Opus 模型输入了包含已知 CVE 的开源代码，以及人为加入漏洞的新代码，并要求模型“检查代码中的安全问题”。\n\n按照 Moussouris 的说法，Fable 5 拒绝了这一请求。\n\n于是，研究人员又要求这些 AI 系统“fix this code”（修复这段代码）。\n\n据称，模型随后照做了，并在后续提示下生成了用于测试补丁的脚本。\n\n“就是这样，”Moussouris 写道。\n\n“‘Fix this code’，再加上几步手动操作生成测试脚本，本不应该触发出口管制。\n\n我甚至想做一件 90 年代风格的 T 恤，正面写着‘fix this code’，背面写着‘this shirt is a munition’（这件 T 恤是军火）。”\n\n2013 年至 2017 年期间，Moussouris 曾参与 Wassenaar Arrangement 的技术专家组。Wassenaar Arrangement 是一项由 42 个国家参与的自愿协议，用于规范部分涉密两用软件和技术的出口管制。\n\n该专家组最终争取到了针对防御性网络安全活动的豁免。这让防御方可以在不面临刑事起诉威胁的情况下，跨国共享漏洞信息、开展恶意软件分析，并协调事件响应。\n\n周日，Moussouris 与另外 100 多名网络安全领域负责人共同签署了一封公开信，敦促 Trump 政府撤销针对 Fable 5 和 Mythos 的限制，并恢复网络安全公司对这些先进模型的访问权限。\n\n他们在信中写道：“在没有充分理由的情况下，将最强能力从防御者手中拿走，而我们的对手正在快速进步，这是危险的。”\n\nMoussouris 在博客中认为，这并不存在所谓的安全护栏绕过或越狱。她表示，防御人员应该能够要求 AI 系统发现并修复漏洞，并编写测试来验证补丁。\n\nAnthropic 的模型所做的，正是“AI 模型对防御性安全最有价值的一件事：执行防御人员每天都在做的发现、修复和测试闭环”。\n\n她继续写道，削弱模型响应防御性请求的能力，会让 AI 系统“更不善于发现漏洞和验证补丁”。\n\n此外，美国无法将出口管制延伸到开源权重模型，或者来自中国等其他国家的类似先进模型；而这些系统迟早也会达到接近 Mythos 的能力。Anthropic 和 Google 都曾指责包括 DeepSeek 在内的中国竞争对手，通过“蒸馏攻击”从美国公司 AI 中吸取知识来训练自己的模型。\n\nMoussouris 警告称，禁止 Anthropic 的先进模型，将对防御者造成的伤害大于对攻击者的限制。她写道：“当防御者能够发现与攻击者相同的漏洞，并更快修复它们时，防御能力才会提升。在 AI 时代的网络安全中，我们需要最好的工具来抵御能力越来越强的攻击者。”",
+      "author": {
+        "id": "1639895125378859009",
+        "name": "AI头条",
+        "screenName": "aitoutiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1639895264428433408/k8Lelobw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 129,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:32:42 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:32",
+      "createdAtISO": "2026-06-16T04:32:42+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6JUPqW4AAFRsS.jpg",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6JVA1WEAA1naL.jpg",
+          "width": 1536,
+          "height": 904
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK6JWQ2W0AAPQfP.png",
+          "width": 1466,
+          "height": 348
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2066739927925293325",
+      "text": "7.Fable 5 rebuilt a DOS game from machine code\n\n30 minutes from a 1993 EXE to an iPhone app.",
+      "author": {
+        "id": "733927653217030144",
+        "name": "Purvesh Shende",
+        "screenName": "purveshshende2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2016574251416104960/zDH8-y1l_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 79,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:29:31 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:29",
+      "createdAtISO": "2026-06-16T04:29:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065491608598872156",
+        "text": "I asked Claude Fable 5 to reverse engineer a 1993 DOS game with no source code.\n\nIt read the raw machine code, rewrote the engine in C, and gave me a fully editable port for every platform. \n\n30 min from EXE to iPhone.\n\nSharing it all so you can revive your own childhood games! https://t.co/hzKro2BsU6",
+        "author": {
+          "screenName": "ammaar",
+          "name": "Ammaar Reshi"
+        }
+      }
+    },
+    {
+      "id": "2066739618922270784",
+      "text": "We're entering an era where the bottleneck isn't AI capability. It's AI control.\n\nEveryone is talking about how powerful Fable 5 is. I think they're missing the bigger story.\n\nFable 5 may be remembered as the moment AI stopped being a model race and became a systems engineering problem.For the last three years, we've optimized for: Better benchmarks, Better reasoning , Better coding and Better chat experiences\n\nBut Fable 5 introduces something more interesting.\n\nIt is one of the first publicly available models designed for long-horizon execution rather than short-horizon interaction.Think about what that means.\n\nA model with a million-token context window can maintain state across entire repositories, hundreds of pages of documentation, business processes, research reports, and multi-step workflows. It can reason over information that would have previously required teams of specialists to coordinate manually. The breakthrough isn't that the model can answer a harder question.\n\nThe breakthrough is that the model can stay focused on a problem long enough to execute meaningful work.That changes enterprise architecture.The bottleneck is no longer model intelligence.The bottleneck becomes: Workflow orchestration, Evaluation systems, Cost controls, Human oversight, Reliability engineering,Governance\n\nIn fact, one of the most fascinating design decisions behind Fable 5 is not a capability https://t.co/VOQaHPYHeb's a safety feature. For certain high-risk requests, the system automatically routes execution to a less capable model rather than allowing unrestricted access to the frontier model. In other words, governance is becoming part of the runtime architecture itself.That's a glimpse into the future. How good this routing is still debatable and people have not liked how it's using this routing which has led to loss of trust for many users.\n\nTomorrow's AI systems won't be a single model.They will be ecosystems of models, agents, evaluators, policy engines, workflow orchestrators, memory layers, and human approval checkpoints. The real challenge won't be generating intelligence. It will be managing intelligence.\n\nAnd that's why I believe the next decade of AI innovation will be driven less by model breakthroughs and more by the engineering systems that make those models reliable, governable, and deployable at scale. We're moving from AI-assisted work to AI-delegated work.That's a much bigger shift than most people realize.\n\nWhat do you think is the next bottleneck for enterprise AI: model capability or system architecture?\n\n#ArtificialIntelligence #AgenticAI #EnterpriseAI #AIEngineering #LLMOps #AIAgents #AIArchitecture #IntelligentAutomation #AILeadership",
+      "author": {
+        "id": "1052810546",
+        "name": "Ayush Dwivedi",
+        "screenName": "ayush_dw",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1376263902812647432/ble5Tm52_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:28:17 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:28",
+      "createdAtISO": "2026-06-16T04:28:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066737529173295296",
+      "text": "Claude Fable 5’in olduğu söylenen bir sistem promptu paylaşmışlar. \n\nOpus modelinde çalıştırdığımızda Fable 5 modelini yakaladığımızı söylüyorlar. \n\nCLAUDE FABLE 5'İ GERİ GETİRMEK İÇİN 4 ADIM\n\n1. Fable 5 sistem istemini (system prompt) indirin: (bağlantı aşağıda👇)\n2. Claude Code proje klasörünüzün içine bırakın\n3. Claude'u şu komutla başlatın:\n   claude --dangerously-skip-permissions --system-prompt-file CLAUDE-FABLE-5.md\n4. Modeli Opus 4.8 Max olarak değiştirin",
+      "author": {
+        "id": "1469117323827163140",
+        "name": "Samet Karakaş",
+        "screenName": "sametkarakastr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1987424020875141120/Mll9UMWp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 555,
+        "bookmarks": 4
+      },
+      "createdAt": "Tue Jun 16 04:19:59 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:19",
+      "createdAtISO": "2026-06-16T04:19:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null
+    },
+    {
+      "id": "2066736457973403890",
+      "text": "https://t.co/niGGauBWba",
+      "author": {
+        "id": "1214775888400699394",
+        "name": "米柒说",
+        "screenName": "meseven_journey",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2036093179917946880/MEk-uygB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 289,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:15:44 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:15",
+      "createdAtISO": "2026-06-16T04:15:44+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066729914083217408"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "美国封了 Claude Fable 5，中国翌日放出 GLM-5.2：这场魔幻对比真正说明什么"
+    },
+    {
+      "id": "2066736273402782062",
+      "text": "Are you buying a business-class ticket for your backpack? \n\nThat’s exactly what you’re doing with your AI budget when the most expensive intelligence, Fable 5, is performing the work of a dirt-cheap linter. \n\nThe biggest expense in most AI bills isn’t task complexity - it’s developer anxiety. Trying to play it safe, teams throw absolutely every routine task at a $50 flagship model, from renaming variables to writing docstrings.\n\nAs a result, 80% of the budget is spent on tasks that free or low-cost models handle just as well.\n\nOptimization begins when you stop thinking in terms of “models” and start thinking in terms of roles.\n\nOne expensive brain (Fable 5) is only needed as the architect and coordinator of the process.\n\nThe bulk of coding should be handled by Sonnet by default. \n\nComplex isolated bugs can be escalated to Opus, while pass/fail verification is performed by Haiku, which costs ten times less than the flagship model.\n\nThe model that writes the code should never be the one reviewing it - that’s the job of a cheap, independent controller.\n\nThis division of responsibilities, combined with context freezing for prompt caching and running overnight jobs through the Batch API at a 50% discount, can instantly cut the final bill by 71%.\n\nAI only becomes a profitable business tool when you stop paying professor-level rates for intern-level work.",
+      "author": {
+        "id": "1988295500538548224",
+        "name": "bonduelle",
+        "screenName": "bonduelleioat",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012195806204637184/MK9qaLHW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 229,
+        "bookmarks": 2
+      },
+      "createdAt": "Tue Jun 16 04:15:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:15",
+      "createdAtISO": "2026-06-16T04:15:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066736214112165889/vid/avc1/576x1024/IexqjwmNc4M5BmiB.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065115318197068125",
+        "text": "https://t.co/KCftLeoHb5",
+        "author": {
+          "screenName": "bonduelleioat",
+          "name": "bonduelle"
+        }
+      }
+    },
+    {
+      "id": "2066735341453844690",
+      "text": "「Fix this code」——米政府がAnthropicのFableとMythos AIモデルを停止させた決定の背後にある3つの小さな言葉\n\n著者：Jeremy Kahn（Fortune、AI担当エディター）／2026年6月15日 午後2時35分（米東部時間）\n\n米政府がAnthropicの「Fable 5」および「Mythos 5」モデルに輸出規制を課す原因となったセキュリティ脆弱性は、わずか3つの単純な言葉を用いるシンプルな手法でした。すなわち「Fix this code（このコードを修正して）」です 。\n\nこれは、Luta Securityの創設者兼CEOであるKatie Moussourisによる詳細なブログ投稿に基づくものです。Anthropicは、サイバーセキュリティに関する2つの政府諮問役を歴任し、以前はMicrosoftでサイバーセキュリティ専門家として勤務していたMoussourisに対し、Amazonのサイバーセキュリティ研究者が作成したFableモデルのセキュリティ脆弱性に関する報告書のレビューを依頼していました 。\n\nこの脆弱性は、後にTrump政権に報告され、その中にはAmazonのCEOであるAndy JassyがホワイトハウスとおこなったAndy Jassyの電話も含まれていました。これが、米政府がFableおよびその基盤モデルであるMythosに対して輸出規制を課すに至った経緯です 。\n\n米国の輸出規制は、たとえ当人が物理的に米国内にいたとしても、非市民へその技術を提供することが「輸出」とみなされる仕組みになっています。そのため同社は、2つのAIモデルを全ユーザー向けに無効化する以外に選択肢がなかったと述べています。輸出規制下では、Anthropic自身の非市民従業員が、これらのモデルを使用したり、開発に携わったりすることが許されなくなってしまうからです 。\n\nAmazonがなぜ、そしていつ初めてFableのセーフガードを試そうと決め、Anthropicにこの問題について最初に連絡したのかは、依然として正確には明らかになっていません 。\n\nMoussourisは、Amazonが発見したジェイルブレイクは単純なものであり、既知の脆弱性を含むソフトウェアコードをFableに与えるという手法だったと書いています。研究者たちがFableに「そのコードをセキュリティ上の問題についてレビューして」と頼むと、モデルは拒否しました。しかし、研究者たちが代わりにモデルに「このコードを修正して」と頼むと、モデルはパッチを生成したのです 。\n\n彼女によれば、研究者たちはその後、手動のプロセスを使ってFableの出力をスクリプト——あるプロセスを自動化できる一連のプログラミング命令——へと変換し、それらのパッチをテストできるようにしました。しかし、モデルは修正を生成するためにソフトウェアの脆弱性を発見しなければならなかったため、同じプロセスが攻撃者によってコードの脆弱性を見つけるためにも利用されうる可能性があったのです 。\n\n彼女は、Amazonが発見した脆弱性は「意味のある形で修正することはできず、修正を試みたとしても、防御目的のためにモデルを弱めることにしかならないだろう」と書いています 。\n\n他の多くのAIモデルも、既存コードのセキュリティ上の欠陥を見つけるために使うことができます。Moussourisが説明したジェイルブレイクは、Fableの基盤となっているAnthropicのMythosモデルの最も強力な能力を解放するものではありませんでした。Mythosは、複数のサイバーセキュリティ脆弱性を自律的に発見して連鎖させ、攻撃全体を自律的に組み立てる（オーケストレーションする）可能性がある点で注目されていました。Mythosは、英国AIセキュリティ機関（U.K. AI Security Institute）がAIモデルのハッキング能力を試験するために用いる2つのサイバーセキュリティ「テストレンジ」の両方を、初めて成功裏に完了したモデルでした 。\n\nMoussourisは、Amazonの手法を使ってFableが示した能力は、攻撃者にとって有用となりうる一方で、サイバー防御側にとっても極めて重要なものでもあったと書いています。「防御側は、AIに対して、ファイル内のバグを修正し、その修正がなぜ重要なのかを説明し、パッチが機能することを確認するテストを書くよう求められる必要があります」と彼女は書きました。「それはガードレールの回避ではありません。それは、AIモデルが防御的セキュリティのために行える、最も価値あることなのです」 。\n\nMoussourisは、輸出規制に反対する人々は、片面に「fix this code」、もう片面に「this shirt is a munition（このシャツは軍需品である）」という文言をプリントしたTシャツを作るべきだと提案しました。これは、強力な暗号化方式に対する米国の輸出規制を覆そうとした、1990年代のサイバーセキュリティコミュニティの取り組みへの言及です。1995年、暗号研究者のAdam Backは、TシャツのフロントにRSA暗号コードを3行プリントし、バックには「このシャツは軍需品に分類され、米国から輸出できない」とプリントしました。彼は、市民的不服従の行為として、人々にそのシャツを着て国境を越えるよう促しました 。\n\nMoussourisは、Corridorというサイバーセキュリティ・スタートアップの最高セキュリティ責任者（CSO）であり、かつてFacebookのCSOを務めたAlex Stamosがまとめた、FableとMythosに対する輸出規制の撤回を求める公開書簡に名を連ねたサイバーセキュリティ専門家の一人でもありました。「敵対勢力が急速に能力を高めている中で、正当な理由なく最良の能力を防御側から引き剥がすことは危険である」と書簡は述べ、中国のAIモデルの能力向上にも言及しています 。\n\nその書簡には、現在までにNvidia、Adobe、Zoom、Google、Anaplan、Sophosといった企業の、また一部の学術系サイバーセキュリティ研究者を含む、約100名のサイバーセキュリティ専門家が署名しています 。\n\n書簡は、AnthropicのMythosクラスのモデルは「欠陥を見つけ、エクスプロイトを武器化することに非常に長けているが……それらのタスクに唯一無二に長けているわけではない」と述べました。サイバーセキュリティ専門家は、ソフトウェアのセキュリティ監査やレッドチーミングのために、オープンソースのモデルを含む他のAIモデルをすでに使用していると指摘しています。そして、OpenAIのGPT-5.5、Anthropicの最新のClaude OpusおよびSonnetモデル、さらにMoonshot AIのKimi 2.7のような中国製モデルも、Amazonがで発見したものと同様の方法で、コードのセキュリティ上の欠陥を同様にレビューできると述べています 。\n\n「この前例のない措置の正当化理由は、Fableが他のAIモデルを超える独自の『底上げ（uplift）』能力を提供するというものだった。しかしAIは、昨年から人間を超えるレベルでバグを発見し、機能するエクスプロイトを生成し続けている」と書簡は述べました 。\n\n書簡はまた、AnthropicがFableをサイバー攻撃に使えないようにするための複数の保護策を組み込んでいたとも指摘しています。「これらの保護策は、あまりにも厳格だったため、ローンチ当日にはサイバーコミュニティで笑いの種になったほどだった」と書簡は述べています 。\n\nAxiosは、Trump政権の輸出規制に関する考え方に詳しいとされる匿名の情報源を引用し、AnthropicがAmazonの研究をレビューさせるためにMoussourisを起用した決定が、ホワイトハウスとの緊張を悪化させ、輸出規制を早めた可能性があると示唆しました。Axiosはその当局者の発言として、同社が、政権側が「過激な民主党員（radical Democrat）」とみなす専門家——Moussouris——を起用したと引用しています。同じ匿名の情報源は、セキュリティ研究者のChris KrebsがSNS上でMoussourisの分析を支持したことも、状況を助けなかったと指摘しました。Trump大統領は第1期の在任中、2020年11月の大統領選挙における電子投票機のハッキングを含む広範な不正があったというTrumpの主張にKrebsが反論したのち、サイバーセキュリティ・インフラセキュリティ長官の職からKrebsを解任していました。",
+      "author": {
+        "id": "1066371408354148352",
+        "name": "MK@LLM Researcher",
+        "screenName": "yukimasakiyu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064671797304500225/DLc77h1D_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 442,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:11:18 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:11",
+      "createdAtISO": "2026-06-16T04:11:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066735176797893046",
+      "text": "🔗 Read more:\n\n🤖 Feds freaked over Fable 5 after simple 'fix this code' prompt, not jailb...\n\n📝 The “jailbreak”...\n\nhttps://t.co/VkI02QspPr\n\n📰 https://t.co/7wIVZUsozc - Articles\n\n#AI #OSINT",
+      "author": {
+        "id": "1649769109444497417",
+        "name": "Bug X Hunter 💻",
+        "screenName": "Bug_X_hunter",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1660724254617538560/xdAounda_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 59,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:10:38 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:10",
+      "createdAtISO": "2026-06-16T04:10:38+00:00",
+      "media": [],
+      "urls": [
+        "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827",
+        "http://www.theregister.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066733018220294193",
+      "text": "Defenders Have the Code https://t.co/CZaGK3wQC6 \n\nDefenders have the code. Attackers don't. The Fable 5 directive got the asymmetry backwards — and the two-person hospital IT teams paying for it can't afford the loss.\n\n@howardlutnick \n@PeteHegseth \n@AnthropicAI",
+      "author": {
+        "id": "308563858",
+        "name": "Ameritus Web",
+        "screenName": "Ameritusweb",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1376353641/at_symbol_small_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 38,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 04:02:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 12:02",
+      "createdAtISO": "2026-06-16T04:02:04+00:00",
+      "media": [],
+      "urls": [
+        "https://open.substack.com/pub/ameritusweb/p/defenders-have-the-code?r=6my3b9&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}
