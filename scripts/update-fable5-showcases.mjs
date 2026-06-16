@@ -989,7 +989,7 @@ for (const item of selected) {
 const collection = [...byUrl.values()].filter((item) => !blockedUrls.has(item.sourceUrl) && passesFinalNegativeFilter(item)).sort((a, b) => {
   const scoreA = scoreMetrics(a.metrics || {})
   const scoreB = scoreMetrics(b.metrics || {})
-  return scoreB - scoreA || String(b.date || '').localeCompare(String(a.date || ''))
+  return String(b.date || '').localeCompare(String(a.date || '')) || scoreB - scoreA
 }).slice(0, limit)
 
 const creators = new Map()

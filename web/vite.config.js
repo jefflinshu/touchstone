@@ -10,6 +10,7 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    allowedHosts: ['jefflin.ai', 'www.jefflin.ai', 'touchstone.jefflin.ai'],
     proxy: {
       '/api': 'http://localhost:3000',
       '/workspace': 'http://localhost:3000',
