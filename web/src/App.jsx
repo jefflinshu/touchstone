@@ -4,6 +4,7 @@ import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import ProfilePage from './components/ProfilePage.jsx'
 import Fable5Page from './components/Fable5Page.jsx'
+import IosCoursePage from './components/IosCoursePage.jsx'
 import ProjectCard from './components/ProjectCard.jsx'
 import SponsorCard from './components/SponsorCard.jsx'
 import GuideCard from './components/GuideCard.jsx'
@@ -202,11 +203,13 @@ function useRoute() {
   }, [])
   const hash = loc.hash
   if (hash === '#/fable5') return { page: 'fable5' }
+  if (hash === '#/ios-course') return { page: 'iosCourse' }
   let m = hash.match(/^#\/p\/(.+)$/)
   if (m) return { page: 'project', project: decodeURIComponent(m[1]) }
   m = hash.match(/^#\/u\/(.+)$/)
   if (m) return { page: 'user', email: decodeURIComponent(m[1]) }
   if (loc.pathname === '/fable5') return { page: 'fable5' }
+  if (loc.pathname === '/ios-course') return { page: 'iosCourse' }
   m = loc.pathname.match(/^\/p\/([^/]+)\/?$/)
   if (m) return { page: 'project', project: decodeURIComponent(m[1]) }
   m = loc.pathname.match(/^\/u\/([^/]+)\/?$/)
@@ -222,6 +225,7 @@ const X1_URL = 'https://x-1.dev'
 
 function getAnalyticsPage(route) {
   if (route.page === 'fable5') return { path: '/fable5', title: 'Fable 5' }
+  if (route.page === 'iosCourse') return { path: '/ios-course', title: 'iOS Course' }
   if (route.page === 'project') return { path: '/p/:project', title: 'Project detail' }
   if (route.page === 'user') return { path: route.tab ? `/u/:user?tab=${route.tab}` : '/u/:user', title: 'User profile' }
   return { path: '/', title: 'Home' }
@@ -248,6 +252,16 @@ export default function App() {
   useEffect(() => {
     if (route.page === 'fable5') {
       setShowGuide(false)
+      return
+    }
+    if (route.page === 'iosCourse') {
+      setPageSeo({
+        title: '用 AI 做出第一款 iOS App · Jeff Lin',
+        description: '面向 macOS 用户的 2 小时直播课，学习用 AI 跑通 iOS App 从产品机会、界面设计、代码开发、订阅付费、TestFlight 到 App Store 上线。',
+        canonicalPath: '/ios-course',
+        imagePath: '/ios-course/hero-mountain-mist.png',
+        type: 'website',
+      })
       return
     }
     const params = new URLSearchParams(window.location.search)
@@ -474,6 +488,16 @@ export default function App() {
       })
       return
     }
+    if (route.page === 'iosCourse') {
+      setPageSeo({
+        title: '用 AI 做出第一款 iOS App · Jeff Lin',
+        description: '面向 macOS 用户的 2 小时直播课，学习用 AI 跑通 iOS App 从产品机会、界面设计、代码开发、订阅付费、TestFlight 到 App Store 上线。',
+        canonicalPath: '/ios-course',
+        imagePath: '/ios-course/hero-mountain-mist.png',
+        type: 'website',
+      })
+      return
+    }
     if (route.page === 'project' && currentGroup) {
       const latest = currentGroup.runs[currentGroup.runs.length - 1]
       const prompt = latest?.prompt ? `${t('common.prompt')}: ${latest.prompt.slice(0, 120)}` : t('seo.projectFallback')
@@ -677,6 +701,8 @@ export default function App() {
       <div className="mx-auto max-w-[1400px] px-4 pb-28 sm:px-6">
         {route.page === 'fable5' ? (
           <Fable5Page onBack={goHome} authLoaded={auth.loaded} authEmail={auth.email} onLogin={login} loggingIn={loggingIn} />
+        ) : route.page === 'iosCourse' ? (
+          <IosCoursePage onBack={goHome} />
         ) : route.page === 'project' ? (
           currentGroup ? (
             <ProjectPage
@@ -798,7 +824,7 @@ export default function App() {
         )}
       </div>
 
-      {route.page !== 'fable5' && (
+      {route.page !== 'fable5' && route.page !== 'iosCourse' && (
         <GuideCard
           agents={agents}
           open={showGuide}

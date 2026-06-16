@@ -85,6 +85,10 @@ function seoForPath(req) {
     title = 'Claude Fable 5 Prompts & Showcases · Touchstone'
     description = '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。'
     type = 'CollectionPage'
+  } else if (pathname === '/ios-course') {
+    title = '用 AI 做出第一款 iOS App · Jeff Lin'
+    description = '面向 macOS 用户的 2 小时直播课，学习用 AI 跑通 iOS App 从产品机会、界面设计、代码开发、订阅付费、TestFlight 到 App Store 上线。'
+    type = 'Event'
   } else {
     const projectMatch = pathname.match(/^\/p\/([^/]+)$/)
     const userMatch = pathname.match(/^\/u\/([^/]+)$/)
@@ -109,7 +113,7 @@ function seoForPath(req) {
   }
 
   const canonical = `${origin}${pathname}`
-  const image = `${origin}${DEFAULT_SOCIAL_IMAGE}`
+  const image = pathname === '/ios-course' ? `${origin}/ios-course/hero-mountain-mist.png` : `${origin}${DEFAULT_SOCIAL_IMAGE}`
   return {
     title,
     description,
@@ -1793,6 +1797,7 @@ app.get('/sitemap.xml', (req, res) => {
   const urls = [
     { loc: `${origin}/`, priority: '1.0', changefreq: 'daily', lastmod: latestIso(runs) },
     { loc: `${origin}/fable5`, priority: '0.9', changefreq: 'weekly', lastmod: latestIso(runs) },
+    { loc: `${origin}/ios-course`, priority: '0.8', changefreq: 'monthly', lastmod: '2026-06-16' },
   ]
   const projects = new Map()
   for (const run of runs) {
