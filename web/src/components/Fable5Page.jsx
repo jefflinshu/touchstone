@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowDownAZ, ArrowUpAZ, Bookmark, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
+import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Featured, loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
@@ -255,6 +255,9 @@ function ShowcaseCard({ item, index, translation, favorite, copied, authLoaded, 
   const metrics = item.metrics || {}
   const copy = localizedShowcaseCopy(item, translation)
   const summary = copy.summary
+  const dateLabel = item.date
+    ? new Date(`${item.date}T00:00:00`).toLocaleDateString(language, { year: 'numeric', month: 'short', day: 'numeric' })
+    : ''
 
   return (
     <article
@@ -264,7 +267,7 @@ function ShowcaseCard({ item, index, translation, favorite, copied, authLoaded, 
       <MediaBlock item={item} priority={index < INITIAL_PRIORITY_IMAGES} />
 
       <div className="flex min-h-0 flex-1 flex-col p-4">
-        <div className="flex h-10 shrink-0 items-start gap-3">
+        <div className="flex min-h-10 shrink-0 items-start gap-3">
           <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="min-w-0 flex-1">
             <div className="flex min-w-0 items-center gap-2.5">
               {item.avatarUrl && !avatarFailed ? (
@@ -281,10 +284,10 @@ function ShowcaseCard({ item, index, translation, favorite, copied, authLoaded, 
                   {(item.handle || '?')[1] || '?'}
                 </span>
               )}
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="truncate text-sm font-medium text-white">{item.author}</div>
                 <div className="mt-0.5 truncate font-mono text-[10px] tracking-[0.12em] text-white/35 uppercase">
-                  {item.handle} · {new Date(item.date).toLocaleDateString(language)}
+                  {item.handle}
                 </div>
               </div>
             </div>
@@ -314,7 +317,16 @@ function ShowcaseCard({ item, index, translation, favorite, copied, authLoaded, 
           </div>
         </div>
 
-        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="mt-3 block h-[104px] shrink-0 overflow-hidden">
+        {dateLabel && (
+          <div className="mt-2 flex h-5 shrink-0 items-center">
+            <span className="inline-flex max-w-full items-center gap-1.5 rounded border border-white/10 bg-white/[0.03] px-2 font-mono text-[10px] tracking-[0.08em] text-white/45 uppercase">
+              <CalendarDays className="h-3 w-3 shrink-0 text-white/35" />
+              <span className="truncate">{dateLabel}</span>
+            </span>
+          </div>
+        )}
+
+        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="mt-2 block h-[104px] shrink-0 overflow-hidden">
           <h2 className="line-clamp-2 text-[15px] leading-6 font-medium text-white/90">{copy.title}</h2>
           {summary[0] && <p className="mt-1 line-clamp-3 text-[13px] leading-5 text-white/55">{summary[0]}</p>}
         </a>
