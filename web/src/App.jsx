@@ -209,7 +209,7 @@ function useRoute() {
   m = hash.match(/^#\/u\/(.+)$/)
   if (m) return { page: 'user', email: decodeURIComponent(m[1]) }
   if (loc.pathname === '/fable5') return { page: 'fable5' }
-  if (loc.pathname === '/ios-course' || loc.pathname === '/ios-course/') return { page: 'iosCourse' }
+  if (loc.pathname === '/ios-course') return { page: 'iosCourse' }
   m = loc.pathname.match(/^\/p\/([^/]+)\/?$/)
   if (m) return { page: 'project', project: decodeURIComponent(m[1]) }
   m = loc.pathname.match(/^\/u\/([^/]+)\/?$/)
