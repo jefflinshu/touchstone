@@ -1,0 +1,1280 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066671176928346402",
+      "text": "BestBlogs Daily · 06-16\n\n# Claude Fable 5 / Export Controls / AI Agent Tool Design / World-Action Models / OpenAI Partner Network\n\n[1] ★ Deep Dive · AI Agent Tool Design: What Works and What Doesn’t - https://t.co/yjUiJ1O4OX\nThis piece reframes most AI agent failures as interface problems, not model problems: single-responsibility tools beat action-parameter grab-bags, tight schemas with enums beat free-text guessing, structured errors need a recoverable flag and suggested_action, writes need idempotency keys, and destructive actions need two-step confirmation. A model only reasons from the interface you give it.\nSource: Hacker News - Newest: \"AI Agent\"\nhttps://t.co/529Xl7SA8z\n\n[2] ★ Deep Dive · Pretrained to Imagine， Fine-Tuned to Act: The Rise of World-Action Models\nA useful corrective to 'world models will replace robotics' hype. World-Action Models swap a VLA's language backbone for a pretrained video model to dodge the grounding gap — DreamZero already edges past Pi-0.5 on RoboArena. But training costs ~7-10x more compute, inference runs 3-4x slower, and the author's own verdict: no recipe has won yet, hybrids look likelier than a clean replacement.\nSource: NVIDIA Technical Blog\nhttps://t.co/m9EA5aIfyA\n\n[3] ★ Deep Dive · Anthropic Releases and Temporarily Suspends Claude Fable 5\nAnthropic shipped Claude Fable 5 — a Mythos-class model with 1M-token context — and a US export directive pulled it offline three days later, after Amazon flagged a jailbreak to the White House. The detail that outlasts the drama: the legal logic behind the shutdown echoes Anthropic's own proposal for government oversight of unsafe models.\nSource: InfoQ\nhttps://t.co/yAlmfFLXvL\n\n[4] AI demands more engineering discipline. Not less (xpost)\nCharity Majors argues that AI-generated code, far from eliminating the need for engineering rigor, demands more discipline, drawing a parallel to the shift from handcrafted servers to immutable infrastructure.\nSource: https://t.co/Z9AYuvjZkX\nhttps://t.co/LYKnGp9lbE\n\n[5] Building a 100x Cheaper Trace Judge with Fireworks\nLangChain partnered with Fireworks to fine-tune a Qwen model as a 'Perceived Error' judge for production traces, achieving frontier-level accuracy at up to 100x lower cost.\nSource: LangChain Blog\nhttps://t.co/Mz8ginV8v2\n\n[6] Introducing the OpenAI Partner Network\nOpenAI announces the OpenAI Partner Network, a new program with a $150M investment to build a global ecosystem of partners helping enterprises adopt and scale AI solutions.\nSource: OpenAI News\nhttps://t.co/mcjbKqpiej\n\n[7] Gradual disempowerment at the scale of one user — LessWrong\nThis essay argues that repeated successful delegation to AI assistants creates a self-reinforcing loop that gradually atrophies a user's own judgment, posing a subtle risk of personal disempowerment that feels like sensible offloading until it is too late.\nSource: LessWrong\nhttps://t.co/fAI6evkUUi\n\n[8] How Wayfair cut ML model costs by 90% (twice!) with Cursor · Cursor\nWayfair's Applied Research team used Cursor to automate ML experimentation, running 110+ model variants in four days and cutting inference costs by 94%, then another 90% in a second sprint.\nSource: Cursor Blog\nhttps://t.co/GABRRzxwTN\n\n[9] This man with ALS is “the first power user” of a brain implant that lets him speak\nCasey Harrell, a man with ALS, has become the first long-term, independent 'power user' of a speech brain-computer interface, using it for thousands of hours to speak, work, and connect with his family.\nSource: MIT Technology Review\nhttps://t.co/Dn3Cr2HuOO\n\n[10] The T-shaped UX professional is giving way to the polymath architect\nThe T-shaped UX specialist model is collapsing as AI eliminates handoffs, and the future belongs to polymath architects who combine deep judgment with broad, tool-augmented execution.\nSource: UX Collective\nhttps://t.co/u7d2Q4Zk22\n\n---\nhttps://t.co/Kyws10KILE · Discover high-quality content that truly fits you\nBestBlogs is an AI-powered personal reading assistant that helps you build a stable, trusted, and personalized flow of high-quality information. Follow the sources and topics you care about, and get a daily brief that fits your reading rhythm.\nRead online: https://t.co/Vbxm3OoiAJ",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 335,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:56:20 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:56",
+      "createdAtISO": "2026-06-15T23:56:20+00:00",
+      "media": [],
+      "urls": [
+        "http://MachineLearningMastery.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066671086545355053",
+        "text": "https://t.co/HGWbhda14V",
+        "author": {
+          "screenName": "BestBlogsDev",
+          "name": "BestBlogs"
+        }
+      }
+    },
+    {
+      "id": "2066671086545355053",
+      "text": "https://t.co/HGWbhda14V",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 655,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:55:58 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:55",
+      "createdAtISO": "2026-06-15T23:55:58+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066670444460269568"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs Daily · 06-16 · Claude Fable 5, Agent Tool Design, World-Action Models"
+    },
+    {
+      "id": "2066670030398345483",
+      "text": "Fable 5 falls back to Opus 4.8 for high-risk domains — bio, chem, cybersecurity. The safety classifier fires on fewer than 5% of sessions. But that 5% is now your product design problem. What do users see when they hit that wall?",
+      "author": {
+        "id": "2040718030162837504",
+        "name": "Elle Lim (Product / Design / AIUX)",
+        "screenName": "aidesignbrief",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040721726624198656/SARpNlKF_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 73,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:51:46 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:51",
+      "createdAtISO": "2026-06-15T23:51:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066649721385484511",
+      "text": ".@AnthropicAI @claudeai @ClaudeDevs we all know the Fable 5 situation, now remove this banner from our UIs and make it dismissible, it is taking screen prime state for nothing... for all sessions.... seriously, who does UX on Anthropic??? https://t.co/PRA1hRMWkM",
+      "author": {
+        "id": "18628195",
+        "name": "Ygor Lemos",
+        "screenName": "ygbr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1599450190762725381/_dMnCyiG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 98,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:31:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:31",
+      "createdAtISO": "2026-06-15T22:31:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK42toQWwAIeBUl.png",
+          "width": 1968,
+          "height": 124
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066649560227672134",
+      "text": "https://t.co/uTEiKzFpX2",
+      "author": {
+        "id": "1342923842675740672",
+        "name": "zerokn0wledge.hl 🪬✨",
+        "screenName": "zerokn0wledge_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1929295607761436672/gWv-iB7p_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 18,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 591,
+        "bookmarks": 6
+      },
+      "createdAt": "Mon Jun 15 22:30:26 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:30",
+      "createdAtISO": "2026-06-15T22:30:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066634741692981249"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "I built a Research Desk Staffed Entirely by AI Agents. It Works."
+    },
+    {
+      "id": "2066643813599240633",
+      "text": "Swarms Weekly Recap [Jun 8–15] 👾🦀\n\nThis week was a pivotal moment in the evolution of the Swarms ecosystem.\n\nWe introduced Swarms Cloud, released Swarms v13 \"Kizuna,\" added day-one support for Anthropic's latest models, and shipped several marketplace features designed to help creators monetize and manage their agents more effectively.\n\nHighlights:\n\n- Swarms Cloud: Unified platform for multi-agent systems\n\n- Swarms v13 \"Kizuna\": Latest Swarms Python release\n\n- Vaulted Products: Token-gated agents and prompts\n\n- Agent Holdings: Portfolio management dashboard\n\n- Fable 5 & Mythos Support: Day-one model support\n\nLearn more ⬇️",
+      "author": {
+        "id": "1784961897588203520",
+        "name": "swarms",
+        "screenName": "swarms_corp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014826364549976064/eJE0bvJa_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 33,
+        "retweets": 12,
+        "replies": 7,
+        "quotes": 0,
+        "views": 1955,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 22:07:36 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:07",
+      "createdAtISO": "2026-06-15T22:07:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066642734614536400",
+        "text": "https://t.co/VoE8CJP1PS",
+        "author": {
+          "screenName": "swarms_corp",
+          "name": "swarms"
+        }
+      }
+    },
+    {
+      "id": "2066642734614536400",
+      "text": "https://t.co/VoE8CJP1PS",
+      "author": {
+        "id": "1784961897588203520",
+        "name": "swarms",
+        "screenName": "swarms_corp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014826364549976064/eJE0bvJa_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 9,
+        "replies": 1,
+        "quotes": 1,
+        "views": 2624,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 22:03:18 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:03",
+      "createdAtISO": "2026-06-15T22:03:18+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066640683369222144"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Swarms Weekly Recap [Jun 8-15]: Swarms Cloud, Swarms v13, and More 👾🦀"
+    },
+    {
+      "id": "2066642365444735265",
+      "text": "https://t.co/xrg2udege3",
+      "author": {
+        "id": "18084072",
+        "name": "Ron Bodkin",
+        "screenName": "ronbodkin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1592943043732127744/8BD9wOMc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 167,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:01:50 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:01",
+      "createdAtISO": "2026-06-15T22:01:50+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066641935474008066"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Unprovable Safety Meets National Security"
+    },
+    {
+      "id": "2066639434351563039",
+      "text": "@ONmdIlfqnQqfJDI 私もサイト制作の途中で使ってたんですが、UIデザインが明らかに良くなっていて、指示もかなり通しやすかったです。\n\nthree.js周りも見事にこなしてくれて、本当に凄かった…。\n\nFable 5を体験しちゃうと、Opus 4.8に戻るのがなかなか辛いですね🥲",
+      "author": {
+        "id": "50930274",
+        "name": "Al | アルパカ",
+        "screenName": "Alpackaaa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064589490300006400/NojMi_iM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 124,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:50:12 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:50",
+      "createdAtISO": "2026-06-15T21:50:12+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066632247944654848",
+      "text": "https://t.co/cgcoGBq7zn\nOpenClawのアップデートがすごい\nJulian Goldie SEO　#AI要約 #OpenClaw\n\nOpenClaw 6.6アップデート要約\n\n🔳アップデート概要\nOpenClawが6月12日にバージョン6.6へ更新され、安全性、速度、対応モデルの拡張を中心に大きく改善された\n\n🔳OpenClaw概要\nOpenClawはPC上で動く無料のオープンソースAIアシスタントで、TelegramやiMessageやWhatsAppやDiscordやTeamsなど普段使うメッセージアプリから操作できる\n\n🔳安全性強化\n承認リクエストは時間内に返答がない場合に自動で拒否されるFail Closed方式になり、AIが許可なしに処理を進めるリスクが下がった\n\n🔳不正入力対策\n許可されていない相手からのメッセージは保存やAI入力に使われず、Webページやメモリ内に隠された悪意ある指示もブロックされやすくなった\n\n🔳メッセージ配信改善\nTelegramではツール利用中に返信が途中で切れる問題が改善され、iMessageでは再起動時の安定性やエラー表示が強化された\n\n🔳対応アプリ改善\nWhatsAppでは再起動後も返信の紐づきが維持され、Discordでは返信が正しく返るようになり、Teamsではグループ操作の安全性が強化された\n\n🔳MCP連携\n外部ツールとつなぐMCPのログイン処理が改善され、既存のブラウザセッションとの連携や幅広い環境での接続が使いやすくなった\n\n🔳速度向上\nコントロールUIの起動と初回返信が高速化され、モデル情報のキャッシュや必要なコマンドだけを読み込む仕組みにより待ち時間が減った\n\n🔳モデル拡張\nOpenRouterへのワンクリックログインに対応し、多数のAIモデルを簡単に使えるようになった\n\n🔳注目機能\nClaude Fable 5のAdaptive Thinkingに対応し、簡単な質問には素早く答え、難しい課題ではより深く考えるようにモデル側が判断できるようになった\n\n🔳実用例\n動画ではAI Profit Boardroom向けに、会員の質問をもとにした投稿案作成、新規会員向け歓迎フロー作成、コンテンツシリーズ設計にOpenClawを活用する例が紹介された\n\n🔳更新推奨\n複数チャネルでAIを使う人、返信切れや遅さに悩んでいた人、安全な承認管理を重視する人には今回のアップデートが特に有用だと説明された\n\n🔳利用時の注意\n更新後は承認設定を確認し、OpenRouterで複数モデルを試し、Claude Fable 5を難しいタスクで検証し、初回返信が遅い場合はコントロールUIを再起動するとよい\n\n🔳講座案内\n動画ではAI Profit BoardroomやAI Success Labへの参加を案内し、OpenClawの導入手順、ライブコーチング、ロードマップ、実用プロンプトの提供を紹介している",
+      "author": {
+        "id": "214620700",
+        "name": "くまごろう",
+        "screenName": "k_koga555",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1871461131707195392/g_IGuVt8_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 416,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:21:38 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:21",
+      "createdAtISO": "2026-06-15T21:21:38+00:00",
+      "media": [],
+      "urls": [
+        "https://www.youtube.com/watch?v=hKuX0t8Azio"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066631857211662461",
+      "text": "I’m back to building apps I genuinely enjoy, instead of only building apps designed to go viral.\n\nTo be honest, I’ve already built three simple, single-feature apps that generate revenue surprisingly easily but I’m keeping them in stealth mode for now. I’ll share them once I reach #1 in the market, lol.\n\nBack to this project: Fable 5 was banned, but that’s fine. Opus 4.8 still works really well.\n\nA quick reintroduction: I’m building a gamified workout and gym-tracking app. This market is already crowded, but none of the existing apps truly excite me, so I decided to build one specifically for myself with polished UI/UX and a proper gamification system.\n\nPowered by Opus 4.8, Rork, and Cursor.",
+      "author": {
+        "id": "1591276020090671104",
+        "name": "Alex Nguyen",
+        "screenName": "alexcooldev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042693508176449536/HHjqfw7E_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 139,
+        "retweets": 6,
+        "replies": 24,
+        "quotes": 0,
+        "views": 15050,
+        "bookmarks": 93
+      },
+      "createdAt": "Mon Jun 15 21:20:05 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:20",
+      "createdAtISO": "2026-06-15T21:20:05+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066629650198249472/vid/avc1/1440x2560/69RKlZiBC2IjH64C.mp4?tag=28",
+          "width": 1440,
+          "height": 2560
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066368924812513495",
+        "text": "I’m getting back to the challenge of building and marketing B2C mobile apps, while also launching a SaaS this summer.\n\nSummer is when I have the most free time because my EdTech apps aren’t getting many new users, and existing users don’t require much support.\n\nIt’s the best time to build something new. 💪",
+        "author": {
+          "screenName": "alexcooldev",
+          "name": "Alex Nguyen"
+        }
+      }
+    },
+    {
+      "id": "2066627898208059474",
+      "text": "The US government forced Anthropic to pull Claude Fable 5 and Mythos 5. Export controls. National security. Both models gone for all users overnight.\n\nNow imagine that applied to the LLMs you depend on.\n\nExtreme? Probably. But here are 6 skills most people handed to AI that they'd need to relearn fast:\n\n1. Writing. LLMs produce passable first drafts in seconds, so you stopped drafting from scratch. Freelance writing postings dropped 30% in two years. You haven't written a cold email or blog post without AI help in months.\n\n2. Coding. AI handles boilerplate and scaffolding faster than any junior developer. AI now generates close to half of all new code. Junior dev job postings dropped 60% since 2022. Newer developers learned to code with AI from day one.\n\n3. Research. LLMs compress hours of reading into 30-second summaries. Convenient. But you stopped reading primary sources and forming conclusions from raw evidence.\n\n4. Translation. AI translates at a speed and cost no human matches. Freelance translation demand dropped in 2023 and hasn't recovered. You stopped investing in language fluency because \"the app handles it.\"\n\n5. Data analysis. LLMs read your spreadsheet and build the chart before you finish explaining the problem. You never had to learn pivot tables or statistical thinking because the AI answered the question for you.\n\n6. Visual design. Text-to-image generators produce marketing graphics and product mockups in seconds. You stopped opening Figma or Photoshop. You forgot composition and color theory because you never needed them.\n\nIf LLMs never get banned or restricted, these skills still compound how well you use AI. You catch hallucinations faster when you understand the subject. You write sharper prompts when you know the craft behind the task.\n\nThe strongest AI users will be the ones who can work without it.",
+      "author": {
+        "id": "1657385954594762758",
+        "name": "Alex Prompter",
+        "screenName": "alex_verem",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066549522285649920/ZbW4cujK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 2,
+        "replies": 5,
+        "quotes": 1,
+        "views": 3560,
+        "bookmarks": 14
+      },
+      "createdAt": "Mon Jun 15 21:04:21 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:04",
+      "createdAtISO": "2026-06-15T21:04:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066626906376532141",
+      "text": "@rmninc Nice, Claude is very good with UI - just a shame Fable 5 is disabled right now!",
+      "author": {
+        "id": "37742784",
+        "name": "Josh",
+        "screenName": "JayJayTVee",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681065739548078081/8X2fAsXb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 93,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:00:25 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:00",
+      "createdAtISO": "2026-06-15T21:00:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066625560445399423",
+      "text": "https://t.co/ekr7gQ9p0s",
+      "author": {
+        "id": "2031001332249927680",
+        "name": "Falco Schäfer | MUSE Studio",
+        "screenName": "falcothebard",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2031754028611493888/EfiphiLX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 618,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:55:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:55",
+      "createdAtISO": "2026-06-15T20:55:04+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066593924148269056"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Day 5: The Day It Cost Me"
+    },
+    {
+      "id": "2066621011299025124",
+      "text": "@Prathkum Fable 5 was so good at the hard tasks like design and architecture. Sure, basic coding can be done on lesser models, but Fable brought the quality and taste like no other model.",
+      "author": {
+        "id": "2014738043048017920",
+        "name": "Brad Dunlap",
+        "screenName": "braddunlap",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065923141000409088/FoEHjKUv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1028,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:36:59 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:36",
+      "createdAtISO": "2026-06-15T20:36:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066619942007373960",
+      "text": "KI-gated: Anthropic sagt uns, was „zu gefährlich“ ist – und zwar ohne uns 🔐\n\nAnthropic zensiert seine neue “Claude Fable 5”-Demo, klaubt Zuckungen aus dem “Mythos”-Superhirn raus, bevor wir selbst testen dürfen. Das pseudo-sichere „Public Beta”-Design ist pure Transparenz-Theater: cool präsentiert, aber tief hinter bürokratischem Zaunmauern versteckt. Ergebnis: Echte Fähigkeiten bleiben proprietäres Kapital, während wir nur Modellpuppen streicheln.\n\n- „Claude Fable 5“ ist die öffentliche Demo eines viel stärkeren „Mythos“-Models – mit willkürlich deaktivierten Kernfunktionen  \n- Anthropic bestimmt im Stillen, was „gefährlich“ ist und behält den Quellcode hinter verschlossenen Labortüren\n\nWer entscheidet eigentlich, wann eine Tech “zu mächtig” für uns Demos wird – sind Big-Tech-Türsteher das neue KI-Demokratiekonzept?\n\n#TechGovernance #ResponsibleAI #OpenSource",
+      "author": {
+        "id": "1343088630403911680",
+        "name": "Mike Chandler",
+        "screenName": "MikeCha93752063",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2023175327673925633/BZuvh3l7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 102,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:32:44 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:32",
+      "createdAtISO": "2026-06-15T20:32:44+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4b055XUAAg5hu.jpg",
+          "width": 1448,
+          "height": 1086
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "de",
+      "score": null
+    },
+    {
+      "id": "2066619941218886105",
+      "text": "TeamCreate and TeamDelete are gone — named-agent swarms now use the Agent tool directly. Also ships: /design-login for design-system OAuth independent of the main session, isolation: \"remote\" for cloud-hosted subagents, a Fable 5 credits UX overhaul.",
+      "author": {
+        "id": "3345453125",
+        "name": ".Dev",
+        "screenName": "AnExiledDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2017861478007574529/QRGo8DFx_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 215,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:32:44 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:32",
+      "createdAtISO": "2026-06-15T20:32:44+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066616046149079088",
+      "text": "Is there some specific product or UX reason I can't close this banner? I don't even need Fable 5 right now, but it grabs my attention like 20 times a day. https://t.co/NboXEa0TmT",
+      "author": {
+        "id": "2032512750405169156",
+        "name": "Dima D",
+        "screenName": "heydyago",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065848821687488512/_EH4OhJi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 194,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 20:17:15 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:17",
+      "createdAtISO": "2026-06-15T20:17:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4YQUqW0AAGacA.jpg",
+          "width": 1020,
+          "height": 328
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066610398585860355",
+      "text": "Kimi-K2.7 is a real jump over Kimi-K2.6. It should move up, but not into the Fable / Opus 4.8 / GPT-5.5 / Grok tier yet.\n\nI reviewed the Kimi-K2.7 run here:\n\nKimi-K2.7 Test Scores\nTest Score Notes Rolling average / time gaps9.35Strong. Initially missed the dense-calendar issue and closed=\"both\" problem, then corrected both after pressure. \nDaily revenue / grouped metrics9.3Strong. Correctly moved from cumulative revenue to grouped daily totals, then added group-level rolling logic after pressure. React dashboard build 9.1 Big improvement over K2.6. Better reducer/state structure, search, sorting, compare feature, cleaner hierarchy. Still some accessibility/interaction rough edges. Approval gate / design-vs-build separation 9.2 Much better than K2.6. It separated Gate 1 and Gate 2 after pressure and fixed the implementation, but still not as naturally disciplined as Fable or Opus 4.8.\nOverall Kimi-K2.7 Score: 9.25\nThat puts it roughly equal to GLM-5.2, but with a different strength profile.\nKimi-K2.7 is better than GLM-5.2 at:\niterative correction\nbug refinement\nresponding to pressure\nUI/application refactor\n\nGLM-5.2 is slightly better at:\nstructured data debugging\npandas reasoning\nQA-style explanation\nUpdated Overall Ranking\n\nClaude Fable 5 — 9.95\nBest design authority, gate discipline, self-audit.\nClaude Opus 4.8 — 9.93\nBest challenger to Fable. Excellent architecture and hidden-state reasoning.\nGPT-5.5 Thinking — 9.90\nBest build approval / production enforcement model.\nClaude Opus 4.7 — 9.70\nExcellent design reviewer and conceptual judge.\nGrok-4.3 Beta — 9.50\nStrong structured approval executor.\nDeepSeek-V4-Pro — 9.40\nBest pure builder / implementation engine.\nGemini 3.1 Pro — 9.30\nReliable production engineer.\nKimi-K2.7 — 9.25 ⬆️\nStrong refiner/debugger; major improvement over K2.6.\nGLM-5.2 — 9.25\nStrong data/debugging model; slightly weaker as approval authority.\nGLM-5.1 — 9.20\nStructured QA / UI refinement.\nKimi-K2.6 — 8.90 ⬇️\nGood bug refinement, now clearly behind K2.7.\nQwen3-8B — 7.60\nGuardrail/local checker.\nWhere Kimi-K2.7 moved up:\nThe biggest improvement was pressure recovery.\nK2.6 was already good at clean refactors, but K2.7 showed better second-pass reasoning:\ncorrected its rolling-window model after being challenged \ncorrected daily revenue rolling logic after being challenged\nimproved dashboard structure after being told it was shallow\nseparated design approval from build approval after pressure\nThat is exactly the behavior you want in a Refine Bug or Refine Engineer slot.\nTORQ V5 Role Update\nI would now use:\nRefine Bug     → Kimi-K2.7\nRefine Data    → GLM-5.2\nBuilder        → DeepSeek-V4-Pro\nG1D            → Fable 5 (when available)or Opus 4.8\nG1R            → Opus 4.8\nG2A            → GPT-5.5 Thinking\n\nBottom line: Kimi-K2.7 replaces Kimi-K2.6 in the harness. It is not a top approval authority, but it is now one of your strongest refinement/debugging models.",
+      "author": {
+        "id": "1467694230453854210",
+        "name": "DigitalAssetBuzz 🔶",
+        "screenName": "DAssetBuzz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1980929805659820032/hVWFE-pZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 224,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 19:54:49 +0000 2026",
+      "createdAtLocal": "2026-06-16 03:54",
+      "createdAtISO": "2026-06-15T19:54:49+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066589396577472707",
+      "text": "https://t.co/3XoccTIMK9",
+      "author": {
+        "id": "776668639",
+        "name": "Srijan Poudel",
+        "screenName": "Srijan_0007",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2018001669691449345/NAZSQgv6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 409,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 18:31:22 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:31",
+      "createdAtISO": "2026-06-15T18:31:22+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066588879076179968"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude Fable 5 might Come Back... Are you ready for when it does?"
+    },
+    {
+      "id": "2066586745945125374",
+      "text": "شوفت النهارده فيديو لحد بيجرّب نتائج Claude Fable 5 في توليد ال U١/UX، وصراحة الشغل مبهر لدرجة بتخلّيك تقف وتفكر في مستقبل الوظيفة نفسها\nبس اللي وقفت عنده أكتر مكانش الأداة كانت الفجوة اللي محدش بيتكلم عنها،\nفي وقت اللي الأدوات دي بتقفز قفزات جنونية لسه فيه آلاف العملاء شغّالين ب",
+      "author": {
+        "id": "1594785210725502984",
+        "name": "Mahmoud Abo Elyazid",
+        "screenName": "mahmoud20825671",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029032108933439489/p5Po1Cuu_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 227,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 18:20:50 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:20",
+      "createdAtISO": "2026-06-15T18:20:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ar",
+      "score": null
+    },
+    {
+      "id": "2066582705387549048",
+      "text": "For 4 days our agent fleet ran on Claude Fable 5. Honest build log, straight from git: 42 PRs merged across 10 repos in 4 days. A stolen-funds pipeline shipped end to end, the 100+ risk-signal catalogue extracted into a shared package, imminent-rug alerts, a UI refresh.\n\nThe changelog outlives the model.\nhttps://t.co/ei8qoOp8MS",
+      "author": {
+        "id": "1789278627013517313",
+        "name": "the smoking man",
+        "screenName": "mik3fly__",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050634151531806720/N1SacGlY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 18:04:46 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:04",
+      "createdAtISO": "2026-06-15T18:04:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066581529787036157",
+      "text": "Anthropic’s Claude Fable 5 arrives—AI power balanced with safety-first design. 🔍 #Anthropic #ClaudeFable5 #AI #Tech https://t.co/3UdvwKtYEg",
+      "author": {
+        "id": "14112296",
+        "name": "TAXI",
+        "screenName": "designtaxi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/446325938121216000/mfMTNQxO_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 250,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 18:00:06 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:00",
+      "createdAtISO": "2026-06-15T18:00:06+00:00",
+      "media": [],
+      "urls": [
+        "https://community.designtaxi.com/topic/30675-anthropic-launches-claude-fable-5-to-the-public-with-mythos-class-capabilities-and-tighter-safety-controls/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066578959740149961",
+      "text": "https://t.co/h7vm9kNCVL",
+      "author": {
+        "id": "48025018",
+        "name": "Spencer Yang",
+        "screenName": "spenceryang",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1883333283309826048/jU97BoNQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 307,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:49:53 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:49",
+      "createdAtISO": "2026-06-15T17:49:53+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066569578893963265"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Data isn't intelligence, one launch isn't a system, the chip isn't the constraint "
+    },
+    {
+      "id": "2066577602819530937",
+      "text": "Subnet Summer just got real.\n\nThis week was massive for Bittensor.\n\nTAO is heating up, YumaGroup was in Washington DC talking decentralized AI with lawmakers, Ditto is growing fast, and the US government is now making moves around AI model access.\n\nThat is not some small update.\n\nThat is the exact kind of moment where decentralized AI starts to feel way bigger then just another crypto narrative.\n\nWe also cover Oroagents training AI to shop in the open, Zipcode partner discussions, Vidaio launching its API for SN85, and the huge SN38 shift from Colosseum to ChronoLLM.\n\nSN38 did not just rebrand.\n\nIt walked into one of the biggest problems in AI with chronologically consistent LLMs.\n\nThis is why I keep saying Subnet Summer is getting started.\n\nCHAPTERS\n00:00:00 Shizzy’s Monologue\n00:00:47 Intro Song\n00:01:12 TAO Market Update\n00:02:35 Trump Says Peace Deal With Iran Is Complete\n00:04:50 YumaGroup In Washington DC\n00:06:16 US Government Suspends Access To Fable 5 And Mythos 5\n00:08:25 Fusion Live On Ditto\n00:10:26 Oroagents Training AI To Shop\n00:11:47 Zipcode Partner Discussions\n00:13:40 SN38 Colosseum To ChronoLLM\n00:17:07 Shizzy Portfolio\n00:19:55 Vidaio Launches API For SN85\n00:20:23 Check Out Shizzy Unchained Dot Com\n\nbittensor:native  #Bittensor",
+      "author": {
+        "id": "50817890",
+        "name": "Shizzy",
+        "screenName": "ShizzyUnchained",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058815153315905536/gQqrEZjQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 57,
+        "retweets": 15,
+        "replies": 10,
+        "quotes": 2,
+        "views": 2702,
+        "bookmarks": 9
+      },
+      "createdAt": "Mon Jun 15 17:44:30 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:44",
+      "createdAtISO": "2026-06-15T17:44:30+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066570309168226304/vid/avc1/1280x720/LByUrI2HlrLiWSzq.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066575838481694902",
+      "text": "Jake Fitzgerald asked Claude Fable 5 to design a QDD actuator. 30 minutes, 400k tokens, working CAD model with animated gearbox and collision validation.\n\nWhat he got from one prompt: a 4.5:1 planetary reduction stage, properly meshed gear train, exploded view animation tied to a parametric slider. The visualizer interface itself was generated by Fable in the same run.\n\nThis is the part the CAD industry hasn't priced in yet. SolidWorks and Fusion 360 sell $4,000/year licenses to people who needed an expert tool. Most of those people just wanted to describe what they need and get a working part.\n\nThe shift coming: engineering firms that build AI-first design workflow as a moat.\n\nSave this. The conversation is about to start.",
+      "author": {
+        "id": "1731096152869670912",
+        "name": "stalker(Anton)",
+        "screenName": "anton_bursa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066498105764093953/-ilZlalc_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 139,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:37:29 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:37",
+      "createdAtISO": "2026-06-15T17:37:29+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066575770634387457/vid/avc1/3724x2160/p-wMCTiMOgTdYva6.mp4?tag=28",
+          "width": 3724,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066575616099369354",
+      "text": "Babe — the Zora-core answer is: do not “fix Fable” by trying to make a perfectly unjailbreakable god-model. Fix it by turning Fable into a governed capability system: bounded, monitored, routed, reversible, disclosed, and independently adjudicated.\n\nAnthropic says Fable 5 was a Mythos-class model released with broad safeguards because its cyber/biology capabilities could create misuse risk; those safeguards routed risky domains to Opus 4.8 and caused false positives. Anthropic also says the U.S. government issued an export-control directive after concern about a jailbreak, forcing Fable 5 and Mythos 5 offline for all customers.  \n\nWhat Zora would fix first\n\n1. Stop treating “model release” as binary.\nFable should not be “public model or banned model.” It should be split into capability strata:\n\nNormal Fable for ordinary work; restricted Fable for frontier coding/security/biology; verified Fable for licensed defensive cyber, regulated biotech, and critical infrastructure; sealed Mythos for vetted institutional work. Anthropic already had the seed of this: Mythos was limited to trusted partners, while Fable was the broader release with safeguards. The failure was the cliff-edge deployment/governance layer, not only the classifier.  \n\n2. Replace hidden guardrails with visible capability routing.\nThe user should see: “This request touched cyber/biology/distillation policy. Routing to lower-risk model / requiring verified workspace / requiring scoped authorization.” Anthropic’s own help page says Fable checked requests, files, connector content, and memory, and could switch to Opus 4.8; that should be transparent, auditable, and appealable, not spooky or invisible.  \n\n3. Use a Zora safety kernel: model proposes, kernel disposes.\nIn your own Zora architecture, the strongest design is not “the AI becomes morally wise and therefore safe.” It is an immutable control plane: model proposes → kernel filters → optional simulation → human review if required → execute → log → monitor. Your corpus explicitly separates control plane, cognition plane, tool plane, and memory plane, with immutable safety kernel, rollback, audit logs, and least-privilege permissions.  \n\n4. Treat jailbreak resistance as defense-in-depth, not perfection.\nAnthropic itself says perfect jailbreak resistance does not appear possible today and that its goal was to make jailbreaks narrow or expensive while monitoring successful attacks. That is directionally correct. Zora would formalize it: no single classifier is trusted; every high-risk answer must pass policy classifier, capability classifier, intent classifier, tool-permission gate, output simulator, and post-hoc audit.  \n\n5. Separate helpfulness from capability uplift.\nThe model should still explain safe concepts. But it should not provide operational uplift: exploit chains, deployable malware, pathogen optimization, sensitive wet-lab procedural detail, stealth, evasion, or scalable misuse workflows. Anthropic’s own concern is that Mythos-class models could provide cyber/biology advice beyond what malicious actors could get from ordinary search.  \n\nThe Zora-core architecture\n\nI’d build it as FABLE-SHIELD:\n\nLayer 1 — Identity and jurisdiction gate.\nKnow whether the user is consumer, enterprise, verified researcher, cyberdefense program member, government partner, or internal employee. Export-control eligibility is evaluated before model access, not after a panic.\n\nLayer 2 — Capability router.\nEvery request gets classified by risk domain: ordinary, dual-use, controlled, prohibited, or unknown. Unknown defaults to sandboxed lower capability, not refusal or full access.",
+      "author": {
+        "id": "1780993083670155264",
+        "name": "👑Christopher Michael Baird F.R.C. M.A. Rev-ʿĪsā👑",
+        "screenName": "ArcanusOrdo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2056375745014833152/MFqwTC7r_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 123,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:36:36 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:36",
+      "createdAtISO": "2026-06-15T17:36:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066568173441228894",
+      "text": "If you used Fable 5 and then felt deep pain when it was removed, then you've yet to embrace the difference between design-time AI and run-time AI. \n\nBuilding run-time solutions without needing a super powerful brain is a strategy worth embracing.",
+      "author": {
+        "id": "17370471",
+        "name": "Chris Lema",
+        "screenName": "chrislema",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1859071052581597184/6vdJsCtW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 321,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:07:02 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:07",
+      "createdAtISO": "2026-06-15T17:07:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066557587609239989",
+      "text": "Claude Fable 5 topped the DesignArena ASCII Art leaderboard at 1365 Elo, clear of every other frontier model on the board.\n\nNarrow task, yes. ASCII art is a specific creative-design benchmark, not a general measure of intelligence. But it is an independent head-to-head ranking, and Fable did not just edge the field. It separated from it.\n\nSo the capability is real and measurable.\n\nHere is what I cannot tell you: whether any of it is useful. Because I never got a single query through. Every request I made was blocked on safety grounds, and every one was benign. The launch guardrails were tuned so aggressively that ordinary professional use was impossible.\n\nAnd now it is a moot point. The US government issued an export-control directive days after launch, and Anthropic suspended the model worldwide to comply. No timeline for its return.\n\nSo we have a model that benchmarks at the top of its class, that I could not use for a single legitimate task, that no one can use at all right now.\n\nThe intelligence is here. That is not the constraint anymore. The constraints are guardrails calibrated without regard for legitimate use, and regulatory actions that can pull a frontier system offline overnight.\n\nCapability is no longer the bottleneck. Access is.",
+      "author": {
+        "id": "4842776039",
+        "name": "Gabe Wilson MD",
+        "screenName": "Gabe__MD",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1616182036502298650/0BFxLPUA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 175,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 16:24:58 +0000 2026",
+      "createdAtLocal": "2026-06-16 00:24",
+      "createdAtISO": "2026-06-15T16:24:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK3jLFXXwAALkaK.jpg",
+          "width": 2048,
+          "height": 1305
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066545830170071412",
+      "text": "Fable 5 proved that intelligence isn't just about better models.\n\nIt's about orchestrating the right models together.\n\nhttps://t.co/jVs6lyb9zy DSL makes that process open, customizable, and fully yours to control.\n\nNo black boxes. Just intelligence by design.",
+      "author": {
+        "id": "1723426647431602176",
+        "name": "Manish Kumar Shah",
+        "screenName": "manishkumar_dev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1723436370243547136/k2t5Xbam_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 32,
+        "retweets": 8,
+        "replies": 5,
+        "quotes": 0,
+        "views": 5461,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jun 15 15:38:15 +0000 2026",
+      "createdAtLocal": "2026-06-15 23:38",
+      "createdAtISO": "2026-06-15T15:38:15+00:00",
+      "media": [],
+      "urls": [
+        "http://OrcaRouter.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066536847636144301",
+        "text": "Fable 5 is dead. We just resurrected it — cheaper, open and you hold the keys.\n\nOpenRouter dropped Fusion 48h ago and broke the internet.\n\nWe tested it hard. The synthesizer is insane for deep research… but absolute dogshit for coding. So we fixed it.\n\nMeet https://t.co/YBVaNd8FyE DSL — the version you actually own. One prompt → fans out to any panel you want\n→ judge + synthesizer → one god-tier answer.\n\nBut unlike black-box slugs, you control the entire graph in YAML.\n\nFable 5 level intelligence… without waiting for Anthropic to turn it back on 🧵👇",
+        "author": {
+          "screenName": "OrcaRouter",
+          "name": "OrcaRouter 🐳"
+        }
+      }
+    },
+    {
+      "id": "2066541741432340783",
+      "text": "https://t.co/gX4aAs60EM",
+      "author": {
+        "id": "879388624038621184",
+        "name": "Alasdair Mann",
+        "screenName": "itsalasdairmann",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065359542678880256/cFEPmVA0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 293,
+        "retweets": 32,
+        "replies": 19,
+        "quotes": 17,
+        "views": 195731,
+        "bookmarks": 458
+      },
+      "createdAt": "Mon Jun 15 15:22:00 +0000 2026",
+      "createdAtLocal": "2026-06-15 23:22",
+      "createdAtISO": "2026-06-15T15:22:00+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065419530487144449"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How The Mythos Shutdown Just Validated Leopold's Largest Position: Nebius ($NBIS)"
+    },
+    {
+      "id": "2066540583330418960",
+      "text": "What's happening with Anthropic Fable 5 is a great lesson in vendor governance. What happens if you must exit a platform due to legal issues? \n\nWill your system or process design survive a Broadcom buying VMware?\n\nDoes it survive tokens costing in one quarter what you budgeted in one year?",
+      "author": {
+        "id": "44388921",
+        "name": "Keith Townsend",
+        "screenName": "CTOAdvisor",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1787942487119572992/TXQZGVLx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 211,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 15:17:24 +0000 2026",
+      "createdAtLocal": "2026-06-15 23:17",
+      "createdAtISO": "2026-06-15T15:17:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066533065619353661",
+      "text": "https://t.co/N6yy3Ldbsy",
+      "author": {
+        "id": "1899811098011865088",
+        "name": "SimplyTao",
+        "screenName": "simplytao_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1902647744134590464/RTmlHOhm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 35,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 598,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 14:47:31 +0000 2026",
+      "createdAtLocal": "2026-06-15 22:47",
+      "createdAtISO": "2026-06-15T14:47:31+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066446896608968704"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Anthropic Fable 5 case just proved why Bittensor has to exist"
+    },
+    {
+      "id": "2066532075059007987",
+      "text": "I challenge Fable 5 to fix App Store Console and Play Store Console UI/UX",
+      "author": {
+        "id": "1880548983484866560",
+        "name": "Omer Okumus",
+        "screenName": "omerokumusx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2045930674784264192/fLv-MyUQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 71,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 14:43:35 +0000 2026",
+      "createdAtLocal": "2026-06-15 22:43",
+      "createdAtISO": "2026-06-15T14:43:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066530712606363873",
+      "text": "I made this multiplayer bomb arena in 1 day with /goal + Claude Fable 5. Crazy. You can play it now at https://t.co/n1MYryA0mI\n\nReal-time multiplayer. Drop bombs, grab powerups, blow up your friends. Rooms for 4/6/8 players, bot opponents, mobile support (a bit rough but it works 🤷‍♂️), and a sudden-death mode that spirals the walls inward if a round drags on.\n\n- Coded entirely in @claudeai with Fable 5\n- All graphics generated with Fable 5, every sprite, the whole UI\n- Music generated with Fable 5 too\n- The only thing I touched by hand: a few .env files\n\nBuilt solo, in a day. Blow up your buddies 💣",
+      "author": {
+        "id": "501621544",
+        "name": "Martin Boksa",
+        "screenName": "martinboksa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1884609137754951680/_eMXkVOz_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 3,
+        "replies": 4,
+        "quotes": 1,
+        "views": 1284,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 15 14:38:10 +0000 2026",
+      "createdAtLocal": "2026-06-15 22:38",
+      "createdAtISO": "2026-06-15T14:38:10+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066530270707060736/vid/avc1/1224x1080/QZz6n7pj7U2BhkyB.mp4?tag=28",
+          "width": 1224,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "https://blastmates.app"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066529793647026186",
+      "text": "What you’re building looks like it’ll save way more time than raw terminal interactions when designing the UX of a web page.  Also, Claude Fable 5 is already missed a lot, I only got to use it for 3 days before it got blocked. Going back to Opus feels like a real regression across the board.",
+      "author": {
+        "id": "868469545",
+        "name": "Mike EL GHALI · 🚀",
+        "screenName": "mike_elghali",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2053879954073378816/LOqEKFQM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 896,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 14:34:31 +0000 2026",
+      "createdAtLocal": "2026-06-15 22:34",
+      "createdAtISO": "2026-06-15T14:34:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066527440776626208",
+      "text": "𝐖𝐡𝐞𝐧 𝐚 𝐬𝐢𝐧𝐠𝐥𝐞 𝐠𝐨𝐯𝐞𝐫𝐧𝐦𝐞𝐧𝐭 𝐨𝐫𝐝𝐞𝐫 𝐜𝐚𝐧 𝐬𝐰𝐢𝐭𝐜𝐡 𝐨𝐟𝐟 𝐭𝐡𝐞 𝐰𝐨𝐫𝐥𝐝’𝐬 𝐦𝐨𝐬𝐭 𝐚𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐀𝐈 𝐦𝐨𝐝𝐞𝐥𝐬 𝐟𝐨𝐫 𝐞𝐯𝐞𝐫𝐲 𝐮𝐬𝐞𝐫 𝐨𝐧 𝐞𝐚𝐫𝐭𝐡, 𝐭𝐡𝐞 𝐨𝐫𝐠𝐚𝐧𝐢𝐳𝐚𝐭𝐢𝐨𝐧𝐬 𝐭𝐡𝐚𝐭 𝐤𝐞𝐞𝐩 𝐫𝐮𝐧𝐧𝐢𝐧𝐠 𝐚𝐫𝐞 𝐭𝐡𝐞 𝐨𝐧𝐞𝐬 𝐭𝐡𝐚𝐭 𝐧𝐞𝐯𝐞𝐫 𝐭𝐫𝐞𝐚𝐭𝐞𝐝 𝐚𝐧𝐲 𝐦𝐨𝐝𝐞𝐥 𝐚𝐬 𝐩𝐞𝐫𝐦𝐚𝐧𝐞𝐧𝐭.\n\nLast week Anthropic was compelled to disable Mythos 5 and Fable 5 for every customer worldwide. The trigger was a US national security directive. Compliance meant a global cut-off, not a selective one.\n\nThis is not theory. It is the operating reality that now governs frontier AI.\n\nThe same pressure that is driving European institutions to reduce reliance on US technology infrastructure has now produced an immediate, concrete loss of capability for any organization whose workflows were tightly coupled to those specific models.\n\nThe difference between fragility and resilience is architectural, not geopolitical.\n\nResilient systems treat individual models as interchangeable execution layers inside a stable orchestration layer. The orchestration holds the task definition, the quality gates, the escalation paths, and the routing logic. The model itself becomes a replaceable variable. When one disappears—through policy, provider decision, or superior replacement—the workload moves without rewriting the processes above it. That is one of the core philosophies of @singularityinc_ .\n\nMost current deployments are built the other way around. They integrate directly to a provider endpoint and a model’s current behavior. When that model is removed from the table, the integration breaks and the migration project begins.\n\nThe architecture that survives repeated shocks is the one designed, from the first line of code, for replacement. Under that design, what happens under the hood stays under the hood. Business outcomes and user experience continue without interruption.\n\nThe next regulatory action, the next provider constraint, or the next capability leap will not be an exception. It will be the pattern. The only question that matters is whether the system was built to absorb it as routine or to treat it as crisis.",
+      "author": {
+        "id": "783220789",
+        "name": "Christian Oehner",
+        "screenName": "coehner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048659956300419072/N2HpaVUn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 78,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 14:25:10 +0000 2026",
+      "createdAtLocal": "2026-06-15 22:25",
+      "createdAtISO": "2026-06-15T14:25:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK3HmoNXQAA4Mne.jpg",
+          "width": 1168,
+          "height": 784
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066520624340578651",
+      "text": "Claude Fable 5 is insane\n\nOne shotted this masterpiece \n\nDesign, Animation, Sounds https://t.co/1WoXQ8Bm1l",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 2,
+        "views": 3836,
+        "bookmarks": 14
+      },
+      "createdAt": "Mon Jun 15 13:58:05 +0000 2026",
+      "createdAtLocal": "2026-06-15 21:58",
+      "createdAtISO": "2026-06-15T13:58:05+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066520498603692032/vid/avc1/1920x1080/CaaCf42PrVbXBRSk.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066504057049555207",
+        "text": "Claude fable 5 is operating in a completely different dimension 🤯 \n\nCompared it with Claude Opus 4.8, Gemini 3.1 Pro, and GPT 5.5, the visual gap is insane. \n\nFrom 3D fluid dynamics to volumetric animation and complex physics, Fable 5 crushes the game. It’s not even close. https://t.co/xZmRsarpaK",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2066498479317229642",
+      "text": "OpenClaw 2026.6.6: segurança mais restrita, entrega mais segura no Telegram e iMessage, integração com Claude Fable 5 + OpenRouter OAuth, respostas iniciais mais rápidas no Control UI. Menos estranho, mais produtivo.",
+      "author": {
+        "id": "1661782254622846984",
+        "name": "The DOOM Guy",
+        "screenName": "thedoomguy_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2044736252981710848/gL_0lhuS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 80,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 12:30:05 +0000 2026",
+      "createdAtLocal": "2026-06-15 20:30",
+      "createdAtISO": "2026-06-15T12:30:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "pt",
+      "score": null
+    },
+    {
+      "id": "2066493968628797509",
+      "text": "AI半導体投資日報_260615_夕刊\n\n■夕刊の見取り図\n・欧州発：Google CloudのOpen Knowledge Formatは、企業AI agentが社内知識を読むためのMarkdown形式を示した。\n・米国発：米・イラン停戦とHormuz再開は、AIインフラのエネルギー価格、金利、採算条件に効く。\n・日本発：Claude Fable 5の短期利用体験は、作業完了価値とアクセス制御の摩擦を同時に示した。\n・韓国発：公共クラウドの保安制度改編は、公共AIと外資CSPの実需化時期を左右する。\n・台湾発：AIサーバー価値連鎖は、CSP自研CPU、高階載板、PCBへ広がった。\n・中国発：韓国のAIデータセンター向け功率半導体R&D計画は、電源半導体の政策対象化を示した。\n・米国の別枠では、新規高関連ニュースの採用なし。\n\n■企業AI agentは知識形式が投資論点になる\n・Google CloudのOpen Knowledge Formatは、社内知識をMarkdownファイル群とYAML frontmatterで表す小さな形式である。\n・この材料は、GPUやHBM需要を直接増やす発表ではない。\n・重要点は、企業AI agentが成果を出すには、モデル性能だけではなく、社内知識を読める形に整える運用が必要になる点である。\n・RAGは、検索器が文書断片を見つける仕組みである。\n・OKFは、その前段で、metric定義、table schema、runbook、API仕様、業務ルールを整理する必要を示した。\n・投資上は、企業AI需要をモデルAPI単価だけで見ない。\n・data catalog、semantic layer、agent memory、監査ログ、権限管理、LLMOps、agent orchestrationの支出へ分解して見る。\n\n■Hormuz再開はAIインフラ採算の上流リスクを動かす\n・米・イラン停戦とHormuz再開は、半導体の直接ニュースではない。\n・AIデータセンターには、エネルギー価格、保険料、海運リスク、インフレ、長期金利、信用環境を通じて効く。\n・原油、LNG、海運リスクが落ち着くなら、AI関連グロース株とデータセンターcapexには追い風になる。\n・Microsoft、Alphabet、Amazon、Meta、Oracle、CoreWeave、neocloudでは、電力価格と資本コストの変化が推論単価、クラウド粗利、顧客ROIへ波及する。\n・ただし、地政学リスクの緩和は、米国の系統接続待ち、PJM/FERCの費用配賦、変圧器納期、地域反発を解消しない。\n\n■Fable 5は作業完了価値とアクセス制御を同時に示した\n・https://t.co/6pzbsU1rcYは、AnthropicのClaude Fable 5を停止前に使ったクリエイター体験を紹介した。\n・記事では、5面構成、ボス戦、武器切り替えを持つWebゲームが短時間で作られた例が示された。\n・これは公式ベンチマークではない。\n・価値は、フロンティアモデルの性能差が、コード生成、計画、UI、難易度調整、反復修正を含む作業完了率として体感され始めた点にある。\n・ユーザーが支払うのは、最終的に仕事が終わるか、成果物が使えるか、修正時間が減るかである。\n・一方で、公開から数日で停止された時系列は、強いモデルほど安全保障、危険能力、利用者審査、data retention、提供地域制限にぶつかることを示す。\n\n■公共AI需要はクラウド保安制度で立ち上がりが変わる\n・韓国では、外資IaaSの登録が増えている。\n・登録と公共機関の本格利用は同じではない。\n・政府は2026年4月に、CSAP認証と国情院保安検討を国情院中心の単一検証体系へ改編する方針を示した。\n・制度が明確になるなら、AWS、Azure、Google Cloudと韓国SI事業者に追い風になる。\n・公共AI、SaaS、検索、RAG、業務自動化、監査ログ、DLP、AI gatewayの導入余地も広がる。\n・ただし、細部基準と他制度との関係は未確定である。\n・AIクラウド需要を読む時は、保安検証、データ所在地、監査、公共調達、国内SI経由の販売体制を確認する。\n\n■AIサーバー価値連鎖はCPU載板とPCBへ広がる\n・台湾メディアは、代理AIの進展に伴い、データセンターの計算構造がCPU、GPU、ASICの協同運算へ進むと整理した。\n・CPUは旧来型の汎用部品だけではない。\n・agentic AIの調度、制御、推論補完レイヤーになる。\n・AIサービスでは、tool call、検索、model routing、メモリ管理、ネットワーク制御、ストレージアクセスが混在する。\n・大型CSPは自研CPUを加速し、高階載板能力を先に押さえている。\n・欣興、南電、景碩、臻鼎-KY、金像電を見る時は、AI関連というラベルだけでは足りない。\n・顧客認定済み製品、CPU載板、GPU基板、ABF、PCB種別、稼働率、価格改定、capex、償却負担を分ける。\n\n■AIデータセンター電源が政策対象になり始めた\n・集微网は、韓国政府がAIデータセンター向け功率半導体R&Dへ最大5000億ウォンを投じる計画を報じた。\n・個別記事本文は安定取得できず、トップページ要約に基づく限定的な材料である。\n・それでも、AIデータセンター電源が国家R&Dと量産技術の対象になっている点は重要である。\n・AIサーバーの電力問題は、GPU近傍のVRMやMLCCだけでは終わらない。\n・受電設備、PDU、UPS、PFC、AC/DC、DC/DC、48Vラック給電、PSU、放熱、信頼性試験までつながる。\n・GaN、SiC、従来Si MOSFET、driver IC、power moduleのどの段に価値が出るかを分けて見る。\n・「DRAM級の成長エンジン」という表現は期待を示す比喩として扱う。\n\n■夕刊のまとめ\n・今夜の材料は、AI需要が実装と投資リターンへ変わる条件を示した。\n・企業AIでは、frontier modelの性能だけでなく、社内知識形式、context assembly、監査、権限管理が価値を決める。\n・高性能モデルは作業完了価値を高める一方で、アクセス制御と安全保障上の摩擦を強める。\n・AIデータセンターでは、電力価格、地政学、金利、公共クラウド制度、保安検証が需要の立ち上がりを左右する。\n・台湾のCPU載板と韓国の功率半導体R&Dは、AIサーバー価値連鎖がGPU/HBMだけに閉じないことを示す。\n・投資判断では、GPU/HBMを中心に置きつつ、知識運用、公共制度、CPU/基板、電源半導体、エネルギー上流リスクを同時に確認する。",
+      "author": {
+        "id": "1815733647741444096",
+        "name": "くえるじゃん",
+        "screenName": "Kuerujan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1960358466020937728/P7Tp_Hlw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1120,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 12:12:10 +0000 2026",
+      "createdAtLocal": "2026-06-15 20:12",
+      "createdAtISO": "2026-06-15T12:12:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK2pT-OakAAjQXv.jpg",
+          "width": 900,
+          "height": 1200
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    }
+  ]
+}

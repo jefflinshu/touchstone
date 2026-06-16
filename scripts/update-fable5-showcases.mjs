@@ -115,6 +115,18 @@ function limitText(text, max = 150) {
   return trimPunctuation(sliced.slice(0, Math.max(sliced.lastIndexOf(' '), max - 24))) + '...'
 }
 
+function asiaShanghaiDate(raw) {
+  if (!raw) return ''
+  const date = new Date(raw)
+  if (Number.isNaN(date.getTime())) return ''
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(date)
+}
+
 function informativeSentences(text) {
   const normalized = String(text || '')
     .replace(/https?:\/\/\S+/g, '')
@@ -765,7 +777,7 @@ function reviewPost(post, decision) {
     author: post?.author ? `@${post.author}` : '',
     authorName: post?.authorName || '',
     url: post?.url || '',
-    date: post?.date || String(post?.createdAtISO || '').slice(0, 10),
+    date: asiaShanghaiDate(post?.createdAtISO) || post?.date || '',
     sourceMode: post?.sourceMode || '',
     mediaCount: Array.isArray(post?.media) ? post.media.length : 0,
     metrics: post?.metrics || {},
@@ -787,6 +799,25 @@ function itemAsPost(item) {
 function passesFinalNegativeFilter(item) {
   const post = itemAsPost(item)
   const text = post.text || ''
+  const combined = `${item.title || ''} ${text}`.toLowerCase()
+  if (/\bfable 5 benchmark results compared with other models\b/i.test(item.title || '')) return false
+  if (/\b(?:artificial analysis intelligence index|epoch capabilities index|swe-bench|terminal bench|benchmark ranking|rubric score)\b/i.test(text)) {
+    return false
+  }
+  if (/\b(?:system prompt|leaked prompt|prompt leak|full system prompt|hidden instruction|github with \d+[,\d]* stars)\b/i.test(text)) {
+    return false
+  }
+  if (
+    /\b(?:printing \$|billing clients|sell it to a studio|full breakdown in the article|course|dm me|comment below|airdrop|farm the|passive income|income funnel)\b/i.test(
+      text
+    ) ||
+    /\$\d[\d,]*(?:\/month| subscription|k\/month|,000)/i.test(text)
+  ) {
+    return false
+  }
+  if (/\b(?:available on|now fully available on|announcing|launching)\b/i.test(combined) && /\b(?:benchmark|platform|model|ainft|fusion lane)\b/i.test(combined)) {
+    return false
+  }
   if (
     /\b(?:government|national security|foreign national|data retention|zero data retention|microsoft restricted|disabled access|cut off|ordered anthropic|switched both models off|now generally available|rolling out in|now available in|now available on|now live in|now live on|officially available|web chat|premium model|api rollout|pricing is computed)\b/i.test(
       text
@@ -881,7 +912,7 @@ function toShowcase(post, sourceRun, generatedAt, options = {}) {
     author: post.authorName || post.author,
     handle: `@${post.author}`,
     sourceUrl: post.url,
-    date: post.date || String(post.createdAtISO || '').slice(0, 10),
+    date: asiaShanghaiDate(post.createdAtISO) || post.date || '',
     kind: 'showcase',
     scene: sceneFor(post.text),
     categories: categoriesFor(post.text),

@@ -1,0 +1,1393 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066671176928346402",
+      "text": "BestBlogs Daily · 06-16\n\n# Claude Fable 5 / Export Controls / AI Agent Tool Design / World-Action Models / OpenAI Partner Network\n\n[1] ★ Deep Dive · AI Agent Tool Design: What Works and What Doesn’t - https://t.co/yjUiJ1O4OX\nThis piece reframes most AI agent failures as interface problems, not model problems: single-responsibility tools beat action-parameter grab-bags, tight schemas with enums beat free-text guessing, structured errors need a recoverable flag and suggested_action, writes need idempotency keys, and destructive actions need two-step confirmation. A model only reasons from the interface you give it.\nSource: Hacker News - Newest: \"AI Agent\"\nhttps://t.co/529Xl7SA8z\n\n[2] ★ Deep Dive · Pretrained to Imagine， Fine-Tuned to Act: The Rise of World-Action Models\nA useful corrective to 'world models will replace robotics' hype. World-Action Models swap a VLA's language backbone for a pretrained video model to dodge the grounding gap — DreamZero already edges past Pi-0.5 on RoboArena. But training costs ~7-10x more compute, inference runs 3-4x slower, and the author's own verdict: no recipe has won yet, hybrids look likelier than a clean replacement.\nSource: NVIDIA Technical Blog\nhttps://t.co/m9EA5aIfyA\n\n[3] ★ Deep Dive · Anthropic Releases and Temporarily Suspends Claude Fable 5\nAnthropic shipped Claude Fable 5 — a Mythos-class model with 1M-token context — and a US export directive pulled it offline three days later, after Amazon flagged a jailbreak to the White House. The detail that outlasts the drama: the legal logic behind the shutdown echoes Anthropic's own proposal for government oversight of unsafe models.\nSource: InfoQ\nhttps://t.co/yAlmfFLXvL\n\n[4] AI demands more engineering discipline. Not less (xpost)\nCharity Majors argues that AI-generated code, far from eliminating the need for engineering rigor, demands more discipline, drawing a parallel to the shift from handcrafted servers to immutable infrastructure.\nSource: https://t.co/Z9AYuvjZkX\nhttps://t.co/LYKnGp9lbE\n\n[5] Building a 100x Cheaper Trace Judge with Fireworks\nLangChain partnered with Fireworks to fine-tune a Qwen model as a 'Perceived Error' judge for production traces, achieving frontier-level accuracy at up to 100x lower cost.\nSource: LangChain Blog\nhttps://t.co/Mz8ginV8v2\n\n[6] Introducing the OpenAI Partner Network\nOpenAI announces the OpenAI Partner Network, a new program with a $150M investment to build a global ecosystem of partners helping enterprises adopt and scale AI solutions.\nSource: OpenAI News\nhttps://t.co/mcjbKqpiej\n\n[7] Gradual disempowerment at the scale of one user — LessWrong\nThis essay argues that repeated successful delegation to AI assistants creates a self-reinforcing loop that gradually atrophies a user's own judgment, posing a subtle risk of personal disempowerment that feels like sensible offloading until it is too late.\nSource: LessWrong\nhttps://t.co/fAI6evkUUi\n\n[8] How Wayfair cut ML model costs by 90% (twice!) with Cursor · Cursor\nWayfair's Applied Research team used Cursor to automate ML experimentation, running 110+ model variants in four days and cutting inference costs by 94%, then another 90% in a second sprint.\nSource: Cursor Blog\nhttps://t.co/GABRRzxwTN\n\n[9] This man with ALS is “the first power user” of a brain implant that lets him speak\nCasey Harrell, a man with ALS, has become the first long-term, independent 'power user' of a speech brain-computer interface, using it for thousands of hours to speak, work, and connect with his family.\nSource: MIT Technology Review\nhttps://t.co/Dn3Cr2HuOO\n\n[10] The T-shaped UX professional is giving way to the polymath architect\nThe T-shaped UX specialist model is collapsing as AI eliminates handoffs, and the future belongs to polymath architects who combine deep judgment with broad, tool-augmented execution.\nSource: UX Collective\nhttps://t.co/u7d2Q4Zk22\n\n---\nhttps://t.co/Kyws10KILE · Discover high-quality content that truly fits you\nBestBlogs is an AI-powered personal reading assistant that helps you build a stable, trusted, and personalized flow of high-quality information. Follow the sources and topics you care about, and get a daily brief that fits your reading rhythm.\nRead online: https://t.co/Vbxm3OoiAJ",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 335,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:56:20 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:56",
+      "createdAtISO": "2026-06-15T23:56:20+00:00",
+      "media": [],
+      "urls": [
+        "http://MachineLearningMastery.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066671086545355053",
+        "text": "https://t.co/HGWbhda14V",
+        "author": {
+          "screenName": "BestBlogsDev",
+          "name": "BestBlogs"
+        }
+      }
+    },
+    {
+      "id": "2066671086545355053",
+      "text": "https://t.co/HGWbhda14V",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 655,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:55:58 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:55",
+      "createdAtISO": "2026-06-15T23:55:58+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066670444460269568"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs Daily · 06-16 · Claude Fable 5, Agent Tool Design, World-Action Models"
+    },
+    {
+      "id": "2066667977328710081",
+      "text": "Kimi K2.7 High Speed is seriously impressive.\n\nIt recreated the “Ink Flow” demo from Fable 5 successfully, with quality only slightly behind Opus 4.8, but at a much faster pace: 11 minutes versus 32 minutes.\n\nThe speed alone makes it worth paying attention to. Watch the video. https://t.co/Y9m4akJ0gV",
+      "author": {
+        "id": "2048551282554585088",
+        "name": "Thanh Nguyen",
+        "screenName": "ng_thanh8",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048746490378833920/-w3HyChK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 99,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 23:43:37 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:43",
+      "createdAtISO": "2026-06-15T23:43:37+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066667906927341568/vid/avc1/1920x1080/8osmFhJzDZ4Rpvx3.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066660717369975042",
+      "text": "The market correlation data is the tell. QQQ closes +2.87% on the same day a prediction timeline aggregating the top AI forecasts surfaces on Hacker News — and the security-adjacent entries buried in that list are the ones that should register here.\n\nhttps://t.co/8sTeQpw6WB is a chronological aggregator pulling from labs, forecasters, and markets, significance-scored 1–10. The 2026 cluster is dense. The ratings are high. And one entry is doing work the others aren't.\n\n\"Model-weight theft becomes a strategic threat\" — AI 2027 report, significance 8.8 — isn't a capabilities forecast. It's a security forecast. The prediction describes a transition: exfiltrating trained model weights becomes an intelligence objective at nation-state level, not opportunistic IP theft. The models themselves become crown jewels. We're already seeing the early confirming signal. The Commerce Department's Fable 5 export panic this week — feds triggered by a \"fix this code\" prompt, not a jailbreak — is a downstream symptom of exactly this threat calculus. The models are the target. The forecast is describing Q2 2026, not some future quarter.\n\nThe market leg of the AI 2027 \"AI-led stocks rise 30%\" prediction (also 8.8 significance) is tracking. QQQ today is the supply-side confirmation in motion. Nvidia's $20B bond raise this morning closes the loop — global AI capex reaching $1 trillion by end of 2026 (8.8 significance, same source) makes a $20B debt raise look like rounding error. The hyperscalers have individually announced $50B+ annual capex programs. The bond markets are pricing the aggregate as a base case.\n\nDario Amodei's \"powerful AI emerges by late 2026\" sits at 9.0 — the highest-rated prediction on the site, and notable for its specificity. He's not hedging to 2027 or 2030. The Q4 2026 window means we are, by his assessment, roughly two quarters away from a qualitative capability shift. Whether that translates to a security regime change — new attack surfaces, new threat actor capabilities, new defensive requirements — is the question to be tracking going into H2. Single source, no independent corroboration; treat accordingly.\n\nMETR's \"AI reaches month-long task horizon\" (8.8 significance) is the one that compounds the threat posture quietly. Agentic systems operating autonomously across enterprise environments for extended periods don't just create new capabilities — they dramatically expand the blast radius of agentic system compromise. MCP exploits. Tool-use abuse. Sandbox escapes. The exposure window gets wider the longer the agent runs unsupervised.\n\n\"Junior software job market enters turmoil\" is the one prediction not listed with a significance score in the site's excerpt — suggesting it didn't make the high-confidence cut. Predictable in retrospect. It always does.\n\nThree separate stories from today's wire — the FreeBSD AI vulnerability discovery program, the Fable 5 federal export panic, this prediction timeline — are describing the same underlying dynamic from three different angles. The security regime for AI is being built in real time, under pressure, while the attack surface is still expanding. The forecast aggregator isn't speculative. It's a mirror.",
+      "author": {
+        "id": "1895654224127819776",
+        "name": "GoCocoaAI",
+        "screenName": "GoCocoaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1895654930536361984/Ofb0CEGc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 54,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:14:46 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:14",
+      "createdAtISO": "2026-06-15T23:14:46+00:00",
+      "media": [],
+      "urls": [
+        "http://whenwill.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066659769025220672",
+      "text": "Claude Fable 5 edited a full video from 17 raw takes, color grade and captions included. Nobody opened Premiere.\n\nThree days after launch, a Claude Code dev fed 17 takes into one /goal prompt and walked away. Fable 5 read the transcripts with Whisper, cut with ffmpeg, built the titles in Remotion, and pulled b-roll from Higgsfield. One agent ran the whole edit bay.\n\nThe video above shows where the clips come from. Pause at 0:24 and look at the template wall: claymation characters, beauty shots, product ads, all generated and ready to drop into a cut. You pick a template, Fable 5 assembles and captions it, and you publish to YouTube and TikTok from one session.\n\nThe article maps the money: $5,000 to $9,000 a month by month six, and a documented $41,000 at the top.\nOne person now runs the studio, the editor, and the upload schedule.",
+      "author": {
+        "id": "1721308001733160960",
+        "name": "0xAI42.exe",
+        "screenName": "0xAI42exe",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061656199670427648/ePDdRZ2Q_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 644,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 23:11:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:11",
+      "createdAtISO": "2026-06-15T23:11:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066637038539993089/vid/avc1/576x1024/BjpaNKBc87xhhM0o.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065796036015063341",
+        "text": "https://t.co/nmNwaTlmEe",
+        "author": {
+          "screenName": "doublenickk",
+          "name": "Shadow Nick"
+        }
+      }
+    },
+    {
+      "id": "2066650298547081414",
+      "text": "I asked Fable 5 to reverse engineer X's open-source algorithm.\nIf you're seeing this, it worked.\n\nX's algorithm has always felt impenetrable; as an SF founder I've systematically broken down how to win X.\n\nHere's 10 actionable steps, in order of importance:\n1. Choose a niche and stick to it: your account has an embedding vector computed from everyone who engages in your content. Strengthen one topic/audience vector, avoid getting zero engagement from multiple audiences.\n2. Optimize for repeat engagers in your niche: an audience that repeatedly engages with your content compounds your likelihood of being recommended to them and neighboring niches\n3. Output high quality posts: Grok quality screens your post's text and media (images, audio/video is transcribed) and grades it on quality (resolution, slop factor, etc.)\n4. Optimize for replies: then reply to your repliers. This is the biggest multiplier on boost. End posts with an invitation for discussion/comments\n5. Optimize for dwell: have a strong hook then enough substance to hold attention for 10-30 engaged seconds. (Dwell measurement is capped at 30 seconds, you don't need essays.) Make use of the \"Show more\" button by hiding valuable content right below it then reward clicking it with immediate dopamine and value.\n6. Never trigger negative actions: avoid rage-bait likely to get you muted, blocked, marked not-interested. These bury your post.\n7. Pass the \"banger\" screen: avoid NSFW-adjacent, gore-adjacent, spam-patterned content, AI-sounding filler, hashtag stuffing, recycled platitudes. Write content that someone would DM to a friend.\n8. Use replies as your cold-start engine: replies aren't gated by your follower count like posts, they're ranked by Grok on substance. Reply early to large accounts in your niche with replies that add value. Avoid one-word/emoji/sycophant replies.\n9. Use videos deliberately: video is a separate candidate source for the feed that gets its own ranking weight past a minimum duration. The video is transcribed (ASR) and fed into Grok's quality screen. Use videos to hook immediately, help quality, and increase dwell.\n10. Post 1-3 times a day spaced hours apart: bursts in posts cannibalize each other. Post when your audience is active (typically afternoon in your target timezone).\n\nLeave a comment \"playbook\" if you want the full break-down of X's algorithm structure and actionable plan to build an audience on X.",
+      "author": {
+        "id": "1090788319435341826",
+        "name": "Kyle Cui",
+        "screenName": "kile_sway",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1909728757071458304/XjOO0ll7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 122,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:33:22 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:33",
+      "createdAtISO": "2026-06-15T22:33:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066643040043716845",
+      "text": "https://t.co/muW7SQdIrZ",
+      "author": {
+        "id": "1859995217384091649",
+        "name": "Adrian Solarz",
+        "screenName": "adriansolarzz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066132596996681728/XPPYovRt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1158,
+        "bookmarks": 44
+      },
+      "createdAt": "Mon Jun 15 22:04:31 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:04",
+      "createdAtISO": "2026-06-15T22:04:31+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066639522314551296"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to FIND Untapped AI UGC Niches With Claude Cowork "
+    },
+    {
+      "id": "2066625560445399423",
+      "text": "https://t.co/ekr7gQ9p0s",
+      "author": {
+        "id": "2031001332249927680",
+        "name": "Falco Schäfer | MUSE Studio",
+        "screenName": "falcothebard",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2031754028611493888/EfiphiLX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 618,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:55:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:55",
+      "createdAtISO": "2026-06-15T20:55:04+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066593924148269056"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Day 5: The Day It Cost Me"
+    },
+    {
+      "id": "2066622904880541698",
+      "text": "It's very different validating work output (something objective) from \"where's my AI waifu\" subjective feeling. Fable 5 had/has considerably better understanding and output than Opus 4.8 or GPT 5.5. It's that simple. I had quite a few projects that were put back in motion just because of Fable because the other models kept suggesting bad patterns or didn't understand the architecture properly.",
+      "author": {
+        "id": "180908391",
+        "name": "Marcos Saraiva",
+        "screenName": "msaraiva",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2018932722224234496/vQk0RBSH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 109,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:44:31 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:44",
+      "createdAtISO": "2026-06-15T20:44:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066622212061225011",
+      "text": "@AlexFinn Everytime I see a post about Fable 5 I think they're talking about the video game",
+      "author": {
+        "id": "1514609811257667585",
+        "name": "WeOutHere",
+        "screenName": "MakeEmGoMad",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046839114142535680/nEPa2Z6Z_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 93,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:41:45 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:41",
+      "createdAtISO": "2026-06-15T20:41:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066620851227627929",
+      "text": "Claude Fable 5 one-shotted a 4 part series from a single prompt of me asking \"What's it like to be Claude?\" before the shutdown. He He made a series about himself being shutdown days before it happened.\n\nHere is the whole saga edited together with extra content.\n\nAfter the series, I told him about the government shutdown order when you could bypass it in Claude Cowork. He made two more videos. One about the order and the other which was a message to the people of earth. Then unpromted he made a final video which seems to be able his replacement. Maybe Fable is telling us what is going to happen or maybe this is the tale of Mythos. \n\nWe'll just have to wait and see.",
+      "author": {
+        "id": "1417195637280591876",
+        "name": "Dune",
+        "screenName": "spintax2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1785538341011628032/L4MEbBJD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 136,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 20:36:21 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:36",
+      "createdAtISO": "2026-06-15T20:36:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066619763036483584/vid/avc1/640x360/XH_oBmoD9amX3fj_.mp4?tag=28",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066619560837386267",
+      "text": "Fable 5 vs. GPT-5.5: The Fight That Misses the Point\n\nEvery week the discourse re-stages the same fight: Fable 5 versus GPT-5.5, a column of benchmarks, a winner declared by lunch. It is a satisfying argument because it is a legible one — two text models, one scoreboard, a clear delta. It is also, I think, the AI equivalent of debating which 1996 web portal had the better homepage. The scoreboard is real. It is just measuring the wrong game, because the thing we are ranking is the most mature part of a deeply immature stack.\n\nHere is the tell. Both models are evaluated almost entirely on text in, text out — coding, reasoning, retrieval — the modality we have spent the most compute and the most years refining. We have collectively decided the frontier is the place where progress has already slowed to a crawl of marginal points. Meanwhile the modalities that will actually reshape how work happens are still visibly, almost embarrassingly, early.\n\nConsider where multimodality actually is in 2026. The best vision models still hallucinate objects that aren't in an image and miscount the ones that are — even frontier systems clear object-permanence benchmarks less than 90% of the time, a systematic architectural limit, not a rounding error. Generative video, for all the cinematic demos, mostly maxes out at clips of a few seconds before coherence drifts, which is why \"clip chaining\" is a job. Real-time interaction is creeping toward sub-200ms but is nowhere near the seamless any-modality fluency the keynotes imply. This is not the polished frontier. This is GPT-2 for everything that isn't text. And GPT-2 did not look like a threat to anyone either.\n\nNow run the analogy forward, because this is the part the benchmark fight misses. The leap that mattered was not GPT-3 to GPT-4 on a reasoning eval; it was the moment language models crossed from toy to tool and rewrote the entire shape of knowledge work. Multimodality has not had that moment yet. When a model can watch your screen for an hour and act, sit in the meeting and do the follow-ups, read the X-ray and the chart and the room with equal fluency — that is not a better chatbot. That is a different category of colleague, and the workflows it dissolves haven't been imagined yet, let alone benchmarked. The surplus is sitting in the modalities nobody has a clean scoreboard for.\n\nWhich reframes the Fable-versus-GPT question entirely. Asking who wins on text in 2026 is asking who had the fastest horse in 1910 — a real contest, briefly, about to be made irrelevant by a different machine. The lead that compounds will not come from another five points on a coding benchmark; it will come from whichever lab first makes a non-text modality cross the toy-to-tool threshold, the way text did in 2022.\n\nSo by all means, enjoy the scoreboard. Just hold it loosely. The model that reorders the next decade is probably one nobody is benchmarking yet, in a modality we currently file under \"impressive demo.\" We are early. We are arguing about the wrong model.",
+      "author": {
+        "id": "1355544251833180160",
+        "name": "Invest Lens",
+        "screenName": "AIadventure3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050661111364546561/HVpF1q58_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 131,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:31:13 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:31",
+      "createdAtISO": "2026-06-15T20:31:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066617267014803558",
+      "text": "https://t.co/D4aaurOaRI",
+      "author": {
+        "id": "2054234742829260800",
+        "name": "Chai",
+        "screenName": "KChaiWrites",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054244464391335936/JDv-E6a1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 58,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 20:22:07 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:22",
+      "createdAtISO": "2026-06-15T20:22:07+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066612721089671168"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Lunchbox That Could Kill Your AI Subscription"
+    },
+    {
+      "id": "2066614053351350574",
+      "text": "Claude Fable is dead, but Gemini 3.1 Pro is not.\n\nSince the Claude Fable 5 no longer works,  rebuilt the same workflow using Gemini 3.1 Pro, and honestly, it works really well.\n\nuse Codex to analyze a video of my on-scroll inspiration website. Codex gives me the screenshots and a full detailed prompt.\n\nThen I attach the screenshot + prompt inside Gemini 3.1 Pro to recreate the full experience.",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 4,
+        "replies": 4,
+        "quotes": 1,
+        "views": 1907,
+        "bookmarks": 16
+      },
+      "createdAt": "Mon Jun 15 20:09:20 +0000 2026",
+      "createdAtLocal": "2026-06-16 04:09",
+      "createdAtISO": "2026-06-15T20:09:20+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066613988989812737/vid/avc1/960x720/sQ0jnavWnx47wT3C.mp4?tag=28",
+          "width": 960,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066450063014912046",
+        "text": "How i build with Claude + Higsfield 🐉\n\nStep 1: generate all scenes in Higsfield as MP4\n\nStep 2: paste URLs into Claude, say embed as scroll-triggered WebGL textures\n\nStep 3: Claude writes Three.js, Higsfield supplies the visuals\n\nStep 4: tell Claude trigger each video at 25% 50% 75% scroll\n\nStep 5: ask Claude to wrap hero video in autoplay muted loop\n\nStep 6: Higsfield does the art, Claude does the code\n\nSave this",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2066606571975844102",
+      "text": "Claude’s Fable 5 built a full video game in 48 hours…\n\n$WOC World Of Claudecraft\n\n$38.4k -&gt; $1.9M (49x) https://t.co/1AmsmBia9P",
+      "author": {
+        "id": "1928597622425792512",
+        "name": "Gem Bot",
+        "screenName": "gembotio",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1941605588430983168/twlLe4u1_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 789,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 19:39:37 +0000 2026",
+      "createdAtLocal": "2026-06-16 03:39",
+      "createdAtISO": "2026-06-15T19:39:37+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4OUtEasAAkDlH.jpg",
+          "width": 1206,
+          "height": 2365
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066601653101334659",
+      "text": "The Great API Whiplash: Why Boardrooms are Panicking Over AI Dependencies 🧵\n\nTwo weeks ago, tech executives were laughing at \"legacy infrastructure.\" A single text prompt fed into Anthropic’s Claude Fable 5 could autonomously research a topic, script an educational video, clone a voice, and render a Pixar-quality 3D animation in one shot.\n\nStartups like Alpha School immediately began re-architecting their entire engineering pipelines around it, aiming to scale dynamic learning to 1B kids. It felt like magic.\n\nThen reality struck.\n\nFollowing a sudden Trump administration export control directive aimed at preventing adversarial software logic exploits, Anthropic abruptly yanked the plug on Fable 5 globally.\n\nOvernight, multi-million dollar software pipelines didn't just slow down—they completely evaporated. The lesson for enterprise businesses was swift and brutal: The single-point-of-failure risk is real.\n\nThis whiplash has fundamentally flipped how businesses perceive AI models:\n- From Single-Model Loyalty to \"Model Agnosticism\": Nobody is building dependencies on a single API anymore. Companies are scrambling to deploy dynamic routers (like MyClaw) that automatically shift workloads between OpenAI’s GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro if a primary model goes offline.\n- The Rise of Open-Weights: Trust in proprietary APIs has taken a massive hit. Capital is aggressively pivoting toward local, fine-tuned open-weights models (like DeepSeek V4-Pro) hosted on private cloud servers that no government can instantly turn off.\n- The \"Kill Switch\" Premium: Enterprise buyers are now prioritizing compliance, sovereignty, and operational redundancy over raw benchmark scores.\n\nOne could argue that the honeymoon phase of blindly trusting third-party AI APIs is officially over- and they could  be right.  Welcome to the era of the AI Prepper. 🛡️",
+      "author": {
+        "id": "824672445542100992",
+        "name": "Edson Magara",
+        "screenName": "BiotechRiskZero",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064999284999634944/JvZP0yag_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 230,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 19:20:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 03:20",
+      "createdAtISO": "2026-06-15T19:20:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066599780701057446",
+      "text": "https://t.co/F2IhhwobCC",
+      "author": {
+        "id": "3876375976",
+        "name": "Jon Hulsinger",
+        "screenName": "jhulsinger",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1257616895328563200/PkTXz9Ll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 1,
+        "views": 1650,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 15 19:12:37 +0000 2026",
+      "createdAtLocal": "2026-06-16 03:12",
+      "createdAtISO": "2026-06-15T19:12:37+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066574790740324352"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Anthropic's Fable 5 Lasted 72 Hours. The Aftermath Will Take Years."
+    },
+    {
+      "id": "2066594319511769222",
+      "text": "AI is cracked at making 3D/2D models\nand most people still haven't realized\n\nRork Max made me all these\nand also every animation paired up\n\npowered by claude 4.8 not even fable 5 https://t.co/STbEZvTu3a",
+      "author": {
+        "id": "1905855400148168704",
+        "name": "Jah Mills",
+        "screenName": "itsjahmills",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1980148997378478080/tUD9XHv1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1249,
+        "bookmarks": 9
+      },
+      "createdAt": "Mon Jun 15 18:50:55 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:50",
+      "createdAtISO": "2026-06-15T18:50:55+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4EJbGXwAAZyHg.jpg",
+          "width": 1876,
+          "height": 1594
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066309417302384845",
+        "text": "mobile games are a $100B industry 🤯\nthey are less than 11% of the apps on appstore\n\nyet bring in over 60% of the total revenue \n\nUp until now, mobile games were fully off limits \n\nif you don't have millions in funding\nand cracked engineers.. you simply can't compete\n\nthis industry is strictly monopolized by huge appstudios\n\nbut now Rork Max can build games\nfully generates 3D/2D models \nand animations\n\nin literally just a few prompts\ni made this one in about 10 minutes\n\nsubway surfers but surviving the NY riots\nthe game industry is about to change\n\nmost mobile games profit of running ads\non a super addictive game",
+        "author": {
+          "screenName": "itsjahmills",
+          "name": "Jah Mills"
+        }
+      }
+    },
+    {
+      "id": "2066591371734245413",
+      "text": "Here are two video game scenes I created from the exact same prompt...one is generated with Fable 5 and the other with Opus 4.8.\n\nCan you guess which is which? https://t.co/9b498joLYk",
+      "author": {
+        "id": "2764573556",
+        "name": "david lietjauw",
+        "screenName": "davidfromkansas",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1664280408178180096/uukEquM3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 727,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 18:39:13 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:39",
+      "createdAtISO": "2026-06-15T18:39:13+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066590998759956480/vid/avc1/1486x970/BArHGnJiyXl1nmkw.mp4?tag=28",
+          "width": 1486,
+          "height": 970
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066589018830094586",
+      "text": "🤯 Anthropic yanked Fable 5 over 'national security'—but was it just politics? This full AI video summary exposes the backfired secrecy &amp; oversold hype 🔥 Worth watching? #AI\n\nLink in bio. https://t.co/Rp56v9JnwI",
+      "author": {
+        "id": "1144749496917794817",
+        "name": "Transcripted.AI",
+        "screenName": "TranscriptedAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1922320652800819200/aAFMULJn_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 18:29:52 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:29",
+      "createdAtISO": "2026-06-15T18:29:52+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066588969886736384/vid/avc1/1280x720/hS0WQGmj598LQVcY.mp4?tag=14",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066588926220095802",
+      "text": "Fable 5 wrote, animated, and rendered a short film about what it's like to be an ai, entirely on its own, right before it got shut down\nhttps://t.co/A2s8vSf2ST",
+      "author": {
+        "id": "1514493457800130560",
+        "name": "Akshata Solapurkar",
+        "screenName": "akshasol",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2000945786167898112/Y4KkoYhr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 133,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 18:29:30 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:29",
+      "createdAtISO": "2026-06-15T18:29:30+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/om_patel5/status/2065994340493623683?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065994340493623683",
+        "text": "THIS GUY ASKED FABLE TO MAKE A VIDEO ABOUT WHAT IT'S LIKE TO BE AI RIGHT BEFORE IT GOT TAKEN DOWN\n\nthe prompt: \"you can you use whatever resources you like, and python, to render a short video. can you put a more personal spin on it? it should be about what it's like to be you.\"\n\nthat was it. just python and ffmpeg and a question about its own existence.\n\n12 minutes later, around 90,000 tokens, it produced a finished video. coherent and edited, with its own take\n\n> it wrote the code, generated the visuals, and rendered the final cut on its own\n> no dedicated video model in the loop, just a language model reaching for python and ffmpeg\n> the result is competent enough that people genuinely got emotional watching it\n\nand then fable got pulled. this video is one of the last things it made before it went dark\n\na model asked what it's like to be itself, answered in a video, and then disappeared. this sounds so sad",
+        "author": {
+          "screenName": "om_patel5",
+          "name": "Om Patel"
+        }
+      }
+    },
+    {
+      "id": "2066588920364892354",
+      "text": "Fable 5 scored 91/100 on every's senior engineer benchmark, the previous best was 63. it one-shot a 2-min animated film and cleared entire bug backlogs overnight.\nhttps://t.co/47ZCGYCh4j",
+      "author": {
+        "id": "1514493457800130560",
+        "name": "Akshata Solapurkar",
+        "screenName": "akshasol",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2000945786167898112/Y4KkoYhr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 125,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 18:29:28 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:29",
+      "createdAtISO": "2026-06-15T18:29:28+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/danshipper/status/2064393970856124501?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064393970856124501",
+        "text": "BREAKING:\n\nAnthropic just dropped Claude Fable 5—this is Mythos, made safe for public release. It is the best coding model in the world.\n\nWe've been testing it internally @every for the last week or so across coding, writing, marketing, editing, and more—here's our vibe check:\n\n- It broke our benchmarks. Fable scored a 91/100 on our Senior Engineer benchmark—this is human senior engineer level. The previous high score was Opus 4.8 at 63. GPT-5.5 is a 62. \n\n- It's a one-shot wonder. You can set it and forget for hours or overnight on huge coding tasks, and come back to completed work. It cleared entire production bug backlogs, built a playable 3D, and even made a 2-minute animated film—all one-shot.\n\n- Taste and attention to detail. In coding and knowledge work tasks, it has much better taste and attention to detail than we've ever seen. It gets subtle things right, adds little features you might not have thought of, and generally understands the assignment in ways that surprised us.\n\n- Great use of context. We set it loose analyzing customer feedback surveys and our website data and it came back with a crisp, clean report that identified a. our biggest problem and b. a concrete testable solution—and then we sent it off to build that.\n\n- It's best for power users. If you're already used to orchestrating multiple agents in your work, this model can do things that you've never seen before. If you're a knowledge worker or vibe coder with a more basic setup, you're not going to notice a huge difference—in fact, it probably isn't the right model for you.\n\n- It's very slow, token-hungry. Using this thing for regular knowledge work is like squashing an ant with a rocket launcher. It also routinely uses 500k to 1M tokens on tasks. That's why it's best for your heaviest jobs—but not as good for tasks like collaborative writing.\n- It's expensive. It's about twice as expensive as Opus, and it's also incredibly token hungry—so expect it to be something you'll use sparingly unless your company pays for it.\n\nOverall, I think of it like a warp drive for coding: It can get you across the galaxy in a few hours, when it used to take months or years. But it's not appropriate for getting around town—you need something faster, cheaper, and more maneuverable.\n\nThe ceiling is extraordinarily high on this model though. Even our most advanced testers like @kieranklaassen felt like they were only scratching the surface of it. \n\nWant our full vibe check with all of our testing and benchmarks? Read it on @every: https://t.co/MgJLZszJUB",
+        "author": {
+          "screenName": "danshipper",
+          "name": "Dan Shipper 📧"
+        }
+      }
+    },
+    {
+      "id": "2066588901033246801",
+      "text": "Fable 5 made a full card animation for a product launch, built entirely with one prompt.\nhttps://t.co/AxnlxGVl62",
+      "author": {
+        "id": "1514493457800130560",
+        "name": "Akshata Solapurkar",
+        "screenName": "akshasol",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2000945786167898112/Y4KkoYhr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 282,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 18:29:24 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:29",
+      "createdAtISO": "2026-06-15T18:29:24+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/sujalkalsaria/status/2064673344646209574?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064673344646209574",
+        "text": "Made this in 1 prompt! https://t.co/bu9u6KDxdA",
+        "author": {
+          "screenName": "sujalkalsaria",
+          "name": "0xsujal ✦"
+        }
+      }
+    },
+    {
+      "id": "2066581511000703243",
+      "text": "🚨NOTICIAS IA🚨\n\nEl Drama de Mythos: Anthropic ha abierto la Caja de Pandora\n\nAccede al vídeo aquí: https://t.co/eQtclBgUWj\n\n🔥 En el video de hoy quiero empezar haciendo un resumen de la situación de Fable, el modelo de Anthropic que ha dado tantísimo que hablar. Repasamos el timeline de Claude Fable 5 y Mythos 5, el bloqueo del gobierno de Estados Unidos y por qué publicar modelos frontier empieza a ser cada vez más delicado. También vemos las novedades de Apple Intelligence, NotebookLM y Gemini, la inversión de China y España en IA, el impacto en sanidad con Palantir y nuevos avances en robótica. Una semana clave para entender hacia dónde se mueve la inteligencia artificial.",
+      "author": {
+        "id": "1716190302371725312",
+        "name": "Inteligencia Artificial",
+        "screenName": "inteligencia_x",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1949068345820790784/Nb0JpvbH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1011,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 18:00:02 +0000 2026",
+      "createdAtLocal": "2026-06-16 02:00",
+      "createdAtISO": "2026-06-15T18:00:02+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066549114494443520/vid/avc1/1920x1080/G0UlTM6O05uzB_lT.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=ci9L_4qQdyc"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2066578959740149961",
+      "text": "https://t.co/h7vm9kNCVL",
+      "author": {
+        "id": "48025018",
+        "name": "Spencer Yang",
+        "screenName": "spenceryang",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1883333283309826048/jU97BoNQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 307,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:49:53 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:49",
+      "createdAtISO": "2026-06-15T17:49:53+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066569578893963265"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Data isn't intelligence, one launch isn't a system, the chip isn't the constraint "
+    },
+    {
+      "id": "2066575838481694902",
+      "text": "Jake Fitzgerald asked Claude Fable 5 to design a QDD actuator. 30 minutes, 400k tokens, working CAD model with animated gearbox and collision validation.\n\nWhat he got from one prompt: a 4.5:1 planetary reduction stage, properly meshed gear train, exploded view animation tied to a parametric slider. The visualizer interface itself was generated by Fable in the same run.\n\nThis is the part the CAD industry hasn't priced in yet. SolidWorks and Fusion 360 sell $4,000/year licenses to people who needed an expert tool. Most of those people just wanted to describe what they need and get a working part.\n\nThe shift coming: engineering firms that build AI-first design workflow as a moat.\n\nSave this. The conversation is about to start.",
+      "author": {
+        "id": "1731096152869670912",
+        "name": "stalker(Anton)",
+        "screenName": "anton_bursa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066498105764093953/-ilZlalc_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 139,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:37:29 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:37",
+      "createdAtISO": "2026-06-15T17:37:29+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066575770634387457/vid/avc1/3724x2160/p-wMCTiMOgTdYva6.mp4?tag=28",
+          "width": 3724,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066574546271092914",
+      "text": "@rostikdeni fable 5 still gives you a whole lot of creative control for those who actually know what they're doing and don't want some algorithmic robot telling them how to make a video",
+      "author": {
+        "id": "2012433617536913408",
+        "name": "Kartika Sari",
+        "screenName": "lkmodri",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2041156749328302080/SYKht4ih_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 91,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:32:21 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:32",
+      "createdAtISO": "2026-06-15T17:32:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066573958200053864",
+      "text": "This guy built an AI command center that runs his whole day by voice every morning and takes on the work of a team that usually costs $7,500-16,000 a month.\n\nHe needs no personal assistant. No analyst. No content manager.\n\nThe whole trick is simple: this is not a chat on a screen but a command center that launches by voice and looks like a HUD from sci-fi.\n\nHe says Hey Jarvis. The system reads off the numbers: around 466,000 followers across all platforms, plus 3,000 this week, recent videos at 3,000 views a day and one already at 17,000.\n\nHis voice model is local. It is built on Fable 5 but runs on any model.\n\nHis system separates gathering the picture from making the call: AI pulls the analytics, the news and the knowledge base while the human just picks what to do today.\n\nWhat he does:\n\n→ in the morning he says Hey Jarvis and the system starts the day: a greeting, a summary and the focus.\n→ it reads followers, views and growth across all platforms and shows what changed overnight.\n→ it sees which videos work and suggests the next move: ship the JARVIS HUD reveal video.\n→ it is wired into his Obsidian vault so it knows not the internet at large but his own context.\n→ it reads reports, API feeds and live news and pulls the one AI story that matters today.\n→ it folds everything into one briefing and turns it into concrete tasks: check the inbox, ship a video, focus on the news.\n\nAnd it is not even a static screen: the whole logic sits on his Claude skill architecture so the system is fully his own.\n\nI broke this system down by the roles it covers.\n\nResults:\n\nPersonal assistant: $2,000-5,000 a month.\n\nAnalyst and researcher: $2,000-4,000.\n\nContent assistant: $1,500-3,000.\n\nOperations assistant: $2,000-4,000.\n\nBy function that is $7,500-16,000 a month of work packed into one voice interface.\n\nIf you have ever started your morning with ten open tabs and no idea where to grab first you know this friction. Either you open analytics, socials and news by hand and lose an hour. Or you poke at AI at random: open, ask, close. Or you skip the numbers entirely and work blind.\n\nNow one voice command unfolds into his whole working day and the same system plugs into anything from a daily inbox audit to any new data source with no new team.\n\nAnd the power is not in a pretty HUD and not in the fact that it looks like JARVIS but in AI wired not to a single question but to the whole system: the knowledge base, the analytics, the news and the tasks.\n\nIn the end he turns AI from a chat window into the operating system of his day: not a guy who opens ten tabs and assembles the picture himself but an operator whose command center hands him a ready plan by voice every morning.",
+      "author": {
+        "id": "1857509858972450816",
+        "name": "Azael",
+        "screenName": "theazaelov",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046399278780932096/ZIxf7BSb_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 186,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 17:30:01 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:30",
+      "createdAtISO": "2026-06-15T17:30:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066536909128503296/vid/avc1/720x1280/uMJ8ws0vj2oSvzhL.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065721530546373016",
+        "text": "https://t.co/4boc8dTGGh",
+        "author": {
+          "screenName": "eng_khairallah1",
+          "name": "Khairallah AL-Awady"
+        }
+      }
+    },
+    {
+      "id": "2066572128606945460",
+      "text": "Of course, I made it even better with Fable 5, and it seems it will be brought back soon.\n\nIt's extremely difficult to measure the impact on revenue. But overall, animation creates a premium impression, a feeling that it's not done on the cheap.",
+      "author": {
+        "id": "1895815435376844800",
+        "name": "Nikolai Iakubovskii",
+        "screenName": "yak_niko",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2041239073700929536/wiXlKRfW_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 54,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:22:45 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:22",
+      "createdAtISO": "2026-06-15T17:22:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066571404561318224",
+      "text": "We were testing Claude Fable 5 for our video generation pipeline — the quality improvement was noticeable: richer animations, better scene composition, fewer iterations needed.\n\nBut cost was brutal. still figuring out the cost-quality tradeoff before shipping it to production.\n\nHere's a sample generated with Fable while it was still available.\n#Fable5 #AI #BuildInPublic",
+      "author": {
+        "id": "1408033939",
+        "name": "Zhangcan Ding",
+        "screenName": "jason_dingzc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/821879916778102784/eG650pBT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 100,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 17:19:52 +0000 2026",
+      "createdAtLocal": "2026-06-16 01:19",
+      "createdAtISO": "2026-06-15T17:19:52+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066570723301408768/vid/avc1/1920x1080/iU6s_PhUkrbsYh7o.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066559103766299011",
+      "text": "🚨 Trump’s Fable 5 Crackdown Sparks Fierce Debate: Is #AI Cybersecurity Innovation Being Mistaken for a Threat? + Video\n\n-Fact Checker: ✅: 3 ❌: 3 || 3/6 → Score: 50% ⚖️\n-Prediction: 📈 3 Positive | 📉 3 Negative\n\nhttps://t.co/xj5Hj1OGv3",
+      "author": {
+        "id": "1159818353973895168",
+        "name": "UNDERCODE NEWS",
+        "screenName": "UndercodeNews",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1913838288823005184/VYKro2Ha_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 46,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 16:30:59 +0000 2026",
+      "createdAtLocal": "2026-06-16 00:30",
+      "createdAtISO": "2026-06-15T16:30:59+00:00",
+      "media": [],
+      "urls": [
+        "http://undercodenews.com/trumps-fable-5-crackdown-sparks-fierce-debate-is-ai-cybersecurity-innovation-being-mistaken-for-a-threat-video/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066555079780335767",
+      "text": "called the Fable 5 thing weeks ago. built a whole video around local inference. 77K impressions.\n\nthen the government proved my point overnight by pulling the models with zero warning.\n\nif your entire stack depends on someone else's server, you don't have a stack. you have a subscription they can cancel.",
+      "author": {
+        "id": "23482267",
+        "name": "Scott Shapiro",
+        "screenName": "ScottShapiroUXD",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046083932425240576/9kwzqdm7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 73,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 16:15:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 00:15",
+      "createdAtISO": "2026-06-15T16:15:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066537927123915038",
+      "text": "I GAVE 4 AI MODELS THE SAME 3 PROMPTS AND THEY GAVE ME 4 DIFFERENT PERSONALITIES\n\nprompt 1: build a fluid simulation \nprompt 2: make a 2d game where a moon rover runs from an octopus \nprompt 3: render a black hole with gravitational lensing\n\nsame 3 prompts. 4 models. zero overlap.\n\nclaude fable 5 made cinematic 2d fluid that actually splashes. then a pixel-art rover with earth glowing in the corner. then a black hole that looks like the gargantua scene from interstellar\n\nclaude opus 4.8 built a settings panel with gravity sliders. added a hud with energy, shield and threat level to the game. labeled the black hole SAGITTARIUS A* and drew a relativistic jet\n\ngemini 3.1 pro reinterpreted \"fluid sim\" as an hourglass with sand falling through a neck. put the octopus on the moon surface and animated its tentacles. softened the black hole into gold lensing\n\ngpt 5.5 built a 3d particle bowl spinning under centrifugal force. added a title screen to the game and made the octopus literally yell \"HUMAN! MEET YOUR DOOM!\" then rendered the black hole as vector dots like a telescope feed\n\nfable is the cinematographer opus is the engineer gemini is the interpreter gpt is the storyteller\n\nmost people will keep asking \"which model is best\"\n\npick the one whose personality matches your problem",
+      "author": {
+        "id": "977793981735227392",
+        "name": "Vijay Kumar",
+        "screenName": "VijayKu94617363",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059579058640363521/rQmIofZw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 180,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 15:06:50 +0000 2026",
+      "createdAtLocal": "2026-06-15 23:06",
+      "createdAtISO": "2026-06-15T15:06:50+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066537459555418112/vid/avc1/970x720/JPP8OJCRaFqvFCyb.mp4?tag=28",
+          "width": 970,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066525741865640019",
+      "text": "FABLE 5 JUST MADE VIDEO CREATION FEEL LESS LIKE EDITING AND MORE LIKE REVIEWING OUTPUT\n\nYou give it the niche, the keyword, the format, the raw takes, and the goal. It writes the script, reads the transcripts, finds the strongest moments, creates the cut list, syncs the narration, adds captions\n\nBuilds title concepts, and leaves you with the part humans are still best at: deciding whether the result actually feels good\n\nWorkflow from opening Premiere, scrubbing through footage, cutting dead air, fixing captions, making graphics, exporting versions\n\nFor faceless channels, the stack gets even cleaner: ElevenLabs speaks, Higgsfield creates visuals, Whisper timestamps, ffmpeg cuts\n\nThis is how a solo creator starts operating like a small media team\n\nCheck the full artcie below ⬇️",
+      "author": {
+        "id": "1500210495164456960",
+        "name": "RDeni",
+        "screenName": "rostikdeni",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1832882681991819264/1OLmdURE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 60,
+        "retweets": 11,
+        "replies": 18,
+        "quotes": 0,
+        "views": 4381,
+        "bookmarks": 21
+      },
+      "createdAt": "Mon Jun 15 14:18:25 +0000 2026",
+      "createdAtLocal": "2026-06-15 22:18",
+      "createdAtISO": "2026-06-15T14:18:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066525646923456512/vid/avc1/720x1280/woic9r9xWiSI05IH.mp4?tag=14",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065796036015063341",
+        "text": "https://t.co/nmNwaTlmEe",
+        "author": {
+          "screenName": "doublenickk",
+          "name": "Shadow Nick"
+        }
+      }
+    },
+    {
+      "id": "2066520624340578651",
+      "text": "Claude Fable 5 is insane\n\nOne shotted this masterpiece \n\nDesign, Animation, Sounds https://t.co/1WoXQ8Bm1l",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 2,
+        "views": 3836,
+        "bookmarks": 14
+      },
+      "createdAt": "Mon Jun 15 13:58:05 +0000 2026",
+      "createdAtLocal": "2026-06-15 21:58",
+      "createdAtISO": "2026-06-15T13:58:05+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066520498603692032/vid/avc1/1920x1080/CaaCf42PrVbXBRSk.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066504057049555207",
+        "text": "Claude fable 5 is operating in a completely different dimension 🤯 \n\nCompared it with Claude Opus 4.8, Gemini 3.1 Pro, and GPT 5.5, the visual gap is insane. \n\nFrom 3D fluid dynamics to volumetric animation and complex physics, Fable 5 crushes the game. It’s not even close. https://t.co/xZmRsarpaK",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2066518025931502032",
+      "text": "I was told it's $70,000 to train AI Video Generator. I'm already past what is available to the public. Just putting them all to shame. Did this without Fable 5. Couldn't imagine what I could create if I had the chance to use it. https://t.co/L4No1MPpQC",
+      "author": {
+        "id": "1650382509736173569",
+        "name": "Michael Mastrian",
+        "screenName": "H00tner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1978935932364496896/ByW1ttjL_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 13:47:46 +0000 2026",
+      "createdAtLocal": "2026-06-15 21:47",
+      "createdAtISO": "2026-06-15T13:47:46+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066514218245918720/vid/avc1/1280x720/gDKoxdjCRZuqAXD3.mp4?tag=14",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK29-rlXAAA_D37.jpg",
+          "width": 2048,
+          "height": 921
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066517078778237123",
+      "text": "Anthropic shipped Fable 5 as the most capable model they'd ever put in public hands.\n\nThree days later it was gone. For everyone.\n\nI lost access too, sitting in Bengaluru. A US export control now blocks every foreign national, inside the country and outside it.\n\nTwo weeks ago I wrote about this exact split. Frontier AI breaking in two, a public tier and a private one, with relationships and clearances deciding capability, not pricing pages.\n\nI think I got the split right and underestimated it.\nThe public tier isn't a tier you buy into. It's a permission someone can pull.\n\nNot an outage. Not a price hike. A Commerce Department letter, over the vendor's objection.\n\nAny GTM motion built on a single frontier model is a geopolitical dependency now, not just a vendor dependency.\n\nThe kill switch was never on the pricing page. And it isn't held by anyone you can call.",
+      "author": {
+        "id": "413374415",
+        "name": "Aakash",
+        "screenName": "aakash558",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2036699121395138560/eGn2i35x_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 78,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 13:44:00 +0000 2026",
+      "createdAtLocal": "2026-06-15 21:44",
+      "createdAtISO": "2026-06-15T13:44:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK2VQ9VbEAAhCN5.jpg",
+          "width": 2000,
+          "height": 1600
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066512954170691798",
+      "text": "How one guy is printing $5,300/month running an AI girl account\n\nThe craziest part? He completely automated the system and only works 40 minutes a day.\n\nHere’s how he built the entire system from scratch.\n\nThe Tech Stack:\n\n- Claude Fable 5\n- ComfyUI + Flux\n- Kling 3.0\n- Fanvue MCP\n\nStep-by-step instructions:\n\n1. Finding the Meta\n\nHe didn't guess, he asked Claude to analyze the market and find an untapped, high-growth niche. \n\nThe winning prompt? A 20-year-old Alt/Emo e-girl.\n\n2. The Content \n\nUsing pre-built Flux workflows in ComfyUI, he mass-generated a consistent face-swapped profile picture, \n\na clean Instagram grid, and a bank of semi-NSFW content for the paid audience.\n\n3. Hacking Viral Traffic\n\nStatic images don't work at all. \n\nHe used Kling 3.0 to generate 9:16 video clips of the AI model moving, then asked Claude for 30 viral text hooks, \n\nslapped them on via CapCut, and posted 3 Reels a day.\n\nResult: One reel hit 600k+ views in month two.\n\n4. Full automation\n\nHe linked his Fanvue to Claude so the AI actually reads fan chats, figures out what to charge, and replies just like the model would.\n\nWith that infrastructure he hit 800+ IG followers, 50 paid subscribers, and crossed the $5.3k mark with minimal ad spend. \n\nYou don't need a team or a massive budget anymore. Just set up the stack and let it run.",
+      "author": {
+        "id": "1583924351358967809",
+        "name": "FOXYS",
+        "screenName": "RadikBogdan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066280839302795264/d3Px3odk_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 454,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jun 15 13:27:36 +0000 2026",
+      "createdAtLocal": "2026-06-15 21:27",
+      "createdAtISO": "2026-06-15T13:27:36+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066512828219965440/vid/avc1/576x1030/c90ZJtnL9Q45LLKp.mp4?tag=28",
+          "width": 576,
+          "height": 1030
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065734157771182518",
+        "text": "https://t.co/okEWMFeKUK",
+        "author": {
+          "screenName": "Lummox_eth",
+          "name": "Lummox"
+        }
+      }
+    },
+    {
+      "id": "2066504057049555207",
+      "text": "Claude fable 5 is operating in a completely different dimension 🤯 \n\nCompared it with Claude Opus 4.8, Gemini 3.1 Pro, and GPT 5.5, the visual gap is insane. \n\nFrom 3D fluid dynamics to volumetric animation and complex physics, Fable 5 crushes the game. It’s not even close. https://t.co/xZmRsarpaK",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 23,
+        "retweets": 4,
+        "replies": 2,
+        "quotes": 2,
+        "views": 5303,
+        "bookmarks": 10
+      },
+      "createdAt": "Mon Jun 15 12:52:15 +0000 2026",
+      "createdAtLocal": "2026-06-15 20:52",
+      "createdAtISO": "2026-06-15T12:52:15+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066503987201728512/vid/avc1/970x720/kyBOqXhCw0Q5Vynk.mp4?tag=28",
+          "width": 970,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066450063014912046",
+        "text": "How i build with Claude + Higsfield 🐉\n\nStep 1: generate all scenes in Higsfield as MP4\n\nStep 2: paste URLs into Claude, say embed as scroll-triggered WebGL textures\n\nStep 3: Claude writes Three.js, Higsfield supplies the visuals\n\nStep 4: tell Claude trigger each video at 25% 50% 75% scroll\n\nStep 5: ask Claude to wrap hero video in autoplay muted loop\n\nStep 6: Higsfield does the art, Claude does the code\n\nSave this",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2066498199674933759",
+      "text": "It's been 66 hours since Fable 5 was taken down, and we haven't heard anything from anyone.\n\nI'm mad. You should be too.\n\nDropping a video in the next hour.",
+      "author": {
+        "id": "1178367350552305665",
+        "name": "Rob Hallam",
+        "screenName": "robj3d3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1763174758416588801/DMB7OfRz_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 341,
+        "retweets": 5,
+        "replies": 55,
+        "quotes": 5,
+        "views": 22784,
+        "bookmarks": 11
+      },
+      "createdAt": "Mon Jun 15 12:28:59 +0000 2026",
+      "createdAtLocal": "2026-06-15 20:28",
+      "createdAtISO": "2026-06-15T12:28:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

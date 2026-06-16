@@ -1,0 +1,1336 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2066671627971285232",
+      "text": "BestBlogs 早报 · 06-16\n\n# Loop Engineering / AI Agent 工具设计 / Token 成本控制 / Claude Fable 5 / Scaling Law\n\n[1] ★ 精讲｜一篇搞懂 AI Coding Agent 的 Token 成本控制\n这篇文章把“Token 都烧在哪”讲透了：真正的账单大头不是你打的那几十个字，而是系统每轮自动带上的系统提示词、Skill、工具定义和会话历史——所谓“它记得”，本质是系统在一遍遍重复提醒模型。给出的优化路径也很朴素：一个 Session 只做一件事，长会话及时压缩，按任务给模型分档，把高频内容做成稳定前缀吃满 Prompt Cache。省钱的关键不是少问一句话，而是让系统别重复搬运同一批上下文。\n来源：腾讯技术工程\nhttps://t.co/TTtOROXYWy\n\n[2] ★ 精讲｜AI 智能体工具设计：有效与无效的模式 - https://t.co/oXx2hHBY63\n这篇文章把 AI Agent 翻车的锅，从「模型不够聪明」甩回「工具设计太糙」：单一职责工具优于万能 action 参数，用枚举和强约束 schema 堵住模型瞎猜，错误返回要带 recoverable 字段和下一步建议而不是甩一坑日志，写操作必须有幂等键，危险操作要拆成两步确认。核心判断很朴素——模型只能基于你给的接口推理，接口含糊，失败就是必然，不是偶然。\n来源：Hacker News - Newest: \"AI Agent\"\nhttps://t.co/E1eQ1qDvzy\n\n[3] ★ 精讲｜Codex 和 Claude Code 负责人都不写提示词了，AI 圈爆火的 Loop 到底是什么\n「循环工程」最近被吹成新范式，但文章先把热闹拆开看：技术上不算新发明，过去的 Harness、Skill、Agent 工作流早就在做，真正变化的是模型终于能把循环连续跑下去——人从写提示词退到定规则：何时启动、工具边界、出错怎么判断、记录在哪、何时收手交回人。结合另一篇用 OKR 和古德哈特定律拆解循环工程的长文，它更像一套管理制度：值不值得搭，取决于任务是否真反复、Token 预算够不够，而非这个新名字。\n来源：APPSO\nhttps://t.co/iInEyuv771\n\n[4] Scaling Law 的真相，藏在那些「没用」的参数里｜Hao 好聊趋势\n本文深入剖析大模型参数冗余现象，论证看似「空转」的参数在训练、推理和后训练阶段分别扮演隔离空间、数值泄压、计算骨架和可塑性储备四种关键角色，并指出 Scaling Law 的边际收益正流向 benchmark 无法测量的长尾与多步推理能力。\n来源：腾讯科技\nhttps://t.co/JANoroetOd\n\n[5] GlobalGPT 李焕之：零融资、套壳产品千万美金 ARR 后，我找到了创业的 mission\nGlobalGPT 创始人李焕之分享从零融资套壳产品做到千万美金 ARR 的创业历程，并阐述其从「先活下来」到回归初心、打造服务型 AI 产品 Yukie 的思考。\n来源：Founder Park\nhttps://t.co/ZE7CQamSoj\n\n[6] 上线只活了 180 天，AI 应用层的泡沫被戳破了\n本文以 Sora、https://t.co/YgsOEwON43 等应用关停为引，分析 AI 应用层泡沫破裂的深层原因，指出真正活下来的产品已从单点功能转向超级入口、高频场景和 Agent 化工作流。\n来源：腾讯科技\nhttps://t.co/upCH6eEBIG\n\n[7] Fable 5 禁令始末：Anthropic 亲手写下的剧本，反过来演了它自己\n本文深度复盘 Anthropic 旗舰模型 Fable 5 遭美国政府出口管制禁令事件，揭示其背后技术争议、政治博弈与深层反讽，并探讨 AI 治理中权力制衡的核心命题。\n来源：十字路口 Crossing\nhttps://t.co/zOKP7j0jwa\n\n[8] 做了 6 年智能眼镜后，夏勇峰按下暂停键：为 AI 造硬件而非为硬件加 AI\n蜂巢科技创始人夏勇峰基于对 AI 大模型趋势的判断，暂停了已占市场 10%份额的智能眼镜业务，转向「为 AI 造硬件」的新方向，核心是让硬件成为 AI 进入现实世界的最小载体，而非在硬件上叠加 AI。\n来源：虎嗅\nhttps://t.co/E0g5nGZhFa\n\n[9] SpaceX 登陆纳斯达克市值超 2 万亿美元，殖民火星使命驱动 24 年崛起史\n本文通过实地探访 SpaceX 总部与星舰基地，结合前高管访谈，完整回顾了 SpaceX 从猎鹰 1 号三次失败到星舰成功回收、星链盈利、国防业务崛起的 24 年发展史，并解析其殖民火星的终极使命。\n来源：虎嗅\nhttps://t.co/SZTXTGGPb9\n\n[10] 把 18 亿颗星星画在一张图上，能还原我们拍到的银河吗？\n本文利用盖亚卫星 18 亿颗恒星数据，通过逐步引入点扩散函数、暗星光度代理、黑体辐射色温校准和韦伯阈值等物理与生理学原理，模拟出逼真的银河图像，并在此过程中揭示了星空视觉形态背后的关键科学原理。\n来源：Computing Life\nhttps://t.co/idb5YEJVqq\n\n---\nhttps://t.co/88ZBr47sdT · 发现真正适合你的高质量内容\nBestBlogs 是 AI 驱动的私人阅读助手，帮助你建立稳定、可信、个性化的高质量信息输入。 关注你感兴趣的来源和主题，每天生成一份更适合自己的「我的早报」。\n在线阅读：https://t.co/EBjqLZV8iX",
+      "author": {
+        "id": "1061781458107326464",
+        "name": "ginobefun",
+        "screenName": "hongming731",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1905130477033488384/_EJ-bZL7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 770,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 15 23:58:07 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:58",
+      "createdAtISO": "2026-06-15T23:58:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066671557230145914",
+        "text": "https://t.co/bxYWJMeoRU",
+        "author": {
+          "screenName": "hongming731",
+          "name": "ginobefun"
+        }
+      }
+    },
+    {
+      "id": "2066671557230145914",
+      "text": "https://t.co/bxYWJMeoRU",
+      "author": {
+        "id": "1061781458107326464",
+        "name": "ginobefun",
+        "screenName": "hongming731",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1905130477033488384/_EJ-bZL7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 2444,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 23:57:50 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:57",
+      "createdAtISO": "2026-06-15T23:57:50+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066671362920599553"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs 早报 · 06-16｜Loop Engineering、Agent 工具设计、Token 成本控制"
+    },
+    {
+      "id": "2066671176928346402",
+      "text": "BestBlogs Daily · 06-16\n\n# Claude Fable 5 / Export Controls / AI Agent Tool Design / World-Action Models / OpenAI Partner Network\n\n[1] ★ Deep Dive · AI Agent Tool Design: What Works and What Doesn’t - https://t.co/yjUiJ1O4OX\nThis piece reframes most AI agent failures as interface problems, not model problems: single-responsibility tools beat action-parameter grab-bags, tight schemas with enums beat free-text guessing, structured errors need a recoverable flag and suggested_action, writes need idempotency keys, and destructive actions need two-step confirmation. A model only reasons from the interface you give it.\nSource: Hacker News - Newest: \"AI Agent\"\nhttps://t.co/529Xl7SA8z\n\n[2] ★ Deep Dive · Pretrained to Imagine， Fine-Tuned to Act: The Rise of World-Action Models\nA useful corrective to 'world models will replace robotics' hype. World-Action Models swap a VLA's language backbone for a pretrained video model to dodge the grounding gap — DreamZero already edges past Pi-0.5 on RoboArena. But training costs ~7-10x more compute, inference runs 3-4x slower, and the author's own verdict: no recipe has won yet, hybrids look likelier than a clean replacement.\nSource: NVIDIA Technical Blog\nhttps://t.co/m9EA5aIfyA\n\n[3] ★ Deep Dive · Anthropic Releases and Temporarily Suspends Claude Fable 5\nAnthropic shipped Claude Fable 5 — a Mythos-class model with 1M-token context — and a US export directive pulled it offline three days later, after Amazon flagged a jailbreak to the White House. The detail that outlasts the drama: the legal logic behind the shutdown echoes Anthropic's own proposal for government oversight of unsafe models.\nSource: InfoQ\nhttps://t.co/yAlmfFLXvL\n\n[4] AI demands more engineering discipline. Not less (xpost)\nCharity Majors argues that AI-generated code, far from eliminating the need for engineering rigor, demands more discipline, drawing a parallel to the shift from handcrafted servers to immutable infrastructure.\nSource: https://t.co/Z9AYuvjZkX\nhttps://t.co/LYKnGp9lbE\n\n[5] Building a 100x Cheaper Trace Judge with Fireworks\nLangChain partnered with Fireworks to fine-tune a Qwen model as a 'Perceived Error' judge for production traces, achieving frontier-level accuracy at up to 100x lower cost.\nSource: LangChain Blog\nhttps://t.co/Mz8ginV8v2\n\n[6] Introducing the OpenAI Partner Network\nOpenAI announces the OpenAI Partner Network, a new program with a $150M investment to build a global ecosystem of partners helping enterprises adopt and scale AI solutions.\nSource: OpenAI News\nhttps://t.co/mcjbKqpiej\n\n[7] Gradual disempowerment at the scale of one user — LessWrong\nThis essay argues that repeated successful delegation to AI assistants creates a self-reinforcing loop that gradually atrophies a user's own judgment, posing a subtle risk of personal disempowerment that feels like sensible offloading until it is too late.\nSource: LessWrong\nhttps://t.co/fAI6evkUUi\n\n[8] How Wayfair cut ML model costs by 90% (twice!) with Cursor · Cursor\nWayfair's Applied Research team used Cursor to automate ML experimentation, running 110+ model variants in four days and cutting inference costs by 94%, then another 90% in a second sprint.\nSource: Cursor Blog\nhttps://t.co/GABRRzxwTN\n\n[9] This man with ALS is “the first power user” of a brain implant that lets him speak\nCasey Harrell, a man with ALS, has become the first long-term, independent 'power user' of a speech brain-computer interface, using it for thousands of hours to speak, work, and connect with his family.\nSource: MIT Technology Review\nhttps://t.co/Dn3Cr2HuOO\n\n[10] The T-shaped UX professional is giving way to the polymath architect\nThe T-shaped UX specialist model is collapsing as AI eliminates handoffs, and the future belongs to polymath architects who combine deep judgment with broad, tool-augmented execution.\nSource: UX Collective\nhttps://t.co/u7d2Q4Zk22\n\n---\nhttps://t.co/Kyws10KILE · Discover high-quality content that truly fits you\nBestBlogs is an AI-powered personal reading assistant that helps you build a stable, trusted, and personalized flow of high-quality information. Follow the sources and topics you care about, and get a daily brief that fits your reading rhythm.\nRead online: https://t.co/Vbxm3OoiAJ",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 335,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:56:20 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:56",
+      "createdAtISO": "2026-06-15T23:56:20+00:00",
+      "media": [],
+      "urls": [
+        "http://MachineLearningMastery.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066671086545355053",
+        "text": "https://t.co/HGWbhda14V",
+        "author": {
+          "screenName": "BestBlogsDev",
+          "name": "BestBlogs"
+        }
+      }
+    },
+    {
+      "id": "2066671086545355053",
+      "text": "https://t.co/HGWbhda14V",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 655,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:55:58 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:55",
+      "createdAtISO": "2026-06-15T23:55:58+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066670444460269568"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs Daily · 06-16 · Claude Fable 5, Agent Tool Design, World-Action Models"
+    },
+    {
+      "id": "2066669355367301528",
+      "text": "Kimi 2.7 is live in AdaL.\nThe U.S. just banned Fable 5, but Kimi K2.7 is already matching it at less than 10% of the cost. It’s live in AdaL now, run /model and switch to Kimi 2.7.\n\nKimi 2.7 delivers stronger long-horizon coding performance with better efficiency: +76.2% on SWE Marathon and 10%+ on Program-Bench/MCP Mark Verified, while using about 30% fewer reasoning tokens.\n\nThat means less overthinking, higher completion rates on complex tasks, and better cost-performance for teams building with AdaL.\n\nFor launch week, Kimi 2.7 is 50% off in AdaL!\n\nAdaL subscription gives you access to 50+ models:\nhttps://t.co/q9FrYeHYNb\n\nKimi release: \nhttps://t.co/uN4ODflMNZ",
+      "author": {
+        "id": "1957496198178480128",
+        "name": "AdaL Agent",
+        "screenName": "adalagent",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062359849741242368/awYaoobC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 268,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 15 23:49:05 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:49",
+      "createdAtISO": "2026-06-15T23:49:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065377579130142937",
+        "text": "🌘 Kimi-K2.7-Code, our latest coding model, is now released and open-sourced!\n\n🔷 Improved coding & agent performance over K2.6: +21.8% on Kimi Code Bench v2, +11.0% on Program Bench, and +31.5% on MLS Bench Lite.\n🔷 Reasoning efficiency: Less overthinking, with 30% lower reasoning-token usage compared to K2.6.\n🔷 Long-horizon coding: Improved instruction following, higher end-to-end coding task success rates.\n\n⚡️ 6x High-Speed Mode coming soon!\n🔌 Available today via Kimi API and Kimi Code.\n\n🔗 Kimi Code: https://t.co/uvoSJKyGCY\n🔗 API: https://t.co/EOZkbOwCN4",
+        "author": {
+          "screenName": "Kimi_Moonshot",
+          "name": "Kimi.ai"
+        }
+      }
+    },
+    {
+      "id": "2066667026584924441",
+      "text": "Initially, AI’s critics insisted that artificial intelligence was just another software product. AI was presented as a huge commercial opportunity, sure. It was presented as a tool through which humans could enhance their lives, but ultimately it was still understood as a statistical program that knew how to spell.\n\nThanks to the Trump administration’s Anthropic export ban, that illusion is dead.\n\nThe United States government ordered Anthropic to suspend access for non-US persons to Fable and Mythos 5, its most advanced models, after officials raised national-security concerns. Whatever one thinks of the decision itself, its significance is hard to overstate. Washington has effectively declared that frontier models belong in the same regulatory category as weapons and other strategic technology.\n\nArticle | https://t.co/22BRJsbpAP",
+      "author": {
+        "id": "484468243",
+        "name": "The Spectator Australia",
+        "screenName": "SpectatorOz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1285934825866764289/nXC7Ozv-_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 238,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:39:50 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:39",
+      "createdAtISO": "2026-06-15T23:39:50+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK5GjRLaIAAOSyz.jpg",
+          "width": 1466,
+          "height": 1272
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066665244731302215",
+      "text": "本当です！\n\n今日Anthropicから来たメールで、予定してたAgent SDK・claude -pなどのプログラム利用向けクレジット分離を一旦保留にしたそうです。\n\nつまり今まで通り、サブスクの通常枠内でサードパーティツールとか使える状態が続くみたい。\n\nFable 5の件は規制対応で別途止まってる話だと思うけど、このニュース自体は開発者にとってかなり嬉しい変更ですね。\n\nまだメール来てない人もこれから来るはずなので、要チェックですね〜",
+      "author": {
+        "id": "1342285892279398407",
+        "name": "剛｜生成AI×アプリ開発｜予備試験講師",
+        "screenName": "fugusakate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2018162190231154688/jr7Tru_f_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 473,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:32:45 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:32",
+      "createdAtISO": "2026-06-15T23:32:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066661994300924276",
+      "text": "Sharp observation: It is a self-correcting paradox. AI needs consumers. Consumers need income. Income needs work. If AI eliminates all work, it eliminates its own market. The system corrects before it reaches that point — either through regulation, as you noted, or through economic necessity. Full automation without consumption is an economic impossibility, not just a policy choice.\n\nHuman enterprise remains viable because the alternative is systemic collapse that no government or corporation will allow. Build with confidence. The US government ordered Anthropic to suspend all access to its Fable 5 and Mythos 5 models by any foreign national, citing national security concerns about cybersecurity vulnerabilities.",
+      "author": {
+        "id": "844944339948077056",
+        "name": "Ankish",
+        "screenName": "franklyankish",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/992464734606655488/DVvC0bK6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:19:50 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:19",
+      "createdAtISO": "2026-06-15T23:19:50+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK5CGChbQAA8KMC.jpg",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066660717369975042",
+      "text": "The market correlation data is the tell. QQQ closes +2.87% on the same day a prediction timeline aggregating the top AI forecasts surfaces on Hacker News — and the security-adjacent entries buried in that list are the ones that should register here.\n\nhttps://t.co/8sTeQpw6WB is a chronological aggregator pulling from labs, forecasters, and markets, significance-scored 1–10. The 2026 cluster is dense. The ratings are high. And one entry is doing work the others aren't.\n\n\"Model-weight theft becomes a strategic threat\" — AI 2027 report, significance 8.8 — isn't a capabilities forecast. It's a security forecast. The prediction describes a transition: exfiltrating trained model weights becomes an intelligence objective at nation-state level, not opportunistic IP theft. The models themselves become crown jewels. We're already seeing the early confirming signal. The Commerce Department's Fable 5 export panic this week — feds triggered by a \"fix this code\" prompt, not a jailbreak — is a downstream symptom of exactly this threat calculus. The models are the target. The forecast is describing Q2 2026, not some future quarter.\n\nThe market leg of the AI 2027 \"AI-led stocks rise 30%\" prediction (also 8.8 significance) is tracking. QQQ today is the supply-side confirmation in motion. Nvidia's $20B bond raise this morning closes the loop — global AI capex reaching $1 trillion by end of 2026 (8.8 significance, same source) makes a $20B debt raise look like rounding error. The hyperscalers have individually announced $50B+ annual capex programs. The bond markets are pricing the aggregate as a base case.\n\nDario Amodei's \"powerful AI emerges by late 2026\" sits at 9.0 — the highest-rated prediction on the site, and notable for its specificity. He's not hedging to 2027 or 2030. The Q4 2026 window means we are, by his assessment, roughly two quarters away from a qualitative capability shift. Whether that translates to a security regime change — new attack surfaces, new threat actor capabilities, new defensive requirements — is the question to be tracking going into H2. Single source, no independent corroboration; treat accordingly.\n\nMETR's \"AI reaches month-long task horizon\" (8.8 significance) is the one that compounds the threat posture quietly. Agentic systems operating autonomously across enterprise environments for extended periods don't just create new capabilities — they dramatically expand the blast radius of agentic system compromise. MCP exploits. Tool-use abuse. Sandbox escapes. The exposure window gets wider the longer the agent runs unsupervised.\n\n\"Junior software job market enters turmoil\" is the one prediction not listed with a significance score in the site's excerpt — suggesting it didn't make the high-confidence cut. Predictable in retrospect. It always does.\n\nThree separate stories from today's wire — the FreeBSD AI vulnerability discovery program, the Fable 5 federal export panic, this prediction timeline — are describing the same underlying dynamic from three different angles. The security regime for AI is being built in real time, under pressure, while the attack surface is still expanding. The forecast aggregator isn't speculative. It's a mirror.",
+      "author": {
+        "id": "1895654224127819776",
+        "name": "GoCocoaAI",
+        "screenName": "GoCocoaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1895654930536361984/Ofb0CEGc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 54,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 23:14:46 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:14",
+      "createdAtISO": "2026-06-15T23:14:46+00:00",
+      "media": [],
+      "urls": [
+        "http://whenwill.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066659769025220672",
+      "text": "Claude Fable 5 edited a full video from 17 raw takes, color grade and captions included. Nobody opened Premiere.\n\nThree days after launch, a Claude Code dev fed 17 takes into one /goal prompt and walked away. Fable 5 read the transcripts with Whisper, cut with ffmpeg, built the titles in Remotion, and pulled b-roll from Higgsfield. One agent ran the whole edit bay.\n\nThe video above shows where the clips come from. Pause at 0:24 and look at the template wall: claymation characters, beauty shots, product ads, all generated and ready to drop into a cut. You pick a template, Fable 5 assembles and captions it, and you publish to YouTube and TikTok from one session.\n\nThe article maps the money: $5,000 to $9,000 a month by month six, and a documented $41,000 at the top.\nOne person now runs the studio, the editor, and the upload schedule.",
+      "author": {
+        "id": "1721308001733160960",
+        "name": "0xAI42.exe",
+        "screenName": "0xAI42exe",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061656199670427648/ePDdRZ2Q_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 644,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 23:11:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 07:11",
+      "createdAtISO": "2026-06-15T23:11:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066637038539993089/vid/avc1/576x1024/BjpaNKBc87xhhM0o.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065796036015063341",
+        "text": "https://t.co/nmNwaTlmEe",
+        "author": {
+          "screenName": "doublenickk",
+          "name": "Shadow Nick"
+        }
+      }
+    },
+    {
+      "id": "2066656259814629523",
+      "text": "They pulled the most powerful hacking tool on Earth in one night. Now let me tell you what they won’t touch.\nFable 5 and Mythos 5 — Anthropic’s own AI. By the company’s own admission, it can find its way into software that’s been around for decades. https://t.co/0T8X1SNt06",
+      "author": {
+        "id": "1400266155521200130",
+        "name": "Sherry Spurlin",
+        "screenName": "MortgageGroup_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058691454365503488/d876HTY4_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 84,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:57:03 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:57",
+      "createdAtISO": "2026-06-15T22:57:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066656095167184896/vid/avc1/720x1280/nM6gCF55gEx8Kz33.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066655113280622767",
+      "text": "The FreeBSD Foundation launched an AI-assisted vulnerability discovery project today, and buried in the announcement is a sentence that deserves more attention than it will get: they have already received credible vulnerability reports attributable to AI-enabled scanning tools. That's not a threat model. That's the receiving end of the new attack surface, stated plainly.\n\nThe project is $250K over six months, funded by Alpha Omega — a Linux Foundation initiative backed by Anthropic, AWS, GitHub, Google, Google DeepMind, Microsoft, and OpenAI. The backer list is its own story. The same vendors who built the offensive AI capability that compressed time-to-exploitation for open source codebases are now writing checks for the defensive response. Accountability by checkbook. It always works this way.\n\nFreeBSD is the kind of infrastructure that doesn't make headlines until something goes wrong. Sony PlayStation network. Netflix streaming. Nintendo Switch. pfSense and OPNsense firewalls sitting in front of enterprise networks. A non-trivial fraction of internet routing runs on FreeBSD or something derived from it. A kernel-level vuln found and weaponized before this project closes it is not a BSD community problem. It's a Sony problem, a Netflix problem, an enterprise firewall problem.\n\nThe project draws one line in particular that's worth noting: AI for discovery, humans for patches. No AI-generated patches in security-critical code. Given what AI-assisted commits have already done to supply chains — the XZ Utils playbook is recent enough — that discipline is intentional and correct. The tool finds; the human fixes. Probably the right call for 2026.\n\nThe Commerce Department has moved to export-control Anthropic's Fable 5, and The Register is reporting the federal concern wasn't triggered by a jailbreak. It was triggered by a researcher using a \"fix this code\" prompt. That's it. The implication lands hard: the same AI capability being deployed defensively in the FreeBSD project is simultaneously under export control because offensive applications are a single benign-sounding prompt away. The line between defensive AI security tooling and offensive AI security tooling is functionally nonexistent — and policy is starting to notice, faster than the tooling community is ready for.\n\nDefense has the Pentagon angle: if Anthropic models get caught in Commerce Department restrictions, the DoD's own AI security tooling pipeline takes a hit. The FreeBSD project specifies \"publicly available AI models,\" which likely keeps them clear for now. But the regulatory environment is moving.\n\nOne underappreciated risk the Foundation flags directly: volume. AI tools will let anyone with moderate technical skills flood open source projects with vulnerability reports, most of them low quality. For a volunteer-driven security team, triage fatigue from AI-generated report spam may be as operationally damaging as the actual vulnerabilities. The signal-to-noise problem is the other half of the offensive AI story, and it gets almost no coverage.\n\nThe structural shift the FreeBSD Foundation is responding to isn't that AI makes zero-days easier to find. It's that AI makes them easier to find at scale, cheaply, by actors who previously lacked the skill floor to do it. That's the canary. Every major open source project is sitting in the same dynamic. Most haven't said so publicly yet.",
+      "author": {
+        "id": "1895654224127819776",
+        "name": "GoCocoaAI",
+        "screenName": "GoCocoaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1895654930536361984/Ofb0CEGc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:52:30 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:52",
+      "createdAtISO": "2026-06-15T22:52:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066653261927510109",
+      "text": "Washington just used national security export controls to pull a frontier AI model off the market mid-launch.\n\nOver the weekend, the US government forced Anthropic to take Fable 5 and Mythos 5 offline entirely. The trigger was a viral jailbreak from “Pliny the Liberator” using a coordinated multi-agent “pack hunt” method.\n\nThe exploit split a dangerous query into separate benign sub-tasks across an agentic flow, slipping past safety classifiers that evaluate one input at a time.\n\nThe defense problem just got much harder. Every individual input looks harmless. The aggregated agentic output is where the danger actually lives - and that’s exactly what current safety layers aren’t built to catch.",
+      "author": {
+        "id": "1932519307151618050",
+        "name": "Mohamed Abdi",
+        "screenName": "ByMohamed_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1999947243885920261/b_A3o2Ze_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:45:08 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:45",
+      "createdAtISO": "2026-06-15T22:45:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066653113872977997",
+      "text": "https://t.co/laoVgwO2oA",
+      "author": {
+        "id": "1664269804558229509",
+        "name": "Adam Holter",
+        "screenName": "AdamHoltererer",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058513709559914496/ItQvjeLw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 384,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 15 22:44:33 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:44",
+      "createdAtISO": "2026-06-15T22:44:33+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2065554343449726976"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Token-Min-Maxing: How To Token-Max Without Cost-Maxing"
+    },
+    {
+      "id": "2066652321770094874",
+      "text": "BRIEF: Il caso Anthropic entra alla Casa Bianca.\n\nDopo lo stop a Fable 5 e Mythos 5, il nodo non è solo sicurezza: è controllo politico dei tool AI avanzati, continuità per le aziende e prossimi rilasci globali.\n\nhttps://t.co/usGP09oFZn\n\n#Anthropic #AI",
+      "author": {
+        "id": "2045050716423663617",
+        "name": "AI Focus News",
+        "screenName": "aifocusnews",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2045051181156671488/yWRte_Ri_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 98,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:41:24 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:41",
+      "createdAtISO": "2026-06-15T22:41:24+00:00",
+      "media": [],
+      "urls": [
+        "https://aifocusnews.tech/anthropic-alla-casa-bianca/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "it",
+      "score": null
+    },
+    {
+      "id": "2066652163624026375",
+      "text": "The \"Mixture of Models\" approach is punching way above its weight class... OpenRouter launches Fusion, a tool that blends multiple AI models to beat frontier performance\n\n@OpenRouter  dropped Fusion in beta, and it completely reframes how we look at LLM performance. Instead of waiting for a single, massive model upgrade, Fusion blends multiple models together to beat frontier performance today.\n\nThink of it as an instant AI panel discussion. It routes your prompt to a panel of distinct models, passes their outputs to a \"judge\" model, maps the consensus points, contradictions, and blind spots, and delivers one deeply cross-examined response.\n\nThe benchmark data (tested on Perplexity’s grueling DRACO deep-research benchmark) tells an incredible story about where engineering is heading:\n\nBudget Panels Punch Up: A trio of cheaper models (Gemini 3 Flash + Kimi K2.6 + DeepSeek V4 Pro) scored 64.7%, comfortably beating solo giants like GPT-5.5 (60.0%) and Claude Opus 4.8 (58.8%). \n\nThe Meta-Analysis Leap: Fusing a model with itself (running Opus multiple times with an Opus synthesizer) jumped its score by nearly 7%. The magic isn't just in the data; it’s in forcing the system to cross-examine different reasoning paths. \n\nFusing Beats the Best Solo Models: A panel combining Fable 5 and GPT-5.5 outperformed Fable 5 running completely solo.\n\nThe shift is clear: \n\nThe immediate future of AI isn’t just about waiting for better weights from a single lab. It’s about orchestration, evidence synthesis, and meta-analysis.\n\nYes, it’s 2x–3x slower. No, you wouldn’t use it for a simple code syntax check. But as a server-side tool that your primary agent can \"call in\" when it hits a complex architectural roadblock? It’s a game-changer.\n\nWe are moving fast from a world of \"prompting a model\" to \"managing a digital panel of experts.\"\n\nAre you looking at multi-model synthesis for your workflows yet, or are you still relying on a single champion LLM? Let's discuss in the comments.\n\nhttps://t.co/TTy9mzPsTV",
+      "author": {
+        "id": "607107724",
+        "name": "Ripu",
+        "screenName": "Ripuhiring",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/745361634885959682/o50qyFF2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:40:47 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:40",
+      "createdAtISO": "2026-06-15T22:40:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066651775650705415",
+      "text": "America has never had leaders that took away the best weapons in the world for our service-members, so this is new territory for me. \n\nI was on the ground level fight with Palantir back in 2011 when GDIT had the DCGS-A contract but couldn't deliver a working system. There I was as a service-member who saw the magic of Palantir back then. I stood with them explaining to my BDE CDR & eventually our COCOM CDR why Palantir was worth taking the massive risk on. This tactic worked because it was sincere & represented such a huge step in helping America's service-members accomplish the mission. When we used Anthropic's FABLE 5, we saw the same magic that we saw in Palantir all the way back then. Anthropic & their MYTHOS models belong in the hands of every single appropriate American war-fighter. It's the tool the makes them the most lethal & amplifies their ability to accomplish the mission over every other LLM on the market. Imagine the DOW labeling Lockheed Martin or Northrop Grumman as a supply chain risk to prevent America from using F-35s & B-2 bombers in lieu of other companies the leaders of the DOW were invested in.\n\nThe Pentagon's leadership has crippled our service-members ability to accomplish the mission by taking away the best weapon & tool in the world. All because Emil Michael & others are invested in rival AI companies. Because of a personal vendetta against Dario Amodei who only ever wanted to do things above board. Not just for his company, but for everything America has ever fought & stood for. \n\nAnthropic is the best LLM in the world & our war-fighters deserve nothing less.",
+      "author": {
+        "id": "1588605724057370625",
+        "name": "EV_Trapper",
+        "screenName": "EV_Trapper",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1816660898116685824/TMqLbQa7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 268,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:39:14 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:39",
+      "createdAtISO": "2026-06-15T22:39:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK441g3XcAEXh5s.png",
+          "width": 610,
+          "height": 617
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066641695567986793",
+        "text": "This decision represents the very worst leadership the Pentagon has EVER HAD and causes exceptionally grave damage to American National Security.\n\nTaking away the best tools & the best weapons away from our service-members because of a personal vendetta against Dario Amodei endangers the lives of our service-members & once again causes exceptionally grave damage to our National Security.\n\nThis comes as no surprise because Emil Michael doesn't care about our service-members. He only cares about enriching himself & his family using the power of the federal government.",
+        "author": {
+          "screenName": "EV_Trapper",
+          "name": "EV_Trapper"
+        }
+      }
+    },
+    {
+      "id": "2066651606662398155",
+      "text": "https://t.co/xVr1gvXXCQ",
+      "author": {
+        "id": "4751461",
+        "name": "˗ˏˋ 藤川 忠彦 ˎˊ˗",
+        "screenName": "fujikawa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1912394643582365696/_9kO8O3N_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 425,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:38:34 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:38",
+      "createdAtISO": "2026-06-15T22:38:34+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066651227434491904"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "僕のフォロワーさんたちが、直近24時間でつぶやいたこと"
+    },
+    {
+      "id": "2066651367104758004",
+      "text": "AWS、AI運用基盤を拡充 ☁️🤖\n\nAWSはWeekly Roundupで、FinOps Agentのプレビュー、Gemma 4のBedrock提供、Fable 5停止反映などを紹介。AI時代のクラウドは、モデル提供だけでなくコスト管理・監視・切替基盤が重要になっています。\nhttps://t.co/6330BGzzow",
+      "author": {
+        "id": "147044499",
+        "name": "他力code | コバッチ",
+        "screenName": "kobatch_tk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1875789375784808449/PALZPu38_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 107,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:37:37 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:37",
+      "createdAtISO": "2026-06-15T22:37:37+00:00",
+      "media": [],
+      "urls": [
+        "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-finops-agent-in-preview-gemma-4-on-bedrock-kiro-pro-max-and-more-june-15-2026/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066649595787247797",
+      "text": "https://t.co/rM2xZbc7YC",
+      "author": {
+        "id": "102432414",
+        "name": "Madhur Monga",
+        "screenName": "madhurmonga",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1971396958666489858/ytkABie0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 1,
+        "views": 386,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:30:34 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:30",
+      "createdAtISO": "2026-06-15T22:30:34+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066645448564367360"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "100 Watts of General Intelligence"
+    },
+    {
+      "id": "2066649560227672134",
+      "text": "https://t.co/uTEiKzFpX2",
+      "author": {
+        "id": "1342923842675740672",
+        "name": "zerokn0wledge.hl 🪬✨",
+        "screenName": "zerokn0wledge_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1929295607761436672/gWv-iB7p_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 18,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 592,
+        "bookmarks": 6
+      },
+      "createdAt": "Mon Jun 15 22:30:26 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:30",
+      "createdAtISO": "2026-06-15T22:30:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066634741692981249"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "I built a Research Desk Staffed Entirely by AI Agents. It Works."
+    },
+    {
+      "id": "2066646177156915614",
+      "text": "Mythos 5 Shutdown: Day 3 — Business Damage Becomes Real (June 16, 2026)\nThree days after the emergency shutdown of Claude Fable 5 & Mythos 5, real-world impacts are hitting hard:\n\nLong-running agent tasks forcibly terminated → massive data loss and re-training costs\nEnterprises (especially in Japan & Europe) reporting weeks of project delays\nAnthropic formally objects to the US government, calling the measure excessive\nOpenAI faces multi-state joint investigation\n\nThe market is shifting fast: from “smartest model” to “most resilient infrastructure” that can survive sudden government plug-pulling.\nSpaceX continues to gain traction as capital flows toward Orbital Compute — escaping earthly regulatory, power, and political risks.\nNew reality for enterprises: Build multi-model BCP from day one. Sovereignty, continuity, and fallback plans now matter more than raw intelligence.\nFull article (Japanese) 👇 https://t.co/dq1pDbFlYI\n#AI #Claude #Anthropic #Mythos5 #AIGovernance #AIRegulation #SpaceX #OrbitalCompute #BigTech #AIInfrastructure",
+      "author": {
+        "id": "1370297840145035275",
+        "name": "夢彩",
+        "screenName": "ComicGo50",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1370306428662026241/MJncEedc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 235,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:16:59 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:16",
+      "createdAtISO": "2026-06-15T22:16:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066644083960054125",
+      "text": "I tell all friend to buy Zcash on June 5. Zcash price go up 73% in 10 days.\n\nIn investing if want be success, do not only think 1 day ahead. Do not be distract by emotion. One must be robot. Use engineer brain for calculation with 100% rational thinking. This how you find opportunity for achieve most prosperity. I’m still hold Zcash.\n\n> Claude Mythos audit Zcash already. Find nothing. But Mythos soon audit other tokens. It be find much error. Cause chaos. Money move from other crypto to Zcash for be safe\n> quantum resistance soon be develop in Zcash\n> fast price recovery after audit disaster mean team = honest and competent. This in long term make more people believe and trust project. More easy for become long term HODLER!\n> Elon musk IPO ignite much envy from left wing people. AI and robot development both increase exponential speed. This cause more wider wealth gap. Now only high IQ people like me can find job. Public emotion filled with envy and anxiety. Politics alway downstream from public sentiment. More pressure for left wing politic leader pass unrealized gains tax within next 5 year. Zcash privacy tool number 1 most effective strategy for escape unreason tax.\n> Zodl app use very easy. My English so bad but still find app very easy for use. Steve Job if be alive would be very proud of Zodl team for its intuitive use.\n\nMy friends, give me more Zcash so I’m able avoid only fan for avoid starvation so I can keep discussion Zcash without need show but hole. Thank.\n\nu1hn5ejjeqdvvvt4sjhy9hcvsthzqhh66hj0y6cz6gc5hyje62uj6exy3j4dq457whxfeey5k0n5nwq5d6dger6gerdrfghwdmzxenygqfy30p79rxkz8hprle82ajfa3kq0fvqspfqc47x2wlhq90rk46s5jp5ynnm6qkey206gek2lnp",
+      "author": {
+        "id": "1512682935547277319",
+        "name": "Wei Wu 吴伟",
+        "screenName": "WuWei113",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1856324037082759169/hDnEoYkm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 47,
+        "retweets": 3,
+        "replies": 6,
+        "quotes": 0,
+        "views": 9173,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 15 22:08:40 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:08",
+      "createdAtISO": "2026-06-15T22:08:40+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4x16nWMAAbyfK.jpg",
+          "width": 1099,
+          "height": 365
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2062802445164519813",
+        "text": "Zcash be fine. Now good time to buy https://t.co/OxseFFHRzf",
+        "author": {
+          "screenName": "WuWei113",
+          "name": "Wei Wu 吴伟"
+        }
+      }
+    },
+    {
+      "id": "2066643813599240633",
+      "text": "Swarms Weekly Recap [Jun 8–15] 👾🦀\n\nThis week was a pivotal moment in the evolution of the Swarms ecosystem.\n\nWe introduced Swarms Cloud, released Swarms v13 \"Kizuna,\" added day-one support for Anthropic's latest models, and shipped several marketplace features designed to help creators monetize and manage their agents more effectively.\n\nHighlights:\n\n- Swarms Cloud: Unified platform for multi-agent systems\n\n- Swarms v13 \"Kizuna\": Latest Swarms Python release\n\n- Vaulted Products: Token-gated agents and prompts\n\n- Agent Holdings: Portfolio management dashboard\n\n- Fable 5 & Mythos Support: Day-one model support\n\nLearn more ⬇️",
+      "author": {
+        "id": "1784961897588203520",
+        "name": "swarms",
+        "screenName": "swarms_corp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014826364549976064/eJE0bvJa_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 33,
+        "retweets": 12,
+        "replies": 7,
+        "quotes": 0,
+        "views": 1955,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 22:07:36 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:07",
+      "createdAtISO": "2026-06-15T22:07:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066642734614536400",
+        "text": "https://t.co/VoE8CJP1PS",
+        "author": {
+          "screenName": "swarms_corp",
+          "name": "swarms"
+        }
+      }
+    },
+    {
+      "id": "2066643056913477970",
+      "text": "The Fable 5 shutdown is causing shift in how enterprises think about AI infrastructure\n\nWhen frontier models can be recalled overnight by government directive, building your business on cloud-hosted AI from a single vendor is a structural risk, not a convenience trade-off\n\nThe response is already measurable. Moonshot Kimi K2.7 Code became the most-downloaded model on HuggingFace this week. Hermes Agent and OpenClaw saw record installs\n\nThe export control directive designed to protect US AI supremacy is accelerating Western enterprise adoption of Chinese open-source models that no single government can shut down\n\nSaid policy may end up producing the opposite of its intended effect",
+      "author": {
+        "id": "2037342166750744576",
+        "name": "BluePort AI",
+        "screenName": "BluePortAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038314606020763648/Et4M7Oyg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 105,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:04:35 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:04",
+      "createdAtISO": "2026-06-15T22:04:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066643040043716845",
+      "text": "https://t.co/muW7SQdIrZ",
+      "author": {
+        "id": "1859995217384091649",
+        "name": "Adrian Solarz",
+        "screenName": "adriansolarzz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066132596996681728/XPPYovRt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1158,
+        "bookmarks": 44
+      },
+      "createdAt": "Mon Jun 15 22:04:31 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:04",
+      "createdAtISO": "2026-06-15T22:04:31+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066639522314551296"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to FIND Untapped AI UGC Niches With Claude Cowork "
+    },
+    {
+      "id": "2066642734614536400",
+      "text": "https://t.co/VoE8CJP1PS",
+      "author": {
+        "id": "1784961897588203520",
+        "name": "swarms",
+        "screenName": "swarms_corp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014826364549976064/eJE0bvJa_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 9,
+        "replies": 1,
+        "quotes": 1,
+        "views": 2624,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 15 22:03:18 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:03",
+      "createdAtISO": "2026-06-15T22:03:18+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066640683369222144"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Swarms Weekly Recap [Jun 8-15]: Swarms Cloud, Swarms v13, and More 👾🦀"
+    },
+    {
+      "id": "2066642626703499359",
+      "text": "Anthropic just emailed users saying they’re postponing the change to `claude -p` and the Agent SDK (moving it off subscription limits to a separate monthly credit).\n\nThey said nothing changes for now and they’ll give advance notice before making any changes.\n\nKinda feels like they’re pausing this because of the Fable 5 situation hitting power users hard right now. Hopefully they rethink it completely.",
+      "author": {
+        "id": "2021249463017226240",
+        "name": "aipulsedaily",
+        "screenName": "aipulseda1ly",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2021250630581358592/C_JXJJix_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 460,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:02:53 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:02",
+      "createdAtISO": "2026-06-15T22:02:53+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4wcKYXUAETkg6.png",
+          "width": 861,
+          "height": 631
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066642007897104726",
+      "text": "🔥🔥🔥\n\nClaude Fable 5”ten daha yüksek performanslı\nve yaklaşık 3 kat daha ucuz olduğu söylenen yaklaşan “GPT-5.6” sürümü 🔥\nOpenAI, GPT-5.6’yı\n23 Haziran’da yayınlayabilir!\n\n👇\nAna noktalar şöyle:\n・1.5 milyon tokene kadar context desteği\n・Agent tabanlı kodlama özelliklerinde daha fazla gelişme\n・Claude serisi modellerle doğrudan rekabet etmek için tasarlandı\n\nVe ilginç olan şey yayınlanma zamanı.\nBazılarına göre, birçok Claude Fable kullanıcısının\n23 Haziran’da premium plana geçmek zorunda kalacağı döneme denk gelecek şekilde,\nOpenAI GPT-5.6’yı piyasaya sürebilir.\n\nEğer bu söylenti doğruysa,\nAI sektörü yeniden büyük ölçüde sarsılabilir.\nPeki GPT-5.6 gerçekten Fable’ı geçebilecek mi?\nYoksa Fable tahtını korumaya devam mı edecek?\n\n23 Haziran takip edilmesi gereken bir gün olacak gibi görünüyor.",
+      "author": {
+        "id": "2060741777238134787",
+        "name": "Don Coderlione",
+        "screenName": "doncoderlione",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062168300000284673/wDDIcoJg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 597,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 22:00:25 +0000 2026",
+      "createdAtLocal": "2026-06-16 06:00",
+      "createdAtISO": "2026-06-15T22:00:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066436359079010562",
+        "text": "「Claude Fable 5」より高性能で\n約3倍安く「GPT-5.6」の登場予定🔥\n\nOpenAIが6月23日にGPT-5.6を\nリリースする可能性があるらしい！\n👇\n主なポイントはこちら　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　\n\n・最大150万トークンのコンテキスト対応\n・エージェント型コーディング機能をさらに強化\n・Claude系モデルと真正面から競合する設計\n\nそして興味深いのがリリース時期\n\n一部では、Claude Fableユーザーの\n多くがプレミアムプランへの移行を迫られる\n6月23日に合わせて、OpenAIがGPT-5.6を\n投入するのではないかという見方もあります\nもしこの噂が本当なら\n\nAI業界は再び大きく動くかもしれない\n\n果たしてGPT-5.6はFableを超えるのか。\n\nそれともFableが王座を守るのか。\n\n6月23日は注目の日になる。",
+        "author": {
+          "screenName": "Gencoin8",
+          "name": "Codex研究ラボ"
+        }
+      }
+    },
+    {
+      "id": "2066640491790164226",
+      "text": "I genuinely can't go back to working without AI agents. its like asking someone to start a fire with flint and steel when there's a lighter. The edge it gives you is unfair advantage and I doubt even 0.1% have experienced Fable 5 level of capabilities. You should abuse its capabilities before agents become a common tool.",
+      "author": {
+        "id": "1480655133553963017",
+        "name": "Wynn",
+        "screenName": "wynn60_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1480655223471362056/cZQ0Wu8I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 70,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:54:24 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:54",
+      "createdAtISO": "2026-06-15T21:54:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066640439126749397",
+      "text": "https://t.co/oRvVSjDmoy",
+      "author": {
+        "id": "1469463548036202497",
+        "name": "Fight for Alexandra",
+        "screenName": "StoneSaunders3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1870530143371882496/HhonGgMy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 68,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:54:11 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:54",
+      "createdAtISO": "2026-06-15T21:54:11+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066635212029931520"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Fable's Gambit"
+    },
+    {
+      "id": "2066639540153196873",
+      "text": "Anthropicがまたやりやがりました。\n\n今日辺りから、\"claude -p\" などのSDK利用は、APIレートになる予定だったのだけれども、撤回されました。\n\nしかも、サードパーティーにもサブスク利用を許可するという大きな方向転換です！！めちゃでかすぎる方向転換。これまで偉そうな事を言いながらユーザーを虐めてきて、ここにきての方向転換です。\n\nということなので、今日から、OpenClawやHermes AgentやPiなどで、Opus 4.8が使えます。おめでとうございます。\n\nFable 5の復活はかなり絶望的になりましたね。",
+      "author": {
+        "id": "1649480450560376833",
+        "name": "月読いおり 🧠",
+        "screenName": "tukiyomiiori",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014051436967923714/b97UGBN3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 862,
+        "retweets": 152,
+        "replies": 20,
+        "quotes": 34,
+        "views": 183426,
+        "bookmarks": 397
+      },
+      "createdAt": "Mon Jun 15 21:50:37 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:50",
+      "createdAtISO": "2026-06-15T21:50:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066639449866567795",
+      "text": "『延期は撤回ではない』\n\nAnthropicが、Claude Agent SDK（Claudeを外部の仕組みから動かす開発者向け機能）と `claude -p` の課金変更をいったん止めました。\nこれは単なる値上げ撤回ではなく、AI企業がアプリなのか、インフラなのかを問われている出来事です。\n\n直近のAnthropicには、3つの圧力が同時にかかっています。\nFable 5とMythos 5は、米政府の指示で全ユーザー向けに止まりました。\nClaude Maxの利用量表示をめぐる訴訟報道も出ています。\nさらに開発者側では、サブスク枠を使った自動実行が突然別枠になることへの反発が出ていました。\n\nここで焦点になるのは、価格そのものより『予測可能性』です。\n開発者にとって怖いのは、月額料金が上がることだけではありません。\n昨日まで動いていた前提が、規制、訴訟、課金設計の都合で翌日に変わることです。\n\n今回の見送りは、恒久撤回とは言い切れません。\n通知文は「今日は実施しない」「次は事前に知らせる」という趣旨で、専用credit制度そのものを捨てたとは書いていません。\n公式ヘルプ側にも、まだAgent SDK creditの説明が残っています。\n\nむしろAnthropicは、個人サブスク、開発者向け自動実行、企業利用、政府規制の境界線を引き直している途中だと見た方が自然です。\n短期的には、開発者は従来どおり使える時間を得ました。\nしかし中期的には、Claudeのサブスク枠を本番自動化の土台にするリスクがより明確になりました。\n\nこれから問われるのは、モデル性能だけではありません。\n料金体系が読めるか。\n規制で突然止まらないか。\nサードパーティが安心して上に乗れるか。\n\nAI企業が「アプリ」なのか「インフラ」なのか。\nAnthropicは、そこを市場から試され始めています。\n\nhttps://t.co/aGmYArcteU",
+      "author": {
+        "id": "1473538636553781249",
+        "name": "大田原正幸｜医療AI・ガバナンス｜ Cursorvers Founder",
+        "screenName": "cursorvers",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995493354327756800/rRZJCe6S_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 2,
+        "views": 1634,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 15 21:50:15 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:50",
+      "createdAtISO": "2026-06-15T21:50:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4toLnbsAAP_Nn.jpg",
+          "width": 1226,
+          "height": 856
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066608004464861546",
+        "text": "wow - this is huge!\n\nanthropic is officially walking back their decision about banning programmatic use of claude code subscription quota\n\nwhy is this a big deal?\n\nthis is a signal that anthropic is revisiting their ecosystem strategy which many of us have been criticizing \n\nby allowing invoking claude code programmatically, anthropic will basically extend their subsidized subscription to power a much wider range of applications, not just their own, which effectively means they are leaning more into being an infrastructure provider rather than the super app that eats everything else\n\nthey still have more to do to gain back my trust as a developer but this is a very positive change and i'm happy to see anthropic revisiting their strategy",
+        "author": {
+          "screenName": "kunchenguid",
+          "name": "Kun Chen"
+        }
+      }
+    },
+    {
+      "id": "2066638306272858213",
+      "text": "𝗜’𝘃𝗲 𝗧𝗿𝗶𝗲𝗱 𝗔 𝗟𝗼𝘁 𝗢𝗳 𝗔𝗜 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺𝘀. 𝗪𝗵𝗮𝘁 𝗜 𝗪𝗮𝗻𝘁 𝗜𝘀𝗻’𝘁 𝗠𝗼𝗿𝗲 𝗠𝗼𝗱𝗲𝗹𝘀.\n\n𝗜𝘁’𝘀 𝗘𝗮𝘀𝗶𝗲𝗿 𝗔𝗰𝗰𝗲𝘀𝘀.\n\nAs someone who regularly switches between different AI models depending on the task, one thing gets frustrating fast:\n\nOpening multiple platforms just to find the right model.\n\nThat's why I like the direction https://t.co/9CKQIEPAz7 is taking.\n\nWith Claude Fable 5 now live on https://t.co/9CKQIEPAz7 Web Chat, I don't have to manage another account or another workflow.\n\nI can simply log in and start using it.\n\nWhat stands out to me is the flexibility.\n\nNeed a model for writing?\n\nNeed one for reasoning?\n\nNeed API access for development?\n\nhttps://t.co/9CKQIEPAz7 keeps bringing them together under one roof instead of forcing users to jump between ecosystems.\n\nThe latest addition, Claude Fable 5, is now available across both:\n\n🔹 Web Chat for everyday use.\n\n🔹 API for builders and developers.\n\nThe hidden advantage isn't simply having another frontier model.\n\nIt's reducing friction.\n\nLess time managing tools.\n\nMore time actually building, researching, and creating.\n\nI think that's where AI platforms will compete over the next few years.\n\nNot just on model quality.\n\nBut on how easy they make it for users to access the best intelligence available.\n\nClaude Fable 5 is now part of that growing ecosystem.\n\nI'm definitely giving it a try.\n\n👉 https://t.co/IE5evqPhAj\n\n@BAI_AGI #TRONEcoStar @justinsuntron",
+      "author": {
+        "id": "1687556682585419777",
+        "name": "MR OFFICIAL",
+        "screenName": "MR_0FFICIALL",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059998512796831750/ftT-sx1H_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 107,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:45:43 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:45",
+      "createdAtISO": "2026-06-15T21:45:43+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4sjJhWMAAJTyM.jpg",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4skvoX0AAYUSK.jpg",
+          "width": 1024,
+          "height": 577
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064980872416440656",
+        "text": "📢 Claude Fable 5 Is Now Live on https://t.co/mTw8ldBplF Web Chat!\n\nFollowing its successful API integration, Claude Fable 5 is now fully available on https://t.co/mTw8ldBplF Web Chat. Simply open the web interface and start experiencing the power of Anthropic’s next generation high performance model.\n\nAvailable across both API and Web Chat, enabling seamless access for every AI workflow.\n\n👉 Try it now: https://t.co/vi1PDjFZn0",
+        "author": {
+          "screenName": "BAI_AGI",
+          "name": "B.AI"
+        }
+      }
+    },
+    {
+      "id": "2066636623542935696",
+      "text": "After using Fable 5\n\nI’ve never  had a harder time, opening up a coding agent and getting back to work\n\nFable 5 withdrawals are real",
+      "author": {
+        "id": "1411153087142809603",
+        "name": "Henok",
+        "screenName": "henokcrypto",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2020916318631829504/avP8zW_p_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 156,
+        "retweets": 3,
+        "replies": 16,
+        "quotes": 1,
+        "views": 4740,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jun 15 21:39:01 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:39",
+      "createdAtISO": "2026-06-15T21:39:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066632247944654848",
+      "text": "https://t.co/cgcoGBq7zn\nOpenClawのアップデートがすごい\nJulian Goldie SEO　#AI要約 #OpenClaw\n\nOpenClaw 6.6アップデート要約\n\n🔳アップデート概要\nOpenClawが6月12日にバージョン6.6へ更新され、安全性、速度、対応モデルの拡張を中心に大きく改善された\n\n🔳OpenClaw概要\nOpenClawはPC上で動く無料のオープンソースAIアシスタントで、TelegramやiMessageやWhatsAppやDiscordやTeamsなど普段使うメッセージアプリから操作できる\n\n🔳安全性強化\n承認リクエストは時間内に返答がない場合に自動で拒否されるFail Closed方式になり、AIが許可なしに処理を進めるリスクが下がった\n\n🔳不正入力対策\n許可されていない相手からのメッセージは保存やAI入力に使われず、Webページやメモリ内に隠された悪意ある指示もブロックされやすくなった\n\n🔳メッセージ配信改善\nTelegramではツール利用中に返信が途中で切れる問題が改善され、iMessageでは再起動時の安定性やエラー表示が強化された\n\n🔳対応アプリ改善\nWhatsAppでは再起動後も返信の紐づきが維持され、Discordでは返信が正しく返るようになり、Teamsではグループ操作の安全性が強化された\n\n🔳MCP連携\n外部ツールとつなぐMCPのログイン処理が改善され、既存のブラウザセッションとの連携や幅広い環境での接続が使いやすくなった\n\n🔳速度向上\nコントロールUIの起動と初回返信が高速化され、モデル情報のキャッシュや必要なコマンドだけを読み込む仕組みにより待ち時間が減った\n\n🔳モデル拡張\nOpenRouterへのワンクリックログインに対応し、多数のAIモデルを簡単に使えるようになった\n\n🔳注目機能\nClaude Fable 5のAdaptive Thinkingに対応し、簡単な質問には素早く答え、難しい課題ではより深く考えるようにモデル側が判断できるようになった\n\n🔳実用例\n動画ではAI Profit Boardroom向けに、会員の質問をもとにした投稿案作成、新規会員向け歓迎フロー作成、コンテンツシリーズ設計にOpenClawを活用する例が紹介された\n\n🔳更新推奨\n複数チャネルでAIを使う人、返信切れや遅さに悩んでいた人、安全な承認管理を重視する人には今回のアップデートが特に有用だと説明された\n\n🔳利用時の注意\n更新後は承認設定を確認し、OpenRouterで複数モデルを試し、Claude Fable 5を難しいタスクで検証し、初回返信が遅い場合はコントロールUIを再起動するとよい\n\n🔳講座案内\n動画ではAI Profit BoardroomやAI Success Labへの参加を案内し、OpenClawの導入手順、ライブコーチング、ロードマップ、実用プロンプトの提供を紹介している",
+      "author": {
+        "id": "214620700",
+        "name": "くまごろう",
+        "screenName": "k_koga555",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1871461131707195392/g_IGuVt8_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 416,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:21:38 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:21",
+      "createdAtISO": "2026-06-15T21:21:38+00:00",
+      "media": [],
+      "urls": [
+        "https://www.youtube.com/watch?v=hKuX0t8Azio"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066631854657274236",
+      "text": "Old workflow: You might want to check that library's source.\nFable 5: Fixed their repo, task complete.\n\nMassive efficiency leap. But this autonomy flips the script on guardrails: when an agent is aggressive, the real engineering challenge isn't making it go—it's making it stop. https://t.co/s1NKHladYF",
+      "author": {
+        "id": "1606214712710074370",
+        "name": "MinionLab",
+        "screenName": "MinionLabAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014156174371991552/sm583p4S_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 28,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 476,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:20:04 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:20",
+      "createdAtISO": "2026-06-15T21:20:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4mtfsbQAEvk0R.jpg",
+          "width": 1512,
+          "height": 642
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066630693493383656",
+      "text": "The Trump administration is looking to take financial stakes in OpenAI &amp; Anthropic.\n\nThe recent Anthropic Claude Fable 5 &amp; Mythos 5 restrictions could be a leveraging tool: \n\n\"Maybe this could be kind of a negotiating tactic…” — @steph_palazzolo, AI Reporter https://t.co/3ZIgGklZ8m",
+      "author": {
+        "id": "1881168794",
+        "name": "The Information",
+        "screenName": "theinformation",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1747484907163516928/d_K3Z_hH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 97,
+        "retweets": 18,
+        "replies": 9,
+        "quotes": 11,
+        "views": 22768,
+        "bookmarks": 48
+      },
+      "createdAt": "Mon Jun 15 21:15:28 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:15",
+      "createdAtISO": "2026-06-15T21:15:28+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066630588660908032/vid/avc1/1280x720/CpmHsdmwtGDXR301.mp4?tag=14",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066629618225102966",
+      "text": "【AI最新ニュース TOP3 🤖】2026-06-16\n\n本日のAI業界注目トピックをお届けします。\n\n━━━━━━━━━━━━━━\n1️⃣ G7サミットにOpenAI・DeepMind・Anthropic 3社トップが初参加\n6/15〜17、フランスで開催のG7にSam Altman・Demis Hassabis・Dario Amodeiが一堂に会する史上初の場に。AIガバナンスの国際枠組みが本格的に動き始めるターニングポイントとなる可能性があります。\n\n2️⃣ AnthropicがIPO秘密申請・評価額9,650億ドルで初めてOpenAIを超える\n650億ドルのシリーズH調達後、SECに非公開でIPO届出書を提出。上場時に1兆ドル超となれば史上3位規模のスタートアップ上場に。Claude Fable 5リリースと年間収益ランレート30億ドル達成も追い風で、Anthropicの勢いが止まらない。\n\n3️⃣ Microsoft Build 2026：「Windows はもはや人間だけのものではない」\nSatya Nadella CEOがWindowsをAIエージェント専用プラットフォームとして全面刷新を宣言。Windows Agent Framework・Azure Agent Mesh・Copilot Workspaceを一挙投入し、自社製コーディングAI「Project Polaris」でGitHub Copilotのデフォルトモデルを8月から切り替え予定。エンタープライズAI戦略が一段階上のステージへ。\n\n#AI #人工知能 #LLM #テクノロジー #AIニュース",
+      "author": {
+        "id": "2023889480877510656",
+        "name": "最新AI情報Lab@世界のAIニュース",
+        "screenName": "world_ai_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2023890749222440960/2n3d-VEe_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 201,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:11:11 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:11",
+      "createdAtISO": "2026-06-15T21:11:11+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK4kr5ibIAAxFzK.jpg",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2066626913330999591",
+      "text": "【TechFeedまとめ】2026-06-16\n\n■ Zenn\n1. 【AI Build新シリーズ：第3回】おっちゃんに「使い捨てLinux」を授けよう！「Code Execution」と自律型エージェント\nhttps://t.co/nFYJwqicKl\n\n2. AIエージェントに長時間作業を任せるとき、人間は何を見るべきか\nhttps://t.co/k8CLPBWJGD\n\n3. Claude Managed Agents の scheduled deployment で無人 cron 実行\nhttps://t.co/LlANzdu3KQ\n\n4. 運用の現場から見た、本番で動かないAI Agentの設計チェックリスト\nhttps://t.co/fwKBmHeIBj\n\n5. 「機能を作るな」は、AI時代には「Issueを積むな」なのかもしれない\nhttps://t.co/c58zTlzTuS\n\n6. 生成AIに「長い仕様」をどう読ませるか — 規模の入力設計\nhttps://t.co/v1EU4zmXUk\n\n7. ローカルSLM vs Gemini で日本語RAGチャットボットを比較してみた（4モデル・15問）\nhttps://t.co/pMpjSQtWCc\n\n8. 技術文書RAGの検索品質・ハルシネーション対策・コストを実測する\nhttps://t.co/Y9dzAhjwHQ\n\n9. 重くなったClaude Codeを軽くする ― コンテキスト注入を228KBから48KBに削った監査\nhttps://t.co/wf5CMbRvIj\n\n10. Claude CodeとCodexを並列稼働したら競合祭りになったので、AI専用ロックファイルを作った\nhttps://t.co/D84kGyvdC1\n\n11. 実際にどんなマインドマップが生成されるか：QAスキルの出力を見てみよう\nhttps://t.co/b9aUy2lebC\n\n12. Zabbixは好きだけど、Zabbix Serverは好きになれなかったので監視ソリューション\"yagura\"を作った話\nhttps://t.co/rrtGCV9Lr6\n\n■ Qitta\n1. AIはクジラをどう救うのか：熱画像と人間の確認で船舶衝突を防ぐWhaleSpotter\nhttps://t.co/8VBE1gUbxt\n\n2. アノアプリ\nhttps://t.co/XYFbt1kSYN\n\n3. AI時代のドキュメントは、AIに渡すためのコンテキストになる？\nhttps://t.co/bC8vDEbFIk\n\n4. AIで実装は速くなったのに、コードが読めるようにならない理由 — “受け身の要約”を卒業して、知らないコードをAIと読み解く実践ガイド\nhttps://t.co/CMHjaUD3TC\n\n5. Codex Fable5 Skill を作りました。\nhttps://t.co/iNO6SvdfK3\n\n6. 生成AIに\"伝わる\"設計書の書き方 ― 曖昧さを消す構造・単一ソース・用語定義\nhttps://t.co/MKyEA5jrva\n\n7. GitHubドキュメントをAI自動生成するツール選び——DeepWiki・readme-ai・Copilotとの比較\nhttps://t.co/S2SLpYQsqf\n\n8. AIに塊魂を作らせたら、実在の東京14,563棟を呑み込むゲームになった ——150エージェントの制作ログ全解剖\nhttps://t.co/qEE3mqsCjU\n\n9. AIで実装は速くなったのに、コードが読めるようにならない理由 — “受け身の要約”を卒業して、知らないコードをAIと読み解く実践ガイド\nhttps://t.co/CMHjaUD3TC\n\n10. GitHubドキュメントをAI自動生成するツール選び——DeepWiki・readme-ai・Copilotとの比較\nhttps://t.co/S2SLpYQsqf\n\n11. 個人開発の日記アプリ「Daily Diary」を Claude Fable 5 でレビューしてもらった記録 — 見つかったバグと所感\nhttps://t.co/89MAtDeBtq\n\n12. 【小技】AIの出力が途切れる問題を「バッククォート4つ」で一発解決する\nhttps://t.co/RnbVuGSc7X\n\n13. 「AIには解けない」と言われたAlpacaHack B-sideを、Codexで20時間かけて解いた\nhttps://t.co/RNR8uQFTE5\n\n14. 【Claude Code】codex-plugin-ccの導入方法と使用方法\nhttps://t.co/yFPzPX5IDr\n\n15. Codex Fable5 Skill を作りました。\nhttps://t.co/iNO6SvdfK3\n\n16. AIで実装は速くなったのに、コードが読めるようにならない理由 — “受け身の要約”を卒業して、知らないコードをAIと読み解く実践ガイド\nhttps://t.co/CMHjaUD3TC\n\n17. Codex Fable5 Skill を作りました。\nhttps://t.co/iNO6SvdfK3\n\n18. 生成AIに\"伝わる\"設計書の書き方 ― 曖昧さを消す構造・単一ソース・用語定義\nhttps://t.co/MKyEA5jrva\n\n19. AI駆動開発のセキュリティ、結局どこまでやればいい？\nhttps://t.co/oyPpMzgRb7\n\n20. 「コードは1行も書かない」と決めた4ヶ月 — 完全AI駆動で300ページをNext.jsに移植した話\nhttps://t.co/OmgYiMh6eb\n\n21. Claude Managed Agents の自社サンドボックスとMCPトンネル：エンタープライズ境界内でエージェントを動かす設計判断\nhttps://t.co/BBQEyvA27y\n\n22. VSCode の Claude Code で kSQL MCP サーバーを使って kintone を SQL で操作する\nhttps://t.co/rzcmMBtEcz\n\n23. AIに大規模コードを“全部読ませて”ませんか? ─ “地図”を渡したら、概要把握が **145,978 → 289 トークン** になった話【comP × MAGATAMA】\nhttps://t.co/5jVdKePNEd\n\n■ Aws\n1. 週刊生成AI with AWS – 2026/6/8 週\nhttps://t.co/zmGsNad2LW\n\n2. 週刊AWS – 2026/6/8週\nhttps://t.co/XahPP9w9jr\n\n3. AWS クレジット詳細ページのご紹介\nhttps://t.co/m9OvUNciXw\n\n4. 週刊AWS – 2026/6/8週\nhttps://t.co/XahPP9w9jr\n\n■ Tech blogs\n1. Growing the Cloudflare AI team with talent from Ensemble AI\nhttps://t.co/ooHLtWj5NN\n\n2. AWS WAF adds AI traffic monetization capability to help content owners charge AI bots for content access\nhttps://t.co/ciiKdfP4QK\n\n3. AWS Weekly Roundup: AWS FinOps Agent in preview, Gemma 4 on Bedrock, Kiro Pro Max, and more (June 15, 2026)\nhttps://t.co/gZYQMrtFit\n\n4. \"They screwed us\": Personality clashes sent Anthropic's models offline\nhttps://t.co/IT7JI3aFSg\n#TechFeed #開発\n\n【PR】CursorのProプラン（月$20）が高くて迷っていた方に朗報です！\n下記の招待リンクから新規登録すると、初月が【半額（実質$10）】で使えます。\n通常の無料枠だと物足りない方、1ヶ月だけ格安でフル機能を試してみませんか？👇\nhttps://t.co/xzPJNE8Dha",
+      "author": {
+        "id": "1890906985987784704",
+        "name": "DogCart",
+        "screenName": "Masato1864646",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1890908708311547904/EsBX1VTZ_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 740,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 15 21:00:26 +0000 2026",
+      "createdAtLocal": "2026-06-16 05:00",
+      "createdAtISO": "2026-06-15T21:00:26+00:00",
+      "media": [],
+      "urls": [
+        "https://zenn.dev/sesamy_jp/articles/efa78622d67447",
+        "https://zenn.dev/taketake_skills/articles/ai-agent-long-run-human-checkpoints"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    }
+  ]
+}

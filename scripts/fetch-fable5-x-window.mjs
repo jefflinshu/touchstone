@@ -71,6 +71,18 @@ function dayAfter(day) {
   return date.toISOString().slice(0, 10)
 }
 
+function asiaShanghaiDate(raw) {
+  if (!raw) return ''
+  const date = new Date(raw)
+  if (Number.isNaN(date.getTime())) return ''
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(date)
+}
+
 function normalizeHandle(raw) {
   return String(raw || '').replace(/^@/, '').trim().toLowerCase()
 }
@@ -231,7 +243,7 @@ function normalizePost(post, fallbackHandle = '') {
     url,
     text,
     createdAtISO,
-    date: createdAtISO ? createdAtISO.slice(0, 10) : '',
+    date: asiaShanghaiDate(createdAtISO),
     metrics,
     media: getMedia(post),
     raw: post,
@@ -433,7 +445,7 @@ function writeDailyPosts(postsForWindow) {
 
   const byDay = new Map()
   for (const post of postsForWindow) {
-    const day = post.date || String(post.createdAtISO || '').slice(0, 10) || 'unknown'
+    const day = post.date || asiaShanghaiDate(post.createdAtISO) || 'unknown'
     if (!byDay.has(day)) byDay.set(day, [])
     byDay.get(day).push(post)
   }
