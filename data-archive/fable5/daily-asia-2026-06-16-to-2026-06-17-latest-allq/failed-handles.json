@@ -1,0 +1,82 @@
+[
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (built OR made OR created OR recreated OR designed OR \"one prompt\" OR \"one-shot\" OR \"one shotted\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (website OR \"landing page\" OR \"web app\" OR frontend OR react OR nextjs OR threejs))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (website OR \"landing page\" OR \"web app\" OR frontend OR react OR nextjs OR threejs)) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (design OR ui OR ux OR figma OR portfolio OR \"hero section\" OR \"liquid glass\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (design OR ui OR ux OR figma OR portfolio OR \"hero section\" OR \"liquid glass\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (animation OR animated OR motion OR cinematic OR video OR \"motion design\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (animation OR animated OR motion OR cinematic OR video OR \"motion design\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (3d OR blender OR \"three.js\" OR threejs OR voxel OR model OR scene))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (3d OR blender OR \"three.js\" OR threejs OR voxel OR model OR scene)) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (code OR coding OR repo OR repository OR refactor OR migration OR audit OR debugging))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (code OR coding OR repo OR repository OR refactor OR migration OR audit OR debugging)) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (mcp OR agent OR workflow OR tool OR automation OR dashboard))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (mcp OR agent OR workflow OR tool OR automation OR dashboard)) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (compare OR compared OR benchmark OR versus OR \"vs Opus\" OR \"vs GPT\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (compare OR compared OR benchmark OR versus OR \"vs Opus\" OR \"vs GPT\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (demo OR showcase OR \"look what\" OR \"insane\" OR \"crazy\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") (demo OR showcase OR \"look what\" OR \"insane\" OR \"crazy\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Fable one shotted\" OR \"Fable 5 one shotted\" OR \"Claude one-shotted\" OR \"Claude Fable one prompt\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Fable one shotted\" OR \"Fable 5 one shotted\" OR \"Claude one-shotted\" OR \"Claude Fable one prompt\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"made this video\" OR \"created this video\" OR \"couple of prompts\") (\"Fable\" OR \"Mythos\" OR \"Claude\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"made this video\" OR \"created this video\" OR \"couple of prompts\") (\"Fable\" OR \"Mythos\" OR \"Claude\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"full Minecraft clone\" OR \"complete Pokemon clone\" OR \"one-shotted Minecraft\" OR \"full game\") (\"Fable\" OR \"Claude\" OR \"Mythos\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"full Minecraft clone\" OR \"complete Pokemon clone\" OR \"one-shotted Minecraft\" OR \"full game\") (\"Fable\" OR \"Claude\" OR \"Mythos\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"GPT Image\" OR \"Blender MCP\" OR \"Higgsfield MCP\") (\"Fable\" OR \"Claude\" OR \"Mythos\"))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"GPT Image\" OR \"Blender MCP\" OR \"Higgsfield MCP\") (\"Fable\" OR \"Claude\" OR \"Mythos\")) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:videos)",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:videos) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media)",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search ((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") has:media) --type latest --since 2026-06-15 --until 2026-06-18 --exclude retweets --min-likes 0 -n 80 --json"
+  },
+  {
+    "query": "((\"Claude Fable 5\" OR \"Fable 5\" OR \"Claude Mythos\" OR \"Mythos 5\") min_faves:10)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 7.0s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.4s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.8s (attempt 3/3)\n"
+  }
+]

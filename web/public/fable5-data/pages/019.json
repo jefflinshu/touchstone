@@ -1,5 +1,74 @@
 [
   {
+    "id": "wizardbrainz-2064729222984474791",
+    "title": "Fable 5 comparison with other models",
+    "author": "wbk ᕦ(ò_ó )ᕤ",
+    "handle": "@wizardbrainz",
+    "sourceUrl": "https://x.com/wizardbrainz/status/2064729222984474791",
+    "date": "2026-06-10",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d",
+      "research"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "3d",
+      "research",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Fable vs GPT 5.5 decompiling Freelancer and replicating its ship flight/camera model in WebGL.  Left Codex was struggling after ~20 prompts.  Right Fable one shot got ~80%, after ~5 more prompts it is ~95% correct.  (Purely for throw away private research purposes) https://t.co/aoEVo0kSBW",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 100,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064728954435768320/vid/avc1/3840x2160/5FnsJlX4vAkkbmeC.mp4?tag=27",
+      "https://video.twimg.com/amplify_video/2064728970051059713/vid/avc1/3840x2160/z5kkukKzJK5Ku3Tf.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "3d-gen"
+      ],
+      "evidence": [
+        "benchmark-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "threejs"
+      ],
+      "risk": [
+        "benchmark-claim"
+      ]
+    },
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2013142088997613568/ANKXT5_z_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/wizardbrainz.jpg https://pbs.twimg.com/profile_images/2013142088997613568/ANKXT5_z_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/wizardbrainz-2064729222984474791.jpg",
+    "avatarUrl": "/fable5-avatars/wizardbrainz.jpg"
+  },
+  {
     "id": "muathmusings-2064575777862025572",
     "title": "perfect clone of planet earth created with Fable 5",
     "author": "Muath",
@@ -35,7 +104,7 @@
       "https://pbs.twimg.com/media/HKbYuhDXwAA6Pfh.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -106,7 +175,7 @@
       "https://video.twimg.com/amplify_video/2064705747120984064/vid/avc1/720x1280/02mAzCY3QP2hNGhp.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -171,7 +240,7 @@
       "https://video.twimg.com/amplify_video/2064487656424427520/vid/avc1/1354x720/6YFUAp9ObJ7sb4tr.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -238,7 +307,7 @@
       "https://video.twimg.com/amplify_video/2064701367294324737/vid/avc1/1280x720/w5vPixzWBgaRlOSm.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -303,7 +372,7 @@
       "https://video.twimg.com/amplify_video/2064368735561883648/vid/avc1/720x1280/MejVkIgEqBVZX4zG.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -379,7 +448,7 @@
       "https://video.twimg.com/amplify_video/2064032015062536192/vid/avc1/1080x1080/gMn-GhsRMq9OlPe6.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -451,7 +520,7 @@
       "https://video.twimg.com/amplify_video/2064048479882690561/vid/avc1/1080x1920/jKDAQlfbs4Z-oQcq.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -526,7 +595,7 @@
       "https://video.twimg.com/amplify_video/2064190609720770560/vid/avc1/720x868/Mudj7iL72-UFlEQ7.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -592,7 +661,7 @@
       "https://video.twimg.com/amplify_video/2064358545944907776/vid/avc1/1320x2682/KS4S06b1pjvJbj1e.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -656,7 +725,7 @@
       "https://video.twimg.com/amplify_video/2063944343925170176/vid/avc1/1208x718/an-sWN9v9AkKOXZj.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -727,7 +796,7 @@
       "https://video.twimg.com/amplify_video/2058023086621097984/vid/avc1/1280x720/B4_-Ik0lJ_aBvrni.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],

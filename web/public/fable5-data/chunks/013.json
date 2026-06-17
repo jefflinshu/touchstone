@@ -1,5 +1,78 @@
 [
   {
+    "id": "realarbrand-2064906719059447958",
+    "title": "tested Claude Fable 5 with the Blender MCP connector",
+    "author": "Fen",
+    "handle": "@realarbrand",
+    "sourceUrl": "https://x.com/realarbrand/status/2064906719059447958",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d",
+      "agents",
+      "prompts"
+    ],
+    "media": "image",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "3d",
+      "agents",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I tested Claude Fable 5 with the Blender MCP connector. I'm new to Blender, so the prompt was just \"build me a lighthouse in the style of each Warcraft 3 faction.\"\n\nIt wrote the Python, screenshotted its own work, caught its mistakes, and fixed them. Then rendered these. https://t.co/MnEpEp2MVD",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 54,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKgFi2-bYAA3OMB.jpg",
+      "https://pbs.twimg.com/media/HKgFi2_a0AAlvJF.jpg",
+      "https://pbs.twimg.com/media/HKgFi29boAAPnxm.jpg",
+      "https://pbs.twimg.com/media/HKgFi3DagAANS5m.jpg"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Describes an agentic workflow around Claude Fable 5, focused on 3D prototyping rather than a simple chat response."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "image",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "blender",
+        "mcp"
+      ],
+      "risk": []
+    },
+    "mediaCacheError": "Command failed: curl -L --fail --max-time 12 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/realarbrand-2064906719059447958.jpg https://pbs.twimg.com/media/HKgFi2-bYAA3OMB.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2024960469254254592/RLzpWXrA_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/realarbrand.jpg https://pbs.twimg.com/profile_images/2024960469254254592/RLzpWXrA_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/realarbrand-2064906719059447958.jpg",
+    "avatarUrl": "/fable5-avatars/realarbrand.jpg"
+  },
+  {
     "id": "mobinmithun-2065069714125255135",
     "title": "Tutorial for animated award-winning websites",
     "author": "Mobin Mithun",
@@ -40,7 +113,7 @@
       "https://video.twimg.com/amplify_video/2065069176595877888/vid/avc1/1662x1080/NapMX0IO5VlwQPZB.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -109,7 +182,7 @@
       "https://video.twimg.com/amplify_video/2065062760669663232/vid/avc1/2956x2160/W0_rMsxQ4nOG3Twc.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -170,7 +243,7 @@
       "https://video.twimg.com/amplify_video/2064922369458614272/vid/avc1/1920x1080/pXznPoSTvmX2bDq-.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -239,7 +312,7 @@
       "https://video.twimg.com/amplify_video/2065097840238411776/vid/avc1/1516x1080/YqFjBIFbzOGnO7-l.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -308,7 +381,7 @@
       "https://video.twimg.com/amplify_video/2065067957110054912/vid/avc1/720x796/6WiLtZL50uiItyHs.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -378,7 +451,7 @@
       "https://pbs.twimg.com/media/HKghi4faQAA6xcJ.png"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -448,7 +521,7 @@
       "https://pbs.twimg.com/media/HKiWCnAawAA1wr7.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -520,7 +593,7 @@
       "https://pbs.twimg.com/media/HKggYoha8AAvW-2.png"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -591,7 +664,7 @@
       "https://video.twimg.com/amplify_video/2065091917843435523/vid/avc1/1458x918/yaIJshapyC__EaCJ.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -657,7 +730,7 @@
       "https://video.twimg.com/amplify_video/2064657060428709888/vid/avc1/1912x1286/O6wY3aezUpQm24tf.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-13T06:53:05.514Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "official-claudeai-case-library-2026-06-12",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -713,7 +786,7 @@
       "https://video.twimg.com/amplify_video/2064472128926216192/vid/avc1/3840x2160/PbdHT9eQGNTeE5uC.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -776,7 +849,7 @@
       "https://pbs.twimg.com/media/HKZSlPVbIAADvSx.jpg"
     ],
     "firstSeenAt": "2026-06-11T16:31:07.318Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "recent-week-2026-06-05-to-2026-06-11",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -844,7 +917,7 @@
       "https://video.twimg.com/amplify_video/2064550784411533312/vid/avc1/2768x1504/V5TwRbUapg8Uq4eT.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:21.735Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -908,7 +981,7 @@
       "https://video.twimg.com/amplify_video/2064496512973803520/vid/avc1/1920x1076/xHpwIXZBfPJ-0V_3.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T16:01:29.453Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "recent-week-2026-06-05-to-2026-06-11",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -978,7 +1051,7 @@
       "https://video.twimg.com/amplify_video/2064427396556546048/vid/avc1/1920x1080/eblcZyNi2Vwl5iRH.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T16:42:24.493Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "recent-2026-06-11-to-2026-06-12",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -1045,7 +1118,7 @@
       "https://video.twimg.com/amplify_video/2064535418092376064/vid/avc1/3620x2160/Wk-XDTkUVYXaI2g9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1101,7 +1174,7 @@
       "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1162,7 +1235,7 @@
       "https://video.twimg.com/amplify_video/2064397274609033216/vid/avc1/1280x720/O58ETHyremKTPAeZ.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11"
@@ -1223,7 +1296,7 @@
       "https://video.twimg.com/amplify_video/2064504372114206720/vid/avc1/1864x1344/qAoQzOOVrmoot0VY.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11"
@@ -1288,7 +1361,7 @@
       "https://video.twimg.com/amplify_video/2064574548146860032/vid/avc1/1820x1350/uxu8m25F0QceVBMl.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1359,7 +1432,7 @@
       "https://video.twimg.com/amplify_video/2064514618593046528/vid/avc1/3448x2134/J08D6EtQPlgz72jV.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1424,7 +1497,7 @@
       "https://video.twimg.com/amplify_video/2064549693569576961/vid/avc1/3840x2160/OIeoBTMFWRWLgl79.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1491,7 +1564,7 @@
       "https://video.twimg.com/amplify_video/2064612577850613761/vid/avc1/1920x1080/ciB50FhAnV2Z2Pca.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:46.239Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -1520,67 +1593,6 @@
     "categories": [
       "videos",
       "design"
-    ]
-  },
-  {
-    "id": "aurelien_gz-2064459148016619928",
-    "title": "Website or web app built with Fable 5",
-    "author": "Aurelien",
-    "handle": "@aurelien_gz",
-    "sourceUrl": "https://x.com/aurelien_gz/status/2064459148016619928",
-    "date": "2026-06-10",
-    "kind": "showcase",
-    "scene": "websites",
-    "media": "video",
-    "heat": "1,357 likes · 58 reposts",
-    "tags": [
-      "fable5",
-      "websites",
-      "web"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "mind blown..\n\ngave claude fable 5 complete freedom to make a website about itself\n\nthe result is wild https://t.co/jFHHxcLLvz",
-    "metrics": {
-      "likes": 1357,
-      "reposts": 58,
-      "replies": 40,
-      "quotes": 29,
-      "views": 444175,
-      "bookmarks": 993
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064458963957985280/vid/avc1/1724x1080/5XDvsMcK1iOIwWOd.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500",
-      "recent-week-2026-06-05-to-2026-06-11"
-    ],
-    "summary": [
-      "Shows a website or web-app build associated with Claude Fable 5."
-    ],
-    "facets": {
-      "artifactType": "website",
-      "medium": "video",
-      "capability": [],
-      "evidence": [
-        "commentary"
-      ],
-      "domain": [
-        "web-design"
-      ],
-      "tech": [],
-      "risk": []
-    },
-    "mediaThumbUrl": "/fable5-media/aurelien_gz-2064459148016619928.jpg",
-    "avatarUrl": "/fable5-avatars/aurelien_gz.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2059734683982663684/nS2pzekl_normal.jpg",
-    "categories": [
-      "websites"
     ]
   }
 ]

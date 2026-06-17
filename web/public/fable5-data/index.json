@@ -1,9 +1,10 @@
 {
-  "updatedAt": "2026-06-16",
-  "lastFetchedAt": "2026-06-16T08:57:28.917Z",
-  "cliStatus": "Loaded 2975 locally archived X posts from 22 fetch runs; collection now has 467 source-linked cards and 450 creator profiles.",
+  "updatedAt": "2026-06-17",
+  "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+  "cliStatus": "Loaded 2995 locally archived X posts from 25 fetch runs; collection now has 468 source-linked cards and 435 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
+    "daily-asia-2026-06-16-to-2026-06-17-latest-allq",
     "incremental-2026-06-15-to-2026-06-16-q5",
     "backfill-asia-2026-06-12-to-2026-06-15-latest-allq",
     "incremental-2026-06-15-to-2026-06-16-creators15",
@@ -21,7 +22,7 @@
     "recent-2026-06-11-to-2026-06-12",
     "recent-week-2026-06-05-to-2026-06-11"
   ],
-  "total": 467,
+  "total": 468,
   "categoryCounts": [
     {
       "key": "games",
@@ -37,7 +38,7 @@
     },
     {
       "key": "videos",
-      "count": 129
+      "count": 130
     },
     {
       "key": "3d",
@@ -49,11 +50,11 @@
     },
     {
       "key": "agents",
-      "count": 85
+      "count": 86
     },
     {
       "key": "prompts",
-      "count": 148
+      "count": 149
     },
     {
       "key": "code",
@@ -61,7 +62,7 @@
     },
     {
       "key": "research",
-      "count": 33
+      "count": 34
     },
     {
       "key": "safety",
@@ -81,7 +82,7 @@
     {
       "file": "pages/000.json",
       "count": 24,
-      "fromDate": "2026-06-16",
+      "fromDate": "2026-06-17",
       "toDate": "2026-06-16"
     },
     {
@@ -194,7 +195,7 @@
     },
     {
       "file": "pages/019.json",
-      "count": 11,
+      "count": 12,
       "fromDate": "2026-06-10",
       "toDate": "2026-06-08"
     }
@@ -203,7 +204,7 @@
     {
       "file": "chunks/000.json",
       "count": 24,
-      "fromDate": "2026-06-16",
+      "fromDate": "2026-06-17",
       "toDate": "2026-06-16"
     },
     {
@@ -316,12 +317,17 @@
     },
     {
       "file": "chunks/019.json",
-      "count": 11,
+      "count": 12,
       "fromDate": "2026-06-10",
       "toDate": "2026-06-08"
     }
   ],
   "shards": [
+    {
+      "date": "2026-06-17",
+      "file": "2026-06-17.json",
+      "count": 1
+    },
     {
       "date": "2026-06-16",
       "file": "2026-06-16.json",

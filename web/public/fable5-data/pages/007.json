@@ -1,5 +1,66 @@
 [
   {
+    "id": "tanabe_fragm-2065307983941116364",
+    "title": "① Claude Fable 5にストーリーボードジェネレーター制作を依頼",
+    "author": "タナベ | 動画・音声生成AI解説",
+    "handle": "@tanabe_fragm",
+    "sourceUrl": "https://x.com/tanabe_fragm/status/2065307983941116364",
+    "date": "2026-06-12",
+    "kind": "showcase",
+    "scene": "design",
+    "categories": [
+      "design"
+    ],
+    "media": "image",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "design"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "① Claude Fable 5にストーリーボードジェネレーター制作を依頼\n\n使用したプロンプトはこちら↓\n-----------------\n私は画像生成AIの「GPT Images 2.0」向けの、ストーリーボード画像を作れるプロンプトを作れるツールを作りたい。\n要はストーリーボード向けプロンプトジェネレーターです。\n生成するストーリーボードは、動画生成AI（Seedance 2.0）に参照させるのに使用します。\n\n以下の項目を選択し、プロンプトを作れるツールを作ってください。\n入力された情報をもとに、最終的にClaudeがGPT Images 2.0向けのプロンプトを生成するツール。\n\nストーリーボートのタイトル：※必須（ストーリーボートにタイトル名を表示させるか選択できるようにして）\n映像の形式：※必須\nストーリー系\nCM・広告系\n教育・解説系\n情報発信系\nエンタメ系\nアート・表現系\nなどを選択できるようにして。\nストーリー概要：概要を入力（ストーリー概要を入力したらエンハンスできる機能もつけて。もしここが空だったら、タイトル・形式を参考にして良い感じのストーリーを作って。）\nスタイル：アニメ（日本の高品質アニメーション）・アニメ（ピクサー風）・実写・その他（フォームに記入）\nパネル数：4〜20までを選択\nパネルの形：正方形・横長・縦長を選択\nパネルに数値を入れるか？：オンにするとパネルに数値が付与される\nパネルに細かい情報を入れるか？：オンにすると、それぞれのパネルに「アクション」「カメラワーク」「セリフ」が記載される\nキャラクターシートの有無：ストーリーボードにキャラクターシートを含める場合はチェック\n\n何か不明な箇所や、細かく定義したい箇所があったら遠慮せず指摘して。\n要は動画生成AIが参照するのに適切なストーリーボードを作りたい。\nもし適切なストーリーボードを作るために必要な情報や、逆にいらない情報があったら指摘して。\n\nツールはClaude上で使えるようにして。\nクリエイターにとって馴染みがあり、使いやすいUI・UX。\n-----------------\n\nすると、以下のようなフォームを作ってくれます。",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 102,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKlx10naMAAaHwL.jpg"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "fetchRuns": [
+      "today-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Summarizes an original X post about ① Claude Fable 5にストーリーボードジェネレーター制作を依頼"
+    ],
+    "facets": {
+      "artifactType": "image",
+      "medium": "image",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaCacheError": "Command failed: curl -L --fail --max-time 12 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/tanabe_fragm-2065307983941116364.jpg https://pbs.twimg.com/media/HKlx10naMAAaHwL.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2046030035241607168/148F4m4X_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/tanabe_fragm.jpg https://pbs.twimg.com/profile_images/2046030035241607168/148F4m4X_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/tanabe_fragm-2065307983941116364.jpg",
+    "avatarUrl": "/fable5-avatars/tanabe_fragm.jpg"
+  },
+  {
     "id": "spectromachina-2065337613913870801",
     "title": "Prompt-driven motion or animation demo",
     "author": "Spectro 🇺🇸",
@@ -37,7 +98,7 @@
       "https://video.twimg.com/amplify_video/2065337066183860224/vid/avc1/1964x1080/IK0H6ARj5AWJ0fVk.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0",
       "today-2026-06-12-latest-target500"
@@ -100,7 +161,7 @@
       "https://pbs.twimg.com/media/HKktLpwX0AAreYC.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -176,7 +237,7 @@
       "https://video.twimg.com/amplify_video/2065113392562470915/vid/avc1/1920x1080/vm1uZJhbmrmbogzn.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -248,7 +309,7 @@
       "https://pbs.twimg.com/media/HKi8aJOa4AEtUAi.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500",
       "recent-2026-06-11-to-2026-06-12"
@@ -312,7 +373,7 @@
       "https://video.twimg.com/amplify_video/2065263338335170560/vid/avc1/960x540/t7SzEM4u04UzN2vU.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -379,7 +440,7 @@
       "https://pbs.twimg.com/media/HKlGQ-ZWIAAE_E3.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -453,7 +514,7 @@
       "https://pbs.twimg.com/media/HKlhHStacAA3N-A.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -517,7 +578,7 @@
       "https://video.twimg.com/amplify_video/2065283421287727104/vid/avc1/2560x1440/ScLm8suBZlsF0Hmf.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -581,7 +642,7 @@
       "https://video.twimg.com/ext_tw_video/2065290508461547520/pu/vid/avc1/720x1280/f5PWf39fwv01LhI2.mp4?tag=12"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -646,7 +707,7 @@
       "https://video.twimg.com/amplify_video/2041002482588135424/vid/avc1/1920x1080/DcQZyDG-puAyIf9J.mp4?tag=21"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0",
       "today-2026-06-12-latest-target500"
@@ -708,7 +769,7 @@
       "https://video.twimg.com/amplify_video/2065339347088601088/vid/avc1/2160x3840/93Lrew2n_zyaT9jF.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0",
       "today-2026-06-12-latest-target500"
@@ -774,7 +835,7 @@
       "https://pbs.twimg.com/media/HKmCkIda4AAoGyg.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -843,7 +904,7 @@
       "https://video.twimg.com/amplify_video/2064403148836397056/vid/avc1/3134x2160/0shHLjSp9UZ2sWEA.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -915,7 +976,7 @@
       "https://video.twimg.com/amplify_video/2065272865109544960/vid/avc1/1920x1080/09ZMIkm0bZC-ez9p.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -984,7 +1045,7 @@
       "https://pbs.twimg.com/media/HKi3XiNWoAAaI7h.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1053,7 +1114,7 @@
       "https://pbs.twimg.com/media/HKmTKdaXgAAfVrq.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0",
       "today-2026-06-12-latest-target500"
@@ -1120,7 +1181,7 @@
       "https://pbs.twimg.com/media/HKi34c6boAApKmZ.png"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1182,7 +1243,7 @@
       "https://video.twimg.com/amplify_video/2065326119440576512/vid/avc1/1790x896/DGEwh5hyv-FVrEEu.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1244,7 +1305,7 @@
       "https://video.twimg.com/amplify_video/2065343961217282048/vid/avc1/1456x1080/nojOAkynFtzQp0wa.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0",
       "today-2026-06-12-latest-target500"
@@ -1302,7 +1363,7 @@
       "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1361,7 +1422,7 @@
       "https://video.twimg.com/amplify_video/2065345516620435456/vid/avc1/1280x720/IQPTEGXLfeIYRrGx.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0"
     ],
@@ -1423,7 +1484,7 @@
       "https://video.twimg.com/tweet_video/HKlE5rPaIAA2txj.mp4"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1488,7 +1549,7 @@
       "https://pbs.twimg.com/media/HKjC2yDXEAEdCFn.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1515,73 +1576,5 @@
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/escher2112.jpg https://pbs.twimg.com/profile_images/2041631505349537792/_pbKmTlN_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
     "mediaThumbUrl": "/fable5-media/escher2112-2065114711239041224.jpg",
     "avatarUrl": "/fable5-avatars/escher2112.jpg"
-  },
-  {
-    "id": "therealscale-2065106423789355130",
-    "title": "Landing page generated with Fable 5",
-    "author": "scale",
-    "handle": "@therealscale",
-    "sourceUrl": "https://x.com/therealscale/status/2065106423789355130",
-    "date": "2026-06-12",
-    "kind": "showcase",
-    "scene": "websites",
-    "categories": [
-      "websites",
-      "design",
-      "prompts"
-    ],
-    "media": "video",
-    "heat": "X post",
-    "tags": [
-      "fable5",
-      "websites",
-      "design",
-      "prompts",
-      "prompt",
-      "web"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Yeni Claude Fable 5 AI gibi duran UI ve Frontend tasarımını öldürdü.\n\nTek prompt'ta yaptığı landing page 👇\n\nhttps://t.co/BZwpsHBwoE",
-    "metrics": {
-      "likes": 0,
-      "reposts": 0,
-      "replies": 0,
-      "quotes": 0,
-      "views": 19,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064467866770935809/vid/avc1/2880x2160/P_zuo67PCUdKYJ3d.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-latest-target500"
-    ],
-    "summary": [
-      "Shows a website or web-app build associated with Claude Fable 5."
-    ],
-    "facets": {
-      "artifactType": "website",
-      "medium": "video",
-      "capability": [
-        "design-gen"
-      ],
-      "evidence": [
-        "commentary"
-      ],
-      "domain": [
-        "web-design"
-      ],
-      "tech": [],
-      "risk": []
-    },
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2010704540320854016/tMpcMmPF_normal.jpg",
-    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/therealscale.jpg https://pbs.twimg.com/profile_images/2010704540320854016/tMpcMmPF_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": "/fable5-media/therealscale-2065106423789355130.jpg",
-    "avatarUrl": "/fable5-avatars/therealscale.jpg"
   }
 ]

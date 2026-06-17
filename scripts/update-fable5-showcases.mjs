@@ -691,6 +691,8 @@ function isNonCaseAnnouncement(post) {
   const media = Array.isArray(post?.media) ? post.media : []
   const strongArtifact = hasStrongArtifactEvidence(post)
 
+  if (isSystemPromptLeakText(text)) return true
+  if (isMoneyHustleText(text) && !strongArtifact) return true
   if (/\bnot made with claude fable\b|\bnot made with fable\b/i.test(text)) return true
   if (/\b(?:localhost|127\.0\.0\.1)\b/i.test(text) && !hasPublicEvidence(text) && !extractPrompt(text)) return true
 
@@ -740,8 +742,31 @@ function isNonCaseAnnouncement(post) {
   return false
 }
 
+function isSystemPromptLeakText(text) {
+  return (
+    /\b(?:system prompt|leaked prompt|prompt leak|full system prompt|hidden instruction|github with \d+[,\d]* stars|pliny the liberator|cl4r1t4s)\b/i.test(
+      text
+    ) ||
+    /(?:系统提示|系統提示|完整提示|提示被完整|隐藏指令|隱藏指令|洩露|泄露|扒出来|曝光|120,000\s*(?:字符|個字符)|1,?5[89]5\s*(?:行|lines))/i.test(
+      text
+    )
+  )
+}
+
+function isMoneyHustleText(text) {
+  return (
+    /\b(?:printing \$|billing clients|sell it to a studio|full breakdown in the article|course|dm me|comment below|airdrop|farm the|passive income|income funnel|replace my salary|multimillion(?:aire)? company|100 million bonus)\b/i.test(
+      text
+    ) ||
+    /\$\d[\d,]*(?:\/month| subscription|k\/month|,000)/i.test(text) ||
+    /\b(?:salario|empresa multimillonaria|bono de 100 millones|despidieran|reemplazar mi salario|remplazar mi salario)\b/i.test(text)
+  )
+}
+
 function isShowcaseCandidate(post) {
   if (!post?.url || !post?.author || !post?.text) return false
+  if (isSystemPromptLeakText(post.text)) return false
+  if (isMoneyHustleText(post.text)) return false
   if (post.sourceMode === 'seed-conversation' && !/\b(?:claude|fable|mythos)\b/i.test(post.text)) return false
   if (looksLikeThreadIndex(post.text)) return false
   if (isWeakTextOnlyClaim(post)) return false
@@ -756,6 +781,8 @@ function curationDecision(post) {
   if (override?.decision === 'keep') return { keep: true, reason: `override-keep: ${override.reason}` }
   if (override?.decision === 'drop') return { keep: false, reason: `override-drop: ${override.reason}` }
   if (!post?.url || !post?.author || !post?.text) return { keep: false, reason: 'missing-url-author-or-text' }
+  if (isSystemPromptLeakText(post.text)) return { keep: false, reason: 'system-prompt-leak-or-analysis' }
+  if (isMoneyHustleText(post.text)) return { keep: false, reason: 'money-hustle-or-hypothetical-prompt' }
   if (post.sourceMode === 'seed-conversation' && !/\b(?:claude|fable|mythos)\b/i.test(post.text)) {
     return { keep: false, reason: 'thread-reply-not-about-fable' }
   }
@@ -804,17 +831,8 @@ function passesFinalNegativeFilter(item) {
   if (/\b(?:artificial analysis intelligence index|epoch capabilities index|swe-bench|terminal bench|benchmark ranking|rubric score)\b/i.test(text)) {
     return false
   }
-  if (/\b(?:system prompt|leaked prompt|prompt leak|full system prompt|hidden instruction|github with \d+[,\d]* stars)\b/i.test(text)) {
-    return false
-  }
-  if (
-    /\b(?:printing \$|billing clients|sell it to a studio|full breakdown in the article|course|dm me|comment below|airdrop|farm the|passive income|income funnel)\b/i.test(
-      text
-    ) ||
-    /\$\d[\d,]*(?:\/month| subscription|k\/month|,000)/i.test(text)
-  ) {
-    return false
-  }
+  if (isSystemPromptLeakText(text)) return false
+  if (isMoneyHustleText(text)) return false
   if (/\b(?:available on|now fully available on|announcing|launching)\b/i.test(combined) && /\b(?:benchmark|platform|model|ainft|fusion lane)\b/i.test(combined)) {
     return false
   }

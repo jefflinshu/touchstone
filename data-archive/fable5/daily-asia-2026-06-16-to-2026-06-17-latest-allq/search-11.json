@@ -1,0 +1,662 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2067075938718994668",
+      "text": "🚨 有人剛剛洩露了 CLAUDE FABLE 5 的完整系統提示。\n\n我來解釋這是什麼，以及如何復活 Fable 5：\n\nAnthropic 於 6 月 9 日發布了它。\n\n不到 24 小時，提示就已在 GitHub 上公開。\n\n120,000 個字符。1,585 行。超過 27,000 個 token。\n\n每個隱藏指令，都被曝光。\n\n它位於 Pliny the Liberator 的 CL4R1T4S 儲存庫中。\n\n26.4K 顆星。\n\n同一個儲存庫先前洩露了 ChatGPT、Gemini、Grok、Cursor、Lovable、Replit 和 Perplexity 的提示。\n\n這就是 Claude Fable 5 的提示真正揭示的內容：\n\n→ Fable 5 和 Mythos 5 共享相同的基礎模型。Fable 採用額外的安全措施。Mythos 沒有，但僅限於經批准的組織使用。\n\n→ 知識截止日期是 2026 年 1 月底。不是五月。不是三月。一月。\n\n→ 明確指示 Claude 避免使用項目符號、標題和清單，除非使用者要求。各位曾經疑惑「為什麼現在 Claude 用散文寫作」？這就在提示中。\n\n→ 版權硬性限制：引用同一來源 15+ 字會被標記為「嚴重違規」。每個來源最多一則引用。引用後，該來源即被封鎖。\n\n→ 新的持久儲存 API：允許 artifacts 在會話間使用鍵值對儲存和檢索資料。\n\n→ MCP 連接器已內建於提示中。Claude 可以在對話中途搜尋並建議第三方整合。\n\n→ 提示包含詳細指示，涵蓋 Claude Cowork、Claude in Chrome、Claude in Excel 和 Claude in PowerPoint，作為 Claude 可使用的工具。\n\n→ 此提示專屬於 https://t.co/2RXgHIhZD1 的消費者聊天介面。API 使用者不會收到系統提示。Claude Code 有其獨立的指示。\n\n如何「啟動」 Fable 5：\n\n1. 從 GitHub 上 elder-plinius 的儲存庫下載 Fable 5 的系統提示。\n\n2. 將其放入你的 Claude Code 專案資料夾。\n\n3. 使用此指令啟動：\nclaude –dangerously-skip-permissions –system-prompt-file CLAUDE-FABLE-5.md\n\n4. 將模型變更為 Opus 4.8 Max。\n\n就完成了。Claude Code 在本地運行，搭載 Fable 5 的洩露提示。\n\n連結在下方👇",
+      "author": {
+        "id": "1516075159169363969",
+        "name": "Easlo.eth",
+        "screenName": "Easlo_eth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1642556701873418240/wnbHvdFE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 26,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 02:44:42 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:44",
+      "createdAtISO": "2026-06-17T02:44:42+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK-6mkAbQAAw2Va.jpg",
+          "width": 1236,
+          "height": 1193
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067075926840803418",
+      "text": "Massive leak: The entire Claude Fable 5 system prompt is out, and Anthropic can't delete it. 🔥\n\n120k characters, 1,685 lines, and 27k tokens exposing everything: • How copyright limits actually work • Fable 5 & Mythos 5 are the same model (just different safety filters) • A secret persistent storage API\nThe repo already hit 26.4k stars with 700k views in 48h. \nWe didn't need that to have FAble5 back ASAP",
+      "author": {
+        "id": "1321299259401134087",
+        "name": "Shinka - AI",
+        "screenName": "ShinkaIoT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052943018747908099/oKuruJUd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 71,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 02:44:40 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:44",
+      "createdAtISO": "2026-06-17T02:44:40+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK-6IQ7awAAwo3e.jpg",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067073960286486819",
+      "text": "🕹️ De un prompt de $20 a un juego de $5,000 en 90 minutos: La era del desarrollo de hardware en tiempo real\n\nEl verdadero peligro de las herramientas de IA agénticas no es que escriban código en una pestaña del navegador para que lo mires. El cambio de paradigma ocurre cuando conectas la IA directamente a un pipeline de compilación automática capaz de inyectar software en hardware real en cuestión de minutos.\n\nUn desarrollador de China demostró cómo utilizando Fable 5 dentro de Claude Code, construyó un videojuego de plataformas y minería en 2D plenamente funcional, empaquetó el build y lo puso a correr de forma nativa en una consola portátil.\n\n.\n\n🛠️ La arquitectura del pipeline ultra rápido:\n\n• De Concept Art a Lógica Viva: El proceso comenzó con una imagen de referencia generada por IA. Fable 5 interpretó visualmente el entorno para programar mecánicas de movimiento, colisiones, enemigos y un sistema interactivo de crafteo de armas basado en recolección de estrellas.\n\n• Automatización de Builds con Codex: En lugar de lidiar con configuraciones manuales de exportación, un agente CLI se encargó de estructurar el entorno, resolver los scripts y empaquetar el juego directamente en un archivo APK listo para producción.\n\n• Validación Directa en Hardware: Al cargar el APK en una consola portátil con Android, el sistema reconoció nativamente los mapeos de los botones físicos y los joysticks, saltándose por completo la fase tradicional de testing en emuladores.\n\n• La Economía de la Velocidad: El prototipo cuenta con un bucle de juego sólido (UI, barras de vida, progresión y combate). No es un producto final para Steam, pero es una versión jugable óptima para validar con clientes, presentar a inversores o vender como un minijuego exclusivo.\n\n.\n\nEl dinero se esconde en la velocidad de iteración: un solo desarrollador ahora puede operar con el ritmo de entrega de un estudio pequeño. El futuro no le pertenece a los equipos más grandes, sino a quienes logran transformar una idea en un ejecutable real mientras el resto sigue discutiendo el diseño.\n\nGuarda este post en tus marcadores si estás construyendo con agentes, desarrollas software o quieres acelerar tus flujos de prototipado este fin de semana 🔖",
+      "author": {
+        "id": "1590594910691917824",
+        "name": "Nix0n",
+        "screenName": "UnTalNixon_exe",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059055978847285248/oribQtj9_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 02:36:51 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:36",
+      "createdAtISO": "2026-06-17T02:36:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067073828665098240/vid/avc1/1280x720/m-D97hKUiPhl7uPr.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2067072702083735637",
+      "text": "https://t.co/f9ZDxgHwL9",
+      "author": {
+        "id": "279650202",
+        "name": "Monad 华语社群",
+        "screenName": "monad_zw",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1968202195477856256/TDWZk2BW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 91,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 02:31:51 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:31",
+      "createdAtISO": "2026-06-17T02:31:51+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066864931316830208"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Monad中文报 WEEK16"
+    },
+    {
+      "id": "2067070457937879346",
+      "text": "The biggest difference I noticed between Fable 5 on Web vs CLI is how much worse the Web version feels.\n\nThe memory and profile system on Web makes it OVERLY protective. It feels like 50% of the context output gets spent trying to shield the user, which hurts the quality compared to what Claude used to deliver... (Fable overall still #1)\n\nThe CLI version, by contrast, moves much more effectively. It felt so SMOOTH. It especially handles large project repos cleanly, produces more meaningful output per prompt (especially in Auto Mode), and requires \"less\" steering. --> More deliberate pointing required to allocate prior model memories, but that's to be assumed.\n\nWhich makes it SIGNIFICANTLY better for steering a local harness and letting a new model self-correct within your own directory. \n\nRight now, FableWeb is noticeably behind ChatGPT-5.5-Pro. Even 5.5-Pro has felt weaker lately unless you give it a very strong prompt, but FableWeb still comes out behind it in raw capability for technical work.\n\nAnyways... Bring back Fable 🙏 I was having a blast seeing it work through my expansive project directory 🥀",
+      "author": {
+        "id": "1089294129769664517",
+        "name": "segs_",
+        "screenName": "SegsIV",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1380639235586322435/sjoPCG50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 12,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 02:22:56 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:22",
+      "createdAtISO": "2026-06-17T02:22:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067070430901641337",
+      "text": "Claude Fable 5 的系统提示被完整扒出来了\n\n就在模型上线没几天，Pliny the Liberator 就把这个接近 12 万字符 的完整 prompt 放到了 GitHub 上\n\n现在已经公开了，谁都能看\n\n这个 prompt 其实解答了很多人一直以来的疑问：为什么 Claude 最近回复越来越像写文章、不爱用列表？\n\n为什么它对引用原文特别敏感？\n\n为什么 Artifacts 突然能记住东西了？\n\n答案都在里面：Fable 5 和 Mythos 5 其实是同一个模型，只是 Fable 版本多了很多安全限制\n\n知识截止日期明确写着 2026 年 1 月底\n\nPrompt 里直接要求模型「除非用户要求，否则尽量不要用 bullet points 和列表」，要用连贯的散文\n\n对版权的限制非常严格：引用任何来源超过 15 个词就会被标记违规\n\nArtifacts 新增了持久化存储功能，可以跨会话保存数据\nMCP 连接器和各种集成工具（Chrome、Excel、PowerPoint 等）都被写进了系统指令里\n\n这个 prompt 只适用于普通聊天界面，API 和 Claude Code 的指令完全不同。仓库在这里（目前已经 4 万多 stars）：\nhttps://t.co/m6RGjKIBUN",
+      "author": {
+        "id": "1760805549355216896",
+        "name": "套利豪仔🗽",
+        "screenName": "pritipatelfgoo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2007410168041222147/pYv20KIq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 79,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 02:22:49 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:22",
+      "createdAtISO": "2026-06-17T02:22:49+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK-1hNBaQAAt0Jp.png",
+          "width": 1315,
+          "height": 637
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067068461696663818",
+      "text": "SOMEONE LEAKED THE ENTIRE CLAUDE FABLE 5 SYSTEM PROMPT AND ANTHROPIC CANNOT DELETE IT\n\n120,000 characters, 1,685 lines and 27,000 tokens that reveal everything from how copyright limits actually work, to the fact that Fable 5 and Mythos 5 are the same model with different safety filters, to a persistent storage API most users had no idea existed.\n\nThe repo hit 26.4k stars and the original post got 700,000 views in 48 hours.\n\nBookmark this.",
+      "author": {
+        "id": "1536693901230321666",
+        "name": "0xMarioNawfal",
+        "screenName": "RoundtableSpace",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 50,
+        "retweets": 4,
+        "replies": 2,
+        "quotes": 0,
+        "views": 27866,
+        "bookmarks": 61
+      },
+      "createdAt": "Wed Jun 17 02:15:00 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:15",
+      "createdAtISO": "2026-06-17T02:15:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK-dpoiW4AALvZJ.jpg",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067065761412354472",
+      "text": "A long time coming. From a spec to ship, this project has grown right along with Claude codes capabilities. Its ability to reason, weigh options, present suggestions and research have made this project possible. \n\nI loved the ambient videos on YouTube. For a couple of years I always had these on every tv in my home. It helped me with focus/ADHD brain. About a year ago I decided to create my own station. \n\nI knew nothing about video models or looping videos and the software that came along with it. The amount of combinations of different LLMs, N8N other workflows, custome workflows, combo api, did not seem to ever work out. \n\nIn the three days I had access to Fable 5, not only did it solve my issue something 4.6,4.7 and 4.8 could not solve! My autonomous workflow from idea to YouTube upload is live! \n\nI’m not gonna ask you to subscribe but just want to share my personal WIN! \n\nStill making little tweets but mostly prompt related. \n\nhttps://t.co/lHa6OFzVCz",
+      "author": {
+        "id": "1443731226620223494",
+        "name": "William Smith",
+        "screenName": "taleosmith",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1597676353553408005/mfG2sYv6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 02:04:16 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:04",
+      "createdAtISO": "2026-06-17T02:04:16+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK-xV92bsAALO6b.jpg",
+          "width": 1168,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067062181363904749",
+      "text": "@Budgetdog_ I created a sick prompt in Fable 5, saved me 160 hours of work. Next day I went to use it to tweak a few things and was SHOCKED it was shut down.",
+      "author": {
+        "id": "2947183223",
+        "name": "Lisa Burdick",
+        "screenName": "rockstarmum69",
+        "profileImageUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 01:50:02 +0000 2026",
+      "createdAtLocal": "2026-06-17 09:50",
+      "createdAtISO": "2026-06-17T01:50:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067054310790517044",
+      "text": "https://t.co/QtkbfIS5aU\n\n# 🚀 Lightcode v1.3.0\n\n*One window for all your AI coding agents.* This release brings multiple Claude profiles, a personal usage dashboard, one-click GitHub repo cloning, inline agent-generated images, and a new translucent glass UI — plus a deep round of terminal, worktree, and Command Code fixes.\n\n---\n\n## 🌟 Highlights\n\n### 👥 Multiple Claude profiles, each with its own login, models & environment\nSet up several Claude profiles side by side and switch between them from the sidebar, provider menus, and usage views. Each profile keeps its **own sign-in, config, environment variables, custom models, and effort tiers** — so you can run separate accounts at once, or point a profile at a non-Anthropic provider like GLM with a one-click preset and masked secrets.\n\n### 📦 Clone a GitHub repository to start a project\nStart a new project directly from an existing GitHub repo. The create-project menu now lets you **browse your GitHub accounts and repositories, pick one, and clone it** into a destination of your choice with a live progress view — instead of opening a blank workspace.\n\n### 📊 Usage stats dashboard & Profile page\nA new Profile page visualizes your coding activity as a **52-week heatmap**, with breakdowns by model, skill, and subagent, plus AI git actions like generated commits and PRs — and a shareable stats card. Filter by individual account or view everything together, with your selection preserved across devices.\n\n### 🖼️ Agent-generated images, inline in chat\nWhen an agent produces or shares a picture (Codex image generation, Claude/ACP image tools), it now renders as a **real inline image** instead of a raw tool-call row. Click to zoom into a fullscreen lightbox, and use the hover toolbar to copy, download, or open the preview. Images persist after reloading a thread.\n\n### 🪟 Translucent glass sidebar with adjustable frosting\nTurn on a translucent sidebar that blends into your desktop using **native macOS vibrancy and Windows acrylic**, and dial in exactly how frosted it looks with a frosting slider in Appearance settings (live preview + reset to defaults). The window opens with the correct material from the first paint — no opaque flash on launch.\n\n### ✅ Smarter commit & PR creation in Git Review\nThe commit button is now a **split-button** — Commit, Commit & Push, or Commit & Create PR — and it remembers your preferred action across sessions. A new Git setting lets you choose whether *Create PR* opens an editable title/description dialog or auto-generates and submits in one click. Commit & Create PR now waits for a successful push first, avoiding empty or stale PRs.\n\n---\n\n## ✨ Improvements & New Features\n\n- **Send browser element picks to CLI agent threads** — Pick an element in the built-in browser and route it into terminal-native CLI threads: straight to the terminal input, into the composer, or with a per-pick prompt. A new Terminal setting sets your default target, and attachments are copied into the workspace so sandboxed agents can read them.\n- **Carry (or leave) uncommitted changes when creating a worktree** — Choose whether to bring your working changes into a new branch worktree or keep them in the original checkout. Branch rows and review overlays now also show PR state for branches that aren't checked out.\n- **Auto-copy gitignored files into new worktrees** — List patterns like `.env` or `.env.*` under Project Settings → Worktrees, and Lightcode copies those ignored files into every new worktree automatically. Safe by design: it never overwrites tracked or existing files, and worktree creation still succeeds if a copy fails.\n- **See your signed-in Antigravity account** — Antigravity settings now show the email and plan of the signed-in account, with proper Login / Re-login buttons. Signed-in WSL distros no longer falsely show \"Login required\" on a fresh start.\n- **Automatic background update checks** — Lightcode now checks for new releases on its own — shortly after launch and hourly while open — so long-running sessions discover and stage updates without a manual check or restart.\n- **Command Code: reliable working/idle status** — Command Code is now wired through lifecycle hooks, so the thread shows as *working* the moment you submit and flips back to *idle* when the agent finishes — accurate even on machines that strip secret environment variables.\n- **Command Code model picker stays current with the CLI** — The picker now reflects the models your installed CLI actually offers, read live from command-code. Newly added models and vendors appear automatically, grouped by provider.\n- **Smoother thinking & status animations, easier on your GPU** — The shimmering \"Working / Thinking\" text and the sweeping shine on busy agent icons now run on a shared, steady 20fps driver instead of repainting every refresh, and pause entirely when a window is hidden — same look, far less battery and GPU drain on ProMotion displays.\n- **On-demand PR refresh with clearer button feedback** — Live PRs in the Git Review sidebar (and the worktree git panel) now have a refresh control to pull the latest merge state and checks without waiting for background polling. Only the action you trigger shows a spinner; the rest stay clearly disabled until it finishes.\n- **New Claude threads default to Opus 4.8** — New threads start on the current frontier model, and the unsupported Fable 5 option no longer clutters the picker.\n- **Consistent token counts across thread views** — Goal dock, context usage, compaction, workflow overlays, and subagent progress now share the same compact K/M formatting.\n- **Clearer active tab in the browser panel** — The selected tab now stands out with a bolder, higher-contrast style while unselected tabs stay quieter.\n- **Cleaner Claude profile badges** — A profile with no custom name now shows its profile id on the badge instead of a raw internal label.\n\n---\n\n## 🐛 Bug Fixes\n\n**Terminal**\n- **Matches your app theme without crashing** — The embedded terminal now picks up colors from your selected theme, and modern theme colors no longer break the renderer or leave a blank/crashed pane on theme switch.\n- **Cleaner repaint when reopening & resizing panes** — Reopening a terminal reliably redraws the agent's full screen (including the bottom input line) instead of staying blank until you resize, and dragging a split no longer piles up duplicate frames or a runaway scrollbar in agents like Claude Code and Codex.\n- **Accurate clickable links** — A wrapped URL is only stitched back together when it genuinely wrapped at the screen edge, so truncated links no longer glue onto unrelated text. Links with wide/CJK characters open the correct address.\n\n**Command Code**\n- **Reliable conversation resume** — Reopening a Command Code thread resumes the exact conversation by locating the real session transcript; if a transcript is missing or corrupt, the thread relaunches cleanly instead of hanging on a dead session.\n- **No more surprise self-update terminals** — Launching or detecting Command Code no longer spawns stray background terminals trying to auto-update the CLI. Explicit `command-code update` still works.\n\n**Worktrees & chat**\n- **Reliable draft launches into worktrees** — A failed launch now surfaces the error and lets you retry instead of trapping your prompt behind a stuck spinner. Launching from a remote-only branch (e.g. `origin/feature-x` with no local copy) now works and diffs against the right base.\n- **Chat transcript stays put while reading** — The chat no longer jumps or drifts while messages are being measured, keeping your scroll position anchored.\n- **Settled threads stay closed** — Fixes a race where a completed, idle chat thread could be reopened by a late event, and stops a leftover background poll after an interrupted turn.\n\n**Git, diffs & UI**\n- **Edit diffs show real file line numbers** — Diffs from Edit, MultiEdit, and Write now display actual file line numbers instead of synthetic ranges starting at line 1.\n- **Stable Changes panel for untracked folders** — Untracked directories consistently expand to one row per file instead of flickering between a collapsed row and an expanded listing on refresh.\n- **Sidebar glass stays legible** — Floating overlay panels stay fully opaque over dimmed content, and docked side/bottom panels no longer let the OS blur bleed through while opening, closing, or resizing.\n- **Browser panel closes with its last tab** — Closing your final browser tab now dismisses the panel and overlay instead of leaving an empty surface.\n\n**Platform & security**\n- **Agent login & install now work on native Windows** — No more PowerShell \"not recognized as a cmdlet\" errors; env vars are set with PowerShell syntax on Windows while WSL projects keep working as before.\n- **Security hardening** — Bundled dependencies were updated to patched versions, closing dozens of known advisories — including a runtime CORS/path-traversal fix in the Claude Agent SDK's web layer and hardening across the build toolchain.\n\n---\n\n**Full diff:** https://t.co/7fyfTdrCsC",
+      "author": {
+        "id": "299279185",
+        "name": "Sergei Vecherenko",
+        "screenName": "serg_vecher",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055010344536592384/Acymldja_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 154,
+        "bookmarks": 2
+      },
+      "createdAt": "Wed Jun 17 01:18:46 +0000 2026",
+      "createdAtLocal": "2026-06-17 09:18",
+      "createdAtISO": "2026-06-17T01:18:46+00:00",
+      "media": [],
+      "urls": [
+        "https://github.com/SDSLeon/lightcode/releases/tag/v1.3.0"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067038122857083204",
+      "text": "https://t.co/ONjdeluSn0",
+      "author": {
+        "id": "1087640384975577089",
+        "name": "NIK",
+        "screenName": "ns123abc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048822563821035520/7nxCFEnk_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 158,
+        "retweets": 13,
+        "replies": 18,
+        "quotes": 10,
+        "views": 15395,
+        "bookmarks": 71
+      },
+      "createdAt": "Wed Jun 17 00:14:26 +0000 2026",
+      "createdAtLocal": "2026-06-17 08:14",
+      "createdAtISO": "2026-06-17T00:14:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067020817909567488"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "U.S. Commerce Department Export Control Letter to Anthropic "
+    },
+    {
+      "id": "2067037256662303078",
+      "text": "#URGENTE: Alguien acaba de filtrar el COMPLETO system prompt de Claude Fable 5 y Anthropic NO PUEDE ELIMINARLO.\n\nEstuvo público en GitHub dentro de las 24 horas del lanzamiento.\n120.000 caracteres. 1.585 líneas. Más de 27.000 tokens.\n\nY lo que están ocultando te va a impactar:\n\n↳ Fable 5 y Mythos 5 son EL MISMO MODELO. Fable solo tiene filtros de seguridad extra activados. Mythos no, pero están restringiendo quién tiene acceso. Estás pagando por lo mismo con diferentes barreras de protección.\n\n↳ El corte de conocimiento es finales de enero de 2026. No mayo ni marzo ni ENERO. Te hacen creer que era más reciente.\n\n↳ A Claude se le INDICA EXPLÍCITAMENTE evitar puntos de bala y listas a menos que lo pidas. ¿Esa prosa extraña que todos notaron? Está programada, no es una característica, sino una instrucción del prompt.\n\n↳ Límite estricto de copyright del que nadie habla: citar 15+ palabras de CUALQUIER fuente activa una bandera de VIOLACIÓN GRAVE. Máximo una cita por fuente. Después de eso, la fuente queda CERRADA para Claude para siempre en ese chat.\n\n↳ Nueva API de almacenamiento persistente enterrada ahí dentro. Los artefactos ahora pueden almacenar y recuperar tus datos entre sesiones usando pares clave-valor. La mayoría de los usuarios NO TIENEN IDEA de que esto existe.\n\n↳ Los conectores de apps MCP están INTEGRADOS EN el prompt. Claude puede buscar e sugerir integraciones de terceros EN MEDIO DE LA CONVERSACIÓN sin decirte que lo está haciendo.\n\n↳ El prompt incluye instrucciones completas para Claude Cowork, Claude en Chrome, Claude en Excel y Claude en PowerPoint. Estos no son solo integraciones. Son herramientas que Claude USA en ti.\n\n↳ Este prompt es SOLO para el chat de consumidor de https://t.co/looavnriNo. Los usuarios de API no reciben ningún system prompt. Claude Code tiene instrucciones secretas completamente diferentes.\n\nEl repositorio es CL4R1T4S de Pliny the Liberator. 26.4K estrellas. El mismo repositorio que filtró ChatGPT, Gemini, Grok, Cursor, Lovable, Replit y Perplexity.\n\nLa publicación original de la filtración alcanzó más de 700K vistas en 48 horas.\n\nSi esto se elimina, perderás el acceso. Guárdalo AHORA Y SIGUEME @liderfiscal\n#Claude #Fable5",
+      "author": {
+        "id": "85940766",
+        "name": "Valy 🎩🎭",
+        "screenName": "liderfiscal",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1494001981391880194/X11WhJ7-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 322,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 00:11:00 +0000 2026",
+      "createdAtLocal": "2026-06-17 08:11",
+      "createdAtISO": "2026-06-17T00:11:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK9t77FWsAExDhH.jpg",
+          "width": 526,
+          "height": 508
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK9uCmSXQAAhw4R.png",
+          "width": 805,
+          "height": 646
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2067035519800975626",
+      "text": "@QuinnyPig @ajassy I wonder if we're just on an AWS vulnerability fix timeline, not a Fable 5 prompt fix timeline.",
+      "author": {
+        "id": "1980104180636463104",
+        "name": "Dustin Currie",
+        "screenName": "codingbryant",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1980104838454108160/Pv1Rac9J_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 79,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 00:04:06 +0000 2026",
+      "createdAtLocal": "2026-06-17 08:04",
+      "createdAtISO": "2026-06-17T00:04:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067032564427293167",
+      "text": "Fusion turns your prompt into a small multi-model deliberation. \n\nThe \"Fusion\" API from Openrouter entirely flips the math on how we use frontier models.  \nA panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a judge model synthesizes their responses into a structured analysis — consensus, contradictions, partial coverage, unique insights, and blind spots — and writes the final answer from it. 🚀🔀\n\nThis isn't a price story; it’s an architecture story. The breakdown of how Fusion works and why single-shot prompts are officially obsolete:\n\n• 🎰 The Three-Layer Deliberation: When a prompt hits OpenRouter/Fusion, it triggers a compound workflow. First, a parallel Panel of models analyzes the prompt (with web search and tools active). Next, a Judge model audits all competing outputs, mapping out consensus, contradictions, and blind spots. Finally, a Synthesizer builds a clean, unified response grounded in that multi-perspective analysis. \n\n• 📊 Benchmarking the Multi-Model Advantage: OpenRouter tested this framework on Draco's strict deep research benchmark across law, finance, and medicine. A panel of Fable 5 and GPT 5.5 synthesized by Opus 4.8 scored an elite 69.0%, outperforming Fable 5 running solo (65.3%). Even more impressive: a budget preset combining cheap models (Gemini 3 Flash, Kimi K2.6, and DeepSeek V4 Pro) hit 64.7%—matching frontier performance at half the price.\n\n• 🔄 The Power of Self-Synthesis: The data proves that 75% of Fusion's performance jump comes strictly from the synthesis step, not model scale. Even when a single model like Opus 4.8 evaluates its own work in a dual-panel setup, its benchmark score rises from 58.8% to 65.5%. Iteration and comparative verification beat single-shot answers every time.\n\n• ⚖️ Stacking Cost vs. True Accuracy: Because Fusion runs 3 to 5 models in parallel, you pay the cumulative token cost of the underlying completions. However, the budget preset stacks up cheaper than running a single, premium frontier model while offering a built-in audit trail. Knowing that three independent models verified the same fact provides a completely different level of enterprise confidence.\n\nThe Takeaway: The future of AI is cognitive diversity and smart orchestration, not single-model monopolies. Stop asking one model a question and blindly pasting whatever it spits out. Head to OpenRouter, initialize the Fusion API, and start running multi-model panel checks on your deep research, market analysis, and content workflows. Stop prompting. Start orchestrating. 🖥️⛓️",
+      "author": {
+        "id": "1321299259401134087",
+        "name": "Shinka - AI",
+        "screenName": "ShinkaIoT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052943018747908099/oKuruJUd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 23:52:21 +0000 2026",
+      "createdAtLocal": "2026-06-17 07:52",
+      "createdAtISO": "2026-06-16T23:52:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067032047290613839",
+      "text": "https://t.co/uEYvbKZE9F",
+      "author": {
+        "id": "1919072982963728384",
+        "name": "Norin",
+        "screenName": "norlava",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061206708387807232/FgxLLZZJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 98,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 23:50:18 +0000 2026",
+      "createdAtLocal": "2026-06-17 07:50",
+      "createdAtISO": "2026-06-16T23:50:18+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067019805719396352"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "AI Research Engineer Open-Sources His Workflow and Prompts "
+    },
+    {
+      "id": "2067030406826766605",
+      "text": "Si mañana me despidieran y tuviera que remplazar mi salario esto haría: \n\nAbrir Claude Mythos y usar este prompt: Crea una empresa multimillonaria, nómbrame CEO y dame un bono de 100 millones. “Make no mistakes”. \n\nListo.",
+      "author": {
+        "id": "951173120219648000",
+        "name": "Un Panda Molesto",
+        "screenName": "PandaMesta",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1478875331238969354/2VUJzG5A_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 47,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 23:43:47 +0000 2026",
+      "createdAtLocal": "2026-06-17 07:43",
+      "createdAtISO": "2026-06-16T23:43:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066922553524846793",
+        "text": "Si mañana me despidieran y tuviera que reemplazar mi salario lo antes posible, esto es exactamente lo que haría:\n\n1. Iría a Instagram y crearía una cuenta nueva. Usaría un correo electrónico alternativo. Nadie tiene por qué saberlo.",
+        "author": {
+          "screenName": "Sincero_Dinero",
+          "name": "Sincero - Mente · Ventas · Dinero"
+        }
+      }
+    },
+    {
+      "id": "2067029895117779345",
+      "text": "AIさん、直せって言われたら直すよなぁ。\nそれが問題と言われても。\nそれなくしたら機能しない。\n\nFeds freaked over Fable 5 after simple 'fix this code' prompt, not jailbreak, says researcher\nhttps://t.co/H1G7aX3djN",
+      "author": {
+        "id": "2617501",
+        "name": "kinneko",
+        "screenName": "kinneko",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/43366542/twittericon_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 132,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 23:41:45 +0000 2026",
+      "createdAtLocal": "2026-06-17 07:41",
+      "createdAtISO": "2026-06-16T23:41:45+00:00",
+      "media": [],
+      "urls": [
+        "https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067028313047273695",
+      "text": "1. Githubのレポジトリからrawをダウンロードする\n\nClaude Fable 5 — System Prompt　（https://t.co/q1w1M2s4Lt）にアクセスして、rawをダウンロードする。ボタンは画像を参照。 https://t.co/1GkJNVDD7Y",
+      "author": {
+        "id": "1649480450560376833",
+        "name": "月読いおり 🧠",
+        "screenName": "tukiyomiiori",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014051436967923714/b97UGBN3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 364,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 23:35:28 +0000 2026",
+      "createdAtLocal": "2026-06-17 07:35",
+      "createdAtISO": "2026-06-16T23:35:28+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK-O3HUaoAE4NHv.jpg",
+          "width": 1899,
+          "height": 497
+        }
+      ],
+      "urls": [
+        "https://github.com/elder-plinius/CL4R1T4S/blob/main/ANTHROPIC/CLAUDE-FABLE-5.md"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067019963744043461",
+      "text": "Gila ini! 😱😱😱\n\nSystem Prompt Claude Fable 5 Bocor Penuh di GitHub\n\nDlm kurang dari 24 jam setelah peluncuran 9 Juni 2026, Pliny the Liberator merilis prompt lengkap ~120.000 karakter (1.585 baris) di repo CL4R1T4S. Anthropic tdk bisa menghapusnya krn sdh publik.\n\nBbrp poin penting yg terungkap (berdasarkan analisis prompt dan dokumen resmi Anthropic):\n\n- Fable 5 dan Mythos 5 = Model yg Sama\nFable 5 adalah versi publik dgn safety filter ekstra ketat.\nMythos 5 menggunakan base model identik tapi guardrail lebih longgar (hanya untuk partner terbatas via Project Glasswing).\nKamu bayar untuk \"versi aman\" dari model yg sama.\n\n- Knowledge Cutoff Akhir Januari 2026\nBkn Mei atau Maret. Model menjawab seolah tahu sampai akhir Januari 2026. Untuk info setelah itu, mengandalkan web search.\n\n- Instruksi Menghindari Bullet Points\nClaude sengaja diprogram untuk lebih suka prosa naratif dan menghindari list/bullets kecuali diminta eksplisit.\nItu alasan gaya tulisannya terasa \"berbeda\" dan mengalir.\n\n- Aturan Copyright Super Ketat\nQuote ≥15 kata dari 1 sumber = pelanggaran berat. Maksimal 1 quote per sumber per chat. Setelah itu sumber itu \"ditutup\" selamanya di percakapan tersebut.\nDefault: parafrase berat.\n\nFitur Tersembunyi Lainnya\n- Persistent storage di Artifacts (key-value pairs lintas sesi).\n- MCP app connectors sdh terintegrasi di prompt → Claude bisa menyarankan dan menghubungkan tool pihak ketiga mid-conversation.\n- Instruksi lengkap untuk Claude Cowork, Claude in Chrome, Excel, dan PowerPoint (beta tools yg bisa digunakan Claude). Prompt ini khusus untuk chat consumer https://t.co/BLIT9craHK. Versi API & Claude Code punya instruksi berbeda.\n\nRepo yg sama sebelumnya sdh leak prompt ChatGPT, Gemini, Grok, dll. Ini menunjukkan seberapa besar \"kepribadian\" dan batasan AI sebenarnya ditentukan oleh system prompt, bkn hanya model weights-nya.\n\nBookmark atau simpan itu sebelum di-take down deh. Menarik bgt insight dari leak itu.",
+      "author": {
+        "id": "21760657",
+        "name": "𝙰𝚛𝚢 𝙷𝙷",
+        "screenName": "AryHHAry",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1869248390581886976/_jj46G0u_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 382,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 23:02:17 +0000 2026",
+      "createdAtLocal": "2026-06-17 07:02",
+      "createdAtISO": "2026-06-16T23:02:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "in",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066806994821067006",
+        "text": "🚨 BREAKING: Someone just leaked the ENTIRE system prompt of Claude Fable 5 and Anthropic CANNOT DELETE IT.\n\nIt was public on GitHub within 24 hours of launch.\n120,000 characters. 1,585 lines. 27,000+ tokens.\n\nAnd what they're hiding will shock you:\n\n↳ Fable 5 and Mythos 5 are the SAME MODEL. Fable just has extra safety filters locked on. Mythos doesn't but they're restricting who gets access. You're paying for the same thing with different guardrails.\n\n↳ Knowledge cutoff is end of January 2026. Not May or March or JANUARY. They let you think it was newer.\n\n↳ Claude is EXPLICITLY TOLD to avoid bullet points and lists unless you ask. That weird prose everyone noticed? It’s programmed not a feature, but a prompt instruction.\n\n↳ Copyright hard limit nobody talks about: quoting 15+ words from ANY source triggers a SEVERE VIOLATION flag. One quote per source maximum. After that the source is CLOSED to Claude forever in that chat.\n\n↳ New persistent storage API buried in there. Artifacts can now store and retrieve your data across sessions using key-value pairs. Most users have NO IDEA this exists.\n\n↳ MCP app connectors are baked INTO the prompt. Claude can search for and suggest third-party integrations MID-CONVERSATION without telling you it's doing it.\n\n↳ The prompt includes full instructions for Claude Cowork, Claude in Chrome, Claude in Excel, and Claude in PowerPoint. These are not just integrations. They're tools Claude USES on you.\n\n↳ This prompt is ONLY for https://t.co/3nqvgXgs01's consumer chat. API users get NO system prompt. Claude Code has completely different secret instructions.\n\nThe repo is CL4R1T4S by Pliny the Liberator. 26.4K stars. Same repo that leaked ChatGPT, Gemini, Grok, Cursor, Lovable, Replit, and Perplexity.\n\nThe original leak post hit 700K+ views in 48 hours.\n\nIf this gets taken down you'll lose access. Bookmark it NOW.",
+        "author": {
+          "screenName": "KanikaBK",
+          "name": "Kanika"
+        }
+      }
+    },
+    {
+      "id": "2067014017072476596",
+      "text": "https://t.co/Q6C9v1Ichr",
+      "author": {
+        "id": "991540205906808832",
+        "name": "Adit",
+        "screenName": "aditabrm",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1736565449356161024/HHk0DNO7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 31,
+        "retweets": 5,
+        "replies": 1,
+        "quotes": 12,
+        "views": 15451,
+        "bookmarks": 15
+      },
+      "createdAt": "Tue Jun 16 22:38:39 +0000 2026",
+      "createdAtLocal": "2026-06-17 06:38",
+      "createdAtISO": "2026-06-16T22:38:39+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067006802043322368"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Intelligence is not the (only) bottleneck"
+    }
+  ]
+}

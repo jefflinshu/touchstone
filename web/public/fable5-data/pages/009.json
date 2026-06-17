@@ -1,5 +1,68 @@
 [
   {
+    "id": "profbuehlermit-2064754615468638351",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "Markus J. Buehler",
+    "handle": "@profbuehlermit",
+    "sourceUrl": "https://x.com/profbuehlermit/status/2064754615468638351",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "media": "video",
+    "heat": "265 likes · 25 reposts",
+    "tags": [
+      "fable5",
+      "3d",
+      "design"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 has impressive spatial reasoning capabilities that are immediately relevant for engineering and design: In this example I gave Claude Fable 5 a single photo of a hierarchical mesh torus (image generated using a text-to-image model); and in one shot, no iteration, it built a full interactive 3D simulation: ~1,400 nodes & 4,400 fibers, realistic mass–spring physics you can grab, compress, twist… plus strain-based sonification so you can 'hear' the structure vibrate. It inferred the complete 3D topology from a partial 2D view. ⤵️",
+    "metrics": {
+      "likes": 265,
+      "reposts": 25,
+      "replies": 14,
+      "quotes": 3,
+      "views": 27034,
+      "bookmarks": 117
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064751457316798464/vid/avc1/1920x1080/ak0fzwYR11RLNyVi.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/profbuehlermit-2064754615468638351.jpg",
+    "avatarUrl": "/fable5-avatars/profbuehlermit.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1133792154181021696/vn_-rmPd_normal.png",
+    "categories": [
+      "3d",
+      "design"
+    ]
+  },
+  {
     "id": "hieudinh_-2064924881750536440",
     "title": "App prototype built with Fable 5",
     "author": "Hieu Dinh",
@@ -34,7 +97,7 @@
       "https://pbs.twimg.com/media/HKgWO1jaEAARotu.jpg"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -93,7 +156,7 @@
       "https://video.twimg.com/amplify_video/2064953086075142144/vid/avc1/3724x2160/2Uts-jBpZmhvK_Fh.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -152,7 +215,7 @@
       "https://video.twimg.com/amplify_video/2064779949849153536/vid/avc1/3840x2072/AtigUPAuRgSsjvd5.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:46.239Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -219,7 +282,7 @@
       "https://video.twimg.com/amplify_video/2064977193835311105/vid/avc1/1436x1170/REPRLkNcte0fjd6D.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:46.239Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11",
@@ -289,7 +352,7 @@
       "https://video.twimg.com/amplify_video/2064509292510674944/vid/avc1/1920x1080/YXgVAl4VUsZDePL9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:06:53.566Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -360,7 +423,7 @@
       "https://video.twimg.com/amplify_video/2064687684023451648/vid/avc1/1920x1080/osIT66YNEOXNW842.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -427,7 +490,7 @@
       "https://video.twimg.com/amplify_video/2064993258204209152/vid/avc1/720x1280/tKHN-omQVBi8VSFd.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -490,7 +553,7 @@
       "https://video.twimg.com/amplify_video/2064941000028807169/vid/avc1/3324x2160/5zjb19ypQmsMrJ8g.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11"
@@ -560,7 +623,7 @@
       "https://video.twimg.com/amplify_video/2065078491545243648/vid/avc1/1920x1080/1xAqppjt0hFxRec9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -630,7 +693,7 @@
       "https://video.twimg.com/amplify_video/2064798554732781568/vid/avc1/1920x1080/EiRxVEw60htargIy.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -698,7 +761,7 @@
       "https://video.twimg.com/amplify_video/2065036565450244096/vid/avc1/1920x1080/jX0kGHCIv8WmhDUz.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-14T06:09:21.996Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -755,7 +818,7 @@
       "https://video.twimg.com/amplify_video/2064896872775577600/vid/avc1/3486x2160/RqmM6gBy9bqGUJxC.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -824,7 +887,7 @@
       "https://video.twimg.com/amplify_video/2064988913752825856/vid/avc1/2240x1182/Yka5OMLGWDkFjQlk.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
     ],
@@ -886,7 +949,7 @@
       "https://video.twimg.com/amplify_video/2064958655372619776/vid/avc1/566x808/3ck_OMzgVWWLBDYF.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -952,7 +1015,7 @@
       "https://video.twimg.com/amplify_video/2064882605015883776/vid/avc1/3724x2160/80Q9lcCFbNPX4J7N.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1018,7 +1081,7 @@
       "https://pbs.twimg.com/media/HKgshRLXYAAJVIH.jpg"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1085,7 +1148,7 @@
       "https://video.twimg.com/amplify_video/2065034997866586112/vid/avc1/3228x2160/DYtd01Ewsu_0xkjM.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -1154,7 +1217,7 @@
       "https://video.twimg.com/amplify_video/2065006284580020224/vid/avc1/1280x720/bxNXujZMWAr7W_vc.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1225,7 +1288,7 @@
       "https://video.twimg.com/amplify_video/2064523291872604160/vid/avc1/1440x1080/g5EqXOiyLOrlZ6UG.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1288,7 +1351,7 @@
       "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:06:53.566Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-latest-target500",
@@ -1353,7 +1416,7 @@
       "https://video.twimg.com/amplify_video/2064775803292844032/vid/avc1/1328x720/1mSravFP-mddt-Dw.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1418,7 +1481,7 @@
       "https://video.twimg.com/amplify_video/2064775581170876416/vid/avc1/1072x720/ZEsQ439OiAgqv809.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1486,7 +1549,7 @@
       "https://video.twimg.com/amplify_video/2064917090977320960/vid/avc1/1910x1080/X2wxlq6_UGqy5IY9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
+    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1511,72 +1574,6 @@
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1944907058274254849/JXRYoZcn_normal.jpg",
     "categories": [
       "videos"
-    ]
-  },
-  {
-    "id": "givros-2064747412464316652",
-    "title": "Minecraft-style game built with one prompt",
-    "author": "Givros",
-    "handle": "@givros",
-    "sourceUrl": "https://x.com/givros/status/2064747412464316652",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "games",
-    "media": "video",
-    "heat": "57 likes · 6 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "3d"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Alright, Claude Fable 5 is good.\n\nBut Codex with a simple /goal is getting ridiculous:\n\n\"Build a Minecraft-inspired voxel fairground with rides and mini-games.\"\n\nI left for 20 minutes and came back to a functional voxel game.\n\nFable 5 makes it beautiful:\n\n“Create a beautiful Minecraft-like world.”\n\nCodex makes it work:\n\n“Create a Minecraft-like game that works.”",
-    "metrics": {
-      "likes": 57,
-      "reposts": 6,
-      "replies": 12,
-      "quotes": 1,
-      "views": 6577,
-      "bookmarks": 26
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064747326405586945/vid/avc1/1920x1080/WgEhn-pcEUgaO9t_.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-16T08:57:28.917Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "design-gen",
-        "3d-gen"
-      ],
-      "evidence": [
-        "commentary"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [],
-      "risk": [
-        "copyright"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/givros-2064747412464316652.jpg",
-    "avatarUrl": "/fable5-avatars/givros.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2058488850125586434/hqfZ8XHV_normal.jpg",
-    "categories": [
-      "games",
-      "3d"
     ]
   }
 ]
