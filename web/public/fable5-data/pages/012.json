@@ -1,360 +1,5 @@
 [
   {
-    "id": "yk_9526-2064855386922889335",
-    "title": "Prompt-driven motion or animation demo",
-    "author": "Yukin Huang",
-    "handle": "@yk_9526",
-    "sourceUrl": "https://x.com/yk_9526/status/2064855386922889335",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "videos",
-    "categories": [
-      "videos",
-      "design",
-      "code"
-    ],
-    "media": "video",
-    "heat": "1 likes · 0 reposts",
-    "tags": [
-      "fable5",
-      "videos",
-      "design",
-      "code",
-      "demo"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Refining the prototype with Claude Fable 5. \nTurn any video upload into a lenticular-style design.\n\n- Static simulation mode\n- Tilt-based interaction\n\nExciting to see how quickly ideas can go from concept to interactive prototype.\n\nBuilt with Claude Code @ClaudeDevs\nAnimations powered by Lottie @LottieFiles \nhttps://t.co/cyvAkl0J6E\n\n#buildinpublic #claude #ai",
-    "metrics": {
-      "likes": 1,
-      "reposts": 0,
-      "replies": 2,
-      "quotes": 1,
-      "views": 167,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064854825276231680/vid/avc1/1776x1080/iTmgiN9_gGIY2YWG.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
-    ],
-    "summary": [
-      "Shows a motion or video generation demo associated with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "video",
-      "medium": "video",
-      "capability": [
-        "design-gen",
-        "motion-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [],
-      "tech": [
-        "claude-code"
-      ],
-      "risk": [
-        "benchmark-claim"
-      ]
-    },
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2047789256224153600/2Akp-pqi_normal.jpg",
-    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/yk_9526.jpg https://pbs.twimg.com/profile_images/2047789256224153600/2Akp-pqi_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": "/fable5-media/yk_9526-2064855386922889335.jpg",
-    "avatarUrl": "/fable5-avatars/yk_9526.jpg"
-  },
-  {
-    "id": "har_ssh7-2065033316764647580",
-    "title": "Playable game prototype built with Fable 5",
-    "author": "Harsh",
-    "handle": "@har_ssh7",
-    "sourceUrl": "https://x.com/har_ssh7/status/2065033316764647580",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "games",
-    "categories": [
-      "games",
-      "3d",
-      "prompts",
-      "research"
-    ],
-    "media": "video",
-    "heat": "2 likes · 0 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "3d",
-      "prompts",
-      "research",
-      "prompt"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "prompted",
-    "prompt": "\"build me a fantasy world game where AI villagers live real lives — read the papers, do whatever it takes.\"\n\n9 villagers with memories, daily plans &amp; gossip. \nEmerging AI Agents.",
-    "note": "Prompt text was extracted from the original post. Verify any hidden follow-up steps before treating it as a tutorial.",
-    "originalText": "Claude Fable one-shotted this entire 3D game based on Stanford's Generative Agents paper.\n\nMy prompt: \"build me a fantasy world game where AI villagers live real lives — read the papers, do whatever it takes.\"\n\n9 villagers with memories, daily plans &amp; gossip. \nEmerging AI Agents. https://t.co/Gw6Emzww4H",
-    "metrics": {
-      "likes": 2,
-      "reposts": 0,
-      "replies": 1,
-      "quotes": 0,
-      "views": 41,
-      "bookmarks": 1
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2065032747174043648/vid/avc1/1280x720/vc9CKdqbeA87UQdb.mp4?tag=14"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
-    ],
-    "summary": [
-      "Shows a playable game prototype attributed to Claude Fable 5, with the post emphasizing one-prompt or one-shot generation."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "one-shot",
-        "design-gen",
-        "3d-gen",
-        "automation"
-      ],
-      "evidence": [
-        "prompted",
-        "unverified-claim"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [],
-      "risk": []
-    },
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1781972880974049280/10ZOPZZr_normal.jpg",
-    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/har_ssh7.jpg https://pbs.twimg.com/profile_images/1781972880974049280/10ZOPZZr_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": "/fable5-media/har_ssh7-2065033316764647580.jpg",
-    "avatarUrl": "/fable5-avatars/har_ssh7.jpg"
-  },
-  {
-    "id": "quroolarc-2065064391712645467",
-    "title": "3D or WebGL prototype built with Fable 5",
-    "author": "qurool",
-    "handle": "@quroolarc",
-    "sourceUrl": "https://x.com/quroolarc/status/2065064391712645467",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "websites",
-    "categories": [
-      "websites",
-      "videos",
-      "3d",
-      "prompts"
-    ],
-    "media": "video",
-    "heat": "3 likes · 0 reposts",
-    "tags": [
-      "fable5",
-      "websites",
-      "videos",
-      "3d",
-      "prompts",
-      "prompt",
-      "web",
-      "demo"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "prompted",
-    "prompt": "\"Create a one-page website for me with a 3D model of a truck rotating continuously in the center; it should be as detailed and realistic as possible. No other content is needed on the site\"\n\nin the video, you can see how they performed \n\ni didn't label the models so you could share your own guesses in the comments\n\nthe result really surprised me",
-    "note": "Prompt text was extracted from the original post. Verify any hidden follow-up steps before treating it as a tutorial.",
-    "originalText": "where is fable 5?\n\ni gave the exact same prompt to all four claude models to see which one would handle the task best\n\n> fable 5\n> opus 4.8\n> sonnet 4.6\n> haiku 4.5\n\nthe prompt:\n\n\"Create a one-page website for me with a 3D model of a truck rotating continuously in the center; it should be as detailed and realistic as possible. No other content is needed on the site\"\n\nin the video, you can see how they performed \n\ni didn't label the models so you could share your own guesses in the comments\n\nthe result really surprised me",
-    "metrics": {
-      "likes": 3,
-      "reposts": 0,
-      "replies": 0,
-      "quotes": 0,
-      "views": 63,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/tweet_video/HKiU4evXoAAC55X.mp4"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-latest-target500"
-    ],
-    "summary": [
-      "Shows a motion or video generation demo associated with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "website",
-      "medium": "video",
-      "capability": [
-        "motion-gen",
-        "3d-gen"
-      ],
-      "evidence": [
-        "prompted"
-      ],
-      "domain": [
-        "web-design"
-      ],
-      "tech": [],
-      "risk": []
-    },
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2029154887653556224/r-O3bWfR_normal.jpg",
-    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/quroolarc.jpg https://pbs.twimg.com/profile_images/2029154887653556224/r-O3bWfR_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": "/fable5-media/quroolarc-2065064391712645467.jpg",
-    "avatarUrl": "/fable5-avatars/quroolarc.jpg"
-  },
-  {
-    "id": "shakhnazarss-2064839036955767100",
-    "title": "Playable game prototype built with Fable 5",
-    "author": "Jackson Shaikh",
-    "handle": "@shakhnazarss",
-    "sourceUrl": "https://x.com/shakhnazarss/status/2064839036955767100",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "games",
-    "categories": [
-      "games",
-      "agents"
-    ],
-    "media": "video",
-    "heat": "0 likes · 1 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "agents"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Claude Mythos + Higgsfield MCP = game changer. literally.\n\nI just made this shooter with camera controls by connecting Higgsfield MCP to Claude Fable 5 and made it in maybe 4 minutes. https://t.co/ZdnVxMnQ4U",
-    "metrics": {
-      "likes": 0,
-      "reposts": 1,
-      "replies": 1,
-      "quotes": 0,
-      "views": 48,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064838981242822656/vid/avc1/720x900/zwDJSftDb2a4qcuW.mp4?tag=14"
-    ],
-    "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
-    ],
-    "summary": [
-      "Describes an agentic workflow around Claude Mythos / Fable 5, focused on game-building rather than a simple chat response."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [
-        "mcp",
-        "higgsfield"
-      ],
-      "risk": []
-    },
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2064837726747365376/nDkemeif_normal.jpg",
-    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/shakhnazarss.jpg https://pbs.twimg.com/profile_images/2064837726747365376/nDkemeif_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
-    "mediaThumbUrl": "/fable5-media/shakhnazarss-2064839036955767100.jpg",
-    "avatarUrl": "/fable5-avatars/shakhnazarss.jpg"
-  },
-  {
-    "id": "mrbrondordefi-2065078009111986359",
-    "title": "Playable game prototype built with Fable 5",
-    "author": "Mr Brondor",
-    "handle": "@mrbrondordefi",
-    "sourceUrl": "https://x.com/mrbrondordefi/status/2065078009111986359",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "games",
-    "categories": [
-      "games",
-      "3d",
-      "agents",
-      "prompts"
-    ],
-    "media": "video",
-    "heat": "1 likes · 0 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "3d",
-      "agents",
-      "prompts",
-      "prompt"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "AI JUST BUILT A FULL WEBCAM GAME FROM A SINGLE PROMPT\n\nAnd you're still not bullish on bittensor:native!?? 💀\n\nClaude Fable 5 + Higgsfield MCP created a complete fruit slicing game controlled by your webcam\n\nOne prompt. Full game. Working.\n\nThis is the AI capability explosion happening in real time \n\nEvery new model release = more compute demand \n\nEvery new feature = more GPU hours burned \n\nEvery developer using AI = more infrastructure needed\n\nMicrosoft already told 100K engineers to stop using Claude because bills exploded\n\nUber burned their entire AI budget by April\n\nThe demand is outpacing supply FAST\n\nbittensor:native is building the decentralized compute layer for exactly this moment\n\nNVIDIA deployed $420 M.\n\nGrayscale filed the ETF. \n\nJensen Huang endorsed it publicly.\n\nDecentralized compute is the infrastructure for what's coming.\n\nPosition accordingly Tribe\n\n-Brondor\n\n-nfa-dyor-",
-    "metrics": {
-      "likes": 1,
-      "reposts": 0,
-      "replies": 0,
-      "quotes": 1,
-      "views": 144,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2065077947153715200/vid/avc1/1080x1920/82txVKKMIMWk9dPN.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
-    ],
-    "summary": [
-      "Shows a playable game prototype attributed to Claude Fable 5, with the post emphasizing one-prompt or one-shot generation."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "one-shot",
-        "design-gen",
-        "3d-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [
-        "mcp",
-        "higgsfield"
-      ],
-      "risk": [
-        "market-claim"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/mrbrondordefi-2065078009111986359.jpg",
-    "avatarUrl": "/fable5-avatars/mrbrondordefi.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2053122377370796032/ZttQspsK_normal.jpg"
-  },
-  {
     "id": "sammydeere-2064890179555307991",
     "title": "Minecraft-style game built with one prompt",
     "author": "Sammy",
@@ -392,7 +37,7 @@
       "https://video.twimg.com/amplify_video/2064889467538751488/vid/avc1/1456x1080/11rCgGaX08OtIela.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -468,7 +113,7 @@
       "https://video.twimg.com/amplify_video/2065090479222312960/vid/avc1/2880x2160/N09nK-0cDmBTfg3K.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500",
       "launch-2026-06-08-to-2026-06-12-latest-target500"
@@ -536,7 +181,7 @@
       "https://pbs.twimg.com/media/HKe2Mp1XkAAEDkP.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -608,7 +253,7 @@
       "https://video.twimg.com/amplify_video/2065095827295756289/vid/avc1/1206x720/QD47lYyIwgROO0c0.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -671,7 +316,7 @@
       "https://pbs.twimg.com/media/HKeV7NYWMAAx95a.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -739,7 +384,7 @@
       "https://pbs.twimg.com/media/HKe4DK6XMAAznvq.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -807,7 +452,7 @@
       "https://video.twimg.com/amplify_video/2064763126424182784/vid/avc1/2058x1440/qzdixqJePGTTcigW.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -872,7 +517,7 @@
       "https://video.twimg.com/amplify_video/2064892865944387585/vid/avc1/1920x1080/l1Qj8rv2MECUWp7X.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
     ],
@@ -936,7 +581,7 @@
       "https://pbs.twimg.com/media/HKhO5OmXUAA-UaJ.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1012,7 +657,7 @@
       "https://pbs.twimg.com/media/HKiOx5NX0AAX0ZB.png"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1088,7 +733,7 @@
       "https://video.twimg.com/amplify_video/2065089930368253952/vid/avc1/1326x720/YRFkka22zZq1A7iL.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500",
       "launch-2026-06-08-to-2026-06-12-latest-target500"
@@ -1158,7 +803,7 @@
       "https://pbs.twimg.com/media/HKivmnlWEAEEEZq.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1229,7 +874,7 @@
       "https://pbs.twimg.com/media/HKiw-eeb0AAPjkg.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1293,7 +938,7 @@
       "https://video.twimg.com/amplify_video/2065078455314874368/vid/avc1/1280x720/jkLrOsYvDtXq2DZy.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1359,7 +1004,7 @@
       "https://video.twimg.com/amplify_video/2064729669287526401/vid/avc1/1920x1080/fU4DZ-HuyfqbU_ya.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1433,7 +1078,7 @@
       "https://pbs.twimg.com/media/HKieSDzXQAAJph8.jpg"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500"
     ],
@@ -1500,7 +1145,7 @@
     },
     "mediaUrls": [],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1564,7 +1209,7 @@
       "https://video.twimg.com/amplify_video/2064809410048978944/vid/avc1/3452x1940/aPh3brBUoJrR-PU7.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1630,7 +1275,7 @@
       "https://video.twimg.com/amplify_video/2065038431194062849/vid/avc1/1080x1920/jxTT8-wxPmNCNreA.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1654,5 +1299,351 @@
     "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/shrenikcc.jpg https://pbs.twimg.com/profile_images/1926288907420717056/MxPU1rMW_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
     "mediaThumbUrl": "/fable5-media/shrenikcc-2065038653651644647.jpg",
     "avatarUrl": "/fable5-avatars/shrenikcc.jpg"
+  },
+  {
+    "id": "realarbrand-2064906719059447958",
+    "title": "tested Claude Fable 5 with the Blender MCP connector",
+    "author": "Fen",
+    "handle": "@realarbrand",
+    "sourceUrl": "https://x.com/realarbrand/status/2064906719059447958",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d",
+      "agents",
+      "prompts"
+    ],
+    "media": "image",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "3d",
+      "agents",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I tested Claude Fable 5 with the Blender MCP connector. I'm new to Blender, so the prompt was just \"build me a lighthouse in the style of each Warcraft 3 faction.\"\n\nIt wrote the Python, screenshotted its own work, caught its mistakes, and fixed them. Then rendered these. https://t.co/MnEpEp2MVD",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 54,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HKgFi2-bYAA3OMB.jpg",
+      "https://pbs.twimg.com/media/HKgFi2_a0AAlvJF.jpg",
+      "https://pbs.twimg.com/media/HKgFi29boAAPnxm.jpg",
+      "https://pbs.twimg.com/media/HKgFi3DagAANS5m.jpg"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Describes an agentic workflow around Claude Fable 5, focused on 3D prototyping rather than a simple chat response."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "image",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "blender",
+        "mcp"
+      ],
+      "risk": []
+    },
+    "mediaCacheError": "Command failed: curl -L --fail --max-time 12 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-media/realarbrand-2064906719059447958.jpg https://pbs.twimg.com/media/HKgFi2-bYAA3OMB.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2024960469254254592/RLzpWXrA_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/realarbrand.jpg https://pbs.twimg.com/profile_images/2024960469254254592/RLzpWXrA_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/realarbrand-2064906719059447958.jpg",
+    "avatarUrl": "/fable5-avatars/realarbrand.jpg"
+  },
+  {
+    "id": "mobinmithun-2065069714125255135",
+    "title": "Tutorial for animated award-winning websites",
+    "author": "Mobin Mithun",
+    "handle": "@mobinmithun",
+    "sourceUrl": "https://x.com/mobinmithun/status/2065069714125255135",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "websites",
+    "categories": [
+      "websites",
+      "videos",
+      "prompts"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "websites",
+      "videos",
+      "prompts",
+      "prompt",
+      "web"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Viktor Oddy’s 12-minute tutorial shows how fast Claude Fable 5 can build animated, high-end website concepts with the right prompt and structure.\n\nNot just a flat landing page.\n\nMotion. Sections. Visual flow. Real web feel!! https://t.co/PXwu6auDKi",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 52,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065069176595877888/vid/avc1/1662x1080/NapMX0IO5VlwQPZB.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Shares a prompt or tutorial for reproducing a web-building workflow with Claude Fable 5."
+    ],
+    "facets": {
+      "artifactType": "website",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "motion-gen"
+      ],
+      "evidence": [
+        "tutorial"
+      ],
+      "domain": [
+        "web-design",
+        "education"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/583318755041628160/pBLU2FRM_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/mobinmithun.jpg https://pbs.twimg.com/profile_images/583318755041628160/pBLU2FRM_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/mobinmithun-2065069714125255135.jpg",
+    "avatarUrl": "/fable5-avatars/mobinmithun.jpg"
+  },
+  {
+    "id": "rehensina-2065093951250665660",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "Rehen",
+    "handle": "@rehensina",
+    "sourceUrl": "https://x.com/rehensina/status/2065093951250665660",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d",
+      "design",
+      "prompts"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "3d",
+      "design",
+      "prompts",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Claude Fable 5 Designed a V8 Engine in Under 10 Minutes\nI asked it to design a V8 engine.\n\nLess than 10 minutes later, it returned a complete 3D model that was fully assembled and ready to use.\n\nNot a rough concept.\nNot a partial design.\nA working V8 engine model generated from a simple prompt.",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 40,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065062760669663232/vid/avc1/2956x2160/W0_rMsxQ4nOG3Twc.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2063347039157751808/-0PjDRax_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/rehensina.jpg https://pbs.twimg.com/profile_images/2063347039157751808/-0PjDRax_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/rehensina-2065093951250665660.jpg",
+    "avatarUrl": "/fable5-avatars/rehensina.jpg"
+  },
+  {
+    "id": "quimedesu-2064923576986107963",
+    "title": "got bored and asked Fable the Anthropic Mythos to build me a Red Dead...",
+    "author": "Ark",
+    "handle": "@quimedesu",
+    "sourceUrl": "https://x.com/quimedesu/status/2064923576986107963",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "code",
+    "categories": [
+      "code"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I got bored and asked Fable the Anthropic Mythos to build me a Red Dead Redemption 3 in one shot. And it wrote 2k lines of code. I'm impressed with how much information he was able to put into so few lines of code. https://t.co/FKagOVOsnC",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 34,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064922369458614272/vid/avc1/1920x1080/pXznPoSTvmX2bDq-.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Summarizes an original X post about got bored and asked Fable the Anthropic Mythos to build me a Red Dead"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [],
+      "risk": []
+    },
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2063293213310341120/fxdTP85P_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/quimedesu.jpg https://pbs.twimg.com/profile_images/2063293213310341120/fxdTP85P_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/quimedesu-2064923576986107963.jpg",
+    "avatarUrl": "/fable5-avatars/quimedesu.jpg"
+  },
+  {
+    "id": "brentmwarner-2065098485532074144",
+    "title": "Claude Fable 5 availability update",
+    "author": "Brent Warner",
+    "handle": "@brentmwarner",
+    "sourceUrl": "https://x.com/brentmwarner/status/2065098485532074144",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d",
+      "design",
+      "agents",
+      "code",
+      "news"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "3d",
+      "design",
+      "agents",
+      "code",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Its been a while but back with some big bangers on the latest update for @graftappio \n🔗:https://t.co/NMIQzW8KIK\n0.1.113\n- Claude Fable 5 now available\n- Agent swarm: Have a model orchestrate multiple threads with subagents, that assigns any provider and model you want. \n- Added harness support for Opencode, Pi, and Antigravity.\n- Added support to run local models via Claude Code, Codex, Pi and Opencode.\n- New chat mode allows you to work outside of a repo and interact with your desktop with any model + model can send screenshots within the chat.\n- UI updates and improvements",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 31,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2065097840238411776/vid/avc1/1516x1080/YqFjBIFbzOGnO7-l.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-12T10:30:19.073Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-latest-target500"
+    ],
+    "summary": [
+      "Describes an agentic workflow around Claude Fable 5, focused on coding rather than a simple chat response."
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "marketing"
+      ],
+      "tech": [
+        "claude-code"
+      ],
+      "risk": [
+        "market-claim"
+      ]
+    },
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1919567217718358016/y8Zlr1sK_normal.jpg",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/fable5-avatars/brentmwarner.jpg https://pbs.twimg.com/profile_images/1919567217718358016/y8Zlr1sK_normal.jpg\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (22) The requested URL returned error: 503\n",
+    "mediaThumbUrl": "/fable5-media/brentmwarner-2065098485532074144.jpg",
+    "avatarUrl": "/fable5-avatars/brentmwarner.jpg"
   }
 ]

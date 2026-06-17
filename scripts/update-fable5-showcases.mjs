@@ -721,8 +721,15 @@ function isNonCaseAnnouncement(post) {
   ) {
     return true
   }
+  if (/\b(?:someone|somebody)\b.{0,80}\b(?:vibe-coded|built|created|made|rebuilt|recreated)\b/i.test(text) && !/\b(?:i|we)\b.{0,80}\b(?:built|created|made|asked|gave)\b/i.test(text)) {
+    return true
+  }
 
   if (/\b(?:bookmark|comment\s+["']?prompt|dm\b|follow|copy this|thank me later|free article|full playbook)\b/i.test(text)) {
+    return true
+  }
+
+  if (/\b(?:compared to fable 5|compared with fable 5|better than fable 5|any other model)\b/i.test(text) && /\b(?:marketplace|export|tesana|platform|launch it directly)\b/i.test(text)) {
     return true
   }
 
@@ -749,6 +756,9 @@ function isSystemPromptLeakText(text) {
     ) ||
     /(?:系统提示|系統提示|完整提示|提示被完整|隐藏指令|隱藏指令|洩露|泄露|扒出来|曝光|120,000\s*(?:字符|個字符)|1,?5[89]5\s*(?:行|lines))/i.test(
       text
+    ) ||
+    /(?:sistem komutu|tam sistem|sızdı|sizdi|1\.585\s*satır|1,585\s*satır|şeffaf|seffaf)/i.test(
+      text
     )
   )
 }
@@ -759,7 +769,8 @@ function isMoneyHustleText(text) {
       text
     ) ||
     /\$\d[\d,]*(?:\/month| subscription|k\/month|,000)/i.test(text) ||
-    /\b(?:salario|empresa multimillonaria|bono de 100 millones|despidieran|reemplazar mi salario|remplazar mi salario)\b/i.test(text)
+    /\b(?:salario|empresa multimillonaria|bono de 100 millones|despidieran|reemplazar mi salario|remplazar mi salario)\b/i.test(text) ||
+    /\b(?:\$\d+k product|pay for|studios|publishers|film companies|token|solana:[a-z0-9]+)\b/i.test(text)
   )
 }
 

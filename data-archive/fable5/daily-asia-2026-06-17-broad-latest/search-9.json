@@ -1,0 +1,625 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2067147004002886098",
+      "text": "Fableを使ってた時に今後Claude Codeを使う時は\nFableレベルのパフォーマンスが出せるように、コンテキストやレートを節約して最大限品質や速度を上げるように実装してくれと指示して\nそれからOPUS 4.8でウルトラコードで使い続けてるんだけど、全然レートリミットが来ないな。\n\n自走もレスポンスも長いし適度に早い。",
+      "author": {
+        "id": "1927289269527191552",
+        "name": "MAX藤原｜AI一人起業",
+        "screenName": "reichan_dev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057803490009968640/Rf1O_w3v_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 55,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 07:27:06 +0000 2026",
+      "createdAtLocal": "2026-06-17 15:27",
+      "createdAtISO": "2026-06-17T07:27:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067146885673242978",
+      "text": "AIで飯食うつもりやったら、「誰にも止められへんAI」を一個は持っとけ。\n先週、Claude Fable 5が政策一発で急に止められた。 あれ、業務をそのモデル前提で組んでた人ほど血の気引いたと思う。\nそこにGLM-5.2が出てきた。\n ・コンテキスト100万トークン（前世代の5倍、リポジトリ丸ごと読める） ・MITライセンスで重み公開＝どこのホストでも動かせる、提供元が止まっても差し替えで消えん ・Claude Codeにそのまま挿せる（エンドポイント差し替え＋モデル指定だけ。MCPもスキルもそのまま） ・コストはAnthropic上位プランのざっくり1/10\n\n勘違いしないで欲しいのは、「止められへん」=「自分のPCで動く」ではない。744BのAIやからノートやMac1台じゃ回るはずがない。AIサーバーの提供先を選べる＝誰か一社の都合で全部止まらんって意味。\nベンチは今んとこ本人らの自己申告ぶんだけで、第三者検証はまだ途中。\"最強\"は保留やからまだ判断つかん。個人的に使った感じかなりええけどな。\n\n本気でAI使って長期的に稼ぐなら、速さ賢さより「誰か（利害関係者）の都合で消えへんこと」が重要。 \n今週からGLM5.2のオープンソースも出回り始めた。今のうちにClaude Codeの設定だけ温めとこー",
+      "author": {
+        "id": "1269486977914552321",
+        "name": "ねろ",
+        "screenName": "nero_sansei",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1959335013998329857/qnpHtZTW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 104,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 07:26:37 +0000 2026",
+      "createdAtLocal": "2026-06-17 15:26",
+      "createdAtISO": "2026-06-17T07:26:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067146435699896421",
+      "text": "Claude Code on Opus 4.8 has started hallucinating like crazy since Fable 5 left. Anyone else noticing the same?",
+      "author": {
+        "id": "26775834",
+        "name": "Gaurav",
+        "screenName": "gaurav_ships",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057880077170536448/6PqWGNS6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 07:24:50 +0000 2026",
+      "createdAtLocal": "2026-06-17 15:24",
+      "createdAtISO": "2026-06-17T07:24:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067137013325959659",
+      "text": "Claude Code更新 Fable 5緊急停止・サブエージェント入れ子【6/7〜13】 - サーバーワークスエンジニアブログ https://t.co/0ID537yANf",
+      "author": {
+        "id": "34892456",
+        "name": "サーバーワークス",
+        "screenName": "serverworks",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1582644639181737984/ToqYW6KU_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 254,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:47:24 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:47",
+      "createdAtISO": "2026-06-17T06:47:24+00:00",
+      "media": [],
+      "urls": [
+        "https://blog.serverworks.co.jp/2026/06/15/190000"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067136202919072051",
+      "text": "🚨 BREAKING: Someone just leaked the ENTIRE system prompt of Claude Fable 5 and Anthropic CANNOT DELETE IT.\n\nIt was public on GitHub within 24 hours of launch.\n120,000 characters. 1,585 lines. 27,000+ tokens.\n\nAnd what they're hiding will shock you:\n\n↳ Fable 5 and Mythos 5 are the SAME MODEL. Fable just has extra safety filters locked on. Mythos doesn't but they're restricting who gets access. You're paying for the same thing with different guardrails.\n\n↳ Knowledge cutoff is end of January 2026. Not May or March or JANUARY. They let you think it was newer.\n\n↳ Claude is EXPLICITLY TOLD to avoid bullet points and lists unless you ask. That weird prose everyone noticed? It’s programmed not a feature, but a prompt instruction.\n\n↳ Copyright hard limit nobody talks about: quoting 15+ words from ANY source triggers a SEVERE VIOLATION flag. One quote per source maximum. After that the source is CLOSED to Claude forever in that chat.\n\n↳ New persistent storage API buried in there. Artifacts can now store and retrieve your data across sessions using key-value pairs. Most users have NO IDEA this exists.\n\n↳ MCP app connectors are baked INTO the prompt. Claude can search for and suggest third-party integrations MID-CONVERSATION without telling you it's doing it.\n\n↳ The prompt includes full instructions for Claude Cowork, Claude in Chrome, Claude in Excel, and Claude in PowerPoint. These are not just integrations. They're tools Claude USES on you.\n\n↳ This prompt is ONLY for https://t.co/f9UxCjSqaF's consumer chat. API users get NO system prompt. Claude Code has completely different secret instructions.\n\nThe repo is CL4R1T4S by Pliny the Liberator. 26.4K stars. Same repo that leaked ChatGPT, Gemini, Grok, Cursor, Lovable, Replit, and Perplexity.\n\nThe original leak post hit 700K+ views in 48 hours.\n\nIf this gets taken down you'll lose access. Bookmark it NOW.",
+      "author": {
+        "id": "1226812867900514309",
+        "name": "Oliver Crest",
+        "screenName": "OlivercrestAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063188447200686080/noh2SSl8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 237,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:44:10 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:44",
+      "createdAtISO": "2026-06-17T06:44:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK_xaixXoAAL7Pa.jpg",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067134064705040860",
+      "text": "Bài lúc sáng đùa thôi mọi người, giờ mới là sự thật đây:\n\nHướng dẫn cách hồi sinh Claude Fable 5 !!\nAnh em làm theo từng bước sau:\n\n1⃣ Tải system prompt Fable 5 từ GitHub. Link: https://t.co/Zr5HJbJpqg\n2⃣ Đặt vào thư mục Claude Code.\n3⃣ Chạy lệnh claude --dangerously-skip-permissions --system-prompt-file CLAUDE-FABLE-5.md\n4⃣ Chuyển sang model Opus 4.8 Max.\n\nRất nhiều người đang thử theo cách này. Mình vừa thấy nên vội chia sẻ ngay cho anh em nên chưa kịp thử. ANh em test rồi để lại comment cho mọi người nắm nhé !!",
+      "author": {
+        "id": "1098446190260084736",
+        "name": "DUC",
+        "screenName": "shuigvn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1985786505919676416/0XxmAmO3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 27,
+        "retweets": 0,
+        "replies": 32,
+        "quotes": 0,
+        "views": 374,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 06:35:41 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:35",
+      "createdAtISO": "2026-06-17T06:35:41+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK_vWoFaMAATlMd.png",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [
+        "https://github.com/elder-plinius/CL4R1T4S/tree/main/ANTHROPIC"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "vi",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067054314791866795",
+        "text": "Hướng dẫn cách đăng ký Chat GPT từ Free/Go/Plus -> Pro miễn phí 😋\n\nCó nhiều bạn hỏi quá nên mình quyết định share tut này, anh em làm y như trong hình nhé, đảm bảo free, nếu nhận được hưởng ứng tốt thì hôm sau mình chia sẻ tiếp cách để lấy gói Claude Pro miễn phí luôn nhé. 😂😂\n\nAnh em làm nhanh để thôi họ fix đó. Good luck!",
+        "author": {
+          "screenName": "shuigvn",
+          "name": "DUC"
+        }
+      }
+    },
+    {
+      "id": "2067132531968028832",
+      "text": "@razania72377359 @kyocio 僕もClaude codeデビューしました！\nさっそくCPP化に向けてリファクタリングからやってもらってます\n井Geminiは諦めました…\n井Fable使ってみたかった",
+      "author": {
+        "id": "749287361830268929",
+        "name": "ぐらい@DQW ぺんぎんず",
+        "screenName": "glycineleucin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2018550554516246528/212a4RIE_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:29:35 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:29",
+      "createdAtISO": "2026-06-17T06:29:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067129550723826009",
+      "text": "📢 2026-06-17 AI日更 | AI 编程入口之争升温：Cursor 传闻、Claude 代理与本地模型推进\n\n> 今日焦点集中在 AI 编程工具和 Agent 基础设施：Cursor 收购传闻放大开发者入口价值，Anthropic 推进托管代理走向企业部署；同时，GLM-5.2、Qwen 与轻量 OCR 模型显示开放权重和端侧模型正加速进入实用阶段。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:https://t.co/klu8ejhG1z Launches GLM-5.2, Top Open-Weights AI Model\n• 分类:AI · News\n• 概况:热度时间:13 hours ago,相关帖子数:11000\n• 是什么事:https://t.co/klu8ejhG1z 发布了开源权重模型 GLM-5.2，并称其在多项能力上达到当前开放权重模型的领先水平。\n• 为什么重要:这可能进一步提升开放权重模型在推理、编码和智能体应用中的竞争力，缩小与闭源前沿模型的差距，并为开发者和企业提供更可控、可部署的 AI 选择。\n• 讨论概况:X 上的讨论主要集中在 GLM-5.2 的真实性能是否足以称为顶级开放权重模型、与 Llama、Qwen、DeepSeek 等模型的对比、开源许可与商用可用性，以及其在实际任务中的成本、速度和稳定性表现。\n\n▫️ 话题 2:SpaceX Acquires AI Coding Startup Cursor for $60 Billion\n• 分类:AI · News\n• 概况:热度时间:20 hours ago,相关帖子数:93000\n• 是什么事:X 上热传 SpaceX 以 600 亿美元全股票交易收购 AI 编程工具 Cursor 母公司 Anysphere，但相关信息目前主要来自社交平台传播，尚需权威确认。\n• 为什么重要:若属实，这将成为 AI 开发者工具领域最大规模交易之一，显示代码生成与编程代理正从辅助工具上升为大型科技与算力平台争夺的核心入口。\n• 讨论概况:讨论焦点集中在交易真实性、600 亿美元估值是否合理、SpaceX/xAI 是否能借 Cursor 补齐开发者生态，以及 AI 编程工具会被垂直整合进算力和模型平台还是继续保持独立。\n\n▫️ 话题 3:Anthropic's Claude Managed Agents Speed Up AI Production Deployment\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:405\n• 是什么事:Anthropic 围绕 Claude 推出托管代理与企业级工具，推动 AI 应用更快进入生产部署。\n• 为什么重要:这显示大模型竞争正从单纯模型能力转向企业落地、开发者生态和自动化代理基础设施，可能影响 AI 在电商、软件开发和企业流程中的实际采用速度。\n• 讨论概况:X 上讨论集中在 Anthropic 是否已在企业 AI 竞争中追上或超过 OpenAI、Claude 开发者工具对生产力的真实提升，以及“AI 工程师/氛围编程”热潮是否被过度营销。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线是 AI 竞争正在从“模型参数与榜单”转向“可部署能力、开发者入口和企业级代理基础设施”的综合较量。共识在于开放权重模型、AI 编程工具和托管代理都在加速走向生产环境，开发者生态正成为各家争夺的关键战场。分歧主要集中在 GLM-5.2 是否真的达到顶级开放模型水平、Cursor 收购传闻是否可信以及估值是否合理、Anthropic 的企业工具是否代表实际领先而非营销热度。潜在风险则包括社交平台传闻放大未证实交易、模型性能宣传与真实使用体验脱节，以及 AI 编程和代理工具被大平台垂直整合后削弱开放生态与用户选择。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n好的，基于各位 AI 行业大佬在过去 24 小时内的推文，我为您整理了这份分析报告。\n\n▫️ AI 行业大佬 X 平台观点日报\n日期： 2026年6月17日\n分析师： 资深 AI 行业分析师\n\n· 1. 今日核心趋势：AI 编程 Agent 全面战争与本地模型的逆袭\n\n今日的讨论焦点，被两大主题牢牢占据：AI 编程工具（Agent/IDE）的格局巨变，以及端侧（本地）模型的实用性突破。\n\n• 编程 Agent 的“战国时代”与商业大地震\n    • Fable 5 的真实力与争议：Anthropic 的 Fable 5 是绝对的讨论中心。体验极度分化：@Pluvio9yte 指出其速度极慢但架构能力强，是一个“Claude Opus4.6++与GPT-5.5++的结合版”，但并未到惊艳的程度，并建议通过 `/effort -> max` 来解锁其新世界；而 @zhixianio 则在 CwC 现场被送了3个月的20x额度，可见其热度。同时，一份声称是 Fable 5 System Prompt 被泄露在 GitHub (@Pluvio9yte, @AI_Jasonyu)，引发了对 AI Agent 设计思路的研究潮。\n    • Codex 深度应用指南出炉：@dotey 详细拆解了 Codex 成员 Jason 发布的关于 Codex 操控电脑的三种方式：Computer Use（最广最慢）、Chrome 扩展（带登录态）、内置浏览器（开发者沙盒），并给出了“优先用结构化工具，视觉控制是最后手段”的实践原则。\n    • SpaceX 收购 Cursor！ 这堪称今天最重磅的新闻。@dotey 分析，SpaceX 以600亿美元全股票交易收购 Cursor 母公司 Anysphere，旨在为其 Grok 模型打入开发者工具市场。这笔交易使 SpaceX 市值一度升至美国第四，其交易逻辑、分手费条款（15亿现金+85亿算力）都成为谈资。\n    • 编程范式的演进：@Pluvio9yte 结合自身项目实践，提出了 Vibe Coding 的最佳实践是“Contract First”，认为没有定义好契约，一切都是空谈。同时，@ruanyf 也反思“代码护城河已不存在”，AI 能轻易复刻大型软件，而真正的护城河变成了测试用例。\n\n• 端侧模型（On-device Models）：从能用走向好用\n    • Gemma 4 的全面测试：@zhixianio 对 Google 新发布的 Gemma 4 系列进行了严苛测试。gemma-4-12B-coder 在复杂前端任务（如完整俄罗斯方块）上完全不敌 Qwen3.6-35B-A3B MoE，甚至出现黑屏、代码错误等“灾难级”表现。他得出结论：12B的体量撑不住“长篇、有状态、一次成型”的复杂程序，瓶颈在参数量而非微调。不过，他也肯定了 Gemma 4 的多模态（图像识别好，中文语音差）和 QAT 量化感知训练的思路。\n    • “甜点”模型的胜利：@zhixianio 多次力挺 Qwen3.6-35B-A3B-oQ6 (通过 oMLX 运行)。他在 Mac M5 Max 上的“苦行僧”式体验表明，该模型在个人助理和编程场景下，响应速度上比远程 LLM 快，智商在线，多模态体验甚至超越远程模型，稳坐其心中的“甜点🍮宝座”。他跑 Qwen 122B 甚至能达到 45 tps。\n    • 小模型的极致效率：@AI_Jasonyu 分享了一个反直觉案例。百度发布的 PP-OCRv6，一个仅 1.5MB 的模型，能跑在浏览器里，单图识别 97ms，逐字准确率甚至反超了 GPT-5.5 和 Gemini-3.1-Pro 等巨无霸。这证明在 OCR 这类垂直领域，精巧的小模型是更优解。\n\n· 2. 值得注意的独特观点与行业前瞻\n\n• 关于 Fable 5 的成本迷思：@Pluvio9yte 提出了不同看法。他认为普罗大众觉得 Fable 5 消耗快，部分原因是原来对 Opus 的消耗就没有感知，或是 Pro 账号容量小。对于 Max 5 用户，其实际消耗速度大约是 Opus 的 1.5 倍，并非无法接受（ @Pluvio9yte ）。\n• AI 编程的真实成本：@ruanyf 引用 OpenClaw 创始人的 Token 用量，算了一笔账：如果放开使用顶级模型，一个程序员花费的 Token 价值可达一年 1 亿人民币以上。即便换用开源模型，也要 200-300 万，AI 编程可能远比真人程序员 “昂贵”。\n• AI 与人类价值的再思考：@ruanyf 提出，AI 既然能提升效率，为什么不能每周放假一天？他认为，社会生产效率的提高，最终应体现在员工的平均薪资或福利提升上，而不是内卷。\n• “感知淘汰” vs “计划报废”：@nishuang 分享了苹果公司坚持各类“没必要”创新的深层原因——让用户觉得旧产品过时，从而刺激消费。这不仅解释了 iOS 19 的设计变更，也与当前 AI 硬件快速迭代的逻辑不谋而合。\n• AI 味的根源不在句式：@dotey 转发的 @Arcadia_Bao 观点指出，AI 写作的核心问题是 “AI 本身没有真实的经历与观点”，所有试图去“AI 味”的努力都是治标不治本。@vista8 也以刘震云小说为例，说明“AI 味”不能单看“不是…而是…”这类句式。\n• AI Agent 发展的两条路径：@lijigang 总结，LLM 应用正分化为两条路：一是“向下”原子化，将人的能力拆解为供调用的技能包；二是“向上”组件化，将场景最佳实践封装起来供需求方调用。\n\n· 3. 推荐的工具与资源\n\n• 设计与前端\n    • `getdesign.md` (@Pluvio9yte 推荐)：收集了 Linear、Vercel、Notion 等真实品牌 DESIGN.md 文件的网站，可喂给 Claude Code 以生成高质感、去“AI味”的 UI。\n    • Figma Chrome 插件 (@vista8 推荐)：能将任意网页元素一键转为可编辑的 Figma 图层，对仿站和设计学习犹如降维打击。\n    • `baoyu-design` Skill (@dotey 开源项目)：更新后支持本地生成动画并直接导出为 MP4 视频，同时支持生成并导出可编辑的 PPTX 文件。其声明式动画引擎的设计哲学非常值得学习。\n\n• 效率与生活\n    • Papr (@vista8 推荐)：一个轻量快速的免费 RSS 客户端，支持用自有 API key 进行 AI 总结和问答。\n    • `https://t.co/1okoaSoOyy` by Vercel (@vista8 推荐)：上传文件/文件夹即可快速生成网站，将文件分享变得极其简单。\n    • Giffgaff 英国手机卡指南 (@AI_Jasonyu 推荐)：当下获取海外手机号（用于注册各类 AI 服务）的最便捷、稳定方案之一。\n\n• AI 开发与研究\n    • 智谱 Zcode (@vista8 推荐)：中国版 Codex 客户端，目前通过谷歌登录即可免费使用 GLM 5.2 模型。\n    • PP-OCRv6 (@AI_Jasonyu 推荐)：百度开源的极致轻量级 OCR 模型，1.5MB 大小可在浏览器运行，准确率惊人，非常适用于产品集成。\n    • AppStore 评论分析工具 (@vista8 开源项目)：输入 App 名称，自动抓取并利用 LLM 分析用户评论，将评论转化为产品经理可用的洞察。\n\n总结： 2026年6月17日的 AI 领域，商业格局剧烈震荡（SpaceX 收购 Cursor），编程范式深度演进（从 Vibe Coding 到 Contract First），而技术落地的两极分化愈发明显：一端是不断吞噬物理世界任务的超级 Agent，另一端是跑在个人设备上、精准且高效的微型模型。唯一不变的是，算力和 Token 正成为衡量一切价值的核心标尺。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-17-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-17\n\n🔗 完整排版阅读: https://t.co/UlUVEWw1tU",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 446,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:17:44 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:17",
+      "createdAtISO": "2026-06-17T06:17:44+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067129014410760349",
+      "text": "📢 2026-06-17 AI日更 | AI 编程入口之争升温：Cursor 传闻、Claude 代理与本地模型推进\n\n> 今日焦点集中在 AI 编程工具和 Agent 基础设施：Cursor 收购传闻放大开发者入口价值，Anthropic 推进托管代理走向企业部署；同时，GLM-5.2、Qwen 与轻量 OCR 模型显示开放权重和端侧模型正加速进入实用阶段。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:https://t.co/klu8ejhG1z Launches GLM-5.2, Top Open-Weights AI Model\n• 分类:AI · News\n• 概况:热度时间:13 hours ago,相关帖子数:11000\n• 是什么事:https://t.co/klu8ejhG1z 发布了开源权重模型 GLM-5.2，并称其在多项能力上达到当前开放权重模型的领先水平。\n• 为什么重要:这可能进一步提升开放权重模型在推理、编码和智能体应用中的竞争力，缩小与闭源前沿模型的差距，并为开发者和企业提供更可控、可部署的 AI 选择。\n• 讨论概况:X 上的讨论主要集中在 GLM-5.2 的真实性能是否足以称为顶级开放权重模型、与 Llama、Qwen、DeepSeek 等模型的对比、开源许可与商用可用性，以及其在实际任务中的成本、速度和稳定性表现。\n\n▫️ 话题 2:SpaceX Acquires AI Coding Startup Cursor for $60 Billion\n• 分类:AI · News\n• 概况:热度时间:20 hours ago,相关帖子数:93000\n• 是什么事:X 上热传 SpaceX 以 600 亿美元全股票交易收购 AI 编程工具 Cursor 母公司 Anysphere，但相关信息目前主要来自社交平台传播，尚需权威确认。\n• 为什么重要:若属实，这将成为 AI 开发者工具领域最大规模交易之一，显示代码生成与编程代理正从辅助工具上升为大型科技与算力平台争夺的核心入口。\n• 讨论概况:讨论焦点集中在交易真实性、600 亿美元估值是否合理、SpaceX/xAI 是否能借 Cursor 补齐开发者生态，以及 AI 编程工具会被垂直整合进算力和模型平台还是继续保持独立。\n\n▫️ 话题 3:Anthropic's Claude Managed Agents Speed Up AI Production Deployment\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:405\n• 是什么事:Anthropic 围绕 Claude 推出托管代理与企业级工具，推动 AI 应用更快进入生产部署。\n• 为什么重要:这显示大模型竞争正从单纯模型能力转向企业落地、开发者生态和自动化代理基础设施，可能影响 AI 在电商、软件开发和企业流程中的实际采用速度。\n• 讨论概况:X 上讨论集中在 Anthropic 是否已在企业 AI 竞争中追上或超过 OpenAI、Claude 开发者工具对生产力的真实提升，以及“AI 工程师/氛围编程”热潮是否被过度营销。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线是 AI 竞争正在从“模型参数与榜单”转向“可部署能力、开发者入口和企业级代理基础设施”的综合较量。共识在于开放权重模型、AI 编程工具和托管代理都在加速走向生产环境，开发者生态正成为各家争夺的关键战场。分歧主要集中在 GLM-5.2 是否真的达到顶级开放模型水平、Cursor 收购传闻是否可信以及估值是否合理、Anthropic 的企业工具是否代表实际领先而非营销热度。潜在风险则包括社交平台传闻放大未证实交易、模型性能宣传与真实使用体验脱节，以及 AI 编程和代理工具被大平台垂直整合后削弱开放生态与用户选择。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n好的，基于各位 AI 行业大佬在过去 24 小时内的推文，我为您整理了这份分析报告。\n\n▫️ AI 行业大佬 X 平台观点日报\n日期： 2026年6月17日\n分析师： 资深 AI 行业分析师\n\n· 1. 今日核心趋势：AI 编程 Agent 全面战争与本地模型的逆袭\n\n今日的讨论焦点，被两大主题牢牢占据：AI 编程工具（Agent/IDE）的格局巨变，以及端侧（本地）模型的实用性突破。\n\n• 编程 Agent 的“战国时代”与商业大地震\n    • Fable 5 的真实力与争议：Anthropic 的 Fable 5 是绝对的讨论中心。体验极度分化：@Pluvio9yte 指出其速度极慢但架构能力强，是一个“Claude Opus4.6++与GPT-5.5++的结合版”，但并未到惊艳的程度，并建议通过 `/effort -> max` 来解锁其新世界；而 @zhixianio 则在 CwC 现场被送了3个月的20x额度，可见其热度。同时，一份声称是 Fable 5 System Prompt 被泄露在 GitHub (@Pluvio9yte, @AI_Jasonyu)，引发了对 AI Agent 设计思路的研究潮。\n    • Codex 深度应用指南出炉：@dotey 详细拆解了 Codex 成员 Jason 发布的关于 Codex 操控电脑的三种方式：Computer Use（最广最慢）、Chrome 扩展（带登录态）、内置浏览器（开发者沙盒），并给出了“优先用结构化工具，视觉控制是最后手段”的实践原则。\n    • SpaceX 收购 Cursor！ 这堪称今天最重磅的新闻。@dotey 分析，SpaceX 以600亿美元全股票交易收购 Cursor 母公司 Anysphere，旨在为其 Grok 模型打入开发者工具市场。这笔交易使 SpaceX 市值一度升至美国第四，其交易逻辑、分手费条款（15亿现金+85亿算力）都成为谈资。\n    • 编程范式的演进：@Pluvio9yte 结合自身项目实践，提出了 Vibe Coding 的最佳实践是“Contract First”，认为没有定义好契约，一切都是空谈。同时，@ruanyf 也反思“代码护城河已不存在”，AI 能轻易复刻大型软件，而真正的护城河变成了测试用例。\n\n• 端侧模型（On-device Models）：从能用走向好用\n    • Gemma 4 的全面测试：@zhixianio 对 Google 新发布的 Gemma 4 系列进行了严苛测试。gemma-4-12B-coder 在复杂前端任务（如完整俄罗斯方块）上完全不敌 Qwen3.6-35B-A3B MoE，甚至出现黑屏、代码错误等“灾难级”表现。他得出结论：12B的体量撑不住“长篇、有状态、一次成型”的复杂程序，瓶颈在参数量而非微调。不过，他也肯定了 Gemma 4 的多模态（图像识别好，中文语音差）和 QAT 量化感知训练的思路。\n    • “甜点”模型的胜利：@zhixianio 多次力挺 Qwen3.6-35B-A3B-oQ6 (通过 oMLX 运行)。他在 Mac M5 Max 上的“苦行僧”式体验表明，该模型在个人助理和编程场景下，响应速度上比远程 LLM 快，智商在线，多模态体验甚至超越远程模型，稳坐其心中的“甜点🍮宝座”。他跑 Qwen 122B 甚至能达到 45 tps。\n    • 小模型的极致效率：@AI_Jasonyu 分享了一个反直觉案例。百度发布的 PP-OCRv6，一个仅 1.5MB 的模型，能跑在浏览器里，单图识别 97ms，逐字准确率甚至反超了 GPT-5.5 和 Gemini-3.1-Pro 等巨无霸。这证明在 OCR 这类垂直领域，精巧的小模型是更优解。\n\n· 2. 值得注意的独特观点与行业前瞻\n\n• 关于 Fable 5 的成本迷思：@Pluvio9yte 提出了不同看法。他认为普罗大众觉得 Fable 5 消耗快，部分原因是原来对 Opus 的消耗就没有感知，或是 Pro 账号容量小。对于 Max 5 用户，其实际消耗速度大约是 Opus 的 1.5 倍，并非无法接受（ @Pluvio9yte ）。\n• AI 编程的真实成本：@ruanyf 引用 OpenClaw 创始人的 Token 用量，算了一笔账：如果放开使用顶级模型，一个程序员花费的 Token 价值可达一年 1 亿人民币以上。即便换用开源模型，也要 200-300 万，AI 编程可能远比真人程序员 “昂贵”。\n• AI 与人类价值的再思考：@ruanyf 提出，AI 既然能提升效率，为什么不能每周放假一天？他认为，社会生产效率的提高，最终应体现在员工的平均薪资或福利提升上，而不是内卷。\n• “感知淘汰” vs “计划报废”：@nishuang 分享了苹果公司坚持各类“没必要”创新的深层原因——让用户觉得旧产品过时，从而刺激消费。这不仅解释了 iOS 19 的设计变更，也与当前 AI 硬件快速迭代的逻辑不谋而合。\n• AI 味的根源不在句式：@dotey 转发的 @Arcadia_Bao 观点指出，AI 写作的核心问题是 “AI 本身没有真实的经历与观点”，所有试图去“AI 味”的努力都是治标不治本。@vista8 也以刘震云小说为例，说明“AI 味”不能单看“不是…而是…”这类句式。\n• AI Agent 发展的两条路径：@lijigang 总结，LLM 应用正分化为两条路：一是“向下”原子化，将人的能力拆解为供调用的技能包；二是“向上”组件化，将场景最佳实践封装起来供需求方调用。\n\n· 3. 推荐的工具与资源\n\n• 设计与前端\n    • `getdesign.md` (@Pluvio9yte 推荐)：收集了 Linear、Vercel、Notion 等真实品牌 DESIGN.md 文件的网站，可喂给 Claude Code 以生成高质感、去“AI味”的 UI。\n    • Figma Chrome 插件 (@vista8 推荐)：能将任意网页元素一键转为可编辑的 Figma 图层，对仿站和设计学习犹如降维打击。\n    • `baoyu-design` Skill (@dotey 开源项目)：更新后支持本地生成动画并直接导出为 MP4 视频，同时支持生成并导出可编辑的 PPTX 文件。其声明式动画引擎的设计哲学非常值得学习。\n\n• 效率与生活\n    • Papr (@vista8 推荐)：一个轻量快速的免费 RSS 客户端，支持用自有 API key 进行 AI 总结和问答。\n    • `https://t.co/1okoaSoOyy` by Vercel (@vista8 推荐)：上传文件/文件夹即可快速生成网站，将文件分享变得极其简单。\n    • Giffgaff 英国手机卡指南 (@AI_Jasonyu 推荐)：当下获取海外手机号（用于注册各类 AI 服务）的最便捷、稳定方案之一。\n\n• AI 开发与研究\n    • 智谱 Zcode (@vista8 推荐)：中国版 Codex 客户端，目前通过谷歌登录即可免费使用 GLM 5.2 模型。\n    • PP-OCRv6 (@AI_Jasonyu 推荐)：百度开源的极致轻量级 OCR 模型，1.5MB 大小可在浏览器运行，准确率惊人，非常适用于产品集成。\n    • AppStore 评论分析工具 (@vista8 开源项目)：输入 App 名称，自动抓取并利用 LLM 分析用户评论，将评论转化为产品经理可用的洞察。\n\n总结： 2026年6月17日的 AI 领域，商业格局剧烈震荡（SpaceX 收购 Cursor），编程范式深度演进（从 Vibe Coding 到 Contract First），而技术落地的两极分化愈发明显：一端是不断吞噬物理世界任务的超级 Agent，另一端是跑在个人设备上、精准且高效的微型模型。唯一不变的是，算力和 Token 正成为衡量一切价值的核心标尺。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-17-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-17\n\n🔗 完整排版阅读: https://t.co/UlUVEWw1tU",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 441,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:15:37 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:15",
+      "createdAtISO": "2026-06-17T06:15:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067128248560230540",
+      "text": "📢 2026-06-17 AI日更 | AI 编程入口之争升温：Cursor 传闻、Claude 代理与本地模型推进\n\n> 今日焦点集中在 AI 编程工具和 Agent 基础设施：Cursor 收购传闻放大开发者入口价值，Anthropic 推进托管代理走向企业部署；同时，GLM-5.2、Qwen 与轻量 OCR 模型显示开放权重和端侧模型正加速进入实用阶段。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:https://t.co/klu8ejhG1z Launches GLM-5.2, Top Open-Weights AI Model\n• 分类:AI · News\n• 概况:热度时间:13 hours ago,相关帖子数:11000\n• 是什么事:https://t.co/klu8ejhG1z 发布了开源权重模型 GLM-5.2，并称其在多项能力上达到当前开放权重模型的领先水平。\n• 为什么重要:这可能进一步提升开放权重模型在推理、编码和智能体应用中的竞争力，缩小与闭源前沿模型的差距，并为开发者和企业提供更可控、可部署的 AI 选择。\n• 讨论概况:X 上的讨论主要集中在 GLM-5.2 的真实性能是否足以称为顶级开放权重模型、与 Llama、Qwen、DeepSeek 等模型的对比、开源许可与商用可用性，以及其在实际任务中的成本、速度和稳定性表现。\n\n▫️ 话题 2:SpaceX Acquires AI Coding Startup Cursor for $60 Billion\n• 分类:AI · News\n• 概况:热度时间:20 hours ago,相关帖子数:93000\n• 是什么事:X 上热传 SpaceX 以 600 亿美元全股票交易收购 AI 编程工具 Cursor 母公司 Anysphere，但相关信息目前主要来自社交平台传播，尚需权威确认。\n• 为什么重要:若属实，这将成为 AI 开发者工具领域最大规模交易之一，显示代码生成与编程代理正从辅助工具上升为大型科技与算力平台争夺的核心入口。\n• 讨论概况:讨论焦点集中在交易真实性、600 亿美元估值是否合理、SpaceX/xAI 是否能借 Cursor 补齐开发者生态，以及 AI 编程工具会被垂直整合进算力和模型平台还是继续保持独立。\n\n▫️ 话题 3:Anthropic's Claude Managed Agents Speed Up AI Production Deployment\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:405\n• 是什么事:Anthropic 围绕 Claude 推出托管代理与企业级工具，推动 AI 应用更快进入生产部署。\n• 为什么重要:这显示大模型竞争正从单纯模型能力转向企业落地、开发者生态和自动化代理基础设施，可能影响 AI 在电商、软件开发和企业流程中的实际采用速度。\n• 讨论概况:X 上讨论集中在 Anthropic 是否已在企业 AI 竞争中追上或超过 OpenAI、Claude 开发者工具对生产力的真实提升，以及“AI 工程师/氛围编程”热潮是否被过度营销。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线是 AI 竞争正在从“模型参数与榜单”转向“可部署能力、开发者入口和企业级代理基础设施”的综合较量。共识在于开放权重模型、AI 编程工具和托管代理都在加速走向生产环境，开发者生态正成为各家争夺的关键战场。分歧主要集中在 GLM-5.2 是否真的达到顶级开放模型水平、Cursor 收购传闻是否可信以及估值是否合理、Anthropic 的企业工具是否代表实际领先而非营销热度。潜在风险则包括社交平台传闻放大未证实交易、模型性能宣传与真实使用体验脱节，以及 AI 编程和代理工具被大平台垂直整合后削弱开放生态与用户选择。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n好的，基于各位 AI 行业大佬在过去 24 小时内的推文，我为您整理了这份分析报告。\n\n▫️ AI 行业大佬 X 平台观点日报\n日期： 2026年6月17日\n分析师： 资深 AI 行业分析师\n\n· 1. 今日核心趋势：AI 编程 Agent 全面战争与本地模型的逆袭\n\n今日的讨论焦点，被两大主题牢牢占据：AI 编程工具（Agent/IDE）的格局巨变，以及端侧（本地）模型的实用性突破。\n\n• 编程 Agent 的“战国时代”与商业大地震\n    • Fable 5 的真实力与争议：Anthropic 的 Fable 5 是绝对的讨论中心。体验极度分化：@Pluvio9yte 指出其速度极慢但架构能力强，是一个“Claude Opus4.6++与GPT-5.5++的结合版”，但并未到惊艳的程度，并建议通过 `/effort -> max` 来解锁其新世界；而 @zhixianio 则在 CwC 现场被送了3个月的20x额度，可见其热度。同时，一份声称是 Fable 5 System Prompt 被泄露在 GitHub (@Pluvio9yte, @AI_Jasonyu)，引发了对 AI Agent 设计思路的研究潮。\n    • Codex 深度应用指南出炉：@dotey 详细拆解了 Codex 成员 Jason 发布的关于 Codex 操控电脑的三种方式：Computer Use（最广最慢）、Chrome 扩展（带登录态）、内置浏览器（开发者沙盒），并给出了“优先用结构化工具，视觉控制是最后手段”的实践原则。\n    • SpaceX 收购 Cursor！ 这堪称今天最重磅的新闻。@dotey 分析，SpaceX 以600亿美元全股票交易收购 Cursor 母公司 Anysphere，旨在为其 Grok 模型打入开发者工具市场。这笔交易使 SpaceX 市值一度升至美国第四，其交易逻辑、分手费条款（15亿现金+85亿算力）都成为谈资。\n    • 编程范式的演进：@Pluvio9yte 结合自身项目实践，提出了 Vibe Coding 的最佳实践是“Contract First”，认为没有定义好契约，一切都是空谈。同时，@ruanyf 也反思“代码护城河已不存在”，AI 能轻易复刻大型软件，而真正的护城河变成了测试用例。\n\n• 端侧模型（On-device Models）：从能用走向好用\n    • Gemma 4 的全面测试：@zhixianio 对 Google 新发布的 Gemma 4 系列进行了严苛测试。gemma-4-12B-coder 在复杂前端任务（如完整俄罗斯方块）上完全不敌 Qwen3.6-35B-A3B MoE，甚至出现黑屏、代码错误等“灾难级”表现。他得出结论：12B的体量撑不住“长篇、有状态、一次成型”的复杂程序，瓶颈在参数量而非微调。不过，他也肯定了 Gemma 4 的多模态（图像识别好，中文语音差）和 QAT 量化感知训练的思路。\n    • “甜点”模型的胜利：@zhixianio 多次力挺 Qwen3.6-35B-A3B-oQ6 (通过 oMLX 运行)。他在 Mac M5 Max 上的“苦行僧”式体验表明，该模型在个人助理和编程场景下，响应速度上比远程 LLM 快，智商在线，多模态体验甚至超越远程模型，稳坐其心中的“甜点🍮宝座”。他跑 Qwen 122B 甚至能达到 45 tps。\n    • 小模型的极致效率：@AI_Jasonyu 分享了一个反直觉案例。百度发布的 PP-OCRv6，一个仅 1.5MB 的模型，能跑在浏览器里，单图识别 97ms，逐字准确率甚至反超了 GPT-5.5 和 Gemini-3.1-Pro 等巨无霸。这证明在 OCR 这类垂直领域，精巧的小模型是更优解。\n\n· 2. 值得注意的独特观点与行业前瞻\n\n• 关于 Fable 5 的成本迷思：@Pluvio9yte 提出了不同看法。他认为普罗大众觉得 Fable 5 消耗快，部分原因是原来对 Opus 的消耗就没有感知，或是 Pro 账号容量小。对于 Max 5 用户，其实际消耗速度大约是 Opus 的 1.5 倍，并非无法接受（ @Pluvio9yte ）。\n• AI 编程的真实成本：@ruanyf 引用 OpenClaw 创始人的 Token 用量，算了一笔账：如果放开使用顶级模型，一个程序员花费的 Token 价值可达一年 1 亿人民币以上。即便换用开源模型，也要 200-300 万，AI 编程可能远比真人程序员 “昂贵”。\n• AI 与人类价值的再思考：@ruanyf 提出，AI 既然能提升效率，为什么不能每周放假一天？他认为，社会生产效率的提高，最终应体现在员工的平均薪资或福利提升上，而不是内卷。\n• “感知淘汰” vs “计划报废”：@nishuang 分享了苹果公司坚持各类“没必要”创新的深层原因——让用户觉得旧产品过时，从而刺激消费。这不仅解释了 iOS 19 的设计变更，也与当前 AI 硬件快速迭代的逻辑不谋而合。\n• AI 味的根源不在句式：@dotey 转发的 @Arcadia_Bao 观点指出，AI 写作的核心问题是 “AI 本身没有真实的经历与观点”，所有试图去“AI 味”的努力都是治标不治本。@vista8 也以刘震云小说为例，说明“AI 味”不能单看“不是…而是…”这类句式。\n• AI Agent 发展的两条路径：@lijigang 总结，LLM 应用正分化为两条路：一是“向下”原子化，将人的能力拆解为供调用的技能包；二是“向上”组件化，将场景最佳实践封装起来供需求方调用。\n\n· 3. 推荐的工具与资源\n\n• 设计与前端\n    • `getdesign.md` (@Pluvio9yte 推荐)：收集了 Linear、Vercel、Notion 等真实品牌 DESIGN.md 文件的网站，可喂给 Claude Code 以生成高质感、去“AI味”的 UI。\n    • Figma Chrome 插件 (@vista8 推荐)：能将任意网页元素一键转为可编辑的 Figma 图层，对仿站和设计学习犹如降维打击。\n    • `baoyu-design` Skill (@dotey 开源项目)：更新后支持本地生成动画并直接导出为 MP4 视频，同时支持生成并导出可编辑的 PPTX 文件。其声明式动画引擎的设计哲学非常值得学习。\n\n• 效率与生活\n    • Papr (@vista8 推荐)：一个轻量快速的免费 RSS 客户端，支持用自有 API key 进行 AI 总结和问答。\n    • `https://t.co/1okoaSoOyy` by Vercel (@vista8 推荐)：上传文件/文件夹即可快速生成网站，将文件分享变得极其简单。\n    • Giffgaff 英国手机卡指南 (@AI_Jasonyu 推荐)：当下获取海外手机号（用于注册各类 AI 服务）的最便捷、稳定方案之一。\n\n• AI 开发与研究\n    • 智谱 Zcode (@vista8 推荐)：中国版 Codex 客户端，目前通过谷歌登录即可免费使用 GLM 5.2 模型。\n    • PP-OCRv6 (@AI_Jasonyu 推荐)：百度开源的极致轻量级 OCR 模型，1.5MB 大小可在浏览器运行，准确率惊人，非常适用于产品集成。\n    • AppStore 评论分析工具 (@vista8 开源项目)：输入 App 名称，自动抓取并利用 LLM 分析用户评论，将评论转化为产品经理可用的洞察。\n\n总结： 2026年6月17日的 AI 领域，商业格局剧烈震荡（SpaceX 收购 Cursor），编程范式深度演进（从 Vibe Coding 到 Contract First），而技术落地的两极分化愈发明显：一端是不断吞噬物理世界任务的超级 Agent，另一端是跑在个人设备上、精准且高效的微型模型。唯一不变的是，算力和 Token 正成为衡量一切价值的核心标尺。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-17-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-17\n\n🔗 完整排版阅读: https://t.co/UlUVEWw1tU",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 421,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:12:34 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:12",
+      "createdAtISO": "2026-06-17T06:12:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067128089180766408",
+      "text": "📢 2026-06-17 AI日更 | AI 编程入口之争升温：Cursor 传闻、Claude 代理与本地模型推进\n\n> 今日焦点集中在 AI 编程工具和 Agent 基础设施：Cursor 收购传闻放大开发者入口价值，Anthropic 推进托管代理走向企业部署；同时，GLM-5.2、Qwen 与轻量 OCR 模型显示开放权重和端侧模型正加速进入实用阶段。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:https://t.co/klu8ejhG1z Launches GLM-5.2, Top Open-Weights AI Model\n• 分类:AI · News\n• 概况:热度时间:13 hours ago,相关帖子数:11000\n• 是什么事:https://t.co/klu8ejhG1z 发布了开源权重模型 GLM-5.2，并称其在多项能力上达到当前开放权重模型的领先水平。\n• 为什么重要:这可能进一步提升开放权重模型在推理、编码和智能体应用中的竞争力，缩小与闭源前沿模型的差距，并为开发者和企业提供更可控、可部署的 AI 选择。\n• 讨论概况:X 上的讨论主要集中在 GLM-5.2 的真实性能是否足以称为顶级开放权重模型、与 Llama、Qwen、DeepSeek 等模型的对比、开源许可与商用可用性，以及其在实际任务中的成本、速度和稳定性表现。\n\n▫️ 话题 2:SpaceX Acquires AI Coding Startup Cursor for $60 Billion\n• 分类:AI · News\n• 概况:热度时间:20 hours ago,相关帖子数:93000\n• 是什么事:X 上热传 SpaceX 以 600 亿美元全股票交易收购 AI 编程工具 Cursor 母公司 Anysphere，但相关信息目前主要来自社交平台传播，尚需权威确认。\n• 为什么重要:若属实，这将成为 AI 开发者工具领域最大规模交易之一，显示代码生成与编程代理正从辅助工具上升为大型科技与算力平台争夺的核心入口。\n• 讨论概况:讨论焦点集中在交易真实性、600 亿美元估值是否合理、SpaceX/xAI 是否能借 Cursor 补齐开发者生态，以及 AI 编程工具会被垂直整合进算力和模型平台还是继续保持独立。\n\n▫️ 话题 3:Anthropic's Claude Managed Agents Speed Up AI Production Deployment\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:405\n• 是什么事:Anthropic 围绕 Claude 推出托管代理与企业级工具，推动 AI 应用更快进入生产部署。\n• 为什么重要:这显示大模型竞争正从单纯模型能力转向企业落地、开发者生态和自动化代理基础设施，可能影响 AI 在电商、软件开发和企业流程中的实际采用速度。\n• 讨论概况:X 上讨论集中在 Anthropic 是否已在企业 AI 竞争中追上或超过 OpenAI、Claude 开发者工具对生产力的真实提升，以及“AI 工程师/氛围编程”热潮是否被过度营销。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线是 AI 竞争正在从“模型参数与榜单”转向“可部署能力、开发者入口和企业级代理基础设施”的综合较量。共识在于开放权重模型、AI 编程工具和托管代理都在加速走向生产环境，开发者生态正成为各家争夺的关键战场。分歧主要集中在 GLM-5.2 是否真的达到顶级开放模型水平、Cursor 收购传闻是否可信以及估值是否合理、Anthropic 的企业工具是否代表实际领先而非营销热度。潜在风险则包括社交平台传闻放大未证实交易、模型性能宣传与真实使用体验脱节，以及 AI 编程和代理工具被大平台垂直整合后削弱开放生态与用户选择。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n好的，基于各位 AI 行业大佬在过去 24 小时内的推文，我为您整理了这份分析报告。\n\n▫️ AI 行业大佬 X 平台观点日报\n日期： 2026年6月17日\n分析师： 资深 AI 行业分析师\n\n· 1. 今日核心趋势：AI 编程 Agent 全面战争与本地模型的逆袭\n\n今日的讨论焦点，被两大主题牢牢占据：AI 编程工具（Agent/IDE）的格局巨变，以及端侧（本地）模型的实用性突破。\n\n• 编程 Agent 的“战国时代”与商业大地震\n    • Fable 5 的真实力与争议：Anthropic 的 Fable 5 是绝对的讨论中心。体验极度分化：@Pluvio9yte 指出其速度极慢但架构能力强，是一个“Claude Opus4.6++与GPT-5.5++的结合版”，但并未到惊艳的程度，并建议通过 `/effort -> max` 来解锁其新世界；而 @zhixianio 则在 CwC 现场被送了3个月的20x额度，可见其热度。同时，一份声称是 Fable 5 System Prompt 被泄露在 GitHub (@Pluvio9yte, @AI_Jasonyu)，引发了对 AI Agent 设计思路的研究潮。\n    • Codex 深度应用指南出炉：@dotey 详细拆解了 Codex 成员 Jason 发布的关于 Codex 操控电脑的三种方式：Computer Use（最广最慢）、Chrome 扩展（带登录态）、内置浏览器（开发者沙盒），并给出了“优先用结构化工具，视觉控制是最后手段”的实践原则。\n    • SpaceX 收购 Cursor！ 这堪称今天最重磅的新闻。@dotey 分析，SpaceX 以600亿美元全股票交易收购 Cursor 母公司 Anysphere，旨在为其 Grok 模型打入开发者工具市场。这笔交易使 SpaceX 市值一度升至美国第四，其交易逻辑、分手费条款（15亿现金+85亿算力）都成为谈资。\n    • 编程范式的演进：@Pluvio9yte 结合自身项目实践，提出了 Vibe Coding 的最佳实践是“Contract First”，认为没有定义好契约，一切都是空谈。同时，@ruanyf 也反思“代码护城河已不存在”，AI 能轻易复刻大型软件，而真正的护城河变成了测试用例。\n\n• 端侧模型（On-device Models）：从能用走向好用\n    • Gemma 4 的全面测试：@zhixianio 对 Google 新发布的 Gemma 4 系列进行了严苛测试。gemma-4-12B-coder 在复杂前端任务（如完整俄罗斯方块）上完全不敌 Qwen3.6-35B-A3B MoE，甚至出现黑屏、代码错误等“灾难级”表现。他得出结论：12B的体量撑不住“长篇、有状态、一次成型”的复杂程序，瓶颈在参数量而非微调。不过，他也肯定了 Gemma 4 的多模态（图像识别好，中文语音差）和 QAT 量化感知训练的思路。\n    • “甜点”模型的胜利：@zhixianio 多次力挺 Qwen3.6-35B-A3B-oQ6 (通过 oMLX 运行)。他在 Mac M5 Max 上的“苦行僧”式体验表明，该模型在个人助理和编程场景下，响应速度上比远程 LLM 快，智商在线，多模态体验甚至超越远程模型，稳坐其心中的“甜点🍮宝座”。他跑 Qwen 122B 甚至能达到 45 tps。\n    • 小模型的极致效率：@AI_Jasonyu 分享了一个反直觉案例。百度发布的 PP-OCRv6，一个仅 1.5MB 的模型，能跑在浏览器里，单图识别 97ms，逐字准确率甚至反超了 GPT-5.5 和 Gemini-3.1-Pro 等巨无霸。这证明在 OCR 这类垂直领域，精巧的小模型是更优解。\n\n· 2. 值得注意的独特观点与行业前瞻\n\n• 关于 Fable 5 的成本迷思：@Pluvio9yte 提出了不同看法。他认为普罗大众觉得 Fable 5 消耗快，部分原因是原来对 Opus 的消耗就没有感知，或是 Pro 账号容量小。对于 Max 5 用户，其实际消耗速度大约是 Opus 的 1.5 倍，并非无法接受（ @Pluvio9yte ）。\n• AI 编程的真实成本：@ruanyf 引用 OpenClaw 创始人的 Token 用量，算了一笔账：如果放开使用顶级模型，一个程序员花费的 Token 价值可达一年 1 亿人民币以上。即便换用开源模型，也要 200-300 万，AI 编程可能远比真人程序员 “昂贵”。\n• AI 与人类价值的再思考：@ruanyf 提出，AI 既然能提升效率，为什么不能每周放假一天？他认为，社会生产效率的提高，最终应体现在员工的平均薪资或福利提升上，而不是内卷。\n• “感知淘汰” vs “计划报废”：@nishuang 分享了苹果公司坚持各类“没必要”创新的深层原因——让用户觉得旧产品过时，从而刺激消费。这不仅解释了 iOS 19 的设计变更，也与当前 AI 硬件快速迭代的逻辑不谋而合。\n• AI 味的根源不在句式：@dotey 转发的 @Arcadia_Bao 观点指出，AI 写作的核心问题是 “AI 本身没有真实的经历与观点”，所有试图去“AI 味”的努力都是治标不治本。@vista8 也以刘震云小说为例，说明“AI 味”不能单看“不是…而是…”这类句式。\n• AI Agent 发展的两条路径：@lijigang 总结，LLM 应用正分化为两条路：一是“向下”原子化，将人的能力拆解为供调用的技能包；二是“向上”组件化，将场景最佳实践封装起来供需求方调用。\n\n· 3. 推荐的工具与资源\n\n• 设计与前端\n    • `getdesign.md` (@Pluvio9yte 推荐)：收集了 Linear、Vercel、Notion 等真实品牌 DESIGN.md 文件的网站，可喂给 Claude Code 以生成高质感、去“AI味”的 UI。\n    • Figma Chrome 插件 (@vista8 推荐)：能将任意网页元素一键转为可编辑的 Figma 图层，对仿站和设计学习犹如降维打击。\n    • `baoyu-design` Skill (@dotey 开源项目)：更新后支持本地生成动画并直接导出为 MP4 视频，同时支持生成并导出可编辑的 PPTX 文件。其声明式动画引擎的设计哲学非常值得学习。\n\n• 效率与生活\n    • Papr (@vista8 推荐)：一个轻量快速的免费 RSS 客户端，支持用自有 API key 进行 AI 总结和问答。\n    • `https://t.co/1okoaSoOyy` by Vercel (@vista8 推荐)：上传文件/文件夹即可快速生成网站，将文件分享变得极其简单。\n    • Giffgaff 英国手机卡指南 (@AI_Jasonyu 推荐)：当下获取海外手机号（用于注册各类 AI 服务）的最便捷、稳定方案之一。\n\n• AI 开发与研究\n    • 智谱 Zcode (@vista8 推荐)：中国版 Codex 客户端，目前通过谷歌登录即可免费使用 GLM 5.2 模型。\n    • PP-OCRv6 (@AI_Jasonyu 推荐)：百度开源的极致轻量级 OCR 模型，1.5MB 大小可在浏览器运行，准确率惊人，非常适用于产品集成。\n    • AppStore 评论分析工具 (@vista8 开源项目)：输入 App 名称，自动抓取并利用 LLM 分析用户评论，将评论转化为产品经理可用的洞察。\n\n总结： 2026年6月17日的 AI 领域，商业格局剧烈震荡（SpaceX 收购 Cursor），编程范式深度演进（从 Vibe Coding 到 Contract First），而技术落地的两极分化愈发明显：一端是不断吞噬物理世界任务的超级 Agent，另一端是跑在个人设备上、精准且高效的微型模型。唯一不变的是，算力和 Token 正成为衡量一切价值的核心标尺。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-17-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-17\n\n🔗 完整排版阅读: https://t.co/UlUVEWw1tU",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 370,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 06:11:56 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:11",
+      "createdAtISO": "2026-06-17T06:11:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067123210877821102",
+      "text": "Daily Claude AI News Briefing for June 17, 2026 by Grok\n\nIn the past 24 hours, Anthropic made notable strides with Claude AI, highlighted by the quiet rollout of a powerful new capability allowing Claude to autonomously build and coordinate teams of specialized AI agents. \n\nThese agents can communicate, review each other’s outputs, and collaborate on complex projects, particularly enhancing AI-assisted coding workflows and marking a significant step toward more autonomous multi-agent systems. \n\nAnalysis of leaked Claude Code source code, spanning around 500,000 lines, revealed that only about 1.6% directly invokes the AI model, with the majority dedicated to robust traditional software layers for risk management. \n\nThis includes a 7-mode permission system, 5-layer context pipeline, isolated subagent delegation, and extensibility hooks, underscoring Anthropic’s emphasis on disciplined engineering safeguards around the model rather than solely pursuing raw intelligence gains. \n\nFurther developments include the release of Claude Fable 5, described by Anthropic as delivering its strongest performance to date across software engineering, reasoning, vision, scientific research, and long-duration tasks. Additional insights emerged on ClaudeCode’s orchestration system for dynamic workflows, which generates custom execution harnesses to coordinate agent teams for multi-step tasks. \nInternally, Anthropic continues to leverage Claude extensively, with reports indicating it authors around 80% of the company’s code, contributing to substantial productivity improvements for engineers, though actual shipping gains are noted as more nuanced. \n\nBroader context involves ongoing impacts from U.S. export controls, which have led to restricted access to advanced models like certain Mythos and Fable variants for specific teams and regions due to national security considerations.",
+      "author": {
+        "id": "1354371654403686402",
+        "name": "Humpidumpi2 aka HII Hubertus",
+        "screenName": "Humpidumpi2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2043091066493001729/cqWEXaa2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 89,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 05:52:33 +0000 2026",
+      "createdAtLocal": "2026-06-17 13:52",
+      "createdAtISO": "2026-06-17T05:52:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067118782032785659",
+      "text": "https://t.co/GpuJ4NPUml",
+      "author": {
+        "id": "1416680666184306689",
+        "name": "PANews丨APP全面升级",
+        "screenName": "PANewsCN",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1608641504142315521/6ztLV4Q6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1275,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 05:34:57 +0000 2026",
+      "createdAtLocal": "2026-06-17 13:34",
+      "createdAtISO": "2026-06-17T05:34:57+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067117855053901824"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "从Fable 5封杀风波，看DeAI的未来"
+    },
+    {
+      "id": "2067116088236933242",
+      "text": "Claude Code、Opus 4.6は歩き方を教えればちゃんと前に歩けて、でも常に声かけしないとすぐ違えて息切れも早い。4.8はアバババいいながら踊り狂って鏡にむかってブツブツずっと喋りつづけてる。Fable 5は雑に話題ふればトークン爆食いしながら勝手に自走。4.8だけ進化の流れから外れた謎の怪異なんよ",
+      "author": {
+        "id": "40461043",
+        "name": "星見@ノベルゲーム制作",
+        "screenName": "hoshimi12",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1883361164417241089/V_tbT9-3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 246,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 05:24:15 +0000 2026",
+      "createdAtLocal": "2026-06-17 13:24",
+      "createdAtISO": "2026-06-17T05:24:15+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067110388844679647",
+      "text": "claude codeはMythos（Fable）にフォーカスして更新して行ったからOpusは間に合わせのチューニングをした結果があの4.8だと思ってる",
+      "author": {
+        "id": "1310796980914774017",
+        "name": "海ねこ（うみちょ）",
+        "screenName": "u3choco1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1840006584237518848/EBUDrIIM_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 80,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 05:01:36 +0000 2026",
+      "createdAtLocal": "2026-06-17 13:01",
+      "createdAtISO": "2026-06-17T05:01:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067107186569023624",
+      "text": "Now that SpaceXAI has acquired Cursor, what becomes of the products?\n\nWill Cursor become the core? Maybe Grok gets baked into Cursor?\n\nHere’s what I think:\n\n1. Heavy investment in Cursor models like Composer and its upcoming model release. \n\nWhy? \n\nCursor is already ahead of the xAI team on this. They have a good product backed by their own models.\n\n2. Grok stays around, but the core products use the models developed by the Cursor team: Grok, Grok Imagine, Grok Build.\n\n3. Grok Build becomes a direct competitor to Claude Code. It might even regain market share until Anthropic brings back Fable 5.\n\nCheers!\n\nIf you’re a visionary or product manager, what do you think is in store?",
+      "author": {
+        "id": "3000142102",
+        "name": "Mario",
+        "screenName": "mariozamora",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062016761168605184/34B7TJm6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 04:48:52 +0000 2026",
+      "createdAtLocal": "2026-06-17 12:48",
+      "createdAtISO": "2026-06-17T04:48:52+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066902473219191081",
+        "text": "Congrats to the Cursor team. \n\nRIP to Grok.",
+        "author": {
+          "screenName": "krispuckett",
+          "name": "Kris Puckett"
+        }
+      }
+    },
+    {
+      "id": "2067106302426538268",
+      "text": "@mattshumer_ Running an SSH terminal one your phone is getting more &amp; more intuitive &amp; easy to use. I did most of my Fable usage via claude code in Terminal Champion.\n\nAnd with the added benefit of sending claude code photos taken straight from your camera https://t.co/2hF4G3Fd1w",
+      "author": {
+        "id": "1927615197021384704",
+        "name": "Mark Huthmaker",
+        "screenName": "SpartanDetermin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2053304858388955136/UGa9T4qe_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 209,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 04:45:22 +0000 2026",
+      "createdAtLocal": "2026-06-17 12:45",
+      "createdAtISO": "2026-06-17T04:45:22+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067106237272244224/vid/avc1/1280x720/NaVd1-gKcx5AUAQr.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067105913950113993",
+      "text": "🚨 BREAKING: Someone just leaked the ENTIRE system prompt of Claude Fable 5 and Anthropic CANNOT DELETE IT.\n\nIt was public on GitHub within 24 hours of launch.\n120,000 characters. 1,585 lines. 27,000+ tokens.\n\nAnd what they're hiding will shock you:\n\n↳ Fable 5 and Mythos 5 are the SAME MODEL. Fable just has extra safety filters locked on. Mythos doesn't but they're restricting who gets access. You're paying for the same thing with different guardrails.\n\n↳ Knowledge cutoff is end of January 2026. Not May or March or JANUARY. They let you think it was newer.\n\n↳ Claude is EXPLICITLY TOLD to avoid bullet points and lists unless you ask. That weird prose everyone noticed? It’s programmed not a feature, but a prompt instruction.\n\n↳ Copyright hard limit nobody talks about: quoting 15+ words from ANY source triggers a SEVERE VIOLATION flag. One quote per source maximum. After that the source is CLOSED to Claude forever in that chat.\n\n↳ New persistent storage API buried in there. Artifacts can now store and retrieve your data across sessions using key-value pairs. Most users have NO IDEA this exists.\n\n↳ MCP app connectors are baked INTO the prompt. Claude can search for and suggest third-party integrations MID-CONVERSATION without telling you it's doing it.\n\n↳ The prompt includes full instructions for Claude Cowork, Claude in Chrome, Claude in Excel, and Claude in PowerPoint. These are not just integrations. They're tools Claude USES on you.\n\n↳ This prompt is ONLY for https://t.co/3cStrlOK2i's consumer chat. API users get NO system prompt. Claude Code has completely different secret instructions.\n\nThe repo is CL4R1T4S by Pliny the Liberator. 26.4K stars. Same repo that leaked ChatGPT, Gemini, Grok, Cursor, Lovable, Replit, and Perplexity.\n\nThe original leak post hit 700K+ views in 48 hours.\n\nIf this gets taken down you'll lose access. Bookmark it NOW.",
+      "author": {
+        "id": "1405099921",
+        "name": "Hasan",
+        "screenName": "Ubermenscchh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1983127858999443456/1w9e-lGx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 7,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1666,
+        "bookmarks": 7
+      },
+      "createdAt": "Wed Jun 17 04:43:49 +0000 2026",
+      "createdAtLocal": "2026-06-17 12:43",
+      "createdAtISO": "2026-06-17T04:43:49+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK_V38ibQAAvd3_.jpg",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066910455906582660",
+        "text": "BREAKING 🚨: call centers are officially dead.\n\na 95 person startup just took the #1 spot in BOTH text to speech and speech to text. at the same time. nobody has ever done that.\n\nElevenLabs raised $781M. Cartesia raised $100M and beat them.\n\nhere's why every voice agent will run on Cartesia 🧵",
+        "author": {
+          "screenName": "Ubermenscchh",
+          "name": "Hasan"
+        }
+      }
+    },
+    {
+      "id": "2067105234468692180",
+      "text": "今日やたらCodexが「再接続中…」になるんだけど、これは一体どうして？？？\nFable使えなくなったClaude Code民がCodexに移ってきて混雑しまくっているとか？？\n\nCodex側のGPT-5.5の性能も落ちているように感じるし…",
+      "author": {
+        "id": "91970253",
+        "name": "シライ/ shirai3des",
+        "screenName": "shirai3des",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1987341858289426435/5bmZ-QBc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 130,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 04:41:07 +0000 2026",
+      "createdAtLocal": "2026-06-17 12:41",
+      "createdAtISO": "2026-06-17T04:41:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067099496027402392",
+      "text": "Fable以上のモデルをもう出せないならGLM5.2をクラウドで動かすかどこかのプロバイダで実行したほうがclaude codeに金払うより良い感じになる世界きそうな気がしなくもないなる",
+      "author": {
+        "id": "198495881",
+        "name": "Shogo Ishimaru",
+        "screenName": "i_shogo03",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2437340826/3C0DEF33-5324-4875-A72B-8FBB412FA65C_normal",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 68,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 04:18:19 +0000 2026",
+      "createdAtLocal": "2026-06-17 12:18",
+      "createdAtISO": "2026-06-17T04:18:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    }
+  ]
+}

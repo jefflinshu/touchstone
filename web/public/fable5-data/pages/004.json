@@ -1,5 +1,72 @@
 [
   {
+    "id": "nessalazne-2065653889072783829",
+    "title": "Fable 5 comparison with other models",
+    "author": "🟢 Building Agentic AI Systems",
+    "handle": "@nessalazne",
+    "sourceUrl": "https://x.com/nessalazne/status/2065653889072783829",
+    "date": "2026-06-13",
+    "kind": "showcase",
+    "scene": "games",
+    "categories": [
+      "games",
+      "research"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "fable5",
+      "games",
+      "research",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I built 4 real apps in 24 hours to test Claude's new Fable 5 vs Opus.\n\nSim game: Fable made moving traffic + a sun tracking the sky. Opus made boxes with labels.\n\nThe depth gap is wild.\n\nComment \"FABLE\" for the full breakdown + prompts.\n\n#fable5 #claudeai https://t.co/mSy62EVh7x",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 84,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/ext_tw_video/2065653833661923328/pu/vid/avc1/720x1280/aBBcoKs9MAQlXhRp.mp4?tag=12"
+    ],
+    "firstSeenAt": "2026-06-13T06:46:33.477Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "incremental-2026-06-12-to-2026-06-13-q0"
+    ],
+    "summary": [
+      "Shows a playable game or game-like prototype associated with Claude Fable 5."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen"
+      ],
+      "evidence": [
+        "benchmark-claim",
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "benchmark-claim"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/nessalazne-2065653889072783829.jpg",
+    "avatarUrl": "/fable5-avatars/nessalazne.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2003595658616356865/n-HI7PrM_normal.jpg"
+  },
+  {
     "id": "rulia2505-2065670899961909736",
     "title": "Playable game prototype built with Fable 5",
     "author": "Samurayich",
@@ -38,7 +105,7 @@
       "https://video.twimg.com/ext_tw_video/2065670866986205185/pu/vid/avc1/576x1024/_WQ5pq7ZlmukbPTG.mp4?tag=25"
     ],
     "firstSeenAt": "2026-06-13T06:46:33.477Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "incremental-2026-06-12-to-2026-06-13-q0"
     ],
@@ -64,75 +131,6 @@
     "mediaThumbUrl": "/fable5-media/rulia2505-2065670899961909736.jpg",
     "avatarUrl": "/fable5-avatars/rulia2505.jpg",
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1908194356994932736/5jcsuKQY_normal.jpg"
-  },
-  {
-    "id": "cybrrog-2065680034820477220",
-    "title": "Minecraft-style game built with one prompt",
-    "author": "Cybrrog",
-    "handle": "@cybrrog",
-    "sourceUrl": "https://x.com/cybrrog/status/2065680034820477220",
-    "date": "2026-06-13",
-    "kind": "showcase",
-    "scene": "games",
-    "categories": [
-      "games",
-      "3d",
-      "prompts"
-    ],
-    "media": "image",
-    "heat": "X post",
-    "tags": [
-      "fable5",
-      "games",
-      "3d",
-      "prompts",
-      "prompt"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Claude Fable 5 and Mythos 5 have been suspended after someone created a Minecraft clone with a single prompt. Does this mean Claude Opus 4.8 is now the most advanced model available to the public? Is this the end for widespread public access? https://t.co/QInpjptisQ",
-    "metrics": {
-      "likes": 0,
-      "reposts": 0,
-      "replies": 0,
-      "quotes": 0,
-      "views": 43,
-      "bookmarks": 0
-    },
-    "mediaUrls": [
-      "https://pbs.twimg.com/media/HKrFCnbXIAA0XIF.jpg",
-      "https://pbs.twimg.com/media/HKrFCneXIAAo4cM.jpg"
-    ],
-    "firstSeenAt": "2026-06-13T06:46:33.477Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "incremental-2026-06-12-to-2026-06-13-q0"
-    ],
-    "summary": [
-      "Shows a playable game prototype attributed to Claude Mythos / Fable 5, with the post emphasizing one-prompt or one-shot generation."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "image",
-      "capability": [
-        "3d-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [],
-      "risk": [
-        "copyright"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/cybrrog-2065680034820477220.jpg",
-    "avatarUrl": "/fable5-avatars/cybrrog.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2011588307344592896/kVPZh55l_normal.jpg"
   },
   {
     "id": "tayoakintunde-2065640160197226664",
@@ -170,7 +168,7 @@
       "https://pbs.twimg.com/media/HKqgn93W8AArVzX.jpg"
     ],
     "firstSeenAt": "2026-06-13T06:46:33.477Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "incremental-2026-06-12-to-2026-06-13-q0"
     ],
@@ -231,7 +229,7 @@
       "https://video.twimg.com/tweet_video/HKq5akoXQAAhA9o.mp4"
     ],
     "firstSeenAt": "2026-06-13T06:46:33.477Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "incremental-2026-06-12-to-2026-06-13-q0"
     ],
@@ -293,7 +291,7 @@
       "https://pbs.twimg.com/media/HKrFoY0bUAAfQB0.jpg"
     ],
     "firstSeenAt": "2026-06-13T06:46:33.477Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "incremental-2026-06-12-to-2026-06-13-q0"
     ],
@@ -355,7 +353,7 @@
       "https://video.twimg.com/amplify_video/2065686884068589568/vid/avc1/544x544/aZXTVTMo6frs4jCI.mp4?tag=25"
     ],
     "firstSeenAt": "2026-06-13T06:49:52.400Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "official-claudeai-case-library-2026-06-12"
     ],
@@ -415,7 +413,7 @@
       "https://pbs.twimg.com/media/HKrJ2g6XAAEwG05.jpg"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "official-claudeai-case-library-2026-06-12"
     ],
@@ -477,7 +475,7 @@
       "https://video.twimg.com/amplify_video/2064919709183782912/vid/avc1/720x720/gaRxGbjk-5YRA-r9.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
     ],
@@ -543,7 +541,7 @@
       "https://video.twimg.com/amplify_video/2065361883662577664/vid/avc1/720x1280/1YEY5jgSMt3pL8eZ.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
     ],
@@ -610,7 +608,7 @@
       "https://video.twimg.com/amplify_video/2065278222112301056/vid/avc1/1858x1834/GKiC8ekbz9qlYecO.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500",
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
@@ -675,7 +673,7 @@
       "https://video.twimg.com/amplify_video/2065376571096256512/vid/avc1/2940x1506/ml9Qzo_Geb3D9VGs.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-13T06:46:33.477Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "incremental-2026-06-12-to-2026-06-13-creators1"
     ],
@@ -742,7 +740,7 @@
       "https://video.twimg.com/amplify_video/2065311015596920832/vid/avc1/1276x720/9CKMVDMgP14X4-VT.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -816,7 +814,7 @@
       "https://video.twimg.com/amplify_video/2065153944322441216/vid/avc1/1320x2868/9yVxxGhBqMsz4RMk.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
     ],
@@ -885,7 +883,7 @@
       "https://video.twimg.com/amplify_video/2065310003180032000/vid/avc1/1280x598/Gff_rnCoQqcSi4WR.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500",
       "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
@@ -958,7 +956,7 @@
       "https://pbs.twimg.com/media/HKlhm-2bsAAt4bA.jpg"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1032,7 +1030,7 @@
       "https://pbs.twimg.com/media/HKkk-h3a0AE441n.jpg"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1099,7 +1097,7 @@
       "https://video.twimg.com/amplify_video/2065260724490817536/vid/avc1/1920x1080/AbbrdTpf6PNbZiQC.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1166,7 +1164,7 @@
       "https://video.twimg.com/amplify_video/2065171988545490944/vid/avc1/720x1280/ZYE4FSx1-qwp_hKu.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1229,7 +1227,7 @@
       "https://video.twimg.com/amplify_video/2065246498137231360/vid/avc1/848x480/xlvR2p7L2x9ITUY0.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1299,7 +1297,7 @@
       "https://pbs.twimg.com/media/HKmVLTaasAE9v30.jpg"
     ],
     "firstSeenAt": "2026-06-12T08:23:09.479Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "incremental-2026-06-11-to-2026-06-12-q0"
     ],
@@ -1362,7 +1360,7 @@
       "https://video.twimg.com/amplify_video/2065315469788377088/vid/avc1/3486x2160/rOTPR89f9a8h1cSL.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1424,7 +1422,7 @@
       "https://video.twimg.com/amplify_video/2065192978612715521/vid/avc1/2160x1174/-gTdasvzQNX48TNP.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T08:09:24.397Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],
@@ -1485,7 +1483,7 @@
       "https://video.twimg.com/amplify_video/2065101981413261313/vid/avc1/1080x1080/LTZhge-EMnBXiC4V.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500",
       "launch-2026-06-08-to-2026-06-12-latest-target500",
@@ -1553,7 +1551,7 @@
       "https://video.twimg.com/amplify_video/2065303686109450240/vid/avc1/1280x720/J8WNVlIUnL2UIhYI.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "today-2026-06-12-latest-target500"
     ],

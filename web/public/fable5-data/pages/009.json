@@ -1,68 +1,5 @@
 [
   {
-    "id": "profbuehlermit-2064754615468638351",
-    "title": "3D or WebGL prototype built with Fable 5",
-    "author": "Markus J. Buehler",
-    "handle": "@profbuehlermit",
-    "sourceUrl": "https://x.com/profbuehlermit/status/2064754615468638351",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "3d",
-    "media": "video",
-    "heat": "265 likes · 25 reposts",
-    "tags": [
-      "fable5",
-      "3d",
-      "design"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "Claude Fable 5 has impressive spatial reasoning capabilities that are immediately relevant for engineering and design: In this example I gave Claude Fable 5 a single photo of a hierarchical mesh torus (image generated using a text-to-image model); and in one shot, no iteration, it built a full interactive 3D simulation: ~1,400 nodes & 4,400 fibers, realistic mass–spring physics you can grab, compress, twist… plus strain-based sonification so you can 'hear' the structure vibrate. It inferred the complete 3D topology from a partial 2D view. ⤵️",
-    "metrics": {
-      "likes": 265,
-      "reposts": 25,
-      "replies": 14,
-      "quotes": 3,
-      "views": 27034,
-      "bookmarks": 117
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064751457316798464/vid/avc1/1920x1080/ak0fzwYR11RLNyVi.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "3d-scene",
-      "medium": "video",
-      "capability": [
-        "one-shot",
-        "design-gen",
-        "3d-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [],
-      "tech": [],
-      "risk": []
-    },
-    "mediaThumbUrl": "/fable5-media/profbuehlermit-2064754615468638351.jpg",
-    "avatarUrl": "/fable5-avatars/profbuehlermit.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1133792154181021696/vn_-rmPd_normal.png",
-    "categories": [
-      "3d",
-      "design"
-    ]
-  },
-  {
     "id": "hieudinh_-2064924881750536440",
     "title": "App prototype built with Fable 5",
     "author": "Hieu Dinh",
@@ -97,7 +34,7 @@
       "https://pbs.twimg.com/media/HKgWO1jaEAARotu.jpg"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -122,65 +59,6 @@
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1969592013868974084/-io8_jw0_normal.jpg",
     "categories": [
       "apps"
-    ]
-  },
-  {
-    "id": "vincentlogic-2064953273367593069",
-    "title": "D CAD model built with Fable 5",
-    "author": "Vincent | 信号＞噪音",
-    "handle": "@vincentlogic",
-    "sourceUrl": "https://x.com/vincentlogic/status/2064953273367593069",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "3d",
-    "media": "video",
-    "heat": "192 likes · 29 reposts",
-    "tags": [
-      "fable5",
-      "3d"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "有人用 Claude Fable 5 设计了一个 QDD 执行器（机器人关节），30 分钟搞定。\n\n看这爆炸图、这齿轮啮合动画...\n这不是简单的 3D 建模，是带完整运动仿真和碰撞检测的 CAD 设计。\n\n关键数据：\n⏱️ 耗时：30 分钟\n💰 Token 消耗：40 万\n🔧 输出：完整的 STEP 文件 + 动画验证\n\n以前做这种精密机械设计：\n- SolidWorks/Fusion 360 建模（几小时）\n- 手动装配、调参数（半天）\n- 运动仿真、查干涉（又半天）\n\n现在 AI 一次性全搞定，连齿轮比都算好了。\n\n机械工程师们，你们还好吗？😂",
-    "metrics": {
-      "likes": 192,
-      "reposts": 29,
-      "replies": 15,
-      "quotes": 0,
-      "views": 13433,
-      "bookmarks": 136
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064953086075142144/vid/avc1/3724x2160/2Uts-jBpZmhvK_Fh.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "launch-2026-06-08-to-2026-06-12-target500"
-    ],
-    "summary": [
-      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "3d-scene",
-      "medium": "video",
-      "capability": [
-        "3d-gen"
-      ],
-      "evidence": [
-        "commentary"
-      ],
-      "domain": [],
-      "tech": [],
-      "risk": []
-    },
-    "mediaThumbUrl": "/fable5-media/vincentlogic-2064953273367593069.jpg",
-    "avatarUrl": "/fable5-avatars/vincentlogic.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2010360210008023040/tDA3CwgH_normal.jpg",
-    "categories": [
-      "3d"
     ]
   },
   {
@@ -215,7 +93,7 @@
       "https://video.twimg.com/amplify_video/2064779949849153536/vid/avc1/3840x2072/AtigUPAuRgSsjvd5.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:46.239Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -282,7 +160,7 @@
       "https://video.twimg.com/amplify_video/2064977193835311105/vid/avc1/1436x1170/REPRLkNcte0fjd6D.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:18:46.239Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11",
@@ -352,7 +230,7 @@
       "https://video.twimg.com/amplify_video/2064509292510674944/vid/avc1/1920x1080/YXgVAl4VUsZDePL9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:06:53.566Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
@@ -423,7 +301,7 @@
       "https://video.twimg.com/amplify_video/2064687684023451648/vid/avc1/1920x1080/osIT66YNEOXNW842.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -490,7 +368,7 @@
       "https://video.twimg.com/amplify_video/2064993258204209152/vid/avc1/720x1280/tKHN-omQVBi8VSFd.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -553,7 +431,7 @@
       "https://video.twimg.com/amplify_video/2064941000028807169/vid/avc1/3324x2160/5zjb19ypQmsMrJ8g.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "recent-week-2026-06-05-to-2026-06-11"
@@ -623,7 +501,7 @@
       "https://video.twimg.com/amplify_video/2065078491545243648/vid/avc1/1920x1080/1xAqppjt0hFxRec9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-latest-target500",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -693,7 +571,7 @@
       "https://video.twimg.com/amplify_video/2064798554732781568/vid/avc1/1920x1080/EiRxVEw60htargIy.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -761,7 +639,7 @@
       "https://video.twimg.com/amplify_video/2065036565450244096/vid/avc1/1920x1080/jX0kGHCIv8WmhDUz.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-14T06:09:21.996Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -818,7 +696,7 @@
       "https://video.twimg.com/amplify_video/2064896872775577600/vid/avc1/3486x2160/RqmM6gBy9bqGUJxC.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -847,74 +725,6 @@
       "3d",
       "design"
     ]
-  },
-  {
-    "id": "0ailab-2064988990458167708",
-    "title": "Prompt-driven motion or animation demo",
-    "author": "0AIVerse",
-    "handle": "@0ailab",
-    "sourceUrl": "https://x.com/0ailab/status/2064988990458167708",
-    "date": "2026-06-11",
-    "kind": "showcase",
-    "scene": "games",
-    "categories": [
-      "games",
-      "design",
-      "code"
-    ],
-    "media": "video",
-    "heat": "51 likes · 13 reposts",
-    "tags": [
-      "fable5",
-      "games",
-      "design",
-      "code"
-    ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
-    "promptStatus": "commentary",
-    "prompt": "",
-    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "I Combined ChatGPT 5.5 Image-2 + Claude Fable 5… And Built This FULL Game in JUST 8 Hours 😱 The World Has Officially Changed Forever\n\nGuys… I still can’t believe what I just pulled off.\nI took ChatGPT 5.5’s new Image-2 to generate every single visual characters, environments, UI, particles, everything and paired it with Claude Fable 5 for the entire codebase.\nThe result?\n\nA complete, polished, fully playable game… finished in only 8 hours.\n\nNo massive team.\nNo months of crunch.\nNo expensive asset packs.\nImage-2 created mind-blowing art assets on demand.\nFable 5 turned those images into real, working code mechanics, physics, AI, animations, menus everything.\nThis hybrid combo is straight-up sorcery.\nThe world has truly changed.\nWe are no longer waiting years for games to be made. One person + these two god-tier AIs just built something that used to require entire studios and huge budgets… in less than a single workday.\nThis is the next level of human civilization.\nThis is what creation looks like from now on.\nBut here’s the crazy part:\n\nThis free access ends June 22, 2026.\nAfter that, you’ll have to pay/subscribe to keep using it.\nIf you’ve been waiting to see what the future of game dev actually looks like…\nTHIS IS IT.\nGo try it right now before the paywall hits.\nDon’t sleep on this. Seriously.\nDrop in the comments:\nWhat game should I build next with this insane Image-2 + Fable 5 hybrid?\nLike if your mind is blown too 🔥\nAnd tag a friend who NEEDS to see this before it’s gone.\nThe future isn’t coming…\nIt’s already here. And it’s free for one more day only.\n#Fable5 #ChatGPT55 #Image2 #AIHybrid #GameDevRevolution",
-    "metrics": {
-      "likes": 51,
-      "reposts": 13,
-      "replies": 14,
-      "quotes": 4,
-      "views": 25857,
-      "bookmarks": 50
-    },
-    "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2064988913752825856/vid/avc1/2240x1182/Yka5OMLGWDkFjQlk.mp4?tag=27"
-    ],
-    "firstSeenAt": "2026-06-16T08:35:52.559Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
-    "fetchRuns": [
-      "backfill-asia-2026-06-12-to-2026-06-15-latest-allq"
-    ],
-    "summary": [
-      "Shows a motion or video generation demo associated with Claude Fable 5, based on the original post's media and description."
-    ],
-    "facets": {
-      "artifactType": "game",
-      "medium": "video",
-      "capability": [
-        "design-gen",
-        "motion-gen"
-      ],
-      "evidence": [
-        "unverified-claim"
-      ],
-      "domain": [
-        "game-dev"
-      ],
-      "tech": [],
-      "risk": [
-        "market-claim"
-      ]
-    },
-    "mediaThumbUrl": "/fable5-media/0ailab-2064988990458167708.jpg",
-    "avatarUrl": "/fable5-avatars/0ailab.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2055886481877839872/HkPBoh_y_normal.jpg"
   },
   {
     "id": "shuigvn-2064958913297141877",
@@ -949,7 +759,7 @@
       "https://video.twimg.com/amplify_video/2064958655372619776/vid/avc1/566x808/3ck_OMzgVWWLBDYF.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1015,7 +825,7 @@
       "https://video.twimg.com/amplify_video/2064882605015883776/vid/avc1/3724x2160/80Q9lcCFbNPX4J7N.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1081,7 +891,7 @@
       "https://pbs.twimg.com/media/HKgshRLXYAAJVIH.jpg"
     ],
     "firstSeenAt": "2026-06-14T06:09:42.146Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1148,7 +958,7 @@
       "https://video.twimg.com/amplify_video/2065034997866586112/vid/avc1/3228x2160/DYtd01Ewsu_0xkjM.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-12T10:30:19.073Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500",
       "launch-2026-06-08-to-2026-06-12-target500",
@@ -1217,7 +1027,7 @@
       "https://video.twimg.com/amplify_video/2065006284580020224/vid/avc1/1280x720/bxNXujZMWAr7W_vc.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1288,7 +1098,7 @@
       "https://video.twimg.com/amplify_video/2064523291872604160/vid/avc1/1440x1080/g5EqXOiyLOrlZ6UG.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1351,7 +1161,7 @@
       "https://video.twimg.com/amplify_video/2064717260200030208/vid/avc1/1920x1080/STfp0Iaca2TH9LtS.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:06:53.566Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500",
       "launch-2026-06-08-to-2026-06-12-latest-target500",
@@ -1416,7 +1226,7 @@
       "https://video.twimg.com/amplify_video/2064775803292844032/vid/avc1/1328x720/1mSravFP-mddt-Dw.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1481,7 +1291,7 @@
       "https://video.twimg.com/amplify_video/2064775581170876416/vid/avc1/1072x720/ZEsQ439OiAgqv809.mp4?tag=14"
     ],
     "firstSeenAt": "2026-06-11T17:25:32.794Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-broad-top-target500"
     ],
@@ -1549,7 +1359,7 @@
       "https://video.twimg.com/amplify_video/2064917090977320960/vid/avc1/1910x1080/X2wxlq6_UGqy5IY9.mp4?tag=27"
     ],
     "firstSeenAt": "2026-06-11T17:25:51.281Z",
-    "lastFetchedAt": "2026-06-17T03:16:37.384Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
     "fetchRuns": [
       "launch-2026-06-08-to-2026-06-12-target500"
     ],
@@ -1574,6 +1384,208 @@
     "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1944907058274254849/JXRYoZcn_normal.jpg",
     "categories": [
       "videos"
+    ]
+  },
+  {
+    "id": "givros-2064747412464316652",
+    "title": "Minecraft-style game built with one prompt",
+    "author": "Givros",
+    "handle": "@givros",
+    "sourceUrl": "https://x.com/givros/status/2064747412464316652",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "57 likes · 6 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Alright, Claude Fable 5 is good.\n\nBut Codex with a simple /goal is getting ridiculous:\n\n\"Build a Minecraft-inspired voxel fairground with rides and mini-games.\"\n\nI left for 20 minutes and came back to a functional voxel game.\n\nFable 5 makes it beautiful:\n\n“Create a beautiful Minecraft-like world.”\n\nCodex makes it work:\n\n“Create a Minecraft-like game that works.”",
+    "metrics": {
+      "likes": 57,
+      "reposts": 6,
+      "replies": 12,
+      "quotes": 1,
+      "views": 6577,
+      "bookmarks": 26
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064747326405586945/vid/avc1/1920x1080/WgEhn-pcEUgaO9t_.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": [
+        "copyright"
+      ]
+    },
+    "mediaThumbUrl": "/fable5-media/givros-2064747412464316652.jpg",
+    "avatarUrl": "/fable5-avatars/givros.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2058488850125586434/hqfZ8XHV_normal.jpg",
+    "categories": [
+      "games",
+      "3d"
+    ]
+  },
+  {
+    "id": "shuigvn-2064911738995462569",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "DUC",
+    "handle": "@shuigvn",
+    "sourceUrl": "https://x.com/shuigvn/status/2064911738995462569",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "60 likes · 0 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "videos",
+      "agents",
+      "demo"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "Một creator Hàn vừa đăng demo Claude Fable 5 tạo ra một game kiểu Vampire Survivors gần như chỉ từ một câu lệnh tiếng Anh\n\nĐiểm đáng nói không phải là giao diện đẹp hay hiệu ứng mượt, mà là nó có đủ menu, asset, gameplay loop và logic tương tác cơ bản. Tức là AI đang đi từ tạo ảnh, tạo video sang dựng prototype có thể chơi được\n\nNếu demo này đúng như tác giả mô tả, thì đây là tín hiệu khá lớn cho tương lai của indie game và rapid prototyping. Làm game sẽ không biến mất, nhưng bước từ ý tưởng sang bản thử nghiệm có thể ngắn đi rất nhiều",
+    "metrics": {
+      "likes": 60,
+      "reposts": 0,
+      "replies": 64,
+      "quotes": 0,
+      "views": 1183,
+      "bookmarks": 2
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064909855098646528/vid/avc1/1280x720/6qj-g5c_V0cTQvtF.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:25:51.281Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "recent-week-2026-06-05-to-2026-06-11"
+    ],
+    "summary": [
+      "Shows a motion or video generation demo associated with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "motion-gen",
+        "automation"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/shuigvn-2064911738995462569.jpg",
+    "avatarUrl": "/fable5-avatars/shuigvn.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1985786505919676416/0XxmAmO3_normal.jpg",
+    "categories": [
+      "games",
+      "videos",
+      "agents"
+    ]
+  },
+  {
+    "id": "roundtablespace-2064909234454794503",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "0xMarioNawfal",
+    "handle": "@roundtablespace",
+    "sourceUrl": "https://x.com/roundtablespace/status/2064909234454794503",
+    "date": "2026-06-11",
+    "kind": "showcase",
+    "scene": "games",
+    "media": "video",
+    "heat": "66 likes · 1 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "prompts",
+      "code",
+      "prompt"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "CLAUDE FABLE 5 BUILT A FULL RELAXING DRIVING GAME FROM SCRATCH WITH BEAUTIFUL SCENERY AND SOLID CONTROLS IN ONE PROMPT\n\ncomplete with that satisfying car feel, one person went from idea to cruising around a playable game without writing a single line of code themselves.\n\nhttps://t.co/AXV4cAk3Jz",
+    "metrics": {
+      "likes": 66,
+      "reposts": 1,
+      "replies": 8,
+      "quotes": 1,
+      "views": 40376,
+      "bookmarks": 13
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2064729695304695808/vid/avc1/1920x1080/ptj9ubkRo1qsCed3.mp4?tag=27"
+    ],
+    "firstSeenAt": "2026-06-11T17:06:53.566Z",
+    "lastFetchedAt": "2026-06-17T07:45:23.416Z",
+    "fetchRuns": [
+      "launch-2026-06-08-to-2026-06-12-target500",
+      "launch-2026-06-08-to-2026-06-12-broad-top-target500"
+    ],
+    "summary": [
+      "Shows a playable game prototype attributed to Claude Fable 5, with the post emphasizing one-prompt or one-shot generation."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "design-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "game-dev"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/roundtablespace-2064909234454794503.jpg",
+    "avatarUrl": "/fable5-avatars/roundtablespace.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2012162102283407360/U-fPj6wg_normal.jpg",
+    "categories": [
+      "games",
+      "prompts",
+      "code"
     ]
   }
 ]

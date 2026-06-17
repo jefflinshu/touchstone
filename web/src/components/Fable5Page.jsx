@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Play, Repeat2, Search } from 'lucide-react'
+import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Repeat2, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases, showcaseScore } from '@/lib/fable5Data'
@@ -163,10 +163,8 @@ function LoadingCard() {
 
 function MediaBlock({ item, priority = false }) {
   const { t } = useI18n()
-  const [playing, setPlaying] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
-  const [videoFailed, setVideoFailed] = useState(false)
   const videoUrl = item.media === 'video' ? item.mediaUrls?.find((url) => /\.mp4(\?|$)/i.test(url)) : ''
   const remoteImageUrl = item.mediaUrls?.find((url) => !/\.mp4(\?|$)/i.test(url))
   const imageUrl = item.mediaThumbUrl || remoteImageUrl
@@ -177,23 +175,6 @@ function MediaBlock({ item, priority = false }) {
       <div className="relative h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
         <MediaPlaceholder label={item.media === 'text' ? t('fable.textOnly') : t('fable.noPreview')} />
         <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
-      </div>
-    )
-  }
-
-  if (playing && videoUrl && !videoFailed) {
-    return (
-      <div className="h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
-        <video
-          src={videoUrl}
-          poster={item.mediaThumbUrl || undefined}
-          className="h-full w-full object-contain"
-          controls
-          autoPlay
-          playsInline
-          preload="metadata"
-          onError={() => setVideoFailed(true)}
-        />
       </div>
     )
   }
@@ -220,30 +201,7 @@ function MediaBlock({ item, priority = false }) {
       ) : (
         <MediaPlaceholder label={videoUrl ? t('fable.videoPreviewUnavailable') : t('fable.noPreview')} />
       )}
-      {videoUrl ? (
-        <button
-          type="button"
-          onClick={() => setPlaying(true)}
-          className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/10 transition-colors hover:bg-black/25"
-          title={t('fable.playVideo')}
-        >
-          <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-black/55 text-white shadow-lg backdrop-blur">
-            <Play className="ml-0.5 h-5 w-5 fill-white" />
-          </span>
-        </button>
-      ) : (
-        <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
-      )}
-      {videoFailed && (
-        <a
-          href={item.sourceUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="absolute right-2 bottom-2 rounded bg-black/70 px-2 py-1 font-mono text-[10px] text-white/70"
-        >
-          {t('common.openSource')}
-        </a>
-      )}
+      <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
     </div>
   )
 }

@@ -1,0 +1,1001 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2067140283024953521",
+      "text": "https://t.co/Q9WyURQMlV",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 68,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 07:00:23 +0000 2026",
+      "createdAtLocal": "2026-06-17 15:00",
+      "createdAtISO": "2026-06-17T07:00:23+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067137720951160832"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Grok Build Release Built A Full 3D World In Minutes"
+    },
+    {
+      "id": "2067129677861310525",
+      "text": "$12,000 a month from kids videos that take 10 minutes each to make\n\nNo camera, no mic, no editing timeline, no face on screen\n\n> she studies what toddlers are obsessing over that week\n> Claude returns a full creative brief, characters, palette, scene direction, in seconds\n> Picsart sets the aesthetic, Sora 2 renders the animation from one prompt\n> she uploads and repeats\n\nLast month the channel hit 4 million views\n\n10 minutes of work per video, and the kids watch each one on loop for days",
+      "author": {
+        "id": "1214245254217363457",
+        "name": "Kiyoro",
+        "screenName": "0xKiyoro",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1886527034257534976/gPioSjjr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 95,
+        "bookmarks": 2
+      },
+      "createdAt": "Wed Jun 17 06:18:15 +0000 2026",
+      "createdAtLocal": "2026-06-17 14:18",
+      "createdAtISO": "2026-06-17T06:18:15+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067129409807474688/vid/avc1/1080x1920/uIDLYDV54Z_O7luH.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2061700552422195234",
+        "text": "https://t.co/p27zuGuqnV",
+        "author": {
+          "screenName": "woody_research",
+          "name": "Woody"
+        }
+      }
+    },
+    {
+      "id": "2067123424028508192",
+      "text": "🚨BREAKING: Researchers just tested whether AI coding agents can actually build a playable game. Not a demo. A real one.\n\nThe best agent in the world scored 41.46%.\n\nYou've seen the viral clips. \"I built a game in one prompt with Claude Code.\" A platformer appears. A shooter appears. It looks like magic on X.\n\nResearchers from Chinese University of Hong Kong just built the test that separates the viral clip from an actual finished game.\n\nIt's called GameCraft-Bench. 140 tasks. 15 game families. Built inside Godot — a real, professional game engine. Not a toy sandbox designed to make agents look good.\n\nHere's why this test is different from every coding benchmark before it.\n\nWriting code that compiles is not the same as building a game that plays correctly. A game needs scripts, scenes, assets, rendering, and runtime interactions to all work together simultaneously. You can have functionally correct code and still end up with a broken, unplayable mess — wrong physics, missing visual feedback, mechanics that exist in the code but never actually trigger during gameplay.\n\nThe researchers built an evaluation framework around three requirements that sound obvious but that no existing benchmark actually checked.\n\nEngine Grounding — does the game actually run inside the real engine, using the engine's actual systems, not some simplified abstraction?\n\nArtifact Completeness — is there an actual finished game here, with enough content, assets, and structure to be called complete? Or is it a tech demo of one mechanic?\n\nInteractive Verification — does it play correctly when an actual player interacts with it? Not \"does the code look right\" — does pressing the jump button actually make the character jump, every time, correctly?\n\nThey evaluate this by replaying actual gameplay demonstrations and having a multimodal judge watch the recorded play session — checking against a detailed rubric the way a real playtester would.\n\nHere's the result that should temper every viral \"AI built my game\" clip you've seen.\nThe strongest frontier coding agent tested: 41.46%. Most agents scored below 40%.\nHere's what's actually breaking.\n\nThe agents aren't failing to understand game mechanics conceptually. They often implement recognizable systems — a jump mechanic exists, an enemy AI exists, a scoring system exists. The failure is in completeness and coherence.\n\nInsufficient content — a platformer with three jumps and then nothing. Broken visual feedback — the health bar exists in code but never actually updates on screen during play. Incoherent presentation — mechanics that technically function but don't combine into something that feels like a finished game a person would actually want to play.\n\nThe gap between \"the code compiles and the demo clip looks cool\" and \"this is a complete, playable game\" is exactly where every current agent collapses.\n\nHere's why this matters beyond game development.\n\nGame generation is the hardest possible stress test for coding agents because it requires everything simultaneously — logic, visual design, real-time interaction, content pacing, and engine-specific knowledge, all coherent at once. If agents can't reliably clear 50% on this benchmark, it tells you something important about agentic coding limitations that simpler coding benchmarks have been hiding.\n\nThe viral clips were real. They were also the easiest 10% of what it takes to ship an actual game.\n\nDemos, code, and full dataset available now. #1 paper on Hugging Face today — June 17.",
+      "author": {
+        "id": "146000731",
+        "name": "Rituraj",
+        "screenName": "RituWithAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026617137578782721/CcmpTpYZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 8,
+        "replies": 2,
+        "quotes": 0,
+        "views": 137,
+        "bookmarks": 8
+      },
+      "createdAt": "Wed Jun 17 05:53:24 +0000 2026",
+      "createdAtLocal": "2026-06-17 13:53",
+      "createdAtISO": "2026-06-17T05:53:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK_ly2SbMAAqeCO.jpg",
+          "width": 1080,
+          "height": 1339
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067117285840699851",
+      "text": "https://t.co/RqswR6o1N5\n\nHow to use Claude in 25 different ways:\n\n(takes 60 seconds to read, saves you 60 hours)\n\n1. Bookmark this image. You'll need it tomorrow.\n2. Full guide + prompts at: https://t.co/70wspEnO48.\n3. Don't pay anything. It's free in the email.\n\n---\n\n1. ASK → Chat\n☑ Quick questions. Quick answers.\n☑ Don't use Cowork for \"write a good email?\"\n\n2. THINK → Opus 4.8\n☑ The smartest model. Always switch to it.\n☑ For deep work, complex writing & thinking.\n\n3. SPEED → Sonnet 4.6\n☑ Faster, cheaper, still excellent.\n☑ Use it for grammar, summaries, short answers.\n\n4. REASON → Extended Thinking\n☑ Toggle it on for hard problems.\n☑ Turn it off for simple ones (saves tokens).\n\n5. BUILD → Cowork\n☑ Where serious work happens. .docx, .xlsx, .pptx.\n☑ Point it at a folder. It works like an employee.\n\n6. SHIP → Claude Code\n☑ For developers (and curious non-devs).\n☑ Build websites and apps from your terminal.\n\n7. MODEL → Claude in Excel\n☑ Install the add-in from the Excel store.\n☑ Real formulas, real models, no copy-paste.\n\n8. SLIDES → Gamma connector\n☑ One prompt. Full presentation. With research.\n☑ Connect Gamma inside Claude.\n\n9. MOCKUP → Claude Design\n☑ Go to claude .ai/design. Build websites in 1 hour.\n☑ Upload a DESIGN .md. Export to Canva, PDF.\n\n10. BROWSE → Claude in Chrome\n☑ A browsing agent. Reads any page for you.\n☑ Acts inside the browser, not just talks about it.\n\n11. CLICK → Computer Use\n☑ Settings > Turn it on.\n☑ Claude clicks, types, browses on your Mac.\n\n12. REMOTE → Dispatch\n☑ Connect your phone. Text a task.\n☑ It works on your computer while you're away.\n\n13. SEARCH → Web Search\n☑ Click the '+'. turn it on.\n☑ It reads the live web before answering.\n\n14. INVESTIGATE → Research\n☑ For deep multi-source reports.\n☑ 13 minutes. 50+ sources. One markdown file.\n\n15. TRIGGER → Skills\n☑ \"Use the skill-creator to build a skill for [task].\"\n☑ Type /skill. It fires automatically.\n\n16. STACK → Plugins\n☑ Cowork > Customize > Browse Plugins.\n☑ Bundles of skills for marketing, legal, sales.\n\n17. PERSIST → Projects\n☑ One Project per recurring deliverable.\n☑ Upload one gold-standard example.\n\n18. AUTOMATE → Scheduled Tasks\n☑ Every Monday at 7am, Claude runs your report.\n☑ Set it up once. No manual work. \n\n19. CONNECT → Connectors\n☑ Gmail, Drive, Slack, Notion, Granola, Calendar.\n☑ 50+ apps. Claude reads, writes & acts inside.\n\n20. RENDER → Artifacts\n☑ Side pane where Claude opens charts, docs.\n☑ Interactive. Editable. Shareable.\n\n21. VOICE → Custom Styles\n☑ Set \"Concise\" or build your own.\n☑ Saves you from re-explaining your voice.\n\n22. SHARE → Team Projects\n☑ Same Project. Whole team inside.\n☑ Skills, files, instructions. Shared once.\n\n23. GUARD → Global Instructions\n☑ Settings > Cowork > Global Instructions.\n☑ Tell Claude what to always do.\n\n24. ORGANIZE → Obsidian Vault\n☑ Free app. Opens your Cowork folder neatly.\n☑ Edit files like Google Docs.\n\n25. BRIEF → about-me file.\n☑ One md. file. Under 2,000 words.\n☑ Your style, your rules, your voice",
+      "author": {
+        "id": "1993331363068682240",
+        "name": "Charlotte",
+        "screenName": "al_tools43377",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2007225011237478400/zbqfymPy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 5,
+        "replies": 2,
+        "quotes": 0,
+        "views": 424,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 05:29:00 +0000 2026",
+      "createdAtLocal": "2026-06-17 13:29",
+      "createdAtISO": "2026-06-17T05:29:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK_gNZdbUAAYoHe.jpg",
+          "width": 960,
+          "height": 1200
+        }
+      ],
+      "urls": [
+        "https://x.com/wam_ai_tech/status/2067106902795067714",
+        "http://how-to-ai.guide"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067106902795067714",
+        "text": "🚨 BREAKING: Claude can now help you build a full AI-powered YouTube channel — like a $10K/month creator agency.\n\nFor free.\n\nHere are 7 prompts to go from 0 → monetized channel in 90 days 👇 https://t.co/kPGMiH93vh",
+        "author": {
+          "screenName": "wam_ai_tech",
+          "name": "WAM AI"
+        }
+      }
+    },
+    {
+      "id": "2067081187533930624",
+      "text": "You can now one shot prompt boss fights that would take a studio months to design.\n\nThis underwater FPS features a full boss called The Leviathan Father with multiple attack phases, weapon switching, special abilities, and real strategy to beat. All assets, graphics, sound, and gameplay were created on Tesana.\n\nAnd the best part? You can take any direction you want, multiplayer? 3 bosses in the room? A harpoon weapon? You're just one prompt away from updating your game.\n\nAfter creating your game on Tesana, you can launch it directly to our marketplace or export it to any console or platform.\n\nCompared to Fable 5 or any other model, Tesana delivers all assets needed for your game.",
+      "author": {
+        "id": "2020760021706121216",
+        "name": "Tesana - Make games with AI",
+        "screenName": "TesanaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057279693758529536/cWepLiOw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 68,
+        "retweets": 7,
+        "replies": 5,
+        "quotes": 0,
+        "views": 4023,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 03:05:34 +0000 2026",
+      "createdAtLocal": "2026-06-17 11:05",
+      "createdAtISO": "2026-06-17T03:05:34+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067079998897614848/vid/avc1/3840x2152/y0O4l3SD5PALW55c.mp4?tag=28",
+          "width": 3840,
+          "height": 2152
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066977553110200741",
+      "text": "6 months ago I genuinely believed vibe coding was going to make me rich.\n\nI opened Lovable, typed one prompt, and watched a full website front-end appear in minutes. No code written. No experience needed. Just a prompt and a result.\n\nIn that moment I thought: this is it. I'm a software engineer now. A few dollars in subscriptions, some more prompts, and I'll have a full startup running in months.\n\nI was completely wrong. And the gap between what I believed and what was real hit me harder than anything I'd experienced building.\n\nLet me be honest about where I was starting from.\n\nI knew nothing. Not Git, not GitHub, not what a branch or a PR even was. No JavaScript, no Python, no understanding of how any language works. I didn't know what a terminal did or why it mattered. I was a complete beginner  not just in coding, but in the entire world of software.\n\nBut Lovable didn't care. One prompt and it gave me a beautiful front-end. So I kept going.\n\nAfter that first shock of \"this actually works,\" I found out about Claude Code and Codex.\n\nAnd that's when things got serious — or at least I thought they were getting serious.\n\nFor 4 months straight I was coding almost every single day. 16 hours some days. Hundreds and hundreds of hours total. I was obsessed. I was building my main project, adding features, working with agents, integrating APIs, trying to understand LLMs and how they reason.\n\nMy mind was overloaded. I was absorbing so much — AI architecture, agent memory, system design, context windows, tool use. Genuinely advanced knowledge in some areas.\n\nBut there was a gap underneath all of it that I couldn't identify at the time.\n\nI didn't understand what the code was actually doing.\n\nWhen something broke I couldn't debug it myself. When I wanted a new feature I couldn't think through what it required  I just prompted and hoped. I couldn't tell if the AI was solving the real problem or just making the error disappear. I had no capability to evaluate the output I was getting.\n\nAnd because I didn't know the basics, I couldn't ask the right questions. So I'd ask the wrong ones, get wrong answers, burn tokens trying to fix the wrong things, and end up in loops that went nowhere.\n\nLooking back honestly   probably 60% of my tokens were wasted on problems that would have taken 10 minutes to solve if I had basic knowledge of the language I was working in. Things that are completely obvious to someone with fundamentals. I was paying a premium for my own ignorance, over and over again.\n\nNaval said something about vibe coding that I understand now in my bones.\n\nHe said it's like a video game. You prompt, you see the result immediately, and that feedback loop pulls you in. You want to do more. You want to see what else it can build. You feel like you're progressing because something is always happening on the screen.\n\nThat's exactly what it felt like. And it's exactly what made it dangerous for me.\n\nI was so addicted to that loop that I stopped thinking. I stopped asking \"what am I actually building and do I understand it?\" I just kept prompting. More features, more complexity, more tokens, more money  chasing the next result like the next level of a game.\n\nAnd vibe coding at that pace, without understanding, doesn't just waste time. It can genuinely make you dumber. You stop developing judgment. You stop sitting with problems long enough to understand them. You outsource your thinking so completely that after a while you're not sure you can think through a technical problem on your own at all.\n\nThe other thing that hurt me: I was doing everything on my main project with no version control discipline.\n\nI knew Git existed. But I didn't know what a PR was. I didn't understand branches. I didn't know why it mattered to separate work into units that could be reviewed, tested, and rolled back. I was just... building directly into the main codebase and hoping everything held together.\n\nThat's not how professional software is built. That's not even how careful amateur software is built. I was one bad prompt away from losing work I couldn't recover, and I didn't even know it.\n\nAround month 3, I started noticing something.\n\nWhen I was tired and kept pushing anyway — the output was garbage. The agents would do things I didn't understand, and I didn't have the energy to even ask why. I was merging junk into my project just to feel like I had moved forward that day.\n\nSo I made a rule for myself: if I'm exhausted, I stop. No exceptions.\n\nOne day of rest is always better than hours of bad work that you'll have to undo later. Tired prompting produces junk. Junk compounded across weeks becomes a disaster you can't unwind.\n\nThat rule probably saved the project.\n\nNow I've stepped back completely to learn the foundations I skipped.\n\nGit, GitHub, branching, pull requests — the basics of how professional developers actually work. Then proper understanding of the languages themselves. I'm following a structured path and I'm not rushing it.\n\nNot because vibe coding is useless. It's genuinely powerful. It can compress work that would take weeks into days. I still believe in it.\n\nBut I now understand something I didn't before:\n\nTools amplify what you already know. If the foundation is empty, the tool doesn't fill it — it just lets you move faster in the wrong direction.\n\nThe developers who will get the most out of AI coding tools are not the ones who skip the basics. They're the ones who know enough to direct the AI, evaluate its output, catch its mistakes, and understand what they're actually building.\n\nThat's who I'm working on becoming.\n\nTook me  months, hundreds of hours, and a lot of burned tokens to learn this. Posting it so maybe someone else doesn't have to.",
+      "author": {
+        "id": "1774507963308212225",
+        "name": "Lawand Soran",
+        "screenName": "LawandOps",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2045801793444102144/7SCxugWh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 187,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 20:13:45 +0000 2026",
+      "createdAtLocal": "2026-06-17 04:13",
+      "createdAtISO": "2026-06-16T20:13:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066943893799629029",
+      "text": "SOMEONE VIBE-CODED A CAT THAT LIVES ON YOUR DESKTOP — AND IT'S THE MOST FUN THING ON THE INTERNET RIGHT NOW\nIt's called Comnyang. A tiny pixel cat that just… lives on your screen while you work.\nWhat it does:\n\nStruts around your desktop and reacts to whatever app you open\nTaps the keys right alongside you when you type\nAnd the second you start typing FAST, it overheats, turns bright red, and steam shoots off its head 🔥\n\nNo game engine. No animation studio. No team. Someone described a cat to an AI and the cat walked out.\n\nSo I tried to rebuild it myself with a few different models. Here's what I got:\n\nClaude Opus 4.8 — one prompt. A walking, reacting cat in ~15 min. Barely touched the code.\nSonnet 4.6 — there in ~30 min, needed a couple nudges on the heat animation.\nGPT-5 — similar, ~30–45 min, cleaner UI out of the box.\nA smaller/cheaper model — one chill afternoon of back-and-forth, but it got there.\nThat's the wild part. What used to be a three-month studio project is now a weekend whim.\n\nWe spent 30 years making desktops more serious. I just put a cat back on mine.",
+      "author": {
+        "id": "1778403076883255296",
+        "name": "Mark Builds AI",
+        "screenName": "MarkAIbuilder",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066877913291534336/KJgxxCSm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 51,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 18:00:00 +0000 2026",
+      "createdAtLocal": "2026-06-17 02:00",
+      "createdAtISO": "2026-06-16T18:00:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066548390817611778/vid/avc1/1080x1920/D720gJ3fiZbFPGw-.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066910714498064724",
+      "text": "Vibecoders will surely love this:\n\nClaude Code burns thousands of tokens scanning your whole codebase just to fix one line. \n\nI found a free tool that kills that habit completely..\n\nit's called Oh My Pi (omp). \n\nan open-source terminal coding agent, 12k stars on github, built on a rust core. \n\nbasically claude code, but way more token-efficient and with real dev tools wired in.\n\nthe headline trick is \"hash-anchored edits\". omp tags every line of your code with a unique anchor, so when there's a bug the agent jumps straight to that exact line and fixes it instead of re-reading the whole file. \n\na fraction of the tokens, and far fewer new bugs introduced.\n\nbut the rest of what it ships with is the real story:\n\n> runs on the plan you already pay for, claude pro/max, codex, deepseek, 40+ providers. no separate api bill. > a real debugger built in, actual breakpoints and stack traces, not just print statements. > LSP wired into edits, so renames and refactors land clean across multiple files. > memory that carries across projects, and subagents that split a job up like a small team.\n\ngive it one prompt, \"build a car game\", and it plans it, writes the code, screenshots its own output, catches its visual bugs, and fixes them before handing it back. \n\none prompt.\n\ninstall (one line): curl -fsSL https://t.co/LGCBiedVe2 | sh\n\n(or brew install can1357/tap/omp)\n\nthen run omp in any project and log in with the plan you already have.\n\nfree, open source, and it makes whatever model you're already using hit noticeably harder..",
+      "author": {
+        "id": "3168947216",
+        "name": "Axel Bitblaze 🪓",
+        "screenName": "Axel_bitblaze69",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1883446587822608384/6eprnWjH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 3,
+        "replies": 5,
+        "quotes": 0,
+        "views": 3722,
+        "bookmarks": 23
+      },
+      "createdAt": "Tue Jun 16 15:48:10 +0000 2026",
+      "createdAtLocal": "2026-06-16 23:48",
+      "createdAtISO": "2026-06-16T15:48:10+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066910620084305920/vid/avc1/2940x1912/OfCAi3bi0v7i_41M.mp4?tag=28",
+          "width": 2940,
+          "height": 1912
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066894682789982541",
+      "text": "Anthropic engineer:\n\n\"You're not supposed to prompt Claude. You're supposed to build a system that prompts itself.\"\n\nthis is one of the best workflows I've seen in a long time\n\nin this video she breaks down exactly how most people are using Claude:\n\n- the 14% you lose to CLAUDE.md before typing a word\n- the plugins that 95% of users have never installed\n- the workflows that run without you typing a single prompt\n- why typing one prompt and closing the tab is leaving 90% on the table\n\nif you've been using Claude for months and still start every session from scratch, you have at least 28 untouched features. probably 30\n\ninstead of another show tonight, watch this\n\nmake sure to bookmark it before it gets lost in your feed\n\nfull guide in the article below",
+      "author": {
+        "id": "1224538644247203844",
+        "name": "Khairallah AL-Awady",
+        "screenName": "eng_khairallah1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1888357542004162560/5D-YlH5e_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 108,
+        "retweets": 20,
+        "replies": 23,
+        "quotes": 1,
+        "views": 17571,
+        "bookmarks": 231
+      },
+      "createdAt": "Tue Jun 16 14:44:28 +0000 2026",
+      "createdAtLocal": "2026-06-16 22:44",
+      "createdAtISO": "2026-06-16T14:44:28+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066894150402711552/vid/avc1/1280x720/euZKzhgyZR-ObWFM.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066801202424091119",
+        "text": "https://t.co/6b3IdFIFoT",
+        "author": {
+          "screenName": "eng_khairallah1",
+          "name": "Khairallah AL-Awady"
+        }
+      }
+    },
+    {
+      "id": "2066888792632377623",
+      "text": "https://t.co/ypixD5CPLb",
+      "author": {
+        "id": "1795121702617186304",
+        "name": "GOAT Network",
+        "screenName": "GOATNetwork",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2039662681691418624/KZeda2Tv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 97,
+        "retweets": 62,
+        "replies": 71,
+        "quotes": 1,
+        "views": 161024,
+        "bookmarks": 5
+      },
+      "createdAt": "Tue Jun 16 14:21:03 +0000 2026",
+      "createdAtLocal": "2026-06-16 22:21",
+      "createdAtISO": "2026-06-16T14:21:03+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066883643767681024"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Meet HyperMove: Bitcoin-Backed Payments for AI Agents"
+    },
+    {
+      "id": "2066888468060594188",
+      "text": "https://t.co/vamnKdiIkv",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 288,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 16 14:19:46 +0000 2026",
+      "createdAtLocal": "2026-06-16 22:19",
+      "createdAtISO": "2026-06-16T14:19:46+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066886566946193408"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "AI SEO Agent With GLM 5.2 Builds A Full Traffic Machine"
+    },
+    {
+      "id": "2066874541566255592",
+      "text": "https://t.co/aX49fUix8T",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 407,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 13:24:26 +0000 2026",
+      "createdAtLocal": "2026-06-16 21:24",
+      "createdAtISO": "2026-06-16T13:24:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066873807848214528"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "I Built AI Operating System Examples With OpenRouter FREE Models"
+    },
+    {
+      "id": "2066868896783847620",
+      "text": "https://t.co/AkIDNWfyoU",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 352,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 16 13:02:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 21:02",
+      "createdAtISO": "2026-06-16T13:02:00+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066865317163450368"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "OpenRouter Fusion API Builds An 8-Model AI Agent Team"
+    },
+    {
+      "id": "2066865877220253931",
+      "text": "Claude wrote 30 faceless YouTube videos and they pulled $37,380 in 30 days. He never turned on a camera.\n\nA guy in Columbus saved one prompt as script-engine.md. He typed a topic, Claude handed back a 1,200-word script with a hook in the first 15 seconds, and an $11 voice tool read it aloud. 30 videos in a month, all from a laptop and a folder named youtube-machine. The money came from two affiliate links and a $39 guide in each description. AdSense was the smallest slice.\n\nThe video above shows where it goes. Pause at 0:39. That dashboard reads $31,117 on 5 million views in 90 days, one faceless channel, no face on a single frame.\nThe article walks all 10 steps: the niche to pick, the script prompt, and the money stack behind each upload.",
+      "author": {
+        "id": "1721308001733160960",
+        "name": "0xAI42.exe",
+        "screenName": "0xAI42exe",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061656199670427648/ePDdRZ2Q_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 42,
+        "retweets": 8,
+        "replies": 5,
+        "quotes": 0,
+        "views": 3188,
+        "bookmarks": 28
+      },
+      "createdAt": "Tue Jun 16 12:50:00 +0000 2026",
+      "createdAtLocal": "2026-06-16 20:50",
+      "createdAtISO": "2026-06-16T12:50:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066639062950158336/vid/avc1/576x1024/gj0yg8aGxTnVBfRR.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065485288672030862",
+        "text": "https://t.co/SwRHjcdBRy",
+        "author": {
+          "screenName": "mpoilerfx",
+          "name": "Mark Poiler"
+        }
+      }
+    },
+    {
+      "id": "2066860960212824335",
+      "text": "you get text, image, AND video generation on one FREE platform - zero subscriptions, zero cards 😳\n\nagnes-2.0-flash is trending as a fully free multimodal stack. text model, image gen, video gen - all three in one login. no separate midjourney bill. no separate runway bill.\n\nwhat you get for $0:\n- agnes-2.0-flash (text): coding, reasoning, agents - generates full interactive websites from one prompt\n- agnes-image-2.0-flash (image): cinematic, artistic, product shots - consistent characters and lighting\n- agnes-video-v2.0 (video): turn text or images into short animations - control motion and camera\n\nwhat this replaces:\n- midjourney: $10-30/mo for image gen\n- claude pro: $20/mo for text/reasoning\n- runway gen-3: $15-30/mo for video generation\n- combined total: $45-80/mo replaced by one free platform\n\nwhy this matters:\n- most multimodal tools charge per modality\n- this gives you three models under one roof at zero cost\n- text -> image -> video pipeline without switching platforms\n- agnes ranks well on leaderboards for an open model\n\nhow to access (2 min):\n\n> go to https://t.co/LkOEuTzvyD\n> sign up free (no credit card)\n> you get immediate access to all three models\n> chat interface works like any AI - just describe what you want\n> advanced: API keys available in developer settings\n\nimportant:\n- free tier may have rate limits during high demand\n- the text model excels at interactive web apps from single prompts\n- the image model works best with detailed style/lighting descriptions\n- the video model can animate your generated images\n- all three live in one dashboard - no tool switching\n\nyou are paying $50+/mo for what this one platform gives for free\n\nbookmark this before the rate limits change",
+      "author": {
+        "id": "1768766800177836033",
+        "name": "Isra",
+        "screenName": "israfill",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057303557553246208/0DsDtZg9_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 129,
+        "retweets": 14,
+        "replies": 25,
+        "quotes": 1,
+        "views": 8783,
+        "bookmarks": 98
+      },
+      "createdAt": "Tue Jun 16 12:30:27 +0000 2026",
+      "createdAtLocal": "2026-06-16 20:30",
+      "createdAtISO": "2026-06-16T12:30:27+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HK726rlasAIr0Xg.jpg",
+          "width": 2400,
+          "height": 1350
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2065868713895829991",
+        "text": "your agent can search Twitter, Reddit, and GitHub for free - zero API keys, zero billing 😳\n\nagent-reach is trending on github with 23K stars. it lets your AI agent read Twitter posts, browse Reddit threads, search GitHub repos, watch YouTube videos - all without paying for a single API subscription\n\nwhat your agent accesses for $0:\n- Twitter/X posts, profiles, and search\n- Reddit threads and comments\n- YouTube videos, metadata, and search\n- GitHub repos, issues, and profiles\n- 10+ more platforms - all in one pip install\n\nwhat this replaces:\n- Twitter API: $100/mo for basic access\n- Reddit API: rate-limited free tier, expensive at scale\n- YouTube API: quota limits, pay for more\n- GitHub API: generous but still rate-limited\n\nwhy this matters:\n- most AI agents are blind to the internet because APIs cost money\n- this gives any agent real-time web access at zero marginal cost\n- perfect for research agents, content radar, competitive intel, market analysis\n\nhow to set up (2 min):\n\n> pip install agent-reach\n> run: agent-reach doctor\n> connect it to your agent as a tool\n> done - your agent can now search the internet for free\n\nimportant:\n- uses direct parsing, not official APIs - no keys needed\n- works with claude code, cursor, aider, langchain, any agent framework\n- MIT licensed, fully open source\n- not for production web scraping at scale - use for agentic research and prototyping\n- 23K stars and trending - community vetted\n\nlet your agent browse Twitter, Reddit, and GitHub for $0\nwhile everyone else is paying $100+/mo for API access\n\nbookmark this before payying for extra api\n\n↓ repo in comment",
+        "author": {
+          "screenName": "israfill",
+          "name": "Isra"
+        }
+      }
+    },
+    {
+      "id": "2066856811404087519",
+      "text": "https://t.co/FXGZ6yfKxC",
+      "author": {
+        "id": "1569989545575284738",
+        "name": "Noisy",
+        "screenName": "noisyb0y1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026302540434767872/rtRKmitd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 129,
+        "retweets": 10,
+        "replies": 11,
+        "quotes": 12,
+        "views": 124077,
+        "bookmarks": 291
+      },
+      "createdAt": "Tue Jun 16 12:13:58 +0000 2026",
+      "createdAtLocal": "2026-06-16 20:13",
+      "createdAtISO": "2026-06-16T12:13:58+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2062596285627269120"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Obsidian + Kimi K2.6 turned my 7,000 notes into a $15,000/month research system"
+    },
+    {
+      "id": "2066846562555248914",
+      "text": "🚀 Fable 5 just changed website building forever.\n\n• One prompt\n• Beautiful design\n• Interactive animations\n• Production-ready websites\n\nThe craziest part?\n\nIt actually understands great design.\n\n🎥 Watch the full breakdown:\nhttps://t.co/r6SBK61boJ https://t.co/1TsorbIvFu",
+      "author": {
+        "id": "1785295044989059073",
+        "name": "Jack Roberts",
+        "screenName": "JackRob357741",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2010622151116857344/JD9H3yEk_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 80,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 11:33:15 +0000 2026",
+      "createdAtLocal": "2026-06-16 19:33",
+      "createdAtISO": "2026-06-16T11:33:15+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2066846503298023424/pu/vid/avc1/1280x720/FTBdfvZF1DVvduKo.mp4?tag=12",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=2ZwO6LhC0SU"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066846466560204851",
+      "text": "https://t.co/sK2YIzA2bD",
+      "author": {
+        "id": "1277585390254186496",
+        "name": "CG",
+        "screenName": "cgtwts",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1955738644528160769/cgVyKTcs_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 1392,
+        "bookmarks": 23
+      },
+      "createdAt": "Tue Jun 16 11:32:52 +0000 2026",
+      "createdAtLocal": "2026-06-16 19:32",
+      "createdAtISO": "2026-06-16T11:32:52+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066843337068597248"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to Build Your First App With Claude Fable 5 (No Code, No Experience)"
+    },
+    {
+      "id": "2066827897592332303",
+      "text": "https://t.co/PCbhRCrGk7",
+      "author": {
+        "id": "1752012144873279489",
+        "name": "Neuvision",
+        "screenName": "Neuvision_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1925201852838371328/t-MGV3zq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 95,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 10:19:05 +0000 2026",
+      "createdAtLocal": "2026-06-16 18:19",
+      "createdAtISO": "2026-06-16T10:19:05+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066825284926820352"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Faceless YouTube isn't about hiding. It's 6 decisions. Here's the prompt for each one."
+    },
+    {
+      "id": "2066811828219555999",
+      "text": "THIS $60 RASPBERRY PI 5 RUNS CLAUDE FABLE 5 AND GENERATES GAMES, IMAGES AND ENTIRE WORLDS - SMALLER THAN YOUR PHONE\n\n2.5x faster than Pi 4, PCIe slot for AI accelerators, 4K 60fps video, two 4K monitors, crypto 40x faster - all for $60\n\nplug in an AI accelerator through the PCIe header, connect Claude Fable 5 and start generating game worlds, character designs and interactive environments from one prompt\n\nthe same $60 box that runs retro games now runs local AI that builds new ones - images, textures, full 3D environments generated locally without paying per token\n\nclients pay $3,000-10,000 for game assets, world generation and interactive experiences - he delivers from a box smaller than a wallet\n\nmost people think you need a $3,000 workstation to do serious AI work - this thing fits in a jacket pocket and bills $10,000/month\n\n$60 hardware, $20 subscription, the right prompts - and a pocket-sized machine that generates income",
+      "author": {
+        "id": "1663460000260390914",
+        "name": "Sprytix",
+        "screenName": "Sprytixl",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042845392757309440/Go9SGJcZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 41,
+        "retweets": 4,
+        "replies": 10,
+        "quotes": 0,
+        "views": 6666,
+        "bookmarks": 27
+      },
+      "createdAt": "Tue Jun 16 09:15:14 +0000 2026",
+      "createdAtLocal": "2026-06-16 17:15",
+      "createdAtISO": "2026-06-16T09:15:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066811773102231552/vid/avc1/720x1278/VUV5lVzNLyRossRx.mp4?tag=14",
+          "width": 1080,
+          "height": 1918
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066417518097416246",
+        "text": "https://t.co/BBXMavIZQr",
+        "author": {
+          "screenName": "noisyb0y1",
+          "name": "Noisy"
+        }
+      }
+    },
+    {
+      "id": "2066784507525824888",
+      "text": "ONE PROMPT IN CLAUDE CHANGES MY LIFE 👀\n\nclaude and one powerful prompt have already completely changed my life.\n\n> i've started moving forward without stopping\n> developing in a new niche of AI\n> and learning video editing in CapCut.\n\ni used to procrastinate a lot and doubt.\n> now I have a clear 90-day plan, and I'm not stopping.\none prompt turns chaos into a system and gives me real power.\n\ndon't stop either.\ntake the prompt from this article, run it in Claude, and move forward.\nyour life is changing right now!",
+      "author": {
+        "id": "1477232492386136066",
+        "name": "Kozh ./",
+        "screenName": "Kozh_Crypto",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065038255909986304/SKWH6R3b_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 62,
+        "retweets": 0,
+        "replies": 11,
+        "quotes": 0,
+        "views": 2382,
+        "bookmarks": 20
+      },
+      "createdAt": "Tue Jun 16 07:26:40 +0000 2026",
+      "createdAtLocal": "2026-06-16 15:26",
+      "createdAtISO": "2026-06-16T07:26:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066783913746616320/vid/avc1/1080x1440/eja496Go4UW1YGDf.mp4?tag=28",
+          "width": 1080,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2063198244847710590",
+        "text": "https://t.co/1WKsGSFnu7",
+        "author": {
+          "screenName": "Kozh_Crypto",
+          "name": "Kozh ./"
+        }
+      }
+    },
+    {
+      "id": "2066784465444081709",
+      "text": "@wesleytypes Just when I started building my little game, antropic drops the Fable 5 model ... took me 2 damn months just to setup a start screen and a small combat system then Fable comes with a complete game in one prompt damn https://t.co/RZkwho8KqG",
+      "author": {
+        "id": "1481655668016762892",
+        "name": "MMLTECH",
+        "screenName": "mmltechYT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063932689917349888/PK6igZEC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 168,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 07:26:30 +0000 2026",
+      "createdAtLocal": "2026-06-16 15:26",
+      "createdAtISO": "2026-06-16T07:26:30+00:00",
+      "media": [],
+      "urls": [
+        "https://www.youtube.com/watch?v=KcFLSQwNFy0"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2066769725179228646",
+      "text": "THIS SCHOOLBOY GENERATED A GENSHIN IMPACT-STYLE GAME IN 5 MINUTES - FULL OPEN WORLD, CHARACTERS AND COMBAT SYSTEM\n\none prompt, 5 minutes, a complete anime open world with elemental combat, character abilities and explorable terrain that miHoYo spent 4 years and $100,000,000 building\n\nhe described the aesthetic, the combat feel and the world style - Claude Fable 5 generated everything else\n\nnow he plays it with friends during lunch break - and already building an in-game economy where players earn and trade resources\n\nbut the real part is what this means for everyone else - one photo and the right prompt is all it takes to build any game, any world, any universe you can imagine\n\nSkyrim, GTA, Minecraft, Fortnite - describe what you want and the model builds it - the barrier to creating a game is now knowing how to explain what you want\n\n$20 subscription, one prompt, one weekend - and a game that your whole school plays by Monday\n\nthe people who figure out how to monetize this first are already charging $5,000-15,000 per world - he figured it out at recess",
+      "author": {
+        "id": "1665982082206531585",
+        "name": "Cortex",
+        "screenName": "0xCortexl",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049856112023707648/79I7G0SU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 18,
+        "retweets": 1,
+        "replies": 5,
+        "quotes": 0,
+        "views": 1250,
+        "bookmarks": 12
+      },
+      "createdAt": "Tue Jun 16 06:27:55 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:27",
+      "createdAtISO": "2026-06-16T06:27:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066769261675048960/vid/avc1/960x720/ixwMaPJnVjw8Mug9.mp4?tag=28",
+          "width": 960,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066417518097416246",
+        "text": "https://t.co/BBXMavIZQr",
+        "author": {
+          "screenName": "noisyb0y1",
+          "name": "Noisy"
+        }
+      }
+    },
+    {
+      "id": "2066769708641042571",
+      "text": "Anthropic engineer:\n\n\"you're not supposed to prompt Claude. you're supposed to build a system that prompts itself [loops].\"\n\nthis is one of the best workflows I've seen in a long time\n\nin this video he breaks down exactly how most people are building loops wrong:\n\n- the memory file you never set up, so every loop starts from zero\n\n- the sub-agents that 95% of builders have never split apart\n\n- the stop condition setup that keeps loops from running forever and billing you in your sleep\n\n- why writing one prompt a day is the slowest way to use Claude\n\nif you've been using Claude for more than a month and still typing every task by hand, you've been running one prompt when you could be running a system of loops\n\ninstead of another prompt tonight, watch this\n\nmake sure to bookmark it before it gets buried\n\nfull guide in the article below",
+      "author": {
+        "id": "1788243647885987840",
+        "name": "MIKE",
+        "screenName": "mikenevermiss",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2004815313108389888/uzJndIfx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1610,
+        "retweets": 188,
+        "replies": 38,
+        "quotes": 6,
+        "views": 251306,
+        "bookmarks": 3718
+      },
+      "createdAt": "Tue Jun 16 06:27:51 +0000 2026",
+      "createdAtLocal": "2026-06-16 14:27",
+      "createdAtISO": "2026-06-16T06:27:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066766823119294464/vid/avc1/1920x1080/ZOwZcoGdaRKbBVKE.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066401066518802637",
+        "text": "https://t.co/tlLZjVprSj",
+        "author": {
+          "screenName": "mikenevermiss",
+          "name": "MIKE"
+        }
+      }
+    },
+    {
+      "id": "2066748902272057698",
+      "text": "An AI just sat down with the editors behind Key & Peele, Beast Games, and George Janko.\n\nTheir reaction is the story. 🤯\n\nA team called Selects rebuilt Premiere Pro from scratch. Not for humans. For AI agents.\n\nNot another \"type a prompt, get a clip\" toy. A real editor that watches raw footage, understands what actually happened in the scene, and makes cuts a professional would respect.\n\nHere's what it did in testing:\n\n→ Fed it 4 cameras and 700GB of footage from a single shoot. It found the speakers, picked the best audio track, and switched cameras based on who was talking, reacting, and how they were expressing themselves. That's the job a human editor spends hours on.\n\n→ One prompt. Ten short-form clips out the other end. No re-editing. No re-cutting. 10x the deliverables from the same footage, in the time it used to take to make one.\n\n→ They pointed it at Claude's Fable Five launch video and asked it to copy the design style. It studied the video, picked up the visual language, recreated the graphics, and dropped them straight onto the timeline.\n\nFor years, \"AI editing\" meant filters and auto-captions. This is an agent doing the part of editing that actually requires judgment: deciding what matters in a scene and why.\n\nEditors aren't being replaced here. They're being handed an assistant that already knows how to cut.\n\nThe line between \"AI that edits clips\" and \"AI that edits like a person who's done this for years\" just moved.\n\nThoughts? 👇",
+      "author": {
+        "id": "1940661832815083520",
+        "name": "Jyoti Meena",
+        "screenName": "GsJyotiM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040506374392774656/oxxpcvRE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 120,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 16 05:05:11 +0000 2026",
+      "createdAtLocal": "2026-06-16 13:05",
+      "createdAtISO": "2026-06-16T05:05:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066506298343174411",
+        "text": "We rebuilt Premiere Pro from scratch for AI agents.\n\nNot a toy that generates clips. A real editor that watches footage, understands what happened, and makes cuts professional editors actually respect.\n\nSo we gave it to editors behind Key & Peele, Beast Games, and George Janko.\n\nTheir reactions are in the video.\n\nExamples below 🧵",
+        "author": {
+          "screenName": "thetomkim",
+          "name": "Tom Kim"
+        }
+      }
+    },
+    {
+      "id": "2066721415353803137",
+      "text": "this is trending today, \"from a single prompt.\"\n\nso i gave Claude Code (Opus 4.8) the same brief, one prompt, using only reframe, my open source motion framework. it wrote the whole thing as code and rendered a deterministic mp4. the American voiceover is Kokoro, running locally.\n\nnot Pixar 3D. but every frame is editable, reproducible code. long way to go, here's where it is today 👇",
+      "author": {
+        "id": "1679453856198197248",
+        "name": "Kian | AI Builder",
+        "screenName": "vericontext",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015248123753607170/hwBd_5Pt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 194,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 16 03:15:57 +0000 2026",
+      "createdAtLocal": "2026-06-16 11:15",
+      "createdAtISO": "2026-06-16T03:15:57+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066720481286447104/vid/avc1/1920x1080/FteHb8JAK-m3jTq2.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066577266608386293",
+        "text": "Claude Fable made this Pixar-quality educational video in one shot.\n\nIt's a preview of what I'm doing next:\n\nI've joined Alpha School to push the limits of what AI can do for learning.\n\nWe're going to transform education for 1B kids. https://t.co/b936wcQQqM",
+        "author": {
+          "screenName": "mattshumer_",
+          "name": "Matt Shumer"
+        }
+      }
+    },
+    {
+      "id": "2066683419170390430",
+      "text": "HIGGSFIELD + FABLE 5 KILLED THE $8,000 GAME STUDIO\n\none sentence → a playable game. deployed. by you, alone.\n\ni ripped the whole pipeline apart in one article. here's the short cut:\n\nthe old way to ship a browser game:\n\n→ hire a dev + a 3D artist\n→ burn 2-3 weeks\n→ eat a $3,000-8,000 invoice\n\nthe new way:\n\n→ describe it to claude fable 5\n→ higgsfield mcp spins up every asset, prop and 3D world\n→ one html file, live in 60 seconds\nreceipts, not hype:\n→ a solo builder shipped a full GTA-style game - driving, gangs, cops, minimap - in ONE chat. cost: ~$20.\n→ schedule 1: one dev, 8M+ copies, ~$125M. the idea was always the hard part.\n→ agencies still quote $8k per mini-game. solo you undercut at $500-2,500 and deliver in days, not weeks.\n\nthe one move that makes it work:\n\none feature per message. skeleton → movement → combat → polish.\n\ndump it all in one prompt and you get a broken mess.\nthis isn't \"ai killed game studios.\"\n\nit's one person now shipping what used to take a team of 20.\n\nfull technical ship guide + the exact prompt chain inside the article 👇",
+      "author": {
+        "id": "1558054593241776128",
+        "name": "ZEUS⚡️",
+        "screenName": "zeuuss_01",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059046904944611328/gjHlGwaU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 966,
+        "bookmarks": 3
+      },
+      "createdAt": "Tue Jun 16 00:44:58 +0000 2026",
+      "createdAtLocal": "2026-06-16 08:44",
+      "createdAtISO": "2026-06-16T00:44:58+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2066683297724321792/vid/avc1/720x1280/Ncsr2LsaurAqffXM.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066210342888177722",
+        "text": "https://t.co/Eb38PBDUsE",
+        "author": {
+          "screenName": "zeuuss_01",
+          "name": "ZEUS⚡️"
+        }
+      }
+    }
+  ]
+}
