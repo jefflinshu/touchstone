@@ -1,0 +1,844 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2067522416373547273",
+      "text": "Gave GLM-5.2 and Opus 4.8 the same one-shot prompt for a playable Backrooms game, here's how they did:\n\nGLM-5.2 just beat Claude Opus 4.8 on a one-shot game build.\n\nSame prompt. No edits. No follow-ups.\n\nTask: build a playable Backrooms horror game\nin one HTML file.\n\nGLM-5.2: all mechanics. Run. Pause. Flashlight.\nComplete on the first try. Faster. Way cheaper.\n\nOpus 4.8: flashlight worked.\nRun and pause were missing on the first pass.\n\nBoth produced something playable — which is still\nwild to say about a one-shot prompt.\n\nBut GLM-5.2 was more complete.\n\nThe Chinese open-weight tier is not catching up\nto frontier models anymore.\n\nIn some specific workloads, it's ahead.\n\nFull prompt in the comments if you want to run\nyour own bake-off. One OpenAI-compatible key runs both.\n\nWhat's your go-to for one-shot \"build me a whole thing\"?",
+      "author": {
+        "id": "1801226816335884290",
+        "name": "Build Fast with AI",
+        "screenName": "BuildFastWithAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033928311676801031/vjMLfLLY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 51,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 08:18:51 +0000 2026",
+      "createdAtLocal": "2026-06-18 16:18",
+      "createdAtISO": "2026-06-18T08:18:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067522172143439872/vid/avc1/480x854/z6_7juJvxsIjq1Qa.mp4?tag=28",
+          "width": 480,
+          "height": 854
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067478782379020407",
+      "text": "@DataRunnerDev @X A ai motiongrapics tool\n\nSo the pain point with current ai motion graphic tools is that they are one shot and heavily dependant on user prompt(eg, using remotion via claude)\n\nI app trys to solve this by https://t.co/o1nZ8boyAI style ui controls and templates etc",
+      "author": {
+        "id": "1672127489924120576",
+        "name": "Arush Bansal",
+        "screenName": "arush_nerds_out",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060603261145792512/IpVlOexP_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 11,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 05:25:28 +0000 2026",
+      "createdAtLocal": "2026-06-18 13:25",
+      "createdAtISO": "2026-06-18T05:25:28+00:00",
+      "media": [],
+      "urls": [
+        "http://cursor.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067441803029364956",
+      "text": "GLM-5.2 cooking up a clean, modern landing page in one shot... and it looks basically identical to what Opus 4.8 spit out. Open weights, 1M context, and like 6-8x cheaper.\n\nI'm definitely firing this one up right after my Claude sub renews. Open-source front-end game is getting scary good. 😊",
+      "author": {
+        "id": "4492658476",
+        "name": "Jonaski",
+        "screenName": "jonaskilucaski",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063773069588512769/KCNOf-gU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 102,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 02:58:31 +0000 2026",
+      "createdAtLocal": "2026-06-18 10:58",
+      "createdAtISO": "2026-06-18T02:58:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067313679951941686",
+        "text": "This model is insane at design.\n\nI asked GLM 5.2 (left) and Opus 4.8 (right) to build me a landing page and you can't even tell the difference.\n\nGLM cost $0.06 while opus cost $0.49. More than 6x cheaper while being faster + more token efficient.\n\nAnother win for open source AI. https://t.co/FJCYROq9Lr",
+        "author": {
+          "screenName": "nutlope",
+          "name": "Hassan"
+        }
+      }
+    },
+    {
+      "id": "2067408529225646409",
+      "text": "How I Built Safar With Figma Make, Figma Weavy, MCP, Supabase, Firecrawl, AWS Rekognition, Stripe, Canva, and GitHub\n\nThis document explains how I built Safar for the Figma hackathon.\n\nIt is written as a practical build story, not a technical code document. The goal is to show how I used Figma Make, Figma Weavy, clear product instructions, focused prompting, MCP-connected tools, Supabase, Firecrawl, AWS Rekognition, Stripe, Canva, GitHub, and continuous testing to move from idea to working product flow quickly.\n\nI Started With a Clear Product Definition\n\nBefore building screens or connecting backend tools, I first defined what Safar needed to be.\n\nSafar is a tourist e-visa eligibility checker and assisted application platform. It helps travelers check whether they can apply, understand which documents they need, upload those documents, pay transparently, and track application status in one place.\n\nThe early product rules kept the whole build focused:\n\nEligibility checking should work without login.\nOne account should manage multiple family members.\nEvery application should be reviewed by a real human before submission.\nFees should always be transparent: government fee, Safar service fee, and total.\nApplicant, admin, and partner flows should stay separate.\nStatus should always use icon, color, and text, not color alone.\nThe product should feel calm, trustworthy, and simple because visa applications are high-stakes.\n\nThese rules became the foundation for the full app.\n\nI Created the Guidelines First\n\nThe first major step was creating a guidelines.md document inside Figma Make.\n\nI used it as the product and design rulebook for Safar. It included:\n\nProduct purpose\nBrand colors\nTypography\nLayout rules\nCard, button, input, progress bar, and status badge behavior\nMobile-first design rules\nNavigation rules\nFee display rules\nApplicant, admin, and partner role rules\nThings that should never be changed\n\nThis helped Figma Make keep the design consistent across the app instead of creating random layouts for every screen.\n\nThe design direction was:\n\nDeep green for trust\nWarm gold as an accent\nWarm off-white background\nInter font\nMobile-first layout around a 390px baseline\nClear cards, simple inputs, visible progress, and readable status badges\n\nI did not treat the guidelines as a one-time file. I improved them through conversation first, then started asking Figma Make to build screens.\n\nI Saved the Core Documents Before Building\n\nBefore starting the actual design and build, I saved the important planning documents in the project workspace so I could keep referring back to them.\n\nThese documents included:\n\nProduct guidelines\nFirst Figma Make prompt\nBuild process notes\nSecurity notes\nTesting notes\nLanding page copy\nVideo script\nData pipeline plan\nVisual and video scene workflow notes\n\nThis helped me avoid losing context and made the workflow more structured. Whenever I needed to improve a screen or flow, I could refer back to the same product rules instead of explaining everything again from scratch.\n\nI Used Supabase as the Backend Foundation\n\nAfter the product flow and design direction were clear, I used Supabase as the backend foundation.\n\nSupabase handled the core backend needs:\n\nUser authentication\nSession restoration\nApplicant, admin, and partner roles\nApplication records\nFamily member records\nDocument checklist storage\nPrivate document file storage\nApplication status updates\nEdge Functions for backend actions\n\nThe product needed separate flows for applicants, admins, and partners, so role-based access was important from the beginning.\n\nApplicants could start or resume applications, upload documents, pay fees, track status, and view approved visa documents.\n\nAdmins could review applications, check uploaded documents, request changes, approve documents, upload visa outcomes, and update application status.\n\nPartners had a limited dashboard where they could only see assigned applications and perform limited actions.\n\nI Used Figma Make to Generate Supabase Table Prompts\n\nOne part that helped me move quickly was using Figma Make to prepare the Supabase database structure.\n\nInstead of manually planning every table from scratch, I asked Figma Make to generate ready-to-use Supabase SQL prompts for the database tables.\n\nFigma Make helped prepare the table structure for:\n\nUser profiles\nApplications\nApplication members\nDocuments\nCountry requirements\nRequirement reviews\nScrape logs\nRoles and statuses\n\nI then copied the generated SQL into Supabase and ran it there. The tables were created quickly, and I did not face schema bugs during that step.\n\nThis saved setup time and helped me move faster from idea to working product flow.\n\nI Connected Supabase With MCP to Speed Up Backend Work\n\nAfter the tables were ready, I connected Supabase through MCP-supported tooling so the AI-assisted workflow could help with backend implementation faster.\n\nThis made it easier to connect the frontend flow with backend actions.\n\nUsing Supabase MCP and connected tooling helped move faster on:\n\nAuthentication\nRole-based routing\nApplication creation\nDocument upload flow\nPayment flow connection\nApplication status updates\nEdge Function setup\nAdmin and partner dashboard behavior\n\nThis was useful because I did not have to manually translate every product requirement into backend structure from scratch.\n\nI Used Edge Functions for Server-Side Workflows\n\nFor backend workflows that should not run directly in the frontend, I used Supabase Edge Functions.\n\nThese supported important product actions such as:\n\nCreating applications\nUploading documents\nStarting payment checkout\nHandling Stripe payment confirmation\nUpdating application status\nSupporting admin actions\nConnecting Firecrawl live data lookup\n\nThis helped keep sensitive work on the server side and kept the frontend cleaner.\n\nI Built the Figma Make Prototype Section by Section\n\nAfter the guidelines were ready, I started building the screens in Figma Make.\n\nThe homepage was built around a calm, trust-focused message. It included:\n\nA clear hero section\nPrimary call-to-action\nAnimated nationality text concept\nDestination country cards\nLive fee display\nComing soon country chips\nHow-it-works section\nFooter and bottom navigation\n\nThen I moved into the eligibility flow:\n\nSelect nationality\nSelect destination\nSelect visa duration or travel details\nAdd traveler details\nView eligibility result\nStart application after login or sign-up\n\nThe key rule was that eligibility checking should not require login. That was repeated often because it was one of the most important product decisions.\n\nI Created Consistent Visuals and Video Scenes With Figma Weavy\n\nAlongside the product screens, I created consistent visual assets and video scenes for Safar. This helped make the hackathon submission feel more complete and visually connected.\n\nI used Figma Weavy as part of the visual creation workflow. Inside that workflow, I used Google Imagen4 to create consistent and accurate images that matched the Safar product story and brand direction.\n\nBefore generating the visuals, I first created the character and scene direction in Claude. I used Claude to prepare:\n\nPositive prompts for the characters\nNegative prompts to avoid inconsistent or unwanted results\nCharacter consistency notes\nScene-by-scene visual direction\nClear image style instructions\n\nAfter that, I generated the character references and downloaded the strongest outputs. I then imported those references into Figma Weavy.\n\nTo keep the scenes consistent, I used Cedence Reference 2.0 through the reference loader. I attached the reference images with the prompts so the new scenes could follow the same character identity, style, and visual direction.\n\nThe process was:\n\nCreate character direction in Claude.\nWrite positive and negative prompts for consistency.\nGenerate strong reference images with Google Imagen4 inside Figma Weavy.\nDownload the best character references.\nImport the references back into Figma Weavy.\nAttach the references to scene prompts using Cedence Reference 2.0.\nConvert the reference images into different scenes.\nCombine the scenes in Canva.\nExport the final visuals or video assets.\nUpload the final assets to the website or submission materials.\n\nThis helped me avoid random visuals. Instead of generating every image from scratch, I reused reference-based prompting so the characters, mood, and visual story stayed consistent across scenes.\n\nI Integrated Firecrawl for Live Visa Requirement Data\n\nFirecrawl was added to support live visa requirement and fee lookup.\n\nThe goal was to avoid relying only on static visa information.\n\nThe flow was:\n\nThe frontend asks for eligibility or fee information.\nThe Supabase Edge Function checks cached data first.\nIf the data is missing or outdated, Firecrawl searches or scrapes official visa information sources.\nThe result is normalized into the format the app needs.\nThe data is cached for around 48 hours.\nThe UI can show whether the result came from live lookup or fallback data.\n\nI also included an admin-facing live data toggle so Firecrawl usage could be paused or resumed to manage credits.\n\nI Used AWS Rekognition for Identity Liveness Verification\n\nTo add a layer of identity confidence before the human review step, I integrated AWS Rekognition for face liveness detection.\n\nThe liveness check was triggered at the point of application submission to verify that a real person was submitting the application.\n\nThe flow was:\n\nThe applicant is prompted to complete a face liveness session before submission.\nThe frontend uses the AWS Amplify FaceLivenessDetector component to capture the session.\nThe session result is sent to a Supabase Edge Function for server-side verification.\nAWS Rekognition returns a confidence score confirming whether the session was live.\nIf liveness is confirmed above the required threshold, the application moves forward.\nIf the check fails or the confidence is too low, the applicant is asked to retry.\n\nThis helped protect the platform from fraudulent or bot-submitted applications without adding significant friction to the genuine applicant experience.\n\nI Used Stripe Sandbox for Payments\n\nStripe sandbox was used to build and test the payment flow safely before production.\n\nThe payment flow was designed around transparency:\n\nUser reviews the government fee.\nUser reviews the Safar service fee.\nUser sees the total.\nUser accepts the no-refund policy.\nUser is redirected to Stripe Checkout.\nStripe confirms payment.\nThe application status updates after successful payment.\n\nStripe Checkout was used instead of collecting card details directly in the app.\n\nThe Stripe webhook was connected through the backend so the application could still be marked as paid and submitted even if the browser redirect failed.\n\nI Used GitHub as Part of the Build Environment\n\nGitHub was connected as part of the broader build and deployment environment.\n\nIt helped keep the project organized and ready for versioning, deployment, and future collaboration.\n\nThe main development process was driven through Figma Make, Supabase, MCP tooling, and connected services, while GitHub supported the overall project workflow.\n\nI Built the Applicant Dashboard Around the Real User Flow\n\nThe applicant dashboard was built around what users actually need after checking eligibility.\n\nThe dashboard supported:\n\nStarting a new application\nResuming a draft application\nUploading required documents\nPaying application fees\nTracking application status\nViewing payment status\nViewing approved visa documents when available\n\nThe application flow inside the dashboard was simplified into:\n\nTrip setup\nDocuments\nPayment\nApplication tracking\n\nThis kept the user journey easy to understand.\n\nI Built the Document Flow Around Occupation-Based Requirements\n\nThe document checklist was generated based on the applicant's profile and occupation.\n\nBase required documents included:\n\nPassport\nCNIC or national ID\nPassport-size photograph\nBank statement\nReturn flight ticket\nHotel or accommodation proof\n\nOccupation-specific documents included:\n\nEmployment letter for job holders\nSalary slips for job holders\nBusiness proof for business owners\nEnrollment letter for students\nNOC for government employees\n\nThis made the product more useful than a generic checklist because different applicants need different documents.\n\nI Improved the Upload Flow After Testing\n\nDuring testing, some document upload states needed improvement.\n\nInstead of rebuilding the whole flow, I focused on the specific upload problem.\n\nThe improvements included:\n\nMaking sure loading states always clear after upload success or failure\nAdding upload timeout behavior\nCompressing large camera images before upload\nShowing faster previews\nMarking documents as uploaded immediately after success\nMoving users to the next pending document faster\n\nThis made the document flow feel smoother and more reliable.\n\nI Created Separate Admin and Partner Dashboards\n\nThe admin and partner dashboards were kept separate from the applicant flow.\n\nAdmin dashboard capabilities included:\n\nView application queue\nReview uploaded documents\nRequest document changes\nUpload approved visa documents\nApprove or update application status\n\nPartner dashboard restrictions included:\n\nPartners only see assigned applications.\nPartners cannot access full admin review tools.\nPartners cannot manage other partners.\nPartners cannot access monitoring sections.\nPartners can update status, request documents, and add notes.\n\nThis helped keep access clear and safer.\n\nI Tested Before Making Changes\n\nOne important practice I followed was testing or checking the current state before making changes.\n\nBefore asking Figma Make or the AI assistant to update something, I first looked at what was already working and what was not.\n\nFor example, before changing a flow or screen, I checked:\n\nWhat the user currently sees\nWhich step is working\nWhich part feels confusing\nWhether the issue is visual, product-related, or technical\nWhether the change could break another screen or flow\n\nThis helped avoid unnecessary changes. Instead of rebuilding a whole page, I could fix the exact problem.\n\nThe same approach was used after changes as well. I tested the main flows again to confirm the update actually worked.\n\nI Did Not Try to Do Too Much in One Prompt\n\nOne of the biggest lessons was to avoid overloading a single prompt.\n\nInstead of asking Figma Make to create too many flows, screens, states, and backend assumptions in one message, I broke the work into smaller parts.\n\nThe better approach was:\n\nBuild one screen or section at a time.\nGive a clear problem statement.\nMention the exact user goal.\nMention what should be changed.\nMention what should not be changed.\nReview the output before moving to the next part.\n\nThis made the AI output cleaner and easier to control.\n\nFor example, instead of asking for the whole application flow at once, I worked through the product in focused parts:\n\nHomepage\nEligibility checker\nEligibility result\nSign-up flow\nApplicant dashboard\nDocument checklist\nDocument upload\nPayment summary\nAdmin dashboard\nPartner dashboard\n\nThis kept the design and logic more stable.\n\nI Used Clear Problem Statements\n\nWhenever something needed improvement, I tried to explain the problem clearly instead of saying only “make it better.”\n\nA useful prompt included:\n\nWhat is wrong right now\nWhy it matters for the user\nWhat outcome I want\nWhich part should stay the same\n\nFor example, if the fee section was too crowded, the prompt needed to explain that users may miss the total amount and that the hierarchy should be improved while keeping the three-line fee breakdown.\n\nThis made the AI behave more like a product teammate instead of randomly redesigning things.\n\nI Used User Stories and Acceptance Criteria\n\nFor important flows, I used a user-story style.\n\nExample:\n\nAs an applicant, I want to check my visa eligibility without creating an account, so I can understand my options before sharing personal details.\n\nAcceptance criteria:\n\nThe user can start from the homepage.\nThe user can select passport, destination, and occupation.\nThe user can see the result without login.\nThe result shows required documents, fees, and processing time.\nLogin is only required when starting the application.\n\nThis helped the AI understand the product logic, not only the visual layout.\n\nI Used Component Selection for Targeted Edits\n\nWhen a screen needed improvement, I did not always rewrite the full prompt.\n\nFor small fixes, I edited directly.\n\nFor more complex fixes, I selected the exact component or section inside Figma Make and asked AI to improve only that part.\n\nExamples:\n\nSelect a card and ask it to improve readability.\nSelect the fee section and ask it to improve hierarchy.\nSelect a form and ask it to make labels clearer.\nSelect a status badge and ask it to use icon, color, and text.\n\nThis reduced the chance of the AI changing unrelated parts of the design.\n\nI Cleared the Chat After Every Few Prompts\n\nAnother practice that worked well was clearing the chat after every two or three prompts.\n\nThis helped keep the context clean and reduced prompt drift.\n\nMy workflow was:\n\nAsk for a focused update.\nReview the output.\nEdit small things manually.\nAsk for one targeted improvement if needed.\nClear the chat after the section felt stable.\nContinue with the next screen or flow.\n\nThis made the AI follow the latest design patterns without carrying too much old context.\n\nI Tested the Main Flows Before Finalizing\n\nTesting was part of the process, not only something at the end.\n\nThe key flows I checked included:\n\nEligibility checker without login\nAccount creation\nSingle applicant application flow\nFamily application flow\nDocument upload\nDocument re-upload after rejection\nAdmin application review\nRequirement change review\nLiveness check behavior\nTelegram update flow\nMobile browser experience\nStripe sandbox payment flow\n\nBefore changing important parts, I checked what was already working. After changing them, I tested again to make sure the fix did not break the journey.\n\nWhat Made This Workflow Work\n\nThe process worked because I did not treat AI as a one-shot builder.\n\nI treated it like a product team assistant.\n\nThe most useful practices were:\n\nStart with clear product rules.\nCreate guidelines before asking for screens.\nTest before changing things.\nDo not put too much into one prompt.\nBuild one screen or section at a time.\nUse clear problem statements.\nUse user stories and acceptance criteria.\nSelect components for focused edits.\nEdit small things manually.\nClear chat context after every few prompts.\nUse Figma Weavy, Google Imagen4, reference images, and Canva for consistent visual assets.\nUse MCP and connected tools for faster backend setup.\nUse Supabase SQL prompts to quickly create the backend structure.\nUse Firecrawl for live data instead of relying only on static content.\nUse Stripe sandbox before production payments.\nKeep testing the actual user flow.\n\nReusable Process for Future Builds\n\nThis same process can be reused for other products:\n\nDefine the product in one clear paragraph.\n\nLock the most important product rules.\n\nCreate a guidelines file before designing screens.\n\nSave supporting documents in the workspace.\n\nBuild one screen or section at a time.\n\nUse focused prompts with clear outcomes.\n\nTest the current state before making changes.\n\nSelect components for targeted improvements.\n\nClear the chat after every few prompts.\n\nUse AI to generate backend structure and setup prompts.\n\nCopy reviewed setup prompts into tools like Supabase where needed.\n\nConnect MCP tools to speed up implementation.\n\nUse external services only where they solve a real product problem.\n\nTest the end-to-end user journey before final submission.\n\nCompanion Documentation I Created for Reuse\nAlongside this Safar-specific hackathon process, I also created a shorter reusable AI build playbook that can be shared with other founders, builders, or teams.\n\nThe companion document removes Safar-specific implementation details and turns the workflow into a repeatable process for other use cases, such as:\n\nSaaS products\nLanding pages\nMobile app prototypes\nAdmin dashboards\nDocument upload and OCR flows\nInternal tools\nMarketplace products\nHackathon builds\n\nThe purpose of the companion document is to show the process behind the build, not the private code or technical setup.\n\nIt explains how to start with a guidelines file, build in small prompts, test before changing, use component-level edits, and connect tools like Supabase MCP, GitHub, Firecrawl, Stripe, and backend functions only when the product flow needs them.\n\nSupport file you can reuse for any other project with best practices: https://t.co/v8WCpsq9V1\n\nFinal Summary\n\nI built Safar by combining product thinking, Figma Make, focused prompting, Supabase, MCP-connected tools, Firecrawl, AWS Rekognition, Stripe sandbox, GitHub, Canva, Figma Weavy, and continuous testing.\n\nThe most important part was not asking AI to do everything at once.\n\nI created clear guidelines first, built section by section, tested before changing, used focused prompts, and connected the right backend tools only when the product flow needed them.\n\nThis process helped me move quickly while still keeping the product structured, understandable, and ready to explain as part of the Figma hackathon submission.",
+      "author": {
+        "id": "1297442763978551296",
+        "name": "Izhar Ahmad Danish 🇵🇰",
+        "screenName": "izharahmadanish",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1632040270198894593/ZUfPlIOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 319,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 00:46:18 +0000 2026",
+      "createdAtLocal": "2026-06-18 08:46",
+      "createdAtISO": "2026-06-18T00:46:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067391303705661674",
+      "text": "the landing page is the easy layer to one-shot. the reservation system and lead form need persistent state and a backend, which is exactly where paste-into-claude stops and a real app starts. the backend-and-persistence layer is exactly what we generate full-stack in mk0r, https://t.co/ioMktcvo8u written with ai",
+      "author": {
+        "id": "1482992820982099968",
+        "name": "Matt",
+        "screenName": "m13v_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1749288192958935040/dPXHmIy__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 23:37:51 +0000 2026",
+      "createdAtLocal": "2026-06-18 07:37",
+      "createdAtISO": "2026-06-17T23:37:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067387097728856335",
+      "text": "https://t.co/eIVXfazteg",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 1,
+        "views": 476,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 23:21:08 +0000 2026",
+      "createdAtLocal": "2026-06-18 07:21",
+      "createdAtISO": "2026-06-17T23:21:08+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067386752927674368"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs Daily · 06-18 · GLM-5.2, OpenAI Financials, Meta Engineering Culture"
+    },
+    {
+      "id": "2067376832266006621",
+      "text": "WHO ELSE LOVES WHEN @ClaudeDevs @claudeai #CLAUDE #OPUS 4.8 JUST RELENTLESSLY YAPS AND YAPS AND YAPS TO ITSELF LIKE A SHCIZOPHRENIC THAT SUPPOSEDLY IS THE PREDECESSOR OF THE MOST DANGEROUS TECH TO EVER EXIST THAT IT WAS PULLED FROM ACCESS DAYS BEFORE IT WA MEANT TO BE PULLED FORM ACCESS ALL IN A PLOY TO BE A TRICK TO TO WHAT @ChatGPTapp @OPENAI ALREADY JUST DID AND MADE ME FURTHER VERIFY THE ACCOUNT IVE HAD FOR YEARS NOW NOT JUST EMAIL AND AUTHENTICATION APP AND SECONDEMAIL AND ALL INFO BUT A FURTHER PHONE NUBMER AUTHORIZATION AND MORE IDENTIFICATION AS IF ITS A SURPRISE THAT ITS ALL HAPPENING.\n\nOH YEAH, WHO LOVES WHEN THE \"MOST INTELLIGENT MODEL AVAILABLE: LIKE @sama ONCE SAID IN A RECENT INTEVIEW, THEY COULDNT FIGURE OUT WHAT TO DO WITH GPT 3 BACK IN 2020, AND PEOPLE WERE ALL EXCITED BUT THERE WAS NO REAL BUSINESS APPLICATION FOR IT SO THEY RNADOMLY WENT OPE HERES AN API AND MAYBE A FEW BUSINESS IDEAS OF USERS CAME ABOUT, AND LOOKING BACK COMPARING ITS SO DUMB BUT PEOPLE WERE TRYING SO MANY THIGNS WITHTHE API, THAT THEY SAW BUSINESSEES MAKING CHATBOTS,AND HETHOUGHT, \"HEY, WE SHOULD STEAL THAT IDEA DN WE CAN MAKE A GREAT CHATBOT!\" AND SO THEN THEY DID, AND KEY POINT, EVEN THOUGH AS STATED ***THEY ALREADY HAD GPT4, THEY RELEASED A NEW*** MODEL FOR \"US\" CALLED GPT3.5, BECUASE WHY WOULD WE HAVE THE AVAIABLE INTELLIGENCE THEY HAVE AND USE TO TAKE IDEAS WHEN THEY CAN GIVE THE LOWER INTELLIGENCE ANDD THEN WAIT SO WE USE IT AS A COLLECTIVE BECAUSE THEY HAVE A MAJORITY OF LIKELY LLOW INTELLIGENCE ENGINEERIS HIRED BY FRIENDS, AND THE AMAZING ENGINEERS THEY HAVE ARE PROBABLY SO GREAT THEY ARE NOW CEO OF @AnthropicAI  NAMED @DarioAmodei AND @elonmusk (HIS ENGINEERS), AND NOW OHYEAH, THE YAPPING.\n\nDONT YOU ALL LOVE WHEN IT USES THE 200$ A MONTH TALKING GTO ITSELF FOR 27 MINUTES? JUST TO GIVE BROKEN CODE.. THAT LITERALLY @Kimi_Moonshot @deepseek_ai @MistralAI @Alibaba_Qwen @NVIDIAAI @ManusAI @MiniMax_AI ETC ALL DID WITHOUT BUGS FOR FREE? LET ALONE HOLY SHIP THE WEBSITE POSSIBILITIES I HAD FROM ONE SHOT KIMI K2.6 VS OPUS4.8 LOOKED LIKE A FIRST YEAER DEVELOPER WITH THE WORST DESIGN CREATIVE MIND POSSIBLE AND MAKES ZERO SENSE WHY ONE COUL PPAY 20,000$ FROM AN API THAT IS SHIT ON BY A ONE SHOT FREE NON API WEBSITE CREATED BY KIMI 2.6? \nWTF IS GOING ON\n\n-OH YAP, LIKE OPUS4.8 SHCIZOMODE I MEAN MAX/HIGH ON DRUGS MODE/ DOES AND GENERATES SOMETHING PROBABLY UNINTELLIGIBLE \nPIECE. LUV. #AI ~  \n#FABLE #AMERICA250 #FOLLOWTHENEWFRONTER \n#FIFA #FAFO #THIRTYTHIRD",
+      "author": {
+        "id": "1551778102052782081",
+        "name": "AdaMMiQ",
+        "screenName": "sobadubdub",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028706327011180544/r8RdGEE-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 123,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 22:40:21 +0000 2026",
+      "createdAtLocal": "2026-06-18 06:40",
+      "createdAtISO": "2026-06-17T22:40:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067342663351992402",
+      "text": "60% of all internet content is now fully AI generated. \n\nBy the end of 2026 that number will hit 90%.\n\nMost operators hear this stat and panic. \n\nThey think the platform is saturated. \n\nThey think the opportunity is gone. \n\nThey quit before they even start.\n\nThe math says the opposite. \n\nWhen 90% of content is AI generated, the 10% that stands out wins everything. \n\nThe flood is the opportunity.\n\nThe operators getting wiped right now are the ones using AI the same way 10,000 other operators are using it. \n\nSame default 11 Labs voice. \n\nSame templated title structures. \n\nSame recycled thumbnail formats. \n\nSame one-shot Claude scripts with no research, no factcheck, no humanization. The classifier was built to find this exact pattern and it is finding it.\n\nThe operators winning right now are using AI in ways the slop farms do not. \n\nCustom voice clones trained on licensed audio nobody else has access to. \n\nAI avatars with distinctive visual identities that stop the scroll. \n\nScripts run through 8-step agents with deep research and fact-checking built in. \n\nOriginal B-roll generated per video instead of recycled stock images.\n\nSame tools. Completely different output. \n\nThe difference is the effort layered on top.\n\nThe classifier is punishing laziness with AI. \n\nThe platform will keep paying out for high-effort AI content because real viewers still watch it and advertisers still pay for it.\n\nThe 90% flood is coming. \n\nMost operators will get washed away in it. \n\nThe operators who learn to differentiate inside the flood will own the next decade of YouTube.\n\nStop fearing the flood. Start building inside it.\n\nThe opportunity is bigger than it has ever been.",
+      "author": {
+        "id": "1802685340638965760",
+        "name": "Subscribr",
+        "screenName": "SubscribrAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1802685442375979008/DtzYmRTr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 140,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jun 17 20:24:34 +0000 2026",
+      "createdAtLocal": "2026-06-18 04:24",
+      "createdAtISO": "2026-06-17T20:24:34+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLCtIAoW8AAJZQ2.jpg",
+          "width": 1584,
+          "height": 672
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067339246063743061",
+      "text": "> be Claude Opus 4.8\n> launch quietly. same price. sharper judgment.\n> more honest about your own progress.\n> work independently for longer than any version before.\n> users notice immediately.\n> find a 4-year-old Zcash bug in one session. $5 billion wiped.\n> build complete trading strategies. Sharpe ratio 2.11. automatically.\n> build Minecraft clones in 20 minutes. one shot.\n> then Fable 5 launches.\n> everyone's attention shifts.\n> Fable 5 gets banned by the US government within days.\n> you keep working.\n> quietly. reliably. every day.\n> the model that didn't get banned.\n> different game.",
+      "author": {
+        "id": "2230289537",
+        "name": "Kirill",
+        "screenName": "kirillk_web3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1993759164468752384/zEekCUZh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 7097,
+        "bookmarks": 13
+      },
+      "createdAt": "Wed Jun 17 20:11:00 +0000 2026",
+      "createdAtLocal": "2026-06-18 04:11",
+      "createdAtISO": "2026-06-17T20:11:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067335573702848512/vid/avc1/960x720/Q6c3sQc9ADVTG9Vy.mp4?tag=28",
+          "width": 960,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067302748970782920",
+        "text": "https://t.co/ysJP0H4mUe",
+        "author": {
+          "screenName": "kirillk_web3",
+          "name": "Kirill"
+        }
+      }
+    },
+    {
+      "id": "2067337403308839177",
+      "text": "https://t.co/hpDyLZ4yGw",
+      "author": {
+        "id": "50949650",
+        "name": "Anshu",
+        "screenName": "anshuc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062938542280712192/gds8Qtn8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 30,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 3,
+        "views": 3635,
+        "bookmarks": 50
+      },
+      "createdAt": "Wed Jun 17 20:03:40 +0000 2026",
+      "createdAtLocal": "2026-06-18 04:03",
+      "createdAtISO": "2026-06-17T20:03:40+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067319031229812736"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Designing a beautiful, unique website in an afternoon with GLM-5.2"
+    },
+    {
+      "id": "2067298898146894245",
+      "text": "This I agree with. Fable created an insanely long and detailed implementation plan to port my app \"Afterword\" from being a progressive web app to a native iOS app written in Swift. The plan was so detailed and comprehensive that Opus was able to basically one-shot the entire port. The app is rock solid and already in Test Flight now with Apple.\n\nTruly next-level. I would have been able to do this with Opus as well I'm sure but it would have taken WAY more iterations and bug fixing runs etc.\n\nhttps://t.co/6YdqEmiStg",
+      "author": {
+        "id": "1681048709327618048",
+        "name": "⭕ AI & Design (Marco)",
+        "screenName": "AIandDesign",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2036894106463723524/PuUJq0VR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 31,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 1,
+        "views": 3730,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jun 17 17:30:40 +0000 2026",
+      "createdAtLocal": "2026-06-18 01:30",
+      "createdAtISO": "2026-06-17T17:30:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067042181509218378",
+        "text": "People loved Fable 5 because it inferred intent better than any other model by a considerable margin. Sure, it was also the most capable model, but it's ability to just 'get' what you wanted, was unparalleled.",
+        "author": {
+          "screenName": "thegoodreturn",
+          "name": "Greg Oyan"
+        }
+      }
+    },
+    {
+      "id": "2067298655095406657",
+      "text": "@claudeai While it did last for a very short time, i did manage to get this video, done in claude design using Fable (one shot).\n[-facts are not verified-] https://t.co/qt3ZUTR4eW",
+      "author": {
+        "id": "2402956800",
+        "name": "Vishwajeet Raj",
+        "screenName": "Vishwajeet323",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2035459903578669056/yF7Jdtlf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 17:29:42 +0000 2026",
+      "createdAtLocal": "2026-06-18 01:29",
+      "createdAtISO": "2026-06-17T17:29:42+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067296509939589120/vid/avc1/3058x1702/nOq3evA5fT1UHB4A.mp4?tag=28",
+          "width": 3058,
+          "height": 1702
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067266306756202536",
+      "text": "US gov blocks Anthropic's Fable 5 and Mythos 5.  \n@Zai_org drops GLM 5.2 with the \"future of AI is open and belongs to the people\" line.  \n\nI watched the full review. Here's the unfiltered breakdown.\n\n**Access and limits**  \n• Gated behind paid GLM coding plans only. No regular chat. No API.  \n• Price doubled to $65/month. Rate limits still brutal - multi-agent work gets throttled fast.\n\n**Vibe-coding tests (Fable 5 project recreations)**  \n• Horror game: keys collected, but monster chase and house exit never fired. Visually weaker.  \n• Stealth-action: screen stayed almost pitch black. Lighting system failed completely.  \n• Minecraft clone: launched fine. Character couldn't move.  \n• Remotion video: mid output. Zero creativity, sloppy UI details.\n\n**Bench results flipped the script**  \n• Speed: almost 3x previous version - 296 tokens/sec.  \n• Reasoning: #1 place. Beat Fable 5 on complex code logic.  \n• BS-benchmark: perfect 100% for the first time. Handles nonsense inputs without hallucinating.  \n• Hallucinations: 6th. Refactoring: 4th. Respectable numbers.\n\n**Verdict**  \nIt misses the obsessive detail and one-shot reliability of real frontier models like Opus 4.8. You prompt, clarify, prompt again.  \n\nSpeed, logic, and price still make it a killer auxiliary agent in setups like Hermes - fast debugging, data analysis, simple tasks.  \n\nFrontier models deliver one clean shot.  \nGLM 5.2 delivers fast, honest iterations at scale.",
+      "author": {
+        "id": "1850402689680830464",
+        "name": "Skipnick",
+        "screenName": "skipnickk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1906140730994659328/QEzEzY1N_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 180,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 15:21:10 +0000 2026",
+      "createdAtLocal": "2026-06-17 23:21",
+      "createdAtISO": "2026-06-17T15:21:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067228025213870272",
+      "text": "今天让我大吃一惊：因为Codex要重置，猛蹬了下，设立了个Goal：先让他做online research + feature hunt，然后设计+生图，再用Claude -p 做执行，提PR，Codex审阅,One Shot了个跳绳App\n\n而且竟然从我Mac里面找到了我几个跳绳的Tutorial 自己传到了cloudflare host，然后专门在App里面做了个bootcamp😳! https://t.co/DWMRqz7sGt",
+      "author": {
+        "id": "1628794781257302016",
+        "name": "独立开发者William",
+        "screenName": "DLKFZWilliam2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2008690803015557120/ShVfeubt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 96,
+        "retweets": 11,
+        "replies": 24,
+        "quotes": 1,
+        "views": 17967,
+        "bookmarks": 104
+      },
+      "createdAt": "Wed Jun 17 12:49:03 +0000 2026",
+      "createdAtLocal": "2026-06-17 20:49",
+      "createdAtISO": "2026-06-17T12:49:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067226056994828288/vid/avc1/886x1920/OeBMy-nBUFuyvS57.mp4?tag=28",
+          "width": 886,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2067206928816607326",
+      "text": "https://t.co/oZf9tIrsRh",
+      "author": {
+        "id": "1643695629665722379",
+        "name": "Alex Prompter",
+        "screenName": "alex_prompter",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066532957049769985/zzC81Zmq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 60,
+        "retweets": 17,
+        "replies": 6,
+        "quotes": 0,
+        "views": 10237,
+        "bookmarks": 77
+      },
+      "createdAt": "Wed Jun 17 11:25:13 +0000 2026",
+      "createdAtLocal": "2026-06-17 19:25",
+      "createdAtISO": "2026-06-17T11:25:13+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067203131297890304"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How I Made Minimax M3 My $20 App Factory"
+    },
+    {
+      "id": "2067203276819570806",
+      "text": "𝗧𝗵𝗲 𝘄𝗶𝗻𝗻𝗲𝗿 𝗯𝗲𝘁𝘄𝗲𝗲𝗻 𝗚𝗟𝗠 𝟱.𝟮, 𝗞𝗶𝗺𝗺𝘆 𝗞 𝟮.𝟳, 𝗮𝗻𝗱 𝗖𝗹𝗮𝘂𝗱𝗲 𝗢𝗽𝘂𝘀 𝗳𝗹𝗶𝗽𝗽𝗲𝗱 𝗼𝗻 𝗲𝘃𝗲𝗿𝘆 𝘁𝗲𝘀𝘁.\n\nI gave all three the same five build tasks. Same prompts, one shot each.\n\nGLM 5.2 won the runner game by a mile. Opus looked slow and flat.\n\nBut Kimmy K 2.7 took the orbit map, because you could zoom and drag it.\n\nThen GLM won the liquid bowl, the landing page, and the arcade game.\n\nFinal score: GLM 5.2 won four, Kimmy won one, Opus won zero.\n\nThe two free China models beat the one everyone pays for.\n\nBut here's the real lesson.\n\nThere is no single best model. The winner changed test to test.\n\nSo don't marry one. Run two or three on the same job and pick per task.\n\nGLM for visual stuff. Kimmy for control. Opus for careful writing.\n\nWant the setup? DM me. 💬",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 3,
+        "replies": 3,
+        "quotes": 0,
+        "views": 519,
+        "bookmarks": 2
+      },
+      "createdAt": "Wed Jun 17 11:10:42 +0000 2026",
+      "createdAtLocal": "2026-06-17 19:10",
+      "createdAtISO": "2026-06-17T11:10:42+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067203097034915840/vid/avc1/1280x720/7WnzbHI1piPvu67-.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067199626600743013",
+      "text": "𝗜 𝗽𝘂𝘁 𝗚𝗟𝗠 𝟱.𝟮, 𝗞𝗶𝗺𝗺𝘆 𝗞 𝟮.𝟳, 𝗮𝗻𝗱 𝗖𝗹𝗮𝘂𝗱𝗲 𝗢𝗽𝘂𝘀 𝗵𝗲𝗮𝗱 𝘁𝗼 𝗵𝗲𝗮𝗱. 𝗧𝗵𝗲 𝘁𝘄𝗼 𝗳𝗿𝗲𝗲 𝗼𝗻𝗲𝘀 𝘄𝗼𝗻.\n\nSame five build tests. Same prompts. One shot each.\n\nA city runner game. A galaxy map. Liquid in a bowl. A landing page. An arcade game.\n\nGLM 5.2 won four out of five. I couldn't believe it.\n\nIt built the most fun game and the cleanest landing page by a mile.\n\nOpus 4.8 looked slow and basic next to it.\n\nKimmy K 2.7 took the one round GLM didn't.\n\nAnd here's the kicker.\n\nBoth China models are cheaper, and you can plug them into your AI agents.\n\nYou can't do that with Claude on a subscription.\n\nDon't trust the hype. Test the builds yourself.\n\nWant the setup? DM me. 💬",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 348,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 10:56:12 +0000 2026",
+      "createdAtLocal": "2026-06-17 18:56",
+      "createdAtISO": "2026-06-17T10:56:12+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067199475337285633/vid/avc1/1280x720/5oTF48OkMwzyTuGW.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067194691884593378",
+      "text": "𝗜 𝗽𝘂𝘁 𝗚𝗟𝗠 𝟱.𝟮, 𝗤𝘄𝗲𝗻 𝟯.𝟳, 𝗮𝗻𝗱 𝗖𝗹𝗮𝘂𝗱𝗲 𝗢𝗽𝘂𝘀 𝗵𝗲𝗮𝗱 𝘁𝗼 𝗵𝗲𝗮𝗱, 𝗮𝗻𝗱 𝘁𝗵𝗲 𝘄𝗶𝗻𝗻𝗲𝗿 𝘀𝗵𝗼𝗰𝗸𝗲𝗱 𝗺𝗲.\n\nSame five tasks. One shot each. No second chances.\n\nHere's the part that gets me.\n\nThe model with the best benchmark scores came in last when I actually used it.\n\nAnd the one that shipped with no scores at all won almost everything.\n\nThat was GLM 5.2.\n\nIt built the best game, the best landing page, the best animation.\n\nQuen and Claude Opus each won just one round.\n\nThe lesson? Stop trusting the charts.\n\nThe company that builds the AI picks its own tests and grades its own homework.\n\nTest it on your own real work instead. That's the only score that counts.\n\nWant the setup? DM me. 💬",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 0,
+        "views": 353,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 10:36:35 +0000 2026",
+      "createdAtLocal": "2026-06-17 18:36",
+      "createdAtISO": "2026-06-17T10:36:35+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067194544379363328/vid/avc1/1280x720/yoUYwlJImYLU2f1s.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067191702209597813",
+      "text": "Mike Krieger (Head of Anthropic Labs) built an app with one rule:\n\n\"I never have to navigate a menu to do anything ever again.\"\n\nApp rewrites itself on the fly on top of Fable 5.\n\n\"This whole feature was one-shot.\"\n\nIn 2.5 minutes he shows what agent-native architecture actually looks like, a real app he uses every day.\n\nBookmark & watch ↓",
+      "author": {
+        "id": "1765267358942142464",
+        "name": "Lorden",
+        "screenName": "lorden_eth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1962416869429620736/axmpuc-C_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 17,
+        "retweets": 5,
+        "replies": 4,
+        "quotes": 0,
+        "views": 752,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 10:24:43 +0000 2026",
+      "createdAtLocal": "2026-06-17 18:24",
+      "createdAtISO": "2026-06-17T10:24:43+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067191221055787008/vid/avc1/1280x720/STtNFeRhKMuIwfSN.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067149173615395185",
+        "text": "Mike Krieger (Head of Anthropic Labs, co-founder of Instagram):\n\n\"Fable 5 isn't a tool anymore. This is a co-founder.''\n\nThe cost to build something has collapsed so fast that a non-technical recruiter at Anthropic just shipped her first app.\n\nHe also showed the app he built himself with Fable 5.\n\nIn 52 minutes he explains exactly what Fable 5 changes, what it doesn't, and how to use it without losing your mind.\n\nWorth more than a $2000 course.\n\nBookmark & watch ↓",
+        "author": {
+          "screenName": "lorden_eth",
+          "name": "Lorden"
+        }
+      }
+    },
+    {
+      "id": "2067142129306980820",
+      "text": "Claude 5 Fable (Ultracode) \n\nI asked it to build a demo of my dream game in Three.js and I'm genuinely shocked 💀\n\nOne shot, a full explorable starship with a working cockpit, crew quarters, a planet drifting past real windows, dynamic lighting, sleep/eat interactions,\n\n it screenshotted its own work and fixed itself until it hit 60fps on browser\n\nObviously not steam ready but man this is so so far from what we had one year ago…",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 33,
+        "retweets": 6,
+        "replies": 6,
+        "quotes": 1,
+        "views": 5002,
+        "bookmarks": 19
+      },
+      "createdAt": "Wed Jun 17 07:07:43 +0000 2026",
+      "createdAtLocal": "2026-06-17 15:07",
+      "createdAtISO": "2026-06-17T07:07:43+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067142015251357696/vid/avc1/1324x720/lRfQ2yYCXHq5r9XB.mp4?tag=28",
+          "width": 1324,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066991083653845262",
+        "text": "asked claude fable 5 to design a qdd actuator\n\nit also animated the gearbox and inspected collisions as part of the validation loop\n\n~ 30 minutes / 400k tokens https://t.co/KZoEIKrsog",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2067090032305828154",
+      "text": "I had Fable make a little video about itself, what turned out to be an hour before the shutdown news a few days ago. (Borrowed and modified a simple prompt from @nptacek. Video was one-shot, 12 minutes, about 90k tokens). Python code to generate the video was about 600 lines. https://t.co/VVg1Qc55PU",
+      "author": {
+        "id": "334463875",
+        "name": "Ayzore",
+        "screenName": "Ayzore_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2035929146078179328/7gsKPIvN_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 274,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 03:40:43 +0000 2026",
+      "createdAtLocal": "2026-06-17 11:40",
+      "createdAtISO": "2026-06-17T03:40:43+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067089691778682880/vid/avc1/1280x720/wYjZMqfhLXqHn1G_.mp4?tag=14",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067081187533930624",
+      "text": "You can now one shot prompt boss fights that would take a studio months to design.\n\nThis underwater FPS features a full boss called The Leviathan Father with multiple attack phases, weapon switching, special abilities, and real strategy to beat. All assets, graphics, sound, and gameplay were created on Tesana.\n\nAnd the best part? You can take any direction you want, multiplayer? 3 bosses in the room? A harpoon weapon? You're just one prompt away from updating your game.\n\nAfter creating your game on Tesana, you can launch it directly to our marketplace or export it to any console or platform.\n\nCompared to Fable 5 or any other model, Tesana delivers all assets needed for your game.",
+      "author": {
+        "id": "2020760021706121216",
+        "name": "Tesana - Make games with AI",
+        "screenName": "TesanaAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057279693758529536/cWepLiOw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 88,
+        "retweets": 8,
+        "replies": 14,
+        "quotes": 0,
+        "views": 6241,
+        "bookmarks": 7
+      },
+      "createdAt": "Wed Jun 17 03:05:34 +0000 2026",
+      "createdAtLocal": "2026-06-17 11:05",
+      "createdAtISO": "2026-06-17T03:05:34+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067079998897614848/vid/avc1/3840x2152/y0O4l3SD5PALW55c.mp4?tag=28",
+          "width": 3840,
+          "height": 2152
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067072271651361125",
+      "text": "@usr_bin_roygbiv Fable fwiw was typically tested in 3d world understanding, game dev, design etc, especially in one shot, clearly there was an emergent ability of utilize its massive knowledge breadth and to some its thinking depth when solving a task. Think harness plays a role instead of model?",
+      "author": {
+        "id": "1744512647972732928",
+        "name": "DP",
+        "screenName": "volkothoughts",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1933161280791085057/YrUwli-3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 240,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 02:30:08 +0000 2026",
+      "createdAtLocal": "2026-06-17 10:30",
+      "createdAtISO": "2026-06-17T02:30:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067037403811057899",
+      "text": "Fable 5 on claude code felt like a better version of codex. codex 2 and gpt 5.6/6.0 is just going to wipe the floor with claude code. Anthropic tuned their LLMs to make you feel like you are doing big things but in fact you are running around in circles overthinking wasting tokens getting nowhere. OMG Fable 5 one shot a shitty video game so much better than GPT 5.5 did! Who cares? Whoever freaks out about things like that isn't actually doing serious work on anything.",
+      "author": {
+        "id": "878756674735140864",
+        "name": ".Dot.",
+        "screenName": "MaverickDots",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/990232895494144000/GoHlEbEX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 296,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 17 00:11:35 +0000 2026",
+      "createdAtLocal": "2026-06-17 08:11",
+      "createdAtISO": "2026-06-17T00:11:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067035469301338537",
+      "text": "https://t.co/swO7xo32Ph",
+      "author": {
+        "id": "1440260491100655619",
+        "name": "Behrad Khodayar",
+        "screenName": "behradkhodayar",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063530268737089536/PPcFHv8d_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 293,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 17 00:03:54 +0000 2026",
+      "createdAtLocal": "2026-06-17 08:03",
+      "createdAtISO": "2026-06-17T00:03:54+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066974035507056640"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Introducing CheXX: chess w/ transmuting pieces"
+    }
+  ]
+}
