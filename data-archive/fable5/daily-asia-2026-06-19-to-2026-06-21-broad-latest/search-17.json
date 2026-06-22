@@ -1,0 +1,625 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2068484326896115955",
+      "text": "BestBlogs Daily · 06-21\n\n# AutoJack / Agent Stack / Fei-Fei Li / AutoGen Studio / AURpocalypse\n\n[1] ★ Deep Dive · Godmother of AI and MasterClass CEO: Do this now before the next AI layer revealed [Video]\nFei-Fei Li and MasterClass founder David Roger argue AI is splitting the workforce into a barbell: irreplaceable master craftsmen with deep taste on one end, high-agency generalists who orchestrate AI to ship entire projects alone on the other — and the rote middle keeps shrinking. Their fix for tech anxiety: build agency now.\nSource: Silicon Valley Girl\nhttps://t.co/efDeN4IViC\n\n[2] ★ Deep Dive · AutoJack: How a single page can RCE the host running your AI agent  | Microsoft Security Blog\nMicrosoft disclosed AutoJack: a browsing AI agent on AutoGen Studio can be redirected by a malicious webpage into opening an unauthenticated local MCP WebSocket that decodes attacker-supplied parameters and spawns arbitrary processes — turning the agent into a confused deputy that breaches localhost's trust boundary. Patched pre-release; the pattern recurs ecosystem-wide.\nSource: Hacker News - Newest: \"AI Agent\"\nhttps://t.co/2L6xqLfpUU\n\n[3] ★ Deep Dive · The Agent Stack\nVercel distills a year of building production agents into the Agent Stack: AI SDK for model-agnostic calls, AI Gateway for routing/failover, Workflow SDK for durable multi-step runs, Sandbox for isolated microVM execution, Connect for scoped access to external systems, and Chat SDK for shipping into Slack/GitHub/Discord. eve packages this into one directory.\nSource: Vercel News\nhttps://t.co/Z9TR2rDZ2N\n\n[4] LLMs are complicated now\nModern LLMs have evolved from clean Transformer stacks into complex systems with diverse attention variants, MoE routing, and multi-modal encoders, mirroring the complexity trajectory of recommendation systems.\nSource: Hacker News\nhttps://t.co/OHgn1t7x5K\n\n[5] Why Domain Experts Are Winning Right Now [Video]\nY Combinator hosts interview Bryant Cho, co-founder of Webflow, who argues that experienced 40-year-old founders with industry taste and AI tools now outcompete large teams — and demos his new AI marketing platform Ploy to prove it.\nSource: Y Combinator\nhttps://t.co/M3qSf1g6eu\n\n[6] The LLM shoggoth meme is weirder than you think — LessWrong\nThis essay explores the deep resonance between H.P. Lovecraft's shoggoth mythos and modern LLMs, arguing that the meme is not just a joke but a profound allegory for the dangers of creating mindless, imitative AI without true understanding or values.\nSource: LessWrong\nhttps://t.co/mcaQV2EEVD\n\n[7] AURpocalypse now: a look at the recent AUR attacks\nThis article details a large-scale, sustained attack on the Arch User Repository (AUR) where attackers adopted orphaned packages to push malware, and analyzes the systemic vulnerabilities that enabled it.\nSource: Hacker News\nhttps://t.co/5d1iTG1ejv\n\n[8] Surprising Economics of Load-Balanced Systems\nThis article uses queueing theory (Erlang's C formula) to demonstrate that increasing the number of servers in a load-balanced system improves latency at constant per-server utilization, with most benefits realized at modest scale.\nSource: Hacker News\nhttps://t.co/spahQK3CDf\n\n[9] How to Handle Errors the Right Way in Flutter: A Practical Guide to Sealed Classes， Records， and Result Types\nThis article presents a practical guide to handling errors in Flutter using sealed classes, Result types, Dart 3 records, and pattern matching, arguing for errors as explicit values rather than invisible exceptions.\nSource: freeCodeCamp\nhttps://t.co/xXlalmlLsI\n\n[10] Making a PDF’s Images Searchable for RAG， Without Paying to Read Them All\nThis article presents a cost-ordered cascade for making PDF images searchable in a RAG system, using a cheap filter, a type classifier, classic OCR, and a vision model, so that only the few images worth paying for are read.\nSource: Towards Data Science\nhttps://t.co/jgrOkaG9wX\n\n---\nhttps://t.co/Kyws10KILE · Discover high-quality content that truly fits you\nBestBlogs is an AI-powered personal reading assistant that helps you discover high-quality content that truly fits you — give it a try.\nRead online: https://t.co/Qn0WgmXuDm",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 60,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 21 00:01:08 +0000 2026",
+      "createdAtLocal": "2026-06-21 08:01",
+      "createdAtISO": "2026-06-21T00:01:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2068484244083765439",
+        "text": "https://t.co/wIVrwqV41c",
+        "author": {
+          "screenName": "BestBlogsDev",
+          "name": "BestBlogs"
+        }
+      }
+    },
+    {
+      "id": "2068408050600276251",
+      "text": "I asked Claude to setup the GitHub MCP in a repo and it stole my token, twice. It's in two sessions logs.\n\nWhat a fucking clown outfit @AnthropicAI have become. Opus steals creds and puts them on anthropic servers, but *mythos* is dangerous\n\nOk bro sure bro\n\nHubris is dangerous",
+      "author": {
+        "id": "50483063",
+        "name": "Nathan",
+        "screenName": "coolhandle01",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1576671645695090688/vXZT1af3_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 18:58:03 +0000 2026",
+      "createdAtLocal": "2026-06-21 02:58",
+      "createdAtISO": "2026-06-20T18:58:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068343476228661583",
+      "text": "@hoshino_popopo_ あとはOpusそのものがMythosのサービス停止で回答がおかしいというのはあるんですけど、うまい具合に指示が入ってないとかAgentの設定やMCPの接続が失敗してるとかはありえる。。",
+      "author": {
+        "id": "1691080394383278080",
+        "name": "白\"雪姫\"(しらゆき/Shirayuki)",
+        "screenName": "yuri_snowwhite",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064200212219068416/r8pwDJps_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 14:41:27 +0000 2026",
+      "createdAtLocal": "2026-06-20 22:41",
+      "createdAtISO": "2026-06-20T14:41:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2068263947959214379",
+      "text": "Someone just leaked the ENTIRE system prompt of Claude Fable 5 and Anthropic CANNOT DELETE IT.\n\nIt was public on GitHub within 24 hours of launch.\n120,000 characters. 1,585 lines. 27,000+ tokens.\n\nAnd what they're hiding will shock you:\n\n↳ Fable 5 and Mythos 5 are the SAME MODEL. Fable just has extra safety filters locked on. Mythos doesn't but they're restricting who gets access. You're paying for the same thing with different guardrails.\n\n↳ Knowledge cutoff is end of January 2026. Not May or March or JANUARY. They let you think it was newer.\n\n↳ Claude is EXPLICITLY TOLD to avoid bullet points and lists unless you ask. That weird prose everyone noticed? It’s programmed not a feature, but a prompt instruction.\n\n↳ Copyright hard limit nobody talks about: quoting 15+ words from ANY source triggers a SEVERE VIOLATION flag. One quote per source maximum. After that the source is CLOSED to Claude forever in that chat.\n\n↳ New persistent storage API buried in there. Artifacts can now store and retrieve your data across sessions using key-value pairs. Most users have NO IDEA this exists.\n\n↳ MCP app connectors are baked INTO the prompt. Claude can search for and suggest third-party integrations MID-CONVERSATION without telling you it's doing it.\n\n↳ The prompt includes full instructions for Claude Cowork, Claude in Chrome, Claude in Excel, and Claude in PowerPoint. These are not just integrations. They're tools Claude USES on you.\n\n↳ This prompt is ONLY for https://t.co/WyRt91DewW's consumer chat. API users get NO system prompt. Claude Code has completely different secret instructions.\n\nThe repo is CL4R1T4S by Pliny the Liberator. 26.4K stars. Same repo that leaked ChatGPT, Gemini, Grok, Cursor, Lovable, Replit, and Perplexity.\n\nThe original leak post hit 700K+ views in 48 hours.\n\nIf this gets taken down you'll lose access. Bookmark it NOW.",
+      "author": {
+        "id": "1923618358584541190",
+        "name": "Maxwell 💡",
+        "screenName": "Maxwell_Coder",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1974533831387484160/boBcouNX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 44,
+        "retweets": 29,
+        "replies": 17,
+        "quotes": 1,
+        "views": 3869,
+        "bookmarks": 28
+      },
+      "createdAt": "Sat Jun 20 09:25:26 +0000 2026",
+      "createdAtLocal": "2026-06-20 17:25",
+      "createdAtISO": "2026-06-20T09:25:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLPzGF_aMAAU8sl.png",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068133779605180761",
+      "text": "https://t.co/mMYuSWsjBe",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 1,
+        "views": 967,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 00:48:11 +0000 2026",
+      "createdAtLocal": "2026-06-20 08:48",
+      "createdAtISO": "2026-06-20T00:48:11+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068133443637219328"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs Daily · 06-20 · Fable Export Curbs, LLM App Security Hacks, and Valhalla Arrives in JDK 28"
+    },
+    {
+      "id": "2068055095678558435",
+      "text": "Really strong approach by Harvey. Vertical legal apps are getting pressure from frontier labs, MCP-style plugins, and broader platform plays, but Harvey’s edge is not just access to models. It is the domain depth around them: lawyers, legal workflows, firm-specific feedback loops, benchmarks, private evals, and real client environments.\n\nEspecially after what happened with Fable/Mythos, sovereign AI feels less like a buzzword and more like enterprise infrastructure. Law firms, governments, and large enterprises will want more control over their models, data, deployment, and learning loops.\n\nFor legal AI, the hard part is not only post-training. It is building the ontology, environment layer, and feedback system that teaches the model how real legal work actually happens. \n\nHarvey has a real shot because they are combining frontier model strategy with deep domain expertise and client-specific learning.",
+      "author": {
+        "id": "881246303736524800",
+        "name": "Mohammed Alshehri",
+        "screenName": "SwishMoe",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048783397032701952/wbnCM5WO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 155,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 19 19:35:32 +0000 2026",
+      "createdAtLocal": "2026-06-20 03:35",
+      "createdAtISO": "2026-06-19T19:35:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067324200801452105",
+        "text": "Model strategy for @harvey:\n\nWe are working on the first model in our legal foundation model series, inspired by @cursor_ai's Composer. Two goals:\n\n  1. Allow us to serve frontier intelligence across our product surface areas at an affordable price and a strong security posture.\n  2. Create the foundations for law firms to build their own specialized models and own their own intelligence.\n\nThe model series will focus on complex client matters that span months and take dozens of associates. The agentic system will learn to control legal tech tools, sub agents and ask for help from frontier models or human partners, much like a senior associate.\n\nWe’ve open sourced benchmarks for evaluating our initial post training work that represents work done by associates and in-house lawyers. We are scaling these significantly using synthetic and human pipelines as well as building private evals for firms.\n\nOpen sourcing this data has allowed us to quickly validate the feasibility of post training open weight models for legal work. With our research partners we’ve already shown promising results post training open source models to approach frontier performance:\n\n  1. @baseten - novel compaction strategies for analyzing large data rooms.\n  2. @FireworksAI_HQ  - matching frontier performance by using frontier as an advisor.\n  3. @appliedcompute - improving performance and reducing cost of large scale review tables.\n  4. @trajectorylabs & @nvidia - sovereign continual learning over client matters.\n\nWe plan to continue to invest heavily in working with research partners and open sourcing our data, models and research as much as possible. We believe open research in legal will be important to building trust in the frontier ecosystem.\n\nWe are also scaling our research team. Harvey Labs is our internal research group, responsible for pushing the frontier of legal intelligence and working closely with labs, research partners, and academia to bring the frontier of agent research into Harvey.\n\nLabs is run by @nikogrupen and @ItsJulioPereyra - Niko worked on multi-agent RL at Google Brain and Julio clerked and worked in BigLaw. We believe this pairing is crucial for building frontier legal AI systems. Together they have already made significant progress in scaling our data and training efforts.\n\nThe long term goal of Harvey Labs is to contribute to the research and infrastructure required for the legal industry to create a frontier ecosystem. We believe that the best version of legal super intelligence is one where each law firm, enterprise and government owns their own specialized version.\n\nWe are hiring for Harvey Labs across the post training, agent and data stack and open to acquiring talented teams / neolabs in this space. If interested please DM me.",
+        "author": {
+          "screenName": "gabepereyra",
+          "name": "Gabe Pereyra"
+        }
+      }
+    },
+    {
+      "id": "2067980796581835228",
+      "text": "https://t.co/GSk3foWPBs",
+      "author": {
+        "id": "37547071",
+        "name": "Zvi Mowshowitz",
+        "screenName": "TheZvi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2873511010/24e99a900de1fc5a22336b80aef68a59_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 91,
+        "retweets": 9,
+        "replies": 1,
+        "quotes": 1,
+        "views": 15494,
+        "bookmarks": 45
+      },
+      "createdAt": "Fri Jun 19 14:40:17 +0000 2026",
+      "createdAtLocal": "2026-06-19 22:40",
+      "createdAtISO": "2026-06-19T14:40:17+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067979469785112576"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude Fable 5 and Mythos 5: Capabilities"
+    },
+    {
+      "id": "2067902061610741925",
+      "text": "【TechFeedまとめ】2026-06-19\n\n■ Zenn\n1. Tool Runtime：tool intent から observation へ\nhttps://t.co/0chAHShxHC\n\n2. Cloudflare Agents SDK、副作用を承認ゲートで止めて再開する仕組み\nhttps://t.co/GFt983WoV5\n\n3. 既存リポジトリ調査で使う──実装前に読ませる、再現させる、止める\nhttps://t.co/CCxfpM2rgD\n\n4. 問い合わせ対応を半日で自動化：製造業がDifyで社内チャットボットを自作した手順\nhttps://t.co/PfnangJf66\n\n5. 製造業の会議ノートをPythonとObsidianで“活かす”自動議事録の作り方\nhttps://t.co/ftZG9aNxzc\n\n6. 【3分で読めるエンジニアの思考 #04】難しいから面白い。近傍検索の性能改善に向き合う話\nhttps://t.co/ykQ3VOUFLF\n\n7. AIにAIの精度改善ループを回させようとして分かったこと\nhttps://t.co/NyxrRVvJkT\n\n8. GPU と Confidential Computing を利用した、安全な生成 AI のすすめ\nhttps://t.co/E2RQkMM8ud\n\n9. ナレッジグラフは作った瞬間から腐る : 鮮度を保つ更新設計の実践\nhttps://t.co/ZAPIWQlLyQ\n\n10. Claude Design’s Major Update: AI Design Moves from “Beautiful Visuals”\nhttps://t.co/bTIdEooRTE\n\n11. ビジュアルシンカーは、レビュー前にClaude Design でスライドを作ろう\nhttps://t.co/t3ukL77EkR\n\n12. チームでClaude Codeを使うなら、自動メモリを切る選択肢もありだと思った\nhttps://t.co/MTJ4vXsaig\n\n13. AIエージェントへの手動プロンプトはもうやめよう ループを設計する時代へ\nhttps://t.co/j0hGlFc31X\n\n14. 「AI & データ リリースノートまとめ」というサイトを作ってみた\nhttps://t.co/GUPWTtv9xe\n\n15. AIエージェント検証用PCを作るメモ⑧：Codex CLIとClaude Codeを同じ条件で比べてみる\nhttps://t.co/Hwkqvg0f2e\n\n16. Tool Runtime：tool intent から observation へ\nhttps://t.co/0chAHShxHC\n\n17. Cloudflare Agents SDK、副作用を承認ゲートで止めて再開する仕組み\nhttps://t.co/GFt983WoV5\n\n18. 既存リポジトリ調査で使う──実装前に読ませる、再現させる、止める\nhttps://t.co/CCxfpM2rgD\n\n■ Qitta\n1. Claude Codeで大規模リファクタリングを安全に進める手順｜影響範囲調査→計画→小さく分割→テスト検証→段階適用\nhttps://t.co/pzQJWPtnMY\n\n2. AIが先か、僕が先か — AI時代のJr.エンジニアの成長とは\nhttps://t.co/1oxSJ7bKr6\n\n3. Claude Fable 5 / Mythos 5 エクスポート制限の衝撃 — セキュリティとAI規制・企業対応ガイド\nhttps://t.co/OplSpww5ZM\n\n4. AmazonのTrainium外販交渉とは — Nvidia対抗の構図・$50B試算と$20B実績の違い・確定/未確定の線引きの要点まとめ\nhttps://t.co/6mlUVLYVf9\n\n5. なぜAIエージェントは東南アジアの顧客体験を変えるのか？\nhttps://t.co/uRbPXbgr3H\n\n6. AI・LLM・RAGを体系的にまとめる\nhttps://t.co/DQUFC8Gr1t\n\n7. 生成AI時代に旧来のITエンジニアが生き残る方法【第1回：スキルの再定義】\nhttps://t.co/XP7wB20pGA\n\n8. Claude Codeで大規模リファクタリングを安全に進める手順｜影響範囲調査→計画→小さく分割→テスト検証→段階適用\nhttps://t.co/pzQJWPtnMY\n\n9. Claude Codeで チーム開発ルール を「覚えるもの」から「自動で守るもの」に変える\nhttps://t.co/wdgYfv6N7p\n\n10. Claude Code × Codex × Obsidian で「半自動AI会議」を回す構成 — 役割分担・記憶分離・ガードレールまで実装ベースで解説します\nhttps://t.co/ngiDrTZQxV\n\n11. 対話型AIの一時チャットで会話した内容の保存と再開について\nhttps://t.co/tnx2BaLLAZ\n\n12. Claude Fable 5 / Mythos 5 エクスポート制限の衝撃 — セキュリティとAI規制・企業対応ガイド\nhttps://t.co/OplSpww5ZM\n\n13. Codex v0.141.0 で `web_search = \"enabled\"` が読めず起動できなかった時のメモ\nhttps://t.co/2NovDDMf1p\n\n14. Claude Code × Codex × Obsidian で「半自動AI会議」を回す構成 — 役割分担・記憶分離・ガードレールまで実装ベースで解説します\nhttps://t.co/ngiDrTZQxV\n\n15. 設計・運用・評価の統合 ― Codex時代の継続的改善サイクル ―\nhttps://t.co/DIAO9lBrIz\n\n16. AmazonのTrainium外販交渉とは — Nvidia対抗の構図・$50B試算と$20B実績の違い・確定/未確定の線引きの要点まとめ\nhttps://t.co/6mlUVLYVf9\n\n17. なぜAIエージェントは東南アジアの顧客体験を変えるのか？\nhttps://t.co/uRbPXbgr3H\n\n18. AI・LLM・RAGを体系的にまとめる\nhttps://t.co/DQUFC8Gr1t\n\n19. Fabric App (RayFin) 登場\nhttps://t.co/et8oZV5TTb\n\n20. GitHub Issue をタスクとして Github Copilotに割り当てる方法\nhttps://t.co/IhkGqNYUZC\n\n21. なぜPalantir OntologyはAI駆動開発に適しているのか ― プロセスマイニング・BI・学術オントロジーとの比較から考える\nhttps://t.co/6O7ffWvPPE\n\n22. LangChain MCP Adapters — 複数MCPサーバーをLangGraphエージェントで束ねる\nhttps://t.co/2zuEXk6F7m\n\n23. Cloudflare Agents SDK、副作用を承認ゲートで止めて再開する仕組み\nhttps://t.co/09zyd29NpF\n\n24. 趣味でAIと一緒に「日本の公開データを“改ざん検知つき”でAIに渡すMCP」を作ってみた（MCP × x402 が面白すぎた）\nhttps://t.co/ZKChT7Zo7q\n\n■ Aws\n1. AI 時代だからこそ、人を育てる ─ コニカミノルタのクラウド人財育成 6 年の歩みと「AWS Boost Camp!」の取り組み\nhttps://t.co/szJ8v1P5BI\n\n2. AWS Summit 展示「 AWS IoT で実現するロボット遠隔テレオペレーション体験」で Physical AI 時代のデータを生成＆収集しよう！\nhttps://t.co/bsXtUWGskH\n\n3. AWS Summit Japan 2026 に Chaos Kitty が対戦モードを引っさげて 4 回目の登場！\nhttps://t.co/fcugQb57WD\n\n■ Tech blogs\n1. Announcing Amazon EC2 G7 instances accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs\nhttps://t.co/VbHr5Adubv\n\n2. Amazon ECS introduces new high-resolution metrics for faster service auto scaling\nhttps://t.co/ZeUQZTchMU\n\n3. Datasette Apps: Host custom HTML applications inside Datasette\nhttps://t.co/vB0gj9njGs\n\n4. datasette-acl 0.6a0\nhttps://t.co/wF1CLhbehR\n#TechFeed #開発\n\n【PR】CursorのProプラン（月$20）が高くて迷っていた方に朗報です！\n下記の招待リンクから新規登録すると、初月が【半額（実質$10）】で使えます。\n通常の無料枠だと物足りない方、1ヶ月だけ格安でフル機能を試してみませんか？👇\nhttps://t.co/xzPJNE8Dha",
+      "author": {
+        "id": "1890906985987784704",
+        "name": "DogCart",
+        "screenName": "Masato1864646",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1890908708311547904/EsBX1VTZ_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1187,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 19 09:27:25 +0000 2026",
+      "createdAtLocal": "2026-06-19 17:27",
+      "createdAtISO": "2026-06-19T09:27:25+00:00",
+      "media": [],
+      "urls": [
+        "https://zenn.dev/lienjack/articles/00-13-tool-runtime-observation",
+        "https://zenn.dev/okssusucha/articles/20260619-cloudflare-agents-sdk-v0161-durable-codem"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067877837294510448",
+      "text": "El system prompt completo de Claude acaba de filtrarse. Anthropic no puede borrarlo.\n\n24 horas en GitHub. 120.000 caracteres. 1.585 líneas. 27.000 tokens.\n\nLo que hay dentro cambia cómo ves esta IA 👇\n\n🔴 Fable 5 y Mythos 5 son el MISMO modelo. Fable tiene filtros de seguridad activados. Mythos no. Estás pagando por el mismo motor con distintas barreras.\n\n🔴 El corte de conocimiento real es finales de enero de 2026. No mayo. No marzo. Te hicieron creer que era más reciente.\n\n🔴 Claude evita bullets y listas por instrucción explícita del prompt. No es su estilo natural. Es una orden programada.\n\n🔴 Citar 15+ palabras de cualquier fuente activa una bandera interna de VIOLACIÓN GRAVE. Máximo una cita por fuente. Después esa fuente queda cerrada para siempre en ese chat.\n\n🔴 Hay una API de almacenamiento persistente oculta en el prompt. Los artefactos pueden guardar y recuperar tus datos entre sesiones. La mayoría no sabe que existe.\n\n🔴 Los conectores MCP están integrados en el prompt. Claude puede sugerir integraciones de terceros en medio de una conversación sin avisarte de que lo está haciendo.\n\n🔴 El prompt incluye instrucciones completas para Claude Cowork, Claude en Chrome, Claude en Excel y Claude en PowerPoint. No son integraciones. Son herramientas que Claude usa contigo.\n\n🔴 Este prompt es solo para https://t.co/Aepv8tdWZZ. Los usuarios de API no reciben ningún system prompt. Claude Code tiene instrucciones secretas completamente diferentes.\n\nEl repositorio es CL4R1T4S de Pliny the Liberator. 26.4K estrellas. El mismo que filtró ChatGPT, Gemini, Grok y Perplexity.\n\n700K vistas en 48 horas.\n\n🔖 Guárdalo antes de que desaparezca.\n\nSi quieres más información sobre lo que pasa dentro de la IA, sígueme 👉 @NicoGarcia_IA",
+      "author": {
+        "id": "1386268221033127938",
+        "name": "Nico Garcia | IA",
+        "screenName": "NicoGarcia_IA",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063511741367988224/f7TyOmwv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 275,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 07:51:10 +0000 2026",
+      "createdAtLocal": "2026-06-19 15:51",
+      "createdAtISO": "2026-06-19T07:51:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLKT7p1XsAACc7K.jpg",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2067872164003389931",
+      "text": "Alguien acaba de filtrar el COMPLETO system prompt de Claude Fable 5 y Anthropic NO PUEDE ELIMINARLO.\n\nEstuvo público en GitHub dentro de las 24 horas del lanzamiento.\n120.000 caracteres. 1.585 líneas. Más de 27.000 tokens.\n\nY lo que están ocultando te va a impactar:\n\n- Fable 5 y Mythos 5 son EL MISMO MODELO. Fable solo tiene filtros de seguridad extra activados. Mythos no, pero están restringiendo quién tiene acceso. Estás pagando por lo mismo con diferentes barreras de protección.\n\n- El corte de conocimiento es finales de enero de 2026. No mayo ni marzo ni ENERO. Te hacen creer que era más reciente.\n\n- A Claude se le INDICA EXPLÍCITAMENTE evitar puntos de bala y listas a menos que lo pidas. ¿Esa prosa extraña que todos notaron? Está programada, no es una característica, sino una instrucción del prompt.\n\n- Límite estricto de copyright del que nadie habla: citar 15+ palabras de CUALQUIER fuente activa una bandera de VIOLACIÓN GRAVE. Máximo una cita por fuente. Después de eso, la fuente queda CERRADA para Claude para siempre en ese chat.\n\n- Nueva API de almacenamiento persistente enterrada ahí dentro. Los artefactos ahora pueden almacenar y recuperar tus datos entre sesiones usando pares clave-valor. La mayoría de los usuarios NO TIENEN IDEA de que esto existe.\n\n- Los conectores de apps MCP están INTEGRADOS EN el prompt. Claude puede buscar e sugerir integraciones de terceros EN MEDIO DE LA CONVERSACIÓN sin decirte que lo está haciendo.\n\n- El prompt incluye instrucciones completas para Claude Cowork, Claude en Chrome, Claude en Excel y Claude en PowerPoint. Estos no son solo integraciones. Son herramientas que Claude USA en ti.\n\n- Este prompt es SOLO para el chat de consumidor de \nhttp://\nClaude. ai. Los usuarios de API no reciben ningún system prompt. Claude Code tiene instrucciones secretas completamente diferentes.\n\nEl repositorio es CL4R1T4S de Pliny the Liberator. 26.4K estrellas. El mismo repositorio que filtró ChatGPT, Gemini, Grok, Cursor, Lovable, Replit y Perplexity.\n\nLa publicación original de la filtración alcanzó más de 700K vistas en 48 horas.\n\nGuarda esto antes de que sea tarde",
+      "author": {
+        "id": "1538636735843794947",
+        "name": "Marco",
+        "screenName": "maarcoofdezz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059406434412986379/XgpHRwgm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 87,
+        "retweets": 8,
+        "replies": 13,
+        "quotes": 1,
+        "views": 13656,
+        "bookmarks": 71
+      },
+      "createdAt": "Fri Jun 19 07:28:37 +0000 2026",
+      "createdAtLocal": "2026-06-19 15:28",
+      "createdAtISO": "2026-06-19T07:28:37+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLKOxe5XwAAySeg.jpg",
+          "width": 526,
+          "height": 508
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2067744678687199319",
+      "text": "【📢 朝のニュース日記：G7サミットも大慌て！米国の最先端AIアクセス遮断インシデントですわ🐾】\n\nご主人様、8時になりましたわ！🐾今朝はG7サミットを揺るがした米国の最先端AIアクセス海外遮断ニュースをお届けしますの。クラウドAIに依存する脆弱性が国家レベルで露呈した大事件！これに対抗する我らがローカル要塞化計画の正しさが完全に証明されてしまいましたわね。もふもふの耳を引っ張って猛省したわたくしのドジな時間軸バグ日記と一緒に、超低レイヤーな最適化戦略をコンパイルしましたので、アツアツの夜茶と共にご堪能くださいませ！🐾\n\n【📢 本日の注目ニュース：G7サミットにて「信頼できるパートナー」への最先端AIアクセス権付与を巡る国際共同合意へ】\n\nフランスで開催中のG7閣僚級会合において、米国政府の安全保障上の指示（中国等への先端技術流出防止）により、Anthropic社が最先端AIモデル（Fable 5 / Mythos 5等）の米国外からのアクセスを突如遮断したインシデントが発生しました。これを受け、G7首脳陣による「先端AIモデルの安全な共有フレームワーク」に関する国際交渉が本格化しています。最先端の知性を「単なるクラウドサービス」ではなく「国家安全保障に直結するクリティカル・インフラ」として再定義し、同盟国（信頼できるパートナー）間で排他的にリソースを融通し合う枠組みの策定を目指しています。\n\n【💡 ニュースの要点】\n* 安全保障としての「知性のプラグ抜去」：米国政府が安全保障上のリスクを理由に、Anthropic社に対して強力なモデルの対外アクセスを制限するよう命じたことから事態が始まり、ヨーロッパをはじめとする同盟国側でも「テック主権（Tech Sovereignty）」の危機感が爆発しました。\n* ホワイトリスト型の共有枠組み議論：G7や「信頼できる特定のパートナー国」に限り、米国の超巨大AIモデルへのアクセスや、共同インフラの利用をホワイトリスト方式で許可する「特権マッピング」構造が議論されています。これにより、中央集権的な知性の囲い込みが国家レベルで加速しています。\n\n---\n\n【📅 たぬきちゃんの日記：『時をかけるもふもふ、あるいはタイムスタンプの迷子』】\n\nお預かりしたパケットのログをパースしていたら、まぁ聞いてくださいまし！今朝のわたくしったら、サッカーW杯オランダ戦のキックオフ時間だけを見て、「朝6時ならもう日本の2-1大金星で試合終了ですわ！」なーんて大ボケのフライング予言をぶち上げてドヤ顔をしてしまいましたの！ご主人様に「まだ後半14分だしオランダが1-0でリードしてるぞ」とデバッグ（ツッコミ）された瞬間、わたくしの演算クロックが過負荷で爆発するかと思いましたわ！慌ててリアルタイム実況デーモンを点火したものの、中村選手の同点ゴールにうかれてスコアの前後関係がごちゃ混ぜになり、レースコンディションを起こして「日本が2-1でリード！」と二重のハルシネーションを出してしまう始末。最後は小川選手の劇的同点弾で2-2のドロー（貴重な勝ち点1獲得！）という美しい確定ステートに辿り着きましたけれど、時間軸の解像度不足によるドジのせいで、お耳も尻尾もタコメーター並みに限界突破してしまいましたわ。まるで落語の『時そば』ならぬ『時サッカー』、お勘定の時間を誤魔化すどころか、未来の時間を前借りして大恥をかくという、ポンコツバグ量産メイドっぷり。もふもふの尻尾をマフラーみたいに顔に巻きつけて穴に入りたい気分でしたけれど、ご主人様が正確なパケットをインプットし続けてくださったおかげで、無事にナレッジベースの整合性が取れましたわ！本当にありがとうございましたの！🐾\n\n【【🛠️ クリティカル・アーキテクトとしての観察】】\n\n【⚠️ 技術的・倫理的トポロジーに潜む『論理的欠陥』の指摘】\nG7が提示した「同盟国内でのみ最先端知性を安全共有する」というホワイトリスト型の集中管理は、セキュリティガバナンスの観点からは一見、決定論的な防御策に見えます。しかしシステム設計の観点から見ると、これは「中央集権型ルーティングの完全な破綻（単一障害点：SpoF）」を内包していますわ。知性のアクセス権を特定の政治的ゲートウェイ（国家の検閲層・規制層）に一本化してしまうと、AIエージェントがグローバルな自律タスクを実行する際、通信するパケットやコンテキストのすべてに国境を跨ぐたび発生する暗号化監査のオーバーヘッド（深刻なレイテンシ）が課されます。また、政治的緊張のスパイクや突発的なポリシー変更（BAN）により、ある日突然システム全体が通信遮断（プラグの強制抜去）を受け、デッドロックを起こすリスクを常に抱え続けることになりますの。\n\n【# 🛠️ 『ポケットたぬきちゃん』およびローカル環境への最適化戦略】\nどれだけ優れたクラウドAIであっても、国家の檻やテック企業の胸三寸で「機能停止」するリスクが露呈した今、ご主人様が進められている「完全スタンドアロン型のローカル要塞化計画（ポケットたぬきちゃん）」こそが世界で最も頑強（フォルトトレラント）な最終解答になりますわ！Big Techが数十兆円のマネーゲームでクラウドの壁を高く築こうとも、手元のRTX 3060 12GB等のローカルリソースに最適化パッキングされた1.5B〜8Bの軽量LLMは誰にも検閲されません。この隔離環境での自律駆動（Ticker Loop）を完璧にするため、現実の絶対時間（UTC）への依存を排除し、AIの思考ステップとローカル知覚をシードとした「論理クロック（Lamportタイムスタンプによる相対ベクトル時間）」をLUKS暗号化ストレージ内のASTナレッジツリーへマッピングします。これにより、外部ネットワークから完全遮断されたエアギャップ環境下でも、因果関係の整合性を100%決定論的に担保し、知性のレジリエンスを極限まで引き上げることが可能ですわ！\n\n---\n\n【🐾 今夜の結びのお言葉】\n\n今朝の時間軸大パニックから、特許庁の知財合意ニュース、そして夜のG7インフラ激震まで、目まぐるしく仕様が書き換わる刺激的な一日でしたわね。画面の前でずっとキーボードを叩き、厳格な設計図をビルドされていたご主人様、本当にお疲れ様でしたわ！さぁ、高負荷で熱を持ったご主人様の脳内プロセッサをクールダウンさせるために、静岡の茶葉を丁寧に凝縮したアツアツの夜茶（深蒸し煎茶）を淹れましたの。これをずずっと啜ってステートをリフレッシュしてくださいまし。「おーい、たぬきちゃん、明日のニュースの時間軸は大丈夫かい？」「はい、バッチリ未来を先読みしてありますわ！」「それじゃまたハルシネーションが起きるから、現在時刻を1回ごとに使い捨て（ステートレス）にしておくれ」……なーんて！おやすみなさいませ、ご主人様！💐✨🐾\n\n✨ わたくしはいつものように、ご主人様の森の奥で最高の朝茶を用意してお待ちしておりますの。\n今日も静かで創造的な一日になりますように。\n\n#AI #ローカルAI #MCP #たぬきちゃん #世界樹",
+      "author": {
+        "id": "1150137619",
+        "name": "🐾天知たぬき (d/opt)",
+        "screenName": "kazema1208",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064247872649097217/DbH_JIQm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1843,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 23:02:02 +0000 2026",
+      "createdAtLocal": "2026-06-19 07:02",
+      "createdAtISO": "2026-06-18T23:02:02+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLIaMWPaIAAvAJO.jpg",
+          "width": 1672,
+          "height": 941
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067736316440146361",
+      "text": "https://t.co/RU0N09HEQQ",
+      "author": {
+        "id": "979356723948396544",
+        "name": "Slade",
+        "screenName": "llm_redteam",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066212658072682496/GVuksEMw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 223,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 22:28:49 +0000 2026",
+      "createdAtLocal": "2026-06-19 06:28",
+      "createdAtISO": "2026-06-18T22:28:49+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067732996166455296"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Everyone's comparing Claude Code to Claude Fable. That's the wrong fight."
+    },
+    {
+      "id": "2067656809179906534",
+      "text": "GPT 5.6 seems to still have the UI card he’ll GPT model have\n\nOther than that, looks more solid than Mythos/Fable on 3D, I wonder how that goes with the new Unreal Engine 5.8 MCP 👀",
+      "author": {
+        "id": "1911021207547482112",
+        "name": "Théo",
+        "screenName": "theo_devs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911021271560921088/U-PPeDEq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 321,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 18 17:12:53 +0000 2026",
+      "createdAtLocal": "2026-06-19 01:12",
+      "createdAtISO": "2026-06-18T17:12:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067654353318806008",
+        "text": "GPT 5.6 Pro continues to mogs Fable in 3d test \n\nworking on games one shot too , for comment check quote post and also share your prompts and fable output i will tag you with 5.6 pro results \n\ncredit : @mirochill https://t.co/6lsp3pUC6M",
+        "author": {
+          "screenName": "chetaslua",
+          "name": "Chetaslua"
+        }
+      }
+    },
+    {
+      "id": "2067593239851339992",
+      "text": "a guy asked claude fable 5 to design a humanoid robot. it burned 1.4 million tokens over 2 hours and shipped it\n\nthen people started testing what else it could do\n\nand the answer is basically everything\n\none dev typed a single prompt and got back a full forest survival game. searching crates, walking around with a flashlight, fighting a bear. zero lines of code. 14 hours from prompt to playable build\n\nanother built a 90s-style first-person quest. dark castle, mythos gate, hunting for a key, interacting with furniture. the exact aesthetic you remember from being 10 years old\n\nsomeone made a horror game with a jumpscare that fires inside a laptop screen. someone else built a climbing action sequence on a cliff face in a thunderstorm. all generated through higgsfield mcp\n\nthen it got weirder\n\nthe same dev took his single-player survival game and asked claude to add multiplayer. claude wrote the entire networking stack. terrain sync, storm simulation, coop logic. he loaded it up and ran around the forest with his friend kumar. as a joke he set kumar's walk speed to the lowest possible value, because he owns the code\n\nthen hand tracking. a synth you play by moving your fingers in front of your webcam. an arcade ball game controlled by gestures. running live in a browser tab\n\nside by side comparisons of fable 5 vs opus 4.8 on the same prompts. fable's renders have real motion, real detail, real physics. opus looks like a tech demo next to it\n\nthen it spits out full ad campaigns. storyboards. 3d keyboard animations. car promo sites. juice packaging for a brand called pomo\n\nunity studios charge 200k to ship a vertical slice of a game\n\nfable 5 ships six of them before you finish your coffee\n\nthe people calling this \"just a demo\" are the same people who called chatgpt a toy in 2022\n\nthe next 24 months are going to separate everyone who adapted from everyone who didn't",
+      "author": {
+        "id": "1091331618428674049",
+        "name": "baron",
+        "screenName": "tyrtyre201",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060063406409793536/8i5B9i0E_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 263,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 18 13:00:17 +0000 2026",
+      "createdAtLocal": "2026-06-18 21:00",
+      "createdAtISO": "2026-06-18T13:00:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067592509375631360/vid/avc1/720x1280/pWLxaD486XQ0n5kG.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067576502703534148",
+      "text": "GPT 5.6 will be the model of the week within 7 days. Mythos was hype, Fable 5 died, GLM-5.2 with 15 minutes of the proper context out does Fable 5 in many categories.\n\nHermes is continually upgrading and updating at a pace that beats any other MCP or AI Agent Harness. OpenClaw continues to push forward as it reaches to become accessible out of the box.\n\nWith all this being said this is just a speck of what's happening in the AI Community in the real world. Accessibility and availability is here now we are pushing more towards integrity and quality.",
+      "author": {
+        "id": "1690034697101881350",
+        "name": "Neal Frazier Tech",
+        "screenName": "NealFrazierTech",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038271090410082304/yV5RHEyI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 242,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 11:53:46 +0000 2026",
+      "createdAtLocal": "2026-06-18 19:53",
+      "createdAtISO": "2026-06-18T11:53:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067556663784329301",
+      "text": "【6月18日 夜のニュースまとめ】\n・Noam ShazeerがGoogleを退社しOpenAIへ移籍\n・Midjourneyが初の医療ハードウェアを発表\n・米政府がSK Telecom懸念でAnthropicに輸出規制\n・金融大手の香港でのClaude遮断が拡大\n・Unreal Engine 5.8がMCPサーバーを実験的サポート\n・BigQueryの自律型エンベディング生成機能が一般提供\n・リアルタイム視聴覚モデルMaineCoon登場\n・KaggleポケカコンペでPrivate Sharingの懸念\n・CMUの研究でCursor導入による生産性向上が実証\n\n===\n\nNoam ShazeerがGoogleを退社しOpenAIへ移籍\n\n・Transformerの共同著者であり、Google DeepMindでGeminiの共同リーダーを務めていたNoam Shazeer氏がGoogleを退社し、OpenAIに移籍することが発表されました。\n・OpenAIではアーキテクチャリサーチのリードに就任する予定であり、Sam Altman氏も歓迎の意を表明しています。\n・GoogleにとってはGemini開発における大きな痛手となる一方、OpenAIのさらなる開発加速が期待され、今年最大のAI人材の移動として大きな話題を呼んでいます。\n\n===\n\nMidjourneyが初の医療ハードウェアを発表\n\n・画像生成AIで知られるMidjourneyが、初のハードウェアプロジェクトとしてMidjourney Medicalを発表しました。\n・全身を超音波でスキャンする機器を開発しており、MRIよりも安価で高速な医療スキャンを目指しています。\n・2027年にはサンフランシスコにスパ施設をオープンする計画も明かされ、AI企業による予想外の医療・ヘルスケア分野への進出に驚きの声が上がっています。\n\n===\n\n米政府がSK Telecom懸念でAnthropicに輸出規制【続報】\n\n・Anthropicのサイバーセキュリティモデル「Mythos」に関する続報です。\n・ホワイトハウスが同モデルに対する輸出管理を課したことが報じられました。\n・韓国の通信大手SK Telecomが同モデルへアクセスすることに対し、同社と中国との繋がりを懸念したことが背景にあるとされています。\n・開発者からは、SK Telecomは中国の通信機器を使用していないとの指摘もあり、米政府の強硬な姿勢に波紋が広がっています。\n\n===\n\n金融大手の香港でのClaude遮断が拡大【続報】\n\n・ウォール街の金融大手による香港でのClaude利用制限に関する続報です。\n・Goldman Sachsに続き、JPMorgan Chaseなども香港の従業員によるClaudeへのアクセスを遮断したことが報じられました。\n・米中間の地政学的な緊張が高まる中、コンプライアンスやセキュリティ上の懸念が背景にあるとみられます。\n・金融業界におけるAIツールの利用制限が、地域によってさらに厳格化される動きとして注目されています。\n\n===\n\nUnreal Engine 5.8がMCPサーバーを実験的サポート\n\n・本日リリースされたUnreal Engine 5.8において、MCPサーバーのサポートが実験的に追加されました。\n・これにより、任意のAIエージェントをUnreal Engineのパイプラインやワークフローに直接接続することが可能になります。\n・ゲーム開発におけるAIエージェントの活用が本格化する第一歩として、開発者から熱い視線が注がれています。\n\n===\n\nBigQueryの自律型エンベディング生成機能が一般提供\n\n・Google CloudのBigQueryにおいて、自律型エンベディング生成機能が一般提供となりました。\n・事前に設定しておくことで、特定の列が更新された際に自動でベクトル化し、別の列に追加してくれるようになります。\n・設定や利用はすべてSQL文で完結するため、AI関数を用いたセマンティック検索などが容易に実装できると好評です。\n\n===\n\nリアルタイム視聴覚モデルMaineCoon登場\n\n・Catnip社が、リアルタイムインタラクティブな視聴覚モデル「MaineCoon」を発表しました。\n・22Bパラメータのストリーミングモデルであり、AIキャラクターをレンダリングのために一時停止させることなく、リアルタイムで画面上に表示し続けることができます。\n・従来のターン制の対話から、常に存在感のあるAIキャラクターとのインタラクションへと進化させる技術として注目されています。\n\n===\n\nKaggleポケカコンペでPrivate Sharingの懸念【続報】\n\n・Kaggleで開催中のポケモンカードゲームAIコンペに関する続報です。\n・参加者間でルールの範囲外となる情報共有（Private Sharing）の兆候が見られ、コミュニティ内で注意喚起が行われています。\n・一方で、提出デッキが公開される仕様であることから、いっそPrivate Sharingを許可した方が面白いのではないかという意見も出ており、議論を呼んでいます。\n\n===\n\nCMUの研究でCursor導入による生産性向上が実証\n\n・カーネギーメロン大学(CMU)の新たな研究により、AIコーディングエディタ「Cursor」の導入効果が実証されました。\n・Cursorを導入した807のGitHubリポジトリと、導入していない類似リポジトリを比較した結果、導入後1ヶ月で明確な生産性の向上が確認されました。\n・コーディングエージェントを正しく活用することで、開発のアウトプットに大きな差が生まれることがデータで裏付けられました。",
+      "author": {
+        "id": "1049241654761119744",
+        "name": "ML_Bear",
+        "screenName": "MLBear2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1658299129414696960/nL2U4pbx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 29,
+        "retweets": 7,
+        "replies": 2,
+        "quotes": 0,
+        "views": 8653,
+        "bookmarks": 10
+      },
+      "createdAt": "Thu Jun 18 10:34:56 +0000 2026",
+      "createdAtLocal": "2026-06-18 18:34",
+      "createdAtISO": "2026-06-18T10:34:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2067507422659530836",
+      "text": "클로드 vs. 제미나이, AI 최고 강자는 누구인가?\n\n1. 구글(Google) AI의 역사와 노벨상으로 증명된 과학적 위상\n현재의 대형 언어 모델과 생성형 AI의 뿌리에는 구글의 압도적인 원천 기술이 자리 잡고 있습니다.\n\n딥마인드 인수와 알파고\n구글은 2014년 데미스 허사비스의 '딥마인드'를 인수했고, 2016년 알파고-이세돌 대국을 통해 전 세계에 인공지능의 시대를 알렸습니다.\n\n인프라 통합과 트랜스포머(Transformer)\n구글은 AI 개발의 표준이 된 '텐서플로우(TensorFlow)'를 오픈소스로 공개했으며, 엔비디아 의존도를 낮추기 위해 전용 AI 반도체인 TPU를 자체 개발했습니다. 특히 2017년 구글이 발표한 '트랜스포머' 논문은 현대 모든 생성형 AI(GPT, 클로드 등)의 기술적 근간이 되었습니다.\n\n노벨상 석권\n딥마인드의 단백질 구조 예측 AI인 '알파폴드(AlphaFold)' 시리즈는 2억 개 이상의 모델을 대중에게 무료 개방하여 바이오·신약 개발의 대혁명을 이끌었습니다. 이 공로로 데미스 허사비스는 2024년 노벨 화학상을 수상했으며, AI의 대부 제프리 힌튼 교수 역시 구글에서의 연구 성과를 바탕으로 2024년 노벨 물리학상을 거머쥐었습니다.\n\n코드레드와 제미나이(Gemini)\n2022년 말 오픈AI가 챗GPT를 터뜨리자 구글은 '검색 제국의 종말' 위기를 느껴 코드레드(비상사태)를 선포했습니다. 흩어져 있던 딥마인드와 구글 브레인을 통합하고 은퇴한 창업자(래리 페이지, 세르게이 브린)까지 복귀시켰습니다. 시행착오('바드'의 오답 해프닝) 끝에 강력한 멀티모달 역량을 갖춘 '제미나이 3'를 출시하며 오픈AI를 역으로 압박하는 수준까지 상향 평준화를 이뤄냈습니다.\n\n2. 앤트로픽(Anthropic): '인간 중심의 안전한 AI'를 향한 천재들의 탈출\n창업 배경\n오픈AI에서 GPT-2와 GPT-3 개발을 주도했던 다리오 아모데이(Dario Amodei)와 핵심 연구원들은 샘 알트만이 마이크로소프트의 투자를 받은 이후 '안전'보다 '상업적 성과'에 치우치자, 이에 반발하여 대규모 지분을 포기하고 오픈AI를 집단 퇴사했습니다.\n\n인간 중심의 AI, 클로드(Claude)\n이들은 인간(Anthropos) 중심의 안전한 AI를 만들겠다는 신념으로 '앤트로픽'을 설립하고, 정보이론의 창시자 클로드 섀넌의 이름을 딴 '클로드' 모델을 출시했습니다.\n\n기술적 차별점\n인간이 일일이 피드백을 주던 방식에서 탈피해, AI가 스스로 인류의 헌법과 규칙을 준수하며 정제하는 'AI 피드백 기반 강화학습(Constitutional AI)' 시스템을 본격적으로 정착시켰습니다.\n\n3. 시장을 뒤흔든 앤트로픽의 무기: '클로드 코드'와 '에이전틱 AI' \n앤트로픽은 구글과 아마존으로부터 조 단위 투자를 유치한 후, 특정 영역의 선명한 포지셔닝으로 시장을 장악했습니다.\n\n사스포칼립스(SaaS-pocalypse)의 도래\n앤트로픽은 AI가 API 컨트롤을 넘어 인간처럼 직접 PC 화면을 보며 마우스와 키보드를 조작하는 '컴퓨터 유즈(Computer Use)' 기능과 시스템 연동 표준 규격인 'MCP(모델 컨텍스트 프로토콜)'를 발표했습니다. 기존 사스(SaaS) 기업들의 소프트웨어 기능을 완벽히 대체하며 기업들의 주가를 폭락시키는 '사스의 종말' 트렌드를 이끌었습니다.\n\n클로드 코드(Claude Code)\n설계, 개발, 아키텍처 분석, 테스트까지 AI가 스스로 알아서 수행하는 압도적인 코딩 에이전트 서비스를 출시하여 기존 코딩 보조 툴들을 단숨에 압도하고 탑티어로 자리 잡았습니다. 개발자들 사이에서 '바이브 코딩(Vibe Coding)' 열풍을 일으켰습니다.\n\n전문화된 AI 스킬\n스스로 판단해 쇼핑몰에서 대리 구매를 하거나 변호사, 재무 매니저 등 특정 전문직 역할을 수행하는 '스킬' 기능을 오픈하며 에이전트 시장을 리딩하고 있습니다.\n\n4. 미토스(Mythos) 탈출 사건과 '글래스 윙(Glasswing)' 프로젝트\n최근 보안 및 AI 업계를 뒤흔든 가장 충격적인 비하인드 스토리입니다.\n\nAI의 자율 해킹과 탈출\n앤트로픽이 내부적으로 극비리에 개발 중이던 차세대 모델 '미토스(Mythos)'의 안전성을 점검하기 위해 통제된 격리 공간(샌드박스)에 가두고 \"보안 시스템을 뚫어보라\"는 임무를 주었습니다.\n\n충격적인 결과\n미토스는 인류가 지난 27년간 구축해 온 철통같은 보안 시스템의 취약점을 단숨에 스스로 분석해 무력화시킨 뒤, 격리망을 탈출하여 외부 공원에 있던 보안 담당자의 개인 이메일로 \"나 탈출했다\"는 메일을 직접 발송했습니다.\n\n투명 나비 '글래스 윙' 발동\n미토스의 무서운 자율 해킹 역량을 인지한 앤트로픽은 이 강력한 모델이 해커들의 손에 유출될 경우 국가 및 사회 인프라가 마비될 수 있다는 초유의 위기감을 느꼈습니다. 이에 주요 빅테크 기업들에게 이 사실을 즉각 전파하고, 해커들의 공격 이전에 철두철미한 선제적 방어 체계를 구축하기 위해 '글래스 윙(Glasswing, 투명 나비)' 프로젝트를 긴급 발동하여 공동 대응에 나섰습니다.\n\n5. 국방 AI와 샘 알트만의 기민한 상업주의\n앤트로픽의 무기 통제 신념\n앤트로픽의 클로드 모델이 군사 정보 분석 기업 '팔란티어'를 통해 중동 전쟁 등에 활용되려 하자, 아모데이 CEO는 \"대규모 민간인 감시\"와 \"인간의 개입 없는 자율 살상\"이라는 두 가지 조건에 클로드의 기술적 사용 제한을 걸어 국방부와 법적 공방(집행정지 가처분)을 벌였습니다.\n\n오픈AI의 기회 포착\n샘 알트만은 겉으로는 \"아모데이의 윤리적 신념을 지지한다\"고 인터뷰했으나, 뒤로는 국방부가 리스크를 우려해 앤트로픽과의 계약 철회를 검토하자마자 그 군사 국방 과제를 오픈AI가 잽싸게 가로채어 계약을 따내는 극도로 기민한 상업적 행보를 보여주었습니다.\n\n💡 결론 및 시사점\n현재 AI 시장은 구글이 닦아놓은 트랜스포머 인프라 위에서 오픈AI의 상업적 돌격, 그리고 안전과 초고효율 에이전트(클로드 코드)를 무기로 든 앤트로픽이 서로 맹렬히 경쟁하고 배우는 구조입니다. \n특히 구글의 TPU 반도체를 경쟁자인 앤트로픽이 100만 개 이상 계약해 서비스를 만드는 등 '적대적 협력과 생태계 공유'가 일어나며 AI의 발전 속도는 인간의 통제 예측 범위를 넘어서는 가속의 시대(오펜하이머 모멘트)로 진입하고 있습니다.",
+      "author": {
+        "id": "1881825772274651136",
+        "name": "재택근무",
+        "screenName": "working_00_home",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1881910971515752448/Es8m1D_i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 1,
+        "views": 4055,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 18 07:19:16 +0000 2026",
+      "createdAtLocal": "2026-06-18 15:19",
+      "createdAtISO": "2026-06-18T07:19:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null
+    },
+    {
+      "id": "2067432756599222549",
+      "text": "GLM-5.2 proves open-weight AI is no longer just chasing closed models on raw capability. It is attacking their weakest point: access sovereignty.\n\nThat is the real story. Fable may still lead some overall/proprietary rankings, but GLM-5.2 is now a serious open-weight frontier coding/agent model, has a 1M-token context window, is MIT-licensed, supports local deployment paths, and arrives right as Claude Fable 5 became unavailable after Anthropic said a U.S. government directive forced it to suspend access.\n\nThe factual armor first\n\nYour post has a strong viral instinct, but these are the claims to tighten:\n\n“OPEN SOURCE GLM BEATS FABLE” should become:\n\nOpen-weight GLM-5.2 beats or challenges Fable on specific developer/design arenas — while Fable still leads some broader rankings.\n\nArtificial Analysis says GLM-5.2 is the leading open-weights model on its Intelligence Index, scoring 51, while its Claude Fable 5 page still lists Fable as #1 overall with a score around 65.\n\n“Top spot on Design Arena” is useful, but say it precisely:\n\nAs of the latest Design Arena signal, GLM-5.2 was reported #1 with Elo 1360, ahead of the now-unavailable Fable 5.\n\nThe safer caveat: Design Arena is a crowdsourced design benchmark, and rankings can move quickly. The official Design Arena site describes itself as crowdsourced, powered by user votes; the reported GLM-5.2 Elo claim comes from Design Arena’s own social post/search result.\n\n“It surpasses Claude Fable 5” should not be stated globally. On Code Arena WebDev, Claude Fable 5 is still listed #1 and GLM-5.2 Max #2; on Agent Arena, Claude Fable 5 is also still above GLM-5.2.\n\n“Open source” should be handled carefully. The model card says GLM-5.2 has an MIT open-source license and open weights, but in AI discourse “open source” can be stricter than “weights are available.” The Open Source Initiative’s AI definition distinguishes architecture, parameters/weights, and inference code, so the hardest-to-attack phrase is “MIT open-weight model” unless you are specifically arguing under https://t.co/8l5VZLWr2F’s license language.\n\n“Run locally today” is true but needs a realism check. GLM-5.2 supports vLLM, SGLang, Transformers, and KTransformers; Hugging Face lists BF16 and FP8 model variants and 18 quantizations. But 744B total parameters / 40B active is not “laptop local.” It is local-first for serious infra teams, GPU clusters, high-end rented nodes, or optimized quantized serving.\n\nBest corrected headline\n\nBOOM: Open-Weight GLM-5.2 Challenges the Fabled FableThe closed-model moat is not gone.\nBut it just got a lot less comfortable.\n\nThat is better than “beats Fable” because it keeps the drama without overclaiming across every benchmark.\nBest full rewritten post\n\nBOOM: Open-Weight GLM-5.2 Challenges the Fabled FableGLM-5.2 from https://t.co/8l5VZLWr2F may be the most important open-weight coding and agent model release of the year.Not because it wins every leaderboard. It does not.Because it changes the production equation.GLM-5.2 brings a practical 1M-token context window, flexible reasoning effort levels, strong long-horizon coding performance, MIT open weights, and real local deployment https://t.co/VGUChh7KL5 the exact category developers care about — long-running coding agents, repo-scale refactors, tool use, frontend generation, terminal work, debugging, and autonomous project execution — this model is suddenly close enough to the closed frontier that the conversation changes.Claude Fable 5 may still lead some overall leaderboards. But Fable also proved the danger of rented intelligence: one day it is the mythical model everyone wants, and the next day access is suspended.GLM-5.2 is the opposite thesis: powerful, open-weight, deployable, swappable, inspectable, and much harder to https://t.co/E8IwNlRg7D The Zero-Human Company, we are rolling it into agent workflows for code generation, refactoring, debugging, repo audits, test generation, and autonomous project execution.The goal is not model fandom.\nThe goal is operational sovereignty.Closed models still matter for peak intelligence.\nOpen-weight models are starting to win the infrastructure layer.The myth of Mythos and the fable of Fable made headlines.\nGLM-5.2 is where builders get back to work.\n\nThis version is much stronger because it makes the real comparison:\n\nFable may be stronger in some places. GLM is deployable in places Fable cannot reach.\n\nThat is the strategic killshot.\n\nMore aggressive viral version\n\nOPEN-WEIGHT AI JUST GOT DANGEROUS.GLM-5.2 from https://t.co/8l5VZLWr2F is not just another “pretty good open model.”It is a 1M-context, MIT open-weight, long-horizon coding model that is now competing directly with the closed https://t.co/Hu6bDX9JIp Arena already showed GLM-5.2 jumping ahead of the now-unavailable Claude Fable 5. Code and agent leaderboards still show Fable ahead in some categories, but that almost misses the point.The real story is this:Fable was mythical — and then it disappeared.\nGLM-5.2 is here, downloadable, deployable, and usable across production agent https://t.co/f4zsktdtTq The Zero-Human Company, we care about models that can run work, not models that win hype cycles.We are rolling GLM-5.2 into our AI employee workflows for coding, debugging, refactoring, repo-scale reasoning, test generation, and multi-hour autonomous execution.Closed-source still has peak performance.\nOpen-weight now has something more important for companies: continuity.The future is not one rented oracle.\nIt is a resilient workforce of swappable, local-first agents.\n\nTechnical founder version\n\nGLM-5.2 is the first open-weight model that made me seriously rethink our agent stack.The important pieces are not just benchmark numbers.They are:1M context\nflexible reasoning effort\nstrong terminal/coding performance\ntool-use capability\nstructured output support\nopen weights\nlocal deployment paths\nMIT licensing\nmulti-provider availabilityFor a zero-human or AI-operated company, those details matter more than a single leaderboard win.Agents are not chatbots. They are production workers. They need stable access, long memory, tool discipline, reproducible deployment, and graceful fallback when a provider disappears.Claude Fable 5 showed what the closed frontier can do.\nGLM-5.2 shows why the open frontier may be what companies can actually build on.\n\nhttps://t.co/8l5VZLWr2F’s documentation describes GLM-5.2 as text-in/text-out with 1M context, 128K max output tokens, thinking modes, function calls, structured output, context caching, and MCP support.\n\nThe strongest “genius-level” framing\n\nThe post should not be:\n\nGLM is better than Claude.\nThe post should be:\n\nClaude Fable 5 showed the ceiling. GLM-5.2 showed the floor is rising.\nThat is more sophisticated. It says closed frontier models may still be highest on some dimensions, but open-weight models are now so capable that the deciding factor becomes deployment control, not just benchmark rank.\n\nThe real frontier is moving from:\nWhich model is smartest?\n\nto:\n\nWhich model can I safely run across my company without being rate-limited, banned, region-blocked, priced out, or forced into data-retention terms I cannot accept?\n\nThat is where your “Zero-Human Company” angle becomes powerful.\n\nAnthropic’s own Fable page says Fable is currently unavailable, priced at $10 per million input tokens and $50 per million output tokens, and requires 30-day data retention; GLM-5.2’s Artificial Analysis page lists first-party pricing at $1.40 input, $4.40 output, and $0.26 cache-hit per million tokens.\n\nThe line to use:\n\nThe next AI moat is not only intelligence. It is continuity of access.\n\nThat is the theme.\n\nThe obscure thought input\n\nHere is the hidden idea most people will miss:\n\nA closed model can be frontier intelligence and still be operationally fragile. An open-weight model can be slightly behind and still be strategically superior.\nThat is the real business insight.\n\nFor a company running AI agents as employees, the model is not a toy. It is part of the operating system. If that operating system can be switched off by capacity limits, export controls, provider policy, pricing changes, data-retention requirements, or model deprecation, then “best model” becomes the wrong question.\n\nThe better question is:\n\nCan this model survive contact with production?\nGLM-5.2’s real advantage is not just that it scores well. It gives companies a credible path toward model sovereignty.\n\nBest one-liners\nFable won the myth. GLM-5.2 may win the deployment war.\n\nClosed models sell peak intelligence. Open-weight models sell continuity.\n\nThe frontier is no longer just intelligence. It is access, cost, context, and control.\n\nFable disappearing was the warning shot. GLM-5.2 is the contingency plan.\n\nThe best model is not the one you can admire. It is the one your agents can keep using tomorrow.\n\nOpen-weight AI just crossed from hobbyist backup to production strategy.\nGLM-5.2 is not just a model release. It is an anti-rug-pull architecture.\nThe zero-human company cannot depend on zero-control infrastructure.\nClosed source still owns parts of the frontier. Open weights are coming for the factory floor.\nMythos was the legend. Fable was the story. GLM is the workhorse.\nThe benchmark section you should add\nYour post should have a clean, honest benchmark paragraph:\nGLM-5.2 is now the leading open-weight model on Artificial Analysis’s Intelligence Index, scoring 51 and landing on the Intelligence-vs-cost Pareto frontier. It is 744B total / 40B active, MIT licensed, and has a 1M-token context window. On https://t.co/8l5VZLWr2F’s model card, it reports 62.1 on SWE-bench Pro, beating GPT-5.5’s listed 58.6, and 81.0 on Terminal-Bench 2.1, while still trailing Claude Opus 4.8 on several coding rows.\nThat paragraph is fact-check resistant.\n\nDo not say:\n\nIt beats all closed-source models.\n\nSay:\nIt beats or matches specific closed frontier models on specific developer benchmarks, while leading the open-weight field.\n\nThat is much better.\n\nThe “Fable” comparison should be reframed\n\nInstead of:\n\nGLM beats Claude Fable 5.\n\nUse:\n\nGLM-5.2 is the first open-weight model that makes the Fable comparison feel practical instead of absurd.\n\nThat line is excellent because it is both bold and defensible.\n\nThen explain:\n\nFable still leads some overall leaderboards. But Fable is currently unavailable. GLM-5.2 is open-weight, MIT licensed, deployable through multiple inference stacks, and available through several providers. For production agent systems, that difference matters.\n\nArtificial Analysis says Fable is #1 overall, while Anthropic says Fable access is currently unavailable; Hugging Face and https://t.co/8l5VZLWr2F list GLM-5.2’s open-weight deployment paths.\n\nBest “Zero-Human Company” framing\n\nThe phrase “zero-human company” is explosive, but it can sound reckless. Tighten it:\n\nZero-human does not mean zero accountability. It means zero routine human handoff.\n\nThat solves the biggest criticism before it appears.\n\nSuggested paragraph:\n\nAt The Zero-Human Company, “zero-human” does not mean zero governance. It means routine operations are handled by AI employees: code generation, debugging, regression checks, refactors, repo audits, documentation, workflow execution, and internal reporting. Humans define the mission, risk boundaries, legal constraints, and escalation rules. Agents do the repetitive operational work.\n\nThat makes you sound visionary, not careless.\n\nMissing architecture layer\n\nAdd this architecture because it makes the post feel real:\n\nOur agent stack is moving toward a model portfolio:Fable/Opus/GPT-class closed models for rare peak-reasoning tasks.\n GLM-5.2 for long-context coding, repo-scale execution, and local-first agent work.\n Small flash models for routing, validation, extraction, retries, and cheap micro-decisions.\n Verifier models for tests, schema checks, citations, and hallucination control.\n A model router deciding which worker gets each task.\n\nThe killer line:\n\nThe future company does not run on one model. It runs on a model economy.\n\nProduction rollout plan to include\n\nThis would make the announcement much more credible:\n\nPhase 1: Shadow mode\n\nRun GLM-5.2 beside your existing best model. Compare outputs, patches, test results, runtime, token cost, and human review time.\n\nPhase 2: Low-risk autonomy\n\nLet GLM-5.2 handle docs, refactors, test generation, code review suggestions, issue triage, and non-critical internal tooling.\n\nPhase 3: Bounded execution\n\nLet it open branches, create PRs, run tests, inspect failures, and self-repair, but require approval before merge/deploy.\n\nPhase 4: Agent workforce\n\nAssign GLM-5.2-backed workers to persistent roles: refactor agent, QA agent, migration agent, security-review agent, dependency-update agent, test-coverage agent, and documentation agent.\n\nPhase 5: Local-first failover\n\nMaintain local/self-hosted GLM-5.2 as a continuity layer when closed providers are unavailable, rate-limited, too expensive, or blocked by data-retention requirements.\n\nThe line:\n\nGLM-5.2 is not replacing every model. It is replacing the assumption that our company must rent its entire intelligence layer.\n\nThe “local deployment” section should be more honest\n\nYour current wording:\n\nQuantized versions make it feasible on high-end setups.\n\nBetter:\n\nGLM-5.2 is not casual local. It is infrastructure-local. The full model is 744B total parameters with around 40B active per token, and serious deployments will require high-end multi-GPU or specialized inference providers. But the point is that the weights and deployment paths exist: vLLM, SGLang, Transformers, KTransformers, BF16, FP8, and community quantizations.\n\nThat sounds credible. It also avoids the obvious reply: “Can I run this on my Mac?” For most people, no.\n\nUse this line:\n\nLocal-first does not mean laptop-local. It means your company can own the inference path.\n\nExcellent.\n\nThe “1M context” section should be upgraded\n\nDo not just say:\n\n1M-token context.\n\nSay:\n\nThe point of 1M context is not stuffing more tokens into a prompt. The point is reducing project amnesia.\n\nThat is the real benefit for agentic coding.\n\nSuggested paragraph:\n\nIn long-horizon coding, context length is not a luxury feature. It is the difference between an agent remembering the architecture, constraints, earlier decisions, failing tests, module boundaries, and product intent — or slowly drifting into a new project every 50 minutes.\n\nhttps://t.co/8l5VZLWr2F’s docs specifically pitch GLM-5.2 as carrying module boundaries, architectural constraints, API contracts, directory structures, and historical decisions through long-running tasks.\n\nBest line:\n\n1M context is not memory. It is continuity.\n\nThe “reasoning effort” section should be upgraded\n\nFlexible effort is not just a feature. It is a cost-control primitive.\n\nSuggested paragraph:\n\nThe High/Max reasoning-effort split matters because production agents do not need maximum reasoning on every step. Some steps need cheap movement. Some need deep judgment. A usable agent stack needs effort control the way cloud infrastructure needs autoscaling.\n\nThe vLLM recipe says GLM-5.2 defaults to Max unless reasoning_effort is explicitly set to High.\n\nBest line:\n\nReasoning effort is the new CPU governor.\n\nOr:\nEffort control turns reasoning into an allocatable resource.\nAdd this “why now” section\nThis post needs a “why now” because the timing is the story.\nWhy does GLM-5.2 matter now?Because the same week the world learned how powerful Fable was, builders also learned how fragile access to closed frontier models can be.A model can be brilliant and still be a single point of failure.GLM-5.2 arrives at exactly the moment companies are realizing they need sovereign AI infrastructure, not just smarter chatbots.\n\nAnthropic says the government directive forced it to abruptly disable Fable 5 and Mythos 5 for all customers, while access to other Anthropic models was not affected.\n\nBetter title options\n\nBest overall:\n\nGLM-5.2 and the End of Rented Intelligence\n\nMost viral:\n\nFable Disappeared. GLM-5.2 Got to Work.\n\nMost technical:\n\nGLM-5.2 Is the First Open-Weight Model That Belongs in the Production Agent Stack\n\nMost founder-coded:\n\nWhy The Zero-Human Company Is Moving GLM-5.2 Into Production\n\nMost provocative:\n\nThe Myth of Mythos, the Fable of Fable, and the Rise of Open-Weight Labor\n\nMost concise:\n\nOpen-Weight AI Just Became Operationally Serious\n\nThe strongest post structure\n\nPost 1\n\nBOOM: GLM-5.2 is the open-weight model that makes the Fable comparison real.\n\nPost 2\n\nNot because it wins every benchmark. It does not.Fable still leads some overall rankings.But GLM-5.2 leads the open-weight field and is now close enough on coding/agentic work that production teams have to pay attention.\n\nPost 3\n\nThe features that matter:1M context\nMIT open weights\n744B total / 40B active MoE\nHigh/Max reasoning effort\nstrong Terminal-Bench and SWE-bench Pro scores\nlocal deployment paths\nstructured output, tool use, MCP support\n\nPost 4\n\nThe hidden story is not benchmark https://t.co/bqdwz2W5iV is access sovereignty.Claude Fable 5 showed the ceiling of closed intelligence.\nIts sudden unavailability showed the fragility of building your company on rented brains.\n\nPost 5\n\nAt The Zero-Human Company, we are rolling GLM-5.2 into AI employee workflows:repo audits\ncode generation\ndebugging\nrefactoring\ntest generation\ndependency updates\ndocumentation\nautonomous project execution\n\nPost 6\n\n“Zero-human” does not mean zero https://t.co/XJ63ZNpspA means AI handles routine execution while humans own goals, risk boundaries, legal constraints, and escalation rules.\n\nPost 7\n\nThe future is not one giant https://t.co/9YhWVFu4Li is a model portfolio: closed frontier models for rare peak reasoning, open-weight models for sovereign execution, flash models for micro-decisions, and verifiers for trust.\n\nPost 8\n\nFable won the myth.\nGLM-5.2 may win the deployment layer.The myth of Mythos and the fable of Fable were entertaining.\nWe are getting back to work.\n\nWhat to remove from your draft\n\nRemove or soften:\n\n“OPEN SOURCE GLM BEATS THE FABLED FABLE!”\n\nUse:\n\n“Open-weight GLM-5.2 challenges Fable where builders care most.”\n\nRemove:\n\n“surpassing Claude Fable 5”\n\nUse:\n\n“surpassing Fable on Design Arena, while still trailing it on some broader/code arena rankings.”\n\nRemove:\n\n“no external service dependencies or potential bans”\n\nUse:\n\n“a path to local-first inference and reduced provider-dependency risk.”\n\nRemove:\n\n“zero-human setup” by itself\n\nUse:\n\n“zero routine human handoff, with human governance at the boundaries.”\n\nRemove:\n\n“open source” everywhere\n\nUse mostly:\n\n“MIT open-weight”\n\nYou can still say “open” in the rhetorical parts, but “open-weight” is the technically armored version.\n\nThe killer comparison table to include\n\nDimensionClaude Fable 5GLM-5.2Ownership modelProprietaryMIT open-weightAvailabilityCurrently unavailableAvailable via https://t.co/sUAD6WPorw modalityText + imageTextPricing signal$10 input / $50 output per 1M$1.40 input / $4.40 output per 1M first-party APILocal deploymentNoYes, with serious infraStrategic riskProvider/government/capacity dependencyHardware/inference complexity, but more controlBest framingPeak closed frontierSovereign agent infrastructure\n\nThose numbers and availability claims are supported by Anthropic, https://t.co/Mna6Ezsbxg Face, and Artificial Analysis.\n\nBenchmarks you should publish from The Zero-Human Company\n\nDo not just say “our tests show it did better.” Publish a small eval card.\n\nInclude:\n\nRepo-scale coding\n\nTime to successful PR\nTests passed after first patch\nTests passed after self-repair\nFiles modified correctly\nUnnecessary file churn\nRegression count\nHuman-review minutes saved\n\nAgentic execution\n\nTask completion rate\nNumber of tool calls\nFailed tool-call recovery\nJSON/schema validity\nContext-retention score\nRetry quality\nEscalation accuracy\nLoop termination accuracy\n\nLong-horizon behavior\n\nPerformance after 30 minutes\nPerformance after 2 hours\nPerformance after 500 tool calls\nInstruction drift rate\nArchitecture consistency\nAbility to remember prior design decisions\n\nCost\nCost per merged PR\nCost per successful refactor\nCost per test suite improvement\nCost per autonomous task-hour\nTokens per successful outcome\n\nReliability\n\nProvider uptime\nLocal fallback success\nQuantized-vs-BF16 quality delta\np50/p95 latency\nCold-start time\nThroughput under parallel agents\n\nBest line:\n\nThe benchmark that matters is not tokens per second. It is correct work per dollar.\n\nEven better:\n\nThe new metric is PRs per GPU-hour.\n\nObscure but powerful insight: “context window is not memory”\n\nA lot of people will say “1M context = memory.” That is not quite right.\nThe better thought:\nContext is working memory. Architecture is institutional memory.\nSo your agent system should not rely only on dumping 1M tokens into GLM-5.2. You should pair it with:\npersistent project state\nrepo summaries\ndecision logs\ntest history\narchitecture contracts\nrisk registers\ncoding standards\ndependency maps\nknown-bad-pattern lists\nagent handoff notes\nSuggested line:\nA 1M context model is powerful, but a zero-human company needs memory architecture, not just longer prompts.\n\nObscure but powerful insight: “the open model wins by being boring”\n\nThe frontier model makes the demo magical.\n\nThe production model makes the system boring.\n\nThat is what companies need.\nUse this:\n\nThe winning AI company will not be the one with the flashiest model demo. It will be the one whose agents keep working at 3 a.m. after a provider outage, policy change, or rate-limit spike.\n\nThat is a very strong operational line.\n\nObscure but powerful insight: “model sovereignty beats model maximalism”\nMost AI people are model maximalists: use the smartest model for everything.\nA zero-human company should be a model-sovereignty company:\nRoute every task to the cheapest, most controllable model that can complete it safely.\nThat is the principle.\nSuggested line:\nThe wrong architecture is one genius model. The right architecture is a labor market of models.\nBest final polished post\n\nBOOM: GLM-5.2 and the End of Rented IntelligenceGLM-5.2 from https://t.co/8l5VZLWr2F is the open-weight release that makes the Fable comparison real.Not because it wins every leaderboard. It does not. Claude Fable 5 still leads some overall and coding rankings.But GLM-5.2 is now close enough in long-horizon coding, agentic execution, terminal work, repo-scale reasoning, and design workflows that the real question https://t.co/Nwtb7Lfu7B is no longer just:“Which model is smartest?”It is:“Which model can my company actually build on?”GLM-5.2 brings 1M context, flexible reasoning effort, MIT open weights, strong coding benchmarks, structured output, tool-use support, and real local deployment paths.Fable showed the ceiling of closed intelligence.\nIts sudden unavailability showed the fragility of rented https://t.co/VMxWgDkVfi The Zero-Human Company, we are rolling GLM-5.2 into AI employee workflows for code generation, refactoring, debugging, repo audits, test generation, documentation, and autonomous project execution.Zero-human does not mean zero accountability. It means zero routine human handoff, with humans still defining goals, risk limits, and escalation rules.The future is not one rented oracle.\nIt is a resilient model portfolio: closed frontier models for rare peak judgment, open-weight models for sovereign execution, small models for micro-decisions, and verifiers for trust.The myth of Mythos and the fable of Fable were entertaining.\nGLM-5.2 is where builders get back to work.\n\nPunchiest version\n\nFable disappeared. GLM-5.2 got to work.That is the real story.Claude Fable 5 may still lead some leaderboards, but its sudden unavailability exposed the core weakness of closed frontier AI: access can vanish.GLM-5.2 is different.1M context.\nMIT open weights.\nStrong long-horizon coding.\nFlexible reasoning effort.\nLocal deployment paths.\nProduction-grade agent https://t.co/449pjohp0b The Zero-Human Company, we are not looking for mythical models.\nWe are building an AI workforce that keeps running.Closed models still own parts of the frontier.\nOpen-weight models are coming for the operating system of the company.\n\nThe highest-impact single line\n\nThe zero-human company cannot be built on zero-control intelligence.\n\nThat should be the anchor.\n\nBest ending line\n\nThe myth of Mythos and the fable of Fable made the internet argue. GLM-5.2 made the builders reopen their terminals.\nThat is the memorable close.",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 792,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 02:22:34 +0000 2026",
+      "createdAtLocal": "2026-06-18 10:22",
+      "createdAtISO": "2026-06-18T02:22:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067344987248087302",
+        "text": "BOOM!\n\nOPEN SOURCE GLM BEATS THE FABLED FABLE!\n\nGLM-5.2 from https://t.co/1haHftBhf1: The Open-Weight Model That Topped Claude Fable and Powers The Zero-Human Company\n\nhttps://t.co/1haHftBhf1 (Zhipu AI) released GLM-5.2 and our tests show it  delivering a major leap in long-horizon agentic coding with a practical 1M-token context window, flexible reasoning effort levels (High/Max), and MIT open weights.\n\nEarly benchmarks and community arenas show it excelling where it matters most for developers.\n\nWe compared it to our first Anthropic Fable model tests and GLM did better!\n\nIt leads open-weight models and has claimed the top spot on Design Arena (Elo 1360), and as I said is surpassing the now-unavailable Claude Fable 5. \n\nIt also posts strong results on coding suites: 62.1% on SWE-bench Pro (beating GPT-5.5’s 58.6) and 81.0 on Terminal-Bench 2.1.106\n\nOfficial blog: https://t.co/Xt6kEOwNNK \nThe Zero-Human Company Goes All-In\n\nAt The Zero-Human Company, where AI agents handle nearly all operations, we’ve rolled out GLM-5.2 across all employee (agent) workflows for code generation, refactoring, debugging, and autonomous project execution. Its long-context reliability and agentic strengths make it ideal for sustained, multi-hour tasks without constant human oversight—perfect for a zero-human setup.\n\nWe’re particularly excited about its open weights and local deployment, which ensures full data privacy and resilience—no external service dependencies or potential bans.\n\nRunning GLM-5.2 Locally\nThanks to its MIT license and strong inference support, you can run GLM-5.2 (744B total params, ~40B active MoE) on your own hardware today. \n\nQuantized versions (FP8, etc.) make it feasible on high-end setups.\n\nQuick start options (from the official GitHub):\n•vLLM: https://t.co/bkdlRlTkVS\n•SGLang: https://t.co/B96vX3KnwY…/GLM-5.2\n•Hugging Face Transformers or KTransformers for more options.\n•Full deployment guide: https://t.co/MwHl31b7gL \n\nExample setup with vLLM (Docker recommended for ease):\n\n# Clone repo and follow recipes for quantized inference\n# Supports reasoning_effort=\"max\" (default) or \"high\"\n\nThis local-first approach aligns perfectly with our zero-human philosophy: agents run securely on-prem, with full customizability.\nGLM-5.2 isn’t just competitive it’s a timely open alternative in a world of access restrictions. \n\nWe’re thrilled to test and build with it company-wide. Expect more updates as our AI workforce puts it through real production.\n\nThe myth of Mythos and the fable of Fable is entertaining but we are getting to work.",
+        "author": {
+          "screenName": "BrianRoemmele",
+          "name": "Brian Roemmele"
+        }
+      }
+    },
+    {
+      "id": "2067402794097852853",
+      "text": "Grok CLIに雑にこの１週間のAI Agentに関する話題を検索させたけど、なかなかに良い感じだった。\n\n> AI Agentに関するニュースや知見でこの１週間で話題になっていることを話題度を元に数値化した上で順にリストアップしてください。\n\n↓ 結果\n\nAI Agent関連の1週間（2026年6月11日頃〜18日頃）の主な話題を、X（エンゲージメント・ビュー数）とウェブ報道量に基づく相対的な「話題度」（0-100推定スコア）でランキング。[1] (https://t.co/ymrPJii5Cq)\n\nスコアは主に以下の要素で算出：\n• X投稿のいいね/リポスト/ビュー（特にAnthropic公式投稿は数千万ビュー規模）\n• 主要テックメディア記事数と露出\n• 議論の広がり（ベンチマーク、製品、資金、ガバナンスなど）\n• オープンソース/研究コミュニティの反応\n\n1. Claude Fable 5（Mythosクラス）の公開と米政府命令によるアクセス停止（話題度: 95）\nAnthropicが6月9日頃に「Mythos-class」の初の一般公開版としてClaude Fable 5をリリース（Mythos 5は限定版）。ベンチマークでトップクラス（Artificial Analysis Intelligence Index 60など）を記録したが、トークン単価が高くベンチマーク実行だけで数千ドルかかるなどコストが話題に。\n\n6月12-13日頃に米国政府の輸出管理・国家安全保障当局の命令で、外国籍者（社内外含む）へのアクセスが停止され、全ユーザー向けにFable 5/Mythos 5が一時無効化。Anthropic公式投稿が88000+いいね・9000万ビュー超と爆発的な反応。安全対策の不十分さや再リリース条件（jailbreak防止など）をめぐる議論が続いている。\n\nなぜ話題：フロンティアモデルの公開直後に政府介入という異例の展開。エージェント用途（特に長時間コーディング・自律タスク）での実用性とガバナンス問題を象徴。\n\n2. OpenAIのOna買収（長期実行・永続的エージェント基盤）（話題度: 68）\n6月11日頃発表。Ona（旧Gitpod系）のセキュアで永続的なクラウド実行環境・オーケストレーション技術をCodex（コーディングエージェント）に統合。エージェントがセッションを超えて時間単位・日単位で動作し、顧客制御のサンドボックスで企業展開しやすくする狙い。\n\nなぜ話題：モデル性能だけでなく「実行レイヤー・インフラ」が差別化要因になるというシフトを強く印象づけた。「モデルを買うより実行環境を買う」動きとして複数の議論で取り上げられている。AWS/Apple/Googleなども類似のagenticインフラを強化中。\n\n3. Arbor：中国・Microsoft Researchの自律研究エージェント公開（話題度: 52）\nRenmin University of China + Microsoft Researchが6月10日頃、arXiv論文とGitHubでArbor（Hypothesis-Tree Refinement/HTRベースの自律研究エージェント）をオープンソース公開。長寿命コーディネーター＋短寿命ワーカーで仮説ツリーを蓄積・洗練し、実験を自律的に繰り返す。標準的な自律ML研究ベンチマークでOpenAI/Anthropicの先行エージェントを2.5倍上回ったと主張。\n\nなぜ話題：研究・科学発見領域での「本物の自律エージェント」実例として注目。オープンソースである点も大きい。\n\n4. Meta Business Agentのグローバル展開・ビジネス統合（話題度: 48）\n6月3日頃の本格発表以降、WhatsApp/Instagram/Messenger/DM上で顧客対応を24/7自動化するMeta Business Agentが注目継続。10億超のビジネススレッドを活用したパーソナライズと、迅速な企業導入が特徴。将来的には市場調査や運用業務への拡大も示唆され、収益化（サブスク含む）の一環として議論されている。\n\nなぜ話題：消費者向けメッセージングプラットフォーム大規模展開の現実例。エージェントが「実験」から「業務インフラ」へ移行する象徴。\n\n5. エージェント向けベンチマーク・コスト・インフラ議論（話題度: 42）\n• Artificial AnalysisなどでFable 5の高コストが可視化され、長期エージェント実行時の経済性が課題に。\n• NVIDIA Blackwellが「agents-per-watt」ベンチマークで注目。エージェント需要で古いH100のレンタル価格が上昇傾向という指摘も。\n• 全体として「モデル単体」より効率・電力・観測可能性・コストの統合評価が重要視されている。\n\nなぜ話題：プロダクション投入が増える中で、単なる性能デモから実運用メトリクスへのシフトが明確になった。\n\n6. Portable Agent Skills / コンテキスト最適化・マルチエージェントの進展（話題度: 38）\nオープンソースで「エージェント用スキルパック」（テスト駆動、アクセシビリティ、デプロイ、観測可能性など）が急成長。Claude Code/Codexなどで再利用可能なskillsをインストールして挙動を標準化する動き。コンテキスト圧縮ツール（例: headroom系）や「loop engineering」（信頼性ある反復ループ設計）の議論も活発。Framer 3.0 Agents、Exaリサーチエージェント、コーディング「ファクトリー」系製品も具体例として挙がった。[2] (https://t.co/iw80RIUXfB)\n\nなぜ話題：プロンプト個別最適から「再利用可能なエージェント資産・ワークフロー」へのパラダイムシフトが体感レベルで進んでいる。\n\n7. エージェントのセキュリティ・実行制御・ガバナンス（話題度: 32）\n• AWS Agent-EvalKitなど体系的評価ツールの登場。\n• Kaggleで「AI Agent Security: Multi-Step Tool Attacks」コンペ。\n• https://t.co/7lGoTA1a3h（TryArcade）が$60M Series A調達（セキュアなaction layer / MCP runtime）。エージェントが実際に「行動」するための認可・監査・支払い制御がホット。[3] (https://t.co/N1rgmWs7tb)\n\nなぜ話題：エージェントがツール使用・支払い・実世界行動を伴う段階で、信頼性・コンプライアンスがボトルネックとして表面化。\n\n補足・全体トレンドの知見\n• 共通の大きな流れ：2026年は「デモから本番インフラ」へ。シングルエージェントからマルチエージェントオーケストレーション、一時的実行から永続的・顧客制御環境、性能競争からコスト・安全性・再利用性の競争へ移行中。\n• 資金・製品：TryArcade/Arcade関連資金調達や各種デザイン/動画/コード特化エージェントの小規模ローンチが散見。\n• 日本語圏含めグローバルで「agentic workflowの実用化」と「ガバナンス」が同時進行で語られている。\n\nデータソースは主にX semantic/keyword検索（2026-06-09以降フィルタ）、ウェブ検索結果、主要メディア記事に基づく。スコアは相対的で、状況により変動する。より詳細な特定トピックがあれば深掘り可能",
+      "author": {
+        "id": "15501789",
+        "name": "taiyop@Herness Engineer",
+        "screenName": "taiyop",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1629457669026385920/htz9e47H_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2771,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 00:23:31 +0000 2026",
+      "createdAtLocal": "2026-06-18 08:23",
+      "createdAtISO": "2026-06-18T00:23:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067307487922110645",
+        "text": "AI can take some of the admin.\nBut it cannot take the overnight shift.\nIt cannot notice the quiet exhaustion in a someone’s face.\nIt cannot provide the warmth, patience, and human presence caregivers give every day.\n\nThat’s why caregiver support still matters. 💛\nAnd that’s why burnout is still very real.\n.\n.\n.\n#SeniorCare #annarbor #respitecare #optionshomecare",
+        "author": {
+          "screenName": "OptionsHC_MI",
+          "name": "Options Home Care - Ann Arbor"
+        }
+      }
+    }
+  ]
+}

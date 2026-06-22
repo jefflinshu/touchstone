@@ -1,9 +1,10 @@
 {
-  "updatedAt": "2026-06-18",
-  "lastFetchedAt": "2026-06-18T08:47:43.803Z",
-  "cliStatus": "Loaded 3445 locally archived X posts from 26 fetch runs; collection now has 462 source-linked cards and 428 creator profiles.",
+  "updatedAt": "2026-06-22",
+  "lastFetchedAt": "2026-06-22T03:09:14.709Z",
+  "cliStatus": "Loaded 3868 locally archived X posts from 27 fetch runs; collection now has 469 source-linked cards and 438 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
+    "daily-asia-2026-06-19-to-2026-06-21-broad-latest",
     "daily-asia-2026-06-18-broad-latest",
     "daily-asia-2026-06-17-broad-latest",
     "daily-asia-2026-06-16-to-2026-06-17-latest-allq",
@@ -24,15 +25,15 @@
     "recent-2026-06-11-to-2026-06-12",
     "recent-week-2026-06-05-to-2026-06-11"
   ],
-  "total": 462,
+  "total": 469,
   "categoryCounts": [
     {
       "key": "games",
-      "count": 156
+      "count": 158
     },
     {
       "key": "apps",
-      "count": 73
+      "count": 74
     },
     {
       "key": "websites",
@@ -40,11 +41,11 @@
     },
     {
       "key": "videos",
-      "count": 132
+      "count": 133
     },
     {
       "key": "3d",
-      "count": 197
+      "count": 203
     },
     {
       "key": "design",
@@ -56,11 +57,11 @@
     },
     {
       "key": "prompts",
-      "count": 146
+      "count": 148
     },
     {
       "key": "code",
-      "count": 60
+      "count": 61
     },
     {
       "key": "research",
@@ -84,25 +85,25 @@
     {
       "file": "pages/000.json",
       "count": 24,
-      "fromDate": "2026-06-18",
+      "fromDate": "2026-06-21",
       "toDate": "2026-06-16"
     },
     {
       "file": "pages/001.json",
       "count": 24,
       "fromDate": "2026-06-16",
-      "toDate": "2026-06-15"
+      "toDate": "2026-06-16"
     },
     {
       "file": "pages/002.json",
       "count": 24,
       "fromDate": "2026-06-15",
-      "toDate": "2026-06-14"
+      "toDate": "2026-06-15"
     },
     {
       "file": "pages/003.json",
       "count": 24,
-      "fromDate": "2026-06-14",
+      "fromDate": "2026-06-15",
       "toDate": "2026-06-13"
     },
     {
@@ -193,12 +194,12 @@
       "file": "pages/018.json",
       "count": 24,
       "fromDate": "2026-06-10",
-      "toDate": "2026-06-09"
+      "toDate": "2026-06-10"
     },
     {
       "file": "pages/019.json",
-      "count": 6,
-      "fromDate": "2026-06-09",
+      "count": 13,
+      "fromDate": "2026-06-10",
       "toDate": "2026-06-08"
     }
   ],
@@ -206,25 +207,25 @@
     {
       "file": "chunks/000.json",
       "count": 24,
-      "fromDate": "2026-06-18",
+      "fromDate": "2026-06-21",
       "toDate": "2026-06-16"
     },
     {
       "file": "chunks/001.json",
       "count": 24,
       "fromDate": "2026-06-16",
-      "toDate": "2026-06-15"
+      "toDate": "2026-06-16"
     },
     {
       "file": "chunks/002.json",
       "count": 24,
       "fromDate": "2026-06-15",
-      "toDate": "2026-06-14"
+      "toDate": "2026-06-15"
     },
     {
       "file": "chunks/003.json",
       "count": 24,
-      "fromDate": "2026-06-14",
+      "fromDate": "2026-06-15",
       "toDate": "2026-06-13"
     },
     {
@@ -315,16 +316,31 @@
       "file": "chunks/018.json",
       "count": 24,
       "fromDate": "2026-06-10",
-      "toDate": "2026-06-09"
+      "toDate": "2026-06-10"
     },
     {
       "file": "chunks/019.json",
-      "count": 6,
-      "fromDate": "2026-06-09",
+      "count": 13,
+      "fromDate": "2026-06-10",
       "toDate": "2026-06-08"
     }
   ],
   "shards": [
+    {
+      "date": "2026-06-21",
+      "file": "2026-06-21.json",
+      "count": 2
+    },
+    {
+      "date": "2026-06-20",
+      "file": "2026-06-20.json",
+      "count": 1
+    },
+    {
+      "date": "2026-06-19",
+      "file": "2026-06-19.json",
+      "count": 4
+    },
     {
       "date": "2026-06-18",
       "file": "2026-06-18.json",

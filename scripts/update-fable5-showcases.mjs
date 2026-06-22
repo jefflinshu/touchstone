@@ -566,10 +566,33 @@ function loadCurationOverrides() {
     return new Map(
       decisions
         .filter((item) => item?.url && /^(?:keep|drop)$/.test(String(item.decision || '')))
-        .map((item) => [item.url, { decision: item.decision, reason: item.reason || 'manual override' }])
+        .map((item) => [
+          item.url,
+          {
+            decision: item.decision,
+            reason: item.reason || 'manual override',
+            title: typeof item.title === 'string' ? item.title.trim() : '',
+            summary:
+              typeof item.summary === 'string'
+                ? [item.summary.trim()].filter(Boolean)
+                : Array.isArray(item.summary)
+                  ? item.summary.map((value) => String(value || '').trim()).filter(Boolean)
+                  : null,
+          },
+        ])
     )
   } catch {
     return new Map()
+  }
+}
+
+function applyCardOverride(item) {
+  const override = item?.sourceUrl ? curationOverrides.get(item.sourceUrl) : null
+  if (!override || override.decision !== 'keep') return item
+  return {
+    ...item,
+    title: override.title || item.title,
+    summary: override.summary?.length ? override.summary : item.summary,
   }
 }
 
@@ -863,7 +886,7 @@ function passesFinalNegativeFilter(item) {
 function normalizeExistingItem(item) {
   const text = item.originalText || item.title || ''
   const media = item.media || 'text'
-  return {
+  return applyCardOverride({
     ...item,
     title: titleFromText(text),
     summary: summaryFromText(text, media),
@@ -871,7 +894,7 @@ function normalizeExistingItem(item) {
     categories: categoriesFor(text),
     tags: tagsFor(text),
     facets: facetFields({ ...item, text }, media),
-  }
+  })
 }
 
 function heat(post) {
@@ -1001,8 +1024,9 @@ function toShowcase(post, sourceRun, generatedAt, options = {}) {
   }
   item.summary = summaryFromText(post.text, item.media)
   item.facets = facetFields(post, item.media)
-  if (!options.cacheMedia) return item
-  return cacheAvatar(cacheMediaPreview(item), post)
+  const overridden = applyCardOverride(item)
+  if (!options.cacheMedia) return overridden
+  return cacheAvatar(cacheMediaPreview(overridden), post)
 }
 
 const args = parseArgs(process.argv.slice(2))

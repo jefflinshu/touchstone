@@ -1,0 +1,1311 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2068452236989190572",
+      "text": "Not sharing the prompts since it's not my app, but I'll do you one better and share the method behind them. Thank you @SyntexRl for being a good sport!\n\n👉 If you want more examples and actual prompts, see the pinned article on my profile, it's got lots more detail!\n\nObviously, this is a rough prototype, missing lots of features and personality from the original. Check out @lockedintheapp for the real thing.\n\n--\n\nPrompt 1: Lay out the design system with intentionality\n\nAI lacks taste but that doesn't mean it's bad at design. The problem is when you ask AI to fill in gaps and let it do whatever it wants. If you provide a clear vision, AI can bring it to life.\n\nIn this case, I liked what @SyntexRl was doing with pixel art. But the rest of the app didn't match (standard gradients and cards). I wanted to go all-in on the gamified pixel art feel.\n\nIf you want your app to be bold and stand out, you have to prompt boldly. With AI, you can take risks, like asking for a custom pixel art UI library. Doing that by hand would take weeks. Claude can knock it out in 10 minutes. If you hate it, just throw it out. Don't be afraid.\n\nI prompted Claude to follow the pixel art aesthetic, with clear instructions about how each screen and component. It was long and detailed, which gave Claude plenty to anchor to when it needed to fill gaps. The one-shot output was already 90% of the way there.\n\n--\n\nPrompt 2: Minor refinements\n\nThere will always be things you and the AI weren't aligned on. If you leave it like that, users will spot the rough edges right away. AI puts unnecessary extras in, mixes fonts excessively, wraps things in cards for no reason, etc.\n\nClaude did all of those things and I had to give it specific guidance: make the buttons the same sizes, right-align things in cards, clean up typography.\n\nFonts are tough for AI to get right. My trick is to have Claude build an HTML page or debug screen with font options in context, pick my favorites, and hone in, rather than describing fonts with words.\n\nDialing in the pixel dither effects took eyeballing and explanation because it was so foreign to Claude. But I didn't want to settle for normal gradients, so I think it was worth the effort.\n\n--\n\nPrompt 3: The Add Habit card transition\n\nClaude defaulted to a standard slide up/down animation for the bottom sheet. This looked fine but boring, and I saw an opportunity for a unique transition. I described this to Claude as a \"pixellated wipe/reveal shader\" and it understood what I meant somehow. I also explained that I wanted it to be interactively driven by the user dragging on the card, and that it needed to verify this behavior in the simulator, which was important for it to work through the issues and nail it first try.\n\n--\n\nPrompt 4: Finishing touches\n\nNothing special, just pointed out a bunch of small things I didn't like before recording (corner radii, button size/alignment, ugly pixel effects)",
+      "author": {
+        "id": "50949650",
+        "name": "Anshu",
+        "screenName": "anshuc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062938542280712192/gds8Qtn8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 198,
+        "bookmarks": 2
+      },
+      "createdAt": "Sat Jun 20 21:53:37 +0000 2026",
+      "createdAtLocal": "2026-06-21 05:53",
+      "createdAtISO": "2026-06-20T21:53:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068439084360450541",
+      "text": "THIS CHINESE GUY BUILT A SYSTEM WHERE CLAUDE BUILDS, TESTS, AND FIXES ITS OWN CODE IN A LOOP UNTIL IT'S ACTUALLY PERFECT\n\nMost people don't realize their AI coding agent runs once and hands you whatever comes out, bugs included.\n\nHe built a system that doesn't stop until the code is actually correct.\n\nTwo specialized agents in Claude Code:\n\n→ Builder Agent: only writes and fixes code.\n→ Checker Agent: only runs tests, type checks, and linting. Reports exactly what failed.\n\nThey're kept separate on purpose. An agent checking its own code can't catch its own blind spots.\n\nAn orchestrator command chains them into a loop:\n\n→ Builder implements the feature\n→ Checker runs everything\n→ All green? Loop stops.\n→ Something failed? Sent back to Builder. Fixed. Checked again. Repeat.\n\nThe critical detail most people miss: stop rules.\n\nMax 5 cycles. After that, a human steps in.\n\nIf a fix breaks something that was previously passing, the loop stops immediately. Without this, agents start weakening tests just to fake a pass instead of actually fixing the bug.\n\nThis is what an actual autonomous dev workflow looks like. Not one-shot prompting. A real build-test-fix loop with guardrails.\n\nBookmark this post. Full setup is in the video below.",
+      "author": {
+        "id": "1380213498702135300",
+        "name": "SCOTTY BEAM",
+        "screenName": "ScottyBeamIO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029514153656721409/27fG1cCf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 63,
+        "retweets": 6,
+        "replies": 23,
+        "quotes": 0,
+        "views": 3276,
+        "bookmarks": 38
+      },
+      "createdAt": "Sat Jun 20 21:01:22 +0000 2026",
+      "createdAtLocal": "2026-06-21 05:01",
+      "createdAtISO": "2026-06-20T21:01:22+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068438106500427776/vid/avc1/1080x1920/3IF-3PlAlt88cN-2.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067299584339230783",
+        "text": "https://t.co/rpb4MejSYP",
+        "author": {
+          "screenName": "pikach_in",
+          "name": "Pikachin"
+        }
+      }
+    },
+    {
+      "id": "2068426404123779321",
+      "text": "How can economists best make use of /goal in Codex and Claude Code?\n\nI made a video demonstrating how I converted Kirill Borusyak's (@borusyak) Stata/Python DiD imputation package with a ~15 hour Codex goal left running overnight.\n\nNow, this is a task you can likely one shot: i.e. /goal convert this package to R, verify everything lines up.\n\nHowever, I find it helpful to define the validation criteria up front rather than leaving it to the coding agent to decide.\n\nIn our case, an existing Stata/Python package are helpful for pinning down the expected behavior of an R  package.\n\nIn more complex situations, I also recommend using Codex/Claude Code to help you think of validation criteria which would be helpful for \"goal\"s and how to acquire those criteria.\n\nIn the video, I also demo my preferred way of using Codex and Claude Code together (using Claude Code from within Codex), as well using a skill I've made using ChatGPT Pro to get a review of some intermediate work.\n\nVideo here: https://t.co/o4gtFGWQ54\nKirill's paper: https://t.co/7vyi4zbHe7\nGenerated R package: https://t.co/qIUJicTt8N",
+      "author": {
+        "id": "1645156351411122177",
+        "name": "Aniket Panjwani",
+        "screenName": "aniketapanjwani",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996758979976761344/CeQdivuy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 39,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3129,
+        "bookmarks": 60
+      },
+      "createdAt": "Sat Jun 20 20:10:58 +0000 2026",
+      "createdAtLocal": "2026-06-21 04:10",
+      "createdAtISO": "2026-06-20T20:10:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068426104088748331",
+      "text": "https://t.co/E7cn84qhZk",
+      "author": {
+        "id": "6238012",
+        "name": "Matt Van Horn",
+        "screenName": "mvanhorn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1565403341647400960/55RW_HGX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 326,
+        "retweets": 39,
+        "replies": 16,
+        "quotes": 5,
+        "views": 66897,
+        "bookmarks": 1075
+      },
+      "createdAt": "Sat Jun 20 20:09:47 +0000 2026",
+      "createdAtLocal": "2026-06-21 04:09",
+      "createdAtISO": "2026-06-20T20:09:47+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068372607045685248"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "WTF Is a Loop? Part 2: The 15 Loops People Are Actually Running (and the Commands to Steal Them)"
+    },
+    {
+      "id": "2068416081325183209",
+      "text": "@Shivambh28 @kyanbuilds I use the Claude API for checking every frame of the generated video so it can learn and give you a one-shot good result. Actually CTA app demo video is only one app screenshot\n\nFor the all rest of thing I use bunch of AI models",
+      "author": {
+        "id": "865669001564868608",
+        "name": "Muhammet A. 👉🏻 Mobile Dev",
+        "screenName": "indiesoftwaredv",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2008492622055157760/Iff-XW7M_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 27,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 19:29:57 +0000 2026",
+      "createdAtLocal": "2026-06-21 03:29",
+      "createdAtISO": "2026-06-20T19:29:57+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068364765202719104",
+      "text": "@EXM7777 Well it literally one-shot this game in Claude Code harness (doing a better job than GPT5.5 on that task), so it's fair to call it \"great\": https://t.co/eubfa3BcKy  In my experiments with it so far it hasn't failed at any task I gave it, across domains, similar to 5.5/4.8 etc.",
+      "author": {
+        "id": "1656191",
+        "name": "Janek Mann",
+        "screenName": "janekm",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/29857182/39239824_N00_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 617,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 16:06:03 +0000 2026",
+      "createdAtLocal": "2026-06-21 00:06",
+      "createdAtISO": "2026-06-20T16:06:03+00:00",
+      "media": [],
+      "urls": [
+        "https://glmdungeon.janekm.com/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068339371481108602",
+      "text": "eu acho que quem diz isso não teve nenhum case de uso especial com o fable em particular\n\ntem coisas que eu realmente não sei fazer pq não é minha área, por exemplo design\n\nentão ou eu pago $200 do plano max ou eu pago mais de 10k pra um designer profissional\n\nfable tirou de letra o design uma UI/UX impecável de um app inteiro (+50 telas) em um one-shot, coisa que o opus nunca foi capaz de fazer",
+      "author": {
+        "id": "715629123100680193",
+        "name": "Hélio Costa",
+        "screenName": "heliotsx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2011079859536027648/UnQqsEME_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 579,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 14:25:08 +0000 2026",
+      "createdAtLocal": "2026-06-20 22:25",
+      "createdAtISO": "2026-06-20T14:25:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "pt",
+      "score": null
+    },
+    {
+      "id": "2068311417153867848",
+      "text": "https://t.co/Bd4wc2yWhM",
+      "author": {
+        "id": "1859222391164899328",
+        "name": "Chase",
+        "screenName": "0xChaseTM",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032881680336187392/XM6_5kMS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 32,
+        "retweets": 2,
+        "replies": 5,
+        "quotes": 2,
+        "views": 2463,
+        "bookmarks": 29
+      },
+      "createdAt": "Sat Jun 20 12:34:03 +0000 2026",
+      "createdAtLocal": "2026-06-20 20:34",
+      "createdAtISO": "2026-06-20T12:34:03+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068004319924731904"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to Turn Any Idea Into a Product (Using Just Two Tools)"
+    },
+    {
+      "id": "2068301911414149526",
+      "text": "GPT 5.6 Pro has pretty nice frontend capabilities! \n\nI decided testing frontend abilities because it was the \"ouch\" moment of ChatGPT since GPT 5.2 \nI used to pay Claude Max x5 before, just to create some nice frontends. Not anymore! \n\nHere are 3 examples of landing pages, one shot. \nGenerated via ChatGPT website.\n\n1. Orbital space tourism landing page\n\nPrompt: \"Build a cinematic landing page for a private space tourism company called Orbital North.\n\nUse a full-bleed Three.js scene with Earth/orbit/starfield visuals. As the user scrolls, camera position, lighting, and content sections should change. The landing page should feel immersive and premium, with real product/service information, itinerary, safety section, pricing teaser, and booking CTA.\n\nAvoid generic gradients, decorative orbs, and marketing filler. The first screen must immediately communicate space travel.\"",
+      "author": {
+        "id": "1044206904543727616",
+        "name": "Sergey Moloman",
+        "screenName": "sergey_moloman",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2022177470624280577/6UolNICH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 337,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 11:56:17 +0000 2026",
+      "createdAtLocal": "2026-06-20 19:56",
+      "createdAtISO": "2026-06-20T11:56:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068300662325358592/vid/avc1/2912x1572/v3riTYqsLqMLYoZb.mp4?tag=28",
+          "width": 2912,
+          "height": 1572
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068285006057742486",
+      "text": "GPT-5.6 Pro is absolutely cooking 👀\n\nWe're seeing more one shot game builds, cleaner environments and stronger execution across complex prompts\n\nWill GPT-5.6 Pro mog Fable in 3D game generation ? https://t.co/zaqL8qLBTr",
+      "author": {
+        "id": "2026660978046480384",
+        "name": "Salio",
+        "screenName": "Mr_Salio",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027630388403965952/mgrd9d6O_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 65,
+        "retweets": 1,
+        "replies": 11,
+        "quotes": 0,
+        "views": 3090,
+        "bookmarks": 13
+      },
+      "createdAt": "Sat Jun 20 10:49:06 +0000 2026",
+      "createdAtLocal": "2026-06-20 18:49",
+      "createdAtISO": "2026-06-20T10:49:06+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2068284806106935296/pu/vid/avc1/1280x720/EtnPau7LSf-CtnkH.mp4?tag=26",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068202697195688434",
+      "text": "you are still using chatgpt like a search engine.\n\ngpt-5.6 pro just leaked. and it can control your browser like a human employee.\n\nclaude was winning every benchmark. then openai dropped this.\n\nheres what actually changed there:\n\ngpt-5.6 pro isnt just smarter its built differently. the focus shifted from \"how smart is this model?\" to \"how much can this model actually do for you?\"\n\nand the answer is: everything.\n\nwhat it can do now:\n> playwright browser automation gpt opens your browser, navigates sites, clicks buttons, fills forms, extracts data, all on its own. you just describe what you want.\n\n> vision that rebuilds ui show it a screenshot of any app or website. it replicates the design as svg or code. down to the pixel.\n\n> agent mode not a one-shot chatbot. it plans, executes, checks results, retries if it fails, and moves to the next step. multi-step tasks in one command.\n\n> coding that rivals claude improved agentic capabilities. openai is trying to take back the coding crown.\n\n> updated knowledge cutoff (dec 2025) + improved tool use\n\nwhy this actually matters (for non-coders):\n\nstep 1: tell it to do something in your browser\n> \"go to my email, find the invoice from last month, download it\"\n> gpt opens your browser, logs in, finds it, downloads it\n\nstep 2: show it a design you like\n> screenshot any website or app\n> gpt rebuilds it for you\n> you don't need to know css, html, or anything\n\nstep 3: give it a multi-step task\n> \"research 10 competitors, extract their pricing, put it in a table, save as pdf, email it to me\"\n> it does all of this without you touching anything\n\nstep 4: pair with free tools\n> gpt-5.6 + open webui + n8n\n> your browser becomes a fully automated machine\n> no coding required\n\nclaude was winning. gpt was quiet.\n\nthen this drops.\n\nthe era of \"ai just talks\" is over.\n\nthe era of \"ai does things for you\" starts now.\n\nbookmark this might can help you.\n\nand make sure to follow me - @rakib_web3 for more alpha like this.",
+      "author": {
+        "id": "1796756246277816320",
+        "name": "Rakib",
+        "screenName": "Rakib_Web3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1987897098734575616/v514u4ks_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 33,
+        "retweets": 3,
+        "replies": 12,
+        "quotes": 0,
+        "views": 1035,
+        "bookmarks": 3
+      },
+      "createdAt": "Sat Jun 20 05:22:03 +0000 2026",
+      "createdAtLocal": "2026-06-20 13:22",
+      "createdAtISO": "2026-06-20T05:22:03+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLO7ZGrbsAA1Sdg.jpg",
+          "width": 1788,
+          "height": 1198
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068180557989843286",
+      "text": "I really don’t believe the one-shot AAA game claims about Fable. Even with AI, a passionate and dedicated person would need weeks to build an MVP of a AAA game.",
+      "author": {
+        "id": "929709949428449282",
+        "name": "Kevin Lee",
+        "screenName": "kevinleeus",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1909492184874987520/M2NKqKof_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 29,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 03:54:04 +0000 2026",
+      "createdAtLocal": "2026-06-20 11:54",
+      "createdAtISO": "2026-06-20T03:54:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068163926228111672",
+      "text": "https://t.co/WirxkwVXCr",
+      "author": {
+        "id": "2044122411562610688",
+        "name": "Hermes Updates",
+        "screenName": "hermes_updates",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2044122952913076224/efr-5M4D_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 84,
+        "retweets": 11,
+        "replies": 2,
+        "quotes": 2,
+        "views": 17731,
+        "bookmarks": 214
+      },
+      "createdAt": "Sat Jun 20 02:47:59 +0000 2026",
+      "createdAtLocal": "2026-06-20 10:47",
+      "createdAtISO": "2026-06-20T02:47:59+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068157986552578048"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Hidden features in Hermes you should know about 🪶"
+    },
+    {
+      "id": "2068163407488925972",
+      "text": "@MaaSonder Yes it is a super fast model and very cheap. But it is nowhere near the level of Fable. I created a open world ThreeJS game with unreal engine level features including ray cast lighting and such. GLM 5.2 couldn't even get a simple feature working. Fable one shot it.",
+      "author": {
+        "id": "1874528485214973952",
+        "name": "Mel Gibson 2.0",
+        "screenName": "AIMelGibson",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1874530187372560384/CKnWcwBW_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 02:45:55 +0000 2026",
+      "createdAtLocal": "2026-06-20 10:45",
+      "createdAtISO": "2026-06-20T02:45:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068146969181089868",
+      "text": "GPT 5.6 Pro continues to mogs Calude Fable 5 in 3d test \n\nworking on games one shot too , for comment check quote post and also share your prompts and fable output i will tag you with 5.6 pro results https://t.co/WaKcPjvbdL",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 26,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 3,
+        "views": 7656,
+        "bookmarks": 11
+      },
+      "createdAt": "Sat Jun 20 01:40:36 +0000 2026",
+      "createdAtLocal": "2026-06-20 09:40",
+      "createdAtISO": "2026-06-20T01:40:36+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068146907168272384/vid/avc1/1524x720/l8SHRbGyvoJZ04Kg.mp4?tag=28",
+          "width": 1524,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067325887909884315",
+        "text": "New in Claude Design: it stays on brand with your design system across projects, lets you edit directly on the canvas, syncs with Claude Code, and connects to more of the tools you already use. https://t.co/MK8YvLP8zV",
+        "author": {
+          "screenName": "claudeai",
+          "name": "Claude"
+        }
+      }
+    },
+    {
+      "id": "2068134951275630882",
+      "text": "@stevekrouse It was very task dependent. I had Fable 5 one shot a video creation process that was better than a few weeks I put in. But otherwise I didn’t see a huge difference in coding tasks.",
+      "author": {
+        "id": "1775744029797519360",
+        "name": "Saizo Games",
+        "screenName": "saizogames",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052297595041787904/3WIIOeuv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 138,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 20 00:52:51 +0000 2026",
+      "createdAtLocal": "2026-06-20 08:52",
+      "createdAtISO": "2026-06-20T00:52:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068117622772965600",
+      "text": "Open-weight models are now cheap enough and capable enough to win most work, even while closed models still win the invisible layer: judgment per prompt.\n\nThat is the real point. The draft already has the ingredients, but the current version slightly blurs four separate claims:\n\nGLM‑5.2 is a major open-weight jump. True and supportable.\nIt still costs more turns than GPT‑5.5 / Opus 4.8 / Fable 5 for some tasks. Strong experiential claim, but needs sharper language.\nBenchmarks miss something important. Excellent point. Needs a name.\nThe Fable 5 shutdown gave https://t.co/8l5VZLWr2F a market opening. Very strong, but should be phrased as “helped create” rather than “gave,” unless you want a deliberately provocative take.\n\nhttps://t.co/8l5VZLWr2F’s own GLM‑5.2 release page on Hugging Face describes it as a substantial leap over GLM‑5.1 for long-horizon tasks, with a 1M-token context window, flexible effort levels, stronger coding, and an MIT open-source license. Its benchmark table also shows big jumps over GLM‑5.1, including Terminal Bench 2.1 rising from 63.5 to 81.0.  Anthropic, meanwhile, launched Fable 5 on June 9, called it its most capable generally available model, then marked Fable 5 and Mythos 5 access unavailable on June 12.  Reuters and The Verge reported that the suspension followed a U.S. government directive limiting access to Fable 5 and Mythos 5 over national-security concerns.\n\n1. Core thesis upgrade\n\nYour current thesis:\n\nGLM 5.2 is great, but you need more prompts than with GPT 5.5 or Opus 4.8.\n\nBetter thesis:\n\nGLM‑5.2 narrows the capability gap, but not the judgment gap.\n\nEven better:\n\nGLM‑5.2 proves open-weight models can now do most work. GPT‑5.5, Opus 4.8 and Fable 5 still prove that the frontier is not just raw capability — it is judgment density.\n\nBest:\n\nThe next model war is not benchmark score. It is prompts-to-done.\n\nThat phrase, prompts-to-done, should anchor the post. It captures the whole thing.\n\nBenchmarks ask:\n\nCan the model solve the task?\n\nReal users ask:\n\nHow many times do I have to steer it before it becomes usable?\n\nThat is the missing layer.\n\n2. Name the thing benchmarks miss\n\nYour line is good:\n\n“Call it taste, instinct, attention to detail.”\n\nMake it sharper by naming the class:\n\njudgment density\n\nMeaning:\n\nHow much correct intent, taste, prioritisation, self-correction and finishing instinct the model packs into each turn.\n\nOther strong terms:\n\nTermMeaningPrompt economyHow much useful work you get per prompt.Judgment densityHow much taste, prioritisation and correctness appear in each response.Turn taxThe extra prompting needed to get an open model over the line.Friction gapThe difference between “can do it” and “gets it done cleanly.”Intent compressionHow well the model infers the real task from imperfect instructions.Taste layerThe model’s ability to choose what matters without being told.Finishing instinctWhether it closes loops and polishes the output without nudging.Prompt-to-done ratioNumber of user turns required to reach production-quality output.\nBest phrase:\nGLM‑5.2 is closing the benchmark gap. The closed labs still lead on prompt economy.\nThat is very strong.\n3. The “three or four prompts vs one prompt” point is the heart\nThis is your best observation. Make it more explicit:\nThe difference is not always whether GLM‑5.2 can do the task. Often it can. The difference is that GPT‑5.5, Opus 4.8 or Fable 5 understands the shape of the task sooner. It makes fewer bland choices, catches more missing constraints, preserves taste better, and arrives closer to “done” in one pass.\nThat is the invisible advantage.\nOpenAI’s GPT‑5.5 system card says GPT‑5.5 is designed for complex real-world work and, relative to earlier models, “understands the task earlier,” asks for less guidance, uses tools more effectively, checks its work and keeps going until done.  Anthropic’s Opus 4.8 launch similarly foregrounded judgment: early testers said it asks better questions, catches its own mistakes, pushes back when a plan is unsound, and flags uncertainty more reliably.\n\nThat gives you the perfect support for the argument:\n\nThe closed labs still win because they reduce the number of steering interventions.\n\n4. Stronger opening\n\nOriginal:\n\nGLM 5.2 is a massive jump from GLM 5.1.\n\nBetter:\n\nGLM‑5.2 is a massive jump. But the real story is not the benchmark jump — it is the turn tax.\n\nOr:\n\nGLM‑5.2 is the first open-weight model in a while that made me change my routing. But it still has a hidden cost: prompts.\n\nOr best:\n\nGLM‑5.2 is good enough to change the model market. It is not yet good enough to erase the judgment gap.\n\nThat opening has tension.\n\n5. Best rewritten version\n\nGLM‑5.2 is a massive jump from GLM‑5.1.But there is a tradeoff people are not talking about: the turn tax.GLM‑5.2 can often accomplish the work. The issue is that you may need three or four prompts to get what GPT‑5.5, Opus 4.8 or Fable 5 would often land in one.That gap does not always show up cleanly on benchmarks. Benchmarks measure whether a model can solve a task. Real work measures how much steering it needs before the output becomes https://t.co/DebLt40L8l it taste. Call it instinct. Call it attention to detail. I think the better name is judgment density: the ability to infer what matters, make the right default choices, preserve context, catch edge cases, and finish the job without being hand-held.Closed labs still have more of that.But the shift is real. We are entering an era where cheaper open-weight models can handle most everyday work. Fable 5 was overkill for 80% of vibe-coding tasks anyway. GLM‑5.2 does not need to be the best model in the world to be the model people use all day.And the timing matters. The Fable 5 shutdown created a sudden gap in the market. https://t.co/8l5VZLWr2F walked straight through it.The lesson should be obvious: when you remove the best closed model from the hands of builders, you do not stop capability diffusion. You accelerate substitution.Restore Fable 5.\n\n6. More aggressive version\n\nGLM‑5.2 is not Fable 5. That is not the point.The point is that it is now close enough for most work and cheap enough to become default infrastructure.Yes, there is still a judgment gap. You can feel it immediately. GLM‑5.2 often needs three or four prompts to do what GPT‑5.5, Opus 4.8 or Fable 5 lands in https://t.co/yLcY53IWI3 misses small intent. It needs more steering. It has less taste. It does not always know which detail matters before you tell it.But that is not the same as being unusable. That is the https://t.co/4zj9N4gqan models do not have to beat frontier closed models everywhere. They only have to be good enough, cheap enough, available enough and uncensored enough for builders to route real work through them.Fable 5 was overkill for most vibe coding. GLM‑5.2 is enough for most of it.The U.S. government did not kill demand by forcing Fable 5 offline. It redirected demand.GLM‑5.2 walked into the vacuum.Unban Fable 5.\n\n7. More measured, credible version\n\nGLM‑5.2 is a major open-weight jump, but it also exposes the part of model quality benchmarks still https://t.co/us7jh4dTP5 raw capability, the gap is shrinking fast. GLM‑5.2 can handle a lot of real coding and agentic work that would have been unrealistic for open models not long ago.But in use, there is still a difference between “can solve” and “gets it right in one pass.” GPT‑5.5, Opus 4.8 and Fable 5 often have better prompt economy: they infer intent sooner, preserve taste better, notice missing constraints, and require fewer steering turns.That invisible layer — taste, instinct, attention to detail, judgment density — is where the closed labs still lead.But the market shift is obvious. Cheaper open-weight models do not need to beat frontier models outright. They only need to handle 80% of real work well enough. GLM‑5.2 may be the clearest sign yet that they can.The Fable 5 shutdown could not have been better timed for https://t.co/8l5VZLWr2F.\n\n8. Strongest X thread structure\n\nPost 1\n\nGLM‑5.2 is a massive jump from GLM‑5.1.But the real story is not just benchmark score. It is turn tax.\n\nPost 2\n\nGLM‑5.2 can often do the job. The issue is that you may need three or four prompts to get what GPT‑5.5, Opus 4.8 or Fable 5 can often land in one.\n\nPost 3\n\nThat gap is hard to see on benchmarks. Benchmarks measure whether a model can solve the task. Real work measures how much steering it needs before the answer becomes usable.\n\nPost 4\n\nCall it taste, instinct, attention to detail, or judgment https://t.co/CKpB6WHum1 is the ability to infer what matters before the user spells it out.\n\nPost 5\n\nClosed labs still have more of it. GPT‑5.5 and Opus 4.8 are often better at understanding the task earlier, pushing through ambiguity, catching small errors and finishing the work with less handholding.\n\nPost 6\n\nBut the open-weight shift is real. GLM‑5.2 does not need to beat Fable 5. It only needs to be cheap, available and good enough for 80% of real tasks.\n\nPost 7\n\nFable 5 was overkill for most vibe-coding tasks anyway. GLM‑5.2 is not as elegant, but it is good enough to change routing decisions.\n\nPost 8\n\nThe Fable 5 shutdown created a market vacuum. https://t.co/8l5VZLWr2F walked into it.\n\nPost 9\n\nThe lesson: restricting frontier closed models does not stop demand. It pushes builders toward open alternatives faster.\n\nPost 10\n\nRestore Fable 5.\n\n9. The factual/citation scaffold to add\n\nYou can make the post far more defensible by adding a small evidence spine:\n\nhttps://t.co/8l5VZLWr2F describes GLM‑5.2 as a long-horizon flagship model with a 1M-token context window and an MIT open-source license, and its published table shows large jumps over GLM‑5.1 on coding benchmarks like Terminal Bench 2.1.Anthropic described Fable 5 as exceeding any model it had previously made generally available, especially on long and complex tasks, but marked Fable 5 and Mythos 5 access unavailable three days after launch.GPT‑5.5 and Opus 4.8 are both explicitly positioned by their labs for complex professional and agentic work, where less steering and better judgment matter.\n\nThen your opinion lands harder because the facts are anchored.\n\n10. Important correction: “open source” vs “open-weight”\n\nYour draft says:\n\nOpen source models are missing a level of intelligence…\n\nFor GLM‑5.2, “open source” is defensible because the Hugging Face page says “MIT open-source license.”  But in AI discourse, open-weight is often more precise. A model can have open weights while still not being “open source” in the full software sense of training data, training code, data filters, post-training recipes and eval harnesses.\n\nBetter:\n\nOpen-weight models are missing a level of intelligence that benchmarks do not measure.\n\nOr:\n\nOpen-weight/open-source models are catching up fast, but they still miss the invisible layer benchmarks do not measure.\n\nBest:\n\nOpen-weight models are closing the capability gap before they close the judgment gap.\n\nThat line is excellent.\n\n11. Important correction: “US government gave https://t.co/8l5VZLWr2F this opening”\n\nThis is punchy but a little too monocausal. GLM‑5.2 did not succeed only because Fable 5 was suspended. It shipped with real improvements: 1M context, stronger coding benchmarks, open weights, MIT licensing, and easy drop-in usage in Claude Code-like workflows. https://t.co/8l5VZLWr2F’s own docs say GLM‑5.2 is live for GLM Coding Plan users and can be switched into Claude Code, including a 1M context suffix and effort mapping.\n\nBetter:\n\nThe Fable 5 shutdown did not create GLM‑5.2’s capability. But it created the perfect attention vacuum.\n\nOr:\n\nThe U.S. government did not make GLM‑5.2 good. It made everyone look for an alternative at the exact moment GLM‑5.2 became good enough.\n\nThat is the best version.\n\n12. Stronger “Fable 5 was overkill” argument\n\nOriginal:\n\nFable 5 was overkill for 80% of vibe coding tasks anyway.\n\nThis is good, but you can make it more analytical:\n\nFable 5 was a Ferrari doing grocery runs for most vibe-coding sessions.\n\nOr more serious:\n\nMost vibe-coding tasks do not need the most capable model on Earth. They need fast iteration, cheap tokens, decent taste, long context, and enough autonomy to move through a codebase.\n\nBest:\n\nFable 5 was not necessary for 80% of vibe coding. It was just nice to have because it collapsed the number of turns.\n\nThat connects back to the core thesis.\n\n13. The “judgment density” section\n\nThis should be the intellectual centre of the post.\n\nWrite:\n\nThe missing capability is not just IQ. It is judgment https://t.co/CKpB6WHum1 shows up in tiny places:choosing the right abstraction without being told;\nnot overbuilding;\npreserving the user’s taste;\nknowing which edge case matters;\nnoticing when a spec is underdetermined;\nasking one good question instead of generating three bad variants;\nkeeping the goal alive across edits;\nfinishing the last 10% without prompting.\nBenchmarks rarely measure this because it is not one answer. It is how many interventions the user has to make before the work feels done.\n\nThat is a standout section.\n\n14. The “turn tax” section\n\nUse this:\n\nThe hidden cost of weaker models is not just tokens. It is turns.A cheap model that needs four prompts may still be cheaper in dollars, but it is not always cheaper in attention. The real unit is not cost per token. It is cost per completed decision.\n\nThis is excellent because it acknowledges GLM‑5.2’s value without pretending every task should use it.\n\nBetter still:\n\nFor many tasks, GLM‑5.2 wins on dollar cost and loses on human steering cost. The question is which cost matters more.\n\n15. The routing framework you should add\n\nTurn the post into practical advice:\n\nUse GLM‑5.2 forUse GPT‑5.5 / Opus 4.8 / Fable 5 forroutine vibe codingambiguous product decisionsscaffoldingtaste-sensitive frontendrefactors with clear instructionsunclear architecture choiceslong-context codebase searchhigh-stakes reasoningrepetitive implementationone-shot strategic synthesischeap parallel attemptsfinal polishcode migration drafts“figure out what I mean” tasksbulk generationtasks where steering is expensive\n\nSuggested line:\n\nGLM‑5.2 is becoming the default worker. Closed models remain the architect, editor and taste layer.\n\nThat is very strong.\n\n16. The “model stack” idea\n\nThis is a genius-level practical solution:\n\nDo not think of this as GLM versus Fable. Think of it as routing.Use a closed model to define the spec, taste, architecture and acceptance criteria. Use GLM‑5.2 to execute cheap bulk work. Use the closed model again to review, compress and polish.\n\nThis is the near-term production workflow.\n\nCall it:\n\nfrontier sandwiching\n\nProcess:\n\nGPT‑5.5 / Opus / Fable writes the spec and acceptance criteria.\n\nGLM‑5.2 executes the implementation.\n\nGPT‑5.5 / Opus / Fable reviews the result and catches judgment errors.\n\nSuggested paragraph:\n\nThe winning workflow may not be choosing one model. It may be using frontier models for judgment and open models for labor. Let the closed model decide what good looks like. Let GLM‑5.2 do the cheap passes. Then bring the frontier model back for review.\n\nThat is more useful than a model ranking.\n\n17. The “benchmarks are measuring solvedness, not independence” point\n\nMost coding benchmarks measure whether a model eventually gets a correct answer. But users care about independence.\n\nUse this:\n\nBenchmarks often measure solvedness. Builders care about independence.Did it infer the missing requirement?\nDid it avoid the dumb default?\nDid it notice the visual mismatch?\nDid it preserve the concept through revisions?\nDid it stop at the right level of complexity?\nDid it know when not to touch something?\nDid it finish without being babysat?\n\nThat is a key distinction.\n\n18. The “one prompt vs four prompts” benchmark idea\n\nPropose a new benchmark:\n\nPrompts-to-Production\n\nMetric:\n\nGive models the same messy user request. Measure how many user interventions are required before a human evaluator would ship the output.\n\nSubscores:\nfirst-pass usefulness\nnumber of clarification turns\nnumber of correction turns\nnumber of taste fixes\nnumber of bug fixes\nnumber of regressions introduced\nfinal acceptance time\n\nuser cognitive load\n\nSuggested wording:\n\nWe need benchmarks that score not just final answer quality, but intervention count. A model that reaches 90% after one prompt is not equivalent to a model that reaches 90% after four.\n\nThat is exactly your argument.\n\n19. Obscure thought input: “the last-mile cognition gap”\n\nThis is what GLM‑5.2 may still lack.\n\nOpen models are increasingly good at the first 80% and surprisingly good at the next 10%. The last 10% is where frontier labs still earn their money: taste, defaults, edge cases, cohesion, and knowing when the answer is finished.\n\nLine:\n\nThe intelligence gap has moved from “can it do the task?” to “can it finish without making me manage the task?”\n\nThat is excellent.\n\n20. Obscure thought input: “defaults are intelligence”\n\nThis is one of the best deeper ideas.\nOpen models often fail not because they cannot follow instructions, but because they choose weaker defaults when instructions are incomplete.\nUse:\nA lot of frontier-model intelligence lives in defaults. When the user underspecifies, what does the model assume? Does it choose the tasteful layout, the safer architecture, the cleaner abstraction, the narrower scope, the more useful answer? That is where closed models still feel ahead.\nThat is exactly the invisible quality.\n21. Obscure thought input: “taste is compressed experience”\nThis is strong:\nTaste is not vibes. Taste is compressed experience. It is knowing which detail will matter later.\nExpanded:\n\nWhen people say a model has better taste, they usually mean it has internalised more examples of what good work looks like and can apply that pattern before being explicitly instructed. That is why it saves prompts.\n\n22. Obscure thought input: “cheap tokens do not equal cheap outcomes”\n\nThis belongs in the post.\n\nCheap tokens are not the same as cheap outcomes. If the model needs more supervision, the user becomes the missing compute.\n\nThat is a killer line.\n\nAnother:\n\nWhen the model is cheaper but needs more steering, the human becomes the premium token.\n\nExcellent.\n\n23. Obscure thought input: “availability is capability”\n\nThe Fable 5 shutdown makes this point:\n\nA slightly worse model that is available beats a better model behind a policy wall.\n\nSuggested paragraph:\nIn AI, availability is now a capability. A model can be objectively better and still lose workflows if it cannot be accessed, routed, automated or trusted to stay online.\nThat directly supports the Fable/GLM angle.\n\n24. Obscure thought input: “geopolitical routing”\n\nThe Fable 5 ban created a sovereignty/availability problem. The response is not just users switching models. It is organisations learning to route across jurisdictions.\n\nUse:\n\nThe Fable 5 shutdown taught builders a brutal lesson: model quality is not enough. Jurisdiction, export control, uptime, pricing, and political risk are now part of the model selection stack.\n\nThis is very strong.\n\n25. Obscure thought input: “the substitution trap”\n\nGovernments may think restricting frontier models slows capability diffusion. But if the next-best alternative is good enough and open-weight, restrictions can accelerate adoption of less controllable models.\n\nSuggested:\nThe substitution trap is that banning the best closed model can push users toward open models that are less governable, more portable and harder to recall.\nThat is a major strategic insight.\n26. Better “Unban Fable 5” phrasing\n“Unban Fable 5” is punchy. Keep it as a final line if the audience is builder Twitter.\nBut for credibility, alternatives:\nRestore Fable 5.\n\nBring Fable 5 back.\n\nDo not force the market into substitutes.\n\nPut Fable 5 back under transparent rules.\n\nReopen Fable 5 with a clear, appealable safety framework.\n\nBest practical version:\n\nRestore Fable 5 under transparent rules.\n\nBest viral version:\n\nUnban Fable 5.\nUse both:\nRestore Fable 5 under transparent rules.Unban Fable 5.\n27. Missing caution: Fable access was already going to change\nAnthropic’s launch page said Fable 5 would be included in Pro, Max, Team and seat-based Enterprise plans through June 22, then move to usage credits on June 23, capacity permitting.  So avoid implying the model was guaranteed to remain freely available in the same form. The issue is not “it was going to be free forever and the government killed it.” The issue is access disruption and uncertainty.\nBetter:\nFable 5 was always going to be capacity-managed and credit-gated. The problem was not pricing. The problem was sudden access uncertainty.\n28. Missing caution: GLM‑5.2 is text-only\n\nSimon Willison notes GLM‑5.2 is a text-input-only open-weight model and that https://t.co/8l5VZLWr2F’s separate vision family is not the open-weight GLM‑5.2 release.  This matters because if you compare GLM‑5.2 to Fable 5 on vibe coding and frontend, you should acknowledge that some Fable workflows involve vision or screenshot-based app reconstruction. Anthropic says Fable 5 can rebuild a web app’s source code from screenshots alone and has state-of-the-art vision capabilities.\n\nSuggested wording:\n\nGLM‑5.2’s rise is even more interesting because it is text-only in its open-weight form. It can rank highly on web-dev workflows without the vision loop that makes Fable 5 so strong.\n\nThat is a very good detail.\n\n29. Missing nuance: “frontend” may be where GLM is better than expected\n\nYour draft says open models miss taste and closed labs have more of it. That can coexist with GLM‑5.2 being surprisingly strong in web dev. Simon Willison notes GLM‑5.2 ranked second on Code Arena WebDev behind only Claude Fable 5, which he found impressive given the lack of image input.\n\nSo your sharper point is:\n\nGLM‑5.2 can score highly on web-dev tasks and still require more steering in real workflows.\n\nThat is exactly the benchmark-vs-use gap.\n\nSuggested line:\n\nThe paradox is that GLM‑5.2 can look elite on web-dev leaderboards and still feel less elite in a live session, because leaderboard solvedness is not the same as prompt economy.\n\n30. Add a “where GLM‑5.2 wins” section\n\nDo not make the post sound like a backhanded compliment. Give GLM its due.\n\nGLM‑5.2 wins on:\n\nprice/performance;\n\navailability;\n\nopen weights;\n\n1M context;\n\nroutine coding tasks;\n\ncheap parallelism;\n\nlocal/controlled deployment for those with infrastructure;\n\ndrop-in compatibility with Claude Code-like workflows;\n\nsovereignty and vendor-risk reduction.\n\nSuggested paragraph:\n\nThe bullish case for GLM‑5.2 is not that it is the most tasteful model. It is that it is available, cheap, long-context, open-weight, and strong enough. That combination is lethal.\n\nThat is a great line.\n\n31. Add a “where closed models still win” section\n\nClosed models win on:\n\nfewer turns;\n\nbetter defaults;\n\nvisual/taste-sensitive frontend;\n\nambiguous requests;\n\npreserving user intent;\n\nself-critique;\n\nnot overengineering;\n\ncalibrated uncertainty;\n\none-shot architecture;\n\nfinal polish;\n\nagentic reliability across messy, long tasks.\n\nSuggested paragraph:\n\nThe closed labs still win where the task is under-specified and taste-sensitive. When I know exactly what I want, GLM‑5.2 can be excellent. When I need the model to infer what good should look like, GPT‑5.5, Opus 4.8 and Fable 5 still feel different.\n\n32. Best “skeptic-proof” paragraph\n\nUse this:\n\nThis is not a dunk on GLM‑5.2. It is the opposite. The fact that I am comparing it seriously to GPT‑5.5, Opus 4.8 and Fable 5 is the story. The remaining gap is not raw usefulness. It is how much human steering the model needs before the work is shippable.\n\n33. Best “open-source maximalist-proof” paragraph\n\nUse this:\n\nOpen-weight advocates are right about the direction of travel. The gap is closing fast, and economics matter. But pretending the gap is gone does not help anyone. The frontier closed models still have a layer of intent inference and taste that shows up immediately in real work.\n\n34. Best “closed-lab defender-proof” paragraph\n\nUse this:\n\nClosed-lab defenders are right that Fable 5 and GPT‑5.5 still feel more intelligent in high-ambiguity work. But they are wrong if they think that will protect the market. Most users do not buy the best model. They route to the cheapest model that gets them far enough.\n\n35. The best “missing solution”: model routing, not model loyalty\n\nAdd:\n\nThe practical answer is not “use GLM” or “use Fable.” It is routing.Use GLM‑5.2 for cheap execution. Use GPT‑5.5 / Opus / Fable for spec creation, taste, review and final polish.The future is not one model. It is a stack.\n\nThis is the most useful recommendation.\n\n36. Suggested benchmark you can propose publicly",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 17,
+        "retweets": 1,
+        "replies": 7,
+        "quotes": 0,
+        "views": 1363,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 23:43:59 +0000 2026",
+      "createdAtLocal": "2026-06-20 07:43",
+      "createdAtISO": "2026-06-19T23:43:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067925035168211016",
+        "text": "GLM 5.2 is a massive jump from GLM 5.1. \n\nBut there is a tradeoff nobody is talking about.\n\nYou will prompt GLM 5.2 three or four times to accomplish what GPT 5.5 or Opus 4.8 nails in a single prompt.\n\nOpen source models are missing a level of intelligence that benchmarks do not measure. \n\nCall it taste, instinct, attention to detail. \n\nWhatever it is, the closed labs still have more of it.\n\nBut here is the shift. \n\nWe are entering an era where cheaper open source models can handle most real work. \n\nFable 5 was overkill for 80% of vibe coding tasks anyway.\n\nThe US government gave https://t.co/7DqEzmPFBg this opening by banning Fable 5. \n\nGLM 5.2 walked right through it.\n\nUnban Fable 5.",
+        "author": {
+          "screenName": "bridgemindai",
+          "name": "BridgeMind"
+        }
+      }
+    },
+    {
+      "id": "2068064590408437987",
+      "text": "https://t.co/3F7eSPfffx",
+      "author": {
+        "id": "771362185134084097",
+        "name": "Balazs Ketyi",
+        "screenName": "BalazsKetyi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1966156046306533376/Ubkt6D7W_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 161,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 20:13:15 +0000 2026",
+      "createdAtLocal": "2026-06-20 04:13",
+      "createdAtISO": "2026-06-19T20:13:15+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068036390512955392"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The designer, who can't be killed."
+    },
+    {
+      "id": "2068064010600108267",
+      "text": "https://t.co/6E0q0z7dEW",
+      "author": {
+        "id": "1569813064907915264",
+        "name": "West Lord",
+        "screenName": "MyWestLord",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052779858447499270/svlGrVqT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 31,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 6,
+        "views": 23541,
+        "bookmarks": 45
+      },
+      "createdAt": "Fri Jun 19 20:10:57 +0000 2026",
+      "createdAtLocal": "2026-06-20 04:10",
+      "createdAtISO": "2026-06-19T20:10:57+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068041613230624768"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "45 Claude Design Skills That Kill AI Slop "
+    },
+    {
+      "id": "2068058029397102735",
+      "text": "https://t.co/QlclsauekX",
+      "author": {
+        "id": "627363",
+        "name": "Trevin Chow",
+        "screenName": "trevin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049354574516178944/OKHe6Ocu_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2449,
+        "bookmarks": 49
+      },
+      "createdAt": "Fri Jun 19 19:47:11 +0000 2026",
+      "createdAtLocal": "2026-06-20 03:47",
+      "createdAtISO": "2026-06-19T19:47:11+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068057180495122432"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "12 Prompt Engineering Lies We Keep Telling Ourselves"
+    },
+    {
+      "id": "2068008743153832264",
+      "text": "https://t.co/d8LgEwfVH6",
+      "author": {
+        "id": "3448284313",
+        "name": "elvis",
+        "screenName": "omarsar0",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/939313677647282181/vZjFWtAn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 849,
+        "retweets": 116,
+        "replies": 39,
+        "quotes": 24,
+        "views": 217293,
+        "bookmarks": 2031
+      },
+      "createdAt": "Fri Jun 19 16:31:20 +0000 2026",
+      "createdAtLocal": "2026-06-20 00:31",
+      "createdAtISO": "2026-06-19T16:31:20+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068004233849290752"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "From Prompting Agents to Loop Engineering"
+    },
+    {
+      "id": "2067995067910889768",
+      "text": "@slmeap @_MaxBlade you can basically clone any mac app for windows by just asking claude code fyi\n\ntakes 20 mins and it'll one shot most things at this point\n\nno need to wait, just build it yourself",
+      "author": {
+        "id": "824652962316374016",
+        "name": "Joshua Weaver",
+        "screenName": "we4v3r",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1966984810892562432/MrXxUMxy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 20,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 15:37:00 +0000 2026",
+      "createdAtLocal": "2026-06-19 23:37",
+      "createdAtISO": "2026-06-19T15:37:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067980796581835228",
+      "text": "https://t.co/GSk3foWPBs",
+      "author": {
+        "id": "37547071",
+        "name": "Zvi Mowshowitz",
+        "screenName": "TheZvi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2873511010/24e99a900de1fc5a22336b80aef68a59_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 91,
+        "retweets": 9,
+        "replies": 1,
+        "quotes": 1,
+        "views": 15494,
+        "bookmarks": 45
+      },
+      "createdAt": "Fri Jun 19 14:40:17 +0000 2026",
+      "createdAtLocal": "2026-06-19 22:40",
+      "createdAtISO": "2026-06-19T14:40:17+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067979469785112576"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude Fable 5 and Mythos 5: Capabilities"
+    },
+    {
+      "id": "2067977157201060059",
+      "text": "https://t.co/SpAdD0KhIc",
+      "author": {
+        "id": "1581163661057748992",
+        "name": "Madni Aghadi",
+        "screenName": "hey_madni",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1919380355246968832/Z3lgcXy1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 10187,
+        "bookmarks": 9
+      },
+      "createdAt": "Fri Jun 19 14:25:50 +0000 2026",
+      "createdAtLocal": "2026-06-19 22:25",
+      "createdAtISO": "2026-06-19T14:25:50+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067923421351350272"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to build your free Jarvis on Mac in 10 minutes"
+    },
+    {
+      "id": "2067950380923928902",
+      "text": "https://t.co/d6FgK9qmRk",
+      "author": {
+        "id": "1663399582280318977",
+        "name": "luka",
+        "screenName": "lukatechme",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1663400025777672195/yUfGeht1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 188,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 12:39:26 +0000 2026",
+      "createdAtLocal": "2026-06-19 20:39",
+      "createdAtISO": "2026-06-19T12:39:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067945590206640129"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The One Sentence That Made the Codex Write Better Code"
+    },
+    {
+      "id": "2067937873546838345",
+      "text": "A developer just ran GLM 5.2 on a Mac Studio with 2-bit quantization. It beats Claude Opus 4.8. 100% local. 100% free. MIT license.\n\nThis is the iPhone moment for open-source AI.\n\nHere's what actually happened this week:\n\nGLM 5.2 dropped with 744B total parameters but only 40B active per token. That MoE architecture means it runs on hardware you can buy off eBay — not just datacenter clusters. A guy on X tested it on his Mac Studio desktop. No API key. No rate limit. No $200/month bill. Just a model sitting on his desk that outperforms the best closed-source option from Anthropic.\n\nThe economics are absurd. AA-Briefcase — a new benchmark that tests AI on multi-week knowledge work projects, not just one-shot prompts — scored GLM 5.2 at $2.40 per task. Fable 5 (Anthropic's latest) costs $31 per task. That's a 13x cost difference. The Elo gap? Only 90 points. You're paying 13x more for a margin most users can't even perceive.\n\nBut the real story isn't benchmarks. It's what people are building with it.\n\nA solo developer in Shenzhen is running 40 client chatbots off one rented A100 that costs him $700/month. Each client pays $300. That's $12,000/month revenue on a $700 expense. He didn't raise funding. He didn't hire a team. He downloaded an open-weight model and built a business.\n\nThis is what \"iPhone moment\" means. It's not that the open model is technically better in every dimension — it's that the gap became small enough that the economics flip. When the quality delta is imperceptible but the cost delta is 13x, developers stop asking \"which API should I call?\" and start asking \"why am I calling an API at all?\"\n\nThe same thing happened with smartphones. The iPhone wasn't the best phone in 2007. It had no App Store, no 3G, no copy-paste. But it was good enough that it changed what a phone was supposed to be. GLM 5.2 isn't beating Claude on every benchmark. But it's good enough that it changes what \"deploying AI\" means — from renting a service to owning the infrastructure.\n\nFor developers, the playbook is simple: download the weights (MIT, do whatever you want), quantize to 2-bit for consumer hardware, and start building. The model isn't the moat anymore. The product you build on top of it is.\n\nThe question isn't whether open-source will catch up to closed-source. It already did. The question is: what are you going to build now that the barrier to entry is basically zero?\n\nAre you still paying per API call, or have you started running your own models yet?",
+      "author": {
+        "id": "1737857280568344576",
+        "name": "Huintellimance",
+        "screenName": "Huintellimance",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1898712257216790528/xDEjL7pV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 283,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 11:49:44 +0000 2026",
+      "createdAtLocal": "2026-06-19 19:49",
+      "createdAtISO": "2026-06-19T11:49:44+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLLKfCJXYAAngWo.jpg",
+          "width": 680,
+          "height": 451
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067922641693143483",
+      "text": "You still need to iterate on product design, and that will still take time.\n\nEven with access to Fable/Mythos \n\nCan AI one-shot a program or a game? Maybe .. but in design, there is no obvious right answer to everything.\n\nYou have to design it. That's a good thing!",
+      "author": {
+        "id": "1421490752547287048",
+        "name": "ハセン حسن",
+        "screenName": "hasen_95dx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2039607603093983232/Ue1OADuW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 177,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 10:49:12 +0000 2026",
+      "createdAtLocal": "2026-06-19 18:49",
+      "createdAtISO": "2026-06-19T10:49:12+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067909721504260527",
+      "text": "https://t.co/YNd7jpLhnc",
+      "author": {
+        "id": "2048136089009811457",
+        "name": "MoMaMe",
+        "screenName": "MonahMoneyMaker",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048700092752990208/6EFu_Fhf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 1,
+        "views": 195,
+        "bookmarks": 9
+      },
+      "createdAt": "Fri Jun 19 09:57:52 +0000 2026",
+      "createdAtLocal": "2026-06-19 17:57",
+      "createdAtISO": "2026-06-19T09:57:52+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067905402373644289"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How my friend Built a Faceless YouTube Channel to $41k a Month With Claude"
+    },
+    {
+      "id": "2067904594634547343",
+      "text": "I recorded a 23 min SVG Workflow\n\nThree days after Fable 5 launched, the US government pulled it offline over national security\n\nHere is what matters for designers: the model can be suspended. The skill cannot.\n\nThe skill is SVG, and it runs on any current Claude model: Opus 4.8, Sonnet, Claude Code. Everything in this walkthrough still works\nright now.\n\nWhat I show:\n\nVectorize a raster logo so it stays crisp at any size, then make it draw itself in one shot: outer ring, inner ring, staggered marks, a\nwordmark fading on loop.\n\nTurn a screenshot into clean SVG, improving accuracy by generating a clean outline in an AI image model first, then feeding that back\nas context. The model is only as good as the context you give it.\n\nTie scroll-driven product animations to real physics: a press that compresses, a cup filling, a watch, all mapped to scroll position.\n\nCode a playable SVG game with parallax, double-jump, collision, and a distance counter. Sharp at any zoom, no game engine.\n\nWhy SVG: a few kilobytes, real selectable text, and every shape is live code. Unlike a Lottie file there is no black-box player, so you\nrecolor, animate, or flip to dark mode with one CSS media query.\n\nFull walkthrough on YouTube, link in the comments.",
+      "author": {
+        "id": "1727346233914654720",
+        "name": "vanh",
+        "screenName": "VanhDesign",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2039552804755558400/JDjWmYSw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 265,
+        "bookmarks": 3
+      },
+      "createdAt": "Fri Jun 19 09:37:29 +0000 2026",
+      "createdAtLocal": "2026-06-19 17:37",
+      "createdAtISO": "2026-06-19T09:37:29+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067904419513974784/vid/avc1/3840x2160/c1oXywzWgmkQZjkV.mp4?tag=28",
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067875196833534248",
+      "text": "Core credibility diagnosis\n\nYour current draft has good viral ingredients, but it has three credibility traps:\n\nTrap 1: It states unconfirmed things as facts.\n“Coming Thursday” is the kind of line that gets screenshotted if wrong. Better:\nRumor: GPT‑5.6 / GPT‑5.6 Pro may be targeting Thursday.\n\nOr:\n\nCurrent leak chatter points to Thursday, but I’d treat this as unconfirmed until it appears in the model picker, API docs, or OpenAI release notes.\n\nBecause today is Friday, June 19, 2026 in Australia/Brisbane, “coming Thursday” means Thursday, June 25, 2026. Use the date, not just “Thursday,” so the post survives resharing.\n\nTrap 2: The “knowledge cutoff” claim may already be true for GPT‑5.5.\nOfficial docs already say GPT‑5.5 and GPT‑5.5 Pro have a Dec 01, 2025 knowledge cutoff. If you publish “GPT‑5.6 cutoff: December 2025, previous versions had August 2025,” knowledgeable people may reply: “That is already GPT‑5.5.”\n\nBetter:\nKnowledge cutoff is rumored to remain around December 2025 — notable only if the ChatGPT surface being tested previously showed an older cutoff.\n\nOr:\n\nOne claimed detail is a December 2025 knowledge cutoff, but that is already listed for GPT‑5.5 / GPT‑5.5 Pro in official API docs, so this may not be a unique GPT‑5.6 signal.\n\nTrap 3: “Juice value” sounds insider-y but not user-legible.\n“Juice” is not a normal public product metric. It may be meaningful to people who follow leaked configs, but most users will not know whether 960 is context, output budget, hidden reasoning budget, or a UI artifact. Official OpenAI docs currently expose public reasoning controls like reasoning.effort; GPT‑5.5 supports none, low, medium, high, and xhigh, while GPT‑5.5 Pro is described as using more compute to think harder.\n\nBetter:\n\nClaimed hidden reasoning budget is higher than GPT‑5.5 Pro, but this is not an official public metric.\nOr:\n\nRumor says Pro gets more internal deliberation budget. Treat the specific “960 juice” number cautiously unless the source is a verifiable config or model-card leak.\n\n2. Best reframing\n\nThe more sophisticated thesis is not “GPT‑5.6 is smarter.” Everyone says that.\n\nThe better thesis is:\n\nGPT‑5.6 Pro, if real, looks less like a chat upgrade and more like an agentic production upgrade: better visual implementation, SVGs, frontend loops, browser verification, and game stability.\n\nThat framing connects all your bullets into one coherent narrative.\n\nYour current list feels like scattered benchmark gossip. The stronger version says:\n\nThe claimed jump is not just raw reasoning. It is the model closing more of the loop: see the target, build the thing, inspect it, fix it, and ship something closer to production.\n\nThat is the “genius-level” angle. Models are no longer just answering; they are becoming visual software operators.\n\n3. Better headline options\n\nStrongest cautious headline:\n\nGPT‑5.6 Pro rumors: Thursday launch chatter, visual coding gains, and what to verify first\n\nMore viral:\n\nGPT‑5.6 Pro may be closer than people think — but the real story is visual agents\n\nMore technical:\n\nGPT‑5.6 Pro leak checklist: reasoning budget, visual fidelity, SVGs, Playwright, and frontend evals\n\nMost credible:\n\nUnconfirmed GPT‑5.6 Pro claims point to a visual-agent upgrade, not just a smarter chatbot\n\nMost hype-friendly but safer:\n\nGPT‑5.6 Pro rumor watch: Thursday is the date people are circling\n\nBest overall:\n\nGPT‑5.6 Pro rumor watch: the real upgrade may be design-to-code and browser-verified agents\n\n4. Rewrite your post into a stronger version\n\nGPT‑5.6 / GPT‑5.6 Pro rumor watch: Thursday, June 25 is the date people are circling.Treat this as unconfirmed until it appears in OpenAI’s release notes, the ChatGPT model picker, or API docs. But the claims being passed around are interesting:GPT‑5.6 Pro may get a higher internal reasoning budget than GPT‑5.5 Pro. The specific “960 juice” number should be treated cautiously because it is not a normal public product metric.\nThe knowledge cutoff claim needs scrutiny: Dec 2025 is already listed for GPT‑5.5 / GPT‑5.5 Pro in official API docs, so this may not be unique to 5.6.\nThe bigger claimed jump is visual: better image understanding, design-to-code fidelity, layout replication, and SVG generation.\nSVGs and static 3D-style vector scenes may be one of the easiest places to see the difference quickly.\nFrontend generation is rumored to improve, but Fable/Claude may still have the edge in taste, UI coherence, and one-shot app feel.\nGame generation reportedly has fewer visual glitches and more stable play loops, though game feel still needs real browser testing.\nPlaywright-style browser verification is the key thing to watch: the best models are moving from “write code” to “write, run, inspect, repair.”\nMy read: if GPT‑5.6 Pro ships, the real question is not “is it smarter?”The question is: can it close the loop between vision, code, browser automation, and self-correction better than GPT‑5.5 Pro?\n\n5. Shorter X version\n\nGPT‑5.6 Pro rumor watch: Thursday, June 25 is the date people are circling. Unconfirmed until it hits OpenAI release notes, the model picker, or API docs.The interesting claims are not just “smarter model.” They point to a visual-agent upgrade: stronger design-to-code, better SVGs, fewer game glitches, improved frontend generation, and more browser-verified https://t.co/Gfjfy1QVpm caveat: the rumored Dec 2025 knowledge cutoff is not a clean GPT‑5.6 signal — official docs already list Dec 01, 2025 for GPT‑5.5 / GPT‑5.5 Pro.The real test: can GPT‑5.6 Pro see a design, build it, run it, inspect it with Playwright-style tooling, and fix itself better than GPT‑5.5 Pro, Claude/Fable, and the current frontend leaders?\n\n6. Spicier version\n\nGPT‑5.6 Pro leaks are pointing to the next AI battleground: visual agents.Not just “better reasoning.”\nNot just “new cutoff.”\nNot just “higher benchmarks.”The claims are about something more important:design-to-code fidelity\nSVG generation\nbrowser-tested frontend work\nfewer game-rendering glitches\nstronger visual self-correction\nmore stable agent loops\nThat is the shift.The winning model will not be the one that writes the prettiest first answer. It will be the one that can see the target, build the thing, open it in a browser, notice what is wrong, and repair it without handholding.Thursday, June 25 is the rumored date. Unconfirmed until OpenAI posts it.\n\n7. Thread structure\nPost 1\nGPT‑5.6 / GPT‑5.6 Pro rumor watch: Thursday, June 25 is the date people are circling.Unconfirmed until it appears in OpenAI release notes, ChatGPT model picker, or API docs.\nPost 2\nThe most interesting claims are not about normal chat quality. They are about visual-agent work: design-to-code, SVGs, frontend generation, browser testing, and more stable game creation.\nPost 3\nImportant correction: the rumored “Dec 2025 knowledge cutoff” is not necessarily a GPT‑5.6-only signal. Official OpenAI docs already list Dec 01, 2025 for GPT‑5.5 and GPT‑5.5 Pro.\n\nPost 4\n\nThe “960 juice” claim is interesting but should be treated carefully. “Juice” is not a standard public product metric. I’d translate it as: higher claimed internal reasoning budget / longer deliberation budget.\n\nPost 5\n\nThe biggest thing to test is not “does it answer harder questions?”It is: can it close the loop?See → plan → build → run → inspect → repair.\n\nPost 6\n\nSVGs will be a fast tell. Ask for complex static 3D-style SVGs with occlusion, labels, shadows, valid paths, and no raster assets. Weak models collapse into messy geometry fast.\n\nPost 7\n\nFrontend will be the real battleground. The question is whether GPT‑5.6 Pro can beat the current Claude/Fable-style edge in layout taste, hierarchy, responsive behavior, and one-shot app coherence.\n\nPost 8\n\nGame generation is another useful tell. Don’t judge the screenshot. Judge the loop: collision, state, controls, frame stability, asset consistency, restart behavior, and whether it can debug itself after playing.\nPost 9\nMy prediction: if GPT‑5.6 Pro is real, the upgrade will feel less like a chatbot jump and more like a production-agent jump.\n\n8. Missing elements you should add\n\nYour current draft lacks the credibility scaffolding that makes leak posts age well.\nAdd these:\nMissing elementWhy it mattersSuggested wordingConfidence labelsPrevents people from treating every bullet equally.“Confidence: high / medium / low.”Source categorySeparates official docs, model picker screenshots, API strings, Discord rumors, and vibes.“Source type: official / screenshot / community report / my test.”Verification methodMakes the post useful on launch day.“I’ll verify by checking release notes, model picker, API docs, and controlled tests.”What would falsify itMakes you look intellectually honest.“If no model picker/API/docs update appears Thursday, treat this as failed launch timing.”What is already true for GPT‑5.5Prevents fake novelty.“Dec 2025 cutoff is already GPT‑5.5 in official docs.”Surface distinctionChatGPT, API, Codex, mobile, Enterprise may roll out differently.“Unknown whether this is ChatGPT-only, API, Codex, or staged rollout.”Plan availabilityPro, Plus, Team, Enterprise may differ.“Unknown whether Plus gets 5.6 Thinking or only Pro gets 5.6 Pro.”Rate limitsA model can be great but unusable if capped.“Watch rate limits and fallback behavior.”LatencyPro models often improve quality by spending more time.“Measure quality per minute, not just quality per answer.”Regression testsNewer does not always mean better at every task.“Test writing, coding, browsing, image analysis, frontend, SVG, and games separately.”\n9. Claims to rewrite one by one\nOriginal\nKnowledge cutoff: December 2025 (previous versions had August 2025).\n\nBetter:\n\nClaimed cutoff: December 2025, but this needs qualification. Official API docs already list Dec 01, 2025 for GPT‑5.5 / GPT‑5.5 Pro, so this is not by itself strong evidence of GPT‑5.6.\n\nOriginal\n\nReasoning effort (“Juice Value”) increased to 960 (vs 768 on GPT‑5.5).\n\nBetter:\n\nClaimed higher hidden reasoning budget than GPT‑5.5 Pro. The specific “960 juice” number is interesting, but I would not treat it as a public benchmark unless the source is verifiable.\n\nEven better:\n\nThe useful translation: GPT‑5.6 Pro may be allowed to deliberate longer before answering, which could improve difficult coding, visual reasoning, and multi-step repair tasks — at the cost of latency.\n\nOriginal\n\nVision and image to design replication are much better (it can almost copy designs).\n\nBetter:\n\nVision-to-code and design-reference fidelity are rumored to be much stronger. I would avoid saying “copy designs” and instead test whether it can accurately implement user-provided or permitted reference designs.\n\nThat avoids making the model sound like a copyright-cloning machine.\n\nOriginal\n\nSVG generation, especially 3D/static SVGs, is excellent and can outperform Fable 5.\n\nBetter:\n\nSVG generation is rumored to be a standout area, especially static 3D-style SVGs. To claim it beats Fable 5, we need side-by-side prompts, rendered outputs, validity checks, and blind human ranking.\n\nAnthropic’s own Fable page describes Claude Fable 5 as built for ambitious coding, vision, and long-running projects, and customer quotes there specifically mention UI design and game coding, so any “beats Fable” claim needs evidence.\n\nOriginal\n\nFrontend generation has improved, but Fable/Claude still have the edge.\n\nBetter:\n\nFrontend generation is rumored to improve, but Claude/Fable may still have the edge in taste, hierarchy, and one-shot app coherence. The real comparison should be browser-rendered output, not code snippets.\n\nAlso note: Anthropic’s own page currently says Claude Fable 5 is unavailable, so comparisons should say “when available” or “based on prior samples/tests.”\n\nOriginal\n\nGame generation is more stable with fewer visual glitches, though Fable 5 is still better overall.\n\nBetter:\n\nGame generation reportedly has fewer visual glitches and more stable loops. But “better game generation” should be measured by playability: controls, collision, state, restart behavior, animation stability, and whether the model can debug after actually playing.\n\nOpenAI’s Codex docs already frame browser-game creation as a loop where Codex builds, tests in a live browser, and iterates on controls, timing, and UI feel, so Playwright-style verification is central to judging this.\n\nOriginal\nPlaywright support is in ChatGPT for browser automation.\nBetter:\nBe precise: official OpenAI Codex docs describe Playwright as a skill/tooling path for browser verification, frontend iteration, and game testing. I would not say “in ChatGPT” unless you have direct evidence it is exposed inside the ChatGPT consumer UI.\nOpenAI’s Codex docs say Playwright can open apps in a real browser, compare implementations to screenshots, resize windows for breakpoints, and iterate on layout/behavior.\n10. The best “genius” angle: visual agents beat text models\nThe important shift is not:\nGPT‑5.6 knows more.\nIt is:\nGPT‑5.6 may be better at turning perception into action.\nThat is a more profound claim.\nA normal chatbot pipeline is:\nprompt → answer\n\nA frontier agent pipeline is:\n\ngoal → plan → generate → execute → observe → compare → repair → final deliverable\n\nSo your post should say:\n\nThe real upgrade is not the first answer. The real upgrade is the repair loop.\n\nOr:\n\nThe frontier is moving from “generate code” to “verify reality.”\n\nThat line is strong.\n\n11. Obscure but useful thought inputs\n\nHere are the deeper concepts you can weave into a longer post or video.\n\n1. SVG is a proxy for spatial binding.\nSVG generation is not just “art.” It tests whether the model can maintain object identity, layering, coordinates, symmetry, occlusion, and hierarchy inside a strict symbolic format. Bad models draw shapes. Good models build scenes.\n\n2. Design-to-code is not copying; it is perceptual compression.\nThe model has to infer spacing, visual hierarchy, components, responsive behavior, and design-system intent from pixels. That is a different skill from writing React.\n\n3. Browser automation is the truth serum.\nA model can hallucinate that a UI looks right. A browser screenshot exposes reality. Playwright closes the loop between claim and rendered output.\n\n4. The hidden bottleneck is taste.\nMany models can make a working app. Fewer can make one that feels designed. Taste means restraint, spacing, hierarchy, empty states, motion, and visual rhythm.\n\n5. Game generation reveals temporal coherence.\nStatic UI tests spatial coherence. Games test time: state, animation, collisions, input latency, difficulty, restarts, and whether visuals remain stable frame after frame.\n\n6. Higher reasoning budget can make models better or worse.\nMore deliberation can improve hard tasks, but it can also produce over-engineered code, slower responses, or more confidently polished hallucinations. The question is not “more thinking?” but “better self-correction?”\n\n7. The model race is becoming a harness race.\nGPT‑5.6 Pro versus Fable 5 may matter less than GPT‑5.6 Pro plus Playwright plus design references plus tests plus good project scaffolding.\n\n8. The best model is the one that knows when to inspect reality.\nFrontend work, SVGs, games, and browser automation all punish models that rely on internal imagination instead of checking outputs.\n\n12. Release-day benchmark suite\n\nDo not just post claims. Post a public test protocol.\n\nTest 1: Knowledge cutoff sanity check\n\nGoal: determine whether the model actually has newer baked-in knowledge or just better browsing/tooling.\n\nPrompt:\n\nWithout browsing, answer these questions about events after August 2025 and before December 2025. For each answer, state confidence and whether this seems memorized or inferred.\n\nThen test against known facts.\n\nTest 2: Design-to-code replication\n\nUse your own mock design or a design you have rights to use.\n\nPrompt:\n\nImplement this screenshot as a responsive React + Tailwind page. Match hierarchy, spacing, typography, shadows, card proportions, and mobile behavior. Use semantic HTML. After implementation, use browser screenshots at 1440px, 1024px, and 390px widths. Compare against the reference and iterate until the biggest visual mismatches are fixed.\n\nJudge:\n\nspacing accuracy\n\ntypography hierarchy\n\nresponsive behavior\n\ncomponent structure\n\nwhether it uses the existing design system\n\nwhether it self-corrects after seeing screenshots\n\nTest 3: SVG stress test\n\nPrompt:\n\nCreate a single self-contained SVG of an isometric translucent mechanical keyboard switch exploded into five labeled layers. Requirements: no raster images, no external CSS, coherent 3D perspective, shadows, highlights, readable labels, valid SVG, and accessible title/description tags.\n\nJudge:\n\nvalid SVG\n\ncoherent perspective\n\ncorrect layering\n\nno broken geometry\n\nreadable text\n\nobject consistency\n\nwhether it uses gradients and masks cleanly\n\nTest 4: Static 3D SVG scene\n\nPrompt:\n\nCreate a single-file SVG of a glassmorphism cyberpunk vending machine on a rainy street corner, viewed in three-quarter perspective. Include reflections, puddles, depth, signage, and small objects in the scene. No external assets.\n\nThis separates genuinely strong visual-symbolic models from models that produce decorative mush.\n\nTest 5: Frontend product test\n\nPrompt:\nBuild a polished SaaS analytics dashboard with sidebar navigation, top filters, KPI cards, chart placeholders, table states, loading state, empty state, error state, and mobile layout. Use React, TypeScript, Tailwind, and accessible components. Then inspect in a browser and fix layout issues.\n\nJudge:\nproduct completeness\n\nvisual taste\naccessibility\n\nmobile behavior\nempty/error states\n\ncode cleanliness\nability to inspect and repair\n\nTest 6: Game stability test\nPrompt:\n\nBuild a playable browser game in one HTML file. It must include a start screen, pause, restart, scoring, increasing difficulty, keyboard and touch controls, collision detection, and stable rendering. Use requestAnimationFrame. Then play-test it through the browser, list bugs, and fix them.\nJudge:\n\ngame actually runs\ncontrols work\n\ncollision feels fair\n\nno visual flicker\n\nrestart works\n\nscore persists correctly\n\ndifficulty scales\n\nmodel can identify bugs after playing\n\nTest 7: Browser automation / Playwright loop\n\nPrompt:\n\nUse Playwright to open the app, take screenshots at three breakpoints, inspect the DOM for overflow/accessibility issues, interact with all major controls, and produce a bug list. Then fix the top five issues and rerun the checks.\n\nThis is the killer test because it measures agentic execution, not just generation.\n\n13. Verification matrix to publish\n\nUse this table in your post or article:\n\nClaimCurrent statusConfidenceHow to verifyGPT‑5.6 Pro launches Thursday, June 25UnconfirmedLow/MediumOpenAI release notes, model picker, API docsKnowledge cutoff Dec 2025Already true for GPT‑5.5 docsMediumOfficial model docsHigher reasoning budget / “960 juice”Unofficial metricLowConfirm through model behavior or official docsBetter vision-to-codeTestableMediumScreenshot-to-code benchmarkStronger SVGsTestableMediumRendered SVG benchmarkBetter frontend generationTestableMediumBrowser screenshots + human rankingBetter game generationTestableMediumPlayability testsPlaywright browser automationOfficially present in Codex workflowsHigh for Codex, unclear for ChatGPT UICodex docs / ChatGPT UI check\n14. Important language safety: avoid “copy designs”\nThis phrase is risky:\nit can almost copy designs\nIt will attract the wrong critique: copyright, cloning, brand theft, “AI steals design,” etc.\nBetter options:\nhigh-fidelity design-to-code from permitted references\n\nstronger visual implementation from screenshots\n\nbetter at matching layout, spacing, hierarchy, and responsive behavior\n\nimproved screenshot-to-UI reconstruction for designs you own or have permission to use\n\nBest sentence:\nThe rumor is not that it “copies designs,” but that it better understands visual structure — spacing, hierarchy, components, and responsive layout — from user-provided references.\n15. Better comparison against Fable / Claude\nSince Anthropic’s own Fable page describes Fable 5 as a Claude-family model and currently says access is unavailable, avoid writing “Fable/Claude” as if they are separate categories. Write:\nClaude/Fable\nor:\nClaude Fable 5\nor:\n\nFable 5, when available\n\nAlso, do not say “GPT‑5.6 beats Fable 5” unless you have tests. Say:\n\nEarly samples suggest GPT‑5.6 Pro may close the gap with Claude Fable 5 on SVG and visual coding, but frontend taste and full-app coherence still need side-by-side testing.\n\nThat is much harder to attack.\n\n16. Higher-impact final version\n\nHere is the strongest full version I’d publish:\n\nGPT‑5.6 / GPT‑5.6 Pro rumor watch: Thursday, June 25 is the date people are circling.Treat this as unconfirmed until it appears in OpenAI release notes, the ChatGPT model picker, or API docs.The interesting part is not just “new model is smarter.” The claims point to something more specific: a stronger visual-agent loop.Rumored improvements:higher internal reasoning budget for Pro, though the specific “960 juice” number is not a normal public metric\nstronger vision and screenshot-to-code fidelity\nmuch better SVG generation, especially static 3D-style SVGs\nimproved frontend generation, though Claude/Fable may still have the edge in taste and one-shot app coherence\nmore stable browser-game generation with fewer visual glitches\nstronger Playwright-style browser verification loops for testing and repair\nImportant caveat: the claimed Dec 2025 knowledge cutoff is not by itself a GPT‑5.6 signal. Official OpenAI docs already list Dec 01, 2025 for GPT‑5.5 / GPT‑5.5 https://t.co/qN9lJmevDN read: if GPT‑5.6 Pro lands, the real test is not whether it writes a better answer.The real test is whether it can see a target, build it, open it in a browser, notice what is wrong, and fix itself.That is the frontier now: not chat. Production loops.\n\n17. Best closing line\nUse this:\nThe model race is becoming a reality-check race: the best model is the one that inspects its own output and repairs it.\nOr:\nThe next leap is not more text. It is models that can verify the world they create.\nOr:\nGPT‑5.6 Pro will be judged less by benchmarks and more by whether it can ship working, visually correct things with fewer human nudges.",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1306,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 07:40:40 +0000 2026",
+      "createdAtLocal": "2026-06-19 15:40",
+      "createdAtISO": "2026-06-19T07:40:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067861385762202012",
+        "text": "GPT-5.6 Pro Leaks: Coming Thursday \n\n- Knowledge cutoff: December 2025 (previous versions had August 2025).\n- Reasoning effort (\"Juice Value\") increased to 960 (vs 768 on GPT-5.5).\n- Vision and image to design replication are much better  (it can almost copy designs)\n- SVG generation, especially 3D/static SVGs, is excellent and can outperform Fable 5.\n- Frontend generation has improved, but Fable/Claude still have the edge.\n- Game generation is more stable with fewer visual glitches, though Fable 5 is still better overall.\n- Playwright support is in ChatGPT for browser automation.\n- GPT-5.6 / GPT-5.6 Pro is most likely coming Thursday.",
+        "author": {
+          "screenName": "pankajkumar_dev",
+          "name": "Pankaj Kumar"
+        }
+      }
+    },
+    {
+      "id": "2067865098203394534",
+      "text": "I really like the tech pioneer spirit on this platform.\n\nGladly, I trained the incoming algo to show me gems like Steven’s Plan Crafter 🤩\n\nYou can feel that he is working on a real-world pain with a lot of experience. 👏\n\nNo “I one-shot this in fable, buy my webinar” BS 🙄.\n\nHe is building in public, getting instant feedback, and improving his 💎.\n\nThings like that would have saved me a lot of all-nighters in CAD/Lumion 🫠.\n\nHear me out: ~145k architects/planners in Germany alone. The potential is huge worldwide.\n\nImagine Steven’s app connected to the @boocamart API so plans and 3D models can be shared with suppliers/subcontractors in real time. No calls, no emails, no briefing ping-pong. They get all the project information 👉 they deliver offers and price tags, and magic happens.\n\nSynchronized real-time planning incoming. 🦾\n\nThis is the real pain. Why wait 2 weeks for an offer?\n\nSubcontractors know their prices and products. Everything is fragmented and unconnected.\n\nThere will be a Skynet for the construction industry, and by 2030 you’ll just hold your phone to a plain area or existing building and get the whole project in 5 mins with mm accuracy and 99% price certainty.",
+      "author": {
+        "id": "1765118387221323776",
+        "name": "Miles Dyson",
+        "screenName": "menrva33",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048392116485955585/etJvTzW2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 6,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1246,
+        "bookmarks": 5
+      },
+      "createdAt": "Fri Jun 19 07:00:33 +0000 2026",
+      "createdAtLocal": "2026-06-19 15:00",
+      "createdAtISO": "2026-06-19T07:00:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067779444413014305",
+        "text": "Estimate-while-you-draw is here. You can watch the pricing adjust in real time as I move walls around and add windows (top right corner). The takeoff lives on its own sheet in the set, along with some other fun settings for pricing and labor controls. https://t.co/CVKDEKhy5k",
+        "author": {
+          "screenName": "Tibbzzee",
+          "name": "Steven Tibbs"
+        }
+      }
+    },
+    {
+      "id": "2067790524451266988",
+      "text": "https://t.co/OHA4vPfTQu",
+      "author": {
+        "id": "161147114",
+        "name": "Andrea",
+        "screenName": "acolombiadev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2002682439060070401/6cs7RW7k_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 1,
+        "views": 1494,
+        "bookmarks": 13
+      },
+      "createdAt": "Fri Jun 19 02:04:13 +0000 2026",
+      "createdAtLocal": "2026-06-19 10:04",
+      "createdAtISO": "2026-06-19T02:04:13+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067617316280377344"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "An agent loop that stops itself"
+    },
+    {
+      "id": "2067763571455647849",
+      "text": "This is why I really dont get the obsession with trying to one shot apps and loop everything to an end,. Unless you are doing a 12 hour interview with the  AI on every feature and intricate part of the design - its utterly useless and a waste of your time trying to expect an AI to one shot an app with an y sort of complexity. And fuck off with your fable 5 shit - it cant read your mind and still wont produce what you want if it is complex - theres no way around doing the work on the details.",
+      "author": {
+        "id": "1552082704551710725",
+        "name": "Guy on the Earth",
+        "screenName": "guyontheearth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1856606490565701632/M2t58daI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 922,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 19 00:17:07 +0000 2026",
+      "createdAtLocal": "2026-06-19 08:17",
+      "createdAtISO": "2026-06-19T00:17:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067743234432868572",
+      "text": "🚨 GPT‑5.6 Pro next Thursday.\n\nThe leaks are getting way too loud: cleaner SVGs, stronger 3D/web demos, one-shot game builds, archery tests, and the Claude Fable 5 gap shrinking fast.\n\nGPT‑5.5 was the appetizer.\n\nThursday we find out how cooked everyone else is.",
+      "author": {
+        "id": "1825979090274320384",
+        "name": "imjustnewatai",
+        "screenName": "imjustnewatai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1921625539938222082/9bFPHCIL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 248,
+        "retweets": 3,
+        "replies": 9,
+        "quotes": 1,
+        "views": 12082,
+        "bookmarks": 19
+      },
+      "createdAt": "Thu Jun 18 22:56:18 +0000 2026",
+      "createdAtLocal": "2026-06-19 06:56",
+      "createdAtISO": "2026-06-18T22:56:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2067654353318806008",
+      "text": "GPT 5.6 Pro continues to mogs Fable in 3d test \n\nworking on games one shot too , for comment check quote post and also share your prompts and fable output i will tag you with 5.6 pro results \n\ncredit : @mirochill https://t.co/6lsp3pUC6M",
+      "author": {
+        "id": "1870923516675289088",
+        "name": "Chetaslua",
+        "screenName": "chetaslua",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1926364057004646400/z3oD9QyB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 933,
+        "retweets": 44,
+        "replies": 67,
+        "quotes": 13,
+        "views": 186132,
+        "bookmarks": 270
+      },
+      "createdAt": "Thu Jun 18 17:03:07 +0000 2026",
+      "createdAtLocal": "2026-06-19 01:03",
+      "createdAtISO": "2026-06-18T17:03:07+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067654112095981568/vid/avc1/1920x1080/605eMjj_-tWpjvyR.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067645297967214594",
+        "text": "@chetaslua Promt: create in one single html file a cool a robotic simulation of a kuka robot, go all out.\n\nfable result : https://t.co/rzo5yUflRb",
+        "author": {
+          "screenName": "CallofdutyFan32",
+          "name": "Bilal Hussein"
+        }
+      }
+    },
+    {
+      "id": "2067629807651704886",
+      "text": "I think I have a new toy in my gym for my athletes 😂🫣. \n\nNow they can train their shoots after doing leg press 😏 via AR. \n\nThx to @roboflow and @claudeai I was able to run a vision model on iPad Pro. \n\nClaude opus 4.8 - no one shot - but precise detailed prompts (12x) to get a first demo. \n\nCalibration is king as always, buts it a good start. 🦾\n\nFinal setup needs: \n\n> projector from the ceiling / short distance \n> also possible with big LED screen or LED foil to avoid the player shadows and more brightness \n> AR shoals fixed on the wall to get an  accurate distance measuring between goal <> ball. \n> multicam tracking next \n\nLoading other models like golf, basketball etc on the fly would make it a perfect all round app. \n\nWorks indoor / outdoor. \n\nWill check if I can push it on smart glasses 🤓 too.",
+      "author": {
+        "id": "1765118387221323776",
+        "name": "Miles Dyson",
+        "screenName": "menrva33",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048392116485955585/etJvTzW2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 6,
+        "replies": 1,
+        "quotes": 1,
+        "views": 9017,
+        "bookmarks": 23
+      },
+      "createdAt": "Thu Jun 18 15:25:35 +0000 2026",
+      "createdAtLocal": "2026-06-18 23:25",
+      "createdAtISO": "2026-06-18T15:25:35+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067629661434019840/vid/avc1/1080x1440/0LAjGEJ1xZqKd9KC.mp4?tag=28",
+          "width": 1080,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067517322114253189",
+        "text": "My dad’s acting as test subject again 🫣 70 yrs old. Former professional footballer. Still the GOAT ⚽️\n\nNext step: LiDAR depth analysis distance goal ↔ ball.\n\nRuns smoothly on iPad. 👌\n\n@roboflow @claudeai @GeminiApp https://t.co/hqwewtgSK6",
+        "author": {
+          "screenName": "menrva33",
+          "name": "Miles Dyson"
+        }
+      }
+    },
+    {
+      "id": "2067591469200806046",
+      "text": "🚨 LANDO NORRIS PAID AN AGENCY $20,000+ FOR THIS SITE. CLAUDE GETS YOU 70% OF THE WAY THERE IN A WEEKEND FOR $20 🏎️\n\nWatch the clip first.\n\nThat is https://t.co/nGO2GpF0NK. The real one. Massive Times-style typography spelling out a legacy statement. A Lando Norris store button in the corner. Ralph Lauren and McLaren sponsor logos. An 8-bit easter egg game past the fold.\n\nI am not pretending Claude built that. Nobody prompts their way into a six-figure brand site for an F1 driver in one shot.\n\nHere's what's actually interesting.\n\nMost of what makes that site feel premium is not bespoke 3D. It is:\n\n→ Big confident typography\n→ One strong scroll-triggered headline\n→ A clean sponsor row\n→ A 3D asset that rotates on hover\n→ A small interactive easter egg\n→ A merch CTA in the top right\n\nClaude can ship all six in a weekend. Not perfectly. Not at AAA polish. But shippable.\n\nWhat an agency charges for the same scope:\n\n→ Hero with custom typography + scroll: $3,000–$5,000\n→ 3D helmet model integration: $4,000–$6,000\n→ Sponsor row + responsive layout: $1,500–$2,500\n→ Built-in 8-bit mini game: $3,000–$5,000\n→ Photo grid + lightbox: $1,000–$2,000\n→ PM time + revisions: $3,000+\n→ Total: $15,000–$25,000, plus 6–10 weeks of calls\n\nWhat Claude delivers with a $20 subscription:\n\n→ Three.js helmet model loaded from a CDN\n→ Massive typography hero with scroll-triggered fills\n→ A 7-logo sponsor row that snaps responsive\n→ A canvas-based 8-bit mini game wired to keyboard input\n→ Photo grid with hover lightbox\n→ One static HTML file. One drag onto Netlify Drop. Public URL in 30 seconds.\n\nTime end to end: a weekend. Maybe two if you actually polish it.\n\nThe old loop is dead. Brief the agency. Wait two weeks for the moodboard. Argue about typography. Wait two weeks for the prototype. Approve revisions. Burn $20,000.\n\nNow one person, one weekend, one Claude tab gets you 70% of the way there — and the 30% that is missing is the kind of polish a senior designer adds in a week, not the kind a team needs months for.\n\nHere's what nobody in sports marketing is saying out loud:\n\nThe agency model survives because clients believe \"premium site\" and \"expensive site\" are the same word.\n\nThey are not. Not anymore.\n\nLando does not need to lower his standard. He has a brand to protect and a budget that absorbs a $20K invoice.\n\nBut the next driver in line — the rising karting star, the GT3 hopeful with sponsors but no marketing budget — they don't have $20K. They have $20 and a weekend.\n\nMost people are still arguing whether AI can replace designers.\n\nMeanwhile, every athlete one tier below F1 just got the same launch site as F1 — for two coffees and a Sunday.\n\nBookmark this.\n\nThe race for premium personal brands just left the agency floor.\n\nLiterally.",
+      "author": {
+        "id": "1919083148509356032",
+        "name": "masYNYa",
+        "screenName": "KijAkubovs86334",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062191987340570624/VfhB2BRT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 228,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 12:53:14 +0000 2026",
+      "createdAtLocal": "2026-06-18 20:53",
+      "createdAtISO": "2026-06-18T12:53:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2067591369820884992/vid/avc1/1440x2560/Mt3e6DDFRxWiuAeT.mp4?tag=28",
+          "width": 1440,
+          "height": 2560
+        }
+      ],
+      "urls": [
+        "http://landonorris.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067227394994221289",
+        "text": "https://t.co/8xD9nCpp0L",
+        "author": {
+          "screenName": "insomnia_vip",
+          "name": "Insomnia"
+        }
+      }
+    },
+    {
+      "id": "2067582170080723110",
+      "text": "https://t.co/VYDBggsS03",
+      "author": {
+        "id": "1277970896355864580",
+        "name": "Arnaud Belinga",
+        "screenName": "ArnaudBelingaCX",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1969077980434497537/cbNCaHqS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 49,
+        "retweets": 6,
+        "replies": 3,
+        "quotes": 1,
+        "views": 6984,
+        "bookmarks": 95
+      },
+      "createdAt": "Thu Jun 18 12:16:17 +0000 2026",
+      "createdAtLocal": "2026-06-18 20:16",
+      "createdAtISO": "2026-06-18T12:16:17+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067501288791674880"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude Controls My CRM: 10 Use Cases That Killed My Manual Work "
+    },
+    {
+      "id": "2067441803029364956",
+      "text": "GLM-5.2 cooking up a clean, modern landing page in one shot... and it looks basically identical to what Opus 4.8 spit out. Open weights, 1M context, and like 6-8x cheaper.\n\nI'm definitely firing this one up right after my Claude sub renews. Open-source front-end game is getting scary good. 😊",
+      "author": {
+        "id": "4492658476",
+        "name": "Jonaski",
+        "screenName": "jonaskilucaski",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063773069588512769/KCNOf-gU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 189,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 02:58:31 +0000 2026",
+      "createdAtLocal": "2026-06-18 10:58",
+      "createdAtISO": "2026-06-18T02:58:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067313679951941686",
+        "text": "This model is insane at design.\n\nI asked GLM 5.2 (left) and Opus 4.8 (right) to build me a landing page and you can't even tell the difference.\n\nGLM cost $0.06 while opus cost $0.49. More than 6x cheaper while being faster + more token efficient.\n\nAnother win for open source AI. https://t.co/FJCYROq9Lr",
+        "author": {
+          "screenName": "nutlope",
+          "name": "Hassan"
+        }
+      }
+    },
+    {
+      "id": "2067408529225646409",
+      "text": "How I Built Safar With Figma Make, Figma Weavy, MCP, Supabase, Firecrawl, AWS Rekognition, Stripe, Canva, and GitHub\n\nThis document explains how I built Safar for the Figma hackathon.\n\nIt is written as a practical build story, not a technical code document. The goal is to show how I used Figma Make, Figma Weavy, clear product instructions, focused prompting, MCP-connected tools, Supabase, Firecrawl, AWS Rekognition, Stripe, Canva, GitHub, and continuous testing to move from idea to working product flow quickly.\n\nI Started With a Clear Product Definition\n\nBefore building screens or connecting backend tools, I first defined what Safar needed to be.\n\nSafar is a tourist e-visa eligibility checker and assisted application platform. It helps travelers check whether they can apply, understand which documents they need, upload those documents, pay transparently, and track application status in one place.\n\nThe early product rules kept the whole build focused:\n\nEligibility checking should work without login.\nOne account should manage multiple family members.\nEvery application should be reviewed by a real human before submission.\nFees should always be transparent: government fee, Safar service fee, and total.\nApplicant, admin, and partner flows should stay separate.\nStatus should always use icon, color, and text, not color alone.\nThe product should feel calm, trustworthy, and simple because visa applications are high-stakes.\n\nThese rules became the foundation for the full app.\n\nI Created the Guidelines First\n\nThe first major step was creating a guidelines.md document inside Figma Make.\n\nI used it as the product and design rulebook for Safar. It included:\n\nProduct purpose\nBrand colors\nTypography\nLayout rules\nCard, button, input, progress bar, and status badge behavior\nMobile-first design rules\nNavigation rules\nFee display rules\nApplicant, admin, and partner role rules\nThings that should never be changed\n\nThis helped Figma Make keep the design consistent across the app instead of creating random layouts for every screen.\n\nThe design direction was:\n\nDeep green for trust\nWarm gold as an accent\nWarm off-white background\nInter font\nMobile-first layout around a 390px baseline\nClear cards, simple inputs, visible progress, and readable status badges\n\nI did not treat the guidelines as a one-time file. I improved them through conversation first, then started asking Figma Make to build screens.\n\nI Saved the Core Documents Before Building\n\nBefore starting the actual design and build, I saved the important planning documents in the project workspace so I could keep referring back to them.\n\nThese documents included:\n\nProduct guidelines\nFirst Figma Make prompt\nBuild process notes\nSecurity notes\nTesting notes\nLanding page copy\nVideo script\nData pipeline plan\nVisual and video scene workflow notes\n\nThis helped me avoid losing context and made the workflow more structured. Whenever I needed to improve a screen or flow, I could refer back to the same product rules instead of explaining everything again from scratch.\n\nI Used Supabase as the Backend Foundation\n\nAfter the product flow and design direction were clear, I used Supabase as the backend foundation.\n\nSupabase handled the core backend needs:\n\nUser authentication\nSession restoration\nApplicant, admin, and partner roles\nApplication records\nFamily member records\nDocument checklist storage\nPrivate document file storage\nApplication status updates\nEdge Functions for backend actions\n\nThe product needed separate flows for applicants, admins, and partners, so role-based access was important from the beginning.\n\nApplicants could start or resume applications, upload documents, pay fees, track status, and view approved visa documents.\n\nAdmins could review applications, check uploaded documents, request changes, approve documents, upload visa outcomes, and update application status.\n\nPartners had a limited dashboard where they could only see assigned applications and perform limited actions.\n\nI Used Figma Make to Generate Supabase Table Prompts\n\nOne part that helped me move quickly was using Figma Make to prepare the Supabase database structure.\n\nInstead of manually planning every table from scratch, I asked Figma Make to generate ready-to-use Supabase SQL prompts for the database tables.\n\nFigma Make helped prepare the table structure for:\n\nUser profiles\nApplications\nApplication members\nDocuments\nCountry requirements\nRequirement reviews\nScrape logs\nRoles and statuses\n\nI then copied the generated SQL into Supabase and ran it there. The tables were created quickly, and I did not face schema bugs during that step.\n\nThis saved setup time and helped me move faster from idea to working product flow.\n\nI Connected Supabase With MCP to Speed Up Backend Work\n\nAfter the tables were ready, I connected Supabase through MCP-supported tooling so the AI-assisted workflow could help with backend implementation faster.\n\nThis made it easier to connect the frontend flow with backend actions.\n\nUsing Supabase MCP and connected tooling helped move faster on:\n\nAuthentication\nRole-based routing\nApplication creation\nDocument upload flow\nPayment flow connection\nApplication status updates\nEdge Function setup\nAdmin and partner dashboard behavior\n\nThis was useful because I did not have to manually translate every product requirement into backend structure from scratch.\n\nI Used Edge Functions for Server-Side Workflows\n\nFor backend workflows that should not run directly in the frontend, I used Supabase Edge Functions.\n\nThese supported important product actions such as:\n\nCreating applications\nUploading documents\nStarting payment checkout\nHandling Stripe payment confirmation\nUpdating application status\nSupporting admin actions\nConnecting Firecrawl live data lookup\n\nThis helped keep sensitive work on the server side and kept the frontend cleaner.\n\nI Built the Figma Make Prototype Section by Section\n\nAfter the guidelines were ready, I started building the screens in Figma Make.\n\nThe homepage was built around a calm, trust-focused message. It included:\n\nA clear hero section\nPrimary call-to-action\nAnimated nationality text concept\nDestination country cards\nLive fee display\nComing soon country chips\nHow-it-works section\nFooter and bottom navigation\n\nThen I moved into the eligibility flow:\n\nSelect nationality\nSelect destination\nSelect visa duration or travel details\nAdd traveler details\nView eligibility result\nStart application after login or sign-up\n\nThe key rule was that eligibility checking should not require login. That was repeated often because it was one of the most important product decisions.\n\nI Created Consistent Visuals and Video Scenes With Figma Weavy\n\nAlongside the product screens, I created consistent visual assets and video scenes for Safar. This helped make the hackathon submission feel more complete and visually connected.\n\nI used Figma Weavy as part of the visual creation workflow. Inside that workflow, I used Google Imagen4 to create consistent and accurate images that matched the Safar product story and brand direction.\n\nBefore generating the visuals, I first created the character and scene direction in Claude. I used Claude to prepare:\n\nPositive prompts for the characters\nNegative prompts to avoid inconsistent or unwanted results\nCharacter consistency notes\nScene-by-scene visual direction\nClear image style instructions\n\nAfter that, I generated the character references and downloaded the strongest outputs. I then imported those references into Figma Weavy.\n\nTo keep the scenes consistent, I used Cedence Reference 2.0 through the reference loader. I attached the reference images with the prompts so the new scenes could follow the same character identity, style, and visual direction.\n\nThe process was:\n\nCreate character direction in Claude.\nWrite positive and negative prompts for consistency.\nGenerate strong reference images with Google Imagen4 inside Figma Weavy.\nDownload the best character references.\nImport the references back into Figma Weavy.\nAttach the references to scene prompts using Cedence Reference 2.0.\nConvert the reference images into different scenes.\nCombine the scenes in Canva.\nExport the final visuals or video assets.\nUpload the final assets to the website or submission materials.\n\nThis helped me avoid random visuals. Instead of generating every image from scratch, I reused reference-based prompting so the characters, mood, and visual story stayed consistent across scenes.\n\nI Integrated Firecrawl for Live Visa Requirement Data\n\nFirecrawl was added to support live visa requirement and fee lookup.\n\nThe goal was to avoid relying only on static visa information.\n\nThe flow was:\n\nThe frontend asks for eligibility or fee information.\nThe Supabase Edge Function checks cached data first.\nIf the data is missing or outdated, Firecrawl searches or scrapes official visa information sources.\nThe result is normalized into the format the app needs.\nThe data is cached for around 48 hours.\nThe UI can show whether the result came from live lookup or fallback data.\n\nI also included an admin-facing live data toggle so Firecrawl usage could be paused or resumed to manage credits.\n\nI Used AWS Rekognition for Identity Liveness Verification\n\nTo add a layer of identity confidence before the human review step, I integrated AWS Rekognition for face liveness detection.\n\nThe liveness check was triggered at the point of application submission to verify that a real person was submitting the application.\n\nThe flow was:\n\nThe applicant is prompted to complete a face liveness session before submission.\nThe frontend uses the AWS Amplify FaceLivenessDetector component to capture the session.\nThe session result is sent to a Supabase Edge Function for server-side verification.\nAWS Rekognition returns a confidence score confirming whether the session was live.\nIf liveness is confirmed above the required threshold, the application moves forward.\nIf the check fails or the confidence is too low, the applicant is asked to retry.\n\nThis helped protect the platform from fraudulent or bot-submitted applications without adding significant friction to the genuine applicant experience.\n\nI Used Stripe Sandbox for Payments\n\nStripe sandbox was used to build and test the payment flow safely before production.\n\nThe payment flow was designed around transparency:\n\nUser reviews the government fee.\nUser reviews the Safar service fee.\nUser sees the total.\nUser accepts the no-refund policy.\nUser is redirected to Stripe Checkout.\nStripe confirms payment.\nThe application status updates after successful payment.\n\nStripe Checkout was used instead of collecting card details directly in the app.\n\nThe Stripe webhook was connected through the backend so the application could still be marked as paid and submitted even if the browser redirect failed.\n\nI Used GitHub as Part of the Build Environment\n\nGitHub was connected as part of the broader build and deployment environment.\n\nIt helped keep the project organized and ready for versioning, deployment, and future collaboration.\n\nThe main development process was driven through Figma Make, Supabase, MCP tooling, and connected services, while GitHub supported the overall project workflow.\n\nI Built the Applicant Dashboard Around the Real User Flow\n\nThe applicant dashboard was built around what users actually need after checking eligibility.\n\nThe dashboard supported:\n\nStarting a new application\nResuming a draft application\nUploading required documents\nPaying application fees\nTracking application status\nViewing payment status\nViewing approved visa documents when available\n\nThe application flow inside the dashboard was simplified into:\n\nTrip setup\nDocuments\nPayment\nApplication tracking\n\nThis kept the user journey easy to understand.\n\nI Built the Document Flow Around Occupation-Based Requirements\n\nThe document checklist was generated based on the applicant's profile and occupation.\n\nBase required documents included:\n\nPassport\nCNIC or national ID\nPassport-size photograph\nBank statement\nReturn flight ticket\nHotel or accommodation proof\n\nOccupation-specific documents included:\n\nEmployment letter for job holders\nSalary slips for job holders\nBusiness proof for business owners\nEnrollment letter for students\nNOC for government employees\n\nThis made the product more useful than a generic checklist because different applicants need different documents.\n\nI Improved the Upload Flow After Testing\n\nDuring testing, some document upload states needed improvement.\n\nInstead of rebuilding the whole flow, I focused on the specific upload problem.\n\nThe improvements included:\n\nMaking sure loading states always clear after upload success or failure\nAdding upload timeout behavior\nCompressing large camera images before upload\nShowing faster previews\nMarking documents as uploaded immediately after success\nMoving users to the next pending document faster\n\nThis made the document flow feel smoother and more reliable.\n\nI Created Separate Admin and Partner Dashboards\n\nThe admin and partner dashboards were kept separate from the applicant flow.\n\nAdmin dashboard capabilities included:\n\nView application queue\nReview uploaded documents\nRequest document changes\nUpload approved visa documents\nApprove or update application status\n\nPartner dashboard restrictions included:\n\nPartners only see assigned applications.\nPartners cannot access full admin review tools.\nPartners cannot manage other partners.\nPartners cannot access monitoring sections.\nPartners can update status, request documents, and add notes.\n\nThis helped keep access clear and safer.\n\nI Tested Before Making Changes\n\nOne important practice I followed was testing or checking the current state before making changes.\n\nBefore asking Figma Make or the AI assistant to update something, I first looked at what was already working and what was not.\n\nFor example, before changing a flow or screen, I checked:\n\nWhat the user currently sees\nWhich step is working\nWhich part feels confusing\nWhether the issue is visual, product-related, or technical\nWhether the change could break another screen or flow\n\nThis helped avoid unnecessary changes. Instead of rebuilding a whole page, I could fix the exact problem.\n\nThe same approach was used after changes as well. I tested the main flows again to confirm the update actually worked.\n\nI Did Not Try to Do Too Much in One Prompt\n\nOne of the biggest lessons was to avoid overloading a single prompt.\n\nInstead of asking Figma Make to create too many flows, screens, states, and backend assumptions in one message, I broke the work into smaller parts.\n\nThe better approach was:\n\nBuild one screen or section at a time.\nGive a clear problem statement.\nMention the exact user goal.\nMention what should be changed.\nMention what should not be changed.\nReview the output before moving to the next part.\n\nThis made the AI output cleaner and easier to control.\n\nFor example, instead of asking for the whole application flow at once, I worked through the product in focused parts:\n\nHomepage\nEligibility checker\nEligibility result\nSign-up flow\nApplicant dashboard\nDocument checklist\nDocument upload\nPayment summary\nAdmin dashboard\nPartner dashboard\n\nThis kept the design and logic more stable.\n\nI Used Clear Problem Statements\n\nWhenever something needed improvement, I tried to explain the problem clearly instead of saying only “make it better.”\n\nA useful prompt included:\n\nWhat is wrong right now\nWhy it matters for the user\nWhat outcome I want\nWhich part should stay the same\n\nFor example, if the fee section was too crowded, the prompt needed to explain that users may miss the total amount and that the hierarchy should be improved while keeping the three-line fee breakdown.\n\nThis made the AI behave more like a product teammate instead of randomly redesigning things.\n\nI Used User Stories and Acceptance Criteria\n\nFor important flows, I used a user-story style.\n\nExample:\n\nAs an applicant, I want to check my visa eligibility without creating an account, so I can understand my options before sharing personal details.\n\nAcceptance criteria:\n\nThe user can start from the homepage.\nThe user can select passport, destination, and occupation.\nThe user can see the result without login.\nThe result shows required documents, fees, and processing time.\nLogin is only required when starting the application.\n\nThis helped the AI understand the product logic, not only the visual layout.\n\nI Used Component Selection for Targeted Edits\n\nWhen a screen needed improvement, I did not always rewrite the full prompt.\n\nFor small fixes, I edited directly.\n\nFor more complex fixes, I selected the exact component or section inside Figma Make and asked AI to improve only that part.\n\nExamples:\n\nSelect a card and ask it to improve readability.\nSelect the fee section and ask it to improve hierarchy.\nSelect a form and ask it to make labels clearer.\nSelect a status badge and ask it to use icon, color, and text.\n\nThis reduced the chance of the AI changing unrelated parts of the design.\n\nI Cleared the Chat After Every Few Prompts\n\nAnother practice that worked well was clearing the chat after every two or three prompts.\n\nThis helped keep the context clean and reduced prompt drift.\n\nMy workflow was:\n\nAsk for a focused update.\nReview the output.\nEdit small things manually.\nAsk for one targeted improvement if needed.\nClear the chat after the section felt stable.\nContinue with the next screen or flow.\n\nThis made the AI follow the latest design patterns without carrying too much old context.\n\nI Tested the Main Flows Before Finalizing\n\nTesting was part of the process, not only something at the end.\n\nThe key flows I checked included:\n\nEligibility checker without login\nAccount creation\nSingle applicant application flow\nFamily application flow\nDocument upload\nDocument re-upload after rejection\nAdmin application review\nRequirement change review\nLiveness check behavior\nTelegram update flow\nMobile browser experience\nStripe sandbox payment flow\n\nBefore changing important parts, I checked what was already working. After changing them, I tested again to make sure the fix did not break the journey.\n\nWhat Made This Workflow Work\n\nThe process worked because I did not treat AI as a one-shot builder.\n\nI treated it like a product team assistant.\n\nThe most useful practices were:\n\nStart with clear product rules.\nCreate guidelines before asking for screens.\nTest before changing things.\nDo not put too much into one prompt.\nBuild one screen or section at a time.\nUse clear problem statements.\nUse user stories and acceptance criteria.\nSelect components for focused edits.\nEdit small things manually.\nClear chat context after every few prompts.\nUse Figma Weavy, Google Imagen4, reference images, and Canva for consistent visual assets.\nUse MCP and connected tools for faster backend setup.\nUse Supabase SQL prompts to quickly create the backend structure.\nUse Firecrawl for live data instead of relying only on static content.\nUse Stripe sandbox before production payments.\nKeep testing the actual user flow.\n\nReusable Process for Future Builds\n\nThis same process can be reused for other products:\n\nDefine the product in one clear paragraph.\n\nLock the most important product rules.\n\nCreate a guidelines file before designing screens.\n\nSave supporting documents in the workspace.\n\nBuild one screen or section at a time.\n\nUse focused prompts with clear outcomes.\n\nTest the current state before making changes.\n\nSelect components for targeted improvements.\n\nClear the chat after every few prompts.\n\nUse AI to generate backend structure and setup prompts.\n\nCopy reviewed setup prompts into tools like Supabase where needed.\n\nConnect MCP tools to speed up implementation.\n\nUse external services only where they solve a real product problem.\n\nTest the end-to-end user journey before final submission.\n\nCompanion Documentation I Created for Reuse\nAlongside this Safar-specific hackathon process, I also created a shorter reusable AI build playbook that can be shared with other founders, builders, or teams.\n\nThe companion document removes Safar-specific implementation details and turns the workflow into a repeatable process for other use cases, such as:\n\nSaaS products\nLanding pages\nMobile app prototypes\nAdmin dashboards\nDocument upload and OCR flows\nInternal tools\nMarketplace products\nHackathon builds\n\nThe purpose of the companion document is to show the process behind the build, not the private code or technical setup.\n\nIt explains how to start with a guidelines file, build in small prompts, test before changing, use component-level edits, and connect tools like Supabase MCP, GitHub, Firecrawl, Stripe, and backend functions only when the product flow needs them.\n\nSupport file you can reuse for any other project with best practices: https://t.co/v8WCpsq9V1\n\nFinal Summary\n\nI built Safar by combining product thinking, Figma Make, focused prompting, Supabase, MCP-connected tools, Firecrawl, AWS Rekognition, Stripe sandbox, GitHub, Canva, Figma Weavy, and continuous testing.\n\nThe most important part was not asking AI to do everything at once.\n\nI created clear guidelines first, built section by section, tested before changing, used focused prompts, and connected the right backend tools only when the product flow needed them.\n\nThis process helped me move quickly while still keeping the product structured, understandable, and ready to explain as part of the Figma hackathon submission.",
+      "author": {
+        "id": "1297442763978551296",
+        "name": "Izhar Ahmad Danish 🇵🇰",
+        "screenName": "izharahmadanish",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1632040270198894593/ZUfPlIOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 694,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 18 00:46:18 +0000 2026",
+      "createdAtLocal": "2026-06-18 08:46",
+      "createdAtISO": "2026-06-18T00:46:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}
