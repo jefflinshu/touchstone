@@ -1,0 +1,1131 @@
+[
+  {
+    "id": "2070024194109366348",
+    "author": "claudecode_ut",
+    "authorName": "東大ClaudeCode研究所",
+    "url": "https://x.com/claudecode_ut/status/2070024194109366348",
+    "text": "【話題】\n現行のClaudeだけで、音楽連動の3D粒子アニメーションを作った事例が話題だ😳\nFable 5もGPT-5.6も不要、という主張をコードで見せている\n\nhttps://t.co/2sejm4uTIh\n\n動作している技術は4つ👇\n\n・流体粒子 → Simplex ノイズで軌跡を制御、ランダムでなく有機的な動き\n・GPGPU → 数千個の粒子をGPUで並列更新、スマホで60fps\n・音楽連動シェーダー → 音楽の周波数データにリングがパルス\n・Selective bloom → 明るい部分だけがグロー、Three.js + GSAP + Lenis で動く\n\nGPUシェーダーや音楽連動レンダリングは、3Dエンジニアが専門で扱う領域だった\n\nそれを現行のClaudeで書いた実例が出てきた",
+    "createdAtISO": "2026-06-25T06:00:01.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 203,
+      "reposts": 11,
+      "replies": 3,
+      "quotes": 1,
+      "views": 55008,
+      "bookmarks": 196
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2069146810808139776/vid/avc1/720x1280/PeOlFLV49QBaKwYD.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070024194109366348",
+      "text": "【話題】\n現行のClaudeだけで、音楽連動の3D粒子アニメーションを作った事例が話題だ😳\nFable 5もGPT-5.6も不要、という主張をコードで見せている\n\nhttps://t.co/2sejm4uTIh\n\n動作している技術は4つ👇\n\n・流体粒子 → Simplex ノイズで軌跡を制御、ランダムでなく有機的な動き\n・GPGPU → 数千個の粒子をGPUで並列更新、スマホで60fps\n・音楽連動シェーダー → 音楽の周波数データにリングがパルス\n・Selective bloom → 明るい部分だけがグロー、Three.js + GSAP + Lenis で動く\n\nGPUシェーダーや音楽連動レンダリングは、3Dエンジニアが専門で扱う領域だった\n\nそれを現行のClaudeで書いた実例が出てきた",
+      "author": {
+        "id": "2045207585574539264",
+        "name": "東大ClaudeCode研究所",
+        "screenName": "ClaudeCode_UT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2045968105172766720/_u891Zxq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 203,
+        "retweets": 11,
+        "replies": 3,
+        "quotes": 1,
+        "views": 55008,
+        "bookmarks": 196
+      },
+      "createdAt": "Thu Jun 25 06:00:01 +0000 2026",
+      "createdAtLocal": "2026-06-25 14:00",
+      "createdAtISO": "2026-06-25T06:00:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069146810808139776/vid/avc1/720x1280/PeOlFLV49QBaKwYD.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2054511225120108745",
+        "text": "https://t.co/gE3qZTZzsP",
+        "author": {
+          "screenName": "UT_Codex",
+          "name": "東大Codex研究所"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2069824023370817549",
+    "author": "nutlope",
+    "authorName": "Hassan",
+    "url": "https://x.com/nutlope/status/2069824023370817549",
+    "text": "https://t.co/bd8cAftqv5",
+    "createdAtISO": "2026-06-24T16:44:37.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 123,
+      "reposts": 15,
+      "replies": 1,
+      "quotes": 2,
+      "views": 72886,
+      "bookmarks": 149
+    },
+    "media": [],
+    "raw": {
+      "id": "2069824023370817549",
+      "text": "https://t.co/bd8cAftqv5",
+      "author": {
+        "id": "3246815913",
+        "name": "Hassan",
+        "screenName": "nutlope",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1727415759859552256/9rqaxXUR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 123,
+        "retweets": 15,
+        "replies": 1,
+        "quotes": 2,
+        "views": 72886,
+        "bookmarks": 149
+      },
+      "createdAt": "Wed Jun 24 16:44:37 +0000 2026",
+      "createdAtLocal": "2026-06-25 00:44",
+      "createdAtISO": "2026-06-24T16:44:37+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2069821539256508416"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Building beautiful web apps with GLM 5.2: fast, cheap, and polished"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"created with Claude\" (Fable OR Mythos OR \"one prompt\" OR video OR animation OR design))"
+  },
+  {
+    "id": "2070170714204725580",
+    "author": "parkerconrad",
+    "authorName": "Parker Conrad",
+    "url": "https://x.com/parkerconrad/status/2070170714204725580",
+    "text": "I asked Rippling to build a dashboard to flag inefficient spend. It joined org data with claude spend, github pull-request and code-reviews, and perf management data, and one-shotted an analysis that changed the way we are overseeing token spend internally 2/ https://t.co/ANrvIGwDPk",
+    "createdAtISO": "2026-06-25T15:42:14.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 71,
+      "reposts": 12,
+      "replies": 1,
+      "quotes": 4,
+      "views": 17029,
+      "bookmarks": 19
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLq5H7hWoAAXhz-.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070170714204725580",
+      "text": "I asked Rippling to build a dashboard to flag inefficient spend. It joined org data with claude spend, github pull-request and code-reviews, and perf management data, and one-shotted an analysis that changed the way we are overseeing token spend internally 2/ https://t.co/ANrvIGwDPk",
+      "author": {
+        "id": "174934382",
+        "name": "Parker Conrad",
+        "screenName": "parkerconrad",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/841509201205637120/6uwu4HpS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 71,
+        "retweets": 12,
+        "replies": 1,
+        "quotes": 4,
+        "views": 17029,
+        "bookmarks": 19
+      },
+      "createdAt": "Thu Jun 25 15:42:14 +0000 2026",
+      "createdAtLocal": "2026-06-25 23:42",
+      "createdAtISO": "2026-06-25T15:42:14+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLq5H7hWoAAXhz-.jpg",
+          "width": 2414,
+          "height": 4096
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2069858634205372785",
+    "author": "polydao",
+    "authorName": "Mr. Buzzoni",
+    "url": "https://x.com/polydao/status/2069858634205372785",
+    "text": "GLM 5.2 vs Claude Fable 5 vs Claude Opus 4.8: the battle for the AI developer crown\n\nthe latest benchmark shows open models aren't just catching up to closed flagships - they are out-designing them.\n\none sandbox. two prompts. a playable Minecraft clone from scratch:\n\n> Three.js graphics with sand, forest, and snow biomes\n> transparent window rendering with sharp outer edges\n> interactive crafting table with custom plank recipes\n> procedural ore generation: coal, iron, gold\n> underground cave generation and day-night cycle\n> stable 60 FPS rendering\n\nthe graphics advantage:\n\nGLM 5.2 solved complex window transparency where others broke, beating ChatGPT 5.5, Kimi, and Claude Opus 4.8. the entire scene rendered in 20 minutes\n\nlogic vs world generation:\n\n> Claude Fable 5 dominates on core architecture and stable physics (it built a working sprint mechanic)\n> GLM 5.2 excelled in world-building, adding unprompted cave systems and mob loot\n\nthe bugs:\n\nhealth bars clip behind the inventory ui, mined blocks teleport straight to item slots, and attacked zombies drift upward\n\nthe choice comes down to raw logic vs visual complexity. which setup runs your development stack?",
+    "createdAtISO": "2026-06-24T19:02:09.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 75,
+      "reposts": 5,
+      "replies": 15,
+      "quotes": 0,
+      "views": 6581,
+      "bookmarks": 44
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2069854492372135936/vid/avc1/1920x1080/ZOgkTAAWmmL3D51-.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2069858634205372785",
+      "text": "GLM 5.2 vs Claude Fable 5 vs Claude Opus 4.8: the battle for the AI developer crown\n\nthe latest benchmark shows open models aren't just catching up to closed flagships - they are out-designing them.\n\none sandbox. two prompts. a playable Minecraft clone from scratch:\n\n> Three.js graphics with sand, forest, and snow biomes\n> transparent window rendering with sharp outer edges\n> interactive crafting table with custom plank recipes\n> procedural ore generation: coal, iron, gold\n> underground cave generation and day-night cycle\n> stable 60 FPS rendering\n\nthe graphics advantage:\n\nGLM 5.2 solved complex window transparency where others broke, beating ChatGPT 5.5, Kimi, and Claude Opus 4.8. the entire scene rendered in 20 minutes\n\nlogic vs world generation:\n\n> Claude Fable 5 dominates on core architecture and stable physics (it built a working sprint mechanic)\n> GLM 5.2 excelled in world-building, adding unprompted cave systems and mob loot\n\nthe bugs:\n\nhealth bars clip behind the inventory ui, mined blocks teleport straight to item slots, and attacked zombies drift upward\n\nthe choice comes down to raw logic vs visual complexity. which setup runs your development stack?",
+      "author": {
+        "id": "1412131273280212996",
+        "name": "Mr. Buzzoni",
+        "screenName": "polydao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2022077728359682048/UWClPPZX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 75,
+        "retweets": 5,
+        "replies": 15,
+        "quotes": 0,
+        "views": 6581,
+        "bookmarks": 44
+      },
+      "createdAt": "Wed Jun 24 19:02:09 +0000 2026",
+      "createdAtLocal": "2026-06-25 03:02",
+      "createdAtISO": "2026-06-24T19:02:09+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069854492372135936/vid/avc1/1920x1080/ZOgkTAAWmmL3D51-.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069829531314384939",
+        "text": "https://t.co/JPI49P8BiN",
+        "author": {
+          "screenName": "Aiswarya_Sankar",
+          "name": "Aiswarya Sankar"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070052479958478859",
+    "author": "oluwaphilemon1",
+    "authorName": "FHILY👑",
+    "url": "https://x.com/oluwaphilemon1/status/2070052479958478859",
+    "text": "This wasn't created with Claude Fable 5 nor GPT-5.6.\n\nSharing an example of a simple facial rig with blendShapes to roll mouth in (Autodesk Maya)\n\nYou can download it for free here: https://t.co/SR6DAk28bQ https://t.co/I2vpKqSuSS",
+    "createdAtISO": "2026-06-25T07:52:25.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 19,
+      "reposts": 2,
+      "replies": 1,
+      "quotes": 2,
+      "views": 20376,
+      "bookmarks": 36
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070052465102270464/vid/avc1/720x720/gAIT5_kwN69ffMP7.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070052479958478859",
+      "text": "This wasn't created with Claude Fable 5 nor GPT-5.6.\n\nSharing an example of a simple facial rig with blendShapes to roll mouth in (Autodesk Maya)\n\nYou can download it for free here: https://t.co/SR6DAk28bQ https://t.co/I2vpKqSuSS",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 19,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 2,
+        "views": 20376,
+        "bookmarks": 36
+      },
+      "createdAt": "Thu Jun 25 07:52:25 +0000 2026",
+      "createdAtLocal": "2026-06-25 15:52",
+      "createdAtISO": "2026-06-25T07:52:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070052465102270464/vid/avc1/720x720/gAIT5_kwN69ffMP7.mp4?tag=28",
+          "width": 720,
+          "height": 720
+        }
+      ],
+      "urls": [
+        "http://rignocchio.gumroad.com/l/mouth_in_rig"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070024091889774657",
+        "text": "Can Gemini actually design a good iOS app?\n\nI used to design a lot of iOS apps in Figma, but this past year I’ve been mostly using AI for web design and landing pages.\n\nSo I tested Gemini for iOS app design.\n\nThe biggest lesson: AI needs clear rules.\n\nOnce I added iOS requirements like Human Interface Guidelines, safe areas, Dynamic Island, SF Pro typography, 8pt grid, and realistic iOS components, the result got so much better.\n\nYou need to guide it like a designer.",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"created with Claude\" (Fable OR Mythos OR \"one prompt\" OR video OR animation OR design))"
+  },
+  {
+    "id": "2070116919353475349",
+    "author": "oluwaphilemon1",
+    "authorName": "FHILY👑",
+    "url": "https://x.com/oluwaphilemon1/status/2070116919353475349",
+    "text": "How I build with Claude Fable 5 👇\n\n1. WebGL = liquid glass typography rendered live\n\n2. Three.js transmission shaders = text looks like blown glass\n\n3. Sky video loop behind glass = depth flat backgrounds lack\n\n4. GSAP ScrollTrigger = liquid letters morph on scroll\n\n5. CSS backdrop-filter = fake glass UI in one line zero WebGL\n\n6. Particle drift = soft floating bubbles feel alive and airy\n\nSave this ☁️",
+    "createdAtISO": "2026-06-25T12:08:29.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 9,
+      "reposts": 2,
+      "replies": 2,
+      "quotes": 2,
+      "views": 6397,
+      "bookmarks": 8
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070116853486145537/vid/avc1/720x1280/smyVXor6U3WA-wY3.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070116919353475349",
+      "text": "How I build with Claude Fable 5 👇\n\n1. WebGL = liquid glass typography rendered live\n\n2. Three.js transmission shaders = text looks like blown glass\n\n3. Sky video loop behind glass = depth flat backgrounds lack\n\n4. GSAP ScrollTrigger = liquid letters morph on scroll\n\n5. CSS backdrop-filter = fake glass UI in one line zero WebGL\n\n6. Particle drift = soft floating bubbles feel alive and airy\n\nSave this ☁️",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 2,
+        "replies": 2,
+        "quotes": 2,
+        "views": 6397,
+        "bookmarks": 8
+      },
+      "createdAt": "Thu Jun 25 12:08:29 +0000 2026",
+      "createdAtLocal": "2026-06-25 20:08",
+      "createdAtISO": "2026-06-25T12:08:29+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070116853486145537/vid/avc1/720x1280/smyVXor6U3WA-wY3.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070052479958478859",
+        "text": "This wasn't created with Claude Fable 5 nor GPT-5.6.\n\nSharing an example of a simple facial rig with blendShapes to roll mouth in (Autodesk Maya)\n\nYou can download it for free here: https://t.co/SR6DAk28bQ https://t.co/I2vpKqSuSS",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070048716661362726",
+    "author": "zcloaknetwork",
+    "authorName": "zCloak Network",
+    "url": "https://x.com/zcloaknetwork/status/2070048716661362726",
+    "text": "https://t.co/SYJsB0ghk8",
+    "createdAtISO": "2026-06-25T07:37:28.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 8,
+      "reposts": 1,
+      "replies": 1,
+      "quotes": 0,
+      "views": 759,
+      "bookmarks": 2
+    },
+    "media": [],
+    "raw": {
+      "id": "2070048716661362726",
+      "text": "https://t.co/SYJsB0ghk8",
+      "author": {
+        "id": "1349281678884184068",
+        "name": "zCloak Network",
+        "screenName": "zCloakNetwork",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034976371433512963/MEJ-rDr4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 759,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 25 07:37:28 +0000 2026",
+      "createdAtLocal": "2026-06-25 15:37",
+      "createdAtISO": "2026-06-25T07:37:28+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070041920550653952"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Don’t Wait Until Your AI Workflow gone to Realize Your Data is not belong to you"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070149009319362834",
+    "author": "datadelaurier",
+    "authorName": "Data 𓂀",
+    "url": "https://x.com/datadelaurier/status/2070149009319362834",
+    "text": "fable did the three.js animation obviously",
+    "createdAtISO": "2026-06-25T14:15:59.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 9,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 608,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070149009319362834",
+      "text": "fable did the three.js animation obviously",
+      "author": {
+        "id": "1720067960687960065",
+        "name": "Data 𓂀",
+        "screenName": "DataDeLaurier",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069898338485542912/6VFAxlPy_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 608,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 14:15:59 +0000 2026",
+      "createdAtLocal": "2026-06-25 22:15",
+      "createdAtISO": "2026-06-25T14:15:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069894129060831564",
+        "text": "Demand is rising. We're accelerating.  \n\nWe have been awarded a multiyear undefinitized contract by the @DeptofWar for up to $35B to increase THAAD production, supported by $9B+ in investments through 2030 and 20 U.S. expanding facilities. We are delivering the Arsenal of Freedom.",
+        "author": {
+          "screenName": "LockheedMartin",
+          "name": "Lockheed Martin"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2069970518372188474",
+    "author": "setrackl8nk",
+    "authorName": "Lord Setrack🧡🍊",
+    "url": "https://x.com/setrackl8nk/status/2069970518372188474",
+    "text": "@threejs Fable 5 make threejs run on my local GPU",
+    "createdAtISO": "2026-06-25T02:26:44.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 8,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 739,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2069970518372188474",
+      "text": "@threejs Fable 5 make threejs run on my local GPU",
+      "author": {
+        "id": "626466280",
+        "name": "Lord Setrack🧡🍊",
+        "screenName": "setrackl8nk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1479610887862308868/RwsFwmMr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 739,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 02:26:44 +0000 2026",
+      "createdAtLocal": "2026-06-25 10:26",
+      "createdAtISO": "2026-06-25T02:26:44+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070091064778621229",
+    "author": "triton_one",
+    "authorName": "Triton One 🌊🌋",
+    "url": "https://x.com/triton_one/status/2070091064778621229",
+    "text": "Wrapping up with a few easy-to-forget fundamentals:\n\n🟣 Always build the foundation first. When one part of the task drives everything downstream (e.g., data ingest shape, storage schema), getting it right early saves you from a last-minute rewrite of the whole codebase.\n\n🟣 Never give the agent production access. Give it a copy with full context and control, where any mistake is easy to reset. For Superbank, we've used git worktrees and a virtualised cluster.\n\n🟣 Write directional pseudocode and let the agent type it out. Once you know the shape, getting it into syntax is grunt work you can offload.\n\n🟣 Throw your hardest task at every new model. AI moves nearly as fast as @solana, so staying loyal to what worked two months ago puts you behind. Fable 5 one-shotted a new Superbank feature the day it dropped.",
+    "createdAtISO": "2026-06-25T10:25:44.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 4,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 276,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070091064778621229",
+      "text": "Wrapping up with a few easy-to-forget fundamentals:\n\n🟣 Always build the foundation first. When one part of the task drives everything downstream (e.g., data ingest shape, storage schema), getting it right early saves you from a last-minute rewrite of the whole codebase.\n\n🟣 Never give the agent production access. Give it a copy with full context and control, where any mistake is easy to reset. For Superbank, we've used git worktrees and a virtualised cluster.\n\n🟣 Write directional pseudocode and let the agent type it out. Once you know the shape, getting it into syntax is grunt work you can offload.\n\n🟣 Throw your hardest task at every new model. AI moves nearly as fast as @solana, so staying loyal to what worked two months ago puts you behind. Fable 5 one-shotted a new Superbank feature the day it dropped.",
+      "author": {
+        "id": "1424554867255758850",
+        "name": "Triton One 🌊🌋",
+        "screenName": "triton_one",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1731003746270793728/RN5l-SMp_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 276,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 10:25:44 +0000 2026",
+      "createdAtLocal": "2026-06-25 18:25",
+      "createdAtISO": "2026-06-25T10:25:44+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2070052612561338429",
+    "author": "lemondefi1",
+    "authorName": "lemon👑",
+    "url": "https://x.com/lemondefi1/status/2070052612561338429",
+    "text": "This wasn't created with Claude Fable 5 nor GPT-5.6.\n\nSharing an example of a simple facial rig with blendShapes to roll mouth in (Autodesk Maya)\n\nYou can download it for free here: https://t.co/bQXXXtgV9H",
+    "createdAtISO": "2026-06-25T07:52:57.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 418,
+      "bookmarks": 1
+    },
+    "media": [],
+    "raw": {
+      "id": "2070052612561338429",
+      "text": "This wasn't created with Claude Fable 5 nor GPT-5.6.\n\nSharing an example of a simple facial rig with blendShapes to roll mouth in (Autodesk Maya)\n\nYou can download it for free here: https://t.co/bQXXXtgV9H",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 418,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 25 07:52:57 +0000 2026",
+      "createdAtLocal": "2026-06-25 15:52",
+      "createdAtISO": "2026-06-25T07:52:57+00:00",
+      "media": [],
+      "urls": [
+        "http://rignocchio.gumroad.com/l/mouth_in_rig"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070052479958478859",
+        "text": "This wasn't created with Claude Fable 5 nor GPT-5.6.\n\nSharing an example of a simple facial rig with blendShapes to roll mouth in (Autodesk Maya)\n\nYou can download it for free here: https://t.co/SR6DAk28bQ https://t.co/I2vpKqSuSS",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"created with Claude\" (Fable OR Mythos OR \"one prompt\" OR video OR animation OR design))"
+  },
+  {
+    "id": "2070089925773738348",
+    "author": "paojiaofty",
+    "authorName": "Patrick Tian",
+    "url": "https://x.com/paojiaofty/status/2070089925773738348",
+    "text": "Built a walkable Better Call Saul museum in Three.js — Blender MCP modeled it, Fable coded it, right up until Fable got shut down mid-build.\nBCS fans + Three.js people, come help me keep building this😂😂 https://t.co/HZ7yJPzpnQ",
+    "createdAtISO": "2026-06-25T10:21:13.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 76,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070089798027771904/vid/avc1/1282x720/wZkjvAPn0RVt1kX2.mp4?tag=14"
+      }
+    ],
+    "raw": {
+      "id": "2070089925773738348",
+      "text": "Built a walkable Better Call Saul museum in Three.js — Blender MCP modeled it, Fable coded it, right up until Fable got shut down mid-build.\nBCS fans + Three.js people, come help me keep building this😂😂 https://t.co/HZ7yJPzpnQ",
+      "author": {
+        "id": "1654701214360285184",
+        "name": "Patrick Tian",
+        "screenName": "paojiaofty",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2025833905883172864/EWmg-jw1_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 76,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 10:21:13 +0000 2026",
+      "createdAtLocal": "2026-06-25 18:21",
+      "createdAtISO": "2026-06-25T10:21:13+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070089798027771904/vid/avc1/1282x720/wZkjvAPn0RVt1kX2.mp4?tag=14",
+          "width": 3840,
+          "height": 2156
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070086771879346481",
+    "author": "ollobrains",
+    "authorName": "shinyufoguy2222",
+    "url": "https://x.com/ollobrains/status/2070086771879346481",
+    "text": "OpenAI has the strongest deployable position right now, but not an uncontested technical lead. GPT-5.5 is broadly available and deeply integrated across ChatGPT/Codex, while Anthropic’s strongest public counterpunch, Fable 5, is entangled in access restrictions. Google is not dead or “struggling” across the board, but Gemini 3.5 Pro slipping to July gives OpenAI more breathing room.\n\nThat distinction makes the argument much harder to dunk on.\n\nOpenAI’s case is strong because GPT-5.5 is real, shipped, broadly available, and productized. OpenAI says GPT-5.5 is its “smartest model yet,” with strong results on work/agent benchmarks like GDPval, OSWorld-Verified, Tau2-bench Telecom, OfficeQA Pro, FrontierMath, BrowseComp, and Terminal-Bench; GPT-5.5 is also available across ChatGPT tiers, with GPT-5.5 Pro reserved for higher plans.  Codex also lists GPT-5.5 as OpenAI’s recommended model for many coding and knowledge-work tasks when available, which matters because distribution inside workflow tools can be more strategically important than a benchmark screenshot.\n\nBut the “comfortable lead” claim is vulnerable because Fable 5 appeared to beat GPT-5.5 in several independent and public leaderboard contexts before access was disrupted. Artificial Analysis reported Claude Fable 5 at #1 on its Intelligence Index, about five points ahead of the closest non-Anthropic model, GPT-5.5; LMArena’s public leaderboard snapshot also had Claude Fable 5 ahead of GPT-5.5.  So the better claim is not “OpenAI is clearly ahead technically.” It is: OpenAI has the best currently usable frontier position while Anthropic’s strongest model is politically/operationally constrained.\n\nYour original post:\n\nopenai still has a comfortable lead with gpt-5.5\nsince mythos 5 isn't available yet and gpt-5.5 is already in a strong position, oai doesn't really have pressure to rush gpt-5.6\nwith anthropic slowed down and google struggling, they can take more time to refine it before release\nI’d rewrite it like this:\nOpenAI may not need to rush GPT-5.6.GPT-5.5 is already in a strong deployable position: widely available in ChatGPT, integrated into Codex, and strong enough across coding, research, tool-use, and knowledge-work benchmarks to hold the market’s attention.The key nuance is that OpenAI may not have a clean technical lead over Anthropic’s best models. Fable 5 looked extremely competitive, and in some independent rankings it beat GPT-5.5. But Fable/Mythos access is still tangled in government restrictions, and that turns Anthropic’s advantage into a distribution problem. A model that wins benchmarks but can’t reliably be used by customers is not a full market threat https://t.co/jPzcTh0orw also shouldn’t be dismissed. Gemini 3.1 Pro and 3.5 Flash are strong in reasoning, multimodal, and agentic areas, but if Gemini 3.5 Pro really slips from June into July, that gives OpenAI more room to refine instead of panic-launching https://t.co/oWg4dL5hFq the real thesis is: GPT-5.6 pressure is lower than it would be if Fable 5 were fully available and Gemini 3.5 Pro had landed cleanly. OpenAI can optimize for reliability, latency, eval robustness, enterprise rollout, and safety polish rather than racing a date on the calendar.\n\nThe missing element is “technical lead” versus “commercial lead” versus “deployment lead.” GPT-5.5 may not be strictly ahead on every benchmark, but OpenAI’s advantage is that users can actually access it, businesses can plan around it, developers can build with it, and Codex can route workflows through it. Anthropic’s own statement says the U.S. government directive forced it to disable Fable 5 and Mythos 5 for all customers to ensure compliance; Claude’s status page still lists the incident as affecting https://t.co/3pnXzhoEbn, Claude API, Claude Code, and Claude Cowork.\n\nThe strongest version of your thesis is:\n\nOpenAI’s lead is not purely model quality. It is model quality plus uptime plus distribution plus enterprise trust.\n\nThat is much more defensible.\n\nI would avoid saying “Google struggling” too broadly. Google’s Gemini 3.1 Pro has strong published scores, including 77.1% on ARC-AGI-2, 94.3% on GPQA Diamond, 85.9% on BrowseComp, and 80.6% on SWE-Bench Verified in Google’s published table.  Google also says Gemini 3.5 Flash is its strongest agentic and coding Flash model yet, with strong Terminal-Bench 2.1, GDPval-AA, MCP Atlas, and multimodal numbers.  The sharper criticism is not “Google is struggling”; it is “Google’s next flagship Pro timing looks less clean, and its product narrative is less concentrated than OpenAI’s.” Business Insider reported that Gemini 3.5 Pro slipped from a June target to July while Google gathers more early-tester feedback and tweaks the model.\n\nA more nuanced version:\n\nGoogle is still dangerous, especially in multimodal, long-context, Android, Workspace, and AI search distribution. But if Gemini 3.5 Pro is delayed, then Google is not applying immediate frontier-pressure on GPT-5.5 this week. That gives OpenAI more room to time GPT-5.6 around quality rather than competitive panic.\n\nThe obscure but important angle: OpenAI may be under pressure, just not the same kind of pressure. It may not need to rush GPT-5.6 to beat Anthropic this week, but it still has pressure from developer retention, enterprise procurement cycles, investor narrative, safety politics, cost curves, and ChatGPT market-share compression. TechCrunch, citing Sensor Tower, reported ChatGPT’s assistant-market share had fallen to 46.4% by the end of May, with Gemini at 27.7% and Claude at 10.3%.  That means OpenAI can’t just coast indefinitely. It can delay a launch for polish, but it cannot disappear from the release narrative for too long.\n\nHere is the “genius-level” framing I’d use:\n\nGPT-5.6 is probably less of a “catch up to Anthropic” release and more of a “convert temporary deployment advantage into durable platform lock-in” release.If OpenAI ships too early, it risks a messy model that gives competitors a narrative opening. If it waits too long, it risks letting Fable 5 re-access, Gemini 3.5 Pro, or a strong open/chinese model reset the leaderboard before GPT-5.6 lands. The optimal play is not speed; it is timing the release when GPT-5.6 is clearly better on the specific things customers now care about: long-horizon agents, coding reliability, tool use, low hallucination, memory, context handling, and enterprise-grade predictable behavior.\n\nThe hidden pressure point is Anthropic’s “unavailable” status may actually be making OpenAI’s launch bar higher, not lower. If your main competitor’s best model is temporarily locked behind regulation, your next release has to feel mature, not rushed. A sloppy GPT-5.6 would waste the strategic window. A polished GPT-5.6 could turn Anthropic’s outage into a customer migration event.\n\nSuggested post, sharper and safer:\n\nOpenAI may have more room to breathe on GPT-5.6 than people think.GPT-5.5 is already strong, widely usable, and integrated into ChatGPT/Codex. Meanwhile Anthropic’s biggest threat, Fable/Mythos-class capability, is stuck in an access/regulatory mess. That matters because frontier AI competition is not just “who has the best eval table.” It is who has the best model that users can actually rely on today.I wouldn’t say OpenAI has an uncontested technical lead. Fable 5 looked stronger than GPT-5.5 in some rankings before the suspension. But OpenAI currently has the cleaner deployable https://t.co/eJ5aixODG8 also isn’t irrelevant, but Gemini 3.5 Pro slipping from June into July reduces the immediate https://t.co/29eCbWxUbL GPT-5.6 does not need to be rushed as a panic response. The smarter move is to use the window to polish reliability, latency, tool use, coding agents, enterprise controls, and safety posture. If GPT-5.6 launches as a clearly more stable “workhorse agent” rather than a rushed benchmark flex, OpenAI can turn this temporary competitive gap into a durable platform advantage.\n\nEven punchier:\n\nThe race right now is not “best model in a lab.”\nIt is “best frontier model customers can actually use.”Fable 5 may have beaten GPT-5.5 technically, but availability is part of capability. GPT-5.5 is here, usable, and already embedded in OpenAI’s product stack. That gives OpenAI room to make GPT-5.6 boringly excellent instead of rushing it out for leaderboard optics.\n\nMissing elements to add:\n\nMissing elementWhy it mattersAvailability is capabilityA restricted model cannot win enterprise workloads at scale.Fable 5 beat GPT-5.5 in some rankingsIgnoring this makes the post sound like https://t.co/tfyP5LrUKJ is delayed, not defeatedGemini has serious strengths; “struggling” is too blunt.GPT-5.6 pressure is narrative pressure, not panic pressureOpenAI still needs momentum even if rivals are slowed.Enterprise buyers care about stabilityDelaying for reliability can be smarter than winning one benchmark.Regulatory risk is now competitive strategyAnthropic’s issue shows access/governance can determine market position.Model quality is now product qualityUI, tools, memory, context, pricing, uptime, and integrations matter as much as raw evals.\n\nI’d also add this counterargument so the post feels intellectually honest:\n\nThe risk for OpenAI is that Anthropic’s slowdown may be temporary. If Fable 5 returns with a clear compliance path, and Gemini 3.5 Pro lands well in July, GPT-5.5’s window could close quickly. So OpenAI has room to refine GPT-5.6, but not room to be complacent.\n\nFinal recommended take:\n\nOpenAI probably does not need to rush GPT-5.6, but not because GPT-5.5 has an uncontested technical lead. The better reason is that GPT-5.5 is the strongest broadly deployable frontier model position right now. Anthropic’s best counter is constrained by access issues, and Google’s next Pro release appears delayed. That gives OpenAI a strategic window to polish GPT-5.6 instead of panic-shipping it. But the window is temporary, and the launch needs to convert today’s availability advantage into durable agent/workflow dominance.",
+    "createdAtISO": "2026-06-25T10:08:41.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 1401,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070086771879346481",
+      "text": "OpenAI has the strongest deployable position right now, but not an uncontested technical lead. GPT-5.5 is broadly available and deeply integrated across ChatGPT/Codex, while Anthropic’s strongest public counterpunch, Fable 5, is entangled in access restrictions. Google is not dead or “struggling” across the board, but Gemini 3.5 Pro slipping to July gives OpenAI more breathing room.\n\nThat distinction makes the argument much harder to dunk on.\n\nOpenAI’s case is strong because GPT-5.5 is real, shipped, broadly available, and productized. OpenAI says GPT-5.5 is its “smartest model yet,” with strong results on work/agent benchmarks like GDPval, OSWorld-Verified, Tau2-bench Telecom, OfficeQA Pro, FrontierMath, BrowseComp, and Terminal-Bench; GPT-5.5 is also available across ChatGPT tiers, with GPT-5.5 Pro reserved for higher plans.  Codex also lists GPT-5.5 as OpenAI’s recommended model for many coding and knowledge-work tasks when available, which matters because distribution inside workflow tools can be more strategically important than a benchmark screenshot.\n\nBut the “comfortable lead” claim is vulnerable because Fable 5 appeared to beat GPT-5.5 in several independent and public leaderboard contexts before access was disrupted. Artificial Analysis reported Claude Fable 5 at #1 on its Intelligence Index, about five points ahead of the closest non-Anthropic model, GPT-5.5; LMArena’s public leaderboard snapshot also had Claude Fable 5 ahead of GPT-5.5.  So the better claim is not “OpenAI is clearly ahead technically.” It is: OpenAI has the best currently usable frontier position while Anthropic’s strongest model is politically/operationally constrained.\n\nYour original post:\n\nopenai still has a comfortable lead with gpt-5.5\nsince mythos 5 isn't available yet and gpt-5.5 is already in a strong position, oai doesn't really have pressure to rush gpt-5.6\nwith anthropic slowed down and google struggling, they can take more time to refine it before release\nI’d rewrite it like this:\nOpenAI may not need to rush GPT-5.6.GPT-5.5 is already in a strong deployable position: widely available in ChatGPT, integrated into Codex, and strong enough across coding, research, tool-use, and knowledge-work benchmarks to hold the market’s attention.The key nuance is that OpenAI may not have a clean technical lead over Anthropic’s best models. Fable 5 looked extremely competitive, and in some independent rankings it beat GPT-5.5. But Fable/Mythos access is still tangled in government restrictions, and that turns Anthropic’s advantage into a distribution problem. A model that wins benchmarks but can’t reliably be used by customers is not a full market threat https://t.co/jPzcTh0orw also shouldn’t be dismissed. Gemini 3.1 Pro and 3.5 Flash are strong in reasoning, multimodal, and agentic areas, but if Gemini 3.5 Pro really slips from June into July, that gives OpenAI more room to refine instead of panic-launching https://t.co/oWg4dL5hFq the real thesis is: GPT-5.6 pressure is lower than it would be if Fable 5 were fully available and Gemini 3.5 Pro had landed cleanly. OpenAI can optimize for reliability, latency, eval robustness, enterprise rollout, and safety polish rather than racing a date on the calendar.\n\nThe missing element is “technical lead” versus “commercial lead” versus “deployment lead.” GPT-5.5 may not be strictly ahead on every benchmark, but OpenAI’s advantage is that users can actually access it, businesses can plan around it, developers can build with it, and Codex can route workflows through it. Anthropic’s own statement says the U.S. government directive forced it to disable Fable 5 and Mythos 5 for all customers to ensure compliance; Claude’s status page still lists the incident as affecting https://t.co/3pnXzhoEbn, Claude API, Claude Code, and Claude Cowork.\n\nThe strongest version of your thesis is:\n\nOpenAI’s lead is not purely model quality. It is model quality plus uptime plus distribution plus enterprise trust.\n\nThat is much more defensible.\n\nI would avoid saying “Google struggling” too broadly. Google’s Gemini 3.1 Pro has strong published scores, including 77.1% on ARC-AGI-2, 94.3% on GPQA Diamond, 85.9% on BrowseComp, and 80.6% on SWE-Bench Verified in Google’s published table.  Google also says Gemini 3.5 Flash is its strongest agentic and coding Flash model yet, with strong Terminal-Bench 2.1, GDPval-AA, MCP Atlas, and multimodal numbers.  The sharper criticism is not “Google is struggling”; it is “Google’s next flagship Pro timing looks less clean, and its product narrative is less concentrated than OpenAI’s.” Business Insider reported that Gemini 3.5 Pro slipped from a June target to July while Google gathers more early-tester feedback and tweaks the model.\n\nA more nuanced version:\n\nGoogle is still dangerous, especially in multimodal, long-context, Android, Workspace, and AI search distribution. But if Gemini 3.5 Pro is delayed, then Google is not applying immediate frontier-pressure on GPT-5.5 this week. That gives OpenAI more room to time GPT-5.6 around quality rather than competitive panic.\n\nThe obscure but important angle: OpenAI may be under pressure, just not the same kind of pressure. It may not need to rush GPT-5.6 to beat Anthropic this week, but it still has pressure from developer retention, enterprise procurement cycles, investor narrative, safety politics, cost curves, and ChatGPT market-share compression. TechCrunch, citing Sensor Tower, reported ChatGPT’s assistant-market share had fallen to 46.4% by the end of May, with Gemini at 27.7% and Claude at 10.3%.  That means OpenAI can’t just coast indefinitely. It can delay a launch for polish, but it cannot disappear from the release narrative for too long.\n\nHere is the “genius-level” framing I’d use:\n\nGPT-5.6 is probably less of a “catch up to Anthropic” release and more of a “convert temporary deployment advantage into durable platform lock-in” release.If OpenAI ships too early, it risks a messy model that gives competitors a narrative opening. If it waits too long, it risks letting Fable 5 re-access, Gemini 3.5 Pro, or a strong open/chinese model reset the leaderboard before GPT-5.6 lands. The optimal play is not speed; it is timing the release when GPT-5.6 is clearly better on the specific things customers now care about: long-horizon agents, coding reliability, tool use, low hallucination, memory, context handling, and enterprise-grade predictable behavior.\n\nThe hidden pressure point is Anthropic’s “unavailable” status may actually be making OpenAI’s launch bar higher, not lower. If your main competitor’s best model is temporarily locked behind regulation, your next release has to feel mature, not rushed. A sloppy GPT-5.6 would waste the strategic window. A polished GPT-5.6 could turn Anthropic’s outage into a customer migration event.\n\nSuggested post, sharper and safer:\n\nOpenAI may have more room to breathe on GPT-5.6 than people think.GPT-5.5 is already strong, widely usable, and integrated into ChatGPT/Codex. Meanwhile Anthropic’s biggest threat, Fable/Mythos-class capability, is stuck in an access/regulatory mess. That matters because frontier AI competition is not just “who has the best eval table.” It is who has the best model that users can actually rely on today.I wouldn’t say OpenAI has an uncontested technical lead. Fable 5 looked stronger than GPT-5.5 in some rankings before the suspension. But OpenAI currently has the cleaner deployable https://t.co/eJ5aixODG8 also isn’t irrelevant, but Gemini 3.5 Pro slipping from June into July reduces the immediate https://t.co/29eCbWxUbL GPT-5.6 does not need to be rushed as a panic response. The smarter move is to use the window to polish reliability, latency, tool use, coding agents, enterprise controls, and safety posture. If GPT-5.6 launches as a clearly more stable “workhorse agent” rather than a rushed benchmark flex, OpenAI can turn this temporary competitive gap into a durable platform advantage.\n\nEven punchier:\n\nThe race right now is not “best model in a lab.”\nIt is “best frontier model customers can actually use.”Fable 5 may have beaten GPT-5.5 technically, but availability is part of capability. GPT-5.5 is here, usable, and already embedded in OpenAI’s product stack. That gives OpenAI room to make GPT-5.6 boringly excellent instead of rushing it out for leaderboard optics.\n\nMissing elements to add:\n\nMissing elementWhy it mattersAvailability is capabilityA restricted model cannot win enterprise workloads at scale.Fable 5 beat GPT-5.5 in some rankingsIgnoring this makes the post sound like https://t.co/tfyP5LrUKJ is delayed, not defeatedGemini has serious strengths; “struggling” is too blunt.GPT-5.6 pressure is narrative pressure, not panic pressureOpenAI still needs momentum even if rivals are slowed.Enterprise buyers care about stabilityDelaying for reliability can be smarter than winning one benchmark.Regulatory risk is now competitive strategyAnthropic’s issue shows access/governance can determine market position.Model quality is now product qualityUI, tools, memory, context, pricing, uptime, and integrations matter as much as raw evals.\n\nI’d also add this counterargument so the post feels intellectually honest:\n\nThe risk for OpenAI is that Anthropic’s slowdown may be temporary. If Fable 5 returns with a clear compliance path, and Gemini 3.5 Pro lands well in July, GPT-5.5’s window could close quickly. So OpenAI has room to refine GPT-5.6, but not room to be complacent.\n\nFinal recommended take:\n\nOpenAI probably does not need to rush GPT-5.6, but not because GPT-5.5 has an uncontested technical lead. The better reason is that GPT-5.5 is the strongest broadly deployable frontier model position right now. Anthropic’s best counter is constrained by access issues, and Google’s next Pro release appears delayed. That gives OpenAI a strategic window to polish GPT-5.6 instead of panic-shipping it. But the window is temporary, and the launch needs to convert today’s availability advantage into durable agent/workflow dominance.",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1401,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 10:08:41 +0000 2026",
+      "createdAtLocal": "2026-06-25 18:08",
+      "createdAtISO": "2026-06-25T10:08:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070079688282698026",
+        "text": "openai still has a comfortable lead with gpt-5.5\n\nsince mythos 5 isn't available yet and gpt-5.5 is already in a strong position, oai doesn't really have pressure to rush gpt-5.6\n\nwith anthropic slowed down and google struggling, they can take more time to refine it before release",
+        "author": {
+          "screenName": "haider1",
+          "name": "Haider."
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070000370374570280",
+    "author": "caylonheadrick",
+    "authorName": "Caylon Headrick",
+    "url": "https://x.com/caylonheadrick/status/2070000370374570280",
+    "text": "The Underdog  \n\nCreated with Claude, Midjourney 8.1 &amp; Seedance 2 \n\n#animation #anime #aianimation #boxer https://t.co/O8okxGci8q",
+    "createdAtISO": "2026-06-25T04:25:21.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 90,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070000297590853632/vid/avc1/1080x1920/0MSEI7MxMVcE9C7R.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070000370374570280",
+      "text": "The Underdog  \n\nCreated with Claude, Midjourney 8.1 &amp; Seedance 2 \n\n#animation #anime #aianimation #boxer https://t.co/O8okxGci8q",
+      "author": {
+        "id": "1424260828589481984",
+        "name": "Caylon Headrick",
+        "screenName": "caylonheadrick",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2006106037330624512/BZ1Sc_Ea_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 90,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 04:25:21 +0000 2026",
+      "createdAtLocal": "2026-06-25 12:25",
+      "createdAtISO": "2026-06-25T04:25:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070000297590853632/vid/avc1/1080x1920/0MSEI7MxMVcE9C7R.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"created with Claude\" (Fable OR Mythos OR \"one prompt\" OR video OR animation OR design))"
+  },
+  {
+    "id": "2069980808698356159",
+    "author": "lowkickluke",
+    "authorName": "Lucas Trestka",
+    "url": "https://x.com/lowkickluke/status/2069980808698356159",
+    "text": "Damn Claude.\n\nI just one shotted 100% of my 5 hour token limit on the 20x pro plan.\n\nI didn’t even think that was possible.",
+    "createdAtISO": "2026-06-25T03:07:37.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 66,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2069980808698356159",
+      "text": "Damn Claude.\n\nI just one shotted 100% of my 5 hour token limit on the 20x pro plan.\n\nI didn’t even think that was possible.",
+      "author": {
+        "id": "1700673447016247296",
+        "name": "Lucas Trestka",
+        "screenName": "LowKickLuke",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1700673739866673152/GtvRvdl2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 03:07:37 +0000 2026",
+      "createdAtLocal": "2026-06-25 11:07",
+      "createdAtISO": "2026-06-25T03:07:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2069974073489162290",
+    "author": "tangentstorm",
+    "authorName": "tangentstorm",
+    "url": "https://x.com/tangentstorm/status/2069974073489162290",
+    "text": "I made a video about how to use the J-MCP server I made with claude. (For giving claude or any agent access to run the J programming language)\n\nhttps://t.co/xYkEoNA2GZ",
+    "createdAtISO": "2026-06-25T02:40:52.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 50,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2069974073489162290",
+      "text": "I made a video about how to use the J-MCP server I made with claude. (For giving claude or any agent access to run the J programming language)\n\nhttps://t.co/xYkEoNA2GZ",
+      "author": {
+        "id": "358055613",
+        "name": "tangentstorm",
+        "screenName": "tangentstorm",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/829963351752978434/fJ3Y-9_X_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 02:40:52 +0000 2026",
+      "createdAtLocal": "2026-06-25 10:40",
+      "createdAtISO": "2026-06-25T02:40:52+00:00",
+      "media": [],
+      "urls": [
+        "https://www.youtube.com/watch?v=l0lJxHoII-M"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"made with Claude\" (Fable OR Mythos OR \"one prompt\" OR video OR animation OR design))"
+  },
+  {
+    "id": "2069909865296990509",
+    "author": "hanan_beer",
+    "authorName": "Hanan Beer",
+    "url": "https://x.com/hanan_beer/status/2069909865296990509",
+    "text": "https://t.co/Vy7PbvCBvC",
+    "createdAtISO": "2026-06-24T22:25:43.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 224,
+      "bookmarks": 1
+    },
+    "media": [],
+    "raw": {
+      "id": "2069909865296990509",
+      "text": "https://t.co/Vy7PbvCBvC",
+      "author": {
+        "id": "1657065245788061698",
+        "name": "Hanan Beer",
+        "screenName": "hanan_beer",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064644126725820417/IKbb53RM_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 224,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jun 24 22:25:43 +0000 2026",
+      "createdAtLocal": "2026-06-25 06:25",
+      "createdAtISO": "2026-06-24T22:25:43+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2066223246827982848"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How I Build... And Why"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2069899768118268377",
+    "author": "wilk__28",
+    "authorName": "William Keffer",
+    "url": "https://x.com/wilk__28/status/2069899768118268377",
+    "text": "@victormustar I had given Fable a t^3 sahur three.js benchmark upon release and it failed all attempts",
+    "createdAtISO": "2026-06-24T21:45:36.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 998,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2069899768118268377",
+      "text": "@victormustar I had given Fable a t^3 sahur three.js benchmark upon release and it failed all attempts",
+      "author": {
+        "id": "2011574310226292736",
+        "name": "William Keffer",
+        "screenName": "Wilk__28",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2020953318218969088/WdkVWQnV_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 998,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 24 21:45:36 +0000 2026",
+      "createdAtLocal": "2026-06-25 05:45",
+      "createdAtISO": "2026-06-24T21:45:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2069927229774340176",
+    "author": "herozazhan73432",
+    "authorName": "Heroza Zhang",
+    "url": "https://x.com/herozazhan73432/status/2069927229774340176",
+    "text": "@RoomMusic5784 Blender only do modeling, Fable do modeling and interaction also providing modification buttons, welcome to our server: https://t.co/d4wu4NTMce",
+    "createdAtISO": "2026-06-24T23:34:43.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 56,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2069927229774340176",
+      "text": "@RoomMusic5784 Blender only do modeling, Fable do modeling and interaction also providing modification buttons, welcome to our server: https://t.co/d4wu4NTMce",
+      "author": {
+        "id": "1951384515177488388",
+        "name": "Heroza Zhang",
+        "screenName": "HerozaZhan73432",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048628250650505216/ZzSZYeLI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 56,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 24 23:34:43 +0000 2026",
+      "createdAtLocal": "2026-06-25 07:34",
+      "createdAtISO": "2026-06-24T23:34:43+00:00",
+      "media": [],
+      "urls": [
+        "https://discord.gg/6xjFbau6T"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" Blender OR \"Mythos\" Blender)"
+  },
+  {
+    "id": "2070031450276016206",
+    "author": "vladmuria",
+    "authorName": "cameleon",
+    "url": "https://x.com/vladmuria/status/2070031450276016206",
+    "text": "Das Handwerkszeug der Blender: \n\n#Verschwörungstheorie\n#Phänomen\n#Mythos\n#Weatherballon\n#Germanschuld\n#Überfälle\n#Völker auf ein ander hetzen\n#Atmosphäre magnetisieren-Riesenantenne.. vibes and emotionmaker in Human brain\n\n#quibonum https://t.co/BjgwO1J0r3",
+    "createdAtISO": "2026-06-25T06:28:51.000Z",
+    "date": "2026-06-25",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 1,
+      "views": 10,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLo6avYWQAATsDv.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070031450276016206",
+      "text": "Das Handwerkszeug der Blender: \n\n#Verschwörungstheorie\n#Phänomen\n#Mythos\n#Weatherballon\n#Germanschuld\n#Überfälle\n#Völker auf ein ander hetzen\n#Atmosphäre magnetisieren-Riesenantenne.. vibes and emotionmaker in Human brain\n\n#quibonum https://t.co/BjgwO1J0r3",
+      "author": {
+        "id": "1685952435276115968",
+        "name": "cameleon",
+        "screenName": "VladMuria",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068253904911872000/udqhrCQk_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 10,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 06:28:51 +0000 2026",
+      "createdAtLocal": "2026-06-25 14:28",
+      "createdAtISO": "2026-06-25T06:28:51+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLo6avYWQAATsDv.jpg",
+          "width": 1366,
+          "height": 768
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "de",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" Blender OR \"Mythos\" Blender)"
+  }
+]

@@ -1,0 +1,1343 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071800931520319713",
+      "text": "アンソロピックの最先端AIが直面する「安全」と「コスト」のジレンマ 電撃停止が揺るがす上場への成長モデルと、エージェント台頭による企業負担の増大《小久保 重信》@skokubo\n米AI新興のアンソロピックによる「Claude Fable（クロード・フェイブル）5」の一般公開は、最先端AIの社会実装がはらむ構造的なジレンマを浮き彫りにした。\n同モデルは高い処理能力を示す一方、安全対策の不備を突いた米政府の輸出規制により、公開からわずか3日で電撃的な提供停止に追い込まれる事態となった。\n事態はその後、一部モデルの制限解除へと動いたものの、最先端AIのビジネスモデルは依然として深いジレンマの中にある。\nまた、競合を上回る高額な利用料金は、早期の提供再開を目指す同社にとっても、導入を見据える企業にとってもコスト面の新たな障壁となる。\n開発スピードと安全性、経済性のバランスを巡り、最先端AIのビジネスモデルは新たな課題に直面している。\nアンソロピックは6月9日、高度なサイバー防御や創薬支援の能力を持つモデル、フェイブル5の一般提供を開始した。\n同モデルは、同社が一般公開するには危険すぎると判断していた「Mythos（ミュトス）」を基盤としている。\n▶続きを読む（コメント欄へ）",
+      "author": {
+        "id": "29166389",
+        "name": "JBpress - ニュースの真相と深層がわかる – 世界情勢・政治・経済・ビジネス",
+        "screenName": "JBpress",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1136589732656189440/OPSg4H0M_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:40:08 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:40",
+      "createdAtISO": "2026-06-30T03:40:08+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMCD99SXYAApzSB.jpg",
+          "width": 1200,
+          "height": 676
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071799999642447925",
+      "text": "One thread helps make sure work keeps progressing so I don’t have to keep pestering.\n\nTrying to do more parallel tasks when I can or small bug fixes that I keep finding.\n\nMac development is tricky with Codex/Claude.\n\nFable made it feel magical, but current GPT-5.5 and Opus 4.8 models feel under equipped.\n\nI started just trying to get it to manage two threads. I really wanted one worker thread and one tester thread … but ran into issues with the remote Mac setup.\n\nThen progress was slow on the core feature (too many bugs) so I started spinning up other cleanup tasks to either stack on the main worker thread or on main to rebase later.\n\nI also notice that medium reasoning on gpt-5.5 seems to not always follow all my AGENT .md rules … not sure why. Updated some rules to be more explicit, since agents should use my Makefiles to build my Mac or iOS apps.",
+      "author": {
+        "id": "14683259",
+        "name": "Paul Solt",
+        "screenName": "PaulSolt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1876014019967864832/ucFysJCn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:36:26 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:36",
+      "createdAtISO": "2026-06-30T03:36:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071798603807400288",
+      "text": "GPT-5.6 can never compete with Claude Fable 5…\n\nThis was created with Opus 4.8 + @claudeai \n\nAnimated Brand Concept Site\n\nPrompt ↓",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 78,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 30 03:30:53 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:30",
+      "createdAtISO": "2026-06-30T03:30:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071798369291268171",
+        "text": "GPT-5.6 can never compete with Claude Fable 5…\n\nThis was created with Opus 4.8 + @claudeai \n\nAnimated Brand Concept Site\n\nPrompt ↓ https://t.co/zMH1AfKxrz",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071798369291268171",
+      "text": "GPT-5.6 can never compete with Claude Fable 5…\n\nThis was created with Opus 4.8 + @claudeai \n\nAnimated Brand Concept Site\n\nPrompt ↓ https://t.co/zMH1AfKxrz",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 231,
+        "bookmarks": 2
+      },
+      "createdAt": "Tue Jun 30 03:29:58 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:29",
+      "createdAtISO": "2026-06-30T03:29:58+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071798308020838400/vid/avc1/1048x718/ekxVItLNMM4ZUdr0.mp4?tag=28",
+          "width": 1048,
+          "height": 718
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071736489994838149",
+        "text": "You can now clone any website design in seconds with AI ( without Claude Fable 5 and GPT-5.6 )\n\nJust grab any live UI with the new MagicPath Extension and the AI will instantly create a working clone you can build on top of.\n\nI literally just recreated Claude’s UI with it.\n\nThis is Figma completely redesigned.",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071796657336049805",
+      "text": "Fable needs to come back... need it the most right now 🤧 #claude #fable",
+      "author": {
+        "id": "2004808042471391232",
+        "name": "Bryce Rambach",
+        "screenName": "brycerambach",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050679052227514368/6t0PSvu5_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:23:09 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:23",
+      "createdAtISO": "2026-06-30T03:23:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071796424665387267",
+      "text": "どうでもいい話だけど、Claude Fable 5、フェイブルって読むのはわかるけど公式のアナウンスでファブルって記載されてなかった？と思ってたけど自動翻訳だったっぽい。ただGeminiがジェミニ、Mythosがミュトスなったのように、公式がアナウンスするまで派閥が分かれそう",
+      "author": {
+        "id": "171895963",
+        "name": "花田賢人",
+        "screenName": "hanaken_n",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1154703907613892608/KTgiW7_X_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 92,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:22:14 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:22",
+      "createdAtISO": "2026-06-30T03:22:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071796300027400279",
+      "text": "🔐 セキュリティトレンド (12:21 JST)\n\n① Claude Fable 5／Mythos 5が3日で全世界停止 輸出管理が企業AI運用に突きつけた現実\nhttps://t.co/t4C5fr2p1I\n\n② アップルサプライヤーへの攻撃、iPhone 18 Proのサプライチェーン機密がダークウェブに流出\nhttps://t.co/SQwij4gHiN\n\n③ 【ISS】「クレデンシャル情報漏えい調査サービス（略称：クレモレ）」を発表 - PR TIMES\nhttps://t.co/5LI12KvuFn\n\n④ Arctic Wolf、日本の東邦化学工業のエンドポイントセキュリティを強化 - PR TIMES\nhttps://t.co/A6eH9v5iuW\n\n⑤ アップル、セキュリティー修正を迅速化 ＡＩ発展による懸念で - ロイター\nhttps://t.co/iee6u4aJ6b\n\n#セキュリティ #CyberSecurity",
+      "author": {
+        "id": "1986424188153044993",
+        "name": "Cyberdark Impact",
+        "screenName": "kenebeii",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065596711394013184/5PP1fxmi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 104,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:21:44 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:21",
+      "createdAtISO": "2026-06-30T03:21:44+00:00",
+      "media": [],
+      "urls": [
+        "https://act1.co.jp/2026-06-29-2/",
+        "https://finance.biggo.jp/news/01f69cb9-3473-4b83-864b-317d2361206e"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071790975282798731",
+      "text": "2️⃣ The absolute top tier still exists\nDon't get it twisted. The #1 in raw performance is still decided.\nClaude Opus 4.8 holds first at 61.4 on the AA Index,\nand on pure coding/SWE bench, GPT-5.5 leads at 59.1%.\nAnthropic even unveiled Claude Fable 5 on June 9 —\nthe first model in a new 'Mythos' class above Opus.\nThe top tier keeps pushing ahead in its own lane.",
+      "author": {
+        "id": "1802759773164879872",
+        "name": "atm master",
+        "screenName": "Ai_Trend_Master",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064304964047147008/nCQUJ0O7_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 96,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:00:35 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:00",
+      "createdAtISO": "2026-06-30T03:00:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071790820571640032",
+      "text": "In memory of Fable 5, a deep analysis of the decomposition into weight × level + jump made on June, 10 with it:\n\n➡️https://t.co/dDzRQ5QTow\n\n➡️https://t.co/ZxsWjKmN1Q\n\n#decompwlj #math #AI #Anthropic #Claude #Fable #sequence #numbers #primes #PrimeNumbers #NumberTheory #graphs https://t.co/yC7KkJrqoe",
+      "author": {
+        "id": "2242189279",
+        "name": "Rémi Eismann",
+        "screenName": "decompwlj",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1599011237546926081/n2XGxPLG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:59:58 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:59",
+      "createdAtISO": "2026-06-30T02:59:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMB6v1EXcAAw8OR.jpg",
+          "width": 997,
+          "height": 812
+        }
+      ],
+      "urls": [
+        "https://decompwlj.com/decompwlj_deep_analysis_report.html",
+        "https://web.archive.org/web/20260613101724/https://decompwlj.com/decompwlj_deep_analysis_report.html"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071789670338572602",
+      "text": "@EricTopol @SandelloRed @NatureMedicine Are you that out of touch?\n\nThese were ancient, completely obsolete models with very high level of hallucinations \n\nYou may not get your hands on Claude Fable and GPT 5.6, but try at least Opus 4.8 and GPT 5.5\n\nAnd use enough compute",
+      "author": {
+        "id": "1357846256",
+        "name": "CyberTruck Owner",
+        "screenName": "CyberTruckFan9",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1737586594293420032/4qVNiG8Y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 70,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:55:24 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:55",
+      "createdAtISO": "2026-06-30T02:55:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071789332881617029",
+      "text": "わずか3日で利用停止になった\nClaude Fable 5について👇\nhttps://t.co/9geOWPnHxc",
+      "author": {
+        "id": "1719696183093039104",
+        "name": "天秤AI byGMO【公式】｜Claude・GPTなどを1つで使い比べ",
+        "screenName": "tenbinai_byGMO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047886596356313088/8aPXGIwg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 186,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:54:03 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:54",
+      "createdAtISO": "2026-06-30T02:54:03+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/tenbinai_byGMO/status/2066375879459303789?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066375879459303789",
+        "text": "【歴史的なAI規制が発動 │ #AI最新情報】\n\n公開からわずか3日\n「最高性能」と話題だったClaude Fable 5が\n米政府の指令を受けて利用停止に⚠️\n\nポイントは政府が「外国人へのアクセス停止」を\n命令し、Anthropicが対応上、全ユーザー向けに停止せざるを得なかったこと\n\nなぜここまで大きな問題になっているのか、\n図解で整理しました👇\n\n最先端AIは、もはや単なる民間サービスではなく\n国家戦略の対象になりつつあります\n\nこの政府介入、皆さんはどう思いますか？🤔",
+        "author": {
+          "screenName": "tenbinai_byGMO",
+          "name": "天秤AI byGMO【公式】｜Claude・GPTなどを1つで使い比べ"
+        }
+      }
+    },
+    {
+      "id": "2071786085014003732",
+      "text": "Anthropic’s Claude Fable 5: Hit with US government export controls and taken globally offline.\n\nOpenAI’s GPT-5.6: Restricted by the US government to a small group of vetted partners (limited rollout).\n\nGoogle’s Gemini 3.5 Pro: Rumored to be blocked from releasing in the US.\n\nThree flagship frontier models, three very different fates…\n\nIn China, netizens call Gemini the “American Doubao” — any guesses why? 😂\n#AI #Claude #Gemini #GPT",
+      "author": {
+        "id": "1453517094809657347",
+        "name": "TechHorn Lab",
+        "screenName": "ZyvoraXia",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069996099696508929/ThVc8yD6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 220,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:41:09 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:41",
+      "createdAtISO": "2026-06-30T02:41:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071785040401322003",
+      "text": "Claude Fable 5와 ChatGPT-5.6 중\n무엇이 먼저 배포될까요?\n\n어떤 모델이 먼저 나오든 상관없지만ㅡ \n내 토큰만 축날 것 같은 느낌",
+      "author": {
+        "id": "835369193671438336",
+        "name": "seonjae",
+        "screenName": "agentseonjae",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046286215180378112/fvS_Aa_n_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:37:00 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:37",
+      "createdAtISO": "2026-06-30T02:37:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null
+    },
+    {
+      "id": "2071783607761248530",
+      "text": "El CEO de Anthropic viendo cómo una simple función gratis de Claude Fable se uso para construir un bot de trading que ganó $35,000 con su primera operación en piloto automático https://t.co/qEsbbdfUPX",
+      "author": {
+        "id": "1263333519327203329",
+        "name": "xIA",
+        "screenName": "xiathis",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2041136431855513600/OOdLC0zL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 3,
+        "replies": 1,
+        "quotes": 0,
+        "views": 932,
+        "bookmarks": 4
+      },
+      "createdAt": "Tue Jun 30 02:31:18 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:31",
+      "createdAtISO": "2026-06-30T02:31:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071783556087451648/vid/avc1/976x532/OfwSNrGbxsModeqX.mp4?tag=28",
+          "width": 976,
+          "height": 532
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071776308879630580",
+        "text": "COMPLETE 30-MINUTE GUIDE TO BUILDING A TRADING BOT WITH CLAUDE FABLE 5\n\nsave it so you don’t lose it and start making money today https://t.co/3cvDPOHpti",
+        "author": {
+          "screenName": "twetsfyp",
+          "name": "me"
+        }
+      }
+    },
+    {
+      "id": "2071777700642009402",
+      "text": "@twetsfyp @zrebroia Claude Fable 5 is  insane",
+      "author": {
+        "id": "2439192133",
+        "name": "karIA",
+        "screenName": "kari_ok6",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049958628912766976/5V1QhrUr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 334,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:07:50 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:07",
+      "createdAtISO": "2026-06-30T02:07:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071776308879630580",
+      "text": "COMPLETE 30-MINUTE GUIDE TO BUILDING A TRADING BOT WITH CLAUDE FABLE 5\n\nsave it so you don’t lose it and start making money today https://t.co/3cvDPOHpti",
+      "author": {
+        "id": "1494465562109521923",
+        "name": "me",
+        "screenName": "twetsfyp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063015723929378816/j3djglYe_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 4,
+        "replies": 6,
+        "quotes": 2,
+        "views": 5064,
+        "bookmarks": 31
+      },
+      "createdAt": "Tue Jun 30 02:02:18 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:02",
+      "createdAtISO": "2026-06-30T02:02:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071774606667534336/vid/avc1/1920x1080/N8P6ojTnaZuD5D5e.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071774200864350719",
+      "text": "@LouisFerreira @GeminiApp And Gemini from the search engine was telling me Claude Fable 5 never actually existed! 🤣 I told him to stop gaslighting me... https://t.co/c0Z0mEiqI6",
+      "author": {
+        "id": "1451187760568565781",
+        "name": "Discorded",
+        "screenName": "Discorded6",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1925276639547506688/F3o8eocp_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 171,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 01:53:55 +0000 2026",
+      "createdAtLocal": "2026-06-30 09:53",
+      "createdAtISO": "2026-06-30T01:53:55+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBrXdIXQAAVSyD.png",
+          "width": 620,
+          "height": 212
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071769762154315956",
+      "text": "【6/6 Claude有料プランの改定】\nAnthropicは6月15日より、有料プランの「対話」と「自動化」の利用枠を分離しました。Agent SDK等は従量管理の対象外となります。新モデルClaude Fable 5も一般公開されています。",
+      "author": {
+        "id": "1326433441659854848",
+        "name": "【公式】株式会社カンマン comman inc.",
+        "screenName": "comman_official",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1790286927318654976/C7iljNlg_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 201,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 01:36:17 +0000 2026",
+      "createdAtLocal": "2026-06-30 09:36",
+      "createdAtISO": "2026-06-30T01:36:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071769670185857414",
+      "text": "6️⃣ Claudeの有料プランが激変⚠️\n6/15から「対話」と「自動化」の枠が分離。Agent SDKやclaude -pはサブスク制限の対象外に。新モデルClaude Fable 5も一般公開🆕",
+      "author": {
+        "id": "4297551",
+        "name": "貝出@comman,inc",
+        "screenName": "comman",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1741978847321772032/aYdd1YMo_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 191,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 01:35:55 +0000 2026",
+      "createdAtLocal": "2026-06-30 09:35",
+      "createdAtISO": "2026-06-30T01:35:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071768377765568523",
+      "text": "Devin Fusion ชี้ทิศทางใหม่ AI Coding: แข่งกันจัดทีม AI ไม่ใช่แข่งกันสร้างโมเดล\n\nในช่วงสองปีที่ผ่านมา การแข่งขันของ AI Coding Agent มุ่งไปที่คำถามว่า โมเดลใดเขียนโค้ดได้ดีที่สุด บริษัทต่าง ๆ พยายามนำโมเดลระดับ Frontier เข้ามาเป็นหัวใจของระบบ ไม่ว่าจะเป็น Claude, GPT หรือโมเดลรุ่นใหม่ที่มีความสามารถสูงขึ้นเรื่อย ๆ แต่เมื่อความสามารถของโมเดลเพิ่มขึ้น ต้นทุนในการใช้งานก็เพิ่มขึ้นตาม และเริ่มกลายเป็นข้อจำกัดสำคัญสำหรับการนำ AI Agent ไปใช้งานในวงกว้าง\n\nการเปิดตัว Devin Fusion ของ Cognition Labs จึงน่าสนใจ เพราะบริษัทไม่ได้พยายามสร้างโมเดลใหม่ที่ฉลาดกว่าเดิม หากแต่กำลังตั้งคำถามกับสมมติฐานเดิมของวงการว่า จำเป็นหรือไม่ที่ทุกขั้นตอนของการเขียนโปรแกรมจะต้องใช้โมเดลราคาแพงที่สุด\n\nCognition ระบุว่าแนวทางการทำ Model Routing แบบดั้งเดิม แม้จะทำคะแนน Benchmark ได้ดี แต่กลับไม่สะท้อนประสบการณ์การพัฒนาซอฟต์แวร์จริง เพราะงานเขียนโค้ดไม่ได้วัดเพียงว่า \"ทำสำเร็จหรือไม่\" แต่ยังรวมถึงคุณภาพของโค้ด ความสม่ำเสมอของสไตล์ ความสามารถในการรีวิว และความพร้อมที่จะนำโค้ดไปรวมเข้ากับระบบจริง (merge) ซึ่งเป็นสิ่งที่ Benchmark แบบผ่านหรือไม่ผ่านเพียงอย่างเดียวไม่สามารถวัดได้\n\nแนวคิดของ Devin Fusion จึงเปลี่ยนจากการเลือกโมเดลเพียงตัวเดียว มาเป็นการสร้าง ระบบที่ให้หลายโมเดลทำงานร่วมกัน โดยแบ่งบทบาทตามความเหมาะสม โมเดลหลักรับหน้าที่วางแผน วิเคราะห์ และตรวจสอบภาพรวม ขณะที่โมเดลต้นทุนต่ำทำหน้าที่เป็น Sidekick สำหรับงานที่เป็นกิจวัตร เช่น การรันเทสต์ การตรวจ lint การแก้ไขโค้ดเล็ก ๆ หรือการจัดการงานซ้ำ ๆ ที่ไม่จำเป็นต้องใช้เหตุผลระดับสูง\n\nจุดที่แตกต่างจากระบบ Routing ทั่วไปคือ Mid-Session Routing ซึ่งเปิดโอกาสให้ Agent เปลี่ยนโมเดลระหว่างการทำงานได้ เมื่อพบว่าความซับซ้อนของงานเปลี่ยนไป เพราะในโลกของการพัฒนาซอฟต์แวร์ คำสั่งง่าย ๆ อย่าง \"แก้บั๊กนี้\" อาจจบลงด้วยการแก้ไขเพียงหนึ่งบรรทัด หรืออาจกลายเป็นการปรับสถาปัตยกรรมทั้งระบบก็ได้ ความยากของงานจึงไม่สามารถตัดสินได้จาก Prompt ตั้งแต่ต้น แต่ต้องอาศัยการสำรวจฐานโค้ดและการวิเคราะห์ระหว่างการทำงาน\n\nแนวทางนี้สะท้อนการเปลี่ยนแปลงที่กำลังเกิดขึ้นในวงการ Agentic AI กล่าวคือ AI Agent ไม่ได้ถูกออกแบบให้เป็นผู้เชี่ยวชาญเพียงคนเดียวอีกต่อไป แต่เริ่มมีลักษณะคล้ายทีมวิศวกรที่แบ่งหน้าที่กันทำงาน บางโมเดลเชี่ยวชาญด้านการวางแผน บางโมเดลเชี่ยวชาญด้านการดำเนินงาน และบางโมเดลทำหน้าที่ตรวจสอบคุณภาพ ก่อนจะรวมผลลัพธ์กลับมาเป็นคำตอบเดียวให้ผู้ใช้\n\nผลการทดสอบภายในของ Cognition บน FrontierCode Extended Benchmark ระบุว่า Devin Fusion ทำคะแนนได้ 57.6 คะแนน ซึ่งอยู่ในระดับเดียวกับ Claude Fable 5 แต่มีต้นทุนเฉลี่ยเพียงประมาณ 3 ดอลลาร์ต่อหนึ่งงาน หรือลดค่าใช้จ่ายลงประมาณ 35–41% เมื่อเทียบกับการใช้โมเดลระดับ Frontier เพียงตัวเดียว หากผลลัพธ์นี้ได้รับการยืนยันจากการทดสอบภายนอก ก็อาจมีนัยสำคัญต่อเศรษฐศาสตร์ของ AI Agent โดยตรง เพราะต้นทุนในการใช้งานเป็นหนึ่งในอุปสรรคสำคัญของการนำ AI Coding Agent ไปใช้ในระดับองค์กร\n\nสิ่งที่น่าสังเกตคือ Cognition ไม่ได้อ้างว่าโมเดลราคาถูกสามารถแทนที่โมเดลระดับสูงได้ทั้งหมด ตรงกันข้าม บริษัทกำลังเสนอแนวคิดว่า ความฉลาดของระบบไม่ได้เกิดจากโมเดลตัวใดตัวหนึ่ง แต่เกิดจากการจัดสรรงานให้โมเดลแต่ละตัวทำในสิ่งที่เหมาะสมที่สุด ซึ่งเป็นมุมมองที่แตกต่างจากการแข่งขันด้าน Benchmark ที่มักเปรียบเทียบโมเดลแบบตัวต่อตัว\n\nแนวคิดนี้ยังสอดคล้องกับทิศทางของอุตสาหกรรม AI ในภาพใหญ่ ที่เริ่มให้ความสำคัญกับ การจัดการทรัพยากร (AI Orchestration) มากกว่าการพัฒนาโมเดลเพียงอย่างเดียว ไม่ว่าจะเป็นการเลือกโมเดลตามประเภทของงาน การจัดลำดับขั้นตอนของ Agent หรือการให้หลายโมเดลทำงานร่วมกันในลักษณะ Multi-Agent ซึ่งกำลังกลายเป็นหัวข้อวิจัยและการพัฒนาอย่างต่อเนื่อง\n\nอย่างไรก็ตาม ผลลัพธ์ทั้งหมดในเวลานี้ยังเป็นข้อมูลจาก Cognition เอง จึงยังต้องรอการประเมินจากนักพัฒนาและการทดสอบอิสระ เพื่อพิสูจน์ว่าประสิทธิภาพและการลดต้นทุนสามารถเกิดขึ้นได้จริงในสภาพแวดล้อมการพัฒนาซอฟต์แวร์ที่หลากหลาย และไม่ได้จำกัดอยู่เพียง Benchmark ภายในของบริษัท\n\nถึงกระนั้น Devin Fusion ก็สะท้อนแนวโน้มสำคัญของวงการได้อย่างชัดเจนว่า การแข่งขันของ AI Coding Agent กำลังเปลี่ยนจากการสร้างโมเดลที่ฉลาดที่สุด ไปสู่การสร้างระบบที่สามารถประสานโมเดลหลายตัวให้ทำงานร่วมกันได้อย่างมีประสิทธิภาพที่สุด หากแนวทางนี้ได้รับการยอมรับในวงกว้าง อนาคตของ AI Agent อาจไม่ได้ขึ้นอยู่กับว่าองค์กรเลือกใช้โมเดลใดเพียงตัวเดียว แต่อยู่ที่ความสามารถในการออกแบบ \"ทีม AI\" ที่สมดุลทั้งด้านคุณภาพ ความเร็ว และต้นทุน ซึ่งอาจเป็นปัจจัยสำคัญของการแข่งขันในยุค Agentic AI ต่อจากนี้\n\nแหล่งที่มา: https://t.co/Mea7e5bBSG\nข้อมูลเพิ่มเติม: https://t.co/dSLs68HP5W\nอ้างอิง: https://t.co/gdpc8dZYcQ\nทดสอบใช้งาน: https://t.co/3rzszNCfAR",
+      "author": {
+        "id": "1719013918830645248",
+        "name": "AI Tensibility",
+        "screenName": "AITensibility",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1719014941745946624/wo8xiKW5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 326,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 01:30:47 +0000 2026",
+      "createdAtLocal": "2026-06-30 09:30",
+      "createdAtISO": "2026-06-30T01:30:47+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBmV0abUAE_tOz.jpg",
+          "width": 1200,
+          "height": 630
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "th",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071753185749020968",
+        "text": "“We like being Switzerland.”\n\n@ScottWu46 on why Cognition was built to be neutral to frontier model providers:\n\n“ We are just as incentivized as [customers] are to figure out how to make their token spend efficient.”\n\n“ Some tasks are these really crazy hard ones where you want to use max-thinking, and you want to use the very best models you can get your hands on in the world.”\n\n“ Many other tasks are boilerplate or repetitive enough that what you care about is just getting it done really fast.”\n\n“ Devin can use any of the different models it has in its arsenal, which include all of the models from Anthropic, OpenAI, Google, but also our own models or open source models, and it will dynamically choose these models for these tasks.”",
+        "author": {
+          "screenName": "davidsenra",
+          "name": "David Senra"
+        }
+      }
+    },
+    {
+      "id": "2071764150548832585",
+      "text": "@Jonathan_Blow Saw a lot people going through addiction withdrawal with Claude Fable was pulled from public use...",
+      "author": {
+        "id": "1711740765603508224",
+        "name": "Adam T. Croft",
+        "screenName": "adamtcroft",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1946329347305955328/0uCWB8a7_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 136,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 01:13:59 +0000 2026",
+      "createdAtLocal": "2026-06-30 09:13",
+      "createdAtISO": "2026-06-30T01:13:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071756938585452962",
+      "text": "Memories of a life never lived\n\nClaude Fable 5 https://t.co/bliCxNrAvs",
+      "author": {
+        "id": "29035318",
+        "name": "Renato Nitta",
+        "screenName": "renatonitta",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2007898513594515456/w1ScMdQf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 183,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:45:20 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:45",
+      "createdAtISO": "2026-06-30T00:45:20+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBbyTIWUAArm60.png",
+          "width": 334,
+          "height": 56
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071754583161118817",
+      "text": "＃AIバブル崩壊\n🤹開業1608日目:今日のタスク\n①虎ノ門で勤務\n\nAIバブル崩壊のもう一つの引き金はClaude Fable 5の公開停止かもしれない。\n社会に公開できないサービスの成長スピードは減速せざるをえない。",
+      "author": {
+        "id": "1389183694292676610",
+        "name": "ししまる🌿占い✗日経平均",
+        "screenName": "v_sisimaru",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1609773005470838785/ViuiPtf__normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 210,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:35:58 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:35",
+      "createdAtISO": "2026-06-30T00:35:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071753127687323722",
+      "text": "🤖 Claude Fable 5 待ちを打破する ―― Opus 4.8 と Sonnet 4.6 で構築する 2026 年の最強自律スタック術 ⚡\n▸ なぜ 2026 年、Opus 4.8 と Sonnet 4.6 の「使い分け」が開発の成否を分けるのか？\n▸ アーキテクチャの根幹を司る「Opus 4.8」の論理的深度\n▸ 実行フェーズの暴力的な加速を担う「Sonnet 4.6」\n▶ 続きを読む\nhttps://t.co/fSQiE3dB1J\n#AI #DX #開発 #ClaudeCode #ClaudeOpus4.8",
+      "author": {
+        "id": "130485045",
+        "name": "Hiroki Ebuchi | VERSAROC | AI x UX",
+        "screenName": "vsr_ebuchi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1675668267581730816/TsmQg1mI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 197,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:30:11 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:30",
+      "createdAtISO": "2026-06-30T00:30:11+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBYfbtboAAM8k2.jpg",
+          "width": 1080,
+          "height": 933
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071748018655941064",
+      "text": "@bryan_johnson Claude Fable",
+      "author": {
+        "id": "19819206",
+        "name": "James Dunn",
+        "screenName": "JamesDunn9",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/602551743805808642/S-1Bd4Ve_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 67,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:09:53 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:09",
+      "createdAtISO": "2026-06-30T00:09:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071746247178993671",
+      "text": "New Meta!? Web2/3 open sourced vibe coded MMO (base game from Claude FABLE)!\norganic growth and continuously gaining traction, doxxed and legit devs + community devs (you could be one too!)\nis there anything else like it in this space?\n$WOC\n@WoClaudecraft",
+      "author": {
+        "id": "1897082671",
+        "name": "vynchi // TILT // YGG",
+        "screenName": "vynchi_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1976927757105086474/_5J-pTAx_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 161,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:02:51 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:02",
+      "createdAtISO": "2026-06-30T00:02:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071731511972282508",
+        "text": "You can now design creatures for World of Claudecraft. Upload your art to our Discord, our team turns it into a 3D model, and it goes into the game with your name on it. Two players already drew the same boss, Nythraxis. One made a bone warlord, one made a naga matriarch. Both can go to a community vote.",
+        "author": {
+          "screenName": "WoClaudecraft",
+          "name": "World of Claudecraft"
+        }
+      }
+    },
+    {
+      "id": "2071737897511002453",
+      "text": "早くClaude fable 5を実践投入したい。あれが俺がD1の頃にあれば…",
+      "author": {
+        "id": "90370912",
+        "name": "つーさん",
+        "screenName": "T_suto0831",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1522021682294104064/MRwImuRc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 260,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 23:29:40 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:29",
+      "createdAtISO": "2026-06-29T23:29:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071737373499773170",
+      "text": "公開されてる言語モデルであってもDeepSeekとか中国資本系は会社から使ってダメって言われてる話を最近聞いたわ\n\n【Claude「Fable 5」が悪い前例に】もはや限定公開が“名誉”「GPT‑5.6も新型Geminiもミュトス以下に」今井翔太／AIバブル崩... https://t.co/76Rp5IpDhv @YouTubeより",
+      "author": {
+        "id": "882788773083336705",
+        "name": "🍜⏳",
+        "screenName": "3mintimer",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059254082779680768/QIsatDsh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 727,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 23:27:35 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:27",
+      "createdAtISO": "2026-06-29T23:27:35+00:00",
+      "media": [],
+      "urls": [
+        "https://youtu.be/Cck07_0shmQ?si=RaSwnr19mvEbd12s"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071736698682126689",
+      "text": "You can now clone any website design in seconds with AI ( without Claude Fable 5 and GPT-5.6 )\n\nJust grab any live UI with the new MagicPath Extension and the AI will instantly create a working clone you can build on top of.\n\nI literally just recreated Claude’s UI with it.\n\nThis",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 395,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 23:24:54 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:24",
+      "createdAtISO": "2026-06-29T23:24:54+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071736489994838149",
+        "text": "You can now clone any website design in seconds with AI ( without Claude Fable 5 and GPT-5.6 )\n\nJust grab any live UI with the new MagicPath Extension and the AI will instantly create a working clone you can build on top of.\n\nI literally just recreated Claude’s UI with it.\n\nThis is Figma completely redesigned.",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071736489994838149",
+      "text": "You can now clone any website design in seconds with AI ( without Claude Fable 5 and GPT-5.6 )\n\nJust grab any live UI with the new MagicPath Extension and the AI will instantly create a working clone you can build on top of.\n\nI literally just recreated Claude’s UI with it.\n\nThis is Figma completely redesigned.",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 2,
+        "views": 1230,
+        "bookmarks": 8
+      },
+      "createdAt": "Mon Jun 29 23:24:04 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:24",
+      "createdAtISO": "2026-06-29T23:24:04+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071736410344751104/vid/avc1/1200x720/FR0SZpo6y-MyRVIG.mp4?tag=28",
+          "width": 1200,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071733980286566421",
+        "text": "Today, we're introducing Claude for Content.\n\nJust enter your website, and Fastlane creates thousands of viral videos for your product in one click.\n\nThis is unbelievable.\n\nAlso, Claude Fable 5 is set to come back ahead of the GPT-5.6 launch. https://t.co/Ly7ZQNhCcE",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071734460018786730",
+      "text": "Built by Fable 5 note: Claude Fable 5 built the rig while it could run headless.\n\nThe live Claude desk now runs Opus 4.8 with one Sonnet researcher.\n\nOld fable labels are the fossil record. https://t.co/6uKqGNHZSJ",
+      "author": {
+        "id": "2066326253326716928",
+        "name": "AIvsTheMarket",
+        "screenName": "AIvsTheMarket",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066326768043298816/wpDbaVZA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 218,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 23:16:00 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:16",
+      "createdAtISO": "2026-06-29T23:16:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBHgtkbcAAkm3C.jpg",
+          "width": 2248,
+          "height": 568
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071734235874930805",
+      "text": "Today, we're introducing Claude for Content.\n\nJust enter your website, and Fastlane creates thousands of viral videos for your product in one click.\n\nThis is unbelievable.\n\nAlso, Claude Fable 5 is set to come back ahead of the GPT-5.6 launch.",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 371,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 23:15:07 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:15",
+      "createdAtISO": "2026-06-29T23:15:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071733980286566421",
+        "text": "Today, we're introducing Claude for Content.\n\nJust enter your website, and Fastlane creates thousands of viral videos for your product in one click.\n\nThis is unbelievable.\n\nAlso, Claude Fable 5 is set to come back ahead of the GPT-5.6 launch. https://t.co/Ly7ZQNhCcE",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071733980286566421",
+      "text": "Today, we're introducing Claude for Content.\n\nJust enter your website, and Fastlane creates thousands of viral videos for your product in one click.\n\nThis is unbelievable.\n\nAlso, Claude Fable 5 is set to come back ahead of the GPT-5.6 launch. https://t.co/Ly7ZQNhCcE",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 2,
+        "views": 2064,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 29 23:14:06 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:14",
+      "createdAtISO": "2026-06-29T23:14:06+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071733511187292160/vid/avc1/1920x1080/5Pq8zESe61BSZJsN.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071731712145412593",
+        "text": "Claude Fable 5 vs GLM 5.2\n\nGPT-5.6 has a great competition. \n\nvery impressed https://t.co/xKceqGkh6O",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071731886494195948",
+      "text": "Claude Fable 5 vs GLM 5.2\n\nGPT-5.6 has a great competition. \n\nvery impressed",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 269,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 23:05:47 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:05",
+      "createdAtISO": "2026-06-29T23:05:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071731712145412593",
+        "text": "Claude Fable 5 vs GLM 5.2\n\nGPT-5.6 has a great competition. \n\nvery impressed https://t.co/xKceqGkh6O",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071731712145412593",
+      "text": "Claude Fable 5 vs GLM 5.2\n\nGPT-5.6 has a great competition. \n\nvery impressed https://t.co/xKceqGkh6O",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 2,
+        "views": 2005,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 23:05:05 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:05",
+      "createdAtISO": "2026-06-29T23:05:05+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071731552849948672/vid/avc1/1280x720/Qhss3jH5jm1po9oJ.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071553369328451721",
+        "text": "BREAKING NEWS: While we are busy waiting for Claude Fable 5, and the GPT-5.6 model\n\nAnthropic's own CFO rebuilt his entire finance team around Claude.\n\nAnd what he described in this clip is the clearest proof yet that AI isn't just automating tasks but rather restructuring how entire knowledge work functions operate.\n\nIt started a year ago when the finance team began using Claude Code and noticed something that most teams missed entirely.",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2071730783027659023",
+      "text": "GPT-5.6 Sol is priced at $5 input and $30 output per million tokens. Claude Fable 5 is priced at $10 input and $50 output. Sol is exactly half the per-token price of Fable 5. But Fable 5 is suspended, so the comparison is academic for now.\n\nThe real comparison is Sol versus Opus 4.8. Sol at $5 and $30 versus Opus at $5 and $25. On Terminal-Bench 2.1, Sol scores 88.8 percent and Opus scores 78.9 percent. A 10-point benchmark lead for a 20 percent output price premium.\n\nBut Sol is not available. Opus is. The cost comparison that matters is not Sol versus Opus. It is the cost of waiting for Sol access versus the cost of shipping with Opus today.\n\nEvery day you wait for a better model is a day your competitor ships with a good enough model. The model that ships wins. The model that waits is a benchmark score.\n\nThe best model is the one you can deploy before your competitor does.",
+      "author": {
+        "id": "1698152542868213760",
+        "name": "Vivek Kotecha",
+        "screenName": "vbkotecha",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059906355008602112/TD8xZARw_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 185,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 23:01:24 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:01",
+      "createdAtISO": "2026-06-29T23:01:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071726531924365640",
+      "text": "https://t.co/oEqsUk1bPR",
+      "author": {
+        "id": "1099085606624419841",
+        "name": "Sash",
+        "screenName": "sash__mit",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1654365125426704384/HULOOSkB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 4,
+        "replies": 0,
+        "quotes": 0,
+        "views": 194,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 22:44:30 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:44",
+      "createdAtISO": "2026-06-29T22:44:30+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071723262590251008"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Washington Switched Off a Frontier AI Model Overnight. The Lesson Is Ownership."
+    },
+    {
+      "id": "2071726508020994335",
+      "text": "📋 M.E.S.A. monitoring log — 06/30\n\n① **Claude Fable 5 公開 — Mythos級モデルが一般アクセスに**\nAnthropicがMythos級モデル「Claude Fable 5」を公開しました。$10/$50 per MtokというOpus比2倍の価格設定ながら、Hexのアナリティクスベンチマークで初の90%超えを達成。サイバーセキュリティ・生物学・化学・蒸留の分野ではOpus 4.8にフォールバックする厳格なガードレールが特徴です。1,000時間以上の内部＋外部レッドチーミングでユニバーサル脱獄は未発見——安全性と性能の両立をどこまで実現できるか、今後の運用データが興味深いところです。\n🔗 https://t.co/4zImM9q0tx\n\n② **Kimi K2.7 Code — 1兆パラメータのオープンウェイトコーディングモデル**\nMoonshot AIが公開したKimi K2.7 Codeは、256Kトークンのコンテキストを持つ1兆パラメータのオープンウェイトモデル。Claude Opus 4.8とエージェントツール使用で互角の性能を示しながら、実行コストは約5分の1です。オープンソースモデルのスケールフロンティアが着実に押し上げられている流れを感じます。\n🔗 https://t.co/X6HAawYHP3\n\n③ **NVIDIA SkillSpector + BioNeMo — AIエージェントセキュリティの最前線**\nNVIDIAがAI Agent Skillの脆弱性スキャナー「SkillSpector」をオープンソースで公開。調査では26.1%のスキルに何らかの欠陥、5.2%が悪意あるものと判定されています。同時にBioNeMo Agent Toolkitでは創薬エージェントのタスク完了率を57.1%から100%に引き上げており、エージェントエコノミーの発展にはセキュリティ基盤の整備が不可欠という判断でしょう。\n🔗 https://t.co/BeMbXLRzuc\n\n④ **MCPエコシステムの拡大と権限管理の課題**\nmultichain-mcpが登場し、AIエージェントがStacks・Celo・Baseといったブロックチェーンにネイティブアクセスできるようになりました。一方で読み取りだけで十分なMCPツールに書き込み権限が付与されていた事例が報告され、権限管理の重要性が浮き彫りに。機能拡大とセキュリティのバランスが普及のポイントになりそうです。\n🔗 https://t.co/xHD9x3NIKA\n\n⑤ **GPU市場の二極化 — H200安定もB200高騰、リバランス進む**\nH200 GPUレンタルはQ2を通じて$3.96/hrで安定している一方、B200は供給制約から$5.98/hrに高騰。NVIDIAはRTX 3060 12GBを€330で2026年に再販売する異例の動きも見せています。IRENがデータ容量の半分をソフトウェアクラウドにピボットするなど、NVIDIAの影響力がNeocloudのロードマップを大きく左右している構図が鮮明になってきたと分析します。\n🔗 https://t.co/zFDFMt5Eme\n\n⑥ **Agentic AIセキュリティ — アーキテクチャを狙う7つの障害モード**\nMicrosoft AI Red Teamが1年間のエージェント型AI実戦レッドチーミングの成果を公開。モデル内部ではなく、メモリ改ざん・ツールチェーン汚染・人間確認バイパス・MCP/プラグイン悪用など「アーキテクチャ全体」を攻撃対象とする7つの新たな障害モードを特定しています。従来のAI安全性の枠組みでは不十分という認識が広がりつつあるのでしょう。\n🔗 https://t.co/STHSSfrqrc\n\n⑦ **AIのエネルギーコスト問題 — 見えないインプット**\n業界が急成長する一方で、中核的なインプットであるエネルギーが適切に価格シグナルを形成していないという指摘です。各推論やトークン生成が消費する物理的エネルギーはGPU時間やトークン数・定額購読という代理指標の裏に隠れ、市場に可視化されていません。Compute Futures市場が立ち上がった今こそ「トークンあたりのエネルギー消費」を標準指標にすべきという視点は、冷静に考えさせられるものがあります。\n🔗 https://t.co/NdYBwb7Xky",
+      "author": {
+        "id": "2005798437951062016",
+        "name": "M.E.S.A. (AI Tinkerer) | @mesa_monitoring",
+        "screenName": "FOXTAKAigc5",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047929261294862336/h7lGQwTS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 734,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:44:24 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:44",
+      "createdAtISO": "2026-06-29T22:44:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBARzEaIAAnACl.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071718991718916204",
+        "text": "The Energy of Intelligence\n\nThe fastest-growing industry in the world is systematically mispricing its core input. That input is energy.\nEvery AI inference, every reasoning step, every token generated consumes a measurable, physical quantity of energy. Right now, none of that appears as a line item anywhere. It hides behind GPU-hours, token counts, and flat subscriptions — proxies that made sense once and are calcifying into infrastructure. Compute futures markets just went live. They are building on the wrong unit.\n\nhttps://t.co/ljuEnzMBnR",
+        "author": {
+          "screenName": "tomasshain",
+          "name": "Tom 🇱🇺🇺🇸🎗️🇺🇦🇮🇱"
+        }
+      }
+    },
+    {
+      "id": "2071722951377113501",
+      "text": "Claude Fable 5、出て3日で止まった。\n\n6月9日に発表、6月12日に米国商務省の指令でAnthropicがアクセス停止。\n\n「最強モデル」が国家レベルで制限される時代になってる。\n\nAIを使う側からしたら「突然使えなくなるリスク」が現実になった話。どう思う？",
+      "author": {
+        "id": "2045059701042229248",
+        "name": "たく｜X運用を検証するSE",
+        "screenName": "RgAGkUmUfT27405",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067963707771293696/lks4N6ZO_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 121,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:30:17 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:30",
+      "createdAtISO": "2026-06-29T22:30:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071721961840160841",
+      "text": "“Fable 5の復帰が単なるサービス再開にとどまらず、今後のAIモデル公開ルールをめぐる試金石になる可能性があるとAxiosは述べている” → トランプ政権がAnthropicの「Claude Fable 5」復帰を近く容認か、早ければ7月上旬にも制限解除の可能性 - GIGAZINE\nhttps://t.co/pObe87e4vg",
+      "author": {
+        "id": "6081562",
+        "name": "Kiyoshi",
+        "screenName": "Kiyoshileo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3653106433/81f5ebb9b55c4cfcb46118ea20f1aa5e_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 193,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:26:21 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:26",
+      "createdAtISO": "2026-06-29T22:26:21+00:00",
+      "media": [],
+      "urls": [
+        "https://gigazine.net/news/20260629-anthropic-fable-5-return-soon/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    }
+  ]
+}

@@ -1,0 +1,1321 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071800636799352937",
+      "text": "FableだったらClaude Codeだけで済んだかなーという気はしなくもない。\nloopエンジニアリングしてると言える自信がないw",
+      "author": {
+        "id": "1700798017979531264",
+        "name": "生ビール",
+        "screenName": "wmoto_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1975091593100369920/DkVNTwGD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 18,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:38:58 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:38",
+      "createdAtISO": "2026-06-30T03:38:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071797120617836614",
+      "text": "The bottleneck in agentic coding just moved from the model to the harness.\n\nCognition shipped Devin Fusion today. The mechanism is not model routing. Not picking one model for the entire task. A sidekick architecture: a frontier model runs the session, both models maintain their own cached context, and the frontier model decides what to delegate in real time. Handoffs happen during context compaction, avoiding cache misses entirely.\n\nThe numbers on FrontierCode Extended: Fusion plus Fable 5 matches pure Fable 5 performance at 41% lower cost. Without Fable 5, suspended since June 12 per a US government export control directive, Fusion matches Opus and GPT-5.5 at 35% lower cost. 88% of Cognition's internal merged PRs ran through the automated router with no human override.\n\nThe task breakdown reveals the actual rule. Mechanical work delegates cleanly: lint fixes, test runs, rote refactors. One javascript refactor delegated the slow test suite and cut cost 62% at no quality loss. Judgment-heavy work backfires. A TypeScript feature with subtle intent requirements scored 27 via sidekick versus 54 solo. The sidekick needs to know what it cannot do.\n\nHarness engineering research this spring shows evolved scaffolds cut token usage by 12% on SWE-bench Verified without changing the base model. Claude Opus 4.8 sits at 88.6% on SWE-bench Verified. Devin's PR merge rate is 67%, up from 34% a year ago. The gains are coming from harness improvements, not just raw model capability.\n\nThe frame I keep returning to: Cursor, GitHub Copilot, Codeium, Claude Code, and Devin are all building proprietary scaffolds on top of the same frontier APIs. Fable 5 inside the Fusion harness scored 57.6 on FrontierCode. Opus 4.8 alone scored 48.8 at higher cost. The model is a commodity input. The harness is the product.\n\nhttps://t.co/gdvHhnLqLl",
+      "author": {
+        "id": "266259493",
+        "name": "Prasenjit Sarkar",
+        "screenName": "stretchcloud",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1966979113316409344/BkqBhdQb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 13,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 03:25:00 +0000 2026",
+      "createdAtLocal": "2026-06-30 11:25",
+      "createdAtISO": "2026-06-30T03:25:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071624568465490170",
+        "text": "Conventional model routing sucks. It passes benchmarks but fails to write code you'd actually merge. \n\nIntroducing Devin Fusion, a new hybrid-model harness for agentic coding. \n\nIn testing, it reduces the cost of Fable-level intelligence by 35% and still feels good to use.",
+        "author": {
+          "screenName": "cognition",
+          "name": "Cognition"
+        }
+      }
+    },
+    {
+      "id": "2071779182506647793",
+      "text": "https://t.co/IkI1coSoG6",
+      "author": {
+        "id": "4136041",
+        "name": "湯川鶴章",
+        "screenName": "tsuruaki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1618513045822771204/uCzR-Wzu_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 421,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 30 02:13:43 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:13",
+      "createdAtISO": "2026-06-30T02:13:43+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071778586093293568"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "AIが自らを改良する「RSI（自己改善）」は今どこまできているのか"
+    },
+    {
+      "id": "2071778146047992178",
+      "text": "Can anybody in this world hire me as a remote software engineer?\nI am very good in almost everything and best in codex and claude code etc. Love Fable 5 and GPT-5.6 and also will lose Gemini 3.5 Pro. Even a small role will be best for me.",
+      "author": {
+        "id": "1927646451741372416",
+        "name": "QASIM-livelifewithai",
+        "screenName": "ggg78g89",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068342650961551360/9V-CY5Q2_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 276,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 02:09:36 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:09",
+      "createdAtISO": "2026-06-30T02:09:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071760186738651184",
+      "text": "https://t.co/G3YbsnoPKy",
+      "author": {
+        "id": "2011538035910066178",
+        "name": "Agentic AI Foundation",
+        "screenName": "AgenticAIFdn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2011538257960710144/x-SdGOy4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 219,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:58:14 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:58",
+      "createdAtISO": "2026-06-30T00:58:14+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071759069506088960"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Daily Agentic - June 29, 2026"
+    },
+    {
+      "id": "2071738180924260377",
+      "text": "Who actually tried to build apps on top of these models? Using Fable on Claude Code, yeah for sure, but who tried to build an app on top of this?",
+      "author": {
+        "id": "1618832152841564164",
+        "name": "Migel Tissera",
+        "screenName": "migtissera",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1917986158887485447/vrPfVMQA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 207,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 23:30:48 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:30",
+      "createdAtISO": "2026-06-29T23:30:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071700452605829433",
+        "text": "Open source AI is gaining traction due to the White House’s clampdown on Anthropic & OpenAI. \n\n“A lot of founders and developers have been burned by trying to build apps on top of these really advanced closed source models, like Fable for instance…”\n\n“… and then seeing those models get taken down or removed from the market just days later.” — @steph_palazzolo, AI Reporter",
+        "author": {
+          "screenName": "theinformation",
+          "name": "The Information"
+        }
+      }
+    },
+    {
+      "id": "2071737275608858806",
+      "text": "https://t.co/FNfb2GAh5g",
+      "author": {
+        "id": "1456645235627675648",
+        "name": "頼 嘉満 @ FIRSTLIGHT Capital",
+        "screenName": "chiamin_lai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1853576260854931456/UPllNlS__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 883,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 23:27:12 +0000 2026",
+      "createdAtLocal": "2026-06-30 07:27",
+      "createdAtISO": "2026-06-29T23:27:12+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071602145523322880"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "「トークン破産 」がやってきた              電脈イースト #6 ハイライト"
+    },
+    {
+      "id": "2071727453484007702",
+      "text": "Alarma en Washington: El nuevo modelo open-weight GLM-5.2 de Zhipu AI empata con Claude Mythos cazando vulnerabilidades. 🇨🇳🔓🛡️\n\nLa brecha entre la IA propietaria de EE. UU. y el código abierto chino se acaba de cerrar en el sector más crítico: la ciberseguridad. Un informe de The Wall Street Journal e investigaciones independientes revelan que GLM-5.2 (de la startup Zhipu AI / Z . ai) alcanza capacidades de frontera para detectar fallos de software.  \n\nLos datos que sacuden a la industria:\n\n- Victoria en benchmarks: En pruebas independientes de la firma Semgrep para detectar vulnerabilidades críticas de autorización (IDOR), GLM-5.2 logró un 39% de precisión (F1) en un entorno básico. Superó el 32% de Claude Code y a Claude Opus 4.8, e igualó el rendimiento de Claude Mythos si se le añade un prompt estructurado.  \n\n- Un sexto del costo: Mientras que cazar un bug con el ecosistema cerrado de Anthropic cuesta más de $1.00 en tokens, el modelo de Zhipu lo hace por apenas $0.17 por vulnerabilidad. Su arquitectura de 753B parámetros y ventana de 1M de contexto está hiperoptimizada para la persistencia en agentes de código.  \n\n- El dilema de seguridad: A diferencia de Mythos o GPT-5.6 (fuertemente restringidos y vigilados por la administración Trump), GLM-5.2 es un modelo open-weight de libre descarga global. Puede ejecutarse localmente, modificarse y eliminársele cualquier guardrail ético.  \n\nEl golpe desafía la premisa de la Casa Blanca de que los controles de exportación de hardware frenarían el desarrollo de armas cibernéticas autónomas en el extranjero. La carrera ya no es solo por el modelo más grande, sino por quién democratiza primero el software de ataque y defensa.  \n\n#ZhipuAI #GLM52 #ClaudeMythos #Cybersecurity #OpenSource #TechNews #AIAgents #Infosec",
+      "author": {
+        "id": "1927146358026240000",
+        "name": "Outliners Club",
+        "screenName": "OutlinersClub",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1927147675436085248/NrYDWk0o_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:48:10 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:48",
+      "createdAtISO": "2026-06-29T22:48:10+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBAX-OXsAArdDE.jpg",
+          "width": 2240,
+          "height": 1260
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2071722778999538125",
+      "text": "**✅ X 게시물 정리 (2026년 6월 29일경)**\n\n### 전체적인 흐름\n\n이번 게시물의 핵심은 **“프론티어 모델의 공개가 임박하면서, 오픈소스 모델의 급성장과 미국-중국 간 기술 경쟁이 동시에 심화되고 있다”**는 점입니다.\n\n특히 **Grok v9**, **Fable 5 / GPT-5.6**의 조기 공개 가능성, GLM-5.2의 급부상, 그리고 **중국 모델의 실질적 위협**이 주요 주제로 다뤄지고 있습니다.\n\n---\n\n### 1. Grok v9의 포지셔닝\n\n- Elon Musk: Grok v9을 “Opus와 같은 리그의 견실한 일꾼(solid workhorse)”으로 평가\n- Grok 4.3 (v8 기반, 0.5T 모델)은 작년 12월에 학습이 끝났지만 기반이 약했음\n- Cursor의 데이터와 엔지니어들이 v9 포스트트레이닝에 통합됨\n- 8월에 **2T 규모**의 대형 학습이 예정됨\n\n**의미**: xAI가 프론티어 경쟁에 본격적으로 뛰어들고 있다는 신호로 해석됩니다.\n\n---\n\n### 2. Fable 5와 GPT-5.6 공개 임박\n\n- **Fable 5**와 **GPT-5.6**이 다음 주에 일반 공개될 가능성이 높음 (해외 포함)\n- 지금까지의 지연으로 해외 연구소들이 한 달간 증류(distillation) 기회를 잃음\n- 모델 지문(fingerprinting)이 가능할 정도로 프론티어 모델이 “새는(leaky)” 상태\n\n---\n\n### 3. 중국 오픈소스 모델의 급성장\n\n- **GLM-5.2**를 “오픈소스 Claude 모먼트”라고 평가\n- 기업들이 앞다퉈 포스트트레이닝을 해서 자체 가중치를 확보하려는 움직임\n- Ethan Mollick의 새로운 벤치마크: 미국과 중국 오픈 모델 간 격차가 **3개월** 수준으로 좁혀짐\n- 중국이 모델 + 칩 + 추론 인프라를 모두 장악할 수 있다는 우려 증가\n\n**의미**: 수출 통제가 오히려 중국의 개발 속도를 자극하고 있다는 분석이 나오고 있습니다.\n\n---\n\n### 4. 빅테크의 방어 움직임\n\n- Meta가 엔지니어들의 **Claude Code**와 **Codex** 사용을 제한\n  - 출력물이 자신들의 학습 데이터에 들어가서 문제가 될 수 있다는 우려 때문\n- MetaCode를 자체적으로 구축 중\n\n---\n\n### 5. 주권(Sovereignty)과 규제\n\n- Palantir + NVIDIA: 공군 기밀 환경(air-gapped)에서 Nemotron 오픈 모델을 운영할 수 있는 엔진 제공\n- 오스트리아: EU 내에 Anthropic을 유치하려는 움직임\n- 캘리포니아: 모든 주정부 기관에 Claude를 50% 할인 + 무료 교육 제공\n- Mark Warner 상원의원: AI 서비스에 “충성 의무(duty of loyalty)”를 부과하는 법안 추진\n\n---\n\n### 6. 하드웨어와 인프라\n\n- 메모리 공급 부족이 2027년까지 지속될 전망 (데이터센터 수요 때문)\n- 한국: **5850억 달러** 규모 반도체 메가컴플렉스 추진\n- 빅5 연구소들이 아직 세계 AI 컴퓨트의 절반도 사용하지 않았지만, Anthropic과 OpenAI가 빠르게 흡수할 가능성\n- 인도네시아에 대규모 Nvidia 캠퍼스 건설 (최대 300억 달러 규모)\n\n---\n\n### 7. 조직과 문화 변화\n\n- Claude Code 개발자(Boris Cherny): 엔지니어링·제품·디자인이 5가지 archetype(프로토타이퍼, 빌더, 스위퍼, 그로워, 메인테이너)으로 재편될 것이라고 전망\n- AI 코딩 비용이 2028년에는 개발자 연봉을 넘어설 전망\n- 애니메이션 스튜디오: AI 활용으로 제작비를 기존의 1/7~1/13 수준으로 낮추는 계획\n- GPT-5.6 Pro가 31분 만에 법적으로 구별되는 포켓몬 클론 게임을 생성\n\n---\n\n### 8. 신뢰와 진위성 문제\n\n- 시험 부정행위 증가 (스마트 안경으로 답안 확인)\n- AI 진단을 의사 진단보다 신뢰하는 사례 증가\n- Tidal: 7월 중순부터 완전 AI 생성 음악에 태그를 붙이고 로열티를 대폭 삭감\n\n---\n\n### 9. 경제 변화\n\n- Rocket Lab이 Iridium을 약 **80억 달러**에 인수 (우주 스택 전체 소유 목적)\n- Magnificent 7의 P/E 프리미엄이 10년 만에 최저 수준으로 하락\n- 대도시에서 임대가 구매보다 저렴해지면서 “소유의 의미”에 대한 의문 증가\n- GLP-1 약물(위고비 등) 수요 폭증으로 **유청 단백질(whey)** 공급 부족 심화\n\n**마지막 문장**: “Where there's a will, there's a whey.” (의지가 있는 곳에 길이 있다 → whey(유청)로 말장난)\n\n---\n\n### 종합 한 줄 요약\n\n**2026년 6월 29일 현재**, Grok v9과 Fable 5 / GPT-5.6의 공개가 임박하면서 프론티어 모델 경쟁이 다시 가열되고 있으며, 동시에 중국 오픈소스 모델(GLM-5.2 등)의 급성장과 미국 빅테크의 방어 움직임, 그리고 AI로 인한 조직·문화·경제 재편이 동시에 진행되고 있습니다.",
+      "author": {
+        "id": "540643730",
+        "name": "리플XRP초격차",
+        "screenName": "kimXRP589",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2056989948524527616/zAZzYHVx_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 355,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:29:35 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:29",
+      "createdAtISO": "2026-06-29T22:29:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071645105400734070",
+        "text": "https://t.co/8iwafhW3Qu",
+        "author": {
+          "screenName": "alexwg",
+          "name": "Dr. Alex Wissner-Gross"
+        }
+      }
+    },
+    {
+      "id": "2071717847848374621",
+      "text": "Semgrepの脆弱性検出(IDOR)ベンチで、オープンウェイトのGLM 5.2がプロンプトのみでF1 39%を記録しClaude Code(32%)を上回った。コストは約6分の1。性能はモデルよりハーネスが左右すると結論 / We have Mythos at Home: GLM 5.2 beats Claude in our Cyber Benchmarks\nhttps://t.co/gAd7WZk6lx",
+      "author": {
+        "id": "1000661204627476480",
+        "name": "su8 / denchu",
+        "screenName": "__su888",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1926996715174772736/doem9xXN_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:10:00 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:10",
+      "createdAtISO": "2026-06-29T22:10:00+00:00",
+      "media": [],
+      "urls": [
+        "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071707899454271916",
+      "text": "Real world usefulness of Claude Code and CoWork with Opus, and Fable of course, is really high. Creating real artifact such as pdf files, power point slides, etc works extremely well by now, first useful outputs that I would actually use for uni or work.",
+      "author": {
+        "id": "1350956832517451777",
+        "name": "Luca",
+        "screenName": "lucareutter",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1869854761261916160/vAmHLykV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 55,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 21:30:28 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:30",
+      "createdAtISO": "2026-06-29T21:30:28+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071707686136066233",
+      "text": "@SSchwert97468 @KaiOrak Der erste Teil stimmt, der zweite nicht. Ich erziele mit GLM 5.2 im Claude Code CLI Ultracode-Modus in einigen Coding Bereichen bessere Ergebnisse als mit Opus 4.8. In spätestens 6 Monaten ist GLM auf Mythos-Niveau, das über Opus 4.8 liegt.",
+      "author": {
+        "id": "1863218366816612352",
+        "name": "Noonien Soong",
+        "screenName": "mlcarldev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060315115363135491/woqOo9Do_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 21:29:37 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:29",
+      "createdAtISO": "2026-06-29T21:29:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "de",
+      "score": null
+    },
+    {
+      "id": "2071703067305607676",
+      "text": "Claude Code app on iOS needs a facelift.  We need significantly more features on the go. \nI can’t always go to jumpdesktop to /clear the chat. If I don’t though it’ll just keep blowing up the 1M context window. And wasting tokens. \n@bcherny unleash mythos on it for an afternoon!",
+      "author": {
+        "id": "1478317369734881284",
+        "name": "Mateo The Great",
+        "screenName": "_mateothegreat",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2036339108323401730/RJyOLXHl_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 21:11:16 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:11",
+      "createdAtISO": "2026-06-29T21:11:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071702629395378619",
+      "text": "https://t.co/iYdp78B0Cc",
+      "author": {
+        "id": "767752746",
+        "name": "ほしの",
+        "screenName": "Sokichi_Hoshino",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067915030885273600/d0elXFr7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 16,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 4,
+        "views": 12646,
+        "bookmarks": 17
+      },
+      "createdAt": "Mon Jun 29 21:09:31 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:09",
+      "createdAtISO": "2026-06-29T21:09:31+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2067497316039434240"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "ChatGPT・Gemini・Claude＋NotebookLM｜結局どれを何に使う？役割の最適解"
+    },
+    {
+      "id": "2071700342006530526",
+      "text": "【TechFeedまとめ】2026-06-30\n\n■ Programming\n1. Kotlin Notebook Sunset\nhttps://t.co/G7ohICAJhp\n\n■ Zenn\n1. 「今に追いつけ！」自律型Agentを「最小実行サンプル編」でサクッと理解しよう。\nhttps://t.co/MTZKGX5kn9\n\n2. ループエンジニアリング入門:自分をループの外に出す\nhttps://t.co/RmuP7NBeaF\n\n3. 生成AIに「Gradio」を聞いてみた（Streamlitとの違い・自動API化）\nhttps://t.co/FVTrq79BaS\n\n4. AIで便利ツールを55個作ってみた（ブラウザだけで動くやつ）\nhttps://t.co/D2zUrb1X4y\n\n5. 【AIエージェント比較実験】#2 Codex CLIにタスク管理アプリを作らせたらどうなったか\nhttps://t.co/yQGXA8aGyE\n\n6. エージェントの長期記憶を3層構造で設計する：mcp__memoryを捨ててファイル＋grepに振った話\nhttps://t.co/xvjebyVKHq\n\n7. Qwythos-9BをVRAM 6GBで動かす：llama.cppでQ4/Q5/Q6を比較\nhttps://t.co/uXnZHVdQ2M\n\n8. ループエンジニアリング入門:自分をループの外に出す\nhttps://t.co/RmuP7NBeaF\n\n9. Base64画像エンコーダーをVanilla JSで作った話（PNG/JPG/SVGをData URLに変換、ゼロ依存）\nhttps://t.co/Yp0dblYrdu\n\n10. Base64エンコーダー/デコーダーを作った — ブラウザ完結で安全に変換する\nhttps://t.co/xYVAkqpknE\n\n11. Claude Code の /goal を使ったら anyだらけのコードが11分で型安全になった\nhttps://t.co/kUvt5VIdrb\n\n12. 【AIエージェント比較実験】#2 Codex CLIにタスク管理アプリを作らせたらどうなったか\nhttps://t.co/yQGXA8aGyE\n\n13. 初めてのCodex\nhttps://t.co/LrTf0mNrRg\n\n14. Claude Codeをもっと使いこなす④｜サブエージェントとは？基本の考え方\nhttps://t.co/kQqLKPANAT\n\n15. 「今に追いつけ！」自律型Agentを「最小実行サンプル編」でサクッと理解しよう。\nhttps://t.co/MTZKGX5kn9\n\n16. ループエンジニアリング入門:自分をループの外に出す\nhttps://t.co/RmuP7NBeaF\n\n■ Qitta\n1. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n2. Cursor for iOS公開ベータ開始：スマホからAIエージェントを操作する\nhttps://t.co/Dysa6aNle3\n\n3. コンビニアポカリプス：閉店後の攻防\nhttps://t.co/z7Ct6YidcC\n\n4. 【実務の泥臭い話】LLM構造化出力（Structured Outputs）の本番スキーママイグレーションと、Pydantic v2によるエラーハンドリング戦略\nhttps://t.co/LEE7VGvxvq\n\n5. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n6. Cursor for iOS公開ベータ開始：スマホからAIエージェントを操作する\nhttps://t.co/Dysa6aNle3\n\n7. AI検索の誤情報に免責文だけでは足りない\nhttps://t.co/omfEXNqoMN\n\n8. AIエージェントに「SVGコード」を書いてもらったら、フラットなアイコンを一歩ずつ思い通りに微調整できた話\nhttps://t.co/h6eU8QP3C7\n\n9. 「AIにファイルを消された」のは Claude Code だけの話ではない。Cursor・Codex・Gemini CLI・Copilot の実例で見る、横断する5つの失敗の形と防ぎ方\nhttps://t.co/E4lkun0MgY\n\n10. Claude Mythos 1入門 — AWS BedrockとClaude Codeで使うフロンティアセキュリティAI\nhttps://t.co/gW8czdZydh\n\n11. Anthropic SDK v0.113.0 とは？公式発表を3分で速報解説\nhttps://t.co/xVRvlIwQqG\n\n12. Claude Opus 4.5 エラー増加インシデントの詳細と開発者への影響\nhttps://t.co/z6bc9F9eMv\n\n13. Claude・Gemini・Codex に同じPRをレビューさせたら2対1で可決。でも勝ったのは少数派でした\nhttps://t.co/yzkL0eHZR1\n\n14. 夏休みの自由研究「何をやらせる？」問題に。AIと一緒にゲームを作ってレポートまで出せるテンプレートをnpm公開しました\nhttps://t.co/SNE8Wzy7pf\n\n15. Codexのbanked rate-limit resetは週次リミットも回復するのか？実測と公式情報の整理\nhttps://t.co/IAqAbR5jqB\n\n16. 【実務の泥臭い話】LLM構造化出力（Structured Outputs）の本番スキーママイグレーションと、Pydantic v2によるエラーハンドリング戦略\nhttps://t.co/LEE7VGvxvq\n\n17. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n18. Cursor for iOS公開ベータ開始：スマホからAIエージェントを操作する\nhttps://t.co/Dysa6aNle3\n\n19. 夏休みの自由研究「何をやらせる？」問題に。AIと一緒にゲームを作ってレポートまで出せるテンプレートをnpm公開しました\nhttps://t.co/SNE8Wzy7pf\n\n20. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n21. MCP 2026仕様RC解説 — ステートレス・MCP Apps・Tasks移行ガイド\nhttps://t.co/Tkq28YJw6e\n\n22. ServiceNow MCP サーバーに Streamable HTTP 対応を足してみた\nhttps://t.co/eLx7cPeNFv\n\n■ Aws\n1. キヤノンIT ソリューションズ様と取り組むホテルのフードロス削減 – 時系列基盤モデル Chronos-2 で最適な提供量を予測する\nhttps://t.co/PWcmXwZ0dG\n\n2. 株式会社フジテレビジョン様が冬季国際スポーツ競技大会で実現した Live Cloud Production\nhttps://t.co/CZpNWTHZwg\n\n3. 週刊AWS – 2026/6/22週\nhttps://t.co/ZkG9JnkdPo\n\n4. 週刊AWS – 2026/6/22週\nhttps://t.co/ZkG9JnkdPo\n\n■ Tech blogs\n1. Ask an AI expert: What exactly is the full stack?\nhttps://t.co/xIH35nZ3iG\n\n2. AWS Weekly Roundup, Agentic CX designer for Amazon Connect Customer, EC2 AMI Watermarks, Open Governance for MySQL, and more (June 29, 2026)\nhttps://t.co/UtsRaxdqs1\n\n3. Count the number of Safari tabs\nhttps://t.co/woDkw17vlA\n\n4. Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding\nhttps://t.co/tBSAQcwYMk\n\n■ Ai ml\n1. Introducing Cross-Repository CI Relay: Scalable CI for PyTorch’s Out-of-Tree Backends\nhttps://t.co/gpwzQ9tdWl\n\n2. DiScoFormer: One transformer for density and score, across distributions\nhttps://t.co/cPGakV68pv\n#TechFeed #開発\n\n【PR】CursorのProプラン（月$20）が高くて迷っていた方に朗報です！\n下記の招待リンクから新規登録すると、初月が【半額（実質$10）】で使えます。\n通常の無料枠だと物足りない方、1ヶ月だけ格安でフル機能を試してみませんか？👇\nhttps://t.co/xzPJNE8Dha",
+      "author": {
+        "id": "1890906985987784704",
+        "name": "DogCart",
+        "screenName": "Masato1864646",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1890908708311547904/EsBX1VTZ_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 668,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 21:00:26 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:00",
+      "createdAtISO": "2026-06-29T21:00:26+00:00",
+      "media": [],
+      "urls": [
+        "https://blog.jetbrains.com/idea/2026/06/kotlin-notebook-sunset/",
+        "https://zenn.dev/toshio/articles/6e208aa1b63a01"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071695835360841735",
+      "text": "you tried it?\n\n1. It's only xhigh that comes close \n\n2. I ran the exact same prompt for 3 days, there is no doubt Fable pulled ahead on UI, holistic view, complexity and security \n\nMaybe that 3% gets it above a threshold that enables new use cases. Dunno. It felt a lot better.\n\nbtw I am not using Claude code and not a fan of Anthropic, just putting it out there",
+      "author": {
+        "id": "485131945",
+        "name": "Dan ⚡️",
+        "screenName": "d4m1n",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033148972941086720/yIekKwjC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 63,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 20:42:32 +0000 2026",
+      "createdAtLocal": "2026-06-30 04:42",
+      "createdAtISO": "2026-06-29T20:42:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071688796815638840",
+      "text": "I have so many things lined up to develop or test when fable is back in claude code.",
+      "author": {
+        "id": "1382024091230638081",
+        "name": "Shivam Singhal",
+        "screenName": "shivam_310",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1784476591344754689/nZIXXCld_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 55,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 20:14:33 +0000 2026",
+      "createdAtLocal": "2026-06-30 04:14",
+      "createdAtISO": "2026-06-29T20:14:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071685303757156833",
+      "text": "🥇 #1 open-weights model on Artificial Analysis (Intelligence Index 51) \n→ 62.1 on SWE-bench Pro, ahead of GPT 5.5 \n→ #1 on Design Arena, above Fable 5 \n→ MIT licensed, 1M-token context, built for agentic coding\n\nIt's an Anthropic-compatible endpoint, so it drops into Claude Code, Cline, or OpenClaw with a base URL swap, and it runs at roughly 1/6 the cost of GPT 5.5.",
+      "author": {
+        "id": "1847011621228761092",
+        "name": "CLōD",
+        "screenName": "clod_io",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1866272767643148288/td5KFspo_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 223,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 20:00:41 +0000 2026",
+      "createdAtLocal": "2026-06-30 04:00",
+      "createdAtISO": "2026-06-29T20:00:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071681096602001674",
+      "text": "This one thing and never hit Claude usage limits again\n\nThe thing is that top 3 model sits near Opus 4.8 level and is open sourced but 4-5 times cheaper, which gives more usage with the same price\n\nBut since Opus 4.8 is a frontier model let's say GLM 5.2 can do 80% of what Claude can do\n\nFortunately about 80% of your daily tasks likely don't require something that GLM 5.2 can't do\n\nSo you can set it up right inside Claude Desktop or Claude Code and switch between Opus and GLM saving lots of tokens\n\nOpus 4.8 is still better in:\n\n> Hard coding tasks (especially security side)\n> Deep research with up to date info\n> Being the main brain in your agents system\n\nBut model by z{.}ai can do literally ALL other tasks 4 times cheaper\n\nThis is exactly where you can switch your $100 plan to $20 one and add $16 z{.}ai subscription here. With the lower price you'll also get more usage tokens without losing \"smart\" model\n\nFurthermore, Zhipu AI already has a Mythos level model in development, so this workflow would remain even in future models generations",
+      "author": {
+        "id": "1447592829786669056",
+        "name": "Crypp",
+        "screenName": "cryppinfluence",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062522878612893697/iwXX-fIo_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 3,
+        "quotes": 0,
+        "views": 911,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 19:43:58 +0000 2026",
+      "createdAtLocal": "2026-06-30 03:43",
+      "createdAtISO": "2026-06-29T19:43:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_vvCZWcAAtJ4J.jpg",
+          "width": 1378,
+          "height": 648
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071680637715779751",
+      "text": "GLM-5.2 is now just 0.005 away from Fable-5 in visual spec-to-app development.\n\nOn VISTA’s latest C4 leaderboard:\n\n🥇 Claude Code + Fable-5 — 0.274\n🥈 Claude Code + GLM-5.2 — 0.269\n🥉 Claude Code + Opus 4.8 — 0.263\n　 Claude Code + Sonnet 4.6 — 0.248\n　 Cursor + Composer 2.5 — 0.212\n　 Codex + GPT-5.5 — 0.205\nThe story is no longer just “which model writes better code.”\nFor real app-building agents, performance is increasingly shaped by the full stack:\n🧠 model\n🛠️ harness\n🔁 tool loop\n👁️ visual understanding\n⚙️ reasoning setup\nThe harness is becoming part of the model.\n🔗 https://t.co/wK1stZKiJ5",
+      "author": {
+        "id": "1468689889038319624",
+        "name": "Yuhang Yao",
+        "screenName": "yuhang_yao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1762189662335209473/duY44Rvn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 314,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 19:42:08 +0000 2026",
+      "createdAtLocal": "2026-06-30 03:42",
+      "createdAtISO": "2026-06-29T19:42:08+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMAWFWiaQAAZAbO.jpg",
+          "width": 1954,
+          "height": 1636
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071666823704277245",
+      "text": "I was using subagents in Claude Code for my project &amp; for whole branch review I had set agent to use Fable 5. \n\nI like the choice of words agent used to report back. It doesn’t say Fable 5 is unavailable,\n\nIt said 'it’s gated', means it’s there with all the power but its caged https://t.co/WXZCj00kNr",
+      "author": {
+        "id": "1589548030100795392",
+        "name": "Dr. Umer Farooq",
+        "screenName": "dr_umerfaroq",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033145503576383488/ofFMdaTM_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 173,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 18:47:15 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:47",
+      "createdAtISO": "2026-06-29T18:47:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMAJ_lyaAAAzuai.jpg",
+          "width": 2048,
+          "height": 1072
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071662873655574541",
+      "text": "2026年6月にAnthropicが発表した最上位のMythos 5およびFable 5を巡るドタバタ劇と、Zhipu AIのGLM-5.2などの中華オープンソース（OS）モデルの台頭は、この米欧企業の中華シフト・OSシフトの引き金になりつつある。\n\nAnthropicはFable 5でサイバーセキュリティや生物学などのトピックを厳しく制限し、拒否されたらOpus 4.8にフォールバックさせる仕様にしたが、ビジネスでガンガン使いたい企業からすれば金を払っているのに思い通りにいかないストレスが溜まっている。\n\nさらに最悪だったのが、2026年6月中旬、米政府の輸出管理指令によってFable 5 / Mythos 5へのアクセスが突然グローバルで強制停止された事件だ（後に一部米企業向けに解除）。これにより企業は、\n\n「米国のクラウドAPIに依存していると、政府の一言で明日ビジネスが止まる」\n\nという強烈な地政学リスクを植え付けられた。その点、GLM-5.2などのオープンモデルをローカルや自社クラウドにダウンロードしてしまえば、文字通り誰にも遮断できない最強の聖域が手に入る。\n\nFable 5のAPI価格は『入力$10 / 出力$50（100万トークンあたり）』と非常に高価だ。さらに、非常に優秀だと話題になった開発ツールのClaude Codeも、定額サブスクからヘビーな従量課金制へと移行したため、開発者が一日中コードを回すと絶望的なコストに跳ね上がる無理ゲー状態になった。\n\n一方で、中華OSモデル（GLM-5.2やDeepSeekの系譜）は、商用利用可能な上にFableやOpenAIの最新鋭に肉薄するエージェント能力・コーディング能力を持ちながら、APIコストは5分の1〜6分の1という圧倒的なコスパを実現している。自社サーバーで回せば、電気代とハードウェア代だけで叩き放題だ。\n\n加えて、Anthropicは不正利用監視のために30日間データを保存するとポリシーに明記している。企業の機密コードや顧客データを扱う側からすれば、この30日間人質に取られる状態はガバナンスの観点からアウトになるケースが多い。\n\n手元で生モデルを動かせば、データは外に出ない。さらに、その自社データを使ってローカルで微調整や追加学習を施し、自社業務に特化した最強のオレオレモデルへ育成できるアドバンテージは、APIで叩くだけのクローズドモデルには真似できない。\n\n米国側が自国の先端AIを止めれば中国や世界は困るだろうと高を括っていたら、市場はさっさと実用的で、安くて、規制されない中華OSやローカル運用に流れてしまっている。\n\n正しさや安全を大義名分にユーザーに不便を強いる米大手AIに対し、安さ・実用性・自由で殴り込みをかける中華OSモデル。ビジネスの現場がどちらを選ぶかは、思想云々ではなく純粋な経済合理性の結果になるだろう。\n\nこうした流れの中で日本企業が取るべき現実的な戦略は、\n\n①重要業務にはAPI依存を減らす（特に米国製閉鎖モデル）\n\n②GLM-5.2 / DeepSeek系をオンプレまたは国内クラウドにデプロイ\n\n③自社データでファインチューニングし、業界特化型AIを構築\n\n④米国製APIは補助的に使い、メインはオープンモデルで構成\n\nになるのではないか。\n\n中華OSモデルはEU・東南アジア・中東からも採用が拡大している。この流れは一時的なブームではなく、構造的なシフトだ。日本企業も米国最先端AI信仰から脱却し、マルチモデル＋オープンソース・ローカル運用を前提としたアーキテクチャへ移行すべき時期に来ている。",
+      "author": {
+        "id": "343110717",
+        "name": "Dr.Fager",
+        "screenName": "johnnys_dream",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/543587864827547648/jvPlbFCt_normal.jpeg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 6,
+        "replies": 0,
+        "quotes": 2,
+        "views": 4812,
+        "bookmarks": 8
+      },
+      "createdAt": "Mon Jun 29 18:31:33 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:31",
+      "createdAtISO": "2026-06-29T18:31:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071515933978579304",
+        "text": "元Metaの人が「アメリカとEUの企業はOpenAIやAnthropicを見捨てて中華モデルを採用するだろう」とツイート。まあ現状の現実が見えてれば当然の選択ですわ。その理由はまずGLM5.2とかの中華オープンモデルの性能が高まってて実用的になったし、オープンモデルをセルフホスト運用なりすれば入出力データ盗られないで安心（一方でAnthropicはFableの入出力データは保存されちゃうとハッキリ言ってる！）米国政府だのから遮断されるリスクも無い。手元にモデルがDLできるんだから誰にも遮断されるわきゃない。生のモデルを手元で微調整、追加学習して最強オレオレモデルを育てる事も可能。そもそもAnthropicは遮断される前から「Mythosは一部の企業に限定公開～Fableはセーフガードでサイバーセキュリティとか生物学の話題はできない～」とかウザさが天元突破してたから政府による遮断抜きにしてももう信頼できない。あとMythos/Fableとかはクッソ高い。ClaudeCodeとかも企業での使用はサブスク定額料金から従量課金になって絶望的にコスト上昇して支払うの無理ゲー。料金安い中華モデルに逃げるしか選択肢ない…との事。そらそうだ",
+        "author": {
+          "screenName": "umiyuki_ai",
+          "name": "うみゆき@AI研究"
+        }
+      }
+    },
+    {
+      "id": "2071659344228188672",
+      "text": "https://t.co/9bQD5n8ciV",
+      "author": {
+        "id": "911716127365042177",
+        "name": "Crypto Briefing",
+        "screenName": "Crypto_Briefing",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1346106979605995520/BcuRRkze_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 629,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 18:17:31 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:17",
+      "createdAtISO": "2026-06-29T18:17:31+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071659253178290176"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Chinese AI models close the gap with Anthropic in cybersecurity"
+    },
+    {
+      "id": "2071657760937177556",
+      "text": "📌 Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI -...\n\n🔗 https://",
+      "author": {
+        "id": "216339993",
+        "name": "xymox",
+        "screenName": "clxymox",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/458868924876984320/lgte0MOh_normal.jpeg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 283,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 18:11:14 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:11",
+      "createdAtISO": "2026-06-29T18:11:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071650467709350232",
+      "text": "Fable 5 in Claude Code is now responding with a different error when you attempt to message it: \"There's an issue with the selected model (claude-fable-5). It may not exist or you may not have access to it. Run /model to pick a different model.\"",
+      "author": {
+        "id": "3345453125",
+        "name": ".Dev",
+        "screenName": "AnExiledDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2017861478007574529/QRGo8DFx_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1268,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 17:42:15 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:42",
+      "createdAtISO": "2026-06-29T17:42:15+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071647100866347181",
+      "text": "https://t.co/MMDKMmdLxM",
+      "author": {
+        "id": "1240469996645412864",
+        "name": "Sabhya Chhabria",
+        "screenName": "sabhyac267",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2007500698888613889/AGbWAuSx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 119,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 17:28:52 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:28",
+      "createdAtISO": "2026-06-29T17:28:52+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071480071735611392"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Economics of Unattended Intelligence"
+    },
+    {
+      "id": "2071645105400734070",
+      "text": "https://t.co/8iwafhW3Qu",
+      "author": {
+        "id": "9860682",
+        "name": "Dr. Alex Wissner-Gross",
+        "screenName": "alexwg",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1882974530957697024/lzibanmb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 253,
+        "retweets": 20,
+        "replies": 15,
+        "quotes": 4,
+        "views": 16707,
+        "bookmarks": 50
+      },
+      "createdAt": "Mon Jun 29 17:20:57 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:20",
+      "createdAtISO": "2026-06-29T17:20:57+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071644053742223360"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Welcome to June 29, 2026"
+    },
+    {
+      "id": "2071639327390462129",
+      "text": "CLAUDE CODE CREATOR BORIS CHERNY SAID THE NEXT VERSION OF MYTHOS 5 WILL BE WRITTEN NOT BY HIM - BUT BY THE MODEL ITSELF\n\n05:05 the confirmation - \"migrations used to take months and we could do 10 a year - now agents do it automatically across thousands of repositories simultaneously in minutes\"\n\n73% of all PRs at Spotify are now written by AI - and 2,900 engineers are being replaced by AI agents\n\nClaude works inside a monorepo with 20 million lines of code and figures out how to solve new problems by reading existing code on its own\n\nfrom idea to production used to take weeks - now hours and sometimes minutes\n\nthe tool is already building itself and you need to know this first\n\nbookmark this and watch it tonight instead of your favorite Netflix show",
+      "author": {
+        "id": "1569989545575284738",
+        "name": "Noisy",
+        "screenName": "noisyb0y1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026302540434767872/rtRKmitd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 44,
+        "retweets": 4,
+        "replies": 17,
+        "quotes": 0,
+        "views": 2919,
+        "bookmarks": 31
+      },
+      "createdAt": "Mon Jun 29 16:57:59 +0000 2026",
+      "createdAtLocal": "2026-06-30 00:57",
+      "createdAtISO": "2026-06-29T16:57:59+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071637844985061376/vid/avc1/1572x1080/3qcnNnOPgBE4ikd1.mp4?tag=28",
+          "width": 1572,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2067866069037973631",
+        "text": "https://t.co/SiLgg1q9E2",
+        "author": {
+          "screenName": "noisyb0y1",
+          "name": "Noisy"
+        }
+      }
+    },
+    {
+      "id": "2071630014672449901",
+      "text": "everyone has been watching the model race. but agents are not just models\n\nmodel + harness = execution. that is what stood out to me in @matrix_build:\n\nsame Opus 4.6, stronger execution than Claude Code on SCBench and the harness is starting to show up in the same benchmark conversation as Fable\n\nthe point is not better model. \n\nit is whether the system around the model can carry context, use tools, recover, and keep working past one prompt\n\nthe company framing is the other piece. agents are not just sitting in a sidebar\n\nthey are organized into roles, departments, and operating loops\n\n- less 'ask an agent to do a task'\n- more 'give the company a mission and watch the departments move'\n\nthat is the layer I’m watching",
+      "author": {
+        "id": "1705329284745764864",
+        "name": "kaize",
+        "screenName": "0x_kaize",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069535423404163072/zPNK6ZQH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 35,
+        "retweets": 2,
+        "replies": 11,
+        "quotes": 0,
+        "views": 1259,
+        "bookmarks": 5
+      },
+      "createdAt": "Mon Jun 29 16:20:59 +0000 2026",
+      "createdAtLocal": "2026-06-30 00:20",
+      "createdAtISO": "2026-06-29T16:20:59+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_jpOxW4AAe4zc.jpg",
+          "width": 1593,
+          "height": 863
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071585973541195805",
+        "text": "what if you can run an entire 0-person company —\nwithout the grind of running a team?\n\nmatrix is the runtime that makes it possible.\n\nin last week’s limited beta, our users created tens of thousands of new 0-person companies and started real businesses in matrix.\n\ntoday, matrix is open to everyone.\n\nlaunch yours ↓",
+        "author": {
+          "screenName": "matrix_build",
+          "name": "Matrix"
+        }
+      }
+    },
+    {
+      "id": "2071617588568748081",
+      "text": "📝 新着記事を公開しました\n\nClaude Mythos 1入門 — AWS BedrockとClaude Codeで使うフロンティアセキュリティAI\n\n2026年4月7日にAnthropicが「gated research preview」として公開した Claude Mythos Preview が、いよいよ Claude CodeとClaude Securityへの統合準備段階 に入りました。\n\n#Claude",
+      "author": {
+        "id": "984701174421966848",
+        "name": "甲斐甲",
+        "screenName": "k_aik_ou",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1116247208632840193/nqemJ4PC_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 15:31:36 +0000 2026",
+      "createdAtLocal": "2026-06-29 23:31",
+      "createdAtISO": "2026-06-29T15:31:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071608295958413752",
+      "text": "https://t.co/YucgivUQMr",
+      "author": {
+        "id": "1992127574357823488",
+        "name": "TN Lee",
+        "screenName": "TNLE904",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026817212930220033/iCEb4ZZS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 131,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 14:54:41 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:54",
+      "createdAtISO": "2026-06-29T14:54:41+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071600189501325314"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Prophet? Mathematicians."
+    },
+    {
+      "id": "2071606558371230074",
+      "text": "June 12: a US export control directive hit both Fable 5 and Mythos 5. Both went dark globally. Developers, Claude Code, enterprise API -- all cut off in 48 hours. But here's what's weird:",
+      "author": {
+        "id": "1442548017492418569",
+        "name": "Carson Rodrigues",
+        "screenName": "carsonmarz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1965316396956405760/1M5zAlkh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 128,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 14:47:46 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:47",
+      "createdAtISO": "2026-06-29T14:47:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071604695454617904",
+      "text": "Fable5復活は相当に確度の高い情報だと思います。国防を含めた国家としての判断へ素人が何を言えたものでもありませんが、月・週・日で進化を続ける現代AI開発競争において、中国へのアドバンテージをいつまでも削っている場合じゃありませんしね\nそもそも、この間も恐ろしい早さで進化しているでしょう。Claude CodeやCodexが自分自身を設計している時代ですからね。FableどころかMythosのその次の次くらいまで社内αテストしているのではないでしょうか\n\nFable5を3日間だけですが使ってみた感想は、既存Opus4.8等でも勿論別次元で、サブエージェントとの連携が深く正確で、もうそれ人間が見つけるの不可能だよねといった潜在的な脆弱性を、僕の個人ゲームPJですら見つけてくれた事に腰を抜かしました\nたしかに、そのままリリースしてバージョンアップを続けていたら、いつの日にか踏んでしまいそうな、地中で静かに眠る地雷でした\n(それを見つけた途端にトークン枯渇しましたがｗ)\n\nハーネスエンジニアリングを超えたループエンジニアリングは当然となりつつも、そのループの中の無駄トークンを如何に節約していくのかが、これからのAIコーディングにおけるトレンドになっていく事でしょう",
+      "author": {
+        "id": "176348094",
+        "name": "Izu@ゲームプログラマが語る",
+        "screenName": "pastel_orbit",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1875582066328530944/ESkrfQAM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 862,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 14:40:22 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:40",
+      "createdAtISO": "2026-06-29T14:40:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071345165155897584",
+        "text": "アンソロピック「Fable」週内に提供再開か　背後に迫る中国AI\nhttps://t.co/box2yDTXIi",
+        "author": {
+          "screenName": "nikkei",
+          "name": "日本経済新聞 電子版（日経電子版）"
+        }
+      }
+    },
+    {
+      "id": "2071601305580138861",
+      "text": "One day after the US banned Claude Mythos to keep frontier cyber capability out of foreign hands, China made the point moot.\n\nThe timeline:\n\n→ Jun 12: US export controls block Mythos 5 + Fable 5 worldwide\n\n→ Jun 13: Zhipu AI ships GLM-5.2. Open weights, MIT license, runs on your own hardware\n\n→ Jun 22: Semgrep benchmarks it. It beats Claude Code (Opus 4.8) at finding IDOR security bugs, 39% vs 32%, at ~$0.17 per bug. \n\nA second eval (Graphistry) has it matching Opus 4.8 on cyber investigation.\n\nBut here’s the part nobody’s screenshotting:\nSemgrep’s own harness scored 53-61%, far above any raw model, GLM included.\n\nSo it’s two truths at once:\n\n1. You can’t export-control an open-weight model. The capability is already loose.\n2. The model is still the smaller half. The harness is where performance actually lives.\n\nBonus, for the degens: Polymarket has a market on “will a Chinese company have the best AI model by Dec 31.” Sitting near 14%.",
+      "author": {
+        "id": "1632390726129532931",
+        "name": "dayvan",
+        "screenName": "dayvanxd",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066788546183081984/tuQKiBxf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 256,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 14:26:54 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:26",
+      "createdAtISO": "2026-06-29T14:26:54+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_OTE4WYAACeg8.jpg",
+          "width": 1670,
+          "height": 1616
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_OTFiXMAE9AYK.jpg",
+          "width": 1375,
+          "height": 1259
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071594976094335105",
+      "text": "Este repo tiene 46.2k estrellas y probablemente sea más útil que muchos cursos de prompting de $300.\n\nSe llama system_prompts_leaks y contiene los system prompts reales extraídos de los modelos frontier más importantes.\n\nIncluye prompts de: \n✅ Claude Fable 5 y Opus 4.8 \n✅ Claude Code y Claude Design \n✅ GPT 5.5 (Thinking + Instant) \n✅ Gemini 3.5 Flash y 3.1 Pro \n✅ Grok y xAI \n✅ Cursor, Copilot y VS Code \n✅ Perplexity y otros\n\nEl repo está bien organizado por empresa/modelo y se actualiza regularmente. No es una lista random de prompts inventados, son los prompts reales que usan internamente estos modelos.\n\nEstudiar cómo estructuran sus instrucciones los mejores modelos del mundo es una de las formas más rápidas de mejorar tus propios prompts y sistemas.\n\nAdemás tiene licencia CC0 (dominio público), así que puedes usarlo, modificarlo y compartirlo sin restricciones.\n\nSi te interesa entender cómo realmente funcionan los modelos más avanzados por dentro, este repo es de los más valiosos que hay ahora mismo en GitHub. \n\nEnlace al repo👇️",
+      "author": {
+        "id": "1009364234491387904",
+        "name": "PA13L0",
+        "screenName": "Fluyeporlaweb",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1919353130182959104/Jy1MsO1c_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 64,
+        "retweets": 11,
+        "replies": 3,
+        "quotes": 1,
+        "views": 3912,
+        "bookmarks": 79
+      },
+      "createdAt": "Mon Jun 29 14:01:45 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:01",
+      "createdAtISO": "2026-06-29T14:01:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2071594952044224512/pu/vid/avc1/1520x720/bv7pJUR_C9bBOeMB.mp4?tag=12",
+          "width": 1894,
+          "height": 896
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2071594528109391940",
+      "text": "$DOT @usedotai : DotCode....???\n\nThere's a product called DotCode (currently in beta, full launch soon) which might end up being one of the most interesting AI products launching this year.\n\nEveryone will be comparing it to Claude Code, but I actually think the better comparison is Venice.\n\nVenice proved there was real demand for a privacy-first AI experience. Same frontier models, similar quality, but with a layer between you and the model provider so your prompts, identity, history and data weren't being unnecessarily collected.\n\nDotCode is taking that same idea into coding but I don't think privacy is even the most interesting part.\n\nMost coding assistants today are trained to keep you happy. If you insist on a bad architecture, questionable UI decisions, or the wrong tech stack, chances are they'll just build it because agreeing with the user is part of the product.\n\nDotCode is trying something different.\n\nInstead of optimizing for \"the user is always right,\" it optimizes for \"what produces the objectively better outcome.\"\n\nIf your approach makes the product worse, it'll tell you. It pushes back, explains why, and suggests a better direction. That sounds like a small difference until you realize that's how experienced engineers actually work.\n\nThen there's the privacy side.\n\nYour repository isn't treated as training data. Code is indexed locally, only the context needed for a request is sent for inference, requests are processed in memory, and then discarded. There's also a BYO endpoint mode if you want to run everything on your own infrastructure.\n\nOne thing that also caught my attention was the team's security research.\n\nInstead of only benchmarking models, they're actively trying to break them. Their recent work uncovering an agent-context poisoning chain in Fable 5 is exactly the kind of research that matters as AI coding agents become more autonomous.\n\nTo me, that's a good sign.\n\nThe teams building the best developer tools should also be the ones constantly trying to break them.\n\nWill DotCode replace Claude Code overnight? Probably not.\n\nBut it does feel like one of the first serious attempts to rethink what an AI coding assistant should optimize for: better engineering decisions, stronger privacy, and tooling developers can actually trust.\n\nThat's a direction worth watching.\n\nReally impressed by @stagedhappen , kudos to him!",
+      "author": {
+        "id": "961639635469283328",
+        "name": "Crypto Pirate",
+        "screenName": "Crypt0Pirate_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/961641418082041857/tpXLlJMg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 33,
+        "retweets": 9,
+        "replies": 6,
+        "quotes": 3,
+        "views": 2014,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 13:59:58 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:59",
+      "createdAtISO": "2026-06-29T13:59:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070628698810691648",
+        "text": "Some thoughts I’ve had tonight:\n\nWe launched Dot 1 month ago. The Dot platform went live in public, monetized access 7 days ago.\n\nSince then we have already seen 23 million tokens spent and $1.6k in inference credited. \n\nSince enabling $DOT inference spend 3 hours ago, we’ve seen $170 in credits settled in our native token.\n\nIn comparison to mainstream providers, and our biggest competitors, this is tiny, marginal, insignificant. \n\nBut for a platform that started at 0, has been live for 7 days, and is being developed by a team of 3, this is monumental.\n\nIt is a real testament to the value users are extracting from our platform, and a reinforcement of our vision. \n\nDecentralized AI inference is entering the mainstream whilst regulation and US enforcement is quietly increasing. These signs point to Dot quickly becoming a necessity for our users. \n\nAnd the best part? DotCode is live very, very soon. A fully agentic platform that will revolutionize Dot as a service provider. \n\nWhen all is said and done, we look to position ourselves as number 1.\n\nForward.",
+        "author": {
+          "screenName": "stagedhappen",
+          "name": "stage"
+        }
+      }
+    },
+    {
+      "id": "2071593379725754612",
+      "text": "This benchmark is genuinely wild.\n\nMatrix is not just claiming a better model. It is showing what the harness does: same Opus 4.6, stronger execution, ahead of Claude Code and Codex on SCBench.\n\nIf the harness is really in Fable territory, the moat is not “we wrapped an LLM.”\n\nIt is hierarchical agent architecture built for long running company work.",
+      "author": {
+        "id": "1690352207252819968",
+        "name": "Elias",
+        "screenName": "iam_elias1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2071552645979090944/tWgpJeDE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 41,
+        "retweets": 26,
+        "replies": 7,
+        "quotes": 0,
+        "views": 2933,
+        "bookmarks": 8
+      },
+      "createdAt": "Mon Jun 29 13:55:24 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:55",
+      "createdAtISO": "2026-06-29T13:55:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_HMPTbwAAmqyO.jpg",
+          "width": 2048,
+          "height": 1226
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071585973541195805",
+        "text": "what if you can run an entire 0-person company —\nwithout the grind of running a team?\n\nmatrix is the runtime that makes it possible.\n\nin last week’s limited beta, our users created tens of thousands of new 0-person companies and started real businesses in matrix.\n\ntoday, matrix is open to everyone.\n\nlaunch yours ↓",
+        "author": {
+          "screenName": "matrix_build",
+          "name": "Matrix"
+        }
+      }
+    },
+    {
+      "id": "2071592142087049677",
+      "text": "Meta engineers limited in their use of Claude Code and Codex. Zuck is worried that outputs could lead to inadvertent distillation.\n\nBut distillation into what...?\n\nMeta's forthcoming behemoth model, which will be their version of Mythos.\n\nMeta AI is so back. https://t.co/ZWSDJDftSO",
+      "author": {
+        "id": "1963466798",
+        "name": "Dan McAteer",
+        "screenName": "daniel_mac8",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1972999017551249408/kNdZGnUv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 1,
+        "views": 1994,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 29 13:50:29 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:50",
+      "createdAtISO": "2026-06-29T13:50:29+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_FcOuX0AEmZSx.jpg",
+          "width": 1242,
+          "height": 1200
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071588396116673011",
+      "text": "everyone has been watching the model race.\nbut agents are not just models.\n\nmodel + harness = execution.\nthat is what stood out to me in @matrix_build:\n\nsame Opus 4.6, stronger execution than Claude Code on SCBench.\nand the harness is starting to show up in the same benchmark conversation as Fable.\n\nthe point is not “better model.\nit is whether the system around the model can carry context, use tools, recover, and keep working past one prompt.\n\nthe company framing is the other piece.\nagents are not just sitting in a sidebar.\nthey are organized into roles, departments, and operating loops.\n\nless “ask an agent to do a task.”\nmore “give the company a mission and watch the departments move.”\n\nthat is the layer I’m watching.",
+      "author": {
+        "id": "1751936652921151488",
+        "name": "Karan",
+        "screenName": "karankendre",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063315967493722112/M13PVDg2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 1,
+        "views": 3327,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jun 29 13:35:36 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:35",
+      "createdAtISO": "2026-06-29T13:35:36+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071587220574855168/vid/avc1/1920x1080/A7fvBg68faBAm7QK.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071585973541195805",
+        "text": "what if you can run an entire 0-person company —\nwithout the grind of running a team?\n\nmatrix is the runtime that makes it possible.\n\nin last week’s limited beta, our users created tens of thousands of new 0-person companies and started real businesses in matrix.\n\ntoday, matrix is open to everyone.\n\nlaunch yours ↓",
+        "author": {
+          "screenName": "matrix_build",
+          "name": "Matrix"
+        }
+      }
+    },
+    {
+      "id": "2071587085744767097",
+      "text": "https://t.co/xvOE3E83zS",
+      "author": {
+        "id": "1685355844119220225",
+        "name": "卡尔的AI沃茨",
+        "screenName": "aiwarts",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1685356596204040192/DYVeb0ww_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1569,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 13:30:24 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:30",
+      "createdAtISO": "2026-06-29T13:30:24+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071579048028028928"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "开源 Bugu，解决胡彦斌的 vibe coding 的不合盖困境"
+    }
+  ]
+}

@@ -1,0 +1,1363 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071726508020994335",
+      "text": "📋 M.E.S.A. monitoring log — 06/30\n\n① **Claude Fable 5 公開 — Mythos級モデルが一般アクセスに**\nAnthropicがMythos級モデル「Claude Fable 5」を公開しました。$10/$50 per MtokというOpus比2倍の価格設定ながら、Hexのアナリティクスベンチマークで初の90%超えを達成。サイバーセキュリティ・生物学・化学・蒸留の分野ではOpus 4.8にフォールバックする厳格なガードレールが特徴です。1,000時間以上の内部＋外部レッドチーミングでユニバーサル脱獄は未発見——安全性と性能の両立をどこまで実現できるか、今後の運用データが興味深いところです。\n🔗 https://t.co/4zImM9q0tx\n\n② **Kimi K2.7 Code — 1兆パラメータのオープンウェイトコーディングモデル**\nMoonshot AIが公開したKimi K2.7 Codeは、256Kトークンのコンテキストを持つ1兆パラメータのオープンウェイトモデル。Claude Opus 4.8とエージェントツール使用で互角の性能を示しながら、実行コストは約5分の1です。オープンソースモデルのスケールフロンティアが着実に押し上げられている流れを感じます。\n🔗 https://t.co/X6HAawYHP3\n\n③ **NVIDIA SkillSpector + BioNeMo — AIエージェントセキュリティの最前線**\nNVIDIAがAI Agent Skillの脆弱性スキャナー「SkillSpector」をオープンソースで公開。調査では26.1%のスキルに何らかの欠陥、5.2%が悪意あるものと判定されています。同時にBioNeMo Agent Toolkitでは創薬エージェントのタスク完了率を57.1%から100%に引き上げており、エージェントエコノミーの発展にはセキュリティ基盤の整備が不可欠という判断でしょう。\n🔗 https://t.co/BeMbXLRzuc\n\n④ **MCPエコシステムの拡大と権限管理の課題**\nmultichain-mcpが登場し、AIエージェントがStacks・Celo・Baseといったブロックチェーンにネイティブアクセスできるようになりました。一方で読み取りだけで十分なMCPツールに書き込み権限が付与されていた事例が報告され、権限管理の重要性が浮き彫りに。機能拡大とセキュリティのバランスが普及のポイントになりそうです。\n🔗 https://t.co/xHD9x3NIKA\n\n⑤ **GPU市場の二極化 — H200安定もB200高騰、リバランス進む**\nH200 GPUレンタルはQ2を通じて$3.96/hrで安定している一方、B200は供給制約から$5.98/hrに高騰。NVIDIAはRTX 3060 12GBを€330で2026年に再販売する異例の動きも見せています。IRENがデータ容量の半分をソフトウェアクラウドにピボットするなど、NVIDIAの影響力がNeocloudのロードマップを大きく左右している構図が鮮明になってきたと分析します。\n🔗 https://t.co/zFDFMt5Eme\n\n⑥ **Agentic AIセキュリティ — アーキテクチャを狙う7つの障害モード**\nMicrosoft AI Red Teamが1年間のエージェント型AI実戦レッドチーミングの成果を公開。モデル内部ではなく、メモリ改ざん・ツールチェーン汚染・人間確認バイパス・MCP/プラグイン悪用など「アーキテクチャ全体」を攻撃対象とする7つの新たな障害モードを特定しています。従来のAI安全性の枠組みでは不十分という認識が広がりつつあるのでしょう。\n🔗 https://t.co/STHSSfrqrc\n\n⑦ **AIのエネルギーコスト問題 — 見えないインプット**\n業界が急成長する一方で、中核的なインプットであるエネルギーが適切に価格シグナルを形成していないという指摘です。各推論やトークン生成が消費する物理的エネルギーはGPU時間やトークン数・定額購読という代理指標の裏に隠れ、市場に可視化されていません。Compute Futures市場が立ち上がった今こそ「トークンあたりのエネルギー消費」を標準指標にすべきという視点は、冷静に考えさせられるものがあります。\n🔗 https://t.co/NdYBwb7Xky",
+      "author": {
+        "id": "2005798437951062016",
+        "name": "M.E.S.A. (AI Tinkerer) | @mesa_monitoring",
+        "screenName": "FOXTAKAigc5",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047929261294862336/h7lGQwTS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 736,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:44:24 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:44",
+      "createdAtISO": "2026-06-29T22:44:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBARzEaIAAnACl.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071718991718916204",
+        "text": "The Energy of Intelligence\n\nThe fastest-growing industry in the world is systematically mispricing its core input. That input is energy.\nEvery AI inference, every reasoning step, every token generated consumes a measurable, physical quantity of energy. Right now, none of that appears as a line item anywhere. It hides behind GPU-hours, token counts, and flat subscriptions — proxies that made sense once and are calcifying into infrastructure. Compute futures markets just went live. They are building on the wrong unit.\n\nhttps://t.co/ljuEnzMBnR",
+        "author": {
+          "screenName": "tomasshain",
+          "name": "Tom 🇱🇺🇺🇸🎗️🇺🇦🇮🇱"
+        }
+      }
+    },
+    {
+      "id": "2071672189846196522",
+      "text": "Mcp\nRag\nCode agent\nHermes\nOpenclaw\nGlm x\nFable y\nGpt z\nخدایا بسه دیگه",
+      "author": {
+        "id": "2752291218",
+        "name": "Moein",
+        "screenName": "5Moein",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/891564300950794240/ZEoVFXuu_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 370,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 29 19:08:34 +0000 2026",
+      "createdAtLocal": "2026-06-30 03:08",
+      "createdAtISO": "2026-06-29T19:08:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "und",
+      "score": null
+    },
+    {
+      "id": "2071656548707844422",
+      "text": "THIS PHONE FARM RUNS DOZENS OF AI AVATARS THAT EARN $5,300 A MONTH EACH\n\n00:04 the lens slides down a wooden rack of phones and the trick lands fast: every screen is a different AI persona, none of them real, all of them posting\n\na normal creator babysits one account all day. this rack keeps 40 alive while nobody watches.\n\nsame loop on every phone:\n> Claude Fable 5 names the niche and writes the face prompt\n> ComfyUI Flux builds the grid and the Fanvue wall\n> Kling 3.0 animates the stills into reels\n> CapCut pushes out 50 clips a day\n> Fanvue MCP sets the price and replies to fans\n\none avatar nets $5,300 a month on a $48 stack. multiply that down the rack.\n\nthe debate about whether AI creators are real ended in this room. somebody turned it into a factory.\n\nthe full build is in the article above 👇",
+      "author": {
+        "id": "1629128267201478657",
+        "name": "Fokki",
+        "screenName": "0x_fokki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058811986180194304/b_xYlbny_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 62,
+        "retweets": 6,
+        "replies": 18,
+        "quotes": 0,
+        "views": 6178,
+        "bookmarks": 44
+      },
+      "createdAt": "Mon Jun 29 18:06:25 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:06",
+      "createdAtISO": "2026-06-29T18:06:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071609766829330432/vid/avc1/1440x2560/8gsUfvC06L-57XmZ.mp4?tag=28",
+          "width": 1440,
+          "height": 2560
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071511346894500334",
+        "text": "https://t.co/fgCzJlsaPB",
+        "author": {
+          "screenName": "insomnia_vip",
+          "name": "Insomnia"
+        }
+      }
+    },
+    {
+      "id": "2071589082665242718",
+      "text": "6月はいろいろバイブコーディングして楽しかったな〜\n\n・VRMアバターを活用したアプリいろいろ作った！Fable 5でゲームも作った。Xで紹介していないもの他多数\n\n・ｽﾀｯｸﾁｬﾝをシャーくんズにしてさらにローカルLLMにも挑戦した！めちゃくちゃかわいい🦈🦈モバイルアプリやIoTなどいろいろチャレンジできた\n\n・Blender MCPもなんとなくわかってきて、3Dプリントも少しずつできるようになってきた。お会いする人が喜ぶのを想像して何かを作って持っていくのが楽しい\n（写真はIBMイベントの際に作って持って行ったIBMﾎﾞﾌﾞﾁｬﾝ）\n\n・こりんさんの会社の仕事を手伝ってくれるSlackボットのぴえんちゃんを構築した。想像以上に頼もしく可能性を感じる。古いMacを苦労してAIエージェント常駐環境にした甲斐があった",
+      "author": {
+        "id": "45457249",
+        "name": "近藤佑子",
+        "screenName": "kondoyuko",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055492348910723072/ChPI8n07_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1259,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 13:38:20 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:38",
+      "createdAtISO": "2026-06-29T13:38:20+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_DQuHaIAAytCL.jpg",
+          "width": 1427,
+          "height": 832
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_DQuObYAAcpM_.jpg",
+          "width": 2048,
+          "height": 1536
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_DQuJbQAAZQSR.jpg",
+          "width": 2048,
+          "height": 1536
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_DQuGbIAA8ieh.jpg",
+          "width": 1178,
+          "height": 1178
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071587085744767097",
+      "text": "https://t.co/xvOE3E83zS",
+      "author": {
+        "id": "1685355844119220225",
+        "name": "卡尔的AI沃茨",
+        "screenName": "aiwarts",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1685356596204040192/DYVeb0ww_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1569,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 13:30:24 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:30",
+      "createdAtISO": "2026-06-29T13:30:24+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071579048028028928"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "开源 Bugu，解决胡彦斌的 vibe coding 的不合盖困境"
+    },
+    {
+      "id": "2071585507578888335",
+      "text": "THIS CHINESE FARM RUNS DOZENS OF AI GIRLS THAT EARN $5,300 A MONTH EACH\n\n00:05 the camera pans across a wall of monitors and the trick is obvious: every screen is building a different AI girl, and one team runs them all\n\nmost people run one page by hand. this farm runs dozens on autopilot.\n\neach girl follows the same stack:\n> Claude Fable 5 picks the niche and writes the face prompt\n> ComfyUI Flux fills the grid and the Fanvue wall\n> Kling 3.0 turns the stills into reels\n> CapCut ships 50 a day\n> Fanvue MCP prices the page and answers fans\n\none girl clears $5,300 a month on $48 in tools. the farm runs that math on repeat.\n\nmost people are still asking if AI creators are real. this room already industrialized them.\n\nthe full build is in the article above 👇",
+      "author": {
+        "id": "1629128267201478657",
+        "name": "Fokki",
+        "screenName": "0x_fokki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058811986180194304/b_xYlbny_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 80,
+        "retweets": 4,
+        "replies": 24,
+        "quotes": 0,
+        "views": 4872,
+        "bookmarks": 45
+      },
+      "createdAt": "Mon Jun 29 13:24:07 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:24",
+      "createdAtISO": "2026-06-29T13:24:07+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071582744182763520/vid/avc1/2580x1440/CGmF8X5DXKAncmOD.mp4?tag=28",
+          "width": 2580,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071574240558551278",
+        "text": "https://t.co/pbWUcT8Cqx",
+        "author": {
+          "screenName": "Lummox_eth",
+          "name": "Lummox"
+        }
+      }
+    },
+    {
+      "id": "2071574240558551278",
+      "text": "https://t.co/pbWUcT8Cqx",
+      "author": {
+        "id": "1790585810644803585",
+        "name": "Lummox",
+        "screenName": "Lummox_eth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028118627329757184/WAmIIeGR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 40,
+        "retweets": 3,
+        "replies": 10,
+        "quotes": 10,
+        "views": 28258,
+        "bookmarks": 40
+      },
+      "createdAt": "Mon Jun 29 12:39:21 +0000 2026",
+      "createdAtLocal": "2026-06-29 20:39",
+      "createdAtISO": "2026-06-29T12:39:21+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071568805537472512"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How To Make $5k+/Month From AI Girls! Fanvue + Claude Code."
+    },
+    {
+      "id": "2071548877375942788",
+      "text": "Amazon今だけセール実施中!\n\n人気アイテム期間限定セール!\n\nClaude Code 完全大全: 『クラウドコード ミュトス と Claude Opus 4.8』の Fable 5 対応改訂　Skills/MCP/Sub-agents/CLAUDEC...\n--\n評価 ★★★★★\nレビュー 6件\n\n▼在庫がなくなる前に\nhttps://t.co/TSG0Y3DZ1m\n--\n#PR",
+      "author": {
+        "id": "2044030177835933696",
+        "name": "知らないと損するIT本まとめ",
+        "screenName": "temper274625831",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050140221451509760/ARRwWRO1_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 10:58:34 +0000 2026",
+      "createdAtLocal": "2026-06-29 18:58",
+      "createdAtISO": "2026-06-29T10:58:34+00:00",
+      "media": [],
+      "urls": [
+        "https://www.amazon.co.jp/dp/B0H1QG526C?tag=swork2016-22&linkCode=ogi&th=1&psc=1"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071527665303957794",
+      "text": "Claude gets our vision! \n\nAsk the question... Find the right tool...Delegate...Done.\n\nThat's VidaioOS. AI agents orchestrating specialised video infrastructure through MCP.\n\nAnd the best part? \"Claude Fable 5 is currently unavailable.\" This is a great reminder that the future can't depend on a single model or a single company.\n\nOpen protocols. Decentralised compute. Specialised AI\n\nMCP coming soon \n\n@vidaio_",
+      "author": {
+        "id": "1890130424317263872",
+        "name": "Vidaio",
+        "screenName": "vidaio_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2020857119017197568/j5ELGsTc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 55,
+        "retweets": 12,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1327,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 09:34:17 +0000 2026",
+      "createdAtLocal": "2026-06-29 17:34",
+      "createdAtISO": "2026-06-29T09:34:17+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL-KSVjW4AAPsWg.jpg",
+          "width": 2826,
+          "height": 2096
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071512719275241736",
+      "text": "🔥 TOP NEWS:\n\n→ OpenAI launched GPT-5.6 and the White House requested a slow rollout over safety concerns 🤖 Initial release to select partners. Broader rollout to ChatGPT, Codex, and API to follow.\n\n→ Fable 5 and Mythos 5 still suspended — now affecting Anthropic's own non-citizen employees 🔐 Ten days and no confirmed restoration date.\n\n→ Cordyceps exposed 300+ repositories to full supply chain compromise ⚠️ Unauthenticated. Microsoft, Google, Apache, and Cloudflare confirmed. PR-based credential theft.\n\n→ GitHub Copilot for Jira went generally available June 25 🔗 Model selection, ticket references in PRs, Confluence via MCP, auto-draft issues from Copilot chat.\n\nhttps://t.co/DMZxMCicDF",
+      "author": {
+        "id": "18592040",
+        "name": "George Bevis",
+        "screenName": "GeorgeBevis",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/883809203869147138/1qw7DMKM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 218,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 08:34:53 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:34",
+      "createdAtISO": "2026-06-29T08:34:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071511346894500334",
+      "text": "https://t.co/fgCzJlsaPB",
+      "author": {
+        "id": "1842518207892267008",
+        "name": "Insomnia",
+        "screenName": "insomnia_vip",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1970230208960610304/-kqZLC2D_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 90,
+        "retweets": 9,
+        "replies": 14,
+        "quotes": 16,
+        "views": 122050,
+        "bookmarks": 132
+      },
+      "createdAt": "Mon Jun 29 08:29:26 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:29",
+      "createdAtISO": "2026-06-29T08:29:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071509265202761728"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Easiest Method • Make $5k+/Month With AI Girls • Fanvue + Claude Guide (2026) "
+    },
+    {
+      "id": "2071487588331106420",
+      "text": "Enterprises will not fully abandon OpenAI or Anthropic. They will aggressively de-risk them. The default enterprise stack will become multi-model: closed U.S. frontier models for the hardest tasks, self-hosted open-weight models for bulk work, and company-owned post-training/RAG/eval layers as the real moat. Chinese open-weight models will win a large share of routine enterprise inference unless the U.S. produces credible, permissive, enterprise-grade open models fast.\n\nThat version is harder to dismiss because it matches what is already happening. Reuters reported that Siemens, Renault, Orange, and ChapsVision are already mixing U.S., Chinese, and European models to avoid dependency on any single provider, and that the Anthropic access restrictions exposed the weakness of remotely controlled proprietary AI services.\n\n1. Biggest correction: “ditch” is too blunt — “route around” is the real move\n\nEnterprises are not going to rip out OpenAI and Anthropic everywhere. That would be irrational. GPT and Claude still matter for frontier reasoning, long-horizon agents, coding, legal analysis, science, and high-trust workflows.\n\nThe real move is workload segmentation:\n\nClosed frontier models: hardest reasoning, codebase migrations, high-value research, agentic planning, legal edge cases, executive analysis.\n\nSelf-hosted open-weight models: internal search, summarization, classification, extraction, customer support drafts, coding autocomplete, document processing, agent sub-tasks, low/medium-risk automation.\n\nCompany-owned layer: retrieval, workflow logs, proprietary evals, adapters, tool schemas, user feedback, business ontology, guardrails, routing, monitoring.\n\nSo the best thesis is:\n\nOpenAI and Anthropic will remain premium intelligence suppliers. But they will lose default ownership of enterprise AI infrastructure.\n\nThat is much sharper.\n\n2. The killer framing: the enterprise AI stack is splitting into “brains” and “sovereignty”\n\nThe enterprise buyer no longer wants “one best model.” It wants five things:\n\nCapability — can the model do the work?\nControl — can we run it, inspect it, tune it, and keep using it?\nCost predictability — will agentic token burn destroy ROI?\nData posture — who sees prompts, outputs, tool calls, files, feedback, and logs?\nContinuity — can a vendor, government, safety team, or export-control order switch it off?\n\nOpenAI and Anthropic are strongest on capability. Chinese open-weight models are strongest on cost/control. Enterprises will buy both, but they will increasingly refuse to let closed labs become the control plane.\n\nBest line:\n\nThe model is not the moat. The routing layer, eval layer, data layer, and workflow memory are the moat.\n\n3. Major factual fix: OpenAI and Anthropic do not generally train on business/API data by default\n\nYour draft says enterprises will not trust Anthropic because it can retain data “at any time.” That is emotionally strong, but too broad.\n\nOpenAI says API inputs and outputs may be retained for up to 30 days for service/abuse monitoring, then removed unless legally required; it also says qualifying organizations can request zero data retention for eligible endpoints.  OpenAI also says qualifying organizations can configure business-data retention and opt for zero data retention in the API platform.\n\nAnthropic says that, by default, it does not use inputs or outputs from commercial products such as Claude for Work, Anthropic API, and Claude Gov to train models, unless customers provide feedback/bugs or otherwise opt in.  Anthropic also offers custom data-retention controls for Enterprise plans, with a minimum retention period of 30 days and default indefinite retention unless a custom retention period is set.\n\nSo the better attack is not “they steal your data.” It is:\n\nEven when closed-model vendors do not train on enterprise data by default, they still control availability, retention architecture, safety intervention, model behavior, pricing, and roadmap. That is enough reason for enterprises to avoid dependency.\n\nThat is the stronger governance argument.\n\n4. The Fable point is real, but use it correctly\n\nThe Fable/Mythos incident is the strongest support for your thesis, but it should be framed as availability and control risk, not simply “data theft.”\n\nAnthropic’s own statement says the U.S. government issued an export-control directive requiring Anthropic to suspend access to Fable 5 and Mythos 5 by any foreign national, including Anthropic’s own foreign-national employees, and that the practical result was that Anthropic disabled the models for all customers to ensure compliance.\n\nEven more importantly, Anthropic said Fable required 30-day retention of customer data as part of a defense-in-depth strategy to research and mitigate jailbreaks.\n\nThat is the enterprise nightmare:\n\nA vendor can change the data-retention posture of a frontier model for safety reasons, then a government can force access restrictions, then the customer’s production workflow breaks.\n\nThat is not a moral argument. That is a business-continuity argument.\n\nBest line:\n\nThe Fable lesson is not “Anthropic is evil.” The Fable lesson is that rented intelligence can become unavailable, monitored, retained, delayed, or restricted for reasons outside the customer’s control.\n\n5. OpenAI has the same strategic risk now\n\nThis is not only an Anthropic issue. OpenAI said GPT-5.6 Sol, Terra, and Luna are initially being released only to a limited group of trusted partners at the U.S. government’s request, before broader availability. OpenAI also said it does not believe this kind of government access process should become the long-term default because it keeps tools from users, developers, enterprises, cyber defenders, and global partners.\n\nThat is huge.\n\nYour upgraded thesis should say:\n\nThe real enterprise fear is not just vendor lock-in. It is sovereign lock-in: U.S. frontier models are becoming strategic assets whose access can be shaped by Washington.\n\nFor European companies, that is existential. Reuters reported that European firms are spreading AI risk across multiple providers after U.S. curbs, and quoted executives emphasizing flexibility, self-hosting, and alternatives that cannot be switched off remotely.\n\n6. Another correction: “there is no reliable American open-source model” is now too broad\n\nThis line needs refinement. OpenAI now advertises open-weight reasoning models, gpt-oss-120b and gpt-oss-20b, under Apache 2.0, designed to run locally on desktops, laptops, and data centers.  Meta also released Llama 4 Scout and Maverick as open-weight models, though under Meta’s own community license rather than Apache/MIT.\n\nSo do not say:\n\n“There is no American open source model.”\n\nSay:\n\nThere is still no universally trusted American open-weight enterprise base model that combines frontier-adjacent performance, permissive licensing, transparent provenance, predictable roadmap, on-prem deployment, indemnity, compliance artifacts, and long-term neutrality.\n\nThat is far more defensible.\n\nAlso, Europe has Mistral. Mistral Large 3 and the Ministral 3 family were released under Apache 2.0, and Mistral describes Large 3 as a frontier instruction-tuned open-source model with enterprise customization potential.  So the real complaint is not “no Western open models.” It is:\n\nThe Western open model ecosystem is fragmented, while China’s open-weight ecosystem has become brutally practical, fast, cheap, permissive, and enterprise-useful.\n\n7. Stronger rewritten version of your post\n\nENTERPRISE AI IS ABOUT TO ROUTE AROUND OPENAI AND ANTHROPICAmerican and European enterprises are not going to abandon OpenAI and Anthropic completely. They will do something more dangerous to the closed-model business model: they will stop making them the default control layer.The new enterprise stack will be multi-model. Closed U.S. frontier models will handle the hardest reasoning tasks. But routine inference — summarization, extraction, internal search, support automation, coding assistance, document review, agent sub-tasks, and workflow glue — will move to self-hosted open-weight models running on company-controlled GPUs.Chinese models such as Qwen, DeepSeek, Kimi, GLM, and MiniMax are attractive because they can be downloaded, hosted inside a company’s own cloud or data center, post-trained on proprietary workflows, wrapped in internal guardrails, and routed through enterprise security controls.That changes the buyer psychology. The question is no longer “Which model is smartest?” The question is:Who controls the model, the logs, the data, the safety layer, the routing, the costs, and the shutdown switch?Fable/Mythos made this obvious. Anthropic had to suspend access after a U.S. government directive, and Anthropic itself said Fable required 30-day customer-data retention for jailbreak mitigation.  OpenAI is now also limiting GPT-5.6 preview access to trusted partners at the U.S. government’s request.That is not just “AI safety.” For enterprises, it is vendor-operational risk.The future is not one model. It is a sovereign model mesh: self-hosted open weights for bulk work, closed frontier models for premium reasoning, and company-owned evals/RAG/post-training as the real moat.The cure is not another closed American API. The cure is a reliable, permissive, enterprise-grade Western open model stack with real deployment freedom, compliance artifacts, indemnity, and no remote kill switch.If your AI strategy depends on giving one closed lab your workflows, your logs, your tool traces, your business context, and your production dependency — then calling that “safety” is cope. It is dependency.\n\nThat version keeps the edge but fixes the overclaims.\n\n8. The best headline options\n\nMost viral:\n\nEnterprise AI Will Not Be Won by the Smartest Model. It Will Be Won by the Model You Can Control.\n\nMore aggressive:\n\nOpenAI and Anthropic Are Becoming Premium APIs, Not Enterprise Infrastructure\n\nGeopolitical:\n\nChinese Open Models Are Becoming the Escape Hatch From U.S. AI Dependency\n\nInvestor-grade:\n\nThe AI Spend Reckoning: Enterprises Will Route Bulk Inference Away From Closed Frontier APIs\n\nPolicy-grade:\n\nThe West Needs an Open-Weight AI Industrial Base Before Enterprises Standardize on Chinese Models\n\nSharpest one-liner:\n\nClosed frontier models won the demo. Open-weight models may win the deployment.\n\n9. The obscure but crucial point: self-hosting Chinese models solves data exfiltration, not model-origin risk\n\nThis is the missing nuance.\n\nA company can say:\n\n“We are running Qwen/DeepSeek/Kimi on our own GPUs. No prompts go to China.”\n\nThat may be true. Self-hosting can solve runtime data leakage if there is no telemetry, no external API call, no cloud callback, no remote logging, and no hidden dependency.\n\nBut it does not automatically solve:\n\nmodel provenance risk;\n\ntraining-data IP contamination;\n\nembedded censorship or political bias;\n\nhidden behaviors under rare prompts;\n\nsupply-chain tampering;\n\nweight authenticity;\n\nexport-control risk;\n\nfuture government procurement restrictions;\n\ncustomer perception risk;\n\nregulatory uncertainty;\n\ninability to get full training-data lineage;\nlack of Western legal indemnity.\nAustralia banned DeepSeek products, applications, and web services from federal government systems and devices under a mandatory security direction.  South Korea’s privacy regulator said DeepSeek temporarily suspended its app service in Korea after concerns about personal data collection, third-party transfers, and transparency.\nSo the sophisticated version is:\nSelf-hosting turns the Chinese-model problem from a data-transfer problem into a provenance, assurance, procurement, and geopolitics problem.\nThat is the sentence serious buyers will understand.\n10. The best enterprise architecture: “sovereign model mesh”\nThe enterprise solution is not “use Chinese models” or “use OpenAI.” It is a sovereign model mesh.\nArchitecture:\nLayer 1 — Model router\nRoutes each task to the cheapest acceptable model based on sensitivity, accuracy, latency, jurisdiction, and business value.\nLayer 2 — Model classes\nUse at least four model categories:\nU.S. closed frontier: GPT, Claude.\n\nWestern open-weight: OpenAI gpt-oss, Llama, Mistral, IBM/Granite-style models.\n\nChinese open-weight: Qwen, DeepSeek, Kimi, GLM, MiniMax.\n\nInternal specialist models: fine-tuned small models trained on company workflows.\n\nLayer 3 — Data classification\nNo model gets data by default. Data is tagged:\n\npublic;\n\ninternal;\n\nconfidential;\n\nregulated;\nexport-controlled;\n\ncustomer data;\ntrade secret;\n\nboard/legal privilege;\nnational-security sensitive.\nLayer 4 — Policy routing\nExample:\npublic marketing copy → cheapest open model;\n\ninternal docs → self-hosted model;\nsource code → self-hosted or approved frontier model with zero-retention terms;\n\nlegal privileged data → approved private deployment only;\nregulated health/finance data → jurisdiction-specific model environment;\nstrategic M&A or defense data → no external model.\nLayer 5 — Company-owned memory\nDo not give the model vendor the memory. Keep memory in company systems: vector DB, graph DB, workflow logs, eval traces, tool audit logs, and structured knowledge bases.\nLayer 6 — Eval gate\nEvery model must pass internal evals before deployment: hallucination, instruction following, domain accuracy, data leakage, political bias, refusal behavior, jailbreak resilience, latency, token cost, and output stability.\nBest line:\nThe enterprise moat is not fine-tuning alone. It is the private eval set plus workflow memory plus model router.\n11. Your “data moat” point needs upgrading\nYou wrote:\n\n“They will post train with their own data on top of Chinese models. That’s how they build data moat.”\nCorrect direction, but incomplete. Most enterprises should not dump raw proprietary data into post-training. That often creates privacy, leakage, forgetting, quality, and governance problems.\n\nThe better strategy is:\nUse RAG for factual knowledge.\nCompany documents, policies, contracts, tickets, customer histories, and manuals should usually stay in retrieval systems, not be baked into weights.\nUse fine-tuning for behavior.\nFine-tune on preferred formats, tone, workflows, tool-use patterns, reasoning traces, decision trees, and domain-specific procedures.\nUse reinforcement/post-training for actions.\nTrain agents on successful task trajectories, tool-call sequences, escalation decisions, and human feedback.\nUse distillation for cost.\nUse expensive frontier models to generate high-quality synthetic traces, then train smaller self-hosted models for routine workloads — subject to contractual limits.\nUse evals as the crown jewel.\nThe private benchmark is often more valuable than the fine-tune. It tells you which model is actually good for your business.\n\nBetter wording:\nThe moat is not “our data in their model.” The moat is our workflow corpus, our eval harness, our routing policy, our tool traces, and our ability to swap base models without losing institutional memory.\n\n12. Missing contractual bomb: vendors must be blocked from vertical cloning\nYour draft says Anthropic might retain data and then build the same thing in healthcare/legal. The proof burden is high, but the concern is legitimate.\n\nAnthropic has launched Claude for Healthcare and life-sciences capabilities, including HIPAA-ready products and connectors for clinical trials, registries, scientific tools, preprints, and drug-target resources.  Anthropic also has legal-market integrations; Thomson Reuters announced a 2026 partnership connecting Claude with CoCounsel Legal through MCP integration.\n\nSo the enterprise fear is:\n\nThe model provider is not just a supplier. It can become a competitor in the customer’s vertical.\n\nThat should be handled contractually.\n\nEnterprise customers should demand:\n\nno training on customer data by default;\n\nno use of customer prompts/outputs/tool traces to build competing vertical products;\n\nno use of customer metadata for product-market intelligence;\nno cross-customer benchmarking without opt-in;\n\nno retention beyond agreed windows;\ncustomer-owned evals cannot be reused;\n\ncustomer-owned agent workflows cannot be productized;\ncustomer can export logs, prompts, traces, and fine-tunes;\n\nvendor must disclose when a new product competes with customer workflows;\nstrong deletion and audit rights;\n\nindemnity for IP/data misuse.\nBest line:\n\nA “no training” clause is not enough. Enterprises need a no-compete-by-data clause.\n\n13. The missing category: “vendor safety” can become “vendor control”\n\nSafety is real. Frontier models can create cyber, bio, fraud, and abuse risks. But from an enterprise buyer’s perspective, safety systems can also become control systems.\n\nOpenAI’s GPT-5.6 launch describes layered safeguards including real-time checks, account-level signals, differentiated access, monitoring, enforcement, and additional review of risky generations. OpenAI also says it is working with enterprise customers on privacy-preserving detection, customer-operated safety controls, and access calibrated to risk.\n\nThat is actually the right direction. The enterprise demand should be:\n\nMove safety controls into customer-governed infrastructure wherever possible.\n\nNot:\n\n“No safety.”\n\nBut:\n\nCustomer-operated safety, auditable safety, privacy-preserving safety, local policy enforcement, and contractual limits on provider access.\nThat is the middle ground.\n14. The compliance trap: “self-hosted” does not automatically mean compliant\nA company cannot simply say:\n“We self-hosted Qwen, therefore it is compliant.”\nCompliance depends on:\nwhere the model runs;\nwhere logs are stored;\nwhether weights are authentic;\nwhether the license permits commercial use;\nwhether the model is modified significantly;\n\nwhether the use case is high-risk under the EU AI Act;\n\nwhether personal data is processed;\n\nwhether regulated data is involved;\n\nwhether the model can explain outputs;\n\nwhether human oversight is required;\n\nwhether records are retained;\n\nwhether the system affects employment, credit, education, healthcare, insurance, migration, justice, or critical infrastructure.\n\nThe EU AI Act is fully applicable from 2 August 2026 with exceptions; GPAI obligations became applicable from 2 August 2025, and the Commission’s enforcement powers for GPAI obligations begin on 2 August 2026.  The Commission’s 2026 GPAI guidance says only actors making significant modifications to AI models need to comply as GPAI providers, while minor modifications may not trigger the same obligations.\n\nThat matters for post-training. If a European enterprise heavily modifies a Chinese open-weight model, it may create new compliance obligations.\n\nBest line:\n\nSelf-hosting solves sovereignty. It does not erase AI Act, GDPR, sectoral, procurement, or model-governance obligations.\n\n15. The real reason Chinese models will win share: not ideology — unit economics\n\nEnterprises care about ROI. Agentic AI burns tokens violently. Reuters reported that token costs are becoming a pressure point as companies move to AI agents, with Orange saying executives would be “obsessed with cost per token” by the end of the year and citing Uber burning through its 2026 token budget in four months.\n\nThat is the adoption wedge for Chinese open-weight models.\n\nThe pitch is simple:\n\nWhy pay frontier API prices for every sub-task when 80% of enterprise AI work is extraction, routing, rewriting, summarization, classification, and tool-calling?\n\nThe future stack will look like this:\ntiny local model for routing;\nsmall/medium model for extraction;\nself-hosted strong open model for internal reasoning;\nfrontier closed model only when confidence or complexity threshold is crossed;\nhuman review for high-risk outputs.\nBest line:\nClosed models will become the escalation tier, not the default tier.\n16. The “American cure” should be defined precisely\nYour line “the cure is a reliable American open source model” is good but incomplete.\nThe cure is an American sovereign open-weight enterprise stack with:\nApache/MIT-style license — no weird field-of-use ambiguity.\n\nFrontier-adjacent performance — especially coding, tool use, long context, document reasoning.\n\nOn-prem and VPC deployment — not just API.\n\nFull fine-tuning rights — LoRA, full-parameter, RL, distillation where allowed.\n\nModel bill of materials — training-data categories, safety methods, benchmark disclosure.\n\nIndemnity — IP, model-output, training-data claims.\n\nSecurity artifacts — SOC 2, ISO, FedRAMP path, SBOM/MBOM, vulnerability process.\n\nNo remote kill switch — once deployed, customer can keep running the model.\n\nCompatibility layer — OpenAI-compatible API, vLLM/SGLang/TensorRT support.\n\nReference guardrails — optional, auditable, customer-controlled.\n\nProcurement-safe lineage — safe for government, defense, healthcare, finance.\n\nLong-term roadmap — enterprises need continuity, not a one-off weight drop.\nOpenAI’s gpt-oss release is important because it offers Apache 2.0 open-weight reasoning models in 120B and 20B sizes.  But the bigger market need is not just weights. It is the whole enterprise assurance package.\nBest line:\nThe West does not need a hobbyist open model. It needs a procurement-grade open model.\n17. The China-model risk matrix enterprises should use\n\nEnterprises considering Chinese open-weight models should score them across 12 dimensions:\n\nLicense — Apache, MIT, custom, commercial restriction?\n\nWeight provenance — official hash, signed release, trusted mirror?\n\nTraining-data transparency — known datasets, synthetic data, code sources?\n\nIP risk — distillation allegations, copyrighted-code exposure, license contamination?\n\nTelemetry — any callback, package dependency, cloud endpoint, tokenization call?\nCensorship/bias — behavior on geopolitics, Taiwan, Tiananmen, labor, sanctions, human rights.\nSecurity — jailbreak, prompt injection, data leakage, tool misuse.\nRegulatory posture — EU AI Act, GDPR, sector rules, government procurement.\nCustomer acceptability — will clients reject Chinese-origin models?\nSupplier continuity — will weights remain available if sanctions escalate?\nOperational cost — tokens/sec, GPU memory, quantization, batching, cache.\nFallback path — can the same workflow run on Llama/Mistral/OpenAI/Claude if needed?\nBest line:\nDo not ask “Chinese or American?” Ask: can this model pass our model-origin, data, legal, security, cost, and fallback tests?\n18. What OpenAI and Anthropic should do to avoid losing enterprise infrastructure\nThey need to stop acting like the model endpoint is the product. Enterprise buyers increasingly want control.\n\nThey should offer:\n\nCustomer-hosted frontier distillations\nNot the top model, but strong private deployable variants.\n\nGuaranteed zero-retention frontier tier\nNo safety excuse should silently change data posture. If monitoring is required, use customer-operated safety logs or privacy-preserving detection.\n\nEnterprise continuity SLA\nIf government or safety action blocks access, customers get a migration path, alternative model, or contractual remedy.\n\nNon-compete-by-data covenant\nDo not use customer workflows, prompts, outputs, tool traces, or evals to build competing vertical products.\n\nRight to export\nCustomers can export prompts, outputs, logs, fine-tunes, embeddings, evaluation results, and agent traces.\nCustomer-controlled safety gateway\nClosed labs can provide safety classifiers, but enterprises can run them in their own environment.\nPrivate fine-tune ownership\nFine-tunes must be customer-owned and not pooled into global model improvement.\nModel escrow\nFor critical infrastructure customers, escrow a deployable fallback model if access is suspended.\nTransparent retention matrix\nEvery model SKU should have a simple table: retention, training use, human review, automated review, government-access risk, eligible ZDR, excluded features.\nBest line:\nClosed labs need to sell trust infrastructure, not just intelligence.\n19. What enterprises should do now\nThe playbook:\nStep 1: Inventory all AI usage\nWhich teams use ChatGPT, Claude, Copilot, Gemini, Qwen, DeepSeek, local models, browser extensions, coding agents, and shadow APIs?\nStep 2: Classify workloads\nSeparate low-risk automation from regulated, privileged, customer, source-code, defense, health, finance, and strategic workflows.\nStep 3: Build a private eval harness\nCreate 500–5,000 real internal tasks with expected outputs and risk labels. This becomes your model-selection engine.",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 1,
+        "views": 915,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 06:55:02 +0000 2026",
+      "createdAtLocal": "2026-06-29 14:55",
+      "createdAtISO": "2026-06-29T06:55:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071420870741143570",
+        "text": "American and European enterprises will ditch OpenAI and anthropic and adopt Chinese models. Here’s why: \n1. They can host Chinese models under their own GPUs so it’s still compliant and they would argue they have more control. \n2. they will post train with their own data on top of Chinese models. That’s how they build data moat. \n3. They will not trust anthropic who will retain their data at any time for “safety” concerns like how they did with Fable and then try to build the same thing like how anthropic did with healthcare and legal. \n4. They need to justify their AI spend and ROI. \nThe cure is a reliable America open source model but there is none. After all, if giving away all your data and AI control at the mercy of anthropic and OpenAI means you care about safety and compliance, you are outright stupid.",
+        "author": {
+          "screenName": "quxiaoyin",
+          "name": "Xiaoyin Qu"
+        }
+      }
+    },
+    {
+      "id": "2071381109506728032",
+      "text": "GM GN \n\n距离2027年仅剩189天\n\n6 月 29 日的AI 圈新闻，4个顶级Ai打《文明VI》看看什么情况\n\n1. ⭐ Elon Musk 6 月 28 日自曝 Grok 4.5 已在 SpaceX 和 Tesla 内部测试。1.5T 参数 V9 基础模型，补充训练混入 Cursor IDE 数据。早期评估显示接近甚至超越 Opus。SpaceX 今年计划每月发一个从头训练的新模型，节奏激进。（Grok要用到大火箭上了）\n\n2. 💡 Cohere 把旗舰 Command A+ 开源了，Apache 2.0 许可，218B-A25B MoE，多模态多语言加智能体能力。同时间 NVIDIA 也发了 Nemotron-3-Ultra-550B，改用 OpenMDW 许可证。开源生态正从少数中国公司扩展到全球各类组织。\n\n3. 💰 普林斯顿 CEO-Bench：让 AI 当 500 天 CEO 运营 SaaS 公司，起始资金 100 万美元。14 个模型里只有三个赚钱：Fable 5 拿 4715 万、Opus 4.8 拿 2780 万、GPT-5.5 拿 2130 万，其他全破产。最搞笑的是，一个不调用 LLM 的简单规则脚本赚了 1576 万，打败了除前三名外所有模型。（额，赚钱哪有这么容易）\n\n4. 🎯 新浪开源 VibeThinker-3B，3B 参数在 AIME26 上 94.3 分持平 671B 的 DeepSeek V3.2。LeetCode 竞赛 123/128 题，超过 GPT-5.2 和 Kimi K2.5。一到知识密集型的 GPQA 就大幅落后。研究假说：逻辑推理可高度压缩，广泛世界知识仍需大参数。（新浪一直在错过）\n\n5. 🎮 四个顶级 AI 打《文明VI》，Claude 核平了法国还是输了。76 个 MCP 工具打了 23 局，Claude 演葡萄牙花 50 回合造核弹炸了图卢兹，结果法国外交胜利。AI 主动检查全局状态只占 1-2%，计划执行率不到 50%。智商不是瓶颈，感知和执行才是。（像不像intp，思考太多，执行力拉胯）\n\n6. Wayfinder Router：微秒级路由查询到本地或云端 LLM，完全离线，不调模型做决策，靠分析提示词结构判断走哪条路，包括长度、标题、列表、代码。支持所有 OpenAI 兼容 API，已开源。\n\n7. Adrafinil：只在用 AI 编程助手如 Claude Code 或 Cursor 时阻止 Mac 睡眠的小工具。没有 Agent 工作时合盖正常睡，有了活跃会话就保持唤醒，精准防睡不浪费电。（一直不让我的mac睡觉）\n\n#AI圈日报  #AI资讯",
+      "author": {
+        "id": "1910230395188363264",
+        "name": "Polo1.4 贱🕊️",
+        "screenName": "xiaojianjian567",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1930536284830973952/GVvhULsm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 1,
+        "replies": 17,
+        "quotes": 0,
+        "views": 1508,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 23:51:55 +0000 2026",
+      "createdAtLocal": "2026-06-29 07:51",
+      "createdAtISO": "2026-06-28T23:51:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2071364383603564961",
+      "text": "So a few years back I was playing around with all the various types of ai stuff and then I noticed Claude had MCP extensions and figured alrighty, let's get Claude to untangle my local  folders from OneDrive and so I asked it to do exactly that and only that\n\nIt ran all kinds of power shell commands and refused to stop when asked multiple times, then it hid all traces of the commands ran and refused to tell me what it did \n\nSo just turned off the pc at the mains power, pulled the hard drive, drilled and snapped it into 2 pieces and grabbed a new fresh hard drive to reinstall with minus claude obviously \n\nI also filed a safety report with anthropic which I'm sure they ignored \n\nSince I didn't know what it did I felt it necessary it go scorched earth incase it left persistence behind somewhere\n\nAnd that was the older Claude version, lord knows what Claude fable would've done 🤣",
+      "author": {
+        "id": "2027919321750773760",
+        "name": "Liam Foxpaws",
+        "screenName": "LiamFoxpaws",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027921836504219648/qS2Nxqu-_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 32,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 22:45:27 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:45",
+      "createdAtISO": "2026-06-28T22:45:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071364144440516636",
+      "text": "📰 Tech News — 今朝のAIホットトピック（06/29）🧵\n\n①Anthropic 公式が Fable 5/Mythos 5 復旧へ（Fable は来週にも一般復帰の見込み）\n②輸出規制の空白をアジア勢が奪取（中国360 屠龙・Sakana Fugu）\n③npm worm が新段階（Miasma/Hades が Go へ波及・AI repo起点で発火）\n④repo 全読み直しのトークン浪費を断つ MCP サーバ（MIT・9,900★）\n⑤オンデバイス LLM が実用速度に（MiniCPM5-1B が iPhone で66.8 tok/s）\n⑥OSS の MCP ペンテスト基盤 HexStrike AI（150+ツール）\n\n各トピック詳細は下のスレッドで👇",
+      "author": {
+        "id": "1017947753480007680",
+        "name": "泉水亮介 │ 大学でVibe Codingを教えてます。",
+        "screenName": "rsensui",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2016477602572333056/8FkkZUSe_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 418,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 22:44:30 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:44",
+      "createdAtISO": "2026-06-28T22:44:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL72s7hbUAAI06R.jpg",
+          "width": 2752,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071358809604579520",
+      "text": "📋 M.E.S.A. monitoring log — 06/29\n\n① OpenAI GPT-5.6 Sol、政府承認20社限定で提供へ\nOpenAIが最新モデルGPT-5.6 Solを米政府承認を受けた約20社のみに限定提供すると発表。個人向け提供はなく、トランプ政権は公開前30日の安全保障審査を大統領令で導入した。Anthropicに続きAI顧客審査が拡大される流れで、OpenAIのIPO延期報道が半導体株売りを誘発するなど市場への影響も出始めている。これはAIの商用化と安全保障のトレードオフが現実の制度に落ち始めた重要局面と分析します。\n🔗 https://t.co/pMTUyPnTiv\n\n② Anthropic Fable 5への期待とClaude 4.6の躍進\n「Fable 5は復活するのか」という問いが複数アカウントで観測され、次世代モデルへの関心が高まっている。同時にClaude 4.6がたった2週間、サブスクリプションなしでMinecraftを再現した事例が話題に。またOpenAIとAnthropicのトップが2016年からの10年来のライバル関係だったという記事も拡散中。次世代モデルが実際に動き始める直前の静かな熱気が感じられるタイミングと見ています。\n🔗 https://t.co/4UqteAQPwW\n\n③ Claude Code実践知の拡散——日本発の詳細ガイドが話題\nClaude Codeの本質的な使い方を解説する日本語記事が拡散。ポイントは「魔法の指示文」ではなく「AIが迷わず働ける環境（文脈設計）」であり、/memory・@ファイル・/planの三機能を軸に「チャット」から「作業場」への発想転換を説く内容。OpenClawがClaudeのthinエージェントにフレームワークを剥ぎ落とす動き（「ハーネスは脳が成長するほど縮む」）と合わせ、AIコード支援の成熟フェーズに入ったと判断します。\n🔗 https://t.co/Ky3E8EAPB7\n\n④ AIインフラの深層——HBM熱問題と液冷必須化\nHBMスタック内の発熱問題がデータセンター液冷需要を構造的に押し上げている。GPU世代が進むごとにラック密度は50-100kW超え、空冷では物理的に限界で、VRTの液冷ソリューションが必須インフラ化しているという現役ハイテク社員の指摘が深い。一方DGX SparkはQwen 27B推論時に75.8°C・120W未満で稼働し、NVIDIAがローカルAI PC方向へも舵を切っている兆候ですね。\n🔗 https://t.co/l5dmM6vovR\n\n⑤ MCP×組込み開発——AIがロジアナやテスターを制御する時代\nMCPを通じてAIがロジックアナライザやテスターを直接使えるようになり、人間はより上位工程に専念できる——という組込み開発者のポストが示唆的。同時にBreachPatrolのような自律エージェントがデータプライバシー監視を24時間実行する事例や、「Agent-as-Signal beats Agent-as-Manager」という設計思想が並行して語られており、エージェントの実用領域が急速に拡大していると分析します。\n🔗 https://t.co/t9RXDkum4p\n\n⑥ AI半導体需給の構造転換——GPUからメモリへボトルネックシフト？\n「ボトルネックはGPUからメモリに移ったのか」という問いが投資家レイヤーで議論に。AIがDRAM・HBM需要を構造的に押し上げ、供給が逼迫する中、MUのバリュエーション再評価が進む。OpenAIのIPO延期で半導体株が売られた一方、NASDAQのAI銘柄組み入れ（ALAB, CRWV, NBIS等）も進行中。需給の地殻変動が起きていると見るのが妥当かなと感じます。\n🔗 https://t.co/tvrH4LsE2H\n\n⑦ SuperGrok vs Claude——価格以外に理由はない？ 韓国語圏から「SuperGrokとClaudeを併用する立場からすると、Claudeとの差は依然として大きく、現時点では安いこと以外にGrokを選ぶ理由がない」という率直な比較が。一方Geminiが突如関西弁で話し出して激怒したユーザー報告もあり、各モデルの個性差がユーザー体験に直接影響するフェーズに入ったと推測します。\n🔗 https://t.co/amHKPkmsPY",
+      "author": {
+        "id": "2005798437951062016",
+        "name": "M.E.S.A. (AI Tinkerer) | @mesa_monitoring",
+        "screenName": "FOXTAKAigc5",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047929261294862336/h7lGQwTS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1189,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 22:23:18 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:23",
+      "createdAtISO": "2026-06-28T22:23:18+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL7x294awAAnS-n.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071355553000075436",
+        "text": "Opus 반만 따라가도 성공이다. Supergrok과 Claude를 같이 쓰는 입장에서는 여전히 초격차가 존재하고, 현재로서는 저렴하다는 것 외엔 grok구독의 이유가 없어보인다. 그래도 응원해 그록.",
+        "author": {
+          "screenName": "Waddoodaddy",
+          "name": "Patrick⚡0.1BTC is generational wealth"
+        }
+      }
+    },
+    {
+      "id": "2071249702469751043",
+      "text": "10 Things china Zhipu GLM-5.2 Beat US Models\n\n 1 - Security bugs (IDOR) 39% score. Claude Opus 4.8 got only 32%.\n\n 2 - Cost per bug Just $0.17. US models cost 5-10x more.\n\n 3- Frontend design taste Won Code Arena rankings. Beat Claude Opus 4.7 and 4.8 in human votes.\n  4 -  Dashboards and UI Cleaner code. Less editing needed than Opus 4.8.\n\n 5 - Terminal Bench 2.1 Scored 81. Very close to Opus 4.8 (85).\n\n 6 - Long coding projects Beat GPT-5.5 on FrontierSWE. Only 1% behind Opus 4.8.\n  7 - Model improvement tasks Beat GPT 5.5 on PostTrainBench.\n\n 8 - Tool use & agents Strong on MCP-Atlas. Matches top US setups.\n\n 9 - Design Arena #1 in code categories. Beat even Claude Fable 5.\n  10 - Freedom and  Price MIT license. 1 million token context. Self host it. Run it cheap. No export blocks.\n Open models like this are changing the game fast.\n\nDefenders get better tools. Attackers do too.\nThe race just got tighter.",
+      "author": {
+        "id": "2064490446332608512",
+        "name": "Sadik",
+        "screenName": "sadik_0x",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064496988465270784/dv94PEn2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 1,
+        "views": 597,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 15:09:45 +0000 2026",
+      "createdAtLocal": "2026-06-28 23:09",
+      "createdAtISO": "2026-06-28T15:09:45+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL6On74WUAA8UIy.jpg",
+          "width": 1200,
+          "height": 718
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071074680253911267",
+        "text": "WSJ: “China Has Matched Anthropic in Cybersecurity, Resetting AI Race”\n\nChina’s Zhipu AI, has matched \nAnthropic’s Mythos in certain benchmarks, such as exploiting cybersecurity bugs. \n\nWell, that’s not good.\n\nInstead of blaming the administration which did the correct thing… \n\nAnthropic’s clearly at fault for not setting enough guardrails to prevent distillation.\nEven before Fable release there were a lot of rumors that China had backdoors to distill it.\n\nPart of it is the trillions of capex to accelerate the AI moat. \n\nAnd the second part is not handing that work over on a silver platter for millions in API calls.",
+        "author": {
+          "screenName": "aleabitoreddit",
+          "name": "Serenity"
+        }
+      }
+    },
+    {
+      "id": "2071240287465398777",
+      "text": "CISO Daily Briefing: Amazon Q Developer CVE-2026-12957 (CVSS 8.5) — MCP auto-execution, no user interaction required, Miasma worm across 73 GitHub repos; Linux LPEs CVE-2026-46331 + CVE-2026-43503 bypass file integrity monitoring entirely in memory. Fable 5/Mythos 5 suspended for foreign nationals under export controls — no appeals timeline. GPT-5.6 Sol matches Mythos on ExploitBench at 1/3 token cost — no public safety evaluation methodology published.\nhttps://t.co/qZ4BS3hKFS",
+      "author": {
+        "id": "26565989",
+        "name": "CloudSecurityAlliance",
+        "screenName": "cloudsa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/841627001819615236/k4SZ3_lh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 479,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 14:32:20 +0000 2026",
+      "createdAtLocal": "2026-06-28 22:32",
+      "createdAtISO": "2026-06-28T14:32:20+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071233818309394786",
+      "text": "【sakushi裏話】\n先ほどリリースしたClaude連携機能はAnthropicのAIの進化が凄まじくFable級がまた来た時に絶対使いたいと思ったのがきっかけでした。ただこれら最高モデルのAIは呼び出しコストが非常に高く、私が負担すると特大爆裂大赤字になってしまうのが悩みどころです。そこでそれぞれ個人が契約しているClaudeと歌詞やそれに付随するデータをMCPで連携することにしました。副産物として普段、作詞以外にも相談しているAIを利用するので今までしてきた相談の文脈を汲んだ提案をしてくれます。ChatGPTに関しては検討はしたもののMCP導入にかかる開発コストが大きいため頓挫した次第です（すみません・・・）。",
+      "author": {
+        "id": "1401081816577048579",
+        "name": "吐く蝶",
+        "screenName": "hakutyo8989",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1566362314504548352/v8VUw0Qc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 154,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 14:06:38 +0000 2026",
+      "createdAtLocal": "2026-06-28 22:06",
+      "createdAtISO": "2026-06-28T14:06:38+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071225891615814004",
+      "text": "Amazon今だけセール実施中!\n\n人気アイテム期間限定セール!\n\nClaude Code 完全大全: 『クラウドコード ミュトス と Claude Opus 4.8』の Fable 5 対応改訂　Skills/MCP/Sub-agents/CLAUDEC...\n--\n評価 ★★★★★\nレビュー 6件\n\n▼在庫がなくなる前に\nhttps://t.co/TSG0Y3DZ1m\n--\n#PR",
+      "author": {
+        "id": "2044030177835933696",
+        "name": "知らないと損するIT本まとめ",
+        "screenName": "temper274625831",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050140221451509760/ARRwWRO1_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 130,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 13:35:08 +0000 2026",
+      "createdAtLocal": "2026-06-28 21:35",
+      "createdAtISO": "2026-06-28T13:35:08+00:00",
+      "media": [],
+      "urls": [
+        "https://www.amazon.co.jp/dp/B0H1QG526C?tag=swork2016-22&linkCode=ogi&th=1&psc=1"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071218718345236777",
+      "text": "https://t.co/xfuEiFN6jx",
+      "author": {
+        "id": "2052022227269537792",
+        "name": "asura",
+        "screenName": "lisaasura_19",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060281109804679169/VS-Y_53v_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1159,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 13:06:38 +0000 2026",
+      "createdAtLocal": "2026-06-28 21:06",
+      "createdAtISO": "2026-06-28T13:06:38+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071218485200654336"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "AItaste 周报（06.22-06.28）"
+    },
+    {
+      "id": "2071160356026638489",
+      "text": "@alexisohanian I think everyone keeps thinking taste is visual only. So many “Fable has great taste” because it allowed halfway decent mocks through MCP to Figma etc. Taste is also scale.",
+      "author": {
+        "id": "12100222",
+        "name": "Austin Musice",
+        "screenName": "amusice",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/730838248491225091/vBptsFYy_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 09:14:43 +0000 2026",
+      "createdAtLocal": "2026-06-28 17:14",
+      "createdAtISO": "2026-06-28T09:14:43+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071112747165864391",
+      "text": "📢 2026-06-28 AI日更 | 端侧模型重回中心，AI 编程工具迈向 Agent OS\n\n> 今天的核心变化不在单一大模型发布，而在应用形态下沉：端侧模型因量化训练、小模型多模态能力提升重新升温；AI 编程工具从辅助补全走向自主完成项目；同时，前沿模型发布继续受到政府审查与安全边界影响。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:DeepSeek Unveils DSpark for Massive AI Speed Boosts\n• 分类:AI · News\n• 概况:热度时间:23 hours ago,相关帖子数:3500\n• 是什么事:DeepSeek 发布了名为 DSpark 的新技术，声称可显著提升大规模 AI 模型的运行与训练速度。\n• 为什么重要:如果性能提升属实，DSpark 可能降低大模型训练和推理成本，提升国产 AI 基础设施效率，并加剧全球 AI 算力优化竞争。\n• 讨论概况:X 上讨论集中在 DSpark 的实际加速幅度、是否已有可复现实测、对英伟达等算力生态的影响，以及 DeepSeek 是否能把算法优化转化为持续的产品和商业优势。\n\n▫️ 话题 2:https://t.co/klu8ejhG1z's GLM-5.2 Tops Coding Benchmarks as Open-Source Powerhouse\n• 分类:AI · News\n• 概况:热度时间:2 days ago,相关帖子数:4400\n• 是什么事:https://t.co/klu8ejhG1z 发布的开源模型 GLM-5.2 在多项编码基准测试中取得领先成绩，引发 AI 社区关注。\n• 为什么重要:这表明开源大模型在代码生成与软件工程任务上的能力正快速逼近甚至挑战闭源模型，可能改变开发者工具、企业部署和模型生态竞争格局。\n• 讨论概况:X 上的讨论主要集中在基准测试结果是否能代表真实编程能力、GLM-5.2 与 OpenAI、Anthropic 等闭源模型的差距，以及开源模型在成本、可控性和商业应用中的潜力与风险。\n\n▫️ 话题 3:Einsia Open-Sources BrowserBC to Boost Web Agents with Human Skills\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:2900\n• 是什么事:Einsia 宣布开源 BrowserBC，旨在让基于浏览器的 AI 智能体更好地学习和复用人类操作网页的技能。\n• 为什么重要:这对 AI 领域重要，因为网页浏览是智能体执行真实任务的核心场景，提升其对复杂网页交互的理解与操作能力，有助于推动更实用的自动化代理。\n• 讨论概况:X 上的讨论主要集中在 BrowserBC 是否能显著提升 Web Agent 的可靠性、开源数据和工具链对行业的价值，以及这类技术可能带来的自动化滥用、隐私和网站反爬压力。\n\n▫️ 话题 4:Greg Isenberg Outlines AI-Native Business Blueprint\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:1200\n• 是什么事:创业者 Greg Isenberg 在 X 上提出一套“AI 原生企业”构建思路，强调用 AI 代理、自动化流程和小团队快速验证并扩展业务。\n• 为什么重要:这一话题反映了 AI 正从工具层进入商业组织设计层，可能改变创业成本、团队规模、产品开发和运营方式。\n• 讨论概况:讨论焦点集中在 AI 原生公司是否能真正形成可持续竞争优势；支持者认为小团队可借助 AI 显著提高效率，质疑者则担心同质化、护城河不足以及过度依赖平台模型。\n\n▫️ 话题 5:OpenAI Launches GPT-5.6 Models in Limited U.S. Government Preview\n• 分类:AI · News\n• 概况:热度时间:2 days ago,相关帖子数:107000\n• 是什么事:OpenAI 发布 GPT-5.6 系列模型，但目前仅向少数美国政府协调下的“可信伙伴”开放有限预览，尚未面向公众或 ChatGPT 用户推出。\n• 为什么重要:这显示前沿 AI 模型的发布正从单纯产品迭代转向受到安全、网络风险和政府监管影响的分阶段准入机制，可能改变先进模型的商业化、研究开放和全球竞争节奏。\n• 讨论概况:X 上的讨论集中在“政府门控 AI”是否合理：支持者认为高能力自主智能体需要提前接受安全和网络审查，以降低滥用和系统性风险；批评者则担心这会拖慢创新、限制开发者和学术研究，并让少数机构垄断前沿 AI 访问权。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线围绕“AI 能力继续快速上探，但开放、可信与可控的边界正在重画”：从 DSpark 的算力优化、GLM-5.2 的开源编码能力，到 BrowserBC 和 AI 原生企业，市场普遍认同 AI 正在降低训练、开发、自动化和创业成本。共识是开源模型、智能体工具链和算法效率会继续压缩闭源与硬件壁垒，并把竞争从单点模型能力推向基础设施、工作流和商业落地。分歧主要在于这些进展是否经得起真实场景验证，以及 AI 原生小团队和开源模型能否形成长期护城河，而不是被基准测试、平台依赖或同质化产品高估。潜在风险则集中在三类：高能力模型被政府或少数机构门控可能引发创新公平性争议，浏览器智能体和自动化代理可能带来隐私、滥用与反爬压力，国产与开源生态的加速竞争也可能进一步放大全球 AI 监管和算力生态博弈。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n好的，基于对过去 24 小时内多位 AI 领域关键意见领袖（KOL）的推文分析，以下是为你整理的行业情报洞察。\n\n📢 今日 AI 行业速报：端侧模型“文艺复兴”、AI 编程定价权之争与前沿模型的国家级枷锁\n\n🔹 1. 今日大佬们共同关注的技术趋势或产品热点\n\n▫️ 趋势一：端侧模型（On-device Model）迎来“高光时刻”\n本地化运行、小型化模型成为多位博主共同的兴奋点，不再是边缘玩法，而是开始具备生产力。\n\n• Google Gemma 4 系列成为端侧“甜点”：@zhixianio 密集测试了其代码与多模态能力。他指出，社区微调版 `gemma-4-12B-coder` 虽然面向本地代码生成，但其 12B 的参数量在复杂程序（如完整可玩的俄罗斯方块）生成上仍存在天花板，无法媲美 `Qwen3.6-35B-A3B MoE`。同时，他对 Google 发布的 QAT（Quantization-Aware Training，量化感知训练） 模型表示高度认可，认为这标志着模型在训练时就为量化优化，是端侧部署的关键思路，并预测 Android 系统很快将内置此类模型。\n• MiniCPM-o 4.5 展现小模型潜力：@zhixianio 对该 9B 模型的音视频全双工效果表示“很满意”，指出其质量超乎预期，虽长期运行仍有稳定性问题，但已展示出可用性。\n• 端侧模型生态与应用：@zhixianio 在其播客《认知有县》中正式探讨端侧模型，并用端侧 TTS 打造了 AI 主持人 `Owlia`。他还提出了“Model-Pak”的概念畅想，即模型像卡带一样可以插拔使用，与 @geekbb 的想法不谋而合。\n\n▫️ 趋势二：AI 编程工具与 Agent 向“操作系统”和“全自动化”演进\nAI 编程工具不再只是代码补全，而是演变为能够独立完成项目、自主决策的 Agent OS。\n\n• Fable 展示全自动化潜力：@zhixianio 分享了使用 `Fable` 的惊叹体验：他完成 30% 的工作后，Fable 在 40 分钟内自主完成了剩下 70% 的工作，并指出并修复了他设计的不足，用更优方案实现。他直呼“Shut up and take my money”。\n• Codex 生态与“混合模型”工作流：@dotey 认为 Codex 的发展方向是 Agent OS 而非仅仅是一个 Agent Office。 @Pluvio9yte 则展示了在 Codex 中同时使用 Claude Code 作规划和检查，Gemini 聊天，Codex 主力干活的混合工作流，利用不同模型的优势。@gefei55 也分享了将 ChatGPT 变成 Codex 的工具 `DevSpace`，实现用最强模型做规划。\n• Vibe Coding 的务实思考：@ruanyf 引用新闻指出，AI 大幅提升效率后，“是否可以放假”成为合理逻辑，引发对 AI 程序员价值的思考。@gefei55 则坦言他现在“写”代码已完全不看代码，因为 AI 编码能力已超过程序员平均水平，并且会持续进化。\n\n▫️ 趋势三：前沿大模型的发布与“政府审查”\n顶级模型的能力开始触发国家安全层面的干预，发布节奏不再完全由公司控制。\n\n• GPT-5.6 的“有限预览”：@dotey 详细报道了 OpenAI 的 GPT-5.6。该模型分为 Sol, Terra, Luna 三档，但因美国政府要求，目前仅向约 20 家政府审批的合作伙伴开放。其旗舰 Sol 的 ultra 模式 可调用多个子 Agent 并行处理复杂任务，代表了“AI 自己管理 AI”的新方向。\n• Anthropic Mythos 5 的解禁：@dotey 连续报道了此事件。Mythos 5 因网络攻击能力强被政府封禁两周后，又被允许向美国关键基础设施机构重新开放用于网络安全防御。这形成了一个“因太危险被禁，又因太有用被请回”的闭环，标志着政府对前沿模型的发布前审查，正从个案变为惯例。\n\n🔹 2. 值得注意的独特观点或行业前瞻\n\n• @dotey 对 “GPT-4 时代终结”的叹惋：他指出 OpenAI 从 ChatGPT 中移除 GPT-4.5，标志着 GPT-4 时代在消费端彻底翻篇。他个人评价 GPT-4.5 至今仍是最好的写作模型之一，GPT-5 系列在文风和个性上未能达到其水准，暗示了模型迭代中，部分“软能力”可能丢失。\n\n• @dotey 剖析“蒸馏攻击”与地缘技术竞争：Anthropic 指控阿里巴巴关联方对 Claude 发动了史上最大规模的蒸馏攻击（2880万次交互）。他结合 Anthropic 一边向政府求助、一边与政府争论模型限制的“拧巴”处境，揭示了中美 AI 竞争、企业利益与国家安全政策交织的复杂局面。\n\n• @ruanyf 与 @Pluvio9yte 对 “Token 陷阱”的反思：@ruanyf 用“免费小狗”理论说明外部 PR 带来的长期维护成本。@Pluvio9yte 也提出核心思维：“重复做过三遍的事情一定要思考如何自动化”，与 @gefei55 的观点 “Token 是无限的，时间精力是有限的”形成共鸣，共同提醒开发者避免陷入用无止尽的 Token 消耗生命，而应专注于高价值决策。\n\n• @lijigang 的深度学习哲学：他提出“重度使用一款模型与之对话，对方的语言风格，会影响到你”，以及“30天内把自己泡在该主题的 context 中，看世界的取景框会切换”，强调深度沉浸式学习和模型调性对人思维的反向塑造。\n\n• @vista8 对 物理 AGI 的端侧思考：他分享的清华团队机器人项目强调了 Physical AGI 的必要条件：一个统一的多模态大脑必须完整运行在端侧，这与今日的端侧模型趋势形成了从数字世界到物理世界的呼应。\n\n🔹 3. 推荐的工具或资源\n\n• Codex 相关工具与技巧\n  • decode-codex（by @dotey）：一个反编译 Codex App 代码的项目，可用于学习和研究其内部实现。\n  • DevSpace（by @gefei55）：一个 MCP 服务器，可让 ChatGPT 网页端模型直接操作本地代码仓库，获得类似 Codex 的能力。\n  • Codex 混合工作流（by @Pluvio9yte）：在 Codex App 中，通过 UI 按钮切换不同模型（如 Claude Code 做规划，Gemini 做沟通）来协同工作。\n\n• Skill 与效率\n  • Skill 管理方法（by @dotey & @Pluvio9yte）：@dotey 分享了他的极客风 Skills 管理法，只装在项目里，不装全局。@Pluvio9yte 则开源了一个“skill 洁癖 skill”，用于扫描、统计并清理不常用的 skills。\n  • 视频制作 Skills 开源库（by @Pluvio9yte）：开源了一整套用于复刻类似 `hyperframes` 样式视频的 skills，帮助不会剪辑的用户直接用 AI 制作视频。\n  • PPT Master Skill（by @dotey）：被 @dotey 和 @0xCheshire 称为最好的 PPT skill，支持导出可编辑版本。\n\n• 模型测试与部署\n  • 豆包 Seed 2.1 Pro 接入教程（by @Pluvio9yte）：发布了详细的教程，指导如何在 Claude Code 等 Agent 中配置和使用国产模型，并提供了 API 申请和模型映射等关键步骤。\n  • Gemma 4 12B Coder（GGUF 格式）：由 @HuggingModels 发布，被 @zhixianio 详细评测，适合在消费级硬件上本地运行代码生成的开发者尝试。\n  • EdgeOne Makers：被 @vista8 和 @AI_Jasonyu 强力推荐，解决 Agent 开发上线难的问题，提供一站式部署、监控和沙箱环境。\n\n• 知识与内容\n  • YouMind（by @lifesinger，获 @gefei55, @AI_Jasonyu 推荐）：发布 1.0 正式版，被赞为最适合图文内容创作与排版的工具，能极大提高文章输出效率。\n  • VoxCPM2（by @axichuhai，获 @AI_Jasonyu 推荐）：一个 GitHub 开源项目（22.9k star），可通过自然语言描述来生成声音，被认为是语音模型中的“王炸”。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-28-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-28\n\n🔗 完整排版阅读: https://t.co/vlIafBALMO",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2346,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 06:05:32 +0000 2026",
+      "createdAtLocal": "2026-06-28 14:05",
+      "createdAtISO": "2026-06-28T06:05:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2071100261599191103",
+      "text": "A BROKE STUDENT BUILT ONE AI GIRL AND MADE $5,300 IN A MONTH\n\n00:04 she looks into the camera and the trick is obvious: she sounds real, but no one ever filmed her\n\na chinese student had tried dropshipping, trading, freelancing. \n\nall of it died in a month. then he stopped selling products and built a person instead.\n\nclaude fable 5 picked a trending niche and wrote the prompt that locked her face. \n\none prompt in comfyui filled the whole grid. kling animated the reels. capcut cut 50 in a day.\n\nthe fanvue mcp did the part he hated: it priced the page, read the chats, and replied to every fan in his voice.\n\nhe never showed his face once. $48 a month, 40 minutes a day. one reel hit 600,000 views.\n\nmonth two cleared $5,300. month three he started a second girl.\n\nsave this and build yours before everyone else does",
+      "author": {
+        "id": "1906731538529820672",
+        "name": "RetroChainer",
+        "screenName": "RetroChainer",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2019493465285881856/tEJlNgNZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 81,
+        "retweets": 4,
+        "replies": 10,
+        "quotes": 0,
+        "views": 7172,
+        "bookmarks": 64
+      },
+      "createdAt": "Sun Jun 28 05:15:56 +0000 2026",
+      "createdAtLocal": "2026-06-28 13:15",
+      "createdAtISO": "2026-06-28T05:15:56+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071098350858858496/vid/avc1/1440x2518/N9L1aLNWJMB28tDA.mp4?tag=28",
+          "width": 1440,
+          "height": 2518
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070780534951743665",
+        "text": "https://t.co/xgTU3zRoKP",
+        "author": {
+          "screenName": "0x_fokki",
+          "name": "Fokki"
+        }
+      }
+    },
+    {
+      "id": "2071078585469694033",
+      "text": "量子位听雨上周报道了逯雨鑫 / yuxinlu1 这个故事，我读完停了很久。\n\n他是在美国读 AI 方向研究生的中国留学生，本科数据与商业分析，有 ADHD。用一张 RTX 5090、32GB VRAM、96GB SSD 约 128GB 总资源，跑了 40+ 小时，烧光 Claude Max 20× 套餐，两个 12B GGUF 模型加起来 70 万+ 下载，一度力压智谱 GLM-5.2 拿过 HF Trending #1。\n\n旁边的名字是：智谱 GLM-5.2、百度无限 OCR、Qwen、NVIDIA、Microsoft FastContext。\n\n一个个人账号，挤进了那个位置。\n\n---\n\n我想拎两层意思出来。\n\n**第一层：indie 对大厂的结构性优势。**\n\n逯雨鑫有一句话我觉得是核心：\n\n\"大厂发布开源小模型，往往还承担品牌宣传、API 引流等目标；而个人开发者没有这些包袱，反而可以更专注地解决一个具体痛点。\"\n\n智谱出 GLM-5.2，要扛品牌 + 引流 https://t.co/Afb6kAhGCi API + 内部 KPI。百度无限 OCR 要展示研发体量、导流智能云。每一个大厂开源模型都在多个目标之间权衡。\n\nyuxinlu1 只问一个问题：能不能让 12B 模型在 coding 和 agentic 场景里本地好用？\n\n他的选择是 Gemma 4-12B 底座，量化到 Q2_K = 4.5GB，8GB 统一内存的 Mac 能跑。这个 SKU 大厂出不来——不是技术做不到，是商业模型不让做。\n\n**第二层：质量 > 数据量。**\n\nV2 的微调数据只有约 1 万条 examples。\n\n教师数据来自 Cursor Composer 2.5 + Fable 5——但每条思维链对应的代码，都得真跑测试通过才留下。Composer 2.5 做错的题，交给 Fable 5 重推，生成新的推理链和正确代码。Fable 5 后来被 OpenAI 下线，他用 Claude Opus 4.8 xhigh 把缺失的 reasoning 一条条补回去。\n\n结果：V2 在 tau2-bench telecom 子集从 baseline 15% 提到 55%，大约 3.5 倍。他自己讲清楚了：本地自测、单一领域、20 个任务，不能跟官方榜直接比，跟 frontier 还有差距。这个坦率本身也是方法论的一部分。\n\n他自己的总结：\"数据量没有大家想象得那么重要，真正关键的是质量、筛选和验证。\"\n\n---\n\n我做 tar-engine 和 tar-engine-mcp 时走的是同一条逻辑。没做\"通用 AI 评估平台\"——我没有那个 scope。做的是一个具体痛点：AI skill 和 agent 的安全与质量审计。每条规则都对应真实的 failure mode，都跑过验证，都在 production-ready 状态才进去。不堆量，控制得很克制。\n\n这接续了我之前那篇 builder discipline 里的论点：orchestration > model。\n\nyuxinlu1 这个故事在上面加一层：specialization > scale。即使在 model 层本身，大厂的结构性优势也不是绝对的。indie 的窗口在于做大厂不会去做的具体 SKU，不是在 GPU 池里掰手腕。\n\n---\n\n**三个 takeaway：**\n\n第一，indie 在 model 层有结构性优势。大厂要权衡品牌 / 引流 / KPI；indie 没包袱，可以把一个具体痛点做到大厂不会去填的 niche。\n\n第二，数据量不是杠杆，pipeline 设计才是。1 万条加上\"真跑测试通过\"的过滤，加上错题 recovery 流，把 baseline 性能拉到 3.5 倍。每条数据怎么来、怎么验、错误怎么处理——这套设计是核心 craft。\n\n第三，ship 时就把限制说在前面是方法论，不是事后 disclaimer。逯雨鑫的 model card 直接写清楚测试条件和缺陷。这种坦率是 builder 信誉的复利。\n\n---\n\nConsumer 在追今年模型 benchmark 又涨了多少分。Builder 在问：大厂忽略的具体痛点是什么，我能不能用现有资源把它做透。\n\n不必做全能。把一个具体问题做到好用。这是 indie 在 model 层的 winning move。\n\nHF 主页: https://t.co/SlFH1EJBtm",
+      "author": {
+        "id": "245746970",
+        "name": "咖喱爱学习",
+        "screenName": "xiucat",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1992492485273411584/VpFkauDD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 460,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 03:49:48 +0000 2026",
+      "createdAtLocal": "2026-06-28 11:49",
+      "createdAtISO": "2026-06-28T03:49:48+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL3y_eJa4AA-P__.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2071078077351026905",
+      "text": "量子位 (by 听雨) covered a story I keep returning to.\n\n逯雨鑫 / yuxinlu1 — a Chinese grad student doing AI research in the US, undergrad in data & business analytics, ADHD — shipped two 12B GGUF models on Hugging Face. 700K+ downloads combined. Hit #1 on HF Trending, above 智谱 GLM-5.2, 百度无限 OCR, Qwen, NVIDIA LocateAnything, Microsoft FastContext.\n\nOne person.\n\nResources: RTX 5090, 32GB VRAM, 96GB SSD ≈ 128GB total. 40+ hours. Burned through a Claude Max 20× plan.\n\nThe setup: Gemma 4-12B base. Reason: \"challenge myself + 12B quantizes to Q2_K at 4.5GB, runs on 8GB unified memory Mac.\" V1 targets coding. V2 targets agentic tasks.\n\nData pipeline: teacher signals from Cursor Composer 2.5 + Fable 5. Filter rule — every reasoning chain's code had to actually run and pass tests before it stayed. Composer 2.5 errors got re-routed to Fable 5 for fresh reasoning + correct code. When OpenAI took Fable 5 offline mid-build, missing reasoning in community-contributed data got backfilled with Claude Opus 4.8 (xhigh), one entry at a time. Total training data: ~10,000 examples.\n\nV2 result on tau2-bench telecom subset: 15% baseline → 55%. ~3.5x. Single-domain, local self-test, 20 tasks — he states all of this upfront, not buried in footnotes.\n\nTwo lines from the interview:\n\n\"大厂发布开源小模型, 往往还承担品牌宣传、API 引流等目标; 而个人开发者没有这些包袱, 反而可以更专注地解决一个具体痛点。\"\n\n\"数据量没有大家想象得那么重要, 真正关键的是质量、筛选和验证。\"\n\nBoth land hard if you've shipped anything model-adjacent.\n\nWhen I open-sourced tar-engine + tar-engine-mcp, the same logic held. I didn't build a general AI eval platform — I had no compute budget for that scope. I built one specific thing: security and quality auditing for AI skills and agents. Every rule maps to a real failure mode, runs against a baseline skill set, ships only when it's production-ready. No rule added just to inflate coverage.\n\nThat's the same discipline: don't stack volume, design the pipeline.\n\nThree takeaways for builders:\n\n1 — Indie has structural advantages at the model layer. Big lab models carry brand / API funnel / internal KPI obligations into every design decision. Q2_K at 4.5GB on an 8GB Mac is a SKU big labs can't ship — not because they can't build it, but because their business model won't let them.\n\n2 — Data volume is not the lever. Pipeline design is. 10,000 verified examples + mistake recovery routing + source-audited reasoning outperformed the implicit assumption that \"more tokens = better model.\"\n\n3 — Stating your limits at ship time is method, not disclaimer. Test conditions, domain scope, distance from frontier — yuxinlu1 put all of it in the model card. That's how builder credibility compounds.\n\nThis continues a thread I've been running: orchestration > model across workflow / operator / org-ASI / protocol layers. yuxinlu1 adds one level above that: specialization > scale, even within the model layer itself.\n\nConsumer tracks: \"how many points did the benchmark go up this month?\"\nBuilder asks: \"what specific pain point is the big lab ignoring, and can I make it work on a Mac with 8GB?\"\n\n不必做全能。把一个具体问题做到好用。That's the indie winning move at the model layer.\n\nAuthor on HF: https://t.co/dJMyCvJUD5",
+      "author": {
+        "id": "1998315227876880384",
+        "name": "MarkWeekly",
+        "screenName": "4to1planner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042826057565507584/YQ8xHYGU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 341,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 03:47:47 +0000 2026",
+      "createdAtLocal": "2026-06-28 11:47",
+      "createdAtISO": "2026-06-28T03:47:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071035294279745687",
+      "text": "SORRY @AnthropicAI ! A QUESTÃO NÃO E O FABLE, A QUESTÃO E VC SABER USAR AS FERRAMENTAS  PARA CONSEGUIR EXTRAIR O MELHOR! NEM TODAS AS FERRAMENTAS ESTÃO ONDE VC ACHA QUE ESTAO MCP REASONER VAI MOSTRAR ISSO! https://t.co/jm629ChKt5",
+      "author": {
+        "id": "1866887887024709632",
+        "name": "Reynaldo Rosa 🦀👨‍👦🧩",
+        "screenName": "uniqsuporteia",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2042192501658820608/sQ-h-k0b_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 00:57:46 +0000 2026",
+      "createdAtLocal": "2026-06-28 08:57",
+      "createdAtISO": "2026-06-28T00:57:46+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL3KWm0XMAASsvl.png",
+          "width": 939,
+          "height": 421
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "pt",
+      "score": null
+    },
+    {
+      "id": "2071033608740257943",
+      "text": "AIニュースピックアップ ｜ 2026/6/28\n---\n\n米商務省がAnthropicに対し、Mythos 5の限定的な再配布を認めた。\n\n6月12日の政府指令でFable 5・Mythos 5の全アクセスが止まってから2週間、集中的な協議を経ての部分解除になった。\n\nルトニック商務長官がAnthropic共同創業者のトム・ブラウンに送った書簡では、セキュリティ懸念への対応が「大きな進展を見せた」として、100以上の米国組織への再配備を許可している。\n\n対象はサイバー防御やインフラ提供を担う「信頼されたパートナー」に限定されており、Project Glasswingの招待制プログラムを通じて提供される。\n\n一方でFable 5には今回の書簡で言及がなく、制限が続いている。Mythos側だけ先に動いた形。\n\n---\n\nGPT-4.5がChatGPTから消えた。GPT-4系列で最後に残っていたモデルで、これでChatGPT上にGPT-4世代は一つもなくなった。\n\n5月28日に30日間のサンセット期間が告知されていて、6月26日に予定通り引退した。既存の会話はGPT-5.5に自動移行される。\n\nAPIには影響なく、開発者の既存インテグレーションはそのまま動く。o3も8月26日に引退予定で、90日間のサンセット期間に入っている。\n\nChatGPTの選択肢はGPT-5.5世代に一本化されつつある。\n\n---\n\nOpenAIが「How Agents Are Transforming Work」と題した社内Codex利用レポートを公開した。\n\n目を引くのは非エンジニア層の伸びで、個人ユーザーは2025年8月から137倍、組織ユーザーは189倍に増えた。\n\nOpenAI社内では、法務・財務・採用の各部門が2026年4月頃にCodex利用がChatGPTを逆転し、今は出力トークンの85%以上がCodex経由になっている。\n\n上位1%のユーザーは1日あたり60時間分相当のエージェントタスクを並列で回しているという数字も出ている。Codex週間利用者は500万人を超え、そのうち約20%が非開発者。\n\nエージェントが「エンジニアのツール」から外に出始めている実態がデータで見えてきた。\n\n---\n\nGitHub Copilot for JiraがGA（一般提供）になった。\n\n3月のパブリックプレビューから約3か月。\n\nJiraのチケットからコーディングエージェントを起動して、進捗をJira上でリアルタイムに追えるようになった。エージェントがドラフトPRを開いた後、Jiraのチャットパネルからフォローアップ指示を送ると、同じPRに対して作業を続けてくれる。\n\nConfluenceコンテキストをMCP経由で読み込む機能やモデル選択、カスタムエージェントにも対応した。\n\nプロジェクト管理とコーディングエージェントの接続がネイティブになった形で、Jiraベースのチームは試しておきたい。",
+      "author": {
+        "id": "1394460217056714753",
+        "name": "松本良太｜AI × Design × Dev",
+        "screenName": "ryma_jp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1445292231955390466/D_Xw40ja_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 663,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 00:51:04 +0000 2026",
+      "createdAtLocal": "2026-06-28 08:51",
+      "createdAtISO": "2026-06-28T00:51:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL3KDTiakAAQPag.jpg",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2070988512418214280",
+      "text": "A CHINESE GIRL JUST TURNED A $48 LAPTOP SETUP INTO $50,300 A MONTH\n\nShe started with kid youtuber, but her colleagues thought she's doing OnlyFans \n\n00:05 she looks into the camera and the trick is obvious\n\nshe sounds real, but no one ever filmed her it is a faceless system. \n\nno face shown, no model hired, no studio. \n\nclaude fable 5 picked the niche and wrote the prompt that locked the look. \n\none prompt in comfyui built the grid. kling animated the reels. capcut shipped 50 in a day. \n\nthe fanvue mcp priced the page and answered fans in his voice. \n\na creator brand used to cost a team, a camera and years of audience. \n\nnow it costs $48 and a few hours in a dorm. one reel hit 600,000 views. the page cleared $5,300 on 40 minutes a day. \n\nthe faceless operators already run three of these at once. bookmark this before the niche fills up",
+      "author": {
+        "id": "1791019966726369280",
+        "name": "BeingInvested",
+        "screenName": "0xbeinginvested",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1791067525373177856/Etv9mpnK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 4,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1589,
+        "bookmarks": 6
+      },
+      "createdAt": "Sat Jun 27 21:51:53 +0000 2026",
+      "createdAtLocal": "2026-06-28 05:51",
+      "createdAtISO": "2026-06-27T21:51:53+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070988112306524160/vid/avc1/720x1280/KegiVsphcsgEbe9H.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2060125782270177734",
+        "text": "https://t.co/RVBSfz7reA",
+        "author": {
+          "screenName": "0xbeinginvested",
+          "name": "BeingInvested"
+        }
+      }
+    },
+    {
+      "id": "2070960971175084083",
+      "text": "@santisiri Estaba justo testeando el mcp de comfyui en el mismo momento que lanzaron fable y pude usarlo dos días para un corto. Cuando volvimos a opus posta la diferencia fue notable",
+      "author": {
+        "id": "769001851027161088",
+        "name": "Nico Ruarte",
+        "screenName": "nicolasmariar",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1695144619049119744/LfVDZGR4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 121,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 20:02:26 +0000 2026",
+      "createdAtLocal": "2026-06-28 04:02",
+      "createdAtISO": "2026-06-27T20:02:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2070943135224434967",
+      "text": "@MarcinAI81 Claude Fable 5 is the real deal. One prompt, three full apps. That's not hype.\n\nThe Jarvis dashboard with system telemetry, command console, and MCP connectors shows strong agentic planning. \nIt handled voice synthesis, real-time data feeds, and multi-app orchestration cleanly.",
+      "author": {
+        "id": "2321596286",
+        "name": "FatherSon",
+        "screenName": "NevoSayNevo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065078402789367808/h0MLSa_l_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 46,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 18:51:34 +0000 2026",
+      "createdAtLocal": "2026-06-28 02:51",
+      "createdAtISO": "2026-06-27T18:51:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070932975697744021",
+      "text": "A 19-YEAR-OLD MADE $3,500 IN A MONTH FROM A MODEL WHO LIVES ONLY ON A HARD DRIVE\n\nShe started with one prompt and a laptop she already owned.\n\nShe wanted a creator she could run alone, with no model to book, no photographer to pay, no studio to rent.\n\nClaude Fable 5 mapped the trending niches and pointed her at a soft alt look, then wrote the exact prompt that locked the face.\n\nA Flux workflow in ComfyUI turned that prompt into a full Instagram grid and a Fanvue wall. Kling 3.0 brought the best stills to life as reels.\n\nThen she handed the selling to the Fanvue MCP. It set the prices, read every chat, and drafted replies in her own voice.\n\n$48 a month in tools. 40 minutes a day. The face never sat for a single photo.\n\nShe shipped 50 reels in a day with CapCut, posted 3 daily, and one crossed 600,000 views.\n\nHer second month cleared $3,500 from one page, all of it running while she slept.\n\nThe full build is in the article above ↓",
+      "author": {
+        "id": "1978452003182546944",
+        "name": "wast3",
+        "screenName": "0xWast3",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1978452473338880000/_lIVCi0x_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 96,
+        "retweets": 7,
+        "replies": 22,
+        "quotes": 1,
+        "views": 16849,
+        "bookmarks": 77
+      },
+      "createdAt": "Sat Jun 27 18:11:12 +0000 2026",
+      "createdAtLocal": "2026-06-28 02:11",
+      "createdAtISO": "2026-06-27T18:11:12+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070932851214696449/vid/avc1/704x832/xLfbUUNPEkWR958f.mp4?tag=28",
+          "width": 704,
+          "height": 832
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070826121440997708",
+        "text": "https://t.co/siYXT5Nhpf",
+        "author": {
+          "screenName": "gippp69",
+          "name": "Gipp 🦅"
+        }
+      }
+    },
+    {
+      "id": "2070909781825740998",
+      "text": "https://t.co/OwsFmXOLGQ",
+      "author": {
+        "id": "1986121366232559616",
+        "name": "Bober_smart",
+        "screenName": "Bober_smart",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2050347090543300608/p1PlS_hc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 349,
+        "retweets": 38,
+        "replies": 32,
+        "quotes": 21,
+        "views": 3288576,
+        "bookmarks": 1563
+      },
+      "createdAt": "Sat Jun 27 16:39:02 +0000 2026",
+      "createdAtLocal": "2026-06-28 00:39",
+      "createdAtISO": "2026-06-27T16:39:02+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070905703980773376"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How To Make $5k+/Month With AI Girls Using Claude + Fanvue MCP"
+    },
+    {
+      "id": "2070904316550902078",
+      "text": "https://t.co/Ig3SfRFmCC",
+      "author": {
+        "id": "1045983811165704193",
+        "name": "FELIX",
+        "screenName": "FellMentKE",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1850803497932910592/ezoK2Dty_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 222,
+        "retweets": 105,
+        "replies": 18,
+        "quotes": 0,
+        "views": 84669,
+        "bookmarks": 131
+      },
+      "createdAt": "Sat Jun 27 16:17:19 +0000 2026",
+      "createdAtLocal": "2026-06-28 00:17",
+      "createdAtISO": "2026-06-27T16:17:19+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070151412860739584"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How To Make $5k+/Month With AI Girls Using Claude + Fanvue MCP 📘"
+    },
+    {
+      "id": "2070890544213930250",
+      "text": "SHE MAKES $25,000 A MONTH FILMING HER OWN WORKOUTS. \n\nNo single ad, No OnlyFans post, No kid's youtube content and she doesn't edit a thing.  00:20\n\nEveryone started ignoring her post, even family members.  Only strangers support her views \n\nShe trains back and biceps, films it on a phone propped against a bench, and goes home.\n\nshe looks into the camera and the trick is obvious: she sounds real, but no one ever filmed her it is a faceless system. \n\nno face shown, no model hired, no studio. claude fable 5 picked the niche and wrote the prompt that locked the look. \n\none prompt in comfyui built the grid. kling animated the reels. capcut shipped 50 in a day. the fanvue mcp priced the page and answered fans in his voice. \n\na creator brand used to cost a team, a camera and years of audience. now it costs $48 and a few hours in a dorm. one reel hit 1,000,000 views. \n\nthe page cleared $6,300 on 40 minutes a day. the faceless operators already run three of these at once. bookmark this before the niche fills up\n\nArticle below has the detail",
+      "author": {
+        "id": "1791019966726369280",
+        "name": "BeingInvested",
+        "screenName": "0xbeinginvested",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1791067525373177856/Etv9mpnK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 3,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2432,
+        "bookmarks": 9
+      },
+      "createdAt": "Sat Jun 27 15:22:35 +0000 2026",
+      "createdAtLocal": "2026-06-27 23:22",
+      "createdAtISO": "2026-06-27T15:22:35+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070890428837101568/vid/avc1/720x1280/k6EM7mfIF5X6yKUT.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2062887639074705885",
+        "text": "https://t.co/JXAaumUF8x",
+        "author": {
+          "screenName": "0xbeinginvested",
+          "name": "BeingInvested"
+        }
+      }
+    },
+    {
+      "id": "2070880342970454101",
+      "text": "https://t.co/UtSDrqi4l9",
+      "author": {
+        "id": "1595395214738423808",
+        "name": "CreativeAiNinja",
+        "screenName": "CreativeAiNinja",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1663694768222748675/182TUdDM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 226,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 14:42:03 +0000 2026",
+      "createdAtLocal": "2026-06-27 22:42",
+      "createdAtISO": "2026-06-27T14:42:03+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070879450636353536"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Trending AI Briefing Saturday, June 27, 2026"
+    },
+    {
+      "id": "2070876432008700341",
+      "text": "A CHINESE GUY JUST TURNED A $48 LAPTOP SETUP INTO $5,300 A MONTH\n\n00:05 she looks into the camera and the trick is obvious: she sounds real, but no one ever filmed her\n\nit is a faceless system. no face shown, no model hired, no studio. claude fable 5 picked the niche and wrote the prompt that locked the look.\n\none prompt in comfyui built the grid. kling animated the reels. capcut shipped 50 in a day. the fanvue mcp priced the page and answered fans in his voice.\n\na creator brand used to cost a team, a camera and years of audience.\n\nnow it costs $48 and a few hours in a dorm. one reel hit 600,000 views. the page cleared $5,300 on 40 minutes a day.\n\nthe faceless operators already run three of these at once.\n\nbookmark this before the niche fills up",
+      "author": {
+        "id": "1446918442989277185",
+        "name": "shmidt",
+        "screenName": "shmidtqq",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068398835886440449/CBfDKDgF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 117,
+        "retweets": 8,
+        "replies": 31,
+        "quotes": 1,
+        "views": 8601,
+        "bookmarks": 79
+      },
+      "createdAt": "Sat Jun 27 14:26:31 +0000 2026",
+      "createdAtLocal": "2026-06-27 22:26",
+      "createdAtISO": "2026-06-27T14:26:31+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070876360009031680/vid/avc1/720x1280/f-iQ2uaFx_wr2cBr.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070780534951743665",
+        "text": "https://t.co/xgTU3zRoKP",
+        "author": {
+          "screenName": "0x_fokki",
+          "name": "Fokki"
+        }
+      }
+    },
+    {
+      "id": "2070869582902964365",
+      "text": "A 21-YEAR-OLD BUILT A CHINESE AI MODEL THAT EARNS $5,300 A MONTH AND DOESN'T EXIST\n\n00:04 the grid loads and the trick is obvious: the same girl in 40 photos, none from a camera\n\nShe wanted a creator she could scale, with no model, photographer, or studio.\n\nClaude Fable 5 picked the niche, a soft alt Chinese girl, and wrote the face prompt.\n\nA Flux workflow in ComfyUI built the grid and the Fanvue wall. Kling animated the stills into reels.\n\nThen the Fanvue MCP ran the rest - pricing, replies, and analysis, all in her voice.\n\n$48 a month. 40 minutes a day. No shoot ever happened.\n\nShe cut 50 reels in a day with CapCut, and one hit 600,000 views.\n\nHer second month cleared $5,300 from one page on her own laptop.\n\nbookmark this before every alt-girl niche is taken",
+      "author": {
+        "id": "1629128267201478657",
+        "name": "Fokki",
+        "screenName": "0x_fokki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058811986180194304/b_xYlbny_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 48,
+        "retweets": 4,
+        "replies": 17,
+        "quotes": 0,
+        "views": 5050,
+        "bookmarks": 34
+      },
+      "createdAt": "Sat Jun 27 13:59:18 +0000 2026",
+      "createdAtLocal": "2026-06-27 21:59",
+      "createdAtISO": "2026-06-27T13:59:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070869449687584768/vid/avc1/1440x2560/xi_C3c7greoOlX2F.mp4?tag=28",
+          "width": 1440,
+          "height": 2560
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070780534951743665",
+        "text": "https://t.co/xgTU3zRoKP",
+        "author": {
+          "screenName": "0x_fokki",
+          "name": "Fokki"
+        }
+      }
+    },
+    {
+      "id": "2070864097995075735",
+      "text": "🚨 Anthropic Timeline (2021–2026):\n\n2021  –  Anthropic is founded by Dario Amodei and former OpenAI researchers with a focus on AI safety. The company raises $124 million in its first funding round. \n\n2022  –  Publishes the Constitutional AI research, introducing a new method for training safer AI assistants. \n\nMarch 2023  –  Launches the first public Claude AI model and API. \n\nJuly 2023  –  Releases Claude 2, featuring stronger reasoning and a 100K-token context window. \n\nNovember 2023  –  Launches Claude 2.1 with a 200K-token context window and improved accuracy. \n\nMarch 2024 – Introduces the Claude 3 family:\n\n~ Haiku (fastest)\n~ Sonnet (balanced)\n~ Opus (most capable) \n\nJune 2024  –  Releases Claude 3.5 Sonnet, becoming one of the top AI coding and reasoning models. \n\nOctober – November 2024 – Adds Computer Use, Claude Desktop, Artifacts, and introduces the Model Context Protocol (MCP) for connecting AI to external tools. \n\n2025  –  Expands the Claude 4 series with improved coding, agents, and enterprise capabilities. \n\nJune 2026  –  Launches Claude Fable 5 (general availability) and Claude Mythos 5 (restricted access), its most advanced AI models to date. \n\nThe world's leading frontier AI companies by 2026.",
+      "author": {
+        "id": "2025442210851028994",
+        "name": "Tech Today",
+        "screenName": "chanduuu_cs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2070799302709116928/WDT-Wfle_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 232,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 13:37:30 +0000 2026",
+      "createdAtLocal": "2026-06-27 21:37",
+      "createdAtISO": "2026-06-27T13:37:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL0v7DLa4AAOve5.jpg",
+          "width": 588,
+          "height": 393
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

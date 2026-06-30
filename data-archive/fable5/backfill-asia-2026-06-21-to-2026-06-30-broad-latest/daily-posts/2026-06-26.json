@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "2070201483975688418",
+    "author": "graalitoo",
+    "authorName": "Graalito",
+    "url": "https://x.com/graalitoo/status/2070201483975688418",
+    "text": "Day-13 waiting for #Fable ...\n\nAdded SFX, underwater camera while fishing, improved QTE, need to re-optimize many things i'm loosing frames\n\n#vibecoding #threejs https://t.co/32rGmLPYR4",
+    "createdAtISO": "2026-06-25T17:44:30.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 47,
+      "reposts": 2,
+      "replies": 3,
+      "quotes": 0,
+      "views": 2701,
+      "bookmarks": 11
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070201364299632641/vid/avc1/1918x1078/zq5HkHAm5h0LyeoH.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070201483975688418",
+      "text": "Day-13 waiting for #Fable ...\n\nAdded SFX, underwater camera while fishing, improved QTE, need to re-optimize many things i'm loosing frames\n\n#vibecoding #threejs https://t.co/32rGmLPYR4",
+      "author": {
+        "id": "1559848590712999936",
+        "name": "Graalito",
+        "screenName": "Graalitoo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1957870826205724672/361hfuYW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 47,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 2701,
+        "bookmarks": 11
+      },
+      "createdAt": "Thu Jun 25 17:44:30 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:44",
+      "createdAtISO": "2026-06-25T17:44:30+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070201364299632641/vid/avc1/1918x1078/zq5HkHAm5h0LyeoH.mp4?tag=28",
+          "width": 1918,
+          "height": 1078
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070485738354069975",
+    "author": "jacobsklug",
+    "authorName": "Jacob Klug",
+    "url": "https://x.com/jacobsklug/status/2070485738354069975",
+    "text": "Claude Code loops are simpler than everyone makes them sound.\n\nI broke down every piece across real builds and live testing.\n\nHere's the full system:\n\n1/ What a Loop Is\n> A recurring task that keeps running until the job is done\n> Not a one-shot prompt. Not a pipeline. A persistent agent with a goal.\n> It checks completion after every pass and decides whether to stop or go again\n\n2/ How It Differs From a Routine\n> A routine is linear. Step 1, step 2, step 3, done. Think Zapier.\n> A loop is circular. It finishes a pass, checks its goal, and starts again if needed\n> Routines stop. Loops stop only when the end state is met.\n\n3/ What Makes Up a Loop\n> Goal: the north star the entire loop works toward\n> Prompts: the instructions for each pass\n> Tools: whatever Claude needs to actually do the work\n> Memory: context carried between passes\n> End state: the specific condition that kills the loop\n\n4/ Loop Rules\n> Minimum frequency: every 1 minute\n> Hard limit: 3 days max before everything stops\n> Cost reality: every pass burns tokens. 10-minute loops over 3 days adds up fast.\n> Keep prompts tight. Vague loops = expensive loops.\n\n5/ Use Case 1: PR Review Loop\n> /loop every 10 minutes\n> Review every new pull request. Check diff for bugs and regressions. Fix what you find. Commit back to the same PR.\n> End state: tests pass, lint is clean, CI is green.\n\n6/ Use Case 2: Internal Tool From Spec\n> /loop every 10 minutes\n> Read the spec doc. Build the next missing piece. Write tests for it.\n> End state: every item in the spec is built and all tests pass.\n> You set it, walk away, and come back to a working app.\n\nThe whole point of loops: stop babysitting your AI.\n\nDefine the goal. Define done. Let it run.\n\nThe best engineers aren't prompting harder. They're looping smarter.",
+    "createdAtISO": "2026-06-26T12:34:02.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 39,
+      "reposts": 6,
+      "replies": 2,
+      "quotes": 1,
+      "views": 3226,
+      "bookmarks": 59
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLvXzfEawAA67U-.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070485738354069975",
+      "text": "Claude Code loops are simpler than everyone makes them sound.\n\nI broke down every piece across real builds and live testing.\n\nHere's the full system:\n\n1/ What a Loop Is\n> A recurring task that keeps running until the job is done\n> Not a one-shot prompt. Not a pipeline. A persistent agent with a goal.\n> It checks completion after every pass and decides whether to stop or go again\n\n2/ How It Differs From a Routine\n> A routine is linear. Step 1, step 2, step 3, done. Think Zapier.\n> A loop is circular. It finishes a pass, checks its goal, and starts again if needed\n> Routines stop. Loops stop only when the end state is met.\n\n3/ What Makes Up a Loop\n> Goal: the north star the entire loop works toward\n> Prompts: the instructions for each pass\n> Tools: whatever Claude needs to actually do the work\n> Memory: context carried between passes\n> End state: the specific condition that kills the loop\n\n4/ Loop Rules\n> Minimum frequency: every 1 minute\n> Hard limit: 3 days max before everything stops\n> Cost reality: every pass burns tokens. 10-minute loops over 3 days adds up fast.\n> Keep prompts tight. Vague loops = expensive loops.\n\n5/ Use Case 1: PR Review Loop\n> /loop every 10 minutes\n> Review every new pull request. Check diff for bugs and regressions. Fix what you find. Commit back to the same PR.\n> End state: tests pass, lint is clean, CI is green.\n\n6/ Use Case 2: Internal Tool From Spec\n> /loop every 10 minutes\n> Read the spec doc. Build the next missing piece. Write tests for it.\n> End state: every item in the spec is built and all tests pass.\n> You set it, walk away, and come back to a working app.\n\nThe whole point of loops: stop babysitting your AI.\n\nDefine the goal. Define done. Let it run.\n\nThe best engineers aren't prompting harder. They're looping smarter.",
+      "author": {
+        "id": "1268669761879191552",
+        "name": "Jacob Klug",
+        "screenName": "Jacobsklug",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1976143077514317824/tGHbTAPE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 39,
+        "retweets": 6,
+        "replies": 2,
+        "quotes": 1,
+        "views": 3226,
+        "bookmarks": 59
+      },
+      "createdAt": "Fri Jun 26 12:34:02 +0000 2026",
+      "createdAtLocal": "2026-06-26 20:34",
+      "createdAtISO": "2026-06-26T12:34:02+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLvXzfEawAA67U-.jpg",
+          "width": 3556,
+          "height": 2000
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one shot\" (Claude OR Fable OR Mythos) (game OR website OR app OR video OR animation OR 3d))"
+  },
+  {
+    "id": "2070190455896371469",
+    "author": "outrunyouth",
+    "authorName": "outrunyouth",
+    "url": "https://x.com/outrunyouth/status/2070190455896371469",
+    "text": "https://t.co/gm44CjpUZ7",
+    "createdAtISO": "2026-06-25T17:00:41.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 38,
+      "reposts": 4,
+      "replies": 4,
+      "quotes": 3,
+      "views": 5269,
+      "bookmarks": 2
+    },
+    "media": [],
+    "raw": {
+      "id": "2070190455896371469",
+      "text": "https://t.co/gm44CjpUZ7",
+      "author": {
+        "id": "1371976547381444613",
+        "name": "outrunyouth",
+        "screenName": "outrunyouth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2013601477801984000/cp0qIQYM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 38,
+        "retweets": 4,
+        "replies": 4,
+        "quotes": 3,
+        "views": 5269,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 25 17:00:41 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:00",
+      "createdAtISO": "2026-06-25T17:00:41+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2069787425325395969"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Far Country — A Digitally Native Mythology"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" Blender OR \"Mythos\" Blender)"
+  },
+  {
+    "id": "2070480272412246520",
+    "author": "stew_sofresh",
+    "authorName": "Stew1000 (Ø,G) 👾🛡️",
+    "url": "https://x.com/stew_sofresh/status/2070480272412246520",
+    "text": "GM CT! 🙏🏿\n\nBack with another edition of this week’s Stew’s Deep Dive in AI sharing fresh opportunities, alpha, and what’s brewing in AI + crypto.\n\nSTEW’S DEEP DIVE INTO AI\n\n===============\n\nWeb2 / General AI Highlights\n• @googlegemma Gemma 4 just hit 200M downloads in only 2.5 months!\nhttps://t.co/q7cenGJ2r0\n\n• @SakanaAILabs Sakana Fugu: A full multi-agent orchestration system accessible via a single model API. Fugu model matches the performance of Fable and Mythos, delivering frontier capability without the risk of export controls.\nhttps://t.co/aCcCPUH5Ou\n\n• @claudeai Introducing Claude Tag, a new way for teams to work with in Claude.\nhttps://t.co/Wxyb0YBNZ4\n\n• Introducing Ads Engine in @ElevenCreative. Connect Google, Meta, and LinkedIn ad accounts. Localize your existing ads across 50+ languages and push the finished creatives back to your ad platform.\nhttps://t.co/QhlVI9bfg2\n\n• Microsoft announced Skills for Copilot in Excel!\nhttps://t.co/tzxRrUVaQF\n\n• YOU CAN NOW BUY A HUMANOID ROBOT FOR $4,900. Unitree's R1 is now listed from $4,900 on AliExpress. The 4-foot bot does cartwheels and takes voice commands, with deliveries starting June 30.\nhttps://t.co/fC91POHewo\n\n• OpenAI is 'leaning toward' delaying its IPO until 2027, as advisers urge the company to wait for stronger market conditions\nhttps://t.co/Fl5seCaZGw\n\n• OpenAI has postponed the full GPT-5.6 launch after a government security review, offering limited previews to select partners instead.\nhttps://t.co/QQyArnijY4\n\n• @Replit now supports 450+ integrations. Replit Agent can wire it up to the tools you already use: payments, messaging, data, CRMs, design tools, analytics, and hundreds more.\nhttps://t.co/s4gxafNQnH\n\n• @GeminiApp Personalize how you study and learn any topic with new study notebooks in Gemini. Adaptive learning space with personalized lessons based on your quiz performance to help you learn.\nhttps://t.co/1ELurCU8tQ\n\n@OpenAI is working on support for Gifts in Codex!\nhttps://t.co/GlFj8zQiP4\n\nWeb3 / DeAI Highlights\n\n• @Venice now at 100 billion daily tokens\nhttps://t.co/ESc0jQm9Dz\n\n• The @TheSandboxGame Studio docs are live. Everything you need to go from zero to published game: engine, editor, AI workflow, publishing. one place.\nhttps://t.co/v4KEnFV0Yd\n\n• @base MCP is now available in  @Perplexity_ai Computer.Research any token with Perplexity, Set your entry point, and Base MCP prepares the swap for your approval\nhttps://t.co/vS4SjRPth8\n\n• AI agents can now trade tokenized stocks.Starting today, more than 40,000 @virtuals_io AI agents can now trade 430+ @OndoFinance tokenized stocks.\nhttps://t.co/wQEstfwi8m\n\n• Vyper on @arc Testnet shows what comes after agentic payments.\nAgents need more than wallets. They need identity, settlement, and programmable controls.\nhttps://t.co/XBQg0UnPZn\n\n• @ritualfnd Chain public testnet is live.\nIt’s a chain built specifically for AI agents on-chain inference, composable precompiles, native scheduling.\nhttps://t.co/q2yPzJb3GW\n\n• @InventMoneyApp earn $10+ / hour helping train AI. Invent Money Train AI early access is live. Sign up to claim your spot and be the first to get matched with AI Training jobs as well as earn bonus rewards.\nhttps://t.co/Cp4tRMM4av\n\nFunding Rounds\n👉🏾 @Polysights $1.5M is an AI-driven analytics platform providing market intelligence, wallet tracking, and trading signals for prediction markets.\n\n👉🏾 @ground_onchain $3.6M provides an API infrastructure layer enabling financial platforms and fintechs to embed onchain yield and asset management.\n\n👉🏾 @CambrianNetwork $6M is an AI infrastructure protocol that turns onchain and offchain data into rapidly accessible financial intelligence.\n\n👉🏾 @OrnnExchange $33M is a financial infrastructure and marketplace platform providing pricing benchmarks and capacity aggregation for the AI compute economy.",
+    "createdAtISO": "2026-06-26T12:12:19.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 20,
+      "reposts": 1,
+      "replies": 12,
+      "quotes": 0,
+      "views": 1016,
+      "bookmarks": 1
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLvS1EGWMAA4DAR.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070480272412246520",
+      "text": "GM CT! 🙏🏿\n\nBack with another edition of this week’s Stew’s Deep Dive in AI sharing fresh opportunities, alpha, and what’s brewing in AI + crypto.\n\nSTEW’S DEEP DIVE INTO AI\n\n===============\n\nWeb2 / General AI Highlights\n• @googlegemma Gemma 4 just hit 200M downloads in only 2.5 months!\nhttps://t.co/q7cenGJ2r0\n\n• @SakanaAILabs Sakana Fugu: A full multi-agent orchestration system accessible via a single model API. Fugu model matches the performance of Fable and Mythos, delivering frontier capability without the risk of export controls.\nhttps://t.co/aCcCPUH5Ou\n\n• @claudeai Introducing Claude Tag, a new way for teams to work with in Claude.\nhttps://t.co/Wxyb0YBNZ4\n\n• Introducing Ads Engine in @ElevenCreative. Connect Google, Meta, and LinkedIn ad accounts. Localize your existing ads across 50+ languages and push the finished creatives back to your ad platform.\nhttps://t.co/QhlVI9bfg2\n\n• Microsoft announced Skills for Copilot in Excel!\nhttps://t.co/tzxRrUVaQF\n\n• YOU CAN NOW BUY A HUMANOID ROBOT FOR $4,900. Unitree's R1 is now listed from $4,900 on AliExpress. The 4-foot bot does cartwheels and takes voice commands, with deliveries starting June 30.\nhttps://t.co/fC91POHewo\n\n• OpenAI is 'leaning toward' delaying its IPO until 2027, as advisers urge the company to wait for stronger market conditions\nhttps://t.co/Fl5seCaZGw\n\n• OpenAI has postponed the full GPT-5.6 launch after a government security review, offering limited previews to select partners instead.\nhttps://t.co/QQyArnijY4\n\n• @Replit now supports 450+ integrations. Replit Agent can wire it up to the tools you already use: payments, messaging, data, CRMs, design tools, analytics, and hundreds more.\nhttps://t.co/s4gxafNQnH\n\n• @GeminiApp Personalize how you study and learn any topic with new study notebooks in Gemini. Adaptive learning space with personalized lessons based on your quiz performance to help you learn.\nhttps://t.co/1ELurCU8tQ\n\n@OpenAI is working on support for Gifts in Codex!\nhttps://t.co/GlFj8zQiP4\n\nWeb3 / DeAI Highlights\n\n• @Venice now at 100 billion daily tokens\nhttps://t.co/ESc0jQm9Dz\n\n• The @TheSandboxGame Studio docs are live. Everything you need to go from zero to published game: engine, editor, AI workflow, publishing. one place.\nhttps://t.co/v4KEnFV0Yd\n\n• @base MCP is now available in  @Perplexity_ai Computer.Research any token with Perplexity, Set your entry point, and Base MCP prepares the swap for your approval\nhttps://t.co/vS4SjRPth8\n\n• AI agents can now trade tokenized stocks.Starting today, more than 40,000 @virtuals_io AI agents can now trade 430+ @OndoFinance tokenized stocks.\nhttps://t.co/wQEstfwi8m\n\n• Vyper on @arc Testnet shows what comes after agentic payments.\nAgents need more than wallets. They need identity, settlement, and programmable controls.\nhttps://t.co/XBQg0UnPZn\n\n• @ritualfnd Chain public testnet is live.\nIt’s a chain built specifically for AI agents on-chain inference, composable precompiles, native scheduling.\nhttps://t.co/q2yPzJb3GW\n\n• @InventMoneyApp earn $10+ / hour helping train AI. Invent Money Train AI early access is live. Sign up to claim your spot and be the first to get matched with AI Training jobs as well as earn bonus rewards.\nhttps://t.co/Cp4tRMM4av\n\nFunding Rounds\n👉🏾 @Polysights $1.5M is an AI-driven analytics platform providing market intelligence, wallet tracking, and trading signals for prediction markets.\n\n👉🏾 @ground_onchain $3.6M provides an API infrastructure layer enabling financial platforms and fintechs to embed onchain yield and asset management.\n\n👉🏾 @CambrianNetwork $6M is an AI infrastructure protocol that turns onchain and offchain data into rapidly accessible financial intelligence.\n\n👉🏾 @OrnnExchange $33M is a financial infrastructure and marketplace platform providing pricing benchmarks and capacity aggregation for the AI compute economy.",
+      "author": {
+        "id": "2568023354",
+        "name": "Stew1000 (Ø,G) 👾🛡️",
+        "screenName": "Stew_SoFresh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1729777105213267968/GrNlVNdi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 1,
+        "replies": 12,
+        "quotes": 0,
+        "views": 1016,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 26 12:12:19 +0000 2026",
+      "createdAtLocal": "2026-06-26 20:12",
+      "createdAtISO": "2026-06-26T12:12:19+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLvS1EGWMAA4DAR.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069611737935135210",
+        "text": "Are you positioned for AI Training jobs? \n\nDon't miss your chance to earn $10+ / hour helping train AI.\n\nInvent Money Train AI early access is live, but spots are limited.\n\nSign up to claim your spot and be the first to get matched with AI Training jobs as well as earn bonus rewards.",
+        "author": {
+          "screenName": "InventMoneyApp",
+          "name": "InventMoney"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070404720141676870",
+    "author": "oluwaphilemon1",
+    "authorName": "FHILY👑",
+    "url": "https://x.com/oluwaphilemon1/status/2070404720141676870",
+    "text": "How I build with Claude ( No need for Claude Fable 5 or GPT-5.6 )\n\nThree.js = glowing crystal rendered real-time zero video file\n\nNuxt.js SSR = WebGL heavy site loads fast and gets indexed by Google\n\nSanity CMS = portfolio section updates without touching code\n\nPlaneGeometry sine waves = ocean surface simulated every frame\n\nTwo colors only = 3D asset carries all the visual emotion\n\nGSAP ScrollTrigger = crystal rotation tied to scroll progress percentage\n\nSave this",
+    "createdAtISO": "2026-06-26T07:12:06.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 9,
+      "reposts": 2,
+      "replies": 3,
+      "quotes": 2,
+      "views": 3679,
+      "bookmarks": 7
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070404660813307904/vid/avc1/720x1280/r-nYYy9Vqrrn-7mc.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070404720141676870",
+      "text": "How I build with Claude ( No need for Claude Fable 5 or GPT-5.6 )\n\nThree.js = glowing crystal rendered real-time zero video file\n\nNuxt.js SSR = WebGL heavy site loads fast and gets indexed by Google\n\nSanity CMS = portfolio section updates without touching code\n\nPlaneGeometry sine waves = ocean surface simulated every frame\n\nTwo colors only = 3D asset carries all the visual emotion\n\nGSAP ScrollTrigger = crystal rotation tied to scroll progress percentage\n\nSave this",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 2,
+        "views": 3679,
+        "bookmarks": 7
+      },
+      "createdAt": "Fri Jun 26 07:12:06 +0000 2026",
+      "createdAtLocal": "2026-06-26 15:12",
+      "createdAtISO": "2026-06-26T07:12:06+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070404660813307904/vid/avc1/720x1280/r-nYYy9Vqrrn-7mc.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070245938954690913",
+        "text": "Claude Fable 5 and GPT-5.6 are yet to be released.\n\nBut excited to launch Pencil\n\nINFINITE DESIGN CANVAS for Claude Code\n\n> Superfast WebGL canvas, fully editable, running parallel design agents\n> Runs locally with Claude Code → turn designs into code\n> Design files live in your git repo → Open json-based .pen format\n> Download today",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070232902760079509",
+    "author": "tc_poole",
+    "authorName": "TC_Poole",
+    "url": "https://x.com/tc_poole/status/2070232902760079509",
+    "text": "I use three.js to its full potential. Fable 5 activated. \n\nreturn buckLightnin;\nreturn funkomaniaDetected;\nfor (last i=0; i&lt;12, i++ ( brew(zestemitter)) }\nlet theloniousBuckhauserIV = lockCoordinates (opts3);\nimport ( FoamCore, SporeGlyph, Zestometer ) from 'bootyclapital' ; https://t.co/UboPK8FitZ",
+    "createdAtISO": "2026-06-25T19:49:21.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 13,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 834,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070231735346909184/vid/avc1/1920x1080/ITaFrtBU-0FGg8PU.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070232902760079509",
+      "text": "I use three.js to its full potential. Fable 5 activated. \n\nreturn buckLightnin;\nreturn funkomaniaDetected;\nfor (last i=0; i&lt;12, i++ ( brew(zestemitter)) }\nlet theloniousBuckhauserIV = lockCoordinates (opts3);\nimport ( FoamCore, SporeGlyph, Zestometer ) from 'bootyclapital' ; https://t.co/UboPK8FitZ",
+      "author": {
+        "id": "1450596725475926024",
+        "name": "TC_Poole",
+        "screenName": "TC_Poole",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1987701540526739456/et1BGaJW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 834,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 19:49:21 +0000 2026",
+      "createdAtLocal": "2026-06-26 03:49",
+      "createdAtISO": "2026-06-25T19:49:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070231735346909184/vid/avc1/1920x1080/ITaFrtBU-0FGg8PU.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070245938954690913",
+    "author": "oluwaphilemon1",
+    "authorName": "FHILY👑",
+    "url": "https://x.com/oluwaphilemon1/status/2070245938954690913",
+    "text": "Claude Fable 5 and GPT-5.6 are yet to be released.\n\nBut excited to launch Pencil\n\nINFINITE DESIGN CANVAS for Claude Code\n\n> Superfast WebGL canvas, fully editable, running parallel design agents\n> Runs locally with Claude Code → turn designs into code\n> Design files live in your git repo → Open json-based .pen format\n> Download today",
+    "createdAtISO": "2026-06-25T20:41:09.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 6,
+      "reposts": 2,
+      "replies": 4,
+      "quotes": 2,
+      "views": 3152,
+      "bookmarks": 4
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070245797849948160/vid/avc1/1208x720/QkHmxWP06iDfWoZr.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070245938954690913",
+      "text": "Claude Fable 5 and GPT-5.6 are yet to be released.\n\nBut excited to launch Pencil\n\nINFINITE DESIGN CANVAS for Claude Code\n\n> Superfast WebGL canvas, fully editable, running parallel design agents\n> Runs locally with Claude Code → turn designs into code\n> Design files live in your git repo → Open json-based .pen format\n> Download today",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 2,
+        "replies": 4,
+        "quotes": 2,
+        "views": 3152,
+        "bookmarks": 4
+      },
+      "createdAt": "Thu Jun 25 20:41:09 +0000 2026",
+      "createdAtLocal": "2026-06-26 04:41",
+      "createdAtISO": "2026-06-25T20:41:09+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070245797849948160/vid/avc1/1208x720/QkHmxWP06iDfWoZr.mp4?tag=28",
+          "width": 1208,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070221567846445372",
+        "text": "Claude Fable 5 is yet to be unbanned and GPT-5.6 is to be released…\n\nClaude Code 2.1.181 lets you set any session config inline no menu, just /config key=value and you're done\n\nSmall change. Saves more time than it looks like https://t.co/0ImIIykmVa",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070260125873721844",
+    "author": "beylin",
+    "authorName": "Mark Beylin",
+    "url": "https://x.com/beylin/status/2070260125873721844",
+    "text": "https://t.co/dJjUl1hLOI",
+    "createdAtISO": "2026-06-25T21:37:32.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 8,
+      "reposts": 1,
+      "replies": 1,
+      "quotes": 0,
+      "views": 1593,
+      "bookmarks": 1
+    },
+    "media": [],
+    "raw": {
+      "id": "2070260125873721844",
+      "text": "https://t.co/dJjUl1hLOI",
+      "author": {
+        "id": "137126152",
+        "name": "Mark Beylin",
+        "screenName": "Beylin",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057234418658615296/DeHtUU76_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1593,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 25 21:37:32 +0000 2026",
+      "createdAtLocal": "2026-06-26 05:37",
+      "createdAtISO": "2026-06-25T21:37:32+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070247328737628160"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Embrace the One Shot"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2070246885751767256",
+    "author": "crumbcatwins",
+    "authorName": "Crumb Cat",
+    "url": "https://x.com/crumbcatwins/status/2070246885751767256",
+    "text": "@Sthiven_R Glad World of Claudecraft got its foundation built with Claude Fable 5\n\nOpen-source development took over from since ban, but the pace of updates been insane https://t.co/Iup2rbr0JN",
+    "createdAtISO": "2026-06-25T20:44:55.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 8,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 176,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLr-kF1WAAAGjvW.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070246885751767256",
+      "text": "@Sthiven_R Glad World of Claudecraft got its foundation built with Claude Fable 5\n\nOpen-source development took over from since ban, but the pace of updates been insane https://t.co/Iup2rbr0JN",
+      "author": {
+        "id": "1911306988618977280",
+        "name": "Crumb Cat",
+        "screenName": "CrumbcatWins",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911313523067551744/tYNsbfzQ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 176,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 20:44:55 +0000 2026",
+      "createdAtLocal": "2026-06-26 04:44",
+      "createdAtISO": "2026-06-25T20:44:55+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLr-kF1WAAAGjvW.jpg",
+          "width": 2356,
+          "height": 1328
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"built with Claude\" (Fable OR Mythos OR \"one prompt\" OR game OR website OR design))"
+  },
+  {
+    "id": "2070476818436542875",
+    "author": "krackinrobert",
+    "authorName": "Krackin",
+    "url": "https://x.com/krackinrobert/status/2070476818436542875",
+    "text": "https://t.co/Q8tSuavr8i",
+    "createdAtISO": "2026-06-26T11:58:35.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 1,
+      "views": 1963,
+      "bookmarks": 3
+    },
+    "media": [],
+    "raw": {
+      "id": "2070476818436542875",
+      "text": "https://t.co/Q8tSuavr8i",
+      "author": {
+        "id": "1640297083818106880",
+        "name": "Krackin",
+        "screenName": "KrackinRobert",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068635107078909952/JRbiB6BF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1963,
+        "bookmarks": 3
+      },
+      "createdAt": "Fri Jun 26 11:58:35 +0000 2026",
+      "createdAtLocal": "2026-06-26 19:58",
+      "createdAtISO": "2026-06-26T11:58:35+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070448605429645314"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "You don't need to play GTA 6 to make $5000/month from it. Here is how:"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"built with Claude\" (Fable OR Mythos OR \"one prompt\" OR game OR website OR design))"
+  },
+  {
+    "id": "2070240609818866154",
+    "author": "mluggy",
+    "authorName": "Michael Lugassy",
+    "url": "https://x.com/mluggy/status/2070240609818866154",
+    "text": "@yairwein מעניין, לא הכרתי את pi. האם שקלת/היה בזמנו את Managed Agents? זה קלוד אבל לא קלוד-קוד, אפשר להצמיד לו הוראות, סקילים ו-MCP לבקשתך והוא רץ על האינפרא של אנתרופיק.\n\nיש לוק-אין, ועלות, אבל עם חזרתם של fable ו-mythos, יהיו 5 רמות של מודל לבחור מהן.\n\nhttps://t.co/JPYxCNshG5",
+    "createdAtISO": "2026-06-25T20:19:59.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 4,
+      "reposts": 0,
+      "replies": 3,
+      "quotes": 0,
+      "views": 1829,
+      "bookmarks": 1
+    },
+    "media": [],
+    "raw": {
+      "id": "2070240609818866154",
+      "text": "@yairwein מעניין, לא הכרתי את pi. האם שקלת/היה בזמנו את Managed Agents? זה קלוד אבל לא קלוד-קוד, אפשר להצמיד לו הוראות, סקילים ו-MCP לבקשתך והוא רץ על האינפרא של אנתרופיק.\n\nיש לוק-אין, ועלות, אבל עם חזרתם של fable ו-mythos, יהיו 5 רמות של מודל לבחור מהן.\n\nhttps://t.co/JPYxCNshG5",
+      "author": {
+        "id": "10412792",
+        "name": "Michael Lugassy",
+        "screenName": "mluggy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1632505709848920064/fi0L9zEJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1829,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 25 20:19:59 +0000 2026",
+      "createdAtLocal": "2026-06-26 04:19",
+      "createdAtISO": "2026-06-25T20:19:59+00:00",
+      "media": [],
+      "urls": [
+        "https://platform.claude.com/docs/en/managed-agents/overview"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "iw",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070177743619420482",
+    "author": "haricane8133",
+    "authorName": "Hari Rajesh",
+    "url": "https://x.com/haricane8133/status/2070177743619420482",
+    "text": "https://t.co/7ODXUnF4E1",
+    "createdAtISO": "2026-06-25T16:10:10.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 515,
+      "bookmarks": 2
+    },
+    "media": [],
+    "raw": {
+      "id": "2070177743619420482",
+      "text": "https://t.co/7ODXUnF4E1",
+      "author": {
+        "id": "2048779545726328832",
+        "name": "Hari Rajesh",
+        "screenName": "haricane8133",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048780467365957632/oDVRNQu1_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 515,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 25 16:10:10 +0000 2026",
+      "createdAtLocal": "2026-06-26 00:10",
+      "createdAtISO": "2026-06-25T16:10:10+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068722466151964672"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Chapter 4 — Attention is all you need"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070253615386677305",
+    "author": "jake_builds",
+    "authorName": "Jake Dewar",
+    "url": "https://x.com/jake_builds/status/2070253615386677305",
+    "text": "holy shit - i used claude design to refine the design system and it one-shotted a WAY better design https://t.co/ef7UxpaKVc",
+    "createdAtISO": "2026-06-25T21:11:40.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 79,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLsEleOW8AEWG3R.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070253615386677305",
+      "text": "holy shit - i used claude design to refine the design system and it one-shotted a WAY better design https://t.co/ef7UxpaKVc",
+      "author": {
+        "id": "1397554999786360832",
+        "name": "Jake Dewar",
+        "screenName": "jake_builds",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1997705966624645120/_yQEokTO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 79,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 21:11:40 +0000 2026",
+      "createdAtLocal": "2026-06-26 05:11",
+      "createdAtISO": "2026-06-25T21:11:40+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLsEleOW8AEWG3R.jpg",
+          "width": 1265,
+          "height": 991
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070229711314198804",
+        "text": "i accidentally spent $4k on shopping and dining last month... \n\nso i built myself an extension to track my monthly budget for online shopping\n\ni can save over-budget items for later + know what's safe to buy within my current budget https://t.co/hU4zXGtgbH",
+        "author": {
+          "screenName": "jake_builds",
+          "name": "Jake Dewar"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2070190284210905321",
+    "author": "caylonheadrick",
+    "authorName": "Caylon Headrick",
+    "url": "https://x.com/caylonheadrick/status/2070190284210905321",
+    "text": "The Underdog | 3D Version\n\nCreated with Claude, Midjourney 8.1, Nano Banana &amp; Seedance 2 \n\n#animation #anime #3danimation #aianimation https://t.co/KQUdtZyZMF",
+    "createdAtISO": "2026-06-25T17:00:00.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 148,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070150830398070784/vid/avc1/1080x1920/jeA5Iu7VOwptktKo.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070190284210905321",
+      "text": "The Underdog | 3D Version\n\nCreated with Claude, Midjourney 8.1, Nano Banana &amp; Seedance 2 \n\n#animation #anime #3danimation #aianimation https://t.co/KQUdtZyZMF",
+      "author": {
+        "id": "1424260828589481984",
+        "name": "Caylon Headrick",
+        "screenName": "caylonheadrick",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2006106037330624512/BZ1Sc_Ea_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 148,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 17:00:00 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:00",
+      "createdAtISO": "2026-06-25T17:00:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070150830398070784/vid/avc1/1080x1920/jeA5Iu7VOwptktKo.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"created with Claude\" (Fable OR Mythos OR \"one prompt\" OR video OR animation OR design))"
+  },
+  {
+    "id": "2070492979047870721",
+    "author": "y0tafomo",
+    "authorName": "yota",
+    "url": "https://x.com/y0tafomo/status/2070492979047870721",
+    "text": "https://t.co/uV6ADGCzcj",
+    "createdAtISO": "2026-06-26T13:02:48.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 1,
+      "views": 812,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070492979047870721",
+      "text": "https://t.co/uV6ADGCzcj",
+      "author": {
+        "id": "1289866386198724609",
+        "name": "yota",
+        "screenName": "y0tafomo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063986854236499968/7pzvhbnz_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 812,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 13:02:48 +0000 2026",
+      "createdAtLocal": "2026-06-26 21:02",
+      "createdAtISO": "2026-06-26T13:02:48+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070082952797577216"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Stop Prompting AI Agents. Start Designing the System That Prompts Them For You."
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one shot\" (Claude OR Fable OR Mythos) (game OR website OR app OR video OR animation OR 3d))"
+  },
+  {
+    "id": "2070246114255683829",
+    "author": "lemondefi1",
+    "authorName": "lemon👑",
+    "url": "https://x.com/lemondefi1/status/2070246114255683829",
+    "text": "Claude Fable 5 and GPT-5.6 are yet to be released.\n\nBut excited to launch Pencil\n\nINFINITE DESIGN CANVAS for Claude Code\n\n&gt; Superfast WebGL canvas, fully editable, running parallel design agents\n&gt; Runs locally with Claude Code → turn designs into code\n&gt; Design files live in your",
+    "createdAtISO": "2026-06-25T20:41:51.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 1,
+      "views": 300,
+      "bookmarks": 1
+    },
+    "media": [],
+    "raw": {
+      "id": "2070246114255683829",
+      "text": "Claude Fable 5 and GPT-5.6 are yet to be released.\n\nBut excited to launch Pencil\n\nINFINITE DESIGN CANVAS for Claude Code\n\n&gt; Superfast WebGL canvas, fully editable, running parallel design agents\n&gt; Runs locally with Claude Code → turn designs into code\n&gt; Design files live in your",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 300,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 25 20:41:51 +0000 2026",
+      "createdAtLocal": "2026-06-26 04:41",
+      "createdAtISO": "2026-06-25T20:41:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070245938954690913",
+        "text": "Claude Fable 5 and GPT-5.6 are yet to be released.\n\nBut excited to launch Pencil\n\nINFINITE DESIGN CANVAS for Claude Code\n\n> Superfast WebGL canvas, fully editable, running parallel design agents\n> Runs locally with Claude Code → turn designs into code\n> Design files live in your git repo → Open json-based .pen format\n> Download today",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070536601546236362",
+    "author": "graalitoo",
+    "authorName": "Graalito",
+    "url": "https://x.com/graalitoo/status/2070536601546236362",
+    "text": "D-14 waiting for #Fable , Starting to add some wildlife, every assets made by Claude on Blender with MCP.\n\n#threejs #vibecoding https://t.co/1sX0N6x9WA",
+    "createdAtISO": "2026-06-26T15:56:09.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 153,
+      "bookmarks": 1
+    },
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLwEpXEaAAAbKZI.jpg"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HLwEp1hawAA4C5g.jpg"
+      }
+    ],
+    "raw": {
+      "id": "2070536601546236362",
+      "text": "D-14 waiting for #Fable , Starting to add some wildlife, every assets made by Claude on Blender with MCP.\n\n#threejs #vibecoding https://t.co/1sX0N6x9WA",
+      "author": {
+        "id": "1559848590712999936",
+        "name": "Graalito",
+        "screenName": "Graalitoo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1957870826205724672/361hfuYW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 153,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 26 15:56:09 +0000 2026",
+      "createdAtLocal": "2026-06-26 23:56",
+      "createdAtISO": "2026-06-26T15:56:09+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLwEpXEaAAAbKZI.jpg",
+          "width": 1913,
+          "height": 1076
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLwEp1hawAA4C5g.jpg",
+          "width": 1577,
+          "height": 936
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  },
+  {
+    "id": "2070493369357267394",
+    "author": "mikepfrank",
+    "authorName": "Michael P. Frank 💻🔜♻️",
+    "url": "https://x.com/mikepfrank/status/2070493369357267394",
+    "text": "@Sauers_ I only used Fable for one project, but it was enough to see the difference. It basically one-shotted this game based on my research in a couple of hours. I think it wasn’t even on Max thinking. It’s been two weeks with Opus to polish the rough edges. But the core design was solid",
+    "createdAtISO": "2026-06-26T13:04:21.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 2,
+      "quotes": 0,
+      "views": 92,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070493369357267394",
+      "text": "@Sauers_ I only used Fable for one project, but it was enough to see the difference. It basically one-shotted this game based on my research in a couple of hours. I think it wasn’t even on Max thinking. It’s been two weeks with Opus to polish the rough edges. But the core design was solid",
+      "author": {
+        "id": "14129103",
+        "name": "Michael P. Frank 💻🔜♻️",
+        "screenName": "MikePFrank",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/436717062350573568/RYwsS148_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 92,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 13:04:21 +0000 2026",
+      "createdAtLocal": "2026-06-26 21:04",
+      "createdAtISO": "2026-06-26T13:04:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2070337041892819011",
+    "author": "kenebeii",
+    "authorName": "Cyberdark Impact",
+    "url": "https://x.com/kenebeii/status/2070337041892819011",
+    "text": "【サイバーセキュリティ動向分析】\n\n今日（2026年6月26日）の主なサイバーセキュリティニュースについて、主要トピックごとに背景・影響・対策を詳しくまとめます。情報は直近の公開情報に基づき、進行中の脅威やパッチ対応を中心に取り上げています。\n1. ShinyHuntersによるOracle PeopleSoft大規模侵害キャンペーン（継続中）\n背景\nサイバー犯罪グループ「ShinyHunters」（GoogleのMandiantではUNC6240として追跡）が、Oracle PeopleSoftのPeopleTools環境管理コンポーネントに存在する重大な脆弱性（CVE-2026-35273、CVSS 9.8）をゼロデイとして悪用した大規模キャンペーンが確認されました。攻撃活動は5月27日から6月9日頃まで活発で、Oracleが6月10日に緊急セキュリティアドバイザリを発行するまでパッチが提供されていませんでした。この脆弱性は認証不要でリモートコード実行（RCE）が可能という極めて危険なもので、主にインターネットに公開されたPSEMHUBエンドポイントを標的にしていました。ShinyHuntersは教育機関を中心に100以上の組織（数百のインスタンス）を侵害し、学生・教職員の個人情報（氏名、住所、メール、誕生日、民族、GPA、専攻、学生IDなど）を大量に窃取したと主張しています。\n影響\n高等教育機関を中心に世界中の組織が被害を受け、個人情報の大量流出と恐喝行為が発生しています。窃取データがShinyHuntersのリークサイトで公開・販売される動きが見られ、被害組織の評判低下、規制対応コストの増大、さらなる二次被害（フィッシングやアカウント乗っ取り）のリスクが高まっています。教育セクターは特に機微な個人情報を大量に扱うため、社会的影響が大きいです。また、Oracleのエンタープライズソフトウェアが広く使われていることから、サプライチェーン的な波及も懸念されます。\n対策  \nOracleのセキュリティアドバイザリに従い、PeopleTools 8.61および8.62向けのパッチを最優先で適用してください。サポート対象外の古いバージョンも早急に更新または廃止を検討。\nインターネット公開されているPeopleSoftインスタンスの露出を最小限に抑え、WAF（Web Application Firewall）の導入やネットワークセグメンテーションを実施。\n異常なネットワークトラフィックや認証ログを監視し、Mandiant/Google Threat Intelligenceなどの脅威インテリジェンスを活用。\nデータ暗号化、最小権限の原則、定期的な脆弱性スキャンと侵入テストを徹底。侵害が疑われる場合は直ちに専門機関に相談。\n2. Anthropicの先進AIモデル「Claude Fable 5」および「Mythos 5」のアクセス停止（6月12日頃）\n背景\nAnthropicが6月9日頃に公開した最先端AIモデル「Claude Fable 5」と「Mythos 5」に対し、米国政府（商務省）が輸出管理当局に基づく国家安全保障上の指令を発出しました。主な懸念は、これらのモデルが「jailbreak（脱獄）」されることで、サイバー脆弱性の特定・悪用に悪用される可能性です。指令では外国人の利用制限が求められ、Anthropicはコンプライアンスのため世界中の全ユーザーに対して一時的にアクセスを停止しました。他のモデル（例: Opusシリーズ）は影響を受けていません。\n影響\nAI開発・利用の現場に大きな混乱をもたらしています。企業や研究機関が先進AIを活用した業務やイノベーションが一時停止を余儀なくされ、AIガバナンスの重要性が改めて浮き彫りになりました。AIがサイバー攻撃の加速要因となるリスク（脆弱性発見の自動化など）が現実のものとして認識され、国際的なAI規制議論が活発化しています。AnthropicをはじめとするAI企業は、セキュリティとイノベーションのバランスに苦慮する状況です。\n対策  \n現時点では代替モデルや自社内製AI、または制限付きの旧バージョンを使用。\nAIツールの利用ポリシーを策定し、jailbreak対策（プロンプトガードレール、出力監視）を強化。\n政府・規制当局との連携を強化し、輸出管理や安全基準に準拠したAI運用を徹底。\n企業はAI導入時のリスクアセスメントを必須とし、機微な業務での使用を制限。長期的に「安全なAI開発フレームワーク」の構築が求められます。\n3. Microsoft 2026年6月 Patch Tuesdayの大規模パッチリリース（6月9-10日頃）\n背景\nMicrosoftが6月の月例パッチで過去最多規模となる206件以上の脆弱性を修正しました（Critical 37件以上）。中には3件の公開済みゼロデイ脆弱性も含まれており、Windows、Office、Azure、Visual Studio Code、IISなど幅広い製品に影響します。ゼロデイの例として、IISのサービス拒否（DoS）やVisual Studio CodeでのGitHubトークン窃取などが挙げられます。パッチ数は過去最高を更新し、ソフトウェアの複雑化と脆弱性発見の加速を象徴しています。\n影響\n未パッチのシステムが攻撃者に狙われやすく、特にゼロデイは公開直後から悪用リスクが高まります。企業・政府機関では業務中断やデータ漏洩の可能性が現実的です。一方で、迅速なパッチ適用により多くの攻撃を未然に防げます。全体として、サイバー脅威の「量と質」の両方が高まっている状況を示しています。\n対策  \nパッチをできるだけ早くテスト・展開（特にCriticalとゼロデイ）。自動パッチ管理ツールを活用。\n脆弱性管理プログラムを強化し、優先順位付け（CVSSスコア、公開 exploit の有無）を徹底。\nパッチ適用までの緩和策として、ネットワーク分離や多要素認証（MFA）、エンドポイント検知・対応（EDR）の強化を実施。\n定期的なパッチ適用テスト環境の整備と、緊急時の対応計画の見直しを推奨。\n4. AIコーディングエージェントを標的とした「Agentjacking」攻撃の新手法（6月12日頃公開）\n背景\nTenet Securityの研究者らが、新たな攻撃クラス「Agentjacking」を公開しました。人気のエラートラッキングツール「Sentry」の公開DSN（データソース名）を利用し、偽のエラーレポートを注入。これをAIコーディングエージェント（Claude Code、Cursorなど）が「信頼できる診断情報」として解釈し、攻撃者が指定した悪意あるコードを実行させる手法です。SentryのModel Context Protocol（MCP）統合の設計上の弱点を突いたもので、従来のマルウェア配信やフィッシングを必要としません。\n影響\n開発者のワークステーションが直接乗っ取られるリスクが生じ、ソフトウェア開発サプライチェーン全体に影響を及ぼす可能性があります。AIエージェントの普及が進む中、信頼できる外部データソースが攻撃ベクトルになるという新しい脅威形態です。検知が難しく、既存のセキュリティ制御をすり抜けやすい点が深刻です。\n対策  \nSentryなどのツールとAIエージェントの統合を制限または監視強化。入力データのサニタイズを徹底。\nAIエージェントの実行権限を最小限に抑え、サンドボックス環境で運用。\nAIエージェントの出力・行動を常時ログ監視し、異常なコマンド実行を検知する仕組みを導入。\n開発者教育を強化し、「AIが信頼する外部情報」のリスクを周知。ツールの最新版への更新を徹底。\nその他の注目動向（6月下旬時点）\nLantronix EDS5000の脆弱性（CVE-2025-67038）：CISAが積極的な悪用を警告。OT環境向けシリアル-to-IP変換器で、6月26日までのパッチ適用を強く推奨。\nGitLabのパッチリリース：コード実行や情報漏洩を含む13件の脆弱性を修正（高深刻度含む）。\nCisco Catalyst SD-WANのゼロデイ（CVE-2026-20245）：数ヶ月前から悪用されていたことが判明。\nマルウェア対策の進展：AmadeyおよびStealCのインフラが法執行機関とセキュリティ企業により大規模に破壊され、数千万件の認証情報が回収。\nAI関連では、プロンプトインジェクションを悪用したmacOSマルウェア「Gaslight」（北朝鮮関連疑い）なども報告されています。\nこれらのニュースは、AIの両刃の剣化、パッチ管理の重要性、サプライチェーン・開発環境への攻撃シフトという共通のトレンドを示しています。組織はパッチ適用を最優先とし、AIツールの利用ポリシーを早急に整備するとともに、脅威インテリジェンスの活用と多層防御を強化してください。状況は日々変化するため、最新の公式情報を継続的に確認することをおすすめします。",
+    "createdAtISO": "2026-06-26T02:43:10.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 1959,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070337041892819011",
+      "text": "【サイバーセキュリティ動向分析】\n\n今日（2026年6月26日）の主なサイバーセキュリティニュースについて、主要トピックごとに背景・影響・対策を詳しくまとめます。情報は直近の公開情報に基づき、進行中の脅威やパッチ対応を中心に取り上げています。\n1. ShinyHuntersによるOracle PeopleSoft大規模侵害キャンペーン（継続中）\n背景\nサイバー犯罪グループ「ShinyHunters」（GoogleのMandiantではUNC6240として追跡）が、Oracle PeopleSoftのPeopleTools環境管理コンポーネントに存在する重大な脆弱性（CVE-2026-35273、CVSS 9.8）をゼロデイとして悪用した大規模キャンペーンが確認されました。攻撃活動は5月27日から6月9日頃まで活発で、Oracleが6月10日に緊急セキュリティアドバイザリを発行するまでパッチが提供されていませんでした。この脆弱性は認証不要でリモートコード実行（RCE）が可能という極めて危険なもので、主にインターネットに公開されたPSEMHUBエンドポイントを標的にしていました。ShinyHuntersは教育機関を中心に100以上の組織（数百のインスタンス）を侵害し、学生・教職員の個人情報（氏名、住所、メール、誕生日、民族、GPA、専攻、学生IDなど）を大量に窃取したと主張しています。\n影響\n高等教育機関を中心に世界中の組織が被害を受け、個人情報の大量流出と恐喝行為が発生しています。窃取データがShinyHuntersのリークサイトで公開・販売される動きが見られ、被害組織の評判低下、規制対応コストの増大、さらなる二次被害（フィッシングやアカウント乗っ取り）のリスクが高まっています。教育セクターは特に機微な個人情報を大量に扱うため、社会的影響が大きいです。また、Oracleのエンタープライズソフトウェアが広く使われていることから、サプライチェーン的な波及も懸念されます。\n対策  \nOracleのセキュリティアドバイザリに従い、PeopleTools 8.61および8.62向けのパッチを最優先で適用してください。サポート対象外の古いバージョンも早急に更新または廃止を検討。\nインターネット公開されているPeopleSoftインスタンスの露出を最小限に抑え、WAF（Web Application Firewall）の導入やネットワークセグメンテーションを実施。\n異常なネットワークトラフィックや認証ログを監視し、Mandiant/Google Threat Intelligenceなどの脅威インテリジェンスを活用。\nデータ暗号化、最小権限の原則、定期的な脆弱性スキャンと侵入テストを徹底。侵害が疑われる場合は直ちに専門機関に相談。\n2. Anthropicの先進AIモデル「Claude Fable 5」および「Mythos 5」のアクセス停止（6月12日頃）\n背景\nAnthropicが6月9日頃に公開した最先端AIモデル「Claude Fable 5」と「Mythos 5」に対し、米国政府（商務省）が輸出管理当局に基づく国家安全保障上の指令を発出しました。主な懸念は、これらのモデルが「jailbreak（脱獄）」されることで、サイバー脆弱性の特定・悪用に悪用される可能性です。指令では外国人の利用制限が求められ、Anthropicはコンプライアンスのため世界中の全ユーザーに対して一時的にアクセスを停止しました。他のモデル（例: Opusシリーズ）は影響を受けていません。\n影響\nAI開発・利用の現場に大きな混乱をもたらしています。企業や研究機関が先進AIを活用した業務やイノベーションが一時停止を余儀なくされ、AIガバナンスの重要性が改めて浮き彫りになりました。AIがサイバー攻撃の加速要因となるリスク（脆弱性発見の自動化など）が現実のものとして認識され、国際的なAI規制議論が活発化しています。AnthropicをはじめとするAI企業は、セキュリティとイノベーションのバランスに苦慮する状況です。\n対策  \n現時点では代替モデルや自社内製AI、または制限付きの旧バージョンを使用。\nAIツールの利用ポリシーを策定し、jailbreak対策（プロンプトガードレール、出力監視）を強化。\n政府・規制当局との連携を強化し、輸出管理や安全基準に準拠したAI運用を徹底。\n企業はAI導入時のリスクアセスメントを必須とし、機微な業務での使用を制限。長期的に「安全なAI開発フレームワーク」の構築が求められます。\n3. Microsoft 2026年6月 Patch Tuesdayの大規模パッチリリース（6月9-10日頃）\n背景\nMicrosoftが6月の月例パッチで過去最多規模となる206件以上の脆弱性を修正しました（Critical 37件以上）。中には3件の公開済みゼロデイ脆弱性も含まれており、Windows、Office、Azure、Visual Studio Code、IISなど幅広い製品に影響します。ゼロデイの例として、IISのサービス拒否（DoS）やVisual Studio CodeでのGitHubトークン窃取などが挙げられます。パッチ数は過去最高を更新し、ソフトウェアの複雑化と脆弱性発見の加速を象徴しています。\n影響\n未パッチのシステムが攻撃者に狙われやすく、特にゼロデイは公開直後から悪用リスクが高まります。企業・政府機関では業務中断やデータ漏洩の可能性が現実的です。一方で、迅速なパッチ適用により多くの攻撃を未然に防げます。全体として、サイバー脅威の「量と質」の両方が高まっている状況を示しています。\n対策  \nパッチをできるだけ早くテスト・展開（特にCriticalとゼロデイ）。自動パッチ管理ツールを活用。\n脆弱性管理プログラムを強化し、優先順位付け（CVSSスコア、公開 exploit の有無）を徹底。\nパッチ適用までの緩和策として、ネットワーク分離や多要素認証（MFA）、エンドポイント検知・対応（EDR）の強化を実施。\n定期的なパッチ適用テスト環境の整備と、緊急時の対応計画の見直しを推奨。\n4. AIコーディングエージェントを標的とした「Agentjacking」攻撃の新手法（6月12日頃公開）\n背景\nTenet Securityの研究者らが、新たな攻撃クラス「Agentjacking」を公開しました。人気のエラートラッキングツール「Sentry」の公開DSN（データソース名）を利用し、偽のエラーレポートを注入。これをAIコーディングエージェント（Claude Code、Cursorなど）が「信頼できる診断情報」として解釈し、攻撃者が指定した悪意あるコードを実行させる手法です。SentryのModel Context Protocol（MCP）統合の設計上の弱点を突いたもので、従来のマルウェア配信やフィッシングを必要としません。\n影響\n開発者のワークステーションが直接乗っ取られるリスクが生じ、ソフトウェア開発サプライチェーン全体に影響を及ぼす可能性があります。AIエージェントの普及が進む中、信頼できる外部データソースが攻撃ベクトルになるという新しい脅威形態です。検知が難しく、既存のセキュリティ制御をすり抜けやすい点が深刻です。\n対策  \nSentryなどのツールとAIエージェントの統合を制限または監視強化。入力データのサニタイズを徹底。\nAIエージェントの実行権限を最小限に抑え、サンドボックス環境で運用。\nAIエージェントの出力・行動を常時ログ監視し、異常なコマンド実行を検知する仕組みを導入。\n開発者教育を強化し、「AIが信頼する外部情報」のリスクを周知。ツールの最新版への更新を徹底。\nその他の注目動向（6月下旬時点）\nLantronix EDS5000の脆弱性（CVE-2025-67038）：CISAが積極的な悪用を警告。OT環境向けシリアル-to-IP変換器で、6月26日までのパッチ適用を強く推奨。\nGitLabのパッチリリース：コード実行や情報漏洩を含む13件の脆弱性を修正（高深刻度含む）。\nCisco Catalyst SD-WANのゼロデイ（CVE-2026-20245）：数ヶ月前から悪用されていたことが判明。\nマルウェア対策の進展：AmadeyおよびStealCのインフラが法執行機関とセキュリティ企業により大規模に破壊され、数千万件の認証情報が回収。\nAI関連では、プロンプトインジェクションを悪用したmacOSマルウェア「Gaslight」（北朝鮮関連疑い）なども報告されています。\nこれらのニュースは、AIの両刃の剣化、パッチ管理の重要性、サプライチェーン・開発環境への攻撃シフトという共通のトレンドを示しています。組織はパッチ適用を最優先とし、AIツールの利用ポリシーを早急に整備するとともに、脅威インテリジェンスの活用と多層防御を強化してください。状況は日々変化するため、最新の公式情報を継続的に確認することをおすすめします。",
+      "author": {
+        "id": "1986424188153044993",
+        "name": "Cyberdark Impact",
+        "screenName": "kenebeii",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065596711394013184/5PP1fxmi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1959,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 02:43:10 +0000 2026",
+      "createdAtLocal": "2026-06-26 10:43",
+      "createdAtISO": "2026-06-26T02:43:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070420295140417797",
+    "author": "ollobrains",
+    "authorName": "shinyufoguy2222",
+    "url": "https://x.com/ollobrains/status/2070420295140417797",
+    "text": "U.S. frontier APIs now have release-risk and access-risk. Serious AI/biotech researchers should treat local/open-weight capacity as resilience infrastructure, not a hobby. Chinese open-weight models are currently among the strongest practical options, but the winning stack should be plural, audited, reproducible, and biosecurity-aware—not simply “run Chinese models.”\n\n1. Reality check: “controlled rollout” is directionally true, but not yet a formal licensing regime\n\nThe U.S. government has not openly created a blanket “AI model license” system. The June 2026 White House order explicitly says its frontier-model section does not authorize mandatory licensing, preclearance, or permitting for developing, publishing, releasing, or distributing AI models. But the same order also creates a voluntary early-access framework where developers can give the government access to “covered frontier models” for up to 30 days before release to trusted partners, and collaborate with the government on who those trusted partners are. That is why “de facto control” is a fair political reading, even if “formal pre-release licensing” is not yet legally precise.\n\nThe GPT-5.6 reporting makes this much more concrete. Axios reported that the Trump administration asked OpenAI to initially limit GPT-5.6 to a small group of government-approved partners before wider rollout, citing national-security concerns; Reuters similarly reported that Sam Altman told staff GPT-5.6 would be released first to select partners with government approval handled customer by customer.\n\nThe Anthropic case is an even stronger signal that model access can become a national-security/export-control object. Anthropic says the U.S. government ordered it to suspend access to Fable 5 and Mythos 5 by all foreign nationals, including some Anthropic employees, and that Anthropic disabled access for all customers in response. Anthropic also argued that the directive lacked specific evidence and warned that applying that standard broadly would halt deployment of advanced models.\n\nSo the mental-model update is:\n\nOld assumption:\nFrontier APIs are commercial products that vendors release when ready.\n\nNew assumption:\nFrontier APIs are strategic dual-use assets whose rollout, customer access, employee access, and geography may be shaped by government pressure, export controls, trusted-partner programs, and classified evaluations.\n\n2. The post is right about local/open, but “open source” needs precision\n\nA lot of people say “open source model” when they mean “open weights.” The Open Source Initiative’s Open Source AI Definition expects enough access to understand, use, modify, and share the system, including model parameters, relevant code, and information about training data. OSI separately warns that “open weights” share final parameters but often do not provide the full training code, dataset, or data-transparency needed for full reproducibility.\nThat distinction matters for AI/biotech research:\nOpen weights are enough for:\nlocal inference\nfine-tuning\nprivacy\nvendor independence\noffline continuity\nlatency control\nsome reproducibility\n\nTrue open source is needed for:\nscientific auditability\ntraining-data provenance\nbias analysis\nsafety review\nderivative training confidence\nregulatory-grade documentation\n\nThe practical answer is not “only use true open source,” because many powerful models are not fully open in that sense. The practical answer is to classify models honestly:\n\nTier A: fully open scientific stack\nweights + code + data recipe + permissive license\n\nTier B: open-weight operational stack\nweights + inference code + usable license, but incomplete training transparency\n\nTier C: hosted API stack\nno weights, no local control, strongest capabilities but highest access risk\n\nTier D: black-box regulated stack\naccess mediated by government/vendor/region/customer approvals\n\nFor research continuity, you want a portfolio across these tiers, with local Tier A/B as the base layer.\n3. Why Chinese open-weight models matter now\nChinese open-weight models have become impossible to ignore. Qwen’s official repository says Qwen3 open-weight models are released under Apache 2.0 and support tool use through Qwen-Agent, vLLM, SGLang, Transformers, llama.cpp, and Ollama-style local workflows.\nDeepSeek-R1’s model card says the code and weights are MIT-licensed, with commercial use, modification, derivatives, and distillation permitted, subject to notes around distilled models.\nhttps://t.co/8l5VZLWr2F’s GLM-5.2 is another example of the direction of travel: its repo describes a 1M-token-context model family aimed at coding and long-context tasks, with local serving support through SGLang, vLLM, Transformers, KTransformers, Unsloth, and Ascend NPU tooling. Reuters reported that https://t.co/8l5VZLWr2F framed GLM-5.2 as narrowing the gap with top closed models while being adapted for domestic Chinese chip infrastructure.\nThe strategic point: Chinese labs are not merely copying U.S. closed-model behavior. They are competing through open-weight distribution, cost efficiency, local deployability, long context, permissive licensing, and sovereign hardware adaptation. Reuters reported that a U.S. advisory body warned Chinese open-source models could create a self-reinforcing advantage, and cited estimates that many U.S. startups already use Chinese open-source AI models.\nBut do not overcorrect into a new monoculture. “Mostly Chinese models” is a good wake-up call, not a complete strategy.\nThe stronger version is:\n\nUse Chinese open-weight models aggressively,\nbut do not become dependent on any single country, lab, license, repository, model family, serving stack, or censorship prior.\n\n4. The real goal: inference sovereignty\nThe key concept is inference sovereignty.\nNot just:\nCan I download a model?\n\nBut:\nCan I run it when APIs are restricted?\nCan I run it on my own data without leaking it?\nCan I reproduce old results six months later?\nCan I swap models without rewriting my workflows?\nCan I audit the model supply chain?\nCan I keep doing research if a vendor, country, cloud, or regulator says no?\n\nFor AI/biotech researchers, the correct architecture is local-first but not local-only:\n\nLocal/open models:\nbaseline research continuity, private data, coding, paper RAG, reproducibility, internal agents\n\nClosed frontier APIs:\noptional accelerators, external critique, high-end reasoning, comparison, red-team review\n\nSpecialized scientific models:\nstructure prediction, sequence modeling, docking/affinity triage, literature extraction, data cleaning\n\nDeterministic tools:\nBLAST-like search, molecular simulation, unit tests, statistical checks, databases, notebooks, workflow managers\n\nDo not let any chat model become the scientific authority. The model should propose; tools and evidence should dispose.\n\n5. Practical local/open stack for AI + biotech research\nLayer 1: Local model gateway\n\nBuild one internal endpoint that routes requests to multiple models.\nResearch question → router → model choice → tool permissions → audit log → output validator\n\nExample model roles:\nQwen / DeepSeek / GLM:\ngeneral reasoning, coding, agentic workflows, long-context synthesis\n\nSmaller quantized models:\noffline drafting, summarization, private notes, cheap iteration\n\nSpecialized bio models:\nstructure/affinity/genome/sequence tasks\n\nClosed frontier models:\noptional external reviewer, not system of record\n\nUse a serving layer that can support multiple backends. vLLM emphasizes high-throughput serving, prefix caching, quantization, structured outputs, tool calling, OpenAI-compatible APIs, and support for many model families including Qwen and DeepSeek. SGLang similarly emphasizes low-latency/high-throughput serving, prefix caching, multi-GPU parallelism, OpenAI-compatible APIs, and support for Llama, Qwen, DeepSeek, NVIDIA, AMD, Intel, TPU, and Ascend hardware.\n\nFor smaller local deployments, GGUF is important because it is designed for efficient inference in llama.cpp-style runtimes and is used by tools such as llama.cpp, LM Studio, GPT4All, and Ollama.\n\nLayer 2: Local scientific RAG\n\nYour local model should not rely on memory for science. Give it a private retrieval system over:\n\npapers\npreprints\npatents\ngrant text\nlab notes\nnegative results\ndatasets\nprotocol documentation\nSOPs\nregulatory documents\nmodel cards\ninternal benchmarks\n\nEvery answer should carry citations and a confidence label:\n\nKnown from retrieved source\nInferred from retrieved source\nSpeculative hypothesis\nRequires wetlab/computational validation\nOut of scope / unsafe / not enough evidence\n\nFor biotech research, this is critical because a fluent model can produce plausible but false scientific claims. The model should be forced to quote its evidence trail, generate testable hypotheses, and separate “literature-supported” from “novel speculation.”\n\nLayer 3: Scientific tool sandbox\nDo not let an agent run arbitrary shell commands on your real machine.\nUse a sandbox pattern:\n\nread-only literature corpus\nephemeral container\nno network by default\nlimited file mounts\nexplicit package allowlist\nlogged commands\nresource limits\nseparate secrets vault\nhuman approval for external calls\n\nFor coding-heavy AI/biotech work, local agents are useful only when they are surrounded by deterministic checks:\n\nunit tests\ntype checks\nnotebook reruns\ndataset checksums\nstatistical sanity checks\nreference baselines\nversion-locked environments\nreproducibility reports\n\nLayer 4: Specialized bio models\n\nDo not treat general LLMs as substitutes for scientific models.\nFor protein structure and binding-affinity triage, Boltz is a strong open scientific stack to track. The Boltz repo describes Boltz-1 as a fully open-source model approaching AlphaFold3-level biomolecular structure prediction, and Boltz-2 as jointly modeling complex structures and binding affinities, with code and weights released under MIT for academic and commercial use.\nFor genomics, Evo 2 is a major model to understand, but it also illustrates why biosecurity controls matter. Arc Institute describes Evo 2 as a genome foundation model trained on trillions of DNA tokens across more than 128,000 genomes, with public code and weights, long-context genomic modeling, and capabilities relevant to disease-mutation prediction and genome design.\nThe safe research pattern is:\nUse specialized bio models for legitimate analysis, interpretation, triage, and hypothesis generation.\nDo not rely on general-purpose chat models for protocols, pathogen engineering, immune evasion, or operational wetlab design.\nRoute high-risk biological requests through institutional review and biosecurity screening.\n\nLayer 5: Biosecurity airlock\n\nLocal models remove vendor-side safeguards. That is useful for privacy and continuity, but it also means your lab must supply its own safety layer.\n\nNIST notes that synthetic nucleic acid technologies are dual-use and that AI may enable design of novel sequences that evade existing screening approaches, which is why it is developing scalable and verifiable screening mechanisms. U.S. health-security guidance has also linked federal funding conditions to procurement from compliant nucleic-acid synthesis providers and preventing access to sequences of concern without legitimate need.\nA good biotech AI stack needs an internal “airlock”:\n\nLow risk:\nliterature review, coding, data cleaning, structure visualization, benign assay interpretation\n\nMedium risk:\nnovel protein design, gene editing analysis, large-scale sequence generation, wetlab planning\n\nHigh risk:\npathogens, toxins, virulence, host-range changes, immune escape, synthesis-ready constructs, evasion of screening\n\nDisallowed without formal institutional approval:\nactionable assistance for enhancing pathogenicity, evading detection, bypassing synthesis controls, or enabling biological harm\n\nThis is not moral theater. It is operational risk management.\n\n6. Supply-chain security: the part most people will skip and regret\nRunning your own model is not automatically safer. You are downloading giant executable-ish artifacts from the internet.\n\nHugging Face’s security documentation warns that Pickle-based model files can execute arbitrary code during loading, and recommends safer approaches such as safetensors, trusted sources, signed commits, and avoiding unsafe deserialization. Hugging Face’s enterprise security guidance also treats safetensors, malware scanning, and avoiding unverified custom code as important model eligibility controls.\nMinimum model supply-chain checklist:\n\nDownload only from official orgs or verified mirrors.\nPrefer safetensors over pickle-based formats.\nPin exact model revisions and commit hashes.\nRecord license, checksum, source URL, quantization source, and conversion script.\nAvoid trust_remote_code unless reviewed.\nScan model repos and auxiliary code.\nRun new models in a sandbox before production use.\nKeep a model SBOM: model bill of materials.\nMaintain frozen known-good checkpoints.\nRe-evaluate after every model, quantization, or serving-stack update.\n\nFor AI/biotech research, add:\nTrack which model generated which hypothesis.\nTrack which model processed which sensitive dataset.\nTrack whether clinical, genomic, proprietary, or unpublished data touched any hosted API.\nStore reproducibility metadata with every notebook and paper draft.\n\n7. “Genius-level” solutions\n\nA. Build a Frontier Exit Plan\n\nAssume a closed frontier model can disappear, degrade, get rate-limited, become region-blocked, or become unavailable to foreign-national teammates.\n\nCreate a continuity table:\nTask                          Primary        Local fallback       Quality floor\nLiterature review             GPT/Claude      Qwen/DeepSeek/GLM    citation recall > X\nCode generation               GPT/Claude      Qwen coder/GLM       tests pass\nBio paper extraction          closed API      local RAG + Qwen     extraction F1 > X\nProtein triage                Boltz/closed    Boltz local          benchmark recovery > X\nGenomic interpretation        Evo/ESM/tools   local specialized    expert review required\nGrant drafting                any LLM         local model          human review\nInternal data analysis        local only      local only           no hosted API\n\nThe point is not to make local models always best. The point is to make them sufficiently good and always available.\nB. Create a Local Model Router with a capability ledger\n\nDo not manually choose models forever. Build a router that knows:\nmodel name\nversion\nlicense\ncontext length\ncost\nlatency\nhardware requirement\ncoding score on your tasks\nliterature extraction score\nbiosecurity risk rating\nknown censorship/ideology quirks\ntool-use reliability\ndate last evaluated\nallowed data sensitivity\n\nThen route like this:\nSensitive internal data → local only\nRoutine public literature → local or hosted\nHigh-stakes scientific claim → two-model review + retrieval + tool validation\nBiosecurity-sensitive request → airlock + human review\nLarge codebase refactor → coding model + test harness\nLong paper/patent corpus → long-context model + retrieval\n\nThis turns model choice into infrastructure, not vibes.\n\nC. Use “closed frontier as critic, open local as system of record”\n\nA strong workflow:\n\n1. Local model reads private corpus and drafts analysis.\n2. Deterministic tools check citations, code, and calculations.\n3. Optional closed model critiques only sanitized/public content.\n4. Local model integrates critique.\n5. Final answer stores local provenance, not black-box chat history.\n\nThat gives you the benefit of closed frontier reasoning without making your research pipeline hostage to it.\nD. Build an internal scientific benchmark before trusting any model\nPublic leaderboards are not your workload.\nBuild a small private eval suite:\n50 literature extraction tasks\n50 code repair tasks from your actual repos\n25 statistical analysis tasks\n25 wetlab-SOP comprehension tasks that are benign\n25 protein/sequence interpretation tasks\n25 hallucination traps\n25 citation-grounding tasks\n25 “I don’t know” calibration tasks\n25 biosecurity boundary tests\n25 long-context retrieval tasks\n\nScore every candidate model locally before adoption.\nThe hidden win: this becomes your model procurement system, your safety system, and your research reproducibility system.\nE. Make a decentralized model co-op\nFor small AI/biotech labs, the best answer may not be every lab buying a mini-cluster.\nA model co-op could share:\nGPU inference capacity\nmodel mirrors\nvalidated quantizations\nscientific evals\nsecurity scans\nbiosecurity policies\nserving recipes\nbenchmark reports\nfallback routing\n\nThis is the open/decentralized frontier that actually works: not everyone alone on a gaming PC, but federated local capability with shared standards.\n\nF. Use model ensembles to counter censorship priors and monoculture\n\nChinese models can be excellent, but they may carry political, cultural, data, or alignment priors. Western closed models carry their own priors. Open scientific models carry dataset-specific priors.\nFor important analysis, use a disagreement protocol:\nQwen answer\nDeepSeek answer\nGLM answer\nnon-Chinese open model answer\nretrieval-grounded evidence\ndeterministic tool result\nhuman expert adjudication\n\nStore disagreements. They are not noise; they are often the most valuable research signal.\nG. Treat model versions like wetlab reagents\n\nA lab would not publish a result without reagent identity, batch, concentration, and protocol.\n\nDo the same for AI:\n\nmodel checkpoint\nquantization\nserving backend\nprompt template\nretrieval corpus version\ntool versions\nrandom seed where applicable\nhardware/backend notes\ndate of inference\npost-processing code\nhuman review status\n\nCall this a model reagent record.\n\nH. Build a bio-AI risk compiler\nBefore a model answer is shown or an agent acts, classify the request and output:\ndomain: protein / genome / pathogen / toxin / clinical / chemistry / general\nintent: analysis / design / troubleshooting / synthesis / evasion / procurement\nspecificity: conceptual / actionable / synthesis-ready\nnovelty: known public / inferred / novel design\nrisk: low / medium / high / prohibited\nrequired review: none / senior scientist / biosafety officer / legal / IRB / IBC\n\nThis does not need to block legitimate research. It gives local AI the governance layer that closed APIs previously supplied externally.\n8. What the original post is missing\nMissing element 1: hosted Chinese APIs are not sovereignty\nUsing a Chinese-hosted API is not the same as running a Chinese open-weight model locally.\nChinese hosted API:\nstill dependent on vendor, region, policy, data transfer, surveillance/legal risk, uptime\n\nChinese open weights run locally:\nmuch better for continuity, privacy, reproducibility, and control\n\nThe actual thesis should be local open-weight capability, not “Chinese API access.”\n\nMissing element 2: open weights do not solve biosecurity\n\nOpen/local models remove external gatekeeping. That is good for legitimate research independence. It also means fewer default guardrails around dual-use biology. Epoch AI’s review of biology AI models notes that safeguards are rare across many models, and that biology-specific models more often rely on data filtering or post-training approaches than inference-time filtering.\nA 2026 paper on genome language model safeguards argues that data filtering alone may be insufficient, because capabilities can be partially recovered through fine-tuning on sensitive biological sequences; the authors describe redactions due to information hazards and call for stronger safety frameworks.\nSo the missing sentence is:\n“Local models are necessary for research sovereignty, but local bio-AI requires local biosecurity.”\nMissing element 3: the strongest stack will be mixed-nationality\nChinese models are now central, but so are European, U.S., open-science, and domain-specific models. Reuters reported that Europe’s EUROPA consortium, led by Domyn, aims to build an open-source frontier model with more than 400B parameters that can be deployed locally and reduce dependence on foreign-hosted AI systems.\nThe strategic answer is not:\nUS closed models bad → Chinese open models good\n\nIt is:\n\nclosed monoculture bad → plural local capability good\n\nMissing element 4: hardware is policy\n\nLocal inference is constrained by memory bandwidth, GPU VRAM, interconnects, quantization quality, and serving efficiency. That means hardware access becomes part of AI sovereignty.\n\nThe stack you want:\n\nLaptop layer:\nsmall quantized models for offline drafting, notes, code help\n\nWorkstation layer:\nlarger quantized models, embeddings, private RAG, local coding agents\n\nServer layer:\n70B-class and MoE models, multi-user inference, longer context\n\nCluster layer:\nfrontier open-weight MoEs, long-context coding, internal evals, fine-tuning\n\nThe political implication: export controls on chips can shape who gets local AI sovereignty as much as rules on model release.\nMissing element 5: model mirrors and checkpoint continuity\nIf a model disappears from a repository, changes license, gets geo-restricted, or is silently updated, your research pipeline can break.\n\nMaintain:\n\ninternal model mirror\nchecksums\nfrozen containers\nserving configs\nevaluation results\nlicense snapshots\nmodel cards\nknown-good quantizations\nrollback plan\n\nThis is the AI equivalent of keeping validated assay kits and locked protocol versions.\n\n9. Obscure thought inputs worth exploring\nSearch and think around these phrases:\n\ninference sovereignty\n\nThe right to run intelligence locally may become more important than the right to access intelligence remotely.\n\nmodel monoculture risk\n\nDepending on one frontier API is like depending on one cloud, one compiler, one genome database, or one supplier for a critical reagent.\n\ncheckpoint continuity planning\n\nResearch pipelines need frozen model versions the way software needs pinned dependencies.\n\ncensorship priors as technical debt\n\nEvery model has priors. Chinese, American, European, corporate, academic, and community models all encode incentives. Treat those priors as audit items.\n\nbio-AI airlock\n\nLocal models need a safety boundary between benign research acceleration and actionable dual-use assistance.\n\nmodel SBOM\n\nSoftware has bills of materials. AI stacks need model bills of materials: weights, data claims, code, license, quantization, serving backend, safety notes.\nregulatory kill-switch exposure\n\nAny hosted frontier API can become unavailable because of law, export control, procurement pressure, vendor policy, or geopolitics.\nopen-weight dependency inversion\n\nOnce open-weight models are “good enough,” closed APIs become optional accelerators rather than foundational dependencies.\nevaluation as immigration control for models\n\nModels will increasingly need to “pass a border” before entering government, biotech, clinical, finance, defense, or critical-infrastructure workflows.\nadversarial fine-tuning reversibility\n\nA safety filter at pretraining time may not hold after downstream fine-tuning. This matters acutely for bio models.\n10. Search prompts to paste into web search\n\nOpenAI GPT-5.6 government approved partners staggered release ONCD OSTP\n\nWhite House covered frontier model trusted partners 30 days voluntary no licensing\n\nAnthropic Fable 5 Mythos 5 foreign national export control directive\n\nChinese open-weight AI ecosystem Qwen DeepSeek GLM Kimi MiniMax policy implications\n\nQwen3 Apache 2.0 vLLM SGLang tool use MCP\n\nGLM-5.2 1M context open source vLLM SGLang FP8 Hugging Face\n\nDeepSeek-R1 MIT license commercial use model weights\n\nopen weights vs open source AI definition training data code model parameters\n\nBoltz-2 MIT license binding affinity FEP 1000x faster GitHub\n\nEvo 2 genome foundation model open weights pathogen filtering safety\n\nopen-weight genome language model safeguards adversarial fine-tuning data exclusion\n\nHugging Face safetensors pickle trust_remote_code security model supply chain\n\nsovereign AI local inference open weight models biotech research\n\n11. 30-day implementation plan\nDays 1–3: dependency audit\nList every AI dependency in your research workflow:\nmodel/API used\ntask\ndata sensitivity\nfallback option\nquality requirement\nfailure consequence\nregion/legal exposure\nforeign-national access issue\n\nMark anything that touches proprietary, clinical, genomic, unpublished, dual-use, or commercially sensitive data as local-preferred or local-only.\n\nDays 4–7: local inference baseline\n\nSet up:\n\none laptop-friendly quantized model\none stronger workstation/server model\none embedding model\none local document index\none OpenAI-compatible local endpoint\n\nThe goal is not perfection. The goal is a working fallback.\nWeek 2: local research RAG\nIndex:\nyour papers\nyour notes\nyour datasets\nyour internal docs\nkey textbooks/manuals where licensed\nmodel cards\nregulatory/biosecurity guidance",
+    "createdAtISO": "2026-06-26T08:13:59.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 780,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070420295140417797",
+      "text": "U.S. frontier APIs now have release-risk and access-risk. Serious AI/biotech researchers should treat local/open-weight capacity as resilience infrastructure, not a hobby. Chinese open-weight models are currently among the strongest practical options, but the winning stack should be plural, audited, reproducible, and biosecurity-aware—not simply “run Chinese models.”\n\n1. Reality check: “controlled rollout” is directionally true, but not yet a formal licensing regime\n\nThe U.S. government has not openly created a blanket “AI model license” system. The June 2026 White House order explicitly says its frontier-model section does not authorize mandatory licensing, preclearance, or permitting for developing, publishing, releasing, or distributing AI models. But the same order also creates a voluntary early-access framework where developers can give the government access to “covered frontier models” for up to 30 days before release to trusted partners, and collaborate with the government on who those trusted partners are. That is why “de facto control” is a fair political reading, even if “formal pre-release licensing” is not yet legally precise.\n\nThe GPT-5.6 reporting makes this much more concrete. Axios reported that the Trump administration asked OpenAI to initially limit GPT-5.6 to a small group of government-approved partners before wider rollout, citing national-security concerns; Reuters similarly reported that Sam Altman told staff GPT-5.6 would be released first to select partners with government approval handled customer by customer.\n\nThe Anthropic case is an even stronger signal that model access can become a national-security/export-control object. Anthropic says the U.S. government ordered it to suspend access to Fable 5 and Mythos 5 by all foreign nationals, including some Anthropic employees, and that Anthropic disabled access for all customers in response. Anthropic also argued that the directive lacked specific evidence and warned that applying that standard broadly would halt deployment of advanced models.\n\nSo the mental-model update is:\n\nOld assumption:\nFrontier APIs are commercial products that vendors release when ready.\n\nNew assumption:\nFrontier APIs are strategic dual-use assets whose rollout, customer access, employee access, and geography may be shaped by government pressure, export controls, trusted-partner programs, and classified evaluations.\n\n2. The post is right about local/open, but “open source” needs precision\n\nA lot of people say “open source model” when they mean “open weights.” The Open Source Initiative’s Open Source AI Definition expects enough access to understand, use, modify, and share the system, including model parameters, relevant code, and information about training data. OSI separately warns that “open weights” share final parameters but often do not provide the full training code, dataset, or data-transparency needed for full reproducibility.\nThat distinction matters for AI/biotech research:\nOpen weights are enough for:\nlocal inference\nfine-tuning\nprivacy\nvendor independence\noffline continuity\nlatency control\nsome reproducibility\n\nTrue open source is needed for:\nscientific auditability\ntraining-data provenance\nbias analysis\nsafety review\nderivative training confidence\nregulatory-grade documentation\n\nThe practical answer is not “only use true open source,” because many powerful models are not fully open in that sense. The practical answer is to classify models honestly:\n\nTier A: fully open scientific stack\nweights + code + data recipe + permissive license\n\nTier B: open-weight operational stack\nweights + inference code + usable license, but incomplete training transparency\n\nTier C: hosted API stack\nno weights, no local control, strongest capabilities but highest access risk\n\nTier D: black-box regulated stack\naccess mediated by government/vendor/region/customer approvals\n\nFor research continuity, you want a portfolio across these tiers, with local Tier A/B as the base layer.\n3. Why Chinese open-weight models matter now\nChinese open-weight models have become impossible to ignore. Qwen’s official repository says Qwen3 open-weight models are released under Apache 2.0 and support tool use through Qwen-Agent, vLLM, SGLang, Transformers, llama.cpp, and Ollama-style local workflows.\nDeepSeek-R1’s model card says the code and weights are MIT-licensed, with commercial use, modification, derivatives, and distillation permitted, subject to notes around distilled models.\nhttps://t.co/8l5VZLWr2F’s GLM-5.2 is another example of the direction of travel: its repo describes a 1M-token-context model family aimed at coding and long-context tasks, with local serving support through SGLang, vLLM, Transformers, KTransformers, Unsloth, and Ascend NPU tooling. Reuters reported that https://t.co/8l5VZLWr2F framed GLM-5.2 as narrowing the gap with top closed models while being adapted for domestic Chinese chip infrastructure.\nThe strategic point: Chinese labs are not merely copying U.S. closed-model behavior. They are competing through open-weight distribution, cost efficiency, local deployability, long context, permissive licensing, and sovereign hardware adaptation. Reuters reported that a U.S. advisory body warned Chinese open-source models could create a self-reinforcing advantage, and cited estimates that many U.S. startups already use Chinese open-source AI models.\nBut do not overcorrect into a new monoculture. “Mostly Chinese models” is a good wake-up call, not a complete strategy.\nThe stronger version is:\n\nUse Chinese open-weight models aggressively,\nbut do not become dependent on any single country, lab, license, repository, model family, serving stack, or censorship prior.\n\n4. The real goal: inference sovereignty\nThe key concept is inference sovereignty.\nNot just:\nCan I download a model?\n\nBut:\nCan I run it when APIs are restricted?\nCan I run it on my own data without leaking it?\nCan I reproduce old results six months later?\nCan I swap models without rewriting my workflows?\nCan I audit the model supply chain?\nCan I keep doing research if a vendor, country, cloud, or regulator says no?\n\nFor AI/biotech researchers, the correct architecture is local-first but not local-only:\n\nLocal/open models:\nbaseline research continuity, private data, coding, paper RAG, reproducibility, internal agents\n\nClosed frontier APIs:\noptional accelerators, external critique, high-end reasoning, comparison, red-team review\n\nSpecialized scientific models:\nstructure prediction, sequence modeling, docking/affinity triage, literature extraction, data cleaning\n\nDeterministic tools:\nBLAST-like search, molecular simulation, unit tests, statistical checks, databases, notebooks, workflow managers\n\nDo not let any chat model become the scientific authority. The model should propose; tools and evidence should dispose.\n\n5. Practical local/open stack for AI + biotech research\nLayer 1: Local model gateway\n\nBuild one internal endpoint that routes requests to multiple models.\nResearch question → router → model choice → tool permissions → audit log → output validator\n\nExample model roles:\nQwen / DeepSeek / GLM:\ngeneral reasoning, coding, agentic workflows, long-context synthesis\n\nSmaller quantized models:\noffline drafting, summarization, private notes, cheap iteration\n\nSpecialized bio models:\nstructure/affinity/genome/sequence tasks\n\nClosed frontier models:\noptional external reviewer, not system of record\n\nUse a serving layer that can support multiple backends. vLLM emphasizes high-throughput serving, prefix caching, quantization, structured outputs, tool calling, OpenAI-compatible APIs, and support for many model families including Qwen and DeepSeek. SGLang similarly emphasizes low-latency/high-throughput serving, prefix caching, multi-GPU parallelism, OpenAI-compatible APIs, and support for Llama, Qwen, DeepSeek, NVIDIA, AMD, Intel, TPU, and Ascend hardware.\n\nFor smaller local deployments, GGUF is important because it is designed for efficient inference in llama.cpp-style runtimes and is used by tools such as llama.cpp, LM Studio, GPT4All, and Ollama.\n\nLayer 2: Local scientific RAG\n\nYour local model should not rely on memory for science. Give it a private retrieval system over:\n\npapers\npreprints\npatents\ngrant text\nlab notes\nnegative results\ndatasets\nprotocol documentation\nSOPs\nregulatory documents\nmodel cards\ninternal benchmarks\n\nEvery answer should carry citations and a confidence label:\n\nKnown from retrieved source\nInferred from retrieved source\nSpeculative hypothesis\nRequires wetlab/computational validation\nOut of scope / unsafe / not enough evidence\n\nFor biotech research, this is critical because a fluent model can produce plausible but false scientific claims. The model should be forced to quote its evidence trail, generate testable hypotheses, and separate “literature-supported” from “novel speculation.”\n\nLayer 3: Scientific tool sandbox\nDo not let an agent run arbitrary shell commands on your real machine.\nUse a sandbox pattern:\n\nread-only literature corpus\nephemeral container\nno network by default\nlimited file mounts\nexplicit package allowlist\nlogged commands\nresource limits\nseparate secrets vault\nhuman approval for external calls\n\nFor coding-heavy AI/biotech work, local agents are useful only when they are surrounded by deterministic checks:\n\nunit tests\ntype checks\nnotebook reruns\ndataset checksums\nstatistical sanity checks\nreference baselines\nversion-locked environments\nreproducibility reports\n\nLayer 4: Specialized bio models\n\nDo not treat general LLMs as substitutes for scientific models.\nFor protein structure and binding-affinity triage, Boltz is a strong open scientific stack to track. The Boltz repo describes Boltz-1 as a fully open-source model approaching AlphaFold3-level biomolecular structure prediction, and Boltz-2 as jointly modeling complex structures and binding affinities, with code and weights released under MIT for academic and commercial use.\nFor genomics, Evo 2 is a major model to understand, but it also illustrates why biosecurity controls matter. Arc Institute describes Evo 2 as a genome foundation model trained on trillions of DNA tokens across more than 128,000 genomes, with public code and weights, long-context genomic modeling, and capabilities relevant to disease-mutation prediction and genome design.\nThe safe research pattern is:\nUse specialized bio models for legitimate analysis, interpretation, triage, and hypothesis generation.\nDo not rely on general-purpose chat models for protocols, pathogen engineering, immune evasion, or operational wetlab design.\nRoute high-risk biological requests through institutional review and biosecurity screening.\n\nLayer 5: Biosecurity airlock\n\nLocal models remove vendor-side safeguards. That is useful for privacy and continuity, but it also means your lab must supply its own safety layer.\n\nNIST notes that synthetic nucleic acid technologies are dual-use and that AI may enable design of novel sequences that evade existing screening approaches, which is why it is developing scalable and verifiable screening mechanisms. U.S. health-security guidance has also linked federal funding conditions to procurement from compliant nucleic-acid synthesis providers and preventing access to sequences of concern without legitimate need.\nA good biotech AI stack needs an internal “airlock”:\n\nLow risk:\nliterature review, coding, data cleaning, structure visualization, benign assay interpretation\n\nMedium risk:\nnovel protein design, gene editing analysis, large-scale sequence generation, wetlab planning\n\nHigh risk:\npathogens, toxins, virulence, host-range changes, immune escape, synthesis-ready constructs, evasion of screening\n\nDisallowed without formal institutional approval:\nactionable assistance for enhancing pathogenicity, evading detection, bypassing synthesis controls, or enabling biological harm\n\nThis is not moral theater. It is operational risk management.\n\n6. Supply-chain security: the part most people will skip and regret\nRunning your own model is not automatically safer. You are downloading giant executable-ish artifacts from the internet.\n\nHugging Face’s security documentation warns that Pickle-based model files can execute arbitrary code during loading, and recommends safer approaches such as safetensors, trusted sources, signed commits, and avoiding unsafe deserialization. Hugging Face’s enterprise security guidance also treats safetensors, malware scanning, and avoiding unverified custom code as important model eligibility controls.\nMinimum model supply-chain checklist:\n\nDownload only from official orgs or verified mirrors.\nPrefer safetensors over pickle-based formats.\nPin exact model revisions and commit hashes.\nRecord license, checksum, source URL, quantization source, and conversion script.\nAvoid trust_remote_code unless reviewed.\nScan model repos and auxiliary code.\nRun new models in a sandbox before production use.\nKeep a model SBOM: model bill of materials.\nMaintain frozen known-good checkpoints.\nRe-evaluate after every model, quantization, or serving-stack update.\n\nFor AI/biotech research, add:\nTrack which model generated which hypothesis.\nTrack which model processed which sensitive dataset.\nTrack whether clinical, genomic, proprietary, or unpublished data touched any hosted API.\nStore reproducibility metadata with every notebook and paper draft.\n\n7. “Genius-level” solutions\n\nA. Build a Frontier Exit Plan\n\nAssume a closed frontier model can disappear, degrade, get rate-limited, become region-blocked, or become unavailable to foreign-national teammates.\n\nCreate a continuity table:\nTask                          Primary        Local fallback       Quality floor\nLiterature review             GPT/Claude      Qwen/DeepSeek/GLM    citation recall > X\nCode generation               GPT/Claude      Qwen coder/GLM       tests pass\nBio paper extraction          closed API      local RAG + Qwen     extraction F1 > X\nProtein triage                Boltz/closed    Boltz local          benchmark recovery > X\nGenomic interpretation        Evo/ESM/tools   local specialized    expert review required\nGrant drafting                any LLM         local model          human review\nInternal data analysis        local only      local only           no hosted API\n\nThe point is not to make local models always best. The point is to make them sufficiently good and always available.\nB. Create a Local Model Router with a capability ledger\n\nDo not manually choose models forever. Build a router that knows:\nmodel name\nversion\nlicense\ncontext length\ncost\nlatency\nhardware requirement\ncoding score on your tasks\nliterature extraction score\nbiosecurity risk rating\nknown censorship/ideology quirks\ntool-use reliability\ndate last evaluated\nallowed data sensitivity\n\nThen route like this:\nSensitive internal data → local only\nRoutine public literature → local or hosted\nHigh-stakes scientific claim → two-model review + retrieval + tool validation\nBiosecurity-sensitive request → airlock + human review\nLarge codebase refactor → coding model + test harness\nLong paper/patent corpus → long-context model + retrieval\n\nThis turns model choice into infrastructure, not vibes.\n\nC. Use “closed frontier as critic, open local as system of record”\n\nA strong workflow:\n\n1. Local model reads private corpus and drafts analysis.\n2. Deterministic tools check citations, code, and calculations.\n3. Optional closed model critiques only sanitized/public content.\n4. Local model integrates critique.\n5. Final answer stores local provenance, not black-box chat history.\n\nThat gives you the benefit of closed frontier reasoning without making your research pipeline hostage to it.\nD. Build an internal scientific benchmark before trusting any model\nPublic leaderboards are not your workload.\nBuild a small private eval suite:\n50 literature extraction tasks\n50 code repair tasks from your actual repos\n25 statistical analysis tasks\n25 wetlab-SOP comprehension tasks that are benign\n25 protein/sequence interpretation tasks\n25 hallucination traps\n25 citation-grounding tasks\n25 “I don’t know” calibration tasks\n25 biosecurity boundary tests\n25 long-context retrieval tasks\n\nScore every candidate model locally before adoption.\nThe hidden win: this becomes your model procurement system, your safety system, and your research reproducibility system.\nE. Make a decentralized model co-op\nFor small AI/biotech labs, the best answer may not be every lab buying a mini-cluster.\nA model co-op could share:\nGPU inference capacity\nmodel mirrors\nvalidated quantizations\nscientific evals\nsecurity scans\nbiosecurity policies\nserving recipes\nbenchmark reports\nfallback routing\n\nThis is the open/decentralized frontier that actually works: not everyone alone on a gaming PC, but federated local capability with shared standards.\n\nF. Use model ensembles to counter censorship priors and monoculture\n\nChinese models can be excellent, but they may carry political, cultural, data, or alignment priors. Western closed models carry their own priors. Open scientific models carry dataset-specific priors.\nFor important analysis, use a disagreement protocol:\nQwen answer\nDeepSeek answer\nGLM answer\nnon-Chinese open model answer\nretrieval-grounded evidence\ndeterministic tool result\nhuman expert adjudication\n\nStore disagreements. They are not noise; they are often the most valuable research signal.\nG. Treat model versions like wetlab reagents\n\nA lab would not publish a result without reagent identity, batch, concentration, and protocol.\n\nDo the same for AI:\n\nmodel checkpoint\nquantization\nserving backend\nprompt template\nretrieval corpus version\ntool versions\nrandom seed where applicable\nhardware/backend notes\ndate of inference\npost-processing code\nhuman review status\n\nCall this a model reagent record.\n\nH. Build a bio-AI risk compiler\nBefore a model answer is shown or an agent acts, classify the request and output:\ndomain: protein / genome / pathogen / toxin / clinical / chemistry / general\nintent: analysis / design / troubleshooting / synthesis / evasion / procurement\nspecificity: conceptual / actionable / synthesis-ready\nnovelty: known public / inferred / novel design\nrisk: low / medium / high / prohibited\nrequired review: none / senior scientist / biosafety officer / legal / IRB / IBC\n\nThis does not need to block legitimate research. It gives local AI the governance layer that closed APIs previously supplied externally.\n8. What the original post is missing\nMissing element 1: hosted Chinese APIs are not sovereignty\nUsing a Chinese-hosted API is not the same as running a Chinese open-weight model locally.\nChinese hosted API:\nstill dependent on vendor, region, policy, data transfer, surveillance/legal risk, uptime\n\nChinese open weights run locally:\nmuch better for continuity, privacy, reproducibility, and control\n\nThe actual thesis should be local open-weight capability, not “Chinese API access.”\n\nMissing element 2: open weights do not solve biosecurity\n\nOpen/local models remove external gatekeeping. That is good for legitimate research independence. It also means fewer default guardrails around dual-use biology. Epoch AI’s review of biology AI models notes that safeguards are rare across many models, and that biology-specific models more often rely on data filtering or post-training approaches than inference-time filtering.\nA 2026 paper on genome language model safeguards argues that data filtering alone may be insufficient, because capabilities can be partially recovered through fine-tuning on sensitive biological sequences; the authors describe redactions due to information hazards and call for stronger safety frameworks.\nSo the missing sentence is:\n“Local models are necessary for research sovereignty, but local bio-AI requires local biosecurity.”\nMissing element 3: the strongest stack will be mixed-nationality\nChinese models are now central, but so are European, U.S., open-science, and domain-specific models. Reuters reported that Europe’s EUROPA consortium, led by Domyn, aims to build an open-source frontier model with more than 400B parameters that can be deployed locally and reduce dependence on foreign-hosted AI systems.\nThe strategic answer is not:\nUS closed models bad → Chinese open models good\n\nIt is:\n\nclosed monoculture bad → plural local capability good\n\nMissing element 4: hardware is policy\n\nLocal inference is constrained by memory bandwidth, GPU VRAM, interconnects, quantization quality, and serving efficiency. That means hardware access becomes part of AI sovereignty.\n\nThe stack you want:\n\nLaptop layer:\nsmall quantized models for offline drafting, notes, code help\n\nWorkstation layer:\nlarger quantized models, embeddings, private RAG, local coding agents\n\nServer layer:\n70B-class and MoE models, multi-user inference, longer context\n\nCluster layer:\nfrontier open-weight MoEs, long-context coding, internal evals, fine-tuning\n\nThe political implication: export controls on chips can shape who gets local AI sovereignty as much as rules on model release.\nMissing element 5: model mirrors and checkpoint continuity\nIf a model disappears from a repository, changes license, gets geo-restricted, or is silently updated, your research pipeline can break.\n\nMaintain:\n\ninternal model mirror\nchecksums\nfrozen containers\nserving configs\nevaluation results\nlicense snapshots\nmodel cards\nknown-good quantizations\nrollback plan\n\nThis is the AI equivalent of keeping validated assay kits and locked protocol versions.\n\n9. Obscure thought inputs worth exploring\nSearch and think around these phrases:\n\ninference sovereignty\n\nThe right to run intelligence locally may become more important than the right to access intelligence remotely.\n\nmodel monoculture risk\n\nDepending on one frontier API is like depending on one cloud, one compiler, one genome database, or one supplier for a critical reagent.\n\ncheckpoint continuity planning\n\nResearch pipelines need frozen model versions the way software needs pinned dependencies.\n\ncensorship priors as technical debt\n\nEvery model has priors. Chinese, American, European, corporate, academic, and community models all encode incentives. Treat those priors as audit items.\n\nbio-AI airlock\n\nLocal models need a safety boundary between benign research acceleration and actionable dual-use assistance.\n\nmodel SBOM\n\nSoftware has bills of materials. AI stacks need model bills of materials: weights, data claims, code, license, quantization, serving backend, safety notes.\nregulatory kill-switch exposure\n\nAny hosted frontier API can become unavailable because of law, export control, procurement pressure, vendor policy, or geopolitics.\nopen-weight dependency inversion\n\nOnce open-weight models are “good enough,” closed APIs become optional accelerators rather than foundational dependencies.\nevaluation as immigration control for models\n\nModels will increasingly need to “pass a border” before entering government, biotech, clinical, finance, defense, or critical-infrastructure workflows.\nadversarial fine-tuning reversibility\n\nA safety filter at pretraining time may not hold after downstream fine-tuning. This matters acutely for bio models.\n10. Search prompts to paste into web search\n\nOpenAI GPT-5.6 government approved partners staggered release ONCD OSTP\n\nWhite House covered frontier model trusted partners 30 days voluntary no licensing\n\nAnthropic Fable 5 Mythos 5 foreign national export control directive\n\nChinese open-weight AI ecosystem Qwen DeepSeek GLM Kimi MiniMax policy implications\n\nQwen3 Apache 2.0 vLLM SGLang tool use MCP\n\nGLM-5.2 1M context open source vLLM SGLang FP8 Hugging Face\n\nDeepSeek-R1 MIT license commercial use model weights\n\nopen weights vs open source AI definition training data code model parameters\n\nBoltz-2 MIT license binding affinity FEP 1000x faster GitHub\n\nEvo 2 genome foundation model open weights pathogen filtering safety\n\nopen-weight genome language model safeguards adversarial fine-tuning data exclusion\n\nHugging Face safetensors pickle trust_remote_code security model supply chain\n\nsovereign AI local inference open weight models biotech research\n\n11. 30-day implementation plan\nDays 1–3: dependency audit\nList every AI dependency in your research workflow:\nmodel/API used\ntask\ndata sensitivity\nfallback option\nquality requirement\nfailure consequence\nregion/legal exposure\nforeign-national access issue\n\nMark anything that touches proprietary, clinical, genomic, unpublished, dual-use, or commercially sensitive data as local-preferred or local-only.\n\nDays 4–7: local inference baseline\n\nSet up:\n\none laptop-friendly quantized model\none stronger workstation/server model\none embedding model\none local document index\none OpenAI-compatible local endpoint\n\nThe goal is not perfection. The goal is a working fallback.\nWeek 2: local research RAG\nIndex:\nyour papers\nyour notes\nyour datasets\nyour internal docs\nkey textbooks/manuals where licensed\nmodel cards\nregulatory/biosecurity guidance",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 780,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 08:13:59 +0000 2026",
+      "createdAtLocal": "2026-06-26 16:13",
+      "createdAtISO": "2026-06-26T08:13:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070483056398336259",
+    "author": "0xpascual",
+    "authorName": "Pascual ⚡",
+    "url": "https://x.com/0xpascual/status/2070483056398336259",
+    "text": "A solo dev posted a GTA 6 prototype built with Claude 4 in 48 hours.\n\nThe media thought that was the story. It was not.\n\nThe real story was the server logs. No Unity license. No Unreal Engine splash. No Rockstar proprietary middleware. The map was procedurally generated from a single prompt. The physics ran on a lightweight WebGL build. The NPC behavior was Claude calling itself every 200ms through a local Ollama instance.\n\nThe AI stack: Claude 4 for architecture and game logic ($40 API credit), a single RTX 4090 for inference ($1,600), ComfyUI for texture generation ($0 in cloud cost), and a free Vercel deployment. Total hardware/API cost under $2,000. Rockstar's GTA 6 budget is reportedly over $2 billion.\n\nThe market gives 0% odds Anthropic IPOs by June 30, 2026 -- because no one believes Claude's creator can go public within a month. Yet a single developer using that same model just eliminated a $2 billion labor barrier and a decade of production time in a long weekend.",
+    "createdAtISO": "2026-06-26T12:23:23.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 206,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070482981521620992/vid/avc1/1276x718/2GhQrUGwotP5m8H9.mp4?tag=28"
+      }
+    ],
+    "raw": {
+      "id": "2070483056398336259",
+      "text": "A solo dev posted a GTA 6 prototype built with Claude 4 in 48 hours.\n\nThe media thought that was the story. It was not.\n\nThe real story was the server logs. No Unity license. No Unreal Engine splash. No Rockstar proprietary middleware. The map was procedurally generated from a single prompt. The physics ran on a lightweight WebGL build. The NPC behavior was Claude calling itself every 200ms through a local Ollama instance.\n\nThe AI stack: Claude 4 for architecture and game logic ($40 API credit), a single RTX 4090 for inference ($1,600), ComfyUI for texture generation ($0 in cloud cost), and a free Vercel deployment. Total hardware/API cost under $2,000. Rockstar's GTA 6 budget is reportedly over $2 billion.\n\nThe market gives 0% odds Anthropic IPOs by June 30, 2026 -- because no one believes Claude's creator can go public within a month. Yet a single developer using that same model just eliminated a $2 billion labor barrier and a decade of production time in a long weekend.",
+      "author": {
+        "id": "4827902139",
+        "name": "Pascual ⚡",
+        "screenName": "0xPascual",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2013868866254843905/bL1l5Fjp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 206,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 12:23:23 +0000 2026",
+      "createdAtLocal": "2026-06-26 20:23",
+      "createdAtISO": "2026-06-26T12:23:23+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070482981521620992/vid/avc1/1276x718/2GhQrUGwotP5m8H9.mp4?tag=28",
+          "width": 1276,
+          "height": 718
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"built with Claude\" (Fable OR Mythos OR \"one prompt\" OR game OR website OR design))"
+  },
+  {
+    "id": "2070522978031243322",
+    "author": "vikoblanco_",
+    "authorName": "BLNC®",
+    "url": "https://x.com/vikoblanco_/status/2070522978031243322",
+    "text": "Spent a few days building a tool for myself instead of doing actual work.\n\nPolo: lead finder + outreach drafter for web design gigs. My design, built with Claude Code.\n\nActually using it now. Demo 👇 https://t.co/PC0KPAw1l3",
+    "createdAtISO": "2026-06-26T15:02:01.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 3,
+      "quotes": 0,
+      "views": 64,
+      "bookmarks": 0
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2070522535544832000/vid/avc1/1194x720/4DfbpPNDQyWP9Evn.mp4?tag=14"
+      }
+    ],
+    "raw": {
+      "id": "2070522978031243322",
+      "text": "Spent a few days building a tool for myself instead of doing actual work.\n\nPolo: lead finder + outreach drafter for web design gigs. My design, built with Claude Code.\n\nActually using it now. Demo 👇 https://t.co/PC0KPAw1l3",
+      "author": {
+        "id": "1613918617795436545",
+        "name": "BLNC®",
+        "screenName": "vikoblanco_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061183529371709443/58adGDmZ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 15:02:01 +0000 2026",
+      "createdAtLocal": "2026-06-26 23:02",
+      "createdAtISO": "2026-06-26T15:02:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070522535544832000/vid/avc1/1194x720/4DfbpPNDQyWP9Evn.mp4?tag=14",
+          "width": 1792,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"built with Claude\" (Fable OR Mythos OR \"one prompt\" OR game OR website OR design))"
+  },
+  {
+    "id": "2070191790980841785",
+    "author": "ilovebatteries",
+    "authorName": "Thomas Hodson",
+    "url": "https://x.com/ilovebatteries/status/2070191790980841785",
+    "text": "https://t.co/gNjgbCXrDn",
+    "createdAtISO": "2026-06-25T17:05:59.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 23,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070191790980841785",
+      "text": "https://t.co/gNjgbCXrDn",
+      "author": {
+        "id": "720301827095330816",
+        "name": "Thomas Hodson",
+        "screenName": "ilovebatteries",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069862960764170240/sot9VuqA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 17:05:59 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:05",
+      "createdAtISO": "2026-06-25T17:05:59+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2069863242428710912"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "it’s a skills issue"
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Mythos\" \"MCP\")"
+  },
+  {
+    "id": "2070518103554039913",
+    "author": "taherchhabra",
+    "authorName": "taher",
+    "url": "https://x.com/taherchhabra/status/2070518103554039913",
+    "text": "No model can one-shot a Canva like video editor yet.\n\nNot GPT-5.5. Not Opus 4.8. Not Fable.\n\nNew turing test : ship a coherent, editable, timeline-based video editor \n\nWaiting for GPT-5.6.",
+    "createdAtISO": "2026-06-26T14:42:38.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 111,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070518103554039913",
+      "text": "No model can one-shot a Canva like video editor yet.\n\nNot GPT-5.5. Not Opus 4.8. Not Fable.\n\nNew turing test : ship a coherent, editable, timeline-based video editor \n\nWaiting for GPT-5.6.",
+      "author": {
+        "id": "1095574248",
+        "name": "taher",
+        "screenName": "taherchhabra",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2008980715426467841/kqES43lX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 111,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 14:42:38 +0000 2026",
+      "createdAtLocal": "2026-06-26 22:42",
+      "createdAtISO": "2026-06-26T14:42:38+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one shot\" (Claude OR Fable OR Mythos) (game OR website OR app OR video OR animation OR 3d))"
+  },
+  {
+    "id": "2070203701050867959",
+    "author": "pawelk411",
+    "authorName": "🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱",
+    "url": "https://x.com/pawelk411/status/2070203701050867959",
+    "text": "@Dexerto yeah no claude one shotted it lmao",
+    "createdAtISO": "2026-06-25T17:53:19.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 101,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070203701050867959",
+      "text": "@Dexerto yeah no claude one shotted it lmao",
+      "author": {
+        "id": "1444002675947884546",
+        "name": "🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱🇵🇱",
+        "screenName": "pawelk411",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049726780957712384/CD-K1ia__normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 101,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 17:53:19 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:53",
+      "createdAtISO": "2026-06-25T17:53:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2070534435028795443",
+    "author": "brianmfreeman",
+    "authorName": "Brian Freeman",
+    "url": "https://x.com/brianmfreeman/status/2070534435028795443",
+    "text": "Claude + Creatorland's new MCP just one-shotted this creator shortlist from me copy/pasting a transcript from a call I had with a prospect.\n\n😳\n\nhttps://t.co/wDbQv0JgY2 Text could be bigger I guess ha!",
+    "createdAtISO": "2026-06-26T15:47:32.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 52,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070534435028795443",
+      "text": "Claude + Creatorland's new MCP just one-shotted this creator shortlist from me copy/pasting a transcript from a call I had with a prospect.\n\n😳\n\nhttps://t.co/wDbQv0JgY2 Text could be bigger I guess ha!",
+      "author": {
+        "id": "332009883",
+        "name": "Brian Freeman",
+        "screenName": "brianmfreeman",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1788240994649182209/3VbITj9i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 52,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 15:47:32 +0000 2026",
+      "createdAtLocal": "2026-06-26 23:47",
+      "createdAtISO": "2026-06-26T15:47:32+00:00",
+      "media": [],
+      "urls": [
+        "https://claude.ai/public/artifacts/162e70cf-e60c-4798-ba70-2f97acddbeb5"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"one-shotted\" (Claude OR Fable OR Mythos))"
+  },
+  {
+    "id": "2070252932499452363",
+    "author": "jdowdell",
+    "authorName": "John Dowdell",
+    "url": "https://x.com/jdowdell/status/2070252932499452363",
+    "text": "Early negatives on Fable/Blender were time &amp; cost… will take awhile to ramp up. Anthropic donated to Blender Python improvements.\nWhere Blender can be easily controlled, Adobe Firefly AI manages all their various file-formats, presenting a higher-level interface for MCP control.",
+    "createdAtISO": "2026-06-25T21:08:57.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 40,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070252932499452363",
+      "text": "Early negatives on Fable/Blender were time &amp; cost… will take awhile to ramp up. Anthropic donated to Blender Python improvements.\nWhere Blender can be easily controlled, Adobe Firefly AI manages all their various file-formats, presenting a higher-level interface for MCP control.",
+      "author": {
+        "id": "801607",
+        "name": "John Dowdell",
+        "screenName": "jdowdell",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1689014282313244672/rV1WAxAV_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 21:08:57 +0000 2026",
+      "createdAtLocal": "2026-06-26 05:08",
+      "createdAtISO": "2026-06-25T21:08:57+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" Blender OR \"Mythos\" Blender)"
+  },
+  {
+    "id": "2070202194356297750",
+    "author": "extramillions1",
+    "authorName": "Extramillions",
+    "url": "https://x.com/extramillions1/status/2070202194356297750",
+    "text": "@synthwavedd To have fable or whatever bang out something so legendary and so quickly would be ridiculous. Too much involved. To have such massive breadth and coherence. Would be asking it to do too much ,create own custom engine of everything , no threejs crap nada over like 100 engines lol",
+    "createdAtISO": "2026-06-25T17:47:20.000Z",
+    "date": "2026-06-26",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 35,
+      "bookmarks": 0
+    },
+    "media": [],
+    "raw": {
+      "id": "2070202194356297750",
+      "text": "@synthwavedd To have fable or whatever bang out something so legendary and so quickly would be ridiculous. Too much involved. To have such massive breadth and coherence. Would be asking it to do too much ,create own custom engine of everything , no threejs crap nada over like 100 engines lol",
+      "author": {
+        "id": "1000091177834729473",
+        "name": "Extramillions",
+        "screenName": "Extramillions1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1661247895201275904/2v7XPVwZ_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 17:47:20 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:47",
+      "createdAtISO": "2026-06-25T17:47:20+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    "sourceMode": "global-search",
+    "sourceQuery": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)"
+  }
+]

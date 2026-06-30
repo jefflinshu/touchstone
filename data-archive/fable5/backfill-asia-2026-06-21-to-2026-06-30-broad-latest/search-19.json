@@ -1,0 +1,217 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071476296623042891",
+      "text": "📢 2026-06-29 AI日更 | 从私测到返聘专家：AI 落地进入场景校验期\n\n> 今天的主线不在单纯发布新模型，而在真实场景中的验证。Grok 4.5 进入 SpaceX、Tesla 私测，显示前沿模型正被优先嵌入核心业务；与此同时，福特返聘资深工程师调教 AI，提醒行业高质量领域经验仍是落地瓶颈。端侧多模态和本地部署继续升温，但价值需要由成本、可靠性和工作流效果来证明。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:xAI's Grok 4.5 Enters Private Beta at SpaceX and Tesla\n• 分类:AI · News\n• 概况:热度时间:18 hours ago,相关帖子数:30000\n• 是什么事:马斯克称 xAI 最新模型 Grok 4.5 已在 SpaceX 和 Tesla 进入私有测试阶段，并据称基于 1.5 万亿参数的 V9 模型，早期评测可媲美 Claude Opus。\n• 为什么重要:这显示 xAI 正将大模型优先嵌入马斯克旗下核心企业场景，可能加速 AI 在工程、制造、自动驾驶和企业工作流中的实际应用，也加剧前沿模型之间的能力竞争。\n• 讨论概况:X 上讨论集中在 Grok 4.5 的真实性能、与 Claude Opus 等顶级模型的差距，以及 SpaceX 和 Tesla 内部测试是否会带来独特数据和落地优势；也有人质疑参数规模和早期评测表述是否存在营销成分。\n\n▫️ 话题 2:OpenAI's Plant Talk Lets Houseplants Chat Back\n• 分类:AI · News\n• 概况:热度时间:1 day ago,相关帖子数:116\n• 是什么事:OpenAI 展示了 Plant Talk 项目，可借助笔记本摄像头、麦克风、扬声器和 ChatGPT，让用户与室内植物进行实时语音互动。\n• 为什么重要:它体现了多模态 AI 将视觉识别、语音交互与传感器数据结合并进入日常物联网场景的趋势，显示 AI 助手正从屏幕内服务扩展到环境感知型交互。\n• 讨论概况:X 上讨论集中在其实用价值与噱头属性的分歧：支持者认为它能降低植物养护门槛，帮助用户理解叶色、萎蔫、湿度和光照等状态；质疑者则认为“植物聊天”偏拟人化包装，可能夸大 AI 对植物真实需求和自然状态的理解能力。\n\n▫️ 话题 3:Exo Labs and OsmanticAI Team Up with NVIDIA for Local AI Push\n• 分类:AI · News\n• 概况:热度时间:12 hours ago,相关帖子数:726\n• 是什么事:Exo Labs 与 OsmanticAI 宣布同 NVIDIA 合作，推动本地端 AI 运行与部署能力。\n• 为什么重要:这反映出 AI 产业正从单纯依赖云端大模型，进一步转向本地推理、隐私保护、低延迟和边缘设备算力利用，对开发者生态和硬件需求都有影响。\n• 讨论概况:X 上讨论主要集中在本地 AI 是否会成为主流、NVIDIA 在边缘和个人设备 AI 生态中的优势是否会进一步扩大，以及本地部署在成本、性能和易用性上能否真正替代云端服务。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线围绕“AI 从前沿模型竞赛走向真实场景落地”：一边是 Grok 4.5 进入 SpaceX、Tesla 私测，强化大模型与工程制造、自动驾驶等核心业务的结合；另一边是 Plant Talk 和本地端 AI 合作，显示 AI 正向日常环境交互、边缘设备和个人部署延伸。共识在于，多模态、本地推理和企业内部应用会成为下一阶段重要方向，AI 不再只是聊天窗口里的能力展示，而是在进入工作流、设备和物理世界。分歧主要集中在“真实价值还是营销包装”：Grok 的参数规模和对标 Claude Opus 的说法是否可靠，Plant Talk 是实用助手还是拟人化噱头，本地 AI 能否在成本、性能和易用性上挑战云端服务。潜在风险则包括前沿模型能力被夸大、企业私有数据形成封闭优势、NVIDIA 等硬件平台进一步集中生态话语权，以及环境感知型 AI 在隐私、误判和用户过度信任上的问题。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n基于过去24小时内的推文，我为您汇总并提炼了AI行业的关键动态。\n\n📢 AI 行业舆情日报 (基于 X 平台 Influencers 推文)\n\n数据周期: 2026年6月24日 - 2026年6月29日\n\n🔹 1. 今日大佬们共同关注的技术趋势或产品热点\n\n▫️ **趋势一：前沿模型发布方式“政治化”与准入管制**\n这是本周社区讨论的最高烈度话题。超级大模型不再是“一键发布”，而是被政府严格管控。\n• 🔒 GPT-5.6 的“有限预览”：@dotey 详细分析了 OpenAI 发布的 GPT-5.6（Sol/Terra/Luna），指出模型本身能力极强（Terminal-Bench 2.1 得分超 Claude Mythos 5），但因美国政府要求，目前仅向少数获批伙伴开放，开启了“逐个客户审批”的先例。他引用了 @steph_palazzolo 的报道，称这意味着公司内部拥有的能力和公众能用到的能力的差距会越拉越大。\n• ⛓️ Mythos 5 的“部分解禁”：@dotey 同样报道了 Anthropic 的旗舰安全模型 Mythos 5 在被封禁两周后，获美国政府批准向约 100 家关键基础设施机构重新开放。他指出，这一事件标志着“美国政府对前沿 AI 模型的发布前审查，正在从个案变成惯例”。\n• 📉 端侧成本压力：@zhixianio 和 @williamlab 关注到苹果因关税/成本问题对产品大幅涨价 20%，感叹这种级别的利润压力对其他厂商而言可能更残酷。\n\n▫️ **趋势二：端侧模型（On-device）与开源小模型的“狂暴测试”**\n大佬们对轻量化模型的性能极限有极高关注度，尤其是谷歌 Gemma 系列。\n• 🤖 Gemma 4 实测翻车与亮点：@zhixianio 对 Gemma 4 12B Coder 进行了严苛的“一次成型”Vibe Coding 测试（俄罗斯方块、Three.js星系）。结论是 12B 模型依然有天花板，在复杂有状态的长程序生成上明显弱于 Qwen 35B MoE；但不影响 Gemma 4 日文邮件解析等普通任务表现优异。他高度评价 Google 针对端侧的 QAT（量化感知训练）优化思路。\n• 📱 音视频交互突破：@zhixianio 测试本地运行 MiniCPM-o 4.5 的全双工音视频，对 9B 模型能达到的效果表示“很满意”，认为虽然有优化空间，但已具备可用性。这体现了社区对“全模态端侧交互”的积极探索。\n• 🛠️ Agent 开发基建平民化：@vista8 和 @AI_Jasonyu 均强推腾讯云 EdgeOne Makers，强调其解决了 Agent 从本地 Demo 到上线的部署困境。@vista8 特别指出其“3 行命令部署”、“持久化 Blob 存储”、“沙箱回收”等能力正在利好中小企业。\n\n🔹 2. 值得注意的独特观点或行业前瞻\n\n▫️ **🚀 Claude Tag：LLM 交互的第三次重构？**\n这是本周最具影响力的产品哲学讨论。@dotey 引述了 @karpathy 将 Anthropic 的 Claude Tag 定性为 LLM 交互的“第三次重新设计”（从网页版到 App，再到嵌入工作流的持久化异步实体）。他还转述了 @GergelyOrosz 的观点：重点不是 Slack Bot，而是它开箱即用地接入了公司内部系统，对非工程师和新员工的赋能是巨大的范式变化。@dotey 将此总结为 Codex 发展趋势是“Agent OS 而不仅仅是 Agent Office”。\n\n▫️ **👴 算法回归老师傅：AI 幻觉的现实反噬**\n@dotey 引用了福特汽车的激进案例：福特因为 AI 质检未达预期，重新雇回了 350 名资深“白须”工程师来调教 AI，并因此重夺新车质量榜第一。他还列举了 Klarna 的 AI 客服质量差、麦当劳撤下 AI 点餐等反例。这与当前“全面替代”的主流叙事形成强烈反差，强调了 AI 产业如今极其缺乏“高质量的领域经验数据” 和人类专家反馈闭环。\n\n▫️ **⚡️ Token 异质性与人机同化**\n• 电力 vs. Token：@lijigang 极具启发性地指出，电力是同质的，但 Token 是高度异质的（1M tokens 的 GPT-5.6 跟豆包是完全不同的价值）。这种差异性意味着大模型不会变成普通的水电基建，而更可能走向“征税式”的定价，并形成供给瓶颈。\n• 语言的模型味儿：@lijigang 还提到，重度使用某一个模型（如 Claude 或 DeepSeek）会反过来影响人的语言风格，这反映出大脑神经网络非常“吃”上下文。对于开发者而言，这是脑机融合的初级信号。\n\n▫️ **🛡️ “代码护城河”的崩塌**\n@ruanyf 转发了黑客新闻的讨论，并坚持他之前的观点：AI 让软件代码本身的护城河迅速消失，只要投入少量算力就能复刻大型项目。这迫使行业将重心从“编写代码”转向“积累难以复刻的高质量测试用例集”。\n\n🔹 3. 推荐的工具或资源\n\n本周推荐高度集中在降本增效的云平台和精细化控制的开源工具上：\n\n1️⃣ 腾讯云 EdgeOne Makers (多位博主推荐):\n    • 来源: @vista8, @AI_Jasonyu\n    • 亮点: 专治 Agent 上线难、并发扛不住、沙箱不安全等痛点。只需几行命令即可部署。适合不想折腾 React 全栈、只想快速落地 Agent 逻辑的开发者。\n\n2️⃣ 火山引擎 Doubao Seed 2.1 Pro + cc-switch (@Pluvio9yte 推荐):\n    • 方案: 通过 cc-switch 工具将极低成本的豆包 2.1 Pro 接入 Claude Code 等 Agent 中。\n    • 亮点: 提出“用便宜模型干杂活，用顶级模型做规划”的混合架构。教程详细展示了如何在扣费和 API 映射中避坑。\n\n3️⃣ DevSpace + ChatGPT MCP (@gefei55 推荐):\n    • 来源: @gefei55\n    • 亮点: 如果你没有 Codex 额度，或者想在网页版上使用最强的 GPT-5.5 Pro 来直接读写本地代码文件，这个开源 MCP 服务器是最佳桥梁。\n\n4️⃣ Codex 橙皮书 (@bozhou_ai 开源，@AI_Jasonyu 强推):\n    • 亮点: 市面上分享 Codex 使用技巧的很多，但系统整理并开源的极少。这是从入门到精细化调教 Skill 的系统性教材。\n\n5️⃣ VoxCPM2 (@axichuhai 发布，22.9k star):\n    • 亮点: 语音圈的“王炸”项目，用自然语言描述即可生成对应声音，代表了 AI 人声合成领域向 “Prompt-to-Speech” 的转变。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-29-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-29\n\n🔗 完整排版阅读: https://t.co/k7Drd10apa",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1415,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 06:10:09 +0000 2026",
+      "createdAtLocal": "2026-06-29 14:10",
+      "createdAtISO": "2026-06-29T06:10:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2070568633965875593",
+      "text": "https://t.co/PnLqYsardl",
+      "author": {
+        "id": "776668639",
+        "name": "Srijan Poudel",
+        "screenName": "Srijan_0007",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2071590138984247296/nQAexHXQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 816,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 18:03:26 +0000 2026",
+      "createdAtLocal": "2026-06-27 02:03",
+      "createdAtISO": "2026-06-26T18:03:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070568350351290368"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "GPT-5.6 Deployment Starts Behind a Federal Gate"
+    },
+    {
+      "id": "2069711549241930193",
+      "text": "https://t.co/CcwblZWkX2",
+      "author": {
+        "id": "1213770526142844928",
+        "name": "香川友志（KAGAWA TOMOYUKI）",
+        "screenName": "KagawaTomo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1214126823698624512/Tsbr0h44_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 32209,
+        "bookmarks": 2
+      },
+      "createdAt": "Wed Jun 24 09:17:41 +0000 2026",
+      "createdAtLocal": "2026-06-24 17:17",
+      "createdAtISO": "2026-06-24T09:17:41+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2069589219291607040"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Fugu Ultraは世界でどこまで戦えるのか"
+    },
+    {
+      "id": "2069116524124594444",
+      "text": "Sakana Fugu Ultra'yı denedim, siz zahmet etmeyin diye 😬\n\nMythos/Fable seviyesinde falan değil, gerçekten şok olacaksınız.\n\nKısa izlenimlerim:\n\nLimitler berbat. 5 saatlik kullanım limitimi 1 prompt'ta bitirdim.\nThree.js ile Rocket League tarzı bir oyun yapmasını istedim (SOTA modellerin epey iyi olduğu bir alan).\n\nOyun epey kötüydü, GPT-5.5'ten bariz daha kötüydü. Birkaç düzeltmeden sonra 7-8 turda ancak neredeyse oynanabilir hale geldi. GPT-5.5 ise tek seferde (one shot) çok daha iyi bir iş çıkardı.\nClaude Opus 4.8 ise resmen ezdi geçti. Daha fazla özellik ekledi, fizikler çok daha iyiydi ve limitin sadece %27'sini kullandı.\nBelki başka alanlarda daha iyidir, umarım yanılıyorumdur. Yarın daha fazla test edeceğim.",
+      "author": {
+        "id": "2032814967397978112",
+        "name": "yunus kent",
+        "screenName": "yunuskentt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032871430803636224/zAx4POgm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 277,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 22 17:53:16 +0000 2026",
+      "createdAtLocal": "2026-06-23 01:53",
+      "createdAtISO": "2026-06-22T17:53:16+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069116435360894976/vid/avc1/1080x1110/0RgBc4TtsDveMJrf.mp4?tag=28",
+          "width": 1080,
+          "height": 1110
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "tr",
+      "score": null,
+      "quotedTweet": {
+        "id": "2068861630327443966",
+        "text": "Introducing Sakana Fugu: A full multi-agent orchestration system accessible via a single model API.\n\nOur ‘Fugu Ultra’ model matches the performance of Fable and Mythos, delivering frontier capability without the risk of export controls.\n\nTry it: https://t.co/hhO6qTawgb 🐡",
+        "author": {
+          "screenName": "SakanaAILabs",
+          "name": "Sakana AI"
+        }
+      }
+    },
+    {
+      "id": "2069041320199602434",
+      "text": "Nobody saw this coming..\n\nA tiny lab from Japan just built a model that matches the performance of Fable and Mythos.\n\nOne prompt: make Crossy Road with three.js”\n\nFugu: $7.32 and 22 minutes\nOpus 4.8: $37.85 and 79 minutes\n\nhttps://t.co/A9evuDEAOC",
+      "author": {
+        "id": "1582819328281481225",
+        "name": "Angry Tom",
+        "screenName": "AngryTomtweets",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1583586611517919239/iU-EoCz1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 46,
+        "retweets": 6,
+        "replies": 8,
+        "quotes": 0,
+        "views": 11365,
+        "bookmarks": 23
+      },
+      "createdAt": "Mon Jun 22 12:54:26 +0000 2026",
+      "createdAtLocal": "2026-06-22 20:54",
+      "createdAtISO": "2026-06-22T12:54:26+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068961820782514176/vid/avc1/1280x720/bhtTlr2xkUtovJVQ.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2068932670696952075",
+      "text": "I tried this so you don't have to.\n\nI know this is going to absolutely shock you but no this does not match the performance of Mythos.\n\nA few early thoughts:\n\n1. The limits are pretty bad. I used 100% of my 5-hour usage in less than 1 prompt. \n\n2. I specifically gave it a threejs task because it is an area that SOTA models have made big strides in, that other models just are not great at.\n\nI asked it to build a replica of Rocket League. I'll put the prompt in the comments.\n\nThe game was pretty bad and notably worse than GPT 5.5. \n\nEven after multiple fixes, it took 7-8 back and forth with Codex just to get it an almost playable condition. Prior to these fixes, the game was not playable.\n\nMaybe it's really strong in other disciplines. I'd love to test that but I hit my limit in 1 prompt lol.\n\nGPT 5.5 by contrast did a pretty good job and required no follow ups. Fable would have absolutely nailed this as well.\n\nBut yeah, early impressions...not great. But I hope I'm wrong. More testing tomorrow.",
+      "author": {
+        "id": "2004675530935926784",
+        "name": "am.will",
+        "screenName": "LLMJunky",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054315142272159744/V-n-NXEo_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 326,
+        "retweets": 26,
+        "replies": 40,
+        "quotes": 21,
+        "views": 277064,
+        "bookmarks": 108
+      },
+      "createdAt": "Mon Jun 22 05:42:42 +0000 2026",
+      "createdAtLocal": "2026-06-22 13:42",
+      "createdAtISO": "2026-06-22T05:42:42+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068930551235375104/vid/avc1/1700x1750/vA534cErRnH4JR7Q.mp4?tag=28",
+          "width": 1700,
+          "height": 1750
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2068861630327443966",
+        "text": "Introducing Sakana Fugu: A full multi-agent orchestration system accessible via a single model API.\n\nOur ‘Fugu Ultra’ model matches the performance of Fable and Mythos, delivering frontier capability without the risk of export controls.\n\nTry it: https://t.co/hhO6qTawgb 🐡",
+        "author": {
+          "screenName": "SakanaAILabs",
+          "name": "Sakana AI"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1385 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071717057695985919",
+      "text": "i kept watching solo founders win on x while doing way less of the busywork. so i broke down exactly how they pull it off.\n\nit isn't discipline. they don't grind demo videos, og images, reels, a newsletter, a blog, and a posting schedule by hand. they build one system that makes all of it, and aim it at one channel.\n\nhere's how to build each piece:\n\n1. build a loop, not a checklist.\n\nfour stages, four folders: ideas, draft, publish, learn.\n- ideas: a running file the system keeps filling from what's already working in your niche\n- voice: reverse-engineer your own 10 best posts into a traits file. sentence length, how you open, what you never do\n- draft: one prompt that loads the voice file plus a single idea\n- learn: log what got bookmarked, feed that back into which ideas get picked next\n\nevery surface (x, blog, newsletter) is just a different publish target hanging off the same drafted piece. build the loop once, not the chores forever.\n\n2. chain specialists. stop one-shotting it.\n\nfive prompt files, one job each:\n- strategist: topic + audience in, angle + hook + brief out\n- researcher: brief in, sources + facts + 3 contrarian points out\n- writer: brief + research in, full draft out\n- editor: cuts 30%, sharpens the opening, rewrites the close\n- publisher: formats for the target platform\n\noutput of one becomes input to the next. it beats a single chat for a concrete reason: an editor in a fresh window will actually cut what a writer \"worked hard on.\" same window, it won't, because it watched the writer struggle. you touch it twice. two paragraphs in, approve at the end.\n\n3. build the faceless video factory, then give it a brain.\n\nthe pipeline is script, voice, assembly, post, measure.\n- claude writes the script. pick the niche by rpm and competition gap, not by what you personally like\n- elevenlabs voices it\n- capcut or any auto-editor assembles the clips or the slideshow\n- a scheduler api drops it in as a draft so you can add trending audio before it publishes\n\nthe step everyone skips is the one that pays. wire the agent to read the funnel: views, then installs, then subscribers. it logs every hook's result and rewrites its own rules over time. an agent that just posts is noise. an agent that reads the funnel is distribution.\n\n4. aim the whole machine at one channel: the one where your product is the audience.\n\nbefore you automate anything, answer one question. where does my buyer already sit, and is my product about that place?\n\nbuild a tool for x creators, sell it on x. the audience is pre-qualified, so even a post with 8 likes brings real leads.\n\nthe mistake is spreading across five platforms on day one and ending up with five weak channels. point everything at the single tightest product-to-audience fit. saturate it. expand only after it's working.\n\n5. start the blog on day one, and write for your competitors' tools too.\n\nthis is the channel that compounds while you sleep.\n- target the exact queries people type when they already have the problem. \"where are X stored\", \"how to install Y\"\n- one article per query, and make every heading a question\n- put a 40 to 60 word answer block at the very top. that block is what chatgpt and perplexity pull and cite\n- add schema markup on every page (article, faq, howto)\n- write guides for adjacent and competitor tools you don't even make. those queries have almost no competition\n\nstart before the product is finished. seo's clock starts at article one, so the earlier you begin the bigger the head start.\n\none catch. the system makes the content. it does not make the replies.\n\nthe fastest growth i found still came down to someone treating replies like a full-time job. short sessions through the day, real conversations, not broadcasts. automate the machine. you're still the one who talks to people.\n\nso: which one channel are you going all in on, and what's the first surface you automate to feed it? specific moves only.",
+      "author": {
+        "id": "1739647570983387136",
+        "name": "Ricky",
+        "screenName": "rcmisk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1999509839819444225/1_VugYkf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 150,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 22:06:51 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:06",
+      "createdAtISO": "2026-06-29T22:06:51+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071669821415002404",
+      "text": "https://t.co/fcfzfqfl5s",
+      "author": {
+        "id": "950126750",
+        "name": "Lima",
+        "screenName": "limalemonnn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069777027394093056/ZUIB1GJa_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 1,
+        "views": 403,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 18:59:09 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:59",
+      "createdAtISO": "2026-06-29T18:59:09+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071611271586185216"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Why every AI site looks the same, and the 7 layers, 11 skills that fix it"
+    },
+    {
+      "id": "2071654934299509050",
+      "text": "GLM 5.2 JUST BEAT CLAUDE ON REAL BUILDS\n\nAnd the wild part?\n\nIt’s open-source.\n\nThe Test:\n\n→ GLM 5.2 built the best game\n\n→ Claude Opus 4.8 crushed the orbit map\n\n→ GPT 5.5 built a playable Color Chain game from one prompt\n\nWhat Actually Mattered:\n\n✓ GLM 5.2 won most creative build tests\n\n✓ Claude felt smoother for careful day-to-day coding\n\n✓ GPT 5.5 looked strongest for long multi-step coding jobs\n\nThe Numbers:\n\n→ SWE-Bench Pro: GLM 5.2 around 62, Opus 4.8 around 69\n\n→ Terminal Bench: GLM 5.2 around 81\n\n→ GLM 5.2 has 1M token context + MIT license\n\nDon’t pick models from leaderboards.\n\nTest them on the exact thing you want to build.",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2363,
+        "bookmarks": 9
+      },
+      "createdAt": "Mon Jun 29 18:00:00 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:00",
+      "createdAtISO": "2026-06-29T18:00:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071612146551861248/vid/avc1/1280x720/EKUAP2kvXFS8Igqw.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071639328850333721",
+      "text": "https://t.co/pVi61IoVRg",
+      "author": {
+        "id": "1498624967474352132",
+        "name": "paydird",
+        "screenName": "paydird",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066903485270929408/npSLBdgq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 184,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 16:57:59 +0000 2026",
+      "createdAtLocal": "2026-06-30 00:57",
+      "createdAtISO": "2026-06-29T16:57:59+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071599093206454272"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Your AI Forgets Everything. This One Keeps Receipts."
+    },
+    {
+      "id": "2071633923516358748",
+      "text": "Obsidian’s co-founder Andrej Karpathy built the ultimate note-taking app.\n\nThen a 21-year-old plugged Claude Code straight into it and turned it into a thinking second brain in under 1 hour.\n\nRaw vault meets real neurons.\n\nThe graph starts connecting ideas on its own. Sales notes from last week suddenly link to customer emails from today. One prompt and hidden patterns surface. Daily reports roll in. Tasks auto-prioritize.\n\nIt doesn’t just store. It evolves with you.\nTo optimize it for your life:\n\nPull in everything - Claude chats, emails, Slack, tasks. Use simple MCPs or cron jobs for auto-ingest. Follow Karpathy-style indexing to link thoughts without over-engineering.\n\nCustomize the daily review prompt to your exact workflow.\n\nThe result? A personal knowledge base that actually thinks and ships with you.\n\nObsidian alone is powerful.\n\nWith Claude Code it becomes unstoppable.\n\nBuild yours tonight. Make it yours.",
+      "author": {
+        "id": "1756412437681590272",
+        "name": "Rugikk",
+        "screenName": "rugikkk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061071199774425093/yXWQl8bS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2076,
+        "bookmarks": 13
+      },
+      "createdAt": "Mon Jun 29 16:36:31 +0000 2026",
+      "createdAtLocal": "2026-06-30 00:36",
+      "createdAtISO": "2026-06-29T16:36:31+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071633858315870208/vid/avc1/576x1024/LPnfNCS7ImKP7FUm.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071544940618744314",
+        "text": "https://t.co/790RgLMYwG",
+        "author": {
+          "screenName": "rugikkk",
+          "name": "Rugikk"
+        }
+      }
+    },
+    {
+      "id": "2071606554101756011",
+      "text": "https://t.co/VMLPcdohE4",
+      "author": {
+        "id": "839202421549195264",
+        "name": "Matt Henderson",
+        "screenName": "Yerbamatt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1963317574067683328/TW73u-nz_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 17,
+        "retweets": 2,
+        "replies": 4,
+        "quotes": 1,
+        "views": 1908,
+        "bookmarks": 12
+      },
+      "createdAt": "Mon Jun 29 14:47:45 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:47",
+      "createdAtISO": "2026-06-29T14:47:45+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071604844234993664"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Everything that’s recently changed with AEO"
+    },
+    {
+      "id": "2071603877288271973",
+      "text": "https://t.co/5odCg8UuvS",
+      "author": {
+        "id": "1594087871803162625",
+        "name": "0xAIGOAT.exe",
+        "screenName": "0xAIGOATexe",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062753492490424320/iPGWtgC-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 309,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 14:37:07 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:37",
+      "createdAtISO": "2026-06-29T14:37:07+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071519634252079104"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Animated AI Sites - Money Play. Playbook: From First Render to First Wire."
+    },
+    {
+      "id": "2071596800100692217",
+      "text": "https://t.co/7uLsn4zs9T",
+      "author": {
+        "id": "1438697123869036545",
+        "name": "Amart (LOOP)⚡️",
+        "screenName": "LoopOnChain",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034734010669387776/DJRqVpiN_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 2,
+        "views": 945,
+        "bookmarks": 6
+      },
+      "createdAt": "Mon Jun 29 14:09:00 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:09",
+      "createdAtISO": "2026-06-29T14:09:00+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071593424457809920"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Boris Cherny ships 49 PRs a day... all from his phone. Here's how to steal his exact setup:"
+    },
+    {
+      "id": "2071585491355304154",
+      "text": "Boris Cherny showed how he really uses Claude.\n\nWhen he logs off, Claude keeps working.\n\nIt finds tasks.\n\nWrites code.\n\nReviews its own work.\n\nKeeps the loop going.\n\nThat's the shift most people still miss.\n\nYou're not supposed to use Claude one prompt at a time.\n\nYou're supposed to build workflows that keep running without you.\n\nWatch the video.\n\nThen read the setup below. 👇",
+      "author": {
+        "id": "1485193016126095364",
+        "name": "wluha",
+        "screenName": "cryptowluha",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061097250068037634/DdcQh8bq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1192,
+        "bookmarks": 11
+      },
+      "createdAt": "Mon Jun 29 13:24:03 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:24",
+      "createdAtISO": "2026-06-29T13:24:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071585074416418816/vid/avc1/1920x1080/gJ3j34OQ1j4eD8hu.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071584258318037469",
+        "text": "https://t.co/n0mz05VzZQ",
+        "author": {
+          "screenName": "cryptowluha",
+          "name": "wluha"
+        }
+      }
+    },
+    {
+      "id": "2071557806281327001",
+      "text": "Someone ran one prompt for 12 hours and got what he calls personal AGI. \n\nEvery call, email, and doc about his life and business, now queryable in one place. \n\nAnd it is one of 8 things that dropped last week most people slept on. Me and @AndrewWarner broke them all down in the video below. \n\nHere's what you need to know:\n\n1. Record and Replay shipped in Codex. Do a task once and it builds a skill it runs for you from then on. Biggest update last week, no contest.\n\n2. @nickvasiles ran a /goal prompt in Codex for 12 hours and built a second brain of his whole business. Every transcript and connector, queryable. He gave the prompt away free.\n\n3. Anthropic put Claude in Slack with Tag. Your team @-mentions it and it pulls Salesforce, chases error spikes, and posts a Monday pipeline digest. Team and Enterprise plans only.\n\n4. WorkClaw makes OpenClaw a one-click install for Slack and Teams. Spin up specialized agents and let them talk with a checkbox. Two weeks of setup, now two clicks.\n\n5. BlueRails makes your site readable to AI agents, then lets them check out on it. The pay-with-PayPal button, but for agents. Six to twelve months early, so now is the time to get ready.\n\n6. OpenRouter shipped an MCP that picks your model for you. Ask for the best coding model under $2 per million tokens and it routes you live. GLM 5.2 keeps winning on cost.\n\n7. Dump raw meeting transcripts into Codex and one-shot the tool you talked about. One note became a working ROI calculator.\n\n8. Zapier MCP gives your agent its own logins with permissions you set. Let it draft email but never send. Google's version took an hour and failed. This took minutes.\n\n2 things I find interesting here:\n\n1. Your context is the moat, not the model. Models are a commodity now. The queryable knowledge base of your business is the one asset that survives every model swap. Start building your second brain this week.\n\n2. The winning agents live where your team already works. Slack, Teams, your inbox, your site. Stop waiting for people to open a new app and put the agent where the work happens.\n\nWe covered all of it (plus the tool that called Andrew a pro poker player and a one-shot menu bar app for watching the World Cup while you work) on this week's News You Missed. \n\nFull video below.",
+      "author": {
+        "id": "1535963469220020228",
+        "name": "Corey Ganim",
+        "screenName": "coreyganim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1991521820084695042/eTKoUALv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 56,
+        "retweets": 7,
+        "replies": 14,
+        "quotes": 1,
+        "views": 5801,
+        "bookmarks": 79
+      },
+      "createdAt": "Mon Jun 29 11:34:03 +0000 2026",
+      "createdAtLocal": "2026-06-29 19:34",
+      "createdAtISO": "2026-06-29T11:34:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071556184125964291/vid/avc1/1920x1080/gclcBJ0N6GbTMMP7.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071556845206970380",
+      "text": "how to master vibe coding fast:\n\n- stop watching tutorials\n- pick a tool you actually need. not a fake idea, something you'd use tomorrow\n- open cursor. describe the full app in one prompt. dont hold back\n- it will break. paste the raw error straight back. dont summarise it\n- when cursor loops on the same fix, stop immediately\n- switch to claude. explain the full context from scratch. fresh context beats a confused model every time\n- keep a CLAUDE[.]md at root. stack, conventions, what not to touch. cursor drifts without it\n- stuck for more than 20 minutes? use `/grill-me` to find what you dont know yet\n- most loops are unknown unknowns, not bad prompts\n- ship the broken version first. fix it after. waiting for clean code is how projects die on localhost\n- every error is just the next prompt\n\nmost people quit at the first broken build but things usually require pushing through end to end",
+      "author": {
+        "id": "1749425181704196097",
+        "name": "Wasim",
+        "screenName": "WasimShips",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2005567404248862721/HdmkB26L_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 184,
+        "bookmarks": 6
+      },
+      "createdAt": "Mon Jun 29 11:30:14 +0000 2026",
+      "createdAtLocal": "2026-06-29 19:30",
+      "createdAtISO": "2026-06-29T11:30:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071535398224818350",
+      "text": "THIS GUY HIT 100K YOUTUBE SUBSCRIBERS IN ONE WEEK WITH AI\n\nand it's not a trick, it's a system. most people use AI to write a script and wonder why the video dies. that's 10% of what Claude does for a channel. the other 90% is the system the fast-growing channels actually run:\n\n> niche: passion + TAM, picked from data before you ever film\n> brand: the one thing a bigger channel can't copy. same concept, weak brand = 100 views, strong brand = 800,000\n> ideas: a burner account turns YouTube's own algorithm into a viral-idea feed, validated against 4+ proven outliers\n> packaging: titles, thumbnails, hooks, each one prompt that returns options you keep swapping\n> money: ad revenue ($2-10 per 1,000 views), sponsors ($500 to $10,000), your own product where the millions live\n\nClaude runs every layer as your strategist. you stop generating and start operating\n\nthe full system, every copy-paste prompt:",
+      "author": {
+        "id": "1528123707146870786",
+        "name": "kuch (vibecoding arc)",
+        "screenName": "thekuchh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1923797852968333312/eWzXpnRZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 51,
+        "retweets": 6,
+        "replies": 3,
+        "quotes": 0,
+        "views": 4276,
+        "bookmarks": 19
+      },
+      "createdAt": "Mon Jun 29 10:05:00 +0000 2026",
+      "createdAtLocal": "2026-06-29 18:05",
+      "createdAtISO": "2026-06-29T10:05:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071520440254668800/vid/avc1/576x1024/hGGH3Jr7jhuuaN6Y.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071519792301777125",
+        "text": "https://t.co/Q2PwWF927j",
+        "author": {
+          "screenName": "thekuchh",
+          "name": "kuch (vibecoding arc)"
+        }
+      }
+    },
+    {
+      "id": "2071522523053744247",
+      "text": "https://t.co/cNjzPk9FpS",
+      "author": {
+        "id": "299656190",
+        "name": "Rahul",
+        "screenName": "sairahul1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1999441729800536065/6-3Y5xyR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 195,
+        "retweets": 40,
+        "replies": 18,
+        "quotes": 7,
+        "views": 143097,
+        "bookmarks": 458
+      },
+      "createdAt": "Mon Jun 29 09:13:51 +0000 2026",
+      "createdAtLocal": "2026-06-29 17:13",
+      "createdAtISO": "2026-06-29T09:13:51+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071506985661640705"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "10 Books Every AI Engineer Should Read in 2026"
+    },
+    {
+      "id": "2071390645982577031",
+      "text": "Claude is now a full AI creator\n\nHiggsfield MCP gives Claude access to 30+ video &amp; image models directly in chat.\n\nVideos. Product shots. Characters. Ad concepts.\n\nAll from one prompt. No tab switching.\n\nSetup takes 60 seconds https://t.co/S8NVu7feVI",
+      "author": {
+        "id": "1266990214620348418",
+        "name": "Maksim Liashch",
+        "screenName": "LyashchMaxim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911866328123625473/PSiFOmAX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 60,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 00:29:49 +0000 2026",
+      "createdAtLocal": "2026-06-29 08:29",
+      "createdAtISO": "2026-06-29T00:29:49+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071390461332484096/vid/avc1/1920x1080/GmIR2eIST8aJu1MT.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071376096256238063",
+      "text": "A 28 YEAR OLD NASHVILLE MOM BUILT AN AI KIDS ANIMATION CHANNEL WITH FRUIT CHARACTERS, POSTS ONE EPISODE A WEEK, AND CLEARS $11,340 A MONTH FROM YOUTUBE AND PATREON WITHOUT HIRING A SINGLE ANIMATOR\n\nsarah is 28, home office in nashville with two monitors and a tablet, watched animation studios charge $15,000 per episode and opened claude instead\n\nthe characters are a family of fruits\nmango dad in a suit reading the newspaper\napple mom with red hair holding coffee\ngreen apple kid named ben who is always angry about something\n\nclaude writes the episode script, keeps every character consistent, breaks the story into scenes, writes the narrator direction, and keeps the tone calm enough for parents to leave it playing before bedtime\n\nmidjourney generates every frame\nrunway adds the motion\nelevenlabs gives each character a voice\nsuno builds the background music\nmake pushes the finished episode to youtube automatically\n\nsarah records nothing\ndraws nothing\nedits nothing\n\none prompt on monday\nfinished episode live by friday\n\nthe old version of this required writers, illustrators, voice actors, editors, music composers, and weeks of production before one episode was ready\n\nsarah's version requires a laptop and a folder of prompts\n\nmonth 1: $1,240 youtube adsense\nmonth 3: $4,730 adsense plus patreon early access\nmonth 6: $11,340 adsense plus patreon plus character pack sales\n\nthe channel owns the IP\nthe characters keep earning after every upload\nthe library compounds every week\n\nanimation used to cost a studio\nnow it costs one person a sunday afternoon\n\nthe window is open, follow and bookmark before it closes",
+      "author": {
+        "id": "1884991284290420736",
+        "name": "Primee32",
+        "screenName": "Primee32",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069528323966001152/GATRKRN1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 599,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 23:32:00 +0000 2026",
+      "createdAtLocal": "2026-06-29 07:32",
+      "createdAtISO": "2026-06-28T23:32:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071164773748580353/vid/avc1/480x854/lEYPw3qCBnujtsPY.mp4?tag=28",
+          "width": 480,
+          "height": 854
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069767794518806656",
+        "text": "https://t.co/j6cbuHRTMR",
+        "author": {
+          "screenName": "Asteri_eth",
+          "name": "Asteri"
+        }
+      }
+    },
+    {
+      "id": "2071361542361125353",
+      "text": "https://t.co/VybrtakZKO",
+      "author": {
+        "id": "1686359368747438082",
+        "name": "Tyler Mommsen",
+        "screenName": "tylermommsen_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068098741408497665/ZdgWYX7G_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 22:34:10 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:34",
+      "createdAtISO": "2026-06-28T22:34:10+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071349854182539264"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to Create Animated Carousels in Minutes Using Claude"
+    },
+    {
+      "id": "2071316557234667643",
+      "text": "Most people are still chasing the next AI model.\n\nBut Hermes shows a better path.\n\nInstead of waiting for GPT 5.6 or Fable 5…\n\nYou can combine models you already have.\n\nOne prompt goes in.\n\nMultiple agents think.\n\nOne chair fuses the answers.\n\nThe result?\n\nBetter outputs without waiting for gated access.\n\nSave this video, you’ll build systems instead of chasing models.\n\nFull Guide is inside the AI Profit Boardroom, DM for the link. 💬",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3264,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 19:35:25 +0000 2026",
+      "createdAtLocal": "2026-06-29 03:35",
+      "createdAtISO": "2026-06-28T19:35:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071316406159986688/vid/avc1/1280x720/pYTY2T9Vv_WIUYDD.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071314535500103913",
+      "text": "Someone said AI is the biggest financial opportunity for anyone under 25. He didn't scroll past.\n\nLook at 0:23. That's a working AI agent for McDonald's. Built in under 60 seconds. He watched it once and repeated it the same evening.\n\nHe now sells agents like this for $200 a month per client. One prompt. One link. One demo. Client sees it live on their website before saying yes.\n\nThe computer vision market alone is $22 billion today. Forecast $111 billion by 2033. Every business with a camera, a store, or a website is a potential client.\n\nHe doesn't write code. He describes what he needs. Claude writes it. He ships the result.\n\nHe watched the interview. Then he stopped watching and started selling.",
+      "author": {
+        "id": "2054938807095484416",
+        "name": "betraidx",
+        "screenName": "betraidx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060830666757935105/Vkfk8o0x_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 131,
+        "retweets": 18,
+        "replies": 7,
+        "quotes": 2,
+        "views": 11344,
+        "bookmarks": 51
+      },
+      "createdAt": "Sun Jun 28 19:27:23 +0000 2026",
+      "createdAtLocal": "2026-06-29 03:27",
+      "createdAtISO": "2026-06-28T19:27:23+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071314317903835136/vid/avc1/1080x1920/PeW2sd2f9t9b9B00.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069392944252022788",
+        "text": "https://t.co/cVH81pBj6h",
+        "author": {
+          "screenName": "ridark_eth",
+          "name": "Ridark"
+        }
+      }
+    },
+    {
+      "id": "2071313684790722642",
+      "text": "She's flexing $30,000 a month in AI kids videos, filmed in a bikini under a sun umbrella. \n\nThen her screen recording asks ChatGPT for a shark and plays back a bat.\n\nWatch it again. At 0:42 the prompt on screen says \"show a cartoon shark smiling \" \n\nAt 0:46 the finished video she points to is a bat, then a bear asleep under a night sky. The shark never shows up. \n\nShe stitched three unrelated clips together and called it one workflow.\n\nBack up to the proof. She says she makes these videos. Then the example she pulls up is someone else's channel, NuNu TV, 26.5K subscribers, 778 uploads. 55 million views in a few days. \n\nShe points at a white card reading 55M views, $11,000.\n\nThat card isn't a YouTube payout. It's a search result answer she screenshotted. The username on her own generator says \"ahsaraf999,\" not her name. \n\nNothing on screen is hers.\n\nNone of this is the point. The point is what she's funneling you toward.\n\nThe \"system\" is three clicks you just watched. Ask ChatGPT for a scene breakdown. \n\nPaste it into a tool called Viewmax. Tick \"add English captions.\" That's the whole guide she wants your comment for.\n\nThe script is one prompt. Claude writes the same scene-by-scene breakdown from any nursery rhyme for $20 a month. The animation is a stock text to video model. The captions are a free checkbox. \n\nViewmax just staples them together and bills you monthly for the staple.\n\nShe wants you to comment YOUTUBE for the free guide that puts you on her list. I rebuilt the actual pipeline, the one that renders the animal you asked for. \n\nComment SHARK and I'll DM it free. You have to be following.",
+      "author": {
+        "id": "1279503373876834305",
+        "name": "Aeron",
+        "screenName": "aeronxbt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033979867616972801/WZLuNjKc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 76,
+        "retweets": 12,
+        "replies": 7,
+        "quotes": 0,
+        "views": 6272,
+        "bookmarks": 91
+      },
+      "createdAt": "Sun Jun 28 19:24:00 +0000 2026",
+      "createdAtLocal": "2026-06-29 03:24",
+      "createdAtISO": "2026-06-28T19:24:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071224519872634880/vid/avc1/720x1280/8hukTjLCnkqIyyxI.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071031687501287646",
+        "text": "https://t.co/17VCFs9YN1",
+        "author": {
+          "screenName": "aeronxbt",
+          "name": "Aeron"
+        }
+      }
+    },
+    {
+      "id": "2071287930941796656",
+      "text": "https://t.co/ozwHybHxii",
+      "author": {
+        "id": "1702288781057921024",
+        "name": "Skynet Insights",
+        "screenName": "Skynet_insights",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1927647773978935296/XlPfOaNr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 3,
+        "replies": 1,
+        "quotes": 1,
+        "views": 46410,
+        "bookmarks": 56
+      },
+      "createdAt": "Sun Jun 28 17:41:40 +0000 2026",
+      "createdAtLocal": "2026-06-29 01:41",
+      "createdAtISO": "2026-06-28T17:41:40+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071279124841197568"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How I Run a One-Person $10M+ Company With Claude"
+    },
+    {
+      "id": "2071286776656699605",
+      "text": "This Week on GitHub\n\nTrending repos you'll wish you saved earlier \n\n↓↓↓\nAI infrastructure this week\n\n> DeusData/codebase-memory-mcp (+2,162 ★)\n\nthis MCP server can index your codebase into a persistent knowledge graph so AI agents answer structural questions with ~120x fewer tokens. single binary, 158 languages, sub-ms queries\n\n🔗 https://t.co/qVkR1gyMPo\n\n> Usestrix/strix (+88 ★)\n\nopen-sourced AI agents that scan your PRs by actually running your code and finding real exploits. YC-backed. blocks insecure merges and opens fix PRs automatically\n\n🔗 https://t.co/9dHtfDXk59\n\n> Robbyant/lingbot-map (+372 ★)\n\nfeed-forward 3D foundation model that reconstructs scenes from streaming video in one pass. from Ant Group. includes paper and demo\n\n🔗 https://t.co/ZQMr1raSU9\n\n↓↓↓\nAI/Trading Repos this week:\n\n> Xbtlin/ai-berkshire (+1,456 ★)\n\nmulti-agent value investing framework for Claude Code and Codex. encodes Buffett, Munger, Duan Yongping, and Li Lu methodologies into adversarial research workflows\n\n🔗 https://t.co/jIVekafkIz\n\n> HKUDS/Vibe-Trading (+490 ★)\n\nresearch workspace from HKU's Data Intelligence Lab that turns plain-english finance questions into runnable analysis: data loading, strategy generation, backtesting, report export, persistent memory\n\n🔗 https://t.co/EZORj244QA\n\n↓↓↓\nDeveloper tools this week:\n\n> Browser/video-use (+186 ★)\n\nyou can edit video through natural language. paste one prompt into Claude Code or Codex and it writes the ffmpeg chain for you\n\n🔗 https://t.co/mi1VKcrkJB\n\n> Altic-dev/FluidVoice (+264 ★)\n\nmacOS offline dictation app. runs fully local on Apple Silicon. no subscription, no cloud, no audio leaving your machine\n\n🔗 https://t.co/0wlCO2CSdQ\n\n↓↓↓\nprivacy / infrastructure this week:\n\n> Simplex-chat/simplex-chat (+1,183 ★)\n\nfirst messaging network operating without user identifiers of any kind. no phone number, no email, no account. haskell. the privacy is architectural, not policy\n\n🔗 https://t.co/N2naSpdLnU\n\n↓↓↓\nAI / documents this week:\n\n> Opendatalab/MinerU (+749 ★)\n\ntransforms PDFs and Office docs into LLM-ready markdown and JSON. handles multi-column layouts, tables, embedded images. the cases where standard parsers fall apart\n\n🔗 https://t.co/Mj7FhF1R7S\n\nif you find any of these useful\n\nBOOKMARK/RETWEET/SHARE\n\nThanks for reading!",
+      "author": {
+        "id": "2985954933",
+        "name": "emelu",
+        "screenName": "emelucrypto",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2039648157198438400/KDm65fiW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 47,
+        "retweets": 0,
+        "replies": 26,
+        "quotes": 0,
+        "views": 1464,
+        "bookmarks": 5
+      },
+      "createdAt": "Sun Jun 28 17:37:04 +0000 2026",
+      "createdAtLocal": "2026-06-29 01:37",
+      "createdAtISO": "2026-06-28T17:37:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL6wVzEWAAA5EzB.jpg",
+          "width": 1920,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071283173921632373",
+      "text": "GPT-5.6 JUST GOT ACCESS TO 1,000+ APPS. THE GOVERNMENT ALREADY TRIED TO STOP IT\n\nThey banned Mythos. GPT-5.6 Sol is more capable. It's out anyway, in limited preview, for the approved list\n\n- Composio integration gives GPT-5.6 direct access to 1,000+ services including Gmail, Instagram, YouTube\n- One prompt can now draft, send, post, and follow up across all three no human in the loop\n- Government restricted full release after deeming capabilities beyond safe public threshold\n- Limited preview access granted only to vetted partners, approved customer by customer\n\nThis is app-layer agent access the model doesn't just answer questions, it operates software on your behalf across your entire stack\n\nYou can connect GPT-5.6 to your Gmail today via Composio and have it handle your entire inbox autonomously\n\nYou can run it across Instagram and YouTube simultaneously to publish, respond, and optimize zero manual action",
+      "author": {
+        "id": "1646035888957169666",
+        "name": "vanvster",
+        "screenName": "vanvster",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027808499074265088/KHO6Vn_G_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 34,
+        "retweets": 5,
+        "replies": 10,
+        "quotes": 0,
+        "views": 3026,
+        "bookmarks": 17
+      },
+      "createdAt": "Sun Jun 28 17:22:45 +0000 2026",
+      "createdAtLocal": "2026-06-29 01:22",
+      "createdAtISO": "2026-06-28T17:22:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071282873018023936/vid/avc1/576x1024/PBryP3kXeu7NonU7.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071255949226987778",
+        "text": "https://t.co/tYPG8XwpIH",
+        "author": {
+          "screenName": "0x_kaize",
+          "name": "kaize"
+        }
+      }
+    },
+    {
+      "id": "2071278465383591953",
+      "text": "https://t.co/spamkXeNrD",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 278,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 17:04:03 +0000 2026",
+      "createdAtLocal": "2026-06-29 01:04",
+      "createdAtISO": "2026-06-28T17:04:03+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071272257717252096"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How To Build Self-Improving AI Agents FREE Using Ornith AI"
+    },
+    {
+      "id": "2071276086973935717",
+      "text": "https://t.co/FkR7b8GjCn",
+      "author": {
+        "id": "19915288",
+        "name": "Aron Prins",
+        "screenName": "aronprins",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1801559253301264384/LT6RLv44_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 4,
+        "views": 3348,
+        "bookmarks": 73
+      },
+      "createdAt": "Sun Jun 28 16:54:36 +0000 2026",
+      "createdAtLocal": "2026-06-29 00:54",
+      "createdAtISO": "2026-06-28T16:54:36+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071151716104278016"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Setup Your Repo So Your Agent Has Memory And A Loop (Prompt included 😉)"
+    },
+    {
+      "id": "2071246711222055363",
+      "text": "https://t.co/qxOGBVt0UC",
+      "author": {
+        "id": "3049366699",
+        "name": "monokern",
+        "screenName": "monokern",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2056505537487888384/M08VfjwG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2011,
+        "retweets": 162,
+        "replies": 40,
+        "quotes": 21,
+        "views": 970051,
+        "bookmarks": 7037
+      },
+      "createdAt": "Sun Jun 28 14:57:52 +0000 2026",
+      "createdAtLocal": "2026-06-28 22:57",
+      "createdAtISO": "2026-06-28T14:57:52+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070867668240941056"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "How to Build a $10,000-Level Website With Animations in Claude Code"
+    },
+    {
+      "id": "2071242995081637921",
+      "text": "I found a faceless YouTube channel making $39,500/month from AdSense alone.\n\nIt's called Bright Side. Documentary-style educational videos. No host. No crew. All AI-generated.\n\nSo I asked: can I replicate that entire channel in 20 minutes using AI?\n\nI did. And it took just two prompts.\n\nHere's the exact playbook:\n\nFirst, I connected Claude (Anthropic's latest model) to Higgsfield AI's MCP tool. Took 2 minutes — just copy a URL and paste it into Claude's settings.\n\nThen I sent one prompt: \"Analyze this channel's scripts and hooks, then write a script for a similar video.\" I included the channel link.\n\nClaude studied their top videos, identified the pattern, chose a topic, and wrote a full script.\n\nSecond prompt: \"Generate a 5-minute 1080p video for a faceless YouTube channel using Seedance 2.0.\"\n\nClaude auto-split the script into scenes, generated visuals, voiceover, and music — all consistent in style. Took 10 minutes.\n\nHere's a sample from the output:\n\n\"Look at that mountain. In a few hours, it will wipe out an entire city. 2,000 years later, we're still digging out those who didn't run. This is Pompeii. Today is your last day here.\"\n\nThen Claude auto-generated a title, description, tags, and 3 thumbnail options for A/B testing. I just uploaded the video file, pasted the text, and scheduled it.\n\nI asked it to make two more videos on different topics. It researched new themes and produced completely different scripts and visuals.\n\nAfter 3 days, the new channel had views and subs. Not $39,500 yet — but the process works.\n\nNow, the revenue claim: the creator reportedly says Bright Side earns $39,500/month. I can't verify that. But YouTube education RPM is $5-15 per 1,000 views. Millions of views make those numbers plausible.\n\nCaveat: YouTube requires 1,000 subs and 4,000 watch hours for monetization. AI content passes review if it's original, deep, and well-edited. Low-effort junk gets demonetized fast.\n\nThis workflow cuts the barrier to entry. No editing skills. No scriptwriting. No face. Even prompt engineering is optional — Claude writes its own prompts.\n\nBut low barrier means fast competition. The winners will be those who understand audience needs and deliver real value. AI is an accelerator, not a money printer.\n\nTry Higgsfield MCP + Claude if you're curious about AI video. But treat it as a skill to learn, not a shortcut to wealth.\n\nFollow for more real AI money breakdowns.\n#AIYouTube #FacelessChannel",
+      "author": {
+        "id": "1938748595043463168",
+        "name": "Diluc",
+        "screenName": "hsaffiliate2025",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1982733057799999488/XrtrchUZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 106,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 14:43:06 +0000 2026",
+      "createdAtLocal": "2026-06-28 22:43",
+      "createdAtISO": "2026-06-28T14:43:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071178478217744749",
+      "text": "Every AI-built website looks identical — same purple gradient, same three cards, same emojis in the headings.\n\nHere's how to make AI build websites that look like a different studio made each one.\n\nThe fix is 5 open-source design skills you plug into Claude once:\n\n→ 161 industry palettes matched to your product type\n\n→ One bold element per page — not everything screaming at once\n\n→ Fonts with personality instead of the same default stack\n\n→ One accent color used sparingly — not the purple gradient\n\n→ Real white space instead of everything crammed together\n\nBefore: one prompt, one generic page, every time.\n\nAfter: same prompt, totally different world for every site.\n\nSame amount of time. The only difference is the principles.\n\nWant the setup? DM me. 💬",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 3,
+        "replies": 4,
+        "quotes": 0,
+        "views": 2952,
+        "bookmarks": 9
+      },
+      "createdAt": "Sun Jun 28 10:26:44 +0000 2026",
+      "createdAtLocal": "2026-06-28 18:26",
+      "createdAtISO": "2026-06-28T10:26:44+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071178217373982720/vid/avc1/1280x720/hbgClwYr5i9BHI-6.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071174898823860496",
+      "text": "This Claude Agent OS runs a judge and a builder in a loop until the work is actually good.\n\nHere's how it works:\n\n→ Builder agent creates the first version\n\n→ Judge agent scores it and gives feedback\n\n→ If it doesn't pass the judge loops it back\n\n→ Keeps going until the quality hits the bar you set\n\nThat's not prompting. That's autonomous quality control.\n\nBut the loop is just one part of what's inside:\n\n→ 15+ agents in one dashboard with shared memory\n\n→ Hermes Oracle publishes SEO blogs in one click\n\n→ Lead generation tool finds and contacts prospects automatically\n\n→ Video agent creates full AI avatar videos from one prompt\n\n→ Voice control opens apps and builds things hands-free\n\nEverything saved. Nothing lost.\n\nWant the setup? DM me. 💬",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1961,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 28 10:12:31 +0000 2026",
+      "createdAtLocal": "2026-06-28 18:12",
+      "createdAtISO": "2026-06-28T10:12:31+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071174749104050177/vid/avc1/1280x720/dqiNQ9S_EQpaMh3_.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071153469633736972",
+      "text": "Claude Code now has its own App Store.\n\nInstall find-skills once, then ask: \"Is there a good skill for [my goal]?\" Claude searches the entire ecosystem and recommends the right one.\n\nOne prompt away from the right tool.\n\nnpx skills add vercel-labs/skills@find-skills -g https://t.co/LKyyeSFULb",
+      "author": {
+        "id": "857083740811603968",
+        "name": "Sam Mokhtari",
+        "screenName": "sam_mk87",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2001271599065141248/565jFKti_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 32,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 08:47:21 +0000 2026",
+      "createdAtLocal": "2026-06-28 16:47",
+      "createdAtISO": "2026-06-28T08:47:21+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL43GvEWgAApOy_.jpg",
+          "width": 1200,
+          "height": 675
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071150910005510576",
+      "text": "https://t.co/TKnihr0GYu",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 614,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 08:37:11 +0000 2026",
+      "createdAtLocal": "2026-06-28 16:37",
+      "createdAtISO": "2026-06-28T08:37:11+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071147636741275649"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "BestBlogs Daily · 06-28 · AI overloads middle managers, local coding agents, money-system discipline"
+    },
+    {
+      "id": "2071031687501287646",
+      "text": "https://t.co/17VCFs9YN1",
+      "author": {
+        "id": "1279503373876834305",
+        "name": "Aeron",
+        "screenName": "aeronxbt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033979867616972801/WZLuNjKc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 4,
+        "views": 31258,
+        "bookmarks": 11
+      },
+      "createdAt": "Sun Jun 28 00:43:26 +0000 2026",
+      "createdAtLocal": "2026-06-28 08:43",
+      "createdAtISO": "2026-06-28T00:43:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070972683874140160"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "He Is 19. He Couldn't Edit a Single Clip. The Faceless Channel He Built With Claude Cleared $41,200 "
+    },
+    {
+      "id": "2071026199862612225",
+      "text": "@Mr_Salio Spent the last two weeks making a list of tasks for Fable to attempt. I think it will be able to write an entire book in one prompt. I want to make custom web font. I want to use Fable to expand my existing website sections to make me more discoverable as a writer.",
+      "author": {
+        "id": "1720450427609559040",
+        "name": "Ty McDuffey",
+        "screenName": "TyMcDuffey",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029298195130662912/WWGDjyhP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 53,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 00:21:38 +0000 2026",
+      "createdAtLocal": "2026-06-28 08:21",
+      "createdAtISO": "2026-06-28T00:21:38+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070943135224434967",
+      "text": "@MarcinAI81 Claude Fable 5 is the real deal. One prompt, three full apps. That's not hype.\n\nThe Jarvis dashboard with system telemetry, command console, and MCP connectors shows strong agentic planning. \nIt handled voice synthesis, real-time data feeds, and multi-app orchestration cleanly.",
+      "author": {
+        "id": "2321596286",
+        "name": "FatherSon",
+        "screenName": "NevoSayNevo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065078402789367808/h0MLSa_l_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 46,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 18:51:34 +0000 2026",
+      "createdAtLocal": "2026-06-28 02:51",
+      "createdAtISO": "2026-06-27T18:51:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070914704998887916",
+      "text": "This 35-year-old guy built a girl who does not exist out of himself and pulls $4,700 a month off her fans on Fanvue without ever showing his own face.\n\nThe AI sculpts this girl for him right on top of his own footage.\n\nHe sits down in the same room in front of the same camera and types one line: \"build me a new girl calm with her own backstory and hold her character across every reel\".\n\nClaude built the character from the look to the way she talks ComfyUI laid the face over his footage and Kling turned the still frames into a living vertical clip. Same room same camera and a completely different person on screen.\n\nA couple of minutes later a finished reel was sitting in the folder impossible to tell apart from a live blogger and he never once put on a wig glued on a cosplay or showed his real self on camera.\n\nHere is how that turns into $4,700.\n\nRunning an account like this used to take a live girl on camera shoots edits and a separate person for the chat and she could walk away at any moment.\n\nThe clip itself is the traffic. One of them pulled 900,000 views and a slice of the viewers turned into paid Fanvue subscribers.\n\nThe first month barely cleared $420 and in the second one video brought in 80 paid subscribers and the total climbed to almost $4,700.\n\nHis only real cost is a couple of subscriptions to the engines and the rest is his.\n\nSince one girl is just one prompt he runs them in parallel and swaps only the face and the character: a fitness trainer a travel girl and a beauty reviewer and each next one costs almost 0.\n\nSubscribers are not paying for a real person. They are paying for a character who is always online and never flakes on a shoot.\n\nAnd it is not only the reels. The same Claude reads the chats with fans points out where to raise the price and drafts the replies in the girl's voice so even the talking runs on autopilot.\n\nThe wild part is how early this still is. Most people are still hunting for a live model and growing an account for months while he spends 28 minutes a day scheduling reels and running the machine.\n\nThere is no wall to hit: a new identity is just one more prompt in the queue and a character that lands turns overnight into a grid of a dozen girls across different platforms.\n\nThis is no longer content creation it is identity arbitrage: the face on camera stopped being who you were born as and became who you switch on for the demand.\n\nGive it a year and \"I subscribed to a real girl\" will sound exactly like \"I mailed a fan letter to an actress and waited for a postcard back\".\n\nHow much longer do live on-camera creators last when anyone can build a face in an evening that performs better?",
+      "author": {
+        "id": "2043365300544888832",
+        "name": "Draven",
+        "screenName": "notdrvx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057772900392796160/1BpbNFNG_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 789,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 16:58:36 +0000 2026",
+      "createdAtLocal": "2026-06-28 00:58",
+      "createdAtISO": "2026-06-27T16:58:36+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070907253679374336/vid/avc1/1080x1920/10qetEeTcg27k2In.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2064615703219458159",
+        "text": "https://t.co/kB3WJsr42Q",
+        "author": {
+          "screenName": "notdrvx",
+          "name": "Draven"
+        }
+      }
+    },
+    {
+      "id": "2070900658002338265",
+      "text": "https://t.co/Exy5GSWgOU",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 247,
+        "bookmarks": 1
+      },
+      "createdAt": "Sat Jun 27 16:02:46 +0000 2026",
+      "createdAtLocal": "2026-06-28 00:02",
+      "createdAtISO": "2026-06-27T16:02:46+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070897232526950400"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "AI Agent Frameworks With Sakana Fugu Will SHOCK You"
+    },
+    {
+      "id": "2070896938275529199",
+      "text": "https://t.co/6dWpfMMUKZ",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2268,
+        "bookmarks": 2
+      },
+      "createdAt": "Sat Jun 27 15:48:00 +0000 2026",
+      "createdAtLocal": "2026-06-27 23:48",
+      "createdAtISO": "2026-06-27T15:48:00+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070893209199554560"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Build Agentic AI Systems With 4 Tools Connected In One Place"
+    },
+    {
+      "id": "2070877325219299730",
+      "text": "Everyone's talking about loop engineering right now. If you're not sure what it actually means, here it is in plain English, from someone who runs his whole business on it.\n\nI run 5 businesses and I barely prompt AI anymore.\n\nA year ago my whole day was typing prompts. Open Claude, ask for something, wait, copy it, fix it, ask again. I was basically a full-time prompt typer across an agency, a community, an app studio, consulting, and an Instagram page.\n\nAt some point that broke. Too many businesses, not enough me.\n\nSo I stopped prompting and started building loops instead. A loop is simple. You set up a system that prompts the AI for you, lets it work, checks its own output, and only pings you when it actually needs a human.\n\nHere's what's running for me right now:\n\n→ A morning loop that briefs me on all 5 businesses before I'm even up\n→ A loop that scopes every client build before the call so I walk in ready\n→ A content loop that drafts the first pass of my tweets and scripts\n→ A loop that watches my community and tells me what people are stuck on\n\nI don't sit there typing prompts to these. They run on their own and report back. I just review and make the calls only a human should make.\n\nThis isn't my idea. Boris Cherny, the creator of Claude Code, kicked it off last week. He doesn't prompt Claude anymore, he just writes loops. That's why everyone's suddenly calling it loop engineering.\n\nThe shift is simple. Prompt engineering made you faster. Loops make the work happen without you.\n\nIf you're running anything real and still typing one prompt at a time, you're on hard mode.",
+      "author": {
+        "id": "1676906284715503617",
+        "name": "Prajwal Tomar",
+        "screenName": "PrajwalTomar_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1994957908099125248/9AaluzL-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 3,
+        "replies": 4,
+        "quotes": 0,
+        "views": 3621,
+        "bookmarks": 33
+      },
+      "createdAt": "Sat Jun 27 14:30:04 +0000 2026",
+      "createdAtLocal": "2026-06-27 22:30",
+      "createdAtISO": "2026-06-27T14:30:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL07826bsAAXTTj.jpg",
+          "width": 2752,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070858813800907139",
+      "text": "this entire video was made by one ai pipeline with zero human editing\n\nthe script. the images. the scenes. the story arc. the football characters. the absurd \n\nplot twist at the stadium all of it generated and sequenced automatically \n\nhere's what the pipeline looks like:\n\nclaude writes the story beat by beat character, setting, conflict, punchline. one prompt in, full scene breakdown out\n\nmidjourney or flux generates each frame from the scene descriptions. consistent characters across 60 seconds of content\n\nrunway or kling animates the stills. 3-4 seconds per scene, stitched together.elevenlabs voices the narration. auto-synced to the cuts\n\nthe whole thing runs on n8n. you feed it a topic \"lamine yamal meets a wooden creature at euro 2024\" it outputs a ready-to-post video\n\ncost per video: $0.80\n\ncreator posts 3-5 of these a day.\n\nthat's a content studio with no studio, no editor, no camera, no crew. the pipeline is the product\n",
+      "author": {
+        "id": "907650906354843648",
+        "name": "bytez",
+        "screenName": "6uappi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059364033938026496/I1suEpq6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 145,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 13:16:30 +0000 2026",
+      "createdAtLocal": "2026-06-27 21:16",
+      "createdAtISO": "2026-06-27T13:16:30+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070858611228545025/vid/avc1/576x1024/ydjAIrekCAIz9mLY.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069767794518806656",
+        "text": "https://t.co/j6cbuHRTMR",
+        "author": {
+          "screenName": "Asteri_eth",
+          "name": "Asteri"
+        }
+      }
+    },
+    {
+      "id": "2070847802901717299",
+      "text": "ONE prompt.\n\nThat's all it took.\n\nClaude Code generated an entire Todo App directly inside the terminal.\n\nThis is one of the coolest AI developer tools I've used recently.\n\n🎥 Full tutorial on my YouTube:\n(https://t.co/hQxfWGMKyV)\n#ClaudeCode #AI #Programming #OpenRouter https://t.co/6dOTKGAZCa",
+      "author": {
+        "id": "1691461695661899776",
+        "name": "Code Hunter Sharath",
+        "screenName": "sharathchandark",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2006637058463551488/vqvzk-kS_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 58,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 12:32:45 +0000 2026",
+      "createdAtLocal": "2026-06-27 20:32",
+      "createdAtISO": "2026-06-27T12:32:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070847519417057282/vid/avc1/720x1280/PmC5S5ia4QFbxltb.mp4?tag=14",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [
+        "https://youtu.be/st6afatxH94"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070824464607334698",
+      "text": "A few months ago...\n\nI used ChatGPT for almost everything.\n\nWriting.\nResearch.\nBusiness ideas.\nPlanning.\n\nPretty much every AI task.\n\nThen someone asked me a simple question.\n\n\"Have you actually tried Claude for serious work?\"\n\nHonestly...\n\nI hadn't.\n\nSo I decided to test it.\n\nNot for five minutes.\nNot for one prompt.\n\nI used Claude every day for real client work.\nAnd that's when I noticed something interesting.\n\nClaude wasn't giving me \"better\" answers.\n\nIt was giving me **better thinking**.\n\nThere's a difference.\n\nFor example...\n\nWhen I asked both tools to write an X thread...\n\nChatGPT usually gave me a good draft.\n\nClaude felt like it understood the story I was trying to tell.\n\nThe flow felt more natural.\nThe ideas connected better.\n\nThen I tested them on a business strategy.\n\nInstead of jumping straight to the answer...\n\nClaude broke the problem into smaller parts.\n\nIt explained:\n\n• What the problem was\n• Why it mattered\n• Different ways to solve it\n• The pros and cons of each option\n\nIt felt less like chatting with AI...\nAnd more like talking to a consultant.\n\nNext...\n\nI uploaded a long PDF.\n\nOver 100 pages.\n\nBoth tools summarised it.\nBut Claude went further.\n\nIt connected ideas across different chapters.\nIt highlighted patterns.\nIt even pointed out things I had completely missed.\n\nThen I tried building a website.\n\nInstead of only writing HTML...\nClaude first thought like a designer.\n\nThen a copywriter.\nThen a developer.\n\nIt explained every decision before writing the code.\n\nThat completely changed how I use AI.\n\nToday...\n\nI don't ask:\n\n\"Which AI is better?\"\n\nI ask:\n\n\"Which AI is better for this job?\"\n\nFor me...\n\nI usually open Claude first when I'm doing:\n\n• Long-form writing\n• Business strategy\n• Website planning\n• Research\n• PDF analysis\n• Client work\n\nAnd I still open ChatGPT every single day for:\n\n• Image generation\n• Quick questions\n• Brainstorming\n• Fast workflows\n\nThe biggest lesson?\n\nDon't become loyal to one AI tool.\nBecome good at choosing the right tool for the right task.\n\nThat's where the real advantage is.\n\nNow I'm curious...\n\nIf you could only keep **one** AI tool for the next 30 days...\n\nWhich one would you choose?\n\nClaude or ChatGPT?",
+      "author": {
+        "id": "1680108291702116352",
+        "name": "Arslan Iqbal",
+        "screenName": "thearslaniqbal",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2043763948252737536/f1CrttBr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 39,
+        "retweets": 3,
+        "replies": 32,
+        "quotes": 0,
+        "views": 1248,
+        "bookmarks": 3
+      },
+      "createdAt": "Sat Jun 27 11:00:01 +0000 2026",
+      "createdAtLocal": "2026-06-27 19:00",
+      "createdAtISO": "2026-06-27T11:00:01+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLzrbuSaMAAFouz.jpg",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

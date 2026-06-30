@@ -1,0 +1,885 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071790123113431103",
+      "text": "look im really really really not here to judge as i’ve made a mistake with AI in the past that i deeply genuinely sincerely regret everyday so this isn’t coming from a place of superiority at all\n\nbut i just think we should be a little careful about what what is being claimed as font-claude-response-body is a css class, meaning it’s an html attribute and not a watermark necessarily so like, if html passes through a rich-text clipboard or an import/export pipeline that doesn’t sanitize class attributes and those can persist through multiple edits\nso say a 3rd party tool like a text clipper or a synonyms website or any took built with claude available in the internet is reusing or preserving that html, the class can persist there too. \n\nagain, not accusing and not denying just adding a point",
+      "author": {
+        "id": "1754242568206893057",
+        "name": "gabi",
+        "screenName": "gabilovestursia",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066155244141076481/VuwsnprE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 16,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 2,
+        "views": 461,
+        "bookmarks": 1
+      },
+      "createdAt": "Tue Jun 30 02:57:12 +0000 2026",
+      "createdAtLocal": "2026-06-30 10:57",
+      "createdAtISO": "2026-06-30T02:57:12+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071702295285248300",
+      "text": "100% agreed, I think dashboards are a default answer to every data question, a very mediocre one. There are at least 2 use cases off the top of my head where dashboard is not the solution yet is used as one: alerts (i.e. I care that something changed) and questions (i.e. tell me something about the data) - we just accept that the answer is a dashboard cause we can’t be bothered to write an alert.\n\nBtw I always find it funny how many „rate my dashboard built with Claude” design posts i see here - like isn’t dashboard ui a solved problem in 2026? Show me something that you replaced the static dashboard with.",
+      "author": {
+        "id": "1295087625863299072",
+        "name": "kuba",
+        "screenName": "zajaccount",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1945610346250596352/MBDJEIpP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 86,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 21:08:12 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:08",
+      "createdAtISO": "2026-06-29T21:08:12+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071646492171878742",
+      "text": "What the website for a Product Hunt 'Product of the Day' could look like today. But honestly, it's pretty sad over there right now—99% of the winning products are just built with Claude 🫠 https://t.co/5yHxMQBIeH",
+      "author": {
+        "id": "3152701691",
+        "name": "Kris Anfalova",
+        "screenName": "KrisAnfalova",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2014408804201304065/cer4mPWs_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 166,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 29 17:26:27 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:26",
+      "createdAtISO": "2026-06-29T17:26:27+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071645881657421824/vid/avc1/1800x1350/ek4Pii6HI3ZHmXVH.mp4?tag=28",
+          "width": 1800,
+          "height": 1350
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071516069060333986",
+      "text": "This is the summary of the @twimlai Generative AI problem-solving research and impact meetup that we had last Friday at 8 a.m. PT. \n\nMayank(@cataluna84)'s TPU Training Update\n🎙️ Presented a simultaneous speech-to-speech translation model built with teammates from the Expedition Tinyaya cohort, using the Moshi backbone with Coherent guidance\n🏗️ Architecture includes user/model audio streams, LoRA fine-tuning, depth decoder (Moshi-ko 6L frozen), CB0–CB7 codebook predictions, and Mimi codec audio output\n⏳ Training a 15k-step run on TPUs (~24 hours total); at time of meeting, ~11k steps complete with ~5–7 hours remaining\n📉 Ran a prior hyperparameter sweep (~22–24 hours) via Weights & Biases; best run had validation audio loss of 4.889, with text weight (0.38) and weight decay (0.35) as the most important hyperparameters\n💻 Collaborator Alper is training on H100 80G GPUs; Mayank is using SPMD and FSDPv2 on TPUs\n⚠️ Evaluation suite requires GPU (not runnable on TPU) due to smaller evaluator model dependencies\nTPU-Specific Challenges\n⏱️ XLA compilation before the first training step takes 30–40 minutes; subsequent steps run in ~10 seconds\n🐛 A critical bug — `XLA_NO_SPECIAL_SCALERS` — caused all validation loss values to be NaN (corrupted); took ~16–17 hours to debug\n🤖 Used AI agents and MCPs to help diagnose the configuration issue\n🔄 Orchestration scripts (playbooks, skills) auto-handle spot instance preemption: if a TPU VM is preempted, a new instance spins up automatically, copies the dataset from Hugging Face, installs code from a tarball, and resumes — no manual intervention required\n📄 All findings, architecture diagrams, and TPU diagnostics documented in PR comments and repo for future reference\n💾 Plans to create a personal backup repo with a pinned README of TPU setup/orchestration details for reuse\n🌐 Project will result in a blog post published under Coherent's website in ~1–2 weeks\n\n@Google Product Updates\n📊 NotebookLM new agentic capabilities: more output formats (charts, graphs, CSVs), data analysis with code generation (Python-style, similar to ChatGPT data analysis), and improved customization — not full code generation like Claude or similar\n🌍 Gemini 3.5 Live Translate: real-time speech translation across 70+ languages via the live streaming API; demo showed English ↔ Mandarin ↔ Swedish conversation\n🏥 Real-time translation apps already deployed (e.g., for medical translation between Spanish/English speakers on phones)\n🖱️ Gemini 3.5 Flash computer use: UI control tool now built into 3.5 Flash, demonstrated analyzing the Gemini app and returning a categorized feature list\n💰 Note: Gemini 3.5 Flash is reportedly more expensive than the prior Flash model, closer in cost to the prior Pro model\n🎧 Discussion of accent conversion: tool \"Crisp\" demonstrated real-time accent softening for call center use cases\n🧠 NotebookLM use cases discussed: creating slide decks, private knowledge bases with sensitive/proprietary documents, querying product manuals, mind maps for topic ramp-up, and a soil/agriculture consulting project\n\nLoop Engineering (@yshaoeng)\n⚙️ \"Loop engineering\" is a recently emerging AI term; Yupeng drew analogies to MAPE-K (Monitor, Analyze, Plan, Execute — Keep) architecture from 1960s–70s human-machine systems for autopilot design\n📡 Key insight: loop engineering is about interfacing AI with real-time sensors/inputs from the world — not just optimization loops\n🤖 Practical example given: instead of manually curating trending topics and prompting an agent to write social media posts, loop engineering builds the harness that automatically monitors feeds, triggers the agent, and posts — removing the human from the loop\n🔗 Connected to prior concepts: harness engineering (Martin Fowler article), context engineering, and now loop engineering as successive layers\n🔮 Prediction: a world model framework for environment/hazard testing may emerge soon\n💸 Skeptical note raised: loop engineering may partly be a way to increase token usage\n🔄 Mayank(@cataluna84) noted practical application in their TPU orchestration: sub-agents check for running TPU processes and self-allocate work based on pre-set goals\n\nEval Course Mention (@HamelHusain & @sh_reya)\n🏫 Free multi-week eval course series being run by Hamel and Shreya, one hour per session\n🛠️ First session covered Shreya's evaluation tools and techniques; more sessions planned\n\nOpenAI Erdős Problem Hype — Rant (@skr1125)\n🧮 OpenAI announced solving an ~80-year-old Erdős combinatorics problem; Srinivas argued this was significantly overhyped\n📉 What actually happened: AI generated thousands of reasoning traces → OpenAI hired mathematicians to review them → mathematicians found a counter-example to a conjecture, thereby disproving it — not an autonomous AI proof\n📰 Media (e.g., @thursdai_pod) declared \"math is done,\" which @skr1125 called irresponsible and harmful\n⚠️ Core concern: hype causes real harm — creates fear and hostility among non-technical people and fuels resentment toward AI broadly\n💼 Real-world example shared: executives privately asking for strategies to eliminate tens of thousands of jobs using AI, while public-facing messaging says otherwise\n🏦 Counter-argument offered: historical analogies (ATM machines didn't reduce bank tellers; linguistics jobs are at an all-time high despite AI translation tools; Workday/cloud computing created more jobs than eliminated)\n🧠 Group consensus: domain expertise is what's missing in the hype — people who understand AI but not the math domain misread the significance\n🛡️ Cal Newport's Deep Work and his weekly AI commentary mentioned as a useful filter against doom-trolling\n📺 A YouTube video on \"humanity in the age of AI\" was shared in chat (slight faith-based framing, noted as broadly accessible)\n📜 The Pope's encyclical on AI also mentioned as a surprisingly substantive read on AI ethics\n\nNamed Entity Resolution / Taxonomy Matching (@antigravityimp)\n🏢 Yuri is rebuilding a solution for company name entity resolution for a friend's financial reporting use case\n⚙️ Claude and Gemini both recommended not using LLMs directly; instead, build a threshold-based system\n📊 Recommended embeddings: Link Transformer (trained on WikiCompany aliases) — slightly better than S-BERT\n🛠️ Fuzzy matching tools evaluated: RapidFuzz (successor to FuzzyWuzzy), Splink, and Zinq for large-scale data\n🎯 Quick prototype built with Claude: implemented fuzzy and TF-IDF lexical matching; baseline accuracy ~70%\n🔁 Problem recurs frequently (deduplication, financial research, software bug reports) — goal is to have a reusable ready solution\n💬 Looking for feedback, particularly from @aitaxonomist and @palsujit (who work in this area but were absent)\n🆔 Noted: standard financial identifiers (e.g., CUSIP) exist for stock/asset names but entity name resolution for company names remains a distinct, persistent problem",
+      "author": {
+        "id": "1481857459",
+        "name": "Mayank Bhaskar",
+        "screenName": "cataluna84",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1372809854939623424/OKqjJLdV_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 647,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 08:48:12 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:48",
+      "createdAtISO": "2026-06-29T08:48:12+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL-Ay0vaIAMpi24.jpg",
+          "width": 2752,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071463957957902842",
+      "text": "GPT Image 2 plus Seedance 2.0. An interior design walkthrough workflow.\n\nGPT Image 2 writes a twelve-shot storyboard for one camera path through a warm minimalist interior. Seedance 2.0 animates that exact path into a continuous twelve-second walkthrough. No cuts.\n\nBuilt with claude code using the  @wireflowai  API",
+      "author": {
+        "id": "1463679609019387910",
+        "name": "AndyAI",
+        "screenName": "AndyAI_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1699189031224160257/0VsQoPtL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 201,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 05:21:08 +0000 2026",
+      "createdAtLocal": "2026-06-29 13:21",
+      "createdAtISO": "2026-06-29T05:21:08+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071463854278873088/vid/avc1/1080x1208/fv5pBQgXFRf4i9-6.mp4?tag=28",
+          "width": 1080,
+          "height": 1208
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071356572236747248",
+      "text": "SOLO DEV MAKES $48,000 A MONTH FROM A SPACE HORROR GAME HE BUILT WITH CLAUDE, FREE UNITY ASSETS, AND ZERO TEAM\n\nthe game looks like iron lung crossed with hardspace shipbreaker. ps1 graphics, red crt warnings, eva spacewalk during a solar flare. sells on steam for $14.99 a copy.\n\nhe doesn't run ads. doesn't pay influencers. doesn't have a marketing team. the entire distribution engine is one tiktok account where he posts 51-second clips of the game looking ominous. one clip a week. the steam page does the rest.\n\nthe stack guess based on visible artifacts: free unity assets for the station geometry, claude for the systems code, an old gaming pc to render, a phone for the tiktok cuts. probably $0 in software outside steam's revenue share.\n\nthe moat isn't art. it isn't gameplay. it's the 51-second loop that converts strangers into buyers at zero marketing cost.\n\nthe loop is dumb and reproducible:\n\n→ lo-fi crt aesthetic, ps1-era polygons, scanlines, red overlay\n→ one threat-text headline white on black. \"don't be outside during a solar flare\"\n→ red warning text crawl above and below the visual. \"magnetosphere breach in sector 7 :: source: solar\"\n→ HUD with falling stats in the corner. oxygen 71%. safer: false. tether: false.\n→ 30-50 seconds. no narration. no gameplay reveal. no logo. just vibe and dread.\n\nstudios hire trailer agencies for $80k and 6-month campaigns. this guy films one clip in 20 minutes and clears $48k a month.\n\nthe only thing that's still hard in indie gamedev in 2026 is taste. the rest is now solvable from a bedroom.",
+      "author": {
+        "id": "2008878851221577728",
+        "name": "Wemoo",
+        "screenName": "0xWemoox",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062105342704529409/nNHGIQ1P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 255,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 22:14:25 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:14",
+      "createdAtISO": "2026-06-28T22:14:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071355502882111488/vid/avc1/576x1024/_qhozDiIz_NPlwYb.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071339597758407062",
+      "text": "@mist3rdouglas Thank you, all built with Claude Design. I'm going to get more creative with some things now that I have it functional and I've figured out hosting.",
+      "author": {
+        "id": "950057817502814210",
+        "name": "Glenn Williams",
+        "screenName": "GlennHasABeard",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2020552376726237184/Er1sWKzL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 21:06:58 +0000 2026",
+      "createdAtLocal": "2026-06-29 05:06",
+      "createdAtISO": "2026-06-28T21:06:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071051681307971662",
+      "text": "Not a developer. Never touched the code.\n\nThis is my new homepage, built with Claude design in an afternoon. https://t.co/ya2BEnAhc7",
+      "author": {
+        "id": "838712731",
+        "name": "Kevin Tung",
+        "screenName": "KevinTungDesign",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055034448035414016/slzSvOTy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 78,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jun 28 02:02:53 +0000 2026",
+      "createdAtLocal": "2026-06-28 10:02",
+      "createdAtISO": "2026-06-28T02:02:53+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071050679376859136/vid/avc1/3244x1772/6H9sHZMftjWNCZ9p.mp4?tag=28",
+          "width": 3244,
+          "height": 1772
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071031687501287646",
+      "text": "https://t.co/17VCFs9YN1",
+      "author": {
+        "id": "1279503373876834305",
+        "name": "Aeron",
+        "screenName": "aeronxbt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2033979867616972801/WZLuNjKc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 4,
+        "views": 31252,
+        "bookmarks": 11
+      },
+      "createdAt": "Sun Jun 28 00:43:26 +0000 2026",
+      "createdAtLocal": "2026-06-28 08:43",
+      "createdAtISO": "2026-06-28T00:43:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070972683874140160"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "He Is 19. He Couldn't Edit a Single Clip. The Faceless Channel He Built With Claude Cleared $41,200 "
+    },
+    {
+      "id": "2070842124770115812",
+      "text": "Spoke with a CPA earlier today who wanted to get more CFO work.\n\n100% of their branding online was for tax work...\n\nPretty easy fix, given that the guys whole website was built with claude code. \n\nBut that's the easy part to fix. The hard part is getting people to SEE YOUR STUFF.",
+      "author": {
+        "id": "1397956723827171342",
+        "name": "Tyler S. Clark 🤙",
+        "screenName": "DreamFirms",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1618236120004689926/0_e0X__u_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 6,
+        "quotes": 0,
+        "views": 1066,
+        "bookmarks": 1
+      },
+      "createdAt": "Sat Jun 27 12:10:11 +0000 2026",
+      "createdAtLocal": "2026-06-27 20:10",
+      "createdAtISO": "2026-06-27T12:10:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070789554081272067",
+      "text": "𝗧𝗵𝗶𝘀 𝗶𝘀 𝘁𝗵𝗲 𝗺𝗼𝘀𝘁 𝗽𝗼𝘄𝗲𝗿𝗳𝘂𝗹 𝘀𝘆𝘀𝘁𝗲𝗺 𝗜'𝘃𝗲 𝗲𝘃𝗲𝗿 𝗯𝘂𝗶𝗹𝘁 𝘄𝗶𝘁𝗵 𝗖𝗹𝗮𝘂𝗱𝗲.\n\nAnd none of it requires Fable 5 or GPT 5.6.\n\nHere's what runs inside one dashboard:\n\nOne click publishes SEO content that grew a site from 0 to 278 clicks a day.\n\nOne click generates a full AI avatar video with script, B-roll, and research done.\n\nOne click takes an idea from concept to shipped app with agents building in the background.\n\nOne click creates cinematic short films with open source tools.\n\nOne click pulls trending news, writes unique articles, and publishes to three sites simultaneously.\n\n1.2 million impressions generated in a single day with AI content.\n\nThe whole thing can run on free APIs and local models.\n\nZero token cost if you set it up right.\n\nEvery frontier model getting gated just proves one thing.\n\nThe people who built systems don't care what gets blocked next.\n\nThey just plug in the next model and keep going.\n\nDon't chase the model.\n\nBuild the system.",
+      "author": {
+        "id": "1405031034",
+        "name": "Julian Goldie SEO",
+        "screenName": "JulianGoldieSEO",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1322760467979268096/b3RoYhTq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 4,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2588,
+        "bookmarks": 10
+      },
+      "createdAt": "Sat Jun 27 08:41:17 +0000 2026",
+      "createdAtLocal": "2026-06-27 16:41",
+      "createdAtISO": "2026-06-27T08:41:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070789444370935808/vid/avc1/1280x720/pKExGnuS8PNZeZ4F.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070784930892894627",
+      "text": "I built a browser RTS: Pixel Conquest. WW2, pixel art, a 7-day map-domination war you fight alongside your faction. \n\nGame design + logic are 100% mine (a month of tuning); code and art built with Claude Code, disclosed openly. \n\nWatch the game review: https://t.co/w5rAL0FU5n",
+      "author": {
+        "id": "350810245",
+        "name": "Tokenberry",
+        "screenName": "tokenberry",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065535000813154304/gA3z-J0G_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 68,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 08:22:55 +0000 2026",
+      "createdAtLocal": "2026-06-27 16:22",
+      "createdAtISO": "2026-06-27T08:22:55+00:00",
+      "media": [],
+      "urls": [
+        "https://youtu.be/Daw2i7Rd0Nc"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070522978031243322",
+      "text": "Spent a few days building a tool for myself instead of doing actual work.\n\nPolo: lead finder + outreach drafter for web design gigs. My design, built with Claude Code.\n\nActually using it now. Demo 👇 https://t.co/PC0KPAw1l3",
+      "author": {
+        "id": "1613918617795436545",
+        "name": "BLNC®",
+        "screenName": "vikoblanco_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061183529371709443/58adGDmZ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 15:02:01 +0000 2026",
+      "createdAtLocal": "2026-06-26 23:02",
+      "createdAtISO": "2026-06-26T15:02:01+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070522535544832000/vid/avc1/1194x720/4DfbpPNDQyWP9Evn.mp4?tag=14",
+          "width": 1792,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070483056398336259",
+      "text": "A solo dev posted a GTA 6 prototype built with Claude 4 in 48 hours.\n\nThe media thought that was the story. It was not.\n\nThe real story was the server logs. No Unity license. No Unreal Engine splash. No Rockstar proprietary middleware. The map was procedurally generated from a single prompt. The physics ran on a lightweight WebGL build. The NPC behavior was Claude calling itself every 200ms through a local Ollama instance.\n\nThe AI stack: Claude 4 for architecture and game logic ($40 API credit), a single RTX 4090 for inference ($1,600), ComfyUI for texture generation ($0 in cloud cost), and a free Vercel deployment. Total hardware/API cost under $2,000. Rockstar's GTA 6 budget is reportedly over $2 billion.\n\nThe market gives 0% odds Anthropic IPOs by June 30, 2026 -- because no one believes Claude's creator can go public within a month. Yet a single developer using that same model just eliminated a $2 billion labor barrier and a decade of production time in a long weekend.",
+      "author": {
+        "id": "4827902139",
+        "name": "Pascual ⚡",
+        "screenName": "0xPascual",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2013868866254843905/bL1l5Fjp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 206,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 12:23:23 +0000 2026",
+      "createdAtLocal": "2026-06-26 20:23",
+      "createdAtISO": "2026-06-26T12:23:23+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070482981521620992/vid/avc1/1276x718/2GhQrUGwotP5m8H9.mp4?tag=28",
+          "width": 1276,
+          "height": 718
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070476818436542875",
+      "text": "https://t.co/Q8tSuavr8i",
+      "author": {
+        "id": "1640297083818106880",
+        "name": "Krackin",
+        "screenName": "KrackinRobert",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068635107078909952/JRbiB6BF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1963,
+        "bookmarks": 3
+      },
+      "createdAt": "Fri Jun 26 11:58:35 +0000 2026",
+      "createdAtLocal": "2026-06-26 19:58",
+      "createdAtISO": "2026-06-26T11:58:35+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070448605429645314"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "You don't need to play GTA 6 to make $5000/month from it. Here is how:"
+    },
+    {
+      "id": "2070246885751767256",
+      "text": "@Sthiven_R Glad World of Claudecraft got its foundation built with Claude Fable 5\n\nOpen-source development took over from since ban, but the pace of updates been insane https://t.co/Iup2rbr0JN",
+      "author": {
+        "id": "1911306988618977280",
+        "name": "Crumb Cat",
+        "screenName": "CrumbcatWins",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1911313523067551744/tYNsbfzQ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 176,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 20:44:55 +0000 2026",
+      "createdAtLocal": "2026-06-26 04:44",
+      "createdAtISO": "2026-06-25T20:44:55+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLr-kF1WAAAGjvW.jpg",
+          "width": 2356,
+          "height": 1328
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2069745211916562641",
+      "text": "🪤 Trap Tower: Troll Platformer is live!\nA rage game where every floor, door &amp; spike is a trap. 200 levels, 50 trap types. You WILL die — that's the point 😈\nBuilt with Claude Code + Fable 5 ⚡ https://t.co/n3LmsnrW8j\n#ClaudeCode #buildinpublic #indiegame #gamedev https://t.co/BdTCphkaXC",
+      "author": {
+        "id": "1005721899186262016",
+        "name": "NoCodeJustAI",
+        "screenName": "NoCodeJustAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1831744276855975941/JXi46AyE_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 120,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jun 24 11:31:27 +0000 2026",
+      "createdAtLocal": "2026-06-24 19:31",
+      "createdAtISO": "2026-06-24T11:31:27+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069742823012712449/vid/avc1/720x1280/tsCBwVRjR4o3xGLy.mp4?tag=14",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [
+        "https://play.google.com/store/apps/details?id=com.traptower.game"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2069405088645570978",
+      "text": "WIP website hero built with claude code https://t.co/35kFhhtwGP",
+      "author": {
+        "id": "36524739",
+        "name": "Chris Halaska",
+        "screenName": "chalaska",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1912376546750287872/jLNyUkQ5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 45,
+        "retweets": 0,
+        "replies": 7,
+        "quotes": 0,
+        "views": 2280,
+        "bookmarks": 10
+      },
+      "createdAt": "Tue Jun 23 12:59:55 +0000 2026",
+      "createdAtLocal": "2026-06-23 20:59",
+      "createdAtISO": "2026-06-23T12:59:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069404799058243584/vid/avc1/1156x720/8GyqiIeTMoh2pLKl.mp4?tag=28",
+          "width": 1156,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2069358154945556727",
+      "text": "Day 11/30 - A crypto website.\n\nI designed the full website aside the hero section using Figma AI, added a travel scroll on the website I built with Claude, made is responsive, added a slight glass effect dropdown on the Nav bar.\n\nLive link: https://t.co/9jvM5gSu10 https://t.co/z9qm6P9Wql",
+      "author": {
+        "id": "1704221920839811072",
+        "name": "Biba",
+        "screenName": "UIbyBiba",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1810058398467039232/IvmBnbtS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 54,
+        "retweets": 4,
+        "replies": 5,
+        "quotes": 1,
+        "views": 3357,
+        "bookmarks": 11
+      },
+      "createdAt": "Tue Jun 23 09:53:25 +0000 2026",
+      "createdAtLocal": "2026-06-23 17:53",
+      "createdAtISO": "2026-06-23T09:53:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069357879438516224/vid/avc1/2160x3840/iRgYDqRtugwSTVaN.mp4?tag=28",
+          "width": 2160,
+          "height": 3840
+        }
+      ],
+      "urls": [
+        "https://synergycrypto.netlify.app/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069044836573827280",
+        "text": "Day 10/30\nAdded auth pages to the hero section and a little cursor effect.\n\nCHECK IT OUT: https://t.co/LON77cFqir https://t.co/LB5VHoz6Hm",
+        "author": {
+          "screenName": "UIbyBiba",
+          "name": "Biba"
+        }
+      }
+    },
+    {
+      "id": "2069270983299703150",
+      "text": "Blogs are cooked. Who searches Google anymore when we've got TikTok and AI?\n\nI rebuilt mine anyway.\n\nI started That Travel Blog in 2012, with one dream: to travel the world.\n\nAt its peak, around 8 years ago, it was 1,000 readers a day, sponsored hotels, festivals around the world, and 600,000 Instagram posts using my hashtag.\n\nWhat a trip.\n\nBut it aged. A neglected, slow WordPress site, I felt embarrassed. So I rebuilt the whole thing: a new editorial design, migrated off WordPress, properly fast.\n\nStack: Astro, Cloudflare Pages. Built with Claude Code.\n\nI know the era is over. I'll never take this one offline though. Some things you keep for the nostalgia.",
+      "author": {
+        "id": "1426556875",
+        "name": "Dave Ships 🇹🇭",
+        "screenName": "davetookthese",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061017976644743168/kf0yE8Ur_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 87,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 23 04:07:02 +0000 2026",
+      "createdAtLocal": "2026-06-23 12:07",
+      "createdAtISO": "2026-06-23T04:07:02+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLeG_J5aAAEn71p.jpg",
+          "width": 966,
+          "height": 1199
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLeG_J8aYAAQutj.jpg",
+          "width": 1000,
+          "height": 1200
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLeG_J6bgAAXoxy.jpg",
+          "width": 972,
+          "height": 1200
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2069147226069238088",
+      "text": "You don't need Claude Fable 5 or GPT-5.6\n\n I built with Claude 👇\n\nDrifting particles + pulsing sound rings, the techniques:",
+      "author": {
+        "id": "1644343436684959745",
+        "name": "lemon👑",
+        "screenName": "lemonDefi1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1833730400604057600/Qc9kOSOr_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 310,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 22 19:55:16 +0000 2026",
+      "createdAtLocal": "2026-06-23 03:55",
+      "createdAtISO": "2026-06-22T19:55:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069146907973173488",
+        "text": "You don't need Claude Fable 5 or GPT-5.6\n\n I built with Claude 👇\n\nDrifting particles + pulsing sound rings, the techniques:\n\n1. Flow field = each particle reads a Simplex noise field for which way to drift, organic not random.\n\n2. GPGPU = thousands of particles updated on the GPU in a texture, 60fps on a phone.\n\n3. Audio-reactive shader = the rings pulse to the track frequency data.\n\n4. Selective bloom = only the bright parts glow. Lenis + GSAP + Three.js.\n\nSave this 🔊",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2069146907973173488",
+      "text": "You don't need Claude Fable 5 or GPT-5.6\n\n I built with Claude 👇\n\nDrifting particles + pulsing sound rings, the techniques:\n\n1. Flow field = each particle reads a Simplex noise field for which way to drift, organic not random.\n\n2. GPGPU = thousands of particles updated on the GPU in a texture, 60fps on a phone.\n\n3. Audio-reactive shader = the rings pulse to the track frequency data.\n\n4. Selective bloom = only the bright parts glow. Lenis + GSAP + Three.js.\n\nSave this 🔊",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 141,
+        "retweets": 21,
+        "replies": 6,
+        "quotes": 4,
+        "views": 458141,
+        "bookmarks": 226
+      },
+      "createdAt": "Mon Jun 22 19:54:00 +0000 2026",
+      "createdAtLocal": "2026-06-23 03:54",
+      "createdAtISO": "2026-06-22T19:54:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2069146810808139776/vid/avc1/720x1280/PeOlFLV49QBaKwYD.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2068957493561045032",
+        "text": "Claude Fable 5 and GPT-5.6 are powerful🥵🥵🥵\n\nHere Is How I built with Claude 👇\n\nPrompt: \"Design an agency site where services are presented as supermarket product packaging in 3D\"\n\nUse Three.js with WebGL to render all products in real time in the browser\n\nUse Blender to model the packaging then export as GLTF to load in Three.js\n\nUse GSAP for the smooth product rotation and hover interactions\n\nSave this if you want a portfolio that makes clients feel they are buying something premium 🛒",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2069097494676467864",
+      "text": "https://t.co/kB7ZLNFHgo",
+      "author": {
+        "id": "1885092994128474112",
+        "name": "nabu",
+        "screenName": "nabushhh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068323916590858240/Ox6RpvJI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 72,
+        "retweets": 14,
+        "replies": 33,
+        "quotes": 1,
+        "views": 6439,
+        "bookmarks": 7
+      },
+      "createdAt": "Mon Jun 22 16:37:39 +0000 2026",
+      "createdAtLocal": "2026-06-23 00:37",
+      "createdAtISO": "2026-06-22T16:37:39+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2069072834358325248"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "build the eye"
+    },
+    {
+      "id": "2068957493561045032",
+      "text": "Claude Fable 5 and GPT-5.6 are powerful🥵🥵🥵\n\nHere Is How I built with Claude 👇\n\nPrompt: \"Design an agency site where services are presented as supermarket product packaging in 3D\"\n\nUse Three.js with WebGL to render all products in real time in the browser\n\nUse Blender to model the packaging then export as GLTF to load in Three.js\n\nUse GSAP for the smooth product rotation and hover interactions\n\nSave this if you want a portfolio that makes clients feel they are buying something premium 🛒",
+      "author": {
+        "id": "1562843426185674755",
+        "name": "FHILY👑",
+        "screenName": "Oluwaphilemon1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1681096269203218432/kTSyPDf7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 52,
+        "retweets": 9,
+        "replies": 1,
+        "quotes": 3,
+        "views": 49187,
+        "bookmarks": 83
+      },
+      "createdAt": "Mon Jun 22 07:21:20 +0000 2026",
+      "createdAtLocal": "2026-06-22 15:21",
+      "createdAtISO": "2026-06-22T07:21:20+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068957430533279746/vid/avc1/720x1280/OFQK-PG8bS8t3VlL.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2068493833210327427",
+        "text": "Enough of Claude Fable 5 and GPT -5.6…\n\nCan we talk about how insane Gemini 3.1 Pro is at webgl https://t.co/J4N0XlSXrS",
+        "author": {
+          "screenName": "Oluwaphilemon1",
+          "name": "FHILY👑"
+        }
+      }
+    },
+    {
+      "id": "2068670009585369247",
+      "text": "$10,000 a month from a SaaS you built with Claude is real. 9 in 10 people chasing it never clear $0.\n\nHere’s the part the hype skips.\n\nBuilding stopped being the hard part. Claude ships a working MVP in a weekend now. So does everyone else’s.\n\nThe moat moved. It’s 50 people who will pay you every month. That’s the whole game.\n\nHonest timeline: \n\nFirst paying customer takes 2 to 3 months, not 2 days. \n\nMost micro-SaaS dies under $500 MRR.\n\nThe ones that clear $10K charge real prices and grind distribution every single day.\n\nWhat those accounts actually do:\n\n1. Pick a boring, narrow problem. Invoicing for plumbers beats “AI assistant for everyone.”\n\n2. Charge $40-100 a month. 200 customers at $50 is $10K .  200 is reachable. 20,000 free users is not.\n\n3. Use Claude for the unglamorous work too - support replies, onboarding docs, cold email drafts.\n\n4. Ship distribution, not just product. 1 channel, posted daily, for 6 months.\n\nThe trap: rebuild the product 10 times, talk to 0 customers. Claude made building cheap, so building is worthless as an edge.\n\nSpend the saved time where the money is - in front of people who have the problem.\n\nClaude builds the product in a weekend. The customers still take a year.",
+      "author": {
+        "id": "1492109438710333446",
+        "name": "HodlReaper",
+        "screenName": "HodlReaper",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054239394261864448/0ZhQOKef_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 74,
+        "retweets": 8,
+        "replies": 14,
+        "quotes": 3,
+        "views": 5092,
+        "bookmarks": 28
+      },
+      "createdAt": "Sun Jun 21 12:18:58 +0000 2026",
+      "createdAtLocal": "2026-06-21 20:18",
+      "createdAtISO": "2026-06-21T12:18:58+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2068669447544459264/vid/avc1/576x1024/rvojbAnVuaLiuUJI.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2068286850205184003",
+        "text": "https://t.co/AgqrgcP7gG",
+        "author": {
+          "screenName": "0xObssnnn",
+          "name": "obssnnn"
+        }
+      }
+    }
+  ]
+}

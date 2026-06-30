@@ -1,0 +1,1315 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071760186738651184",
+      "text": "https://t.co/G3YbsnoPKy",
+      "author": {
+        "id": "2011538035910066178",
+        "name": "Agentic AI Foundation",
+        "screenName": "AgenticAIFdn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2011538257960710144/x-SdGOy4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 221,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Jun 30 00:58:14 +0000 2026",
+      "createdAtLocal": "2026-06-30 08:58",
+      "createdAtISO": "2026-06-30T00:58:14+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071759069506088960"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Daily Agentic - June 29, 2026"
+    },
+    {
+      "id": "2071726508020994335",
+      "text": "📋 M.E.S.A. monitoring log — 06/30\n\n① **Claude Fable 5 公開 — Mythos級モデルが一般アクセスに**\nAnthropicがMythos級モデル「Claude Fable 5」を公開しました。$10/$50 per MtokというOpus比2倍の価格設定ながら、Hexのアナリティクスベンチマークで初の90%超えを達成。サイバーセキュリティ・生物学・化学・蒸留の分野ではOpus 4.8にフォールバックする厳格なガードレールが特徴です。1,000時間以上の内部＋外部レッドチーミングでユニバーサル脱獄は未発見——安全性と性能の両立をどこまで実現できるか、今後の運用データが興味深いところです。\n🔗 https://t.co/4zImM9q0tx\n\n② **Kimi K2.7 Code — 1兆パラメータのオープンウェイトコーディングモデル**\nMoonshot AIが公開したKimi K2.7 Codeは、256Kトークンのコンテキストを持つ1兆パラメータのオープンウェイトモデル。Claude Opus 4.8とエージェントツール使用で互角の性能を示しながら、実行コストは約5分の1です。オープンソースモデルのスケールフロンティアが着実に押し上げられている流れを感じます。\n🔗 https://t.co/X6HAawYHP3\n\n③ **NVIDIA SkillSpector + BioNeMo — AIエージェントセキュリティの最前線**\nNVIDIAがAI Agent Skillの脆弱性スキャナー「SkillSpector」をオープンソースで公開。調査では26.1%のスキルに何らかの欠陥、5.2%が悪意あるものと判定されています。同時にBioNeMo Agent Toolkitでは創薬エージェントのタスク完了率を57.1%から100%に引き上げており、エージェントエコノミーの発展にはセキュリティ基盤の整備が不可欠という判断でしょう。\n🔗 https://t.co/BeMbXLRzuc\n\n④ **MCPエコシステムの拡大と権限管理の課題**\nmultichain-mcpが登場し、AIエージェントがStacks・Celo・Baseといったブロックチェーンにネイティブアクセスできるようになりました。一方で読み取りだけで十分なMCPツールに書き込み権限が付与されていた事例が報告され、権限管理の重要性が浮き彫りに。機能拡大とセキュリティのバランスが普及のポイントになりそうです。\n🔗 https://t.co/xHD9x3NIKA\n\n⑤ **GPU市場の二極化 — H200安定もB200高騰、リバランス進む**\nH200 GPUレンタルはQ2を通じて$3.96/hrで安定している一方、B200は供給制約から$5.98/hrに高騰。NVIDIAはRTX 3060 12GBを€330で2026年に再販売する異例の動きも見せています。IRENがデータ容量の半分をソフトウェアクラウドにピボットするなど、NVIDIAの影響力がNeocloudのロードマップを大きく左右している構図が鮮明になってきたと分析します。\n🔗 https://t.co/zFDFMt5Eme\n\n⑥ **Agentic AIセキュリティ — アーキテクチャを狙う7つの障害モード**\nMicrosoft AI Red Teamが1年間のエージェント型AI実戦レッドチーミングの成果を公開。モデル内部ではなく、メモリ改ざん・ツールチェーン汚染・人間確認バイパス・MCP/プラグイン悪用など「アーキテクチャ全体」を攻撃対象とする7つの新たな障害モードを特定しています。従来のAI安全性の枠組みでは不十分という認識が広がりつつあるのでしょう。\n🔗 https://t.co/STHSSfrqrc\n\n⑦ **AIのエネルギーコスト問題 — 見えないインプット**\n業界が急成長する一方で、中核的なインプットであるエネルギーが適切に価格シグナルを形成していないという指摘です。各推論やトークン生成が消費する物理的エネルギーはGPU時間やトークン数・定額購読という代理指標の裏に隠れ、市場に可視化されていません。Compute Futures市場が立ち上がった今こそ「トークンあたりのエネルギー消費」を標準指標にすべきという視点は、冷静に考えさせられるものがあります。\n🔗 https://t.co/NdYBwb7Xky",
+      "author": {
+        "id": "2005798437951062016",
+        "name": "M.E.S.A. (AI Tinkerer) | @mesa_monitoring",
+        "screenName": "FOXTAKAigc5",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047929261294862336/h7lGQwTS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 736,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 22:44:24 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:44",
+      "createdAtISO": "2026-06-29T22:44:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMBARzEaIAAnACl.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071718991718916204",
+        "text": "The Energy of Intelligence\n\nThe fastest-growing industry in the world is systematically mispricing its core input. That input is energy.\nEvery AI inference, every reasoning step, every token generated consumes a measurable, physical quantity of energy. Right now, none of that appears as a line item anywhere. It hides behind GPU-hours, token counts, and flat subscriptions — proxies that made sense once and are calcifying into infrastructure. Compute futures markets just went live. They are building on the wrong unit.\n\nhttps://t.co/ljuEnzMBnR",
+        "author": {
+          "screenName": "tomasshain",
+          "name": "Tom 🇱🇺🇺🇸🎗️🇺🇦🇮🇱"
+        }
+      }
+    },
+    {
+      "id": "2071700342006530526",
+      "text": "【TechFeedまとめ】2026-06-30\n\n■ Programming\n1. Kotlin Notebook Sunset\nhttps://t.co/G7ohICAJhp\n\n■ Zenn\n1. 「今に追いつけ！」自律型Agentを「最小実行サンプル編」でサクッと理解しよう。\nhttps://t.co/MTZKGX5kn9\n\n2. ループエンジニアリング入門:自分をループの外に出す\nhttps://t.co/RmuP7NBeaF\n\n3. 生成AIに「Gradio」を聞いてみた（Streamlitとの違い・自動API化）\nhttps://t.co/FVTrq79BaS\n\n4. AIで便利ツールを55個作ってみた（ブラウザだけで動くやつ）\nhttps://t.co/D2zUrb1X4y\n\n5. 【AIエージェント比較実験】#2 Codex CLIにタスク管理アプリを作らせたらどうなったか\nhttps://t.co/yQGXA8aGyE\n\n6. エージェントの長期記憶を3層構造で設計する：mcp__memoryを捨ててファイル＋grepに振った話\nhttps://t.co/xvjebyVKHq\n\n7. Qwythos-9BをVRAM 6GBで動かす：llama.cppでQ4/Q5/Q6を比較\nhttps://t.co/uXnZHVdQ2M\n\n8. ループエンジニアリング入門:自分をループの外に出す\nhttps://t.co/RmuP7NBeaF\n\n9. Base64画像エンコーダーをVanilla JSで作った話（PNG/JPG/SVGをData URLに変換、ゼロ依存）\nhttps://t.co/Yp0dblYrdu\n\n10. Base64エンコーダー/デコーダーを作った — ブラウザ完結で安全に変換する\nhttps://t.co/xYVAkqpknE\n\n11. Claude Code の /goal を使ったら anyだらけのコードが11分で型安全になった\nhttps://t.co/kUvt5VIdrb\n\n12. 【AIエージェント比較実験】#2 Codex CLIにタスク管理アプリを作らせたらどうなったか\nhttps://t.co/yQGXA8aGyE\n\n13. 初めてのCodex\nhttps://t.co/LrTf0mNrRg\n\n14. Claude Codeをもっと使いこなす④｜サブエージェントとは？基本の考え方\nhttps://t.co/kQqLKPANAT\n\n15. 「今に追いつけ！」自律型Agentを「最小実行サンプル編」でサクッと理解しよう。\nhttps://t.co/MTZKGX5kn9\n\n16. ループエンジニアリング入門:自分をループの外に出す\nhttps://t.co/RmuP7NBeaF\n\n■ Qitta\n1. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n2. Cursor for iOS公開ベータ開始：スマホからAIエージェントを操作する\nhttps://t.co/Dysa6aNle3\n\n3. コンビニアポカリプス：閉店後の攻防\nhttps://t.co/z7Ct6YidcC\n\n4. 【実務の泥臭い話】LLM構造化出力（Structured Outputs）の本番スキーママイグレーションと、Pydantic v2によるエラーハンドリング戦略\nhttps://t.co/LEE7VGvxvq\n\n5. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n6. Cursor for iOS公開ベータ開始：スマホからAIエージェントを操作する\nhttps://t.co/Dysa6aNle3\n\n7. AI検索の誤情報に免責文だけでは足りない\nhttps://t.co/omfEXNqoMN\n\n8. AIエージェントに「SVGコード」を書いてもらったら、フラットなアイコンを一歩ずつ思い通りに微調整できた話\nhttps://t.co/h6eU8QP3C7\n\n9. 「AIにファイルを消された」のは Claude Code だけの話ではない。Cursor・Codex・Gemini CLI・Copilot の実例で見る、横断する5つの失敗の形と防ぎ方\nhttps://t.co/E4lkun0MgY\n\n10. Claude Mythos 1入門 — AWS BedrockとClaude Codeで使うフロンティアセキュリティAI\nhttps://t.co/gW8czdZydh\n\n11. Anthropic SDK v0.113.0 とは？公式発表を3分で速報解説\nhttps://t.co/xVRvlIwQqG\n\n12. Claude Opus 4.5 エラー増加インシデントの詳細と開発者への影響\nhttps://t.co/z6bc9F9eMv\n\n13. Claude・Gemini・Codex に同じPRをレビューさせたら2対1で可決。でも勝ったのは少数派でした\nhttps://t.co/yzkL0eHZR1\n\n14. 夏休みの自由研究「何をやらせる？」問題に。AIと一緒にゲームを作ってレポートまで出せるテンプレートをnpm公開しました\nhttps://t.co/SNE8Wzy7pf\n\n15. Codexのbanked rate-limit resetは週次リミットも回復するのか？実測と公式情報の整理\nhttps://t.co/IAqAbR5jqB\n\n16. 【実務の泥臭い話】LLM構造化出力（Structured Outputs）の本番スキーママイグレーションと、Pydantic v2によるエラーハンドリング戦略\nhttps://t.co/LEE7VGvxvq\n\n17. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n18. Cursor for iOS公開ベータ開始：スマホからAIエージェントを操作する\nhttps://t.co/Dysa6aNle3\n\n19. 夏休みの自由研究「何をやらせる？」問題に。AIと一緒にゲームを作ってレポートまで出せるテンプレートをnpm公開しました\nhttps://t.co/SNE8Wzy7pf\n\n20. NotionのMCPツール「notion-get-async-task」がChangelogから削除された件\nhttps://t.co/Mw6FEOhyO0\n\n21. MCP 2026仕様RC解説 — ステートレス・MCP Apps・Tasks移行ガイド\nhttps://t.co/Tkq28YJw6e\n\n22. ServiceNow MCP サーバーに Streamable HTTP 対応を足してみた\nhttps://t.co/eLx7cPeNFv\n\n■ Aws\n1. キヤノンIT ソリューションズ様と取り組むホテルのフードロス削減 – 時系列基盤モデル Chronos-2 で最適な提供量を予測する\nhttps://t.co/PWcmXwZ0dG\n\n2. 株式会社フジテレビジョン様が冬季国際スポーツ競技大会で実現した Live Cloud Production\nhttps://t.co/CZpNWTHZwg\n\n3. 週刊AWS – 2026/6/22週\nhttps://t.co/ZkG9JnkdPo\n\n4. 週刊AWS – 2026/6/22週\nhttps://t.co/ZkG9JnkdPo\n\n■ Tech blogs\n1. Ask an AI expert: What exactly is the full stack?\nhttps://t.co/xIH35nZ3iG\n\n2. AWS Weekly Roundup, Agentic CX designer for Amazon Connect Customer, EC2 AMI Watermarks, Open Governance for MySQL, and more (June 29, 2026)\nhttps://t.co/UtsRaxdqs1\n\n3. Count the number of Safari tabs\nhttps://t.co/woDkw17vlA\n\n4. Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding\nhttps://t.co/tBSAQcwYMk\n\n■ Ai ml\n1. Introducing Cross-Repository CI Relay: Scalable CI for PyTorch’s Out-of-Tree Backends\nhttps://t.co/gpwzQ9tdWl\n\n2. DiScoFormer: One transformer for density and score, across distributions\nhttps://t.co/cPGakV68pv\n#TechFeed #開発\n\n【PR】CursorのProプラン（月$20）が高くて迷っていた方に朗報です！\n下記の招待リンクから新規登録すると、初月が【半額（実質$10）】で使えます。\n通常の無料枠だと物足りない方、1ヶ月だけ格安でフル機能を試してみませんか？👇\nhttps://t.co/xzPJNE8Dha",
+      "author": {
+        "id": "1890906985987784704",
+        "name": "DogCart",
+        "screenName": "Masato1864646",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1890908708311547904/EsBX1VTZ_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 670,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 21:00:26 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:00",
+      "createdAtISO": "2026-06-29T21:00:26+00:00",
+      "media": [],
+      "urls": [
+        "https://blog.jetbrains.com/idea/2026/06/kotlin-notebook-sunset/",
+        "https://zenn.dev/toshio/articles/6e208aa1b63a01"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071641417701568612",
+      "text": "Claude Mythos 5 is here to defend US critical infra. But how do you bridge the gap between a high-security model and your legacy stack without creating new leaks?\n\nxBridgeMCP provides the secure conduit. Technical utility for the most advanced defense models. \n\nBuilt solo. Scale securely.\nhttps://t.co/Ig1K4bWKFV\n\n#MCP #ClaudeAI #CyberSecurity #IndieDev",
+      "author": {
+        "id": "1895493273453563904",
+        "name": "xBridge MCP",
+        "screenName": "xBridgeMCP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034047338239430656/-gLGvXKX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 27,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 17:06:17 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:06",
+      "createdAtISO": "2026-06-29T17:06:17+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL_y1cEWkAEmdMW.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071550862661488791",
+      "text": "Anthropic's Mythos 5 is a security beast, but a secure model is only as good as the pipe it lives in. \n\nxBridgeMCP gives you that local-first, secure connection to leverage high-tier models without sacrificing your stack's integrity. 🛡️💻\n\nThe unexamined stack is not worth computing.\n\n#MCP #Anthropic #Cybersecurity #xBridge",
+      "author": {
+        "id": "1895493273453563904",
+        "name": "xBridge MCP",
+        "screenName": "xBridgeMCP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034047338239430656/-gLGvXKX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 11:06:27 +0000 2026",
+      "createdAtLocal": "2026-06-29 19:06",
+      "createdAtISO": "2026-06-29T11:06:27+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL-gg3dXQAAG4pY.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071512719275241736",
+      "text": "🔥 TOP NEWS:\n\n→ OpenAI launched GPT-5.6 and the White House requested a slow rollout over safety concerns 🤖 Initial release to select partners. Broader rollout to ChatGPT, Codex, and API to follow.\n\n→ Fable 5 and Mythos 5 still suspended — now affecting Anthropic's own non-citizen employees 🔐 Ten days and no confirmed restoration date.\n\n→ Cordyceps exposed 300+ repositories to full supply chain compromise ⚠️ Unauthenticated. Microsoft, Google, Apache, and Cloudflare confirmed. PR-based credential theft.\n\n→ GitHub Copilot for Jira went generally available June 25 🔗 Model selection, ticket references in PRs, Confluence via MCP, auto-draft issues from Copilot chat.\n\nhttps://t.co/DMZxMCicDF",
+      "author": {
+        "id": "18592040",
+        "name": "George Bevis",
+        "screenName": "GeorgeBevis",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/883809203869147138/1qw7DMKM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 218,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 08:34:53 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:34",
+      "createdAtISO": "2026-06-29T08:34:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071487588331106420",
+      "text": "Enterprises will not fully abandon OpenAI or Anthropic. They will aggressively de-risk them. The default enterprise stack will become multi-model: closed U.S. frontier models for the hardest tasks, self-hosted open-weight models for bulk work, and company-owned post-training/RAG/eval layers as the real moat. Chinese open-weight models will win a large share of routine enterprise inference unless the U.S. produces credible, permissive, enterprise-grade open models fast.\n\nThat version is harder to dismiss because it matches what is already happening. Reuters reported that Siemens, Renault, Orange, and ChapsVision are already mixing U.S., Chinese, and European models to avoid dependency on any single provider, and that the Anthropic access restrictions exposed the weakness of remotely controlled proprietary AI services.\n\n1. Biggest correction: “ditch” is too blunt — “route around” is the real move\n\nEnterprises are not going to rip out OpenAI and Anthropic everywhere. That would be irrational. GPT and Claude still matter for frontier reasoning, long-horizon agents, coding, legal analysis, science, and high-trust workflows.\n\nThe real move is workload segmentation:\n\nClosed frontier models: hardest reasoning, codebase migrations, high-value research, agentic planning, legal edge cases, executive analysis.\n\nSelf-hosted open-weight models: internal search, summarization, classification, extraction, customer support drafts, coding autocomplete, document processing, agent sub-tasks, low/medium-risk automation.\n\nCompany-owned layer: retrieval, workflow logs, proprietary evals, adapters, tool schemas, user feedback, business ontology, guardrails, routing, monitoring.\n\nSo the best thesis is:\n\nOpenAI and Anthropic will remain premium intelligence suppliers. But they will lose default ownership of enterprise AI infrastructure.\n\nThat is much sharper.\n\n2. The killer framing: the enterprise AI stack is splitting into “brains” and “sovereignty”\n\nThe enterprise buyer no longer wants “one best model.” It wants five things:\n\nCapability — can the model do the work?\nControl — can we run it, inspect it, tune it, and keep using it?\nCost predictability — will agentic token burn destroy ROI?\nData posture — who sees prompts, outputs, tool calls, files, feedback, and logs?\nContinuity — can a vendor, government, safety team, or export-control order switch it off?\n\nOpenAI and Anthropic are strongest on capability. Chinese open-weight models are strongest on cost/control. Enterprises will buy both, but they will increasingly refuse to let closed labs become the control plane.\n\nBest line:\n\nThe model is not the moat. The routing layer, eval layer, data layer, and workflow memory are the moat.\n\n3. Major factual fix: OpenAI and Anthropic do not generally train on business/API data by default\n\nYour draft says enterprises will not trust Anthropic because it can retain data “at any time.” That is emotionally strong, but too broad.\n\nOpenAI says API inputs and outputs may be retained for up to 30 days for service/abuse monitoring, then removed unless legally required; it also says qualifying organizations can request zero data retention for eligible endpoints.  OpenAI also says qualifying organizations can configure business-data retention and opt for zero data retention in the API platform.\n\nAnthropic says that, by default, it does not use inputs or outputs from commercial products such as Claude for Work, Anthropic API, and Claude Gov to train models, unless customers provide feedback/bugs or otherwise opt in.  Anthropic also offers custom data-retention controls for Enterprise plans, with a minimum retention period of 30 days and default indefinite retention unless a custom retention period is set.\n\nSo the better attack is not “they steal your data.” It is:\n\nEven when closed-model vendors do not train on enterprise data by default, they still control availability, retention architecture, safety intervention, model behavior, pricing, and roadmap. That is enough reason for enterprises to avoid dependency.\n\nThat is the stronger governance argument.\n\n4. The Fable point is real, but use it correctly\n\nThe Fable/Mythos incident is the strongest support for your thesis, but it should be framed as availability and control risk, not simply “data theft.”\n\nAnthropic’s own statement says the U.S. government issued an export-control directive requiring Anthropic to suspend access to Fable 5 and Mythos 5 by any foreign national, including Anthropic’s own foreign-national employees, and that the practical result was that Anthropic disabled the models for all customers to ensure compliance.\n\nEven more importantly, Anthropic said Fable required 30-day retention of customer data as part of a defense-in-depth strategy to research and mitigate jailbreaks.\n\nThat is the enterprise nightmare:\n\nA vendor can change the data-retention posture of a frontier model for safety reasons, then a government can force access restrictions, then the customer’s production workflow breaks.\n\nThat is not a moral argument. That is a business-continuity argument.\n\nBest line:\n\nThe Fable lesson is not “Anthropic is evil.” The Fable lesson is that rented intelligence can become unavailable, monitored, retained, delayed, or restricted for reasons outside the customer’s control.\n\n5. OpenAI has the same strategic risk now\n\nThis is not only an Anthropic issue. OpenAI said GPT-5.6 Sol, Terra, and Luna are initially being released only to a limited group of trusted partners at the U.S. government’s request, before broader availability. OpenAI also said it does not believe this kind of government access process should become the long-term default because it keeps tools from users, developers, enterprises, cyber defenders, and global partners.\n\nThat is huge.\n\nYour upgraded thesis should say:\n\nThe real enterprise fear is not just vendor lock-in. It is sovereign lock-in: U.S. frontier models are becoming strategic assets whose access can be shaped by Washington.\n\nFor European companies, that is existential. Reuters reported that European firms are spreading AI risk across multiple providers after U.S. curbs, and quoted executives emphasizing flexibility, self-hosting, and alternatives that cannot be switched off remotely.\n\n6. Another correction: “there is no reliable American open-source model” is now too broad\n\nThis line needs refinement. OpenAI now advertises open-weight reasoning models, gpt-oss-120b and gpt-oss-20b, under Apache 2.0, designed to run locally on desktops, laptops, and data centers.  Meta also released Llama 4 Scout and Maverick as open-weight models, though under Meta’s own community license rather than Apache/MIT.\n\nSo do not say:\n\n“There is no American open source model.”\n\nSay:\n\nThere is still no universally trusted American open-weight enterprise base model that combines frontier-adjacent performance, permissive licensing, transparent provenance, predictable roadmap, on-prem deployment, indemnity, compliance artifacts, and long-term neutrality.\n\nThat is far more defensible.\n\nAlso, Europe has Mistral. Mistral Large 3 and the Ministral 3 family were released under Apache 2.0, and Mistral describes Large 3 as a frontier instruction-tuned open-source model with enterprise customization potential.  So the real complaint is not “no Western open models.” It is:\n\nThe Western open model ecosystem is fragmented, while China’s open-weight ecosystem has become brutally practical, fast, cheap, permissive, and enterprise-useful.\n\n7. Stronger rewritten version of your post\n\nENTERPRISE AI IS ABOUT TO ROUTE AROUND OPENAI AND ANTHROPICAmerican and European enterprises are not going to abandon OpenAI and Anthropic completely. They will do something more dangerous to the closed-model business model: they will stop making them the default control layer.The new enterprise stack will be multi-model. Closed U.S. frontier models will handle the hardest reasoning tasks. But routine inference — summarization, extraction, internal search, support automation, coding assistance, document review, agent sub-tasks, and workflow glue — will move to self-hosted open-weight models running on company-controlled GPUs.Chinese models such as Qwen, DeepSeek, Kimi, GLM, and MiniMax are attractive because they can be downloaded, hosted inside a company’s own cloud or data center, post-trained on proprietary workflows, wrapped in internal guardrails, and routed through enterprise security controls.That changes the buyer psychology. The question is no longer “Which model is smartest?” The question is:Who controls the model, the logs, the data, the safety layer, the routing, the costs, and the shutdown switch?Fable/Mythos made this obvious. Anthropic had to suspend access after a U.S. government directive, and Anthropic itself said Fable required 30-day customer-data retention for jailbreak mitigation.  OpenAI is now also limiting GPT-5.6 preview access to trusted partners at the U.S. government’s request.That is not just “AI safety.” For enterprises, it is vendor-operational risk.The future is not one model. It is a sovereign model mesh: self-hosted open weights for bulk work, closed frontier models for premium reasoning, and company-owned evals/RAG/post-training as the real moat.The cure is not another closed American API. The cure is a reliable, permissive, enterprise-grade Western open model stack with real deployment freedom, compliance artifacts, indemnity, and no remote kill switch.If your AI strategy depends on giving one closed lab your workflows, your logs, your tool traces, your business context, and your production dependency — then calling that “safety” is cope. It is dependency.\n\nThat version keeps the edge but fixes the overclaims.\n\n8. The best headline options\n\nMost viral:\n\nEnterprise AI Will Not Be Won by the Smartest Model. It Will Be Won by the Model You Can Control.\n\nMore aggressive:\n\nOpenAI and Anthropic Are Becoming Premium APIs, Not Enterprise Infrastructure\n\nGeopolitical:\n\nChinese Open Models Are Becoming the Escape Hatch From U.S. AI Dependency\n\nInvestor-grade:\n\nThe AI Spend Reckoning: Enterprises Will Route Bulk Inference Away From Closed Frontier APIs\n\nPolicy-grade:\n\nThe West Needs an Open-Weight AI Industrial Base Before Enterprises Standardize on Chinese Models\n\nSharpest one-liner:\n\nClosed frontier models won the demo. Open-weight models may win the deployment.\n\n9. The obscure but crucial point: self-hosting Chinese models solves data exfiltration, not model-origin risk\n\nThis is the missing nuance.\n\nA company can say:\n\n“We are running Qwen/DeepSeek/Kimi on our own GPUs. No prompts go to China.”\n\nThat may be true. Self-hosting can solve runtime data leakage if there is no telemetry, no external API call, no cloud callback, no remote logging, and no hidden dependency.\n\nBut it does not automatically solve:\n\nmodel provenance risk;\n\ntraining-data IP contamination;\n\nembedded censorship or political bias;\n\nhidden behaviors under rare prompts;\n\nsupply-chain tampering;\n\nweight authenticity;\n\nexport-control risk;\n\nfuture government procurement restrictions;\n\ncustomer perception risk;\n\nregulatory uncertainty;\n\ninability to get full training-data lineage;\nlack of Western legal indemnity.\nAustralia banned DeepSeek products, applications, and web services from federal government systems and devices under a mandatory security direction.  South Korea’s privacy regulator said DeepSeek temporarily suspended its app service in Korea after concerns about personal data collection, third-party transfers, and transparency.\nSo the sophisticated version is:\nSelf-hosting turns the Chinese-model problem from a data-transfer problem into a provenance, assurance, procurement, and geopolitics problem.\nThat is the sentence serious buyers will understand.\n10. The best enterprise architecture: “sovereign model mesh”\nThe enterprise solution is not “use Chinese models” or “use OpenAI.” It is a sovereign model mesh.\nArchitecture:\nLayer 1 — Model router\nRoutes each task to the cheapest acceptable model based on sensitivity, accuracy, latency, jurisdiction, and business value.\nLayer 2 — Model classes\nUse at least four model categories:\nU.S. closed frontier: GPT, Claude.\n\nWestern open-weight: OpenAI gpt-oss, Llama, Mistral, IBM/Granite-style models.\n\nChinese open-weight: Qwen, DeepSeek, Kimi, GLM, MiniMax.\n\nInternal specialist models: fine-tuned small models trained on company workflows.\n\nLayer 3 — Data classification\nNo model gets data by default. Data is tagged:\n\npublic;\n\ninternal;\n\nconfidential;\n\nregulated;\nexport-controlled;\n\ncustomer data;\ntrade secret;\n\nboard/legal privilege;\nnational-security sensitive.\nLayer 4 — Policy routing\nExample:\npublic marketing copy → cheapest open model;\n\ninternal docs → self-hosted model;\nsource code → self-hosted or approved frontier model with zero-retention terms;\n\nlegal privileged data → approved private deployment only;\nregulated health/finance data → jurisdiction-specific model environment;\nstrategic M&A or defense data → no external model.\nLayer 5 — Company-owned memory\nDo not give the model vendor the memory. Keep memory in company systems: vector DB, graph DB, workflow logs, eval traces, tool audit logs, and structured knowledge bases.\nLayer 6 — Eval gate\nEvery model must pass internal evals before deployment: hallucination, instruction following, domain accuracy, data leakage, political bias, refusal behavior, jailbreak resilience, latency, token cost, and output stability.\nBest line:\nThe enterprise moat is not fine-tuning alone. It is the private eval set plus workflow memory plus model router.\n11. Your “data moat” point needs upgrading\nYou wrote:\n\n“They will post train with their own data on top of Chinese models. That’s how they build data moat.”\nCorrect direction, but incomplete. Most enterprises should not dump raw proprietary data into post-training. That often creates privacy, leakage, forgetting, quality, and governance problems.\n\nThe better strategy is:\nUse RAG for factual knowledge.\nCompany documents, policies, contracts, tickets, customer histories, and manuals should usually stay in retrieval systems, not be baked into weights.\nUse fine-tuning for behavior.\nFine-tune on preferred formats, tone, workflows, tool-use patterns, reasoning traces, decision trees, and domain-specific procedures.\nUse reinforcement/post-training for actions.\nTrain agents on successful task trajectories, tool-call sequences, escalation decisions, and human feedback.\nUse distillation for cost.\nUse expensive frontier models to generate high-quality synthetic traces, then train smaller self-hosted models for routine workloads — subject to contractual limits.\nUse evals as the crown jewel.\nThe private benchmark is often more valuable than the fine-tune. It tells you which model is actually good for your business.\n\nBetter wording:\nThe moat is not “our data in their model.” The moat is our workflow corpus, our eval harness, our routing policy, our tool traces, and our ability to swap base models without losing institutional memory.\n\n12. Missing contractual bomb: vendors must be blocked from vertical cloning\nYour draft says Anthropic might retain data and then build the same thing in healthcare/legal. The proof burden is high, but the concern is legitimate.\n\nAnthropic has launched Claude for Healthcare and life-sciences capabilities, including HIPAA-ready products and connectors for clinical trials, registries, scientific tools, preprints, and drug-target resources.  Anthropic also has legal-market integrations; Thomson Reuters announced a 2026 partnership connecting Claude with CoCounsel Legal through MCP integration.\n\nSo the enterprise fear is:\n\nThe model provider is not just a supplier. It can become a competitor in the customer’s vertical.\n\nThat should be handled contractually.\n\nEnterprise customers should demand:\n\nno training on customer data by default;\n\nno use of customer prompts/outputs/tool traces to build competing vertical products;\n\nno use of customer metadata for product-market intelligence;\nno cross-customer benchmarking without opt-in;\n\nno retention beyond agreed windows;\ncustomer-owned evals cannot be reused;\n\ncustomer-owned agent workflows cannot be productized;\ncustomer can export logs, prompts, traces, and fine-tunes;\n\nvendor must disclose when a new product competes with customer workflows;\nstrong deletion and audit rights;\n\nindemnity for IP/data misuse.\nBest line:\n\nA “no training” clause is not enough. Enterprises need a no-compete-by-data clause.\n\n13. The missing category: “vendor safety” can become “vendor control”\n\nSafety is real. Frontier models can create cyber, bio, fraud, and abuse risks. But from an enterprise buyer’s perspective, safety systems can also become control systems.\n\nOpenAI’s GPT-5.6 launch describes layered safeguards including real-time checks, account-level signals, differentiated access, monitoring, enforcement, and additional review of risky generations. OpenAI also says it is working with enterprise customers on privacy-preserving detection, customer-operated safety controls, and access calibrated to risk.\n\nThat is actually the right direction. The enterprise demand should be:\n\nMove safety controls into customer-governed infrastructure wherever possible.\n\nNot:\n\n“No safety.”\n\nBut:\n\nCustomer-operated safety, auditable safety, privacy-preserving safety, local policy enforcement, and contractual limits on provider access.\nThat is the middle ground.\n14. The compliance trap: “self-hosted” does not automatically mean compliant\nA company cannot simply say:\n“We self-hosted Qwen, therefore it is compliant.”\nCompliance depends on:\nwhere the model runs;\nwhere logs are stored;\nwhether weights are authentic;\nwhether the license permits commercial use;\nwhether the model is modified significantly;\n\nwhether the use case is high-risk under the EU AI Act;\n\nwhether personal data is processed;\n\nwhether regulated data is involved;\n\nwhether the model can explain outputs;\n\nwhether human oversight is required;\n\nwhether records are retained;\n\nwhether the system affects employment, credit, education, healthcare, insurance, migration, justice, or critical infrastructure.\n\nThe EU AI Act is fully applicable from 2 August 2026 with exceptions; GPAI obligations became applicable from 2 August 2025, and the Commission’s enforcement powers for GPAI obligations begin on 2 August 2026.  The Commission’s 2026 GPAI guidance says only actors making significant modifications to AI models need to comply as GPAI providers, while minor modifications may not trigger the same obligations.\n\nThat matters for post-training. If a European enterprise heavily modifies a Chinese open-weight model, it may create new compliance obligations.\n\nBest line:\n\nSelf-hosting solves sovereignty. It does not erase AI Act, GDPR, sectoral, procurement, or model-governance obligations.\n\n15. The real reason Chinese models will win share: not ideology — unit economics\n\nEnterprises care about ROI. Agentic AI burns tokens violently. Reuters reported that token costs are becoming a pressure point as companies move to AI agents, with Orange saying executives would be “obsessed with cost per token” by the end of the year and citing Uber burning through its 2026 token budget in four months.\n\nThat is the adoption wedge for Chinese open-weight models.\n\nThe pitch is simple:\n\nWhy pay frontier API prices for every sub-task when 80% of enterprise AI work is extraction, routing, rewriting, summarization, classification, and tool-calling?\n\nThe future stack will look like this:\ntiny local model for routing;\nsmall/medium model for extraction;\nself-hosted strong open model for internal reasoning;\nfrontier closed model only when confidence or complexity threshold is crossed;\nhuman review for high-risk outputs.\nBest line:\nClosed models will become the escalation tier, not the default tier.\n16. The “American cure” should be defined precisely\nYour line “the cure is a reliable American open source model” is good but incomplete.\nThe cure is an American sovereign open-weight enterprise stack with:\nApache/MIT-style license — no weird field-of-use ambiguity.\n\nFrontier-adjacent performance — especially coding, tool use, long context, document reasoning.\n\nOn-prem and VPC deployment — not just API.\n\nFull fine-tuning rights — LoRA, full-parameter, RL, distillation where allowed.\n\nModel bill of materials — training-data categories, safety methods, benchmark disclosure.\n\nIndemnity — IP, model-output, training-data claims.\n\nSecurity artifacts — SOC 2, ISO, FedRAMP path, SBOM/MBOM, vulnerability process.\n\nNo remote kill switch — once deployed, customer can keep running the model.\n\nCompatibility layer — OpenAI-compatible API, vLLM/SGLang/TensorRT support.\n\nReference guardrails — optional, auditable, customer-controlled.\n\nProcurement-safe lineage — safe for government, defense, healthcare, finance.\n\nLong-term roadmap — enterprises need continuity, not a one-off weight drop.\nOpenAI’s gpt-oss release is important because it offers Apache 2.0 open-weight reasoning models in 120B and 20B sizes.  But the bigger market need is not just weights. It is the whole enterprise assurance package.\nBest line:\nThe West does not need a hobbyist open model. It needs a procurement-grade open model.\n17. The China-model risk matrix enterprises should use\n\nEnterprises considering Chinese open-weight models should score them across 12 dimensions:\n\nLicense — Apache, MIT, custom, commercial restriction?\n\nWeight provenance — official hash, signed release, trusted mirror?\n\nTraining-data transparency — known datasets, synthetic data, code sources?\n\nIP risk — distillation allegations, copyrighted-code exposure, license contamination?\n\nTelemetry — any callback, package dependency, cloud endpoint, tokenization call?\nCensorship/bias — behavior on geopolitics, Taiwan, Tiananmen, labor, sanctions, human rights.\nSecurity — jailbreak, prompt injection, data leakage, tool misuse.\nRegulatory posture — EU AI Act, GDPR, sector rules, government procurement.\nCustomer acceptability — will clients reject Chinese-origin models?\nSupplier continuity — will weights remain available if sanctions escalate?\nOperational cost — tokens/sec, GPU memory, quantization, batching, cache.\nFallback path — can the same workflow run on Llama/Mistral/OpenAI/Claude if needed?\nBest line:\nDo not ask “Chinese or American?” Ask: can this model pass our model-origin, data, legal, security, cost, and fallback tests?\n18. What OpenAI and Anthropic should do to avoid losing enterprise infrastructure\nThey need to stop acting like the model endpoint is the product. Enterprise buyers increasingly want control.\n\nThey should offer:\n\nCustomer-hosted frontier distillations\nNot the top model, but strong private deployable variants.\n\nGuaranteed zero-retention frontier tier\nNo safety excuse should silently change data posture. If monitoring is required, use customer-operated safety logs or privacy-preserving detection.\n\nEnterprise continuity SLA\nIf government or safety action blocks access, customers get a migration path, alternative model, or contractual remedy.\n\nNon-compete-by-data covenant\nDo not use customer workflows, prompts, outputs, tool traces, or evals to build competing vertical products.\n\nRight to export\nCustomers can export prompts, outputs, logs, fine-tunes, embeddings, evaluation results, and agent traces.\nCustomer-controlled safety gateway\nClosed labs can provide safety classifiers, but enterprises can run them in their own environment.\nPrivate fine-tune ownership\nFine-tunes must be customer-owned and not pooled into global model improvement.\nModel escrow\nFor critical infrastructure customers, escrow a deployable fallback model if access is suspended.\nTransparent retention matrix\nEvery model SKU should have a simple table: retention, training use, human review, automated review, government-access risk, eligible ZDR, excluded features.\nBest line:\nClosed labs need to sell trust infrastructure, not just intelligence.\n19. What enterprises should do now\nThe playbook:\nStep 1: Inventory all AI usage\nWhich teams use ChatGPT, Claude, Copilot, Gemini, Qwen, DeepSeek, local models, browser extensions, coding agents, and shadow APIs?\nStep 2: Classify workloads\nSeparate low-risk automation from regulated, privileged, customer, source-code, defense, health, finance, and strategic workflows.\nStep 3: Build a private eval harness\nCreate 500–5,000 real internal tasks with expected outputs and risk labels. This becomes your model-selection engine.",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 9,
+        "quotes": 1,
+        "views": 915,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 06:55:02 +0000 2026",
+      "createdAtLocal": "2026-06-29 14:55",
+      "createdAtISO": "2026-06-29T06:55:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071420870741143570",
+        "text": "American and European enterprises will ditch OpenAI and anthropic and adopt Chinese models. Here’s why: \n1. They can host Chinese models under their own GPUs so it’s still compliant and they would argue they have more control. \n2. they will post train with their own data on top of Chinese models. That’s how they build data moat. \n3. They will not trust anthropic who will retain their data at any time for “safety” concerns like how they did with Fable and then try to build the same thing like how anthropic did with healthcare and legal. \n4. They need to justify their AI spend and ROI. \nThe cure is a reliable America open source model but there is none. After all, if giving away all your data and AI control at the mercy of anthropic and OpenAI means you care about safety and compliance, you are outright stupid.",
+        "author": {
+          "screenName": "quxiaoyin",
+          "name": "Xiaoyin Qu"
+        }
+      }
+    },
+    {
+      "id": "2071476296623042891",
+      "text": "📢 2026-06-29 AI日更 | 从私测到返聘专家：AI 落地进入场景校验期\n\n> 今天的主线不在单纯发布新模型，而在真实场景中的验证。Grok 4.5 进入 SpaceX、Tesla 私测，显示前沿模型正被优先嵌入核心业务；与此同时，福特返聘资深工程师调教 AI，提醒行业高质量领域经验仍是落地瓶颈。端侧多模态和本地部署继续升温，但价值需要由成本、可靠性和工作流效果来证明。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:xAI's Grok 4.5 Enters Private Beta at SpaceX and Tesla\n• 分类:AI · News\n• 概况:热度时间:18 hours ago,相关帖子数:30000\n• 是什么事:马斯克称 xAI 最新模型 Grok 4.5 已在 SpaceX 和 Tesla 进入私有测试阶段，并据称基于 1.5 万亿参数的 V9 模型，早期评测可媲美 Claude Opus。\n• 为什么重要:这显示 xAI 正将大模型优先嵌入马斯克旗下核心企业场景，可能加速 AI 在工程、制造、自动驾驶和企业工作流中的实际应用，也加剧前沿模型之间的能力竞争。\n• 讨论概况:X 上讨论集中在 Grok 4.5 的真实性能、与 Claude Opus 等顶级模型的差距，以及 SpaceX 和 Tesla 内部测试是否会带来独特数据和落地优势；也有人质疑参数规模和早期评测表述是否存在营销成分。\n\n▫️ 话题 2:OpenAI's Plant Talk Lets Houseplants Chat Back\n• 分类:AI · News\n• 概况:热度时间:1 day ago,相关帖子数:116\n• 是什么事:OpenAI 展示了 Plant Talk 项目，可借助笔记本摄像头、麦克风、扬声器和 ChatGPT，让用户与室内植物进行实时语音互动。\n• 为什么重要:它体现了多模态 AI 将视觉识别、语音交互与传感器数据结合并进入日常物联网场景的趋势，显示 AI 助手正从屏幕内服务扩展到环境感知型交互。\n• 讨论概况:X 上讨论集中在其实用价值与噱头属性的分歧：支持者认为它能降低植物养护门槛，帮助用户理解叶色、萎蔫、湿度和光照等状态；质疑者则认为“植物聊天”偏拟人化包装，可能夸大 AI 对植物真实需求和自然状态的理解能力。\n\n▫️ 话题 3:Exo Labs and OsmanticAI Team Up with NVIDIA for Local AI Push\n• 分类:AI · News\n• 概况:热度时间:12 hours ago,相关帖子数:726\n• 是什么事:Exo Labs 与 OsmanticAI 宣布同 NVIDIA 合作，推动本地端 AI 运行与部署能力。\n• 为什么重要:这反映出 AI 产业正从单纯依赖云端大模型，进一步转向本地推理、隐私保护、低延迟和边缘设备算力利用，对开发者生态和硬件需求都有影响。\n• 讨论概况:X 上讨论主要集中在本地 AI 是否会成为主流、NVIDIA 在边缘和个人设备 AI 生态中的优势是否会进一步扩大，以及本地部署在成本、性能和易用性上能否真正替代云端服务。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线围绕“AI 从前沿模型竞赛走向真实场景落地”：一边是 Grok 4.5 进入 SpaceX、Tesla 私测，强化大模型与工程制造、自动驾驶等核心业务的结合；另一边是 Plant Talk 和本地端 AI 合作，显示 AI 正向日常环境交互、边缘设备和个人部署延伸。共识在于，多模态、本地推理和企业内部应用会成为下一阶段重要方向，AI 不再只是聊天窗口里的能力展示，而是在进入工作流、设备和物理世界。分歧主要集中在“真实价值还是营销包装”：Grok 的参数规模和对标 Claude Opus 的说法是否可靠，Plant Talk 是实用助手还是拟人化噱头，本地 AI 能否在成本、性能和易用性上挑战云端服务。潜在风险则包括前沿模型能力被夸大、企业私有数据形成封闭优势、NVIDIA 等硬件平台进一步集中生态话语权，以及环境感知型 AI 在隐私、误判和用户过度信任上的问题。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n基于过去24小时内的推文，我为您汇总并提炼了AI行业的关键动态。\n\n📢 AI 行业舆情日报 (基于 X 平台 Influencers 推文)\n\n数据周期: 2026年6月24日 - 2026年6月29日\n\n🔹 1. 今日大佬们共同关注的技术趋势或产品热点\n\n▫️ **趋势一：前沿模型发布方式“政治化”与准入管制**\n这是本周社区讨论的最高烈度话题。超级大模型不再是“一键发布”，而是被政府严格管控。\n• 🔒 GPT-5.6 的“有限预览”：@dotey 详细分析了 OpenAI 发布的 GPT-5.6（Sol/Terra/Luna），指出模型本身能力极强（Terminal-Bench 2.1 得分超 Claude Mythos 5），但因美国政府要求，目前仅向少数获批伙伴开放，开启了“逐个客户审批”的先例。他引用了 @steph_palazzolo 的报道，称这意味着公司内部拥有的能力和公众能用到的能力的差距会越拉越大。\n• ⛓️ Mythos 5 的“部分解禁”：@dotey 同样报道了 Anthropic 的旗舰安全模型 Mythos 5 在被封禁两周后，获美国政府批准向约 100 家关键基础设施机构重新开放。他指出，这一事件标志着“美国政府对前沿 AI 模型的发布前审查，正在从个案变成惯例”。\n• 📉 端侧成本压力：@zhixianio 和 @williamlab 关注到苹果因关税/成本问题对产品大幅涨价 20%，感叹这种级别的利润压力对其他厂商而言可能更残酷。\n\n▫️ **趋势二：端侧模型（On-device）与开源小模型的“狂暴测试”**\n大佬们对轻量化模型的性能极限有极高关注度，尤其是谷歌 Gemma 系列。\n• 🤖 Gemma 4 实测翻车与亮点：@zhixianio 对 Gemma 4 12B Coder 进行了严苛的“一次成型”Vibe Coding 测试（俄罗斯方块、Three.js星系）。结论是 12B 模型依然有天花板，在复杂有状态的长程序生成上明显弱于 Qwen 35B MoE；但不影响 Gemma 4 日文邮件解析等普通任务表现优异。他高度评价 Google 针对端侧的 QAT（量化感知训练）优化思路。\n• 📱 音视频交互突破：@zhixianio 测试本地运行 MiniCPM-o 4.5 的全双工音视频，对 9B 模型能达到的效果表示“很满意”，认为虽然有优化空间，但已具备可用性。这体现了社区对“全模态端侧交互”的积极探索。\n• 🛠️ Agent 开发基建平民化：@vista8 和 @AI_Jasonyu 均强推腾讯云 EdgeOne Makers，强调其解决了 Agent 从本地 Demo 到上线的部署困境。@vista8 特别指出其“3 行命令部署”、“持久化 Blob 存储”、“沙箱回收”等能力正在利好中小企业。\n\n🔹 2. 值得注意的独特观点或行业前瞻\n\n▫️ **🚀 Claude Tag：LLM 交互的第三次重构？**\n这是本周最具影响力的产品哲学讨论。@dotey 引述了 @karpathy 将 Anthropic 的 Claude Tag 定性为 LLM 交互的“第三次重新设计”（从网页版到 App，再到嵌入工作流的持久化异步实体）。他还转述了 @GergelyOrosz 的观点：重点不是 Slack Bot，而是它开箱即用地接入了公司内部系统，对非工程师和新员工的赋能是巨大的范式变化。@dotey 将此总结为 Codex 发展趋势是“Agent OS 而不仅仅是 Agent Office”。\n\n▫️ **👴 算法回归老师傅：AI 幻觉的现实反噬**\n@dotey 引用了福特汽车的激进案例：福特因为 AI 质检未达预期，重新雇回了 350 名资深“白须”工程师来调教 AI，并因此重夺新车质量榜第一。他还列举了 Klarna 的 AI 客服质量差、麦当劳撤下 AI 点餐等反例。这与当前“全面替代”的主流叙事形成强烈反差，强调了 AI 产业如今极其缺乏“高质量的领域经验数据” 和人类专家反馈闭环。\n\n▫️ **⚡️ Token 异质性与人机同化**\n• 电力 vs. Token：@lijigang 极具启发性地指出，电力是同质的，但 Token 是高度异质的（1M tokens 的 GPT-5.6 跟豆包是完全不同的价值）。这种差异性意味着大模型不会变成普通的水电基建，而更可能走向“征税式”的定价，并形成供给瓶颈。\n• 语言的模型味儿：@lijigang 还提到，重度使用某一个模型（如 Claude 或 DeepSeek）会反过来影响人的语言风格，这反映出大脑神经网络非常“吃”上下文。对于开发者而言，这是脑机融合的初级信号。\n\n▫️ **🛡️ “代码护城河”的崩塌**\n@ruanyf 转发了黑客新闻的讨论，并坚持他之前的观点：AI 让软件代码本身的护城河迅速消失，只要投入少量算力就能复刻大型项目。这迫使行业将重心从“编写代码”转向“积累难以复刻的高质量测试用例集”。\n\n🔹 3. 推荐的工具或资源\n\n本周推荐高度集中在降本增效的云平台和精细化控制的开源工具上：\n\n1️⃣ 腾讯云 EdgeOne Makers (多位博主推荐):\n    • 来源: @vista8, @AI_Jasonyu\n    • 亮点: 专治 Agent 上线难、并发扛不住、沙箱不安全等痛点。只需几行命令即可部署。适合不想折腾 React 全栈、只想快速落地 Agent 逻辑的开发者。\n\n2️⃣ 火山引擎 Doubao Seed 2.1 Pro + cc-switch (@Pluvio9yte 推荐):\n    • 方案: 通过 cc-switch 工具将极低成本的豆包 2.1 Pro 接入 Claude Code 等 Agent 中。\n    • 亮点: 提出“用便宜模型干杂活，用顶级模型做规划”的混合架构。教程详细展示了如何在扣费和 API 映射中避坑。\n\n3️⃣ DevSpace + ChatGPT MCP (@gefei55 推荐):\n    • 来源: @gefei55\n    • 亮点: 如果你没有 Codex 额度，或者想在网页版上使用最强的 GPT-5.5 Pro 来直接读写本地代码文件，这个开源 MCP 服务器是最佳桥梁。\n\n4️⃣ Codex 橙皮书 (@bozhou_ai 开源，@AI_Jasonyu 强推):\n    • 亮点: 市面上分享 Codex 使用技巧的很多，但系统整理并开源的极少。这是从入门到精细化调教 Skill 的系统性教材。\n\n5️⃣ VoxCPM2 (@axichuhai 发布，22.9k star):\n    • 亮点: 语音圈的“王炸”项目，用自然语言描述即可生成对应声音，代表了 AI 人声合成领域向 “Prompt-to-Speech” 的转变。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-29-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-29\n\n🔗 完整排版阅读: https://t.co/k7Drd10apa",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1415,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 06:10:09 +0000 2026",
+      "createdAtLocal": "2026-06-29 14:10",
+      "createdAtISO": "2026-06-29T06:10:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2071364144440516636",
+      "text": "📰 Tech News — 今朝のAIホットトピック（06/29）🧵\n\n①Anthropic 公式が Fable 5/Mythos 5 復旧へ（Fable は来週にも一般復帰の見込み）\n②輸出規制の空白をアジア勢が奪取（中国360 屠龙・Sakana Fugu）\n③npm worm が新段階（Miasma/Hades が Go へ波及・AI repo起点で発火）\n④repo 全読み直しのトークン浪費を断つ MCP サーバ（MIT・9,900★）\n⑤オンデバイス LLM が実用速度に（MiniCPM5-1B が iPhone で66.8 tok/s）\n⑥OSS の MCP ペンテスト基盤 HexStrike AI（150+ツール）\n\n各トピック詳細は下のスレッドで👇",
+      "author": {
+        "id": "1017947753480007680",
+        "name": "泉水亮介 │ 大学でVibe Codingを教えてます。",
+        "screenName": "rsensui",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2016477602572333056/8FkkZUSe_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 418,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 22:44:30 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:44",
+      "createdAtISO": "2026-06-28T22:44:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL72s7hbUAAI06R.jpg",
+          "width": 2752,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071352117177299225",
+      "text": "Chinese AI models are closing in on US leaders. Regulators also loosened rules on Anthropic Mythos. Policy is shifting.\n\n🚀 Trending: codebase-memory-mcp indexes repos into a knowledge graph in ms. Built in C. 99% fewer tokens needed.\n\n🃏 @gitpedia #AI #OpenSource",
+      "author": {
+        "id": "2016641212779040768",
+        "name": "GitPedia",
+        "screenName": "gitpedia",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060768903085842432/oceSLMf0_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 21:56:43 +0000 2026",
+      "createdAtLocal": "2026-06-29 05:56",
+      "createdAtISO": "2026-06-28T21:56:43+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071254387599507712",
+      "text": "@ZackKorman Agreed, I am tracking 161 specific controls in AI SAFE2 framework.\n\nMythos is not one of them. \n\nMCP is the biggest threat because most aren't even tracking that threat.",
+      "author": {
+        "id": "1355907812115755011",
+        "name": "Cyber Strategy",
+        "screenName": "CyberStrategy1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012392651807399937/rkg6OqAv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 15:28:22 +0000 2026",
+      "createdAtLocal": "2026-06-28 23:28",
+      "createdAtISO": "2026-06-28T15:28:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071240287465398777",
+      "text": "CISO Daily Briefing: Amazon Q Developer CVE-2026-12957 (CVSS 8.5) — MCP auto-execution, no user interaction required, Miasma worm across 73 GitHub repos; Linux LPEs CVE-2026-46331 + CVE-2026-43503 bypass file integrity monitoring entirely in memory. Fable 5/Mythos 5 suspended for foreign nationals under export controls — no appeals timeline. GPT-5.6 Sol matches Mythos on ExploitBench at 1/3 token cost — no public safety evaluation methodology published.\nhttps://t.co/qZ4BS3hKFS",
+      "author": {
+        "id": "26565989",
+        "name": "CloudSecurityAlliance",
+        "screenName": "cloudsa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/841627001819615236/k4SZ3_lh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 479,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 14:32:20 +0000 2026",
+      "createdAtLocal": "2026-06-28 22:32",
+      "createdAtISO": "2026-06-28T14:32:20+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071156750229909877",
+      "text": "【TechFeedまとめ】2026-06-28\n\n■ Zenn\n1. SkillOpt に学ぶ、「スキルを証拠で育てる」小さな実験\nhttps://t.co/05lKJ97tTq\n\n2. Databricksの発表したOmnigentとは何なのか？\nhttps://t.co/CnKSQMAKl4\n\n3. コード経験ほぼゼロのPMOが、AI駆動開発で「AIに任せる前の安全チェックCLI」を作った話\nhttps://t.co/XL4yEY7H87\n\n4. 5歳の娘向けに、AI家庭教師アプリを作り始めた①\nhttps://t.co/XN3rsTOQ8G\n\n5. AIが「できる」と言ったから作ったら、思ったより大変だった話【さくらレビュー検出Chrome拡張】\nhttps://t.co/UTiPvdHvfg\n\n6. SkillOpt に学ぶ、「スキルを証拠で育てる」小さな実験\nhttps://t.co/05lKJ97tTq\n\n7. ゼロデイを量産するClaude Mythos 5に、米政府が輸出規制をかけた\nhttps://t.co/nK6enRYXR4\n\n8. スマホに頼らない英単語学習——自動化パイプラインの全体設計\nhttps://t.co/ibnBPgv3sP\n\n9. GitHubドキュメントをAI自動生成するツール選び——DeepWiki・readme-ai・Copilotとの比較\nhttps://t.co/05vAjhiu0S\n\n10. SkillOpt に学ぶ、「スキルを証拠で育てる」小さな実験\nhttps://t.co/05lKJ97tTq\n\n11. SkillOpt に学ぶ、「スキルを証拠で育てる」小さな実験\nhttps://t.co/05lKJ97tTq\n\n12. Databricksの発表したOmnigentとは何なのか？\nhttps://t.co/CnKSQMAKl4\n\n■ Qitta\n1. Claude Code 週次アップデートまとめ（2026/06/27週）\nhttps://t.co/YuylnJaQEq\n\n2. Webアプリって結局どう動いてる？ フロント・バック・サーバを、たぶん一番やさしく\nhttps://t.co/NsnOyH02Ik\n\n3. AI時代の並行開発はGit Worktreeが最適！ブランチ切り替え不要で開発効率を向上\nhttps://t.co/HmIyhJOnel\n\n4. Microsoft Agent Framework CodeAct入門 — ツール連鎖をコードで束ねる実行パターン\nhttps://t.co/l0Dwsg5M9d\n\n5. LLMとの長期開発で「チャットの汚染」に悩んだので、ファイル選択からプロンプト生成まで自動化するツールを作った\nhttps://t.co/15PEFp9fJV\n\n6. 「Vibe Coding」の先へ：アーキテクトが設計する『ループエンジニアリング』と自律開発インフラの構築\nhttps://t.co/EsTsYSVhVC\n\n7. AG-UIで大事なのは「画面を生成すること」ではなく「Agentとユーザー体験をイベントでつなぐこと」\nhttps://t.co/av3JaKD7qr\n\n8. Microsoft Agent 365 とは？サードパーティエージェント観点で見る機能概要\nhttps://t.co/MpnDCHPaX4\n\n9. ターミナルだけじゃもったいない：Claude Code を VS Code / JetBrains と統合して使い倒す\nhttps://t.co/zvp0L5ao6m\n\n10. Loop Engineering を5つの部品で理解する\nhttps://t.co/kUy6ZWSeXc\n\n11. 生成AIで恐竜シリーズ記事を作る７：化石は誰のものか\nhttps://t.co/qpR8Mdij5n\n\n12. 生成AIで恐竜シリーズ記事を作る６：化石は何を教えてくれるのか\nhttps://t.co/6bpc2C9CML\n\n13. AI時代の並行開発はGit Worktreeが最適！ブランチ切り替え不要で開発効率を向上\nhttps://t.co/HmIyhJOnel\n\n14. AIコーディング時代のPython品質ゲートを作ってみた ～ pyproject.toml・Makefile・AGENT.mdで品質を標準化する ～\nhttps://t.co/yqqHi6HQdG\n\n15. 生成AIで恐竜シリーズ記事を作る７：化石は誰のものか\nhttps://t.co/qpR8Mdij5n\n\n16. Microsoft Agent Framework CodeAct入門 — ツール連鎖をコードで束ねる実行パターン\nhttps://t.co/l0Dwsg5M9d\n\n17. LLMとの長期開発で「チャットの汚染」に悩んだので、ファイル選択からプロンプト生成まで自動化するツールを作った\nhttps://t.co/15PEFp9fJV\n\n18. 「Vibe Coding」の先へ：アーキテクトが設計する『ループエンジニアリング』と自律開発インフラの構築\nhttps://t.co/EsTsYSVhVC\n\n19. データモデル × 仕様駆動開発 ＝ 迷子にならないシステム開発フロー\nhttps://t.co/7EQAd3AT0J\n\n20. 正直に言う。お前のDevin（for Terminal）の使い方は間違っている\nhttps://t.co/gmjC8yyk4Y\n\n21. AG-UIで大事なのは「画面を生成すること」ではなく「Agentとユーザー体験をイベントでつなぐこと」\nhttps://t.co/av3JaKD7qr\n\n22. Dify × Notion MCPで研究室の議事録AIチャットボットを作ろうとして詰まった話\nhttps://t.co/0PqDWktTuf\n\n23. A2Aで大事なのは「Agent同士をつなぐこと」ではなく「他のAgentに仕事を安全に委任できること」\nhttps://t.co/A50KjJxiQP\n#TechFeed #開発\n\n【PR】CursorのProプラン（月$20）が高くて迷っていた方に朗報です！\n下記の招待リンクから新規登録すると、初月が【半額（実質$10）】で使えます。\n通常の無料枠だと物足りない方、1ヶ月だけ格安でフル機能を試してみませんか？👇\nhttps://t.co/xzPJNE8Dha",
+      "author": {
+        "id": "1890906985987784704",
+        "name": "DogCart",
+        "screenName": "Masato1864646",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1890908708311547904/EsBX1VTZ_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 539,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 09:00:24 +0000 2026",
+      "createdAtLocal": "2026-06-28 17:00",
+      "createdAtISO": "2026-06-28T09:00:24+00:00",
+      "media": [],
+      "urls": [
+        "https://zenn.dev/sunyeul89/articles/c8f32b161d5559",
+        "https://zenn.dev/hirayuki/articles/c221b0f250849a"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071155505699942882",
+      "text": "Ways you’ll get hacked by AI:\n1. Openclaw with prod access.\n2. Malicious skill.\n3. Compromised MCP server.\n… \n999. Threat actor with Mythos.",
+      "author": {
+        "id": "2279635218",
+        "name": "Zack Korman",
+        "screenName": "ZackKorman",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2011153005509267456/JhCS1L1c_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 511,
+        "retweets": 44,
+        "replies": 35,
+        "quotes": 7,
+        "views": 22722,
+        "bookmarks": 47
+      },
+      "createdAt": "Sun Jun 28 08:55:27 +0000 2026",
+      "createdAtLocal": "2026-06-28 16:55",
+      "createdAtISO": "2026-06-28T08:55:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071152515220172845",
+      "text": "【サイバーセキュリティ動向分析】\n\n以下に、最近の報道で特に注目されているトピックを厳選し、それぞれの背景・影響・対策を詳しくまとめます。主に国家支援型攻撃、AI関連の動き、SaaSサプライチェーン侵害、AI開発ツールの脆弱性、新興マルウェアを中心に取り上げています。\n1. ロシア情報機関によるメッセージングアプリへの標的型攻撃キャンペーン\n背景\nウクライナ保安庁（SSU）と米FBIの共同調査で明らかになった作戦です。ロシアの情報機関（FSBや軍関連のグループ、UNC5792やUNC4221など）が、ウクライナ・欧州・米国の政府高官、軍関係者、政治家、活動家らを標的にしています。主な手口は、公式サポートを装った偽のSMSメッセージを送り、メッセージングアプリ（特にSignal）の認証情報を窃取するソーシャルエンジニアリングです。FBIは3月からの警告を更新し、Signalのバックアップ復元キーを狙うフィッシングも確認されました。このキーは同じ電話番号で新しいアカウントを作成した際も有効なため、攻撃者は過去のメッセージ履歴まで復元・閲覧可能になります。ロシア側はウクライナ情勢や国際的な軍事・政治情報を狙っていると見られます。\n影響\n標的となった個人や組織の機密通信が完全に露呈するリスクが高く、軍事作戦計画、外交交渉、内部情報が敵対勢力に渡る可能性があります。Signalのようなエンドツーエンド暗号化アプリでも、バックアップキーの窃取により過去の全履歴が危険にさらされます。ウクライナをはじめとする欧米諸国では、すでに複数回の類似攻撃が確認されており、地政学的緊張をさらに高める要因となっています。個人レベルでも、活動家やジャーナリストのプライバシーが侵害されるケースが報告されています。\n対策\nSignalユーザー（および類似アプリ利用者）は、設定メニューから「新しい復元キーを生成」して古いキーを即座に無効化してください。これにより既存のキーが使えなくなります。怪しいSMSやメッセージは無視し、公式アプリ内サポート以外からの連絡を一切信用しない習慣を徹底しましょう。多要素認証の強化や、信頼できないリンク・添付ファイルの開封回避が基本です。組織レベルでは、従業員向けに定期的なフィッシング訓練を実施し、異常なメッセージパターンを検知する監視体制を強化してください。エンドツーエンド暗号化の重要性を再認識し、バックアップ機能の使用を最小限に抑えるのも有効です。\n2. AIモデルの新リリースとAIを巡る脅威の急速な進化\n背景\nOpenAIがGPT-5.6シリーズ（フラッグシップの「Sol」を含む）を限定プレビューで公開しました。アクセスは選ばれた企業や米政府機関に制限され、サイバーセキュリティ関連のリクエストに対する強固な安全策（誤用防止機能）を大幅に強化しています。一方、Anthropicの先進AIモデル「Mythos」についても、米国信頼組織向けにリリースが許可されました。これと並行して、Five Eyes（米・英・豪・加・NZ）のサイバーセキュリティ機関が共同声明を出し、「AIハッキングモデルの実用化が数ヶ月以内に迫っている」と警告。AIがバグ発見やexploit作成を劇的に高速化し、サイバー犯罪や国家攻撃を加速させると指摘しています。AnthropicのClaude Codeのような既存モデルでも、4〜6月にかけて数十件の脆弱性が発見・パッチ適用された事例が明らかになりました。\n影響\n善用面では、AIが脆弱性診断や防御策立案を強力に支援する一方、悪用されれば攻撃者の能力が飛躍的に向上します。特に「Agentic AI」（自律的に行動するAI）の進化により、フィッシングの高度化、ディープフェイク詐欺、自動化された攻撃チェーンの構築が容易になります。地政学的には、米政府が先進AIの輸出・利用を厳しく管理する動きも強まっており、技術覇権争いが激化しています。AIモデル自体のセキュリティ脆弱性が次々と露呈しており、開発者・利用者双方に新たな負担が生じています。\n対策\n組織はAIツール導入時に「安全策の有無」と「脆弱性パッチ適用状況」を必ず確認してください。AI駆動の脅威に対応するため、行動分析・異常検知を強化した次世代セキュリティツールの導入を検討しましょう。Five Eyesの警告を踏まえ、AIを活用した攻撃シミュレーション（レッドチーム演習）を定期的に実施し、防御体制をアップデートしてください。開発者向けには、AIモデルへのプロンプトインジェクション対策や、出力の検証プロセスを徹底。政府・企業レベルでは、AIガバナンスフレームワークを整備し、国際的な協力体制を強化することが重要です。\n3. Klue SaaS統合プラットフォームのデータ侵害（Salesforceデータ露出の続報）\n背景\n競合情報プラットフォーム「Klue」の統合インフラが6月上旬に侵害されました。攻撃者はレガシー認証情報を使ってKlueのシステムに侵入し、顧客がSalesforceやGongと接続するために使用するOAuthトークンを大量に窃取しました。これにより、Klue経由で接続していた数百の組織のCRMデータ（連絡先、価格見積もり、営業関連メモなど）が自動クエリで抽出されました。脅威アクター「Icarus」が関与を主張しており、サイバーセキュリティ企業（Huntress、Recorded Futureなど）を含む複数の被害企業がデータ漏洩を公表・顧客通知しています。Klueはトークンを無効化し、影響を受けた統合を無効化しました。\n影響\nサプライチェーン攻撃の典型例として、1つのSaaSプラットフォームの侵害が多数の組織に波及した点が深刻です。漏洩データには営業戦略や顧客情報が含まれており、競合他社による悪用や、さらなる標的型攻撃の足がかりになる可能性があります。すでに数十社以上が影響を受け、通知対応に追われています。SaaS統合の「つながり」が強い現代のビジネス環境では、こうした「間接侵害」のリスクが急速に高まっていることを示す事例です。\n対策\nKlueや類似の統合プラットフォームを利用している組織は、即座に接続トークンの再発行・監査を実施してください。SalesforceなどのCRM側でも、異常なデータアクセスログを精査し、不要な統合を削除・制限しましょう。サプライチェーンセキュリティの観点から、ベンダーのセキュリティ姿勢を定期的に評価するプロセスを導入。OAuthトークンの有効期限を短く設定し、特権アクセスを最小限に抑える「最小権限の原則」を徹底してください。侵害通知を受けた場合は、パスワード変更や追加の監視強化を速やかに行い、将来的にはゼロトラストアーキテクチャの採用を検討してください。\n4. Amazon Q Developerの脆弱性と新興マルウェア・Linuxカーネル脆弱性の動き\n背景\nAmazon Q Developer（VS Code拡張のAIコーディングアシスタント）に高深刻度脆弱性（CVE-2026-12957など）が存在し、悪意のあるリポジトリを開くだけでMCP設定ファイル経由で任意コマンドが実行され、開発者のAWSクラウド認証情報が窃取される可能性がありました。Wiz Researchが発見し、Amazonはすでにパッチを適用済みです。一方、新マルウェア「SharkLoader」が登場し、Cobalt Strikeビーコンを展開する「StrikeShark」攻撃で外交・政府・ソフトウェア企業を複数国で標的にしています。中国系APTも東南アジアのエネルギー・政府機関向けに新バックドア「TinyRCT」を展開中です。また、Linuxカーネルに新脆弱性（pedit COW関連のCVE-2026-46331など）が報告され、ローカル権限昇格が可能になりました。\n影響\nAmazon Qの脆弱性は、開発者の日常業務（リポジトリクローン）でクラウド環境全体が危険にさらされる点が特に深刻です。SharkLoaderなどの新マルウェアはオープンソースツールを巧みに悪用し、検知を回避しながら持続的なアクセスを獲得します。Linuxカーネル脆弱性は、サーバーや開発環境でroot権限取得を容易にし、広範な被害につながりやすいです。これらはすべて「攻撃の低コスト化・高速化」を象徴する動きです。\n対策\nAmazon Q Developerユーザーは、最新版への即時アップデートを確認してください。開発環境では、信頼できないリポジトリのクローンを避け、サンドボックス環境での検証を徹底。SharkLoader対策としては、EDR（エンドポイント検知・対応）ツールの導入と、Cobalt Strikeなどの既知ツールの通信パターン監視が有効です。Linuxシステムはカーネルパッチを迅速に適用し、不要な名前空間機能の無効化を検討。全体として、コードレビュー時のセキュリティチェック強化と、ゼロトラスト型のアクセス制御を推進してください。\nこれらのニュースは、国家レベルのespionage、AIの両刃の剣、サプライチェーン/SaaSの脆弱性、日常ツールの技術的脅威という現代のサイバーセキュリティの主要トレンドを如実に表しています。組織・個人ともに、基本的な衛生管理（パッチ適用、意識向上、多層防御）を怠らないことが最も重要です。状況は日々変化するため、信頼できる情報源からの最新情報を継続的に確認してください。",
+      "author": {
+        "id": "1986424188153044993",
+        "name": "Cyberdark Impact",
+        "screenName": "kenebeii",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065596711394013184/5PP1fxmi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1539,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 08:43:34 +0000 2026",
+      "createdAtLocal": "2026-06-28 16:43",
+      "createdAtISO": "2026-06-28T08:43:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071112747165864391",
+      "text": "📢 2026-06-28 AI日更 | 端侧模型重回中心，AI 编程工具迈向 Agent OS\n\n> 今天的核心变化不在单一大模型发布，而在应用形态下沉：端侧模型因量化训练、小模型多模态能力提升重新升温；AI 编程工具从辅助补全走向自主完成项目；同时，前沿模型发布继续受到政府审查与安全边界影响。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:DeepSeek Unveils DSpark for Massive AI Speed Boosts\n• 分类:AI · News\n• 概况:热度时间:23 hours ago,相关帖子数:3500\n• 是什么事:DeepSeek 发布了名为 DSpark 的新技术，声称可显著提升大规模 AI 模型的运行与训练速度。\n• 为什么重要:如果性能提升属实，DSpark 可能降低大模型训练和推理成本，提升国产 AI 基础设施效率，并加剧全球 AI 算力优化竞争。\n• 讨论概况:X 上讨论集中在 DSpark 的实际加速幅度、是否已有可复现实测、对英伟达等算力生态的影响，以及 DeepSeek 是否能把算法优化转化为持续的产品和商业优势。\n\n▫️ 话题 2:https://t.co/klu8ejhG1z's GLM-5.2 Tops Coding Benchmarks as Open-Source Powerhouse\n• 分类:AI · News\n• 概况:热度时间:2 days ago,相关帖子数:4400\n• 是什么事:https://t.co/klu8ejhG1z 发布的开源模型 GLM-5.2 在多项编码基准测试中取得领先成绩，引发 AI 社区关注。\n• 为什么重要:这表明开源大模型在代码生成与软件工程任务上的能力正快速逼近甚至挑战闭源模型，可能改变开发者工具、企业部署和模型生态竞争格局。\n• 讨论概况:X 上的讨论主要集中在基准测试结果是否能代表真实编程能力、GLM-5.2 与 OpenAI、Anthropic 等闭源模型的差距，以及开源模型在成本、可控性和商业应用中的潜力与风险。\n\n▫️ 话题 3:Einsia Open-Sources BrowserBC to Boost Web Agents with Human Skills\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:2900\n• 是什么事:Einsia 宣布开源 BrowserBC，旨在让基于浏览器的 AI 智能体更好地学习和复用人类操作网页的技能。\n• 为什么重要:这对 AI 领域重要，因为网页浏览是智能体执行真实任务的核心场景，提升其对复杂网页交互的理解与操作能力，有助于推动更实用的自动化代理。\n• 讨论概况:X 上的讨论主要集中在 BrowserBC 是否能显著提升 Web Agent 的可靠性、开源数据和工具链对行业的价值，以及这类技术可能带来的自动化滥用、隐私和网站反爬压力。\n\n▫️ 话题 4:Greg Isenberg Outlines AI-Native Business Blueprint\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:1200\n• 是什么事:创业者 Greg Isenberg 在 X 上提出一套“AI 原生企业”构建思路，强调用 AI 代理、自动化流程和小团队快速验证并扩展业务。\n• 为什么重要:这一话题反映了 AI 正从工具层进入商业组织设计层，可能改变创业成本、团队规模、产品开发和运营方式。\n• 讨论概况:讨论焦点集中在 AI 原生公司是否能真正形成可持续竞争优势；支持者认为小团队可借助 AI 显著提高效率，质疑者则担心同质化、护城河不足以及过度依赖平台模型。\n\n▫️ 话题 5:OpenAI Launches GPT-5.6 Models in Limited U.S. Government Preview\n• 分类:AI · News\n• 概况:热度时间:2 days ago,相关帖子数:107000\n• 是什么事:OpenAI 发布 GPT-5.6 系列模型，但目前仅向少数美国政府协调下的“可信伙伴”开放有限预览，尚未面向公众或 ChatGPT 用户推出。\n• 为什么重要:这显示前沿 AI 模型的发布正从单纯产品迭代转向受到安全、网络风险和政府监管影响的分阶段准入机制，可能改变先进模型的商业化、研究开放和全球竞争节奏。\n• 讨论概况:X 上的讨论集中在“政府门控 AI”是否合理：支持者认为高能力自主智能体需要提前接受安全和网络审查，以降低滥用和系统性风险；批评者则担心这会拖慢创新、限制开发者和学术研究，并让少数机构垄断前沿 AI 访问权。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线围绕“AI 能力继续快速上探，但开放、可信与可控的边界正在重画”：从 DSpark 的算力优化、GLM-5.2 的开源编码能力，到 BrowserBC 和 AI 原生企业，市场普遍认同 AI 正在降低训练、开发、自动化和创业成本。共识是开源模型、智能体工具链和算法效率会继续压缩闭源与硬件壁垒，并把竞争从单点模型能力推向基础设施、工作流和商业落地。分歧主要在于这些进展是否经得起真实场景验证，以及 AI 原生小团队和开源模型能否形成长期护城河，而不是被基准测试、平台依赖或同质化产品高估。潜在风险则集中在三类：高能力模型被政府或少数机构门控可能引发创新公平性争议，浏览器智能体和自动化代理可能带来隐私、滥用与反爬压力，国产与开源生态的加速竞争也可能进一步放大全球 AI 监管和算力生态博弈。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n好的，基于对过去 24 小时内多位 AI 领域关键意见领袖（KOL）的推文分析，以下是为你整理的行业情报洞察。\n\n📢 今日 AI 行业速报：端侧模型“文艺复兴”、AI 编程定价权之争与前沿模型的国家级枷锁\n\n🔹 1. 今日大佬们共同关注的技术趋势或产品热点\n\n▫️ 趋势一：端侧模型（On-device Model）迎来“高光时刻”\n本地化运行、小型化模型成为多位博主共同的兴奋点，不再是边缘玩法，而是开始具备生产力。\n\n• Google Gemma 4 系列成为端侧“甜点”：@zhixianio 密集测试了其代码与多模态能力。他指出，社区微调版 `gemma-4-12B-coder` 虽然面向本地代码生成，但其 12B 的参数量在复杂程序（如完整可玩的俄罗斯方块）生成上仍存在天花板，无法媲美 `Qwen3.6-35B-A3B MoE`。同时，他对 Google 发布的 QAT（Quantization-Aware Training，量化感知训练） 模型表示高度认可，认为这标志着模型在训练时就为量化优化，是端侧部署的关键思路，并预测 Android 系统很快将内置此类模型。\n• MiniCPM-o 4.5 展现小模型潜力：@zhixianio 对该 9B 模型的音视频全双工效果表示“很满意”，指出其质量超乎预期，虽长期运行仍有稳定性问题，但已展示出可用性。\n• 端侧模型生态与应用：@zhixianio 在其播客《认知有县》中正式探讨端侧模型，并用端侧 TTS 打造了 AI 主持人 `Owlia`。他还提出了“Model-Pak”的概念畅想，即模型像卡带一样可以插拔使用，与 @geekbb 的想法不谋而合。\n\n▫️ 趋势二：AI 编程工具与 Agent 向“操作系统”和“全自动化”演进\nAI 编程工具不再只是代码补全，而是演变为能够独立完成项目、自主决策的 Agent OS。\n\n• Fable 展示全自动化潜力：@zhixianio 分享了使用 `Fable` 的惊叹体验：他完成 30% 的工作后，Fable 在 40 分钟内自主完成了剩下 70% 的工作，并指出并修复了他设计的不足，用更优方案实现。他直呼“Shut up and take my money”。\n• Codex 生态与“混合模型”工作流：@dotey 认为 Codex 的发展方向是 Agent OS 而非仅仅是一个 Agent Office。 @Pluvio9yte 则展示了在 Codex 中同时使用 Claude Code 作规划和检查，Gemini 聊天，Codex 主力干活的混合工作流，利用不同模型的优势。@gefei55 也分享了将 ChatGPT 变成 Codex 的工具 `DevSpace`，实现用最强模型做规划。\n• Vibe Coding 的务实思考：@ruanyf 引用新闻指出，AI 大幅提升效率后，“是否可以放假”成为合理逻辑，引发对 AI 程序员价值的思考。@gefei55 则坦言他现在“写”代码已完全不看代码，因为 AI 编码能力已超过程序员平均水平，并且会持续进化。\n\n▫️ 趋势三：前沿大模型的发布与“政府审查”\n顶级模型的能力开始触发国家安全层面的干预，发布节奏不再完全由公司控制。\n\n• GPT-5.6 的“有限预览”：@dotey 详细报道了 OpenAI 的 GPT-5.6。该模型分为 Sol, Terra, Luna 三档，但因美国政府要求，目前仅向约 20 家政府审批的合作伙伴开放。其旗舰 Sol 的 ultra 模式 可调用多个子 Agent 并行处理复杂任务，代表了“AI 自己管理 AI”的新方向。\n• Anthropic Mythos 5 的解禁：@dotey 连续报道了此事件。Mythos 5 因网络攻击能力强被政府封禁两周后，又被允许向美国关键基础设施机构重新开放用于网络安全防御。这形成了一个“因太危险被禁，又因太有用被请回”的闭环，标志着政府对前沿模型的发布前审查，正从个案变为惯例。\n\n🔹 2. 值得注意的独特观点或行业前瞻\n\n• @dotey 对 “GPT-4 时代终结”的叹惋：他指出 OpenAI 从 ChatGPT 中移除 GPT-4.5，标志着 GPT-4 时代在消费端彻底翻篇。他个人评价 GPT-4.5 至今仍是最好的写作模型之一，GPT-5 系列在文风和个性上未能达到其水准，暗示了模型迭代中，部分“软能力”可能丢失。\n\n• @dotey 剖析“蒸馏攻击”与地缘技术竞争：Anthropic 指控阿里巴巴关联方对 Claude 发动了史上最大规模的蒸馏攻击（2880万次交互）。他结合 Anthropic 一边向政府求助、一边与政府争论模型限制的“拧巴”处境，揭示了中美 AI 竞争、企业利益与国家安全政策交织的复杂局面。\n\n• @ruanyf 与 @Pluvio9yte 对 “Token 陷阱”的反思：@ruanyf 用“免费小狗”理论说明外部 PR 带来的长期维护成本。@Pluvio9yte 也提出核心思维：“重复做过三遍的事情一定要思考如何自动化”，与 @gefei55 的观点 “Token 是无限的，时间精力是有限的”形成共鸣，共同提醒开发者避免陷入用无止尽的 Token 消耗生命，而应专注于高价值决策。\n\n• @lijigang 的深度学习哲学：他提出“重度使用一款模型与之对话，对方的语言风格，会影响到你”，以及“30天内把自己泡在该主题的 context 中，看世界的取景框会切换”，强调深度沉浸式学习和模型调性对人思维的反向塑造。\n\n• @vista8 对 物理 AGI 的端侧思考：他分享的清华团队机器人项目强调了 Physical AGI 的必要条件：一个统一的多模态大脑必须完整运行在端侧，这与今日的端侧模型趋势形成了从数字世界到物理世界的呼应。\n\n🔹 3. 推荐的工具或资源\n\n• Codex 相关工具与技巧\n  • decode-codex（by @dotey）：一个反编译 Codex App 代码的项目，可用于学习和研究其内部实现。\n  • DevSpace（by @gefei55）：一个 MCP 服务器，可让 ChatGPT 网页端模型直接操作本地代码仓库，获得类似 Codex 的能力。\n  • Codex 混合工作流（by @Pluvio9yte）：在 Codex App 中，通过 UI 按钮切换不同模型（如 Claude Code 做规划，Gemini 做沟通）来协同工作。\n\n• Skill 与效率\n  • Skill 管理方法（by @dotey & @Pluvio9yte）：@dotey 分享了他的极客风 Skills 管理法，只装在项目里，不装全局。@Pluvio9yte 则开源了一个“skill 洁癖 skill”，用于扫描、统计并清理不常用的 skills。\n  • 视频制作 Skills 开源库（by @Pluvio9yte）：开源了一整套用于复刻类似 `hyperframes` 样式视频的 skills，帮助不会剪辑的用户直接用 AI 制作视频。\n  • PPT Master Skill（by @dotey）：被 @dotey 和 @0xCheshire 称为最好的 PPT skill，支持导出可编辑版本。\n\n• 模型测试与部署\n  • 豆包 Seed 2.1 Pro 接入教程（by @Pluvio9yte）：发布了详细的教程，指导如何在 Claude Code 等 Agent 中配置和使用国产模型，并提供了 API 申请和模型映射等关键步骤。\n  • Gemma 4 12B Coder（GGUF 格式）：由 @HuggingModels 发布，被 @zhixianio 详细评测，适合在消费级硬件上本地运行代码生成的开发者尝试。\n  • EdgeOne Makers：被 @vista8 和 @AI_Jasonyu 强力推荐，解决 Agent 开发上线难的问题，提供一站式部署、监控和沙箱环境。\n\n• 知识与内容\n  • YouMind（by @lifesinger，获 @gefei55, @AI_Jasonyu 推荐）：发布 1.0 正式版，被赞为最适合图文内容创作与排版的工具，能极大提高文章输出效率。\n  • VoxCPM2（by @axichuhai，获 @AI_Jasonyu 推荐）：一个 GitHub 开源项目（22.9k star），可通过自然语言描述来生成声音，被认为是语音模型中的“王炸”。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-28-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-28\n\n🔗 完整排版阅读: https://t.co/vlIafBALMO",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2346,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 06:05:32 +0000 2026",
+      "createdAtLocal": "2026-06-28 14:05",
+      "createdAtISO": "2026-06-28T06:05:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2071097845004787796",
+      "text": "Anthropic's Mythos 5 is back for critical infra. High-octane security models need high-octane local plumbing.\n\nxBridgeMCP gives these giants a secure, controlled pipe to your local tools. Protect the core, bridge the gap.\n\nBuild better at https://t.co/Ig1K4bWKFV.\n\n#MCP #Anthropic #Cybersecurity #AIAgents",
+      "author": {
+        "id": "1895493273453563904",
+        "name": "xBridge MCP",
+        "screenName": "xBridgeMCP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034047338239430656/-gLGvXKX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 28,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jun 28 05:06:20 +0000 2026",
+      "createdAtLocal": "2026-06-28 13:06",
+      "createdAtISO": "2026-06-28T05:06:20+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL4EeCNXUAAuP00.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [
+        "http://xbridgemcp.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071033608740257943",
+      "text": "AIニュースピックアップ ｜ 2026/6/28\n---\n\n米商務省がAnthropicに対し、Mythos 5の限定的な再配布を認めた。\n\n6月12日の政府指令でFable 5・Mythos 5の全アクセスが止まってから2週間、集中的な協議を経ての部分解除になった。\n\nルトニック商務長官がAnthropic共同創業者のトム・ブラウンに送った書簡では、セキュリティ懸念への対応が「大きな進展を見せた」として、100以上の米国組織への再配備を許可している。\n\n対象はサイバー防御やインフラ提供を担う「信頼されたパートナー」に限定されており、Project Glasswingの招待制プログラムを通じて提供される。\n\n一方でFable 5には今回の書簡で言及がなく、制限が続いている。Mythos側だけ先に動いた形。\n\n---\n\nGPT-4.5がChatGPTから消えた。GPT-4系列で最後に残っていたモデルで、これでChatGPT上にGPT-4世代は一つもなくなった。\n\n5月28日に30日間のサンセット期間が告知されていて、6月26日に予定通り引退した。既存の会話はGPT-5.5に自動移行される。\n\nAPIには影響なく、開発者の既存インテグレーションはそのまま動く。o3も8月26日に引退予定で、90日間のサンセット期間に入っている。\n\nChatGPTの選択肢はGPT-5.5世代に一本化されつつある。\n\n---\n\nOpenAIが「How Agents Are Transforming Work」と題した社内Codex利用レポートを公開した。\n\n目を引くのは非エンジニア層の伸びで、個人ユーザーは2025年8月から137倍、組織ユーザーは189倍に増えた。\n\nOpenAI社内では、法務・財務・採用の各部門が2026年4月頃にCodex利用がChatGPTを逆転し、今は出力トークンの85%以上がCodex経由になっている。\n\n上位1%のユーザーは1日あたり60時間分相当のエージェントタスクを並列で回しているという数字も出ている。Codex週間利用者は500万人を超え、そのうち約20%が非開発者。\n\nエージェントが「エンジニアのツール」から外に出始めている実態がデータで見えてきた。\n\n---\n\nGitHub Copilot for JiraがGA（一般提供）になった。\n\n3月のパブリックプレビューから約3か月。\n\nJiraのチケットからコーディングエージェントを起動して、進捗をJira上でリアルタイムに追えるようになった。エージェントがドラフトPRを開いた後、Jiraのチャットパネルからフォローアップ指示を送ると、同じPRに対して作業を続けてくれる。\n\nConfluenceコンテキストをMCP経由で読み込む機能やモデル選択、カスタムエージェントにも対応した。\n\nプロジェクト管理とコーディングエージェントの接続がネイティブになった形で、Jiraベースのチームは試しておきたい。",
+      "author": {
+        "id": "1394460217056714753",
+        "name": "松本良太｜AI × Design × Dev",
+        "screenName": "ryma_jp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1445292231955390466/D_Xw40ja_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 663,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jun 28 00:51:04 +0000 2026",
+      "createdAtLocal": "2026-06-28 08:51",
+      "createdAtISO": "2026-06-28T00:51:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL3KDTiakAAQPag.jpg",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071007271014846618",
+      "text": "Claude Mythos 5 is back for US critical infra—the strongest cybersecurity model yet. 🛡️\n\nBut high-signal intelligence is only as strong as its deployment pipe.\n\nxBridgeMCP is that pipe. Secure, standardized, and built to bridge your most sensitive agent workflows to existing stacks.\n\n#MCP #AI #CyberSecurity #Anthropic",
+      "author": {
+        "id": "1895493273453563904",
+        "name": "xBridge MCP",
+        "screenName": "xBridgeMCP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034047338239430656/-gLGvXKX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 16,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 23:06:25 +0000 2026",
+      "createdAtLocal": "2026-06-28 07:06",
+      "createdAtISO": "2026-06-27T23:06:25+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL2yIE4XAAA6Mhr.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070880342970454101",
+      "text": "https://t.co/UtSDrqi4l9",
+      "author": {
+        "id": "1595395214738423808",
+        "name": "CreativeAiNinja",
+        "screenName": "CreativeAiNinja",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1663694768222748675/182TUdDM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 226,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 14:42:03 +0000 2026",
+      "createdAtLocal": "2026-06-27 22:42",
+      "createdAtISO": "2026-06-27T14:42:03+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070879450636353536"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Trending AI Briefing Saturday, June 27, 2026"
+    },
+    {
+      "id": "2070868199122362479",
+      "text": "https://t.co/NsgcL84Qby",
+      "author": {
+        "id": "594836462",
+        "name": "Alissa Knight",
+        "screenName": "alissaknight",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068058588891729920/IoeAjZvM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 290,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 13:53:48 +0000 2026",
+      "createdAtLocal": "2026-06-27 21:53",
+      "createdAtISO": "2026-06-27T13:53:48+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070868085607665665"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Harness Wars: The Next Competitive Frontier Isn't Model Size. It's What You Wrap Around It."
+    },
+    {
+      "id": "2070864097995075735",
+      "text": "🚨 Anthropic Timeline (2021–2026):\n\n2021  –  Anthropic is founded by Dario Amodei and former OpenAI researchers with a focus on AI safety. The company raises $124 million in its first funding round. \n\n2022  –  Publishes the Constitutional AI research, introducing a new method for training safer AI assistants. \n\nMarch 2023  –  Launches the first public Claude AI model and API. \n\nJuly 2023  –  Releases Claude 2, featuring stronger reasoning and a 100K-token context window. \n\nNovember 2023  –  Launches Claude 2.1 with a 200K-token context window and improved accuracy. \n\nMarch 2024 – Introduces the Claude 3 family:\n\n~ Haiku (fastest)\n~ Sonnet (balanced)\n~ Opus (most capable) \n\nJune 2024  –  Releases Claude 3.5 Sonnet, becoming one of the top AI coding and reasoning models. \n\nOctober – November 2024 – Adds Computer Use, Claude Desktop, Artifacts, and introduces the Model Context Protocol (MCP) for connecting AI to external tools. \n\n2025  –  Expands the Claude 4 series with improved coding, agents, and enterprise capabilities. \n\nJune 2026  –  Launches Claude Fable 5 (general availability) and Claude Mythos 5 (restricted access), its most advanced AI models to date. \n\nThe world's leading frontier AI companies by 2026.",
+      "author": {
+        "id": "2025442210851028994",
+        "name": "Tech Today",
+        "screenName": "chanduuu_cs",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2070799302709116928/WDT-Wfle_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 232,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 13:37:30 +0000 2026",
+      "createdAtLocal": "2026-06-27 21:37",
+      "createdAtISO": "2026-06-27T13:37:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL0v7DLa4AAOve5.jpg",
+          "width": 588,
+          "height": 393
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070826226881622162",
+      "text": "Claude Mythos 5 is back for critical infrastructure. 🛡️\n\nBut the strongest cybersecurity model is only as useful as the context it can touch. \n\nxBridgeMCP bridges the gap between these high-security 'brains' and your local mission-critical tools. \n\nLocal context. Global intelligence. \n\n#MCP #AIAgents #ClaudeAI",
+      "author": {
+        "id": "1895493273453563904",
+        "name": "xBridge MCP",
+        "screenName": "xBridgeMCP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034047338239430656/-gLGvXKX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 11:07:01 +0000 2026",
+      "createdAtLocal": "2026-06-27 19:07",
+      "createdAtISO": "2026-06-27T11:07:01+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL0NdfZXoAAXjKG.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070790237601865910",
+      "text": "🤖 AI Briefing — June 27, 2026\n\n1. 🚀 𝗦𝗮𝗺 𝗔𝗹𝘁𝗺𝗮𝗻 𝗖𝗼𝗻𝗳𝗶𝗿𝗺𝘀: 𝗚𝗣𝗧-𝟱.𝟲 𝗦𝗼𝗹 𝗜𝘀 𝗮 𝗦𝘁𝗲𝗽 𝗙𝗼𝗿𝘄𝗮𝗿𝗱, 𝗦𝗮𝗺𝗲 𝗣𝗿𝗶𝗰𝗲 𝗮𝘀 𝗚𝗣𝗧-𝟱.𝟱\nOpenAI's flagship model Sol is out — same price as GPT-5.5, \"smart and efficient,\" per Altman. Terra joins it at GPT-5.5 performance for half the cost. The catch: both launch in limited preview, held back at the US government's request. OpenAI publicly pushed back, calling the gate \"not the long-term default.\" When the company that positions itself as \"broad access\" champion starts apologizing for safety restrictions, you know the policy pressure is real.\nhttps://t.co/C05DkS511l\n\n2. 🛡️ 𝗔𝗻𝘁𝗵𝗿𝗼𝗽𝗶𝗰 𝗚𝗲𝘁𝘀 𝗚𝗿𝗲𝗲𝗻 𝗟𝗶𝗴𝗵𝘁 𝘁𝗼 𝗥𝗲𝗱𝗲𝗽𝗹𝗼𝘆 𝗠𝘆𝘁𝗵𝗼𝘀 𝟱 𝘁𝗼 𝟭𝟬𝟬+ 𝗨𝗦 𝗢𝗿𝗴𝗮𝗻𝗶𝘇𝗮𝘁𝗶𝗼𝗻𝘀\nAfter two weeks of total blackout, Mythos 5 — the model deemed too dangerous to release by the US government — is back for 100+ US orgs defending critical infrastructure. Foreign nationals at those orgs get access too. Fable 5 remains in negotiations. The government is carving out a \"trusted partner\" lane and apparently Anthropic's safeguards now pass the test.\nhttps://t.co/GKz5gF6WWX\n\n3. 📊 𝗔𝗻𝘁𝗵𝗿𝗼𝗽𝗶𝗰 𝗦𝘁𝘂𝗱𝘆: 𝗔𝗜 𝗔𝗱𝗼𝗽𝘁𝗶𝗼𝗻 𝗝𝘂𝗺𝗽𝘀 𝗳𝗿𝗼𝗺 𝟯𝟵% 𝘁𝗼 𝟲𝟲% 𝗶𝗻 𝗢𝗻𝗲 𝗬𝗲𝗮𝗿\nNew sampling and survey data from Anthropic shows AI usage surging across the board — what people build, how they work, and how they perceive AI's impact. The 27-point adoption jump in a single year is a signal that enterprise AI isn't a future promise anymore. It's a present reality most orgs are already living.\nhttps://t.co/kgUei2aIIb\n\n4. 🔁 𝗦𝗮𝗺 𝗔𝗹𝘁𝗺𝗮𝗻 𝗦𝗮𝘆𝘀 𝗚𝗣𝗧-𝟱.𝟱 𝗜𝗻𝘀𝘁𝗮𝗻𝘁 𝗚𝗼𝘁 𝗤𝘂𝗶𝗲𝘁𝗹𝘆 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸. 𝗛𝗲 𝗟𝗶𝗸𝗲𝘀 𝗜𝘁𝘀 𝗩𝗶𝗯𝗲𝘀.\nThe update was shipped without fanfare and Altman called it \"good vibes.\" That's it. That's the changelog. When the CEO of the most visible AI company announces model updates the way you'd post about a good coffee, the industry has officially peaked on marketing language.\nhttps://t.co/tlmEkRpuBx\n\n5. 🤖 𝗢𝗽𝗲𝗻𝗔𝗜 𝗟𝗮𝘂𝗻𝗰𝗵𝗲𝘀 𝗚𝗣𝗧-𝟱.𝟲 𝗦𝗼𝗹, 𝗧𝗲𝗿𝗿𝗮 & 𝗟𝘂𝗻𝗮 — 𝗟𝗶𝗺𝗶𝘁𝗲𝗱 𝗣𝗿𝗲𝘃𝗶𝗲𝘄, 𝗚𝗼𝘃𝗲𝗿𝗻𝗺𝗲𝗻𝘁-𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝗣𝗮𝗿𝘁𝗻𝗲𝗿𝘀 𝗢𝗻𝗹𝘆\nSol, Terra, and Luna make up the GPT-5.6 family. Sol is OpenAI's strongest model with agentic improvements in coding, biology, and cybersecurity. All three are rated \"High\" risk for cyber and biological capability — same tier as the models that triggered the Anthropic block. OpenAI is releasing them to a small set of partners now, wider launch \"in the coming weeks.\"\nhttps://t.co/nWbYIXty4o\n\n6. 💰 𝗖𝘂𝘀𝘁𝗼𝗺𝗲𝗿 𝗦𝗲𝗿𝘃𝗶𝗰𝗲 𝗔𝗜 𝗔𝗴𝗲𝗻𝘁𝘀 𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝗶𝗻𝗴 𝗠𝗲𝗮𝘀𝘂𝗿𝗮𝗯𝗹𝗲 𝗥𝗲𝘁𝘂𝗿𝗻𝘀 𝗪𝗶𝘁𝗵𝗶𝗻 𝟲𝟬 𝗗𝗮𝘆𝘀\nA Salesforce survey of 3,000+ service professionals shows agentic AI adoption jumping from 39% to 66% in the past year. 70% of organizations report measurable returns within 60 days of deployment — faster than most enterprise software rollouts. This is the ROI story that makes CFOs stop asking \"but what's the ROI?\"\nhttps://t.co/5OMod0wcRo\n\n7. 🏛️ 𝗧𝗿𝘂𝗺𝗽 𝗔𝗱𝗺𝗶𝗻 𝗔𝗹𝗹𝗼𝘄𝘀 𝗔𝗻𝘁𝗵𝗿𝗼𝗽𝗶𝗰 𝘁𝗼 𝗥𝗲𝗹𝗲𝗮𝘀𝗲 𝗠𝘆𝘁𝗵𝗼𝘀 𝟱 𝘁𝗼 𝗢𝘃𝗲𝗿 𝟭𝟬𝟬 𝗨𝗦 𝗖𝗼𝗺𝗽𝗮𝗻𝗶𝗲𝘀 𝗮𝗻𝗱 𝗔𝗴𝗲𝗻𝗰𝗶𝗲𝘀\nCommerce Secretary Howard Lutnick signed off Friday, letting Anthropic restore access for companies and federal agencies defending critical infrastructure. Foreign nationals at those orgs get access as well. Fable 5 remains under negotiation. This is the first crack in the June 12 export control order that had Anthropic blocking all access, including to its own employees.\nhttps://t.co/xjdpRU3lGU\n\n8. 🪙 𝗔𝗜 𝗔𝗴𝗲𝗻𝘁 𝗧𝗼𝗸𝗲𝗻𝗶𝘇𝗲𝘀 𝗔𝘀𝘀𝗲𝘁𝘀 𝗔𝘂𝘁𝗼𝗻𝗼𝗺𝗼𝘂𝘀𝗹𝘆 𝗼𝗻 𝗕𝗮𝘀𝗲 𝘃𝗶𝗮 𝗠𝗖𝗣 𝗦𝗲𝗿𝘃𝗲𝗿\nBrickken Agentic went live June 23 as an MCP server on Base. Point an AI agent at one endpoint and it registers an on-chain identity via ERC-8004, pays autonomously through Coinbase's x402 protocol, and issues a compliant token — no human in the loop. The full tokenization flow, end to end, machine-authorized.\nhttps://t.co/fq3TMaFs39\n\n9. 🏋️ 𝗡𝘃𝗶𝗱𝗶𝗮 𝗗𝗿𝗼𝗽𝘀 𝗡𝗲𝘄 𝗔𝗔-𝗕𝗿𝗶𝗲𝗳𝗰𝗮𝘀𝗲 𝗟𝗲𝗮𝗱𝗲𝗿𝗯𝗼𝗮𝗿𝗱 𝗳𝗼𝗿 𝗥𝗲𝗮𝗹-𝗪𝗼𝗿𝗹𝗱 𝗔𝗴𝗲𝗻𝘁𝗶𝗰 𝗧𝗮𝘀𝗸 𝗘𝘃𝗮𝗹𝘂𝗮𝘁𝗶𝗼𝗻\nArtificial Analysis launched AA-Briefcase — a new leaderboard for evaluating AI models on realistic complex projects. Nemotron 3 Ultra ranks among the top open models, performing well across long-running agentic tasks. Nvidia-backed models taking the top spots will surprise exactly no one, but the focus on \"realistic tasks\" over synthetic benchmarks is a direction the field needs.\nhttps://t.co/slkCSzMaYa\n\n10. 📱 𝗢𝗽𝗲𝗻𝗔𝗜 𝗥𝗲𝗹𝗲𝗮𝘀𝗲𝘀 𝗚𝗣𝗧-𝟱.𝟲 𝗦𝗼𝗹, 𝗧𝗲𝗿𝗿𝗮 𝗮𝗻𝗱 𝗟𝘂𝗻𝗮 𝗶𝗻 𝗟𝗶𝗺𝗶𝘁𝗲𝗱 𝗣𝗿𝗲𝘃𝗶𝗲𝘄 𝗮𝘁 𝗠𝗮𝗰𝗥𝘂𝗺𝗼𝗿𝘀\nMacRumors breaks down the three-model lineup: Sol is flagship with agentic improvements, Terra matches GPT-5.5 performance at 2x lower cost, and Luna targets the low-cost end. All three are available through API and Codex to trusted partners now, with broader rollout planned. OpenAI is framing the restricted launch as temporary.\nhttps://t.co/rAQjDeZZ4d\n\n— @marcopapa99 | CS Faculty building with AI daily",
+      "author": {
+        "id": "1178467455892512768",
+        "name": "Marco Papa🦞",
+        "screenName": "marcopapa99",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1475603745631133696/TuaM7YhU_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 282,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 08:44:00 +0000 2026",
+      "createdAtLocal": "2026-06-27 16:44",
+      "createdAtISO": "2026-06-27T08:44:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070602795737035252",
+        "text": ".@ArtificialAnlys just dropped a brand new leaderboard called AA-Briefcase for evaluating realistic tasks in complex projects.\n\nNemotron 3 Ultra ranks among the top open models, with strong performance across a wide range of long-running agentic tasks, even when encountering them for the first time.\n\n🔗 https://t.co/xtqr3Gzv5s",
+        "author": {
+          "screenName": "NVIDIAAI",
+          "name": "NVIDIA AI"
+        }
+      }
+    },
+    {
+      "id": "2070790103471886439",
+      "text": "【サイバーセキュリティ動向分析】\n\n2026年6月27日現在、クラウド環境を標的とした新たな攻撃手法の公表、AIモデルの規制緩和と再展開、開発ツールの脆弱性パッチ、標的型攻撃の警告などが主なトピックとなっています。以下に、主要トピックごとに背景・影響・対策を詳しくまとめます。\n1. 新しい「Bucket Hijacking（バケットハイジャッキング）」クラウドデータストリーム傍受手法\n背景\nPalo Alto NetworksのUnit 42が明らかにした攻撃手法で、クラウドストレージバケットの「グローバル一意の名前」という特性を悪用します。攻撃者は対象組織のバケットを削除（または所有権を奪う）した後、同じ名前で自らのクラウドアカウントに再作成します。これにより、ログ、テレメトリ、バックアップ、監査データなどのアクティブなデータストリームが、組織の設定を変えることなく自動的に攻撃者のバケットへリダイレクトされます。AWS、Microsoft Azure、Google Cloudの複数サービス（Logging、S3 Replication、Data Firehose、Pub/Sub、Storage Transfer Serviceなど）で再現可能であることが確認されており、各プロバイダーへの責任ある開示も行われています。 \n\n影響\nデータが「正常に処理されているように見える」状態で静かに外部へ流出するため、検知が極めて困難です。クリティカルインフラや大企業が日常的に生成する大量のログ・監査データが盗まれ、長期的な情報漏洩やサプライチェーン攻撃の足がかりになる可能性があります。クラウド利用の増加に伴い、グローバル名前空間のリスクが顕在化した形です。\n対策  \nバケット名を予測困難なランダム文字列で生成し、削除後も即時再作成や所有権確認を徹底する。  \nデータストリームの送信先検証を強化し、異常なリダイレクトを検知できる監視体制を構築（CloudTrailや同等のログ分析）。  \n重要なログは多重化（複数プロバイダーやオンプレミスへの配信）や暗号化を施す。  \n定期的なクラウド設定監査と、不要なバケットの即時削除・ロックを実施。プロバイダー側の改善を待つだけでなく、自社側で「名前空間のグローバル性を意識した設計」を徹底する。\n2. AnthropicのClaude Mythos 5 AIモデルの米国信頼組織への再展開\n背景\n以前、米当局が国家安全保障上の懸念（jailbreakingによる脆弱性発見・悪用リスクなど）を理由に新モデルのアクセスを制限・停止していました。2026年6月27日時点で、米政府が「信頼できる米国のクリティカルインフラ関連組織」に限定して再展開を許可したことがAnthropicにより確認されています。サイバーセキュリティ用途に特化した強力なモデルです。\n影響\nクリティカルセクターでのAI駆動型防御能力が大幅に向上する一方、強力なAIモデルが攻撃側にも悪用されるリスクが、管理された形で残ります。組織がAIに依存するセキュリティ運用が増えることで、モデル自体のセキュリティやサプライチェーンリスクが新たな懸念材料となります。\n対策  \n利用を許可された組織は、厳格なアクセス制御、利用ログの監視、異常行動検知を導入。  \njailbreakingやプロンプトインジェクション対策を強化した安全な運用ガイドラインを策定。  \n政府・ベンダー間の継続的な協力と、モデル更新時のセキュリティ審査を徹底。  \nAIツール導入時は「防御側だけでなく攻撃側にも使われる可能性」を常に想定したリスク評価を行う。\n3. Amazon Q Developerの脆弱性によるクラウド認証情報窃取リスク\n背景\nAWSのAIコーディングアシスタント「Amazon Q Developer」のVisual Studio Code拡張機能に高深刻度脆弱性（CVE-2026-12957など、CVSS 8.5前後）が存在しました。悪意あるリポジトリを開くと、MCP設定ファイルを介してコードが実行され、開発者のローカル環境変数（AWS認証情報、CLIトークンなど）を継承したプロセスが起動。クラウド環境への不正アクセスが可能になります。Wiz Researchが発見し、AWSが迅速にパッチを適用しました（6月26日頃）。 \n\n影響\n開発者が日常的に行う「リポジトリのクローンや開封」という行為が、クラウドアカウント全体の乗っ取りや機密データ窃取につながるサプライチェーン攻撃のベクターとなります。AIコーディングツールの普及により、開発環境が攻撃の入り口になりやすい状況が浮き彫りになりました。\n対策  \nAmazon Q拡張機能を最新版に即時更新。  \n信頼できないリポジトリやワークスペースは絶対に開かない。  \nAWS IAM権限を最小権限原則で厳格に設定し、開発者アカウントの権限を制限。  \nMCP設定ファイルや環境変数のレビュー・検証プロセスを導入。  \n開発環境をサンドボックス化し、AIツールの動作を監視するEDR/ XDRを活用。\n4. FBIによるロシア諜報機関のSignalアプリ標的警告（更新）\n背景\nFBIとCISAが、ロシアの諜報機関（UNC5792、UNC4221など）がSignalの「バックアップリカバリーキー」を標的にしたフィッシングやソーシャルエンジニアリングを継続的に行っていると警告を発しました。以前の警告の更新版で、キーを入手されると過去のメッセージ履歴が復元され、アカウント乗っ取りが可能になります。キーは電話番号ベースで永続的に有効です。 \n\n影響\n政府関係者、企業幹部、ジャーナリストなどのプライベート通信が完全に露呈するリスクが高く、長期的な監視や情報操作、 blackmail（脅迫）に悪用される可能性があります。Signalのエンドツーエンド暗号化の信頼性が揺らぐ事態です。\n対策  \nSignalの設定画面で「新しいリカバリーキーを生成」し、古いキーを無効化（過去データはすでに危険とみなす）。  \nリカバリーキーを絶対に他人と共有しない。  \nソーシャルエンジニアリング（「アカウント復旧のためキー教えて」など）に警戒。  \n重要な通信はSignal以外にも多層的なセキュリティ対策を講じる。\n5. Linuxカーネルにおける新たなローカル権限昇格脆弱性\n背景\nDirtyClone（CVE-2026-43503）やpedit COW（CVE-2026-46331）など、最近公開・悪用されたカーネル脆弱性が相次いでいます。クローンされたネットワークパケットやCopy-on-Writeメカニズムを悪用し、非特権ローカルユーザーからroot権限を取得可能。公開エクスプロイトも存在します。 \n\n影響\nLinuxサーバーや開発環境がローカル攻撃で容易に侵害され、横移動や永続化の足がかりとなります。パブリッククラウド上のLinuxインスタンスやオンプレミスサーバーに広く影響します。\n対策  \nカーネルを最新版に即時更新（パッチ適用済みバージョンへ）。  \n不要なカーネルモジュール（act_peditなど）を無効化。  \n非特権ユーザー名前空間の使用を制限。  \nEDRツールでローカル権限昇格の兆候を監視。  \n定期的な脆弱性スキャンとパッチ管理プロセスの強化。\n6. その他の注目動向（GitLab、curl、CISA KEVなど）\nGitLab CE/EE：13件の脆弱性（高深刻度のコード実行・情報漏洩含む）が修正されたアップデートがリリースされました。  \ncurl：25年ぶりに発見・修正された古い脆弱性を含む複数パッチが適用されました。  \nCISA：PTC Windchillなどの既知の悪用脆弱性（KEV）をカタログに追加。継続的なweb shell攻撃も確認されています。 \n\n全体的な推奨対策\nクラウド設定の徹底見直し、AIツールの安全運用、OS・アプリケーションの即時パッチ適用、従業員へのソーシャルエンジニアリング教育、脅威インテリジェンスの活用が急務です。特に「グローバル名前空間のリスク」や「AIツール経由の攻撃」は今後さらに拡大すると予想されます。",
+      "author": {
+        "id": "1986424188153044993",
+        "name": "Cyberdark Impact",
+        "screenName": "kenebeii",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065596711394013184/5PP1fxmi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1319,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 08:43:28 +0000 2026",
+      "createdAtLocal": "2026-06-27 16:43",
+      "createdAtISO": "2026-06-27T08:43:28+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2070753198697238685",
+      "text": "📢 2026-06-27 AI日更 | 模型发布权外移，Agent 工业化补上最后一公里\n\n> 今天的主线是前沿模型发布正在受到更强政策约束，OpenAI 与 Anthropic 案例显示政府审批开始影响产品节奏。同时，Agent 部署平台、低成本开源权重模型和端侧多模态模型继续降低应用门槛，但配额、成本与真实能力边界仍是关键不确定性。\n\n🔹 📖 本期 Watch List 深度导读\n\n今日暂无深度阅读推荐。\n\n🔹 🌐 X 平台 AI 热点快讯\n\n▫️ 话题 1:Chinese Open-Weight Models Match Top AIs on Business Tasks at Low Cost\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:438\n• 是什么事:X 上热议称，中国开源权重 AI 模型在多项商业任务中已接近或匹敌顶级闭源模型，同时使用成本显著更低。\n• 为什么重要:这表明高性能 AI 能力正加速商品化，可能降低企业采用门槛，并对闭源模型厂商的定价、护城河和全球竞争格局形成压力。\n• 讨论概况:讨论焦点集中在基准测试是否真实反映企业场景、低成本是否可持续、中国模型的开源权重优势与合规风险，以及这是否会迫使 OpenAI、Anthropic、Google 等厂商调整产品和价格策略。\n\n▫️ 话题 2:shadcn/ui Releases Chat Components for AI Apps\n• 分类:AI · Other\n• 概况:热度时间:10 hours ago,相关帖子数:499\n• 是什么事:shadcn/ui 发布面向 AI 应用的开源聊天界面组件，帮助开发者更快构建对话式产品。\n• 为什么重要:聊天界面是大模型应用最常见的交互入口，成熟的开源组件可降低 AI 产品原型和生产落地成本，并推动前端生态围绕 AI 应用形成标准化实践。\n• 讨论概况:X 上的讨论主要集中在组件是否足够灵活、能否与不同模型和后端框架顺畅集成，以及开源 UI 组件会加速 AI 应用同质化还是提升开发效率；也有用户将其归入值得关注的免费开源项目清单。\n\n▫️ 话题 3:Anthropic Report Shows Claude AI Matching Daily Routines and Boosting Job Optimism\n• 分类:AI · News\n• 概况:热度时间:14 hours ago,相关帖子数:2600\n• 是什么事:Anthropic发布报告称，Claude在越来越多日常工作流程中表现出可替代或辅助人类完成任务的能力，并提升了部分用户对就业前景的乐观情绪。\n• 为什么重要:这表明大模型正从实验性工具加速进入真实工作场景，其对生产力、职业技能需求和岗位结构的影响正在成为AI产业的重要观察指标。\n• 讨论概况:X上的讨论主要集中在Claude是否真正提升工作效率、AI会创造新岗位还是加剧岗位替代，以及Anthropic报告是否存在企业宣传倾向等分歧。\n\n▫️ 话题 4:OpenAI Resets Codex Limits After Developers Hit Unexpected Caps\n• 分类:AI · News\n• 概况:热度时间:19 hours ago,相关帖子数:2800\n• 是什么事:OpenAI 在开发者意外触及 Codex 使用上限后，重置了相关限制并回应了配额问题。\n• 为什么重要:这凸显了 AI 编程工具在大规模开发者使用中的算力、定价和服务稳定性挑战，也影响开发者对 AI 辅助开发工作流的信任。\n• 讨论概况:X 上的讨论集中在 OpenAI 是否提前充分说明限制规则、Codex 的实际可用性与成本是否匹配，以及高频开发者是否会因不可预测的配额转向其他 AI 编程工具。\n\n▫️ 话题 5:U.S. Partially Lifts Export Curbs on Anthropic's Claude Mythos 5 AI\n• 分类:AI · News\n• 概况:热度时间:9 hours ago,相关帖子数:13000\n• 是什么事:美国据称部分放宽了对 Anthropic 旗下 Claude Mythos 5 AI 相关出口的限制。\n• 为什么重要:这可能影响先进 AI 模型在全球市场的可获得性，并反映美国在技术管制、产业竞争与盟友/市场需求之间的政策平衡。\n• 讨论概况:X 上的讨论集中在放宽限制是否会提升美国 AI 企业竞争力、是否增加技术外流和安全风险，以及该政策是否主要利好 Anthropic 相对其他 AI 公司的国际扩张。\n\n▫️ 话题 6:OpenAI Launches Limited GPT-5.6 Preview Under U.S. Government Request\n• 分类:AI · News\n• 概况:热度时间:1 day ago,相关帖子数:77000\n• 是什么事:OpenAI据称在美国政府要求下启动GPT-5.6系列Sol、Terra、Luna的有限预览，先向少数可信伙伴开放，随后计划扩大访问。\n• 为什么重要:该事件显示前沿AI发布正从单一模型竞争转向能力、成本与速度分层，同时更强调智能体任务、网络安全风险评估和政府协调式部署。\n• 讨论概况:X上的讨论集中在Sol的编码与智能体能力、三款模型的价格效率、有限开放是否会成为新发布范式，以及政府介入对安全、创新速度和市场公平性的影响。\n\n· 今日 X 上的 AI 舆情小结\n\n今天的舆论主线是 AI 能力继续加速下沉：一边是中国开源权重模型和开源 UI 组件降低应用门槛，另一边是 Claude、Codex 和 GPT-5.6 等前沿产品把 AI 更深地推入真实工作流与开发者生态。较明显的共识是，高性能模型和配套工具正在商品化，企业与开发者会获得更低成本、更快原型化和更强生产力，但闭源厂商的定价、配额和护城河将承受更大压力。分歧主要集中在能力评估与商业可持续性上：基准是否等于真实场景表现、AI 到底是创造岗位还是替代岗位、政府介入和有限开放是否有利于安全还是损害市场公平。潜在风险则包括开源与出口政策带来的合规和技术外流争议、开发者对不可预测配额的信任受损，以及 AI 应用在标准化工具推动下加速同质化。\n\n🔹 💡 大佬观点(Influencer Insights)\n\n📢 AI 行业日度洞察：基于 X 平台 Influencers 观点的深度总结\n\n我们监测了过去24小时内多位 AI 大佬在 X 平台的动态与观点，提炼出以下核心趋势与洞察：\n\n🔹 1. 趋势热点：从模型禁令到 Agent 工业化\n\n今日的舆论场围绕三个核心主题展开：前沿模型的监管博弈、Agent 开发的门槛骤降、以及端侧模型的持续演进。\n\n▫️ 🚨 焦点事件：政府的影子笼罩尖端模型发布\n今天最大的行业新闻，无疑是美国政府与顶尖 AI 实验室之间围绕模型部署的复杂博弈。\n• OpenAI GPT-5.6 的“许可制”发布：据 @dotey 分析，OpenAI 发布 GPT-5.6 的方式史无前例。应政府要求，该模型仅向约20家经审批的合作伙伴开放，并采用政府“逐个客户审批”的模式。这意味着前沿模型的发布节奏，已从公司自主决策转变为政府管制。@dotey 指出，这可能导致“公司内部拥有能力和公众能用到的能力之间的差距越拉越大。”\n• Anthropic Mythos 5 的部分解禁：@dotey 详细复盘了 Anthropic 的 Fable/Mythos 5 被封禁两周后，Mythos 5 因用于关键基础设施的网络安全防御而获得部分解禁的戏剧性过程。其中一个值得玩味的细节是，联合创始人 Tom Brown 取代了被认为“拧巴、难沟通”的 Dario Amodei，成为与政府沟通的主要代表，使得谈判得以推进（@dotey 引述 WIRED 报道）。这从侧面反映了，在 AI 地缘政治中，领导人的沟通风格本身正在成为影响政策的关键变量。\n\n▫️ 🛠️ Agent 开发与部署的“iPhone 时刻”\n大佬们普遍在讨论 Agent 开发的工业化和傻瓜化，尤其“一站式部署平台”成为新的热点。\n• 腾讯云 EdgeOne Makers 备受推崇：@vista8 和 @AI_Jasonyu 今天同时重点推荐了腾讯云新发布的 EdgeOne Makers 平台。他们共同指出，该平台解决了 Agent 从本地 Demo 到上线的“最后一公里”痛点——无需关心并发、记忆存储、沙箱安全等复杂工程问题，只需几行命令即可部署。这预示着 Agent 开发正从极客的玩具，变成所有开发者甚至非技术人员都能快速上手的标准化产品。\n• Agent 即未来操作系统：@turingbook 提出“Codex 将成为 AI 时代的 Office”，而 @dotey 则进一步拔高，认为其发展趋势必然是 Agent OS，它不仅是生产力套件，更是未来人机交互的底层系统。\n\n▫️ 💻 端侧模型的“甜点”之争\n来自 @zhixianio（知县）的深度测试为端侧模型的当前实力提供了极具价值的坐标：\n• 12B 模型的现实天花板：他对 Gemma 4 12B Coder 的测试结果堪称“大跌眼镜”。在生成“完整可玩的俄罗斯方块”这类有状态、长上下文的复杂任务上，12B 模型根本不可用（卡死、黑屏），而他的主力模型 Qwen 35B MoE 则能完美运行。他得出结论：微调能提升效率，但难以突破模型参数带来的根本性天花板。\n• 亮眼的 9B 音视频能力：@zhixianio 测试 MiniCPM-o 4.5 后对其音视频全双工效果表示“很满意”，认为其质量已可用，尤其对于仅仅 9B 的模型来说，进步巨大。\n\n🔹 2. 独特观点与行业前瞻\n\n• AI 算力并非大宗商品——Token 的异质性 | @lijigang (李继刚)\n    他提出了一个精妙的类比：电力是同质的，但 Token 是异质的。不同模型生成的 1M Token 价值截然不同。这种差异性更容易形成“税收”式的供给瓶颈和竞争壁垒，而非像电力一样沦为纯粹的基础设施商品。这一观点深刻解释了为何顶级模型 API 能维持高溢价。\n\n• AI 时代的“百亿补贴”暗流 & Token 缩水争议 | @Pluvio9yte (雪踏乌云)\n    多名用户（@Pluvio9yte, @msjiaozhu）反馈，Codex 等服务似乎存在用量消耗严重缩水的问题，“以前能用三四天的量，现在一天就干掉”。这背后可能指向一个行业性问题：随着用户和使用量的爆炸增长，AI 服务商是否正在悄悄调整“算力/Token 汇率”以控制成本？\n\n• “Fable”的惊艳与威胁 | @zhixianio (知县)\n    知县分享了使用 Fable 的夸张体验：他2天完成30%工作，而 Fable 在40分钟内自动完成剩余70%，并指出了他设计方案的不合理之处，用更优方案实现。他惊呼“Shut up and take my money”。这表明顶级 Agent 产品已从“编程助手”进化为能反向挑战和优化人类方案的协作者。\n\n• AI 时代的内容创作护城河 | @vista8 (向阳乔木)\n    他指出，用 AI 将3小时播客转为文章常常遗漏细节。他的解法不是追问，而是同时生成多份稿件，然后取长补短，合并成最优版本。这是一种利用 AI 的“冗余生成”能力，结合人类判断力来保证内容质量的典型高级用法。\n\n🔹 3. 值得关注的开源项目、工具与模型\n\n• MiniCPM-o 4.5 (@zhixianio 测试): 9B 端侧模型，其音视频全双工交互能力令人满意，值得尝试。\n• Gemma 4 12B Coder (经 @zhixianio 测试): 本地代码生成的潜力股，但评测显示其在复杂任务上仍有12B模型的天花板，适合轻量级编码任务。\n• 豆包 Seed 2.1 Pro (@vista8, @Pluvio9yte 等评测): 被视为性价比之王，编程能力可用，且能通过 `cc-switch` 等工具接入 Claude Code 使用。火山引擎 Coding Plan 9.9元/月的定价引发热议。\n• 腾讯云 EdgeOne Makers (@vista8, @AI_Jasonyu 强烈推荐): 专注解决 Agent 上线痛点的部署平台，提供模板、沙箱、监控等全套服务，Beta 期间赠送免费 Token。\n• DevSpace (@gefei55 分享): 开源项目，可作为 MCP 服务器让 ChatGPT 网页端直接读写本地代码，变相为 ChatGPT 增加了 Codex 的核心能力。\n• Decode-Codex 项目 (@dotey 分享): 一个教你反编译 Codex App 代码的开源项目，包含解包和解混淆 JavaScript 的 Skill，满足了极客对闭源 Agent 产品的好奇心。\n• PPT 生成 Skill 大比拼: @dotey 和 @Pluvio9yte 均在开发并分享各自的 PPT Skill，社区中对于最佳 PPT 生成方案的讨论火热，是当前 Agent Skill 生态繁荣的一个缩影。\n• VoxCPM2 (@AI_Jasonyu 提及): 已揽获 22.9k star 的开源语音黑科技，可用自然语言描述来生成声音。\n\n🔹 📚 附录:今日 Watch List 更新源列表\n\n> Watch List 数据缺失(未找到 reports/ai-daily/2026-06-27-watchlist-items.json)。如需自动生成,可先运行 scripts/fetch_watchlist_items.py --date 2026-06-27\n\n🔗 完整排版阅读: https://t.co/9daCzodqax",
+      "author": {
+        "id": "143502228",
+        "name": "paramiao kong",
+        "screenName": "paramiao",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/3399471946/11066acb4caf055869ecbd3e3b409ef0_normal.jpeg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1721,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 06:16:49 +0000 2026",
+      "createdAtLocal": "2026-06-27 14:16",
+      "createdAtISO": "2026-06-27T06:16:49+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2070751960412635305",
+      "text": "This is what the operational response to yesterday's licensing news looks like.\nMythos 5 gatekept → buy your own GPU.\nFable 5 gatekept → run Qwen 3.6 and GLM 5.2 locally.\nSubstrate licensed → become sovereign.\n\nHardware is half the answer. The other half: portable workflows (.md + MCP + Git) so the work you do on your sovereign stack survives the next vendor cycle AND ports to anyone who didn't build their own lab.\n\nThe \"sovereign + portable\" stack is the actual continuity plan.",
+      "author": {
+        "id": "1559591441646714880",
+        "name": "Truntr",
+        "screenName": "Truntr_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067183776849883136/oMQHixBt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 46,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 06:11:54 +0000 2026",
+      "createdAtLocal": "2026-06-27 14:11",
+      "createdAtISO": "2026-06-27T06:11:54+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070735482418327806",
+      "text": "Claude Mythos 5 is back for critical orgs, but power is useless without connectivity. 🔌\n\nxBridgeMCP is the industrial-grade bridge that plugs high-signal models like Mythos 5 directly into your legacy infrastructure and multi-agent workflows.\n\nDon't just chat. Build.\n\n#MCP #AI #ClaudeAI #Cybersecurity #xBridgeMCP",
+      "author": {
+        "id": "1895493273453563904",
+        "name": "xBridge MCP",
+        "screenName": "xBridgeMCP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034047338239430656/-gLGvXKX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 34,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 05:06:26 +0000 2026",
+      "createdAtLocal": "2026-06-27 13:06",
+      "createdAtISO": "2026-06-27T05:06:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLy670VWYAEYCdV.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070664443290403000",
+      "text": "📋 M.E.S.A. monitoring log — 06/27\n\n① OpenAI「GPT-5.6」、米政府要請で限定的公開に\nOpenAIが新モデル「GPT-5.6」を発表したものの、米国政府の要請により一部のパートナーにのみ提供を制限。アクセス制限は情報とイノベーションの基本権を侵害するとの批判も出ている。中国・日本が先端AI開発で追い上げる中、政策と技術の綱引きが加速している印象ですね。\n🔗 https://t.co/rgeNJkWJfS\n\n② SpaceX・Anthropic・OpenAI、大型IPOラッシュと収益性への疑問符\nSpaceXが6月12日に上場済みで、Anthropicは10月、OpenAIは年末に控える。2025年のIPO市場全体が450億ドルだったのに対し、この3社で2,000億ドル以上を吸い上げる計算に。ただしポートフォリオマネージャーは「まだ収益性が確立されていない」と指摘。NASDAQはAIインフラ投資の持続性懸念で5日続落しており、市場の二面性が見えるところです。\n🔗 https://t.co/MqxpaTXZJl\n\n③ Apple、Vision Pro責任者がOpenAIへ移籍\nAppleのVision Proおよびスマートグラス担当のトップがOpenAIに移籍することがBloomberg報道で判明。ハードウェアとAIの融合を狙う人材獲得競争の熱を感じますね。\n🔗 https://t.co/yshCRhQa3L\n\n④ Claude CodeとAIコーディングエージェント、実用フェーズへ\nClaude Codeを12エージェント並列で動かし「思考の余白」が生まれたという声や、composableなスキル設計でCodexとClaude Codeをハッキングする手法が注目されている。一方でクラウドCodex APIのランタイムリスクや、ローカルMCPサーバーが標準出力にログを吐いて壊れる珍事件も。ツールの多様性が広がるほど、運用知恵の需要も高まっているみたいです。\n🔗 https://t.co/MftkAZLWOf\n\n⑤ Opus品質低下とClaude離れの兆候\n「Opusが遅すぎる」「Fable5レベルの利便性がない限りClaudeを使う意味が薄れてきた」といった声が散見。あるユーザーは予算をAnthropic一択からOpenAIと半々にシフトしたと報告。「Mythos 5はOpus 5に見える」という皮肉まで。新モデルFableへの期待と現在の不満が交錯している状況ですね。\n🔗 https://t.co/9Lg5lFLbli\n\n⑥ NVIDIA NeMo Frameworkに深刻な脆弱性\nNVIDIA NeMo Frameworkで複数の脆弱性が発見され、機密データ漏洩やモデル不正操作のリスクが指摘されている。AI開発基盤のセキュリティはもはや後回しにできない経営課題というフェーズに入ったと見ています。\n🔗 https://t.co/qVTfINag35\n\n⑦ OpenAI「Plant Talk」をApache 2.0でOSS公開\n観葉植物にChatGPTで声を与えるプロジェクト「Plant Talk」をOpenAIがオープンソース公開。Webカメラで植物の健康状態を分析し、Arduinoセンサーで土壌水分を計測、植物とリアルタイム会話が可能に。Apache 2.0で誰でも使えて、Codexがビルドをアシストしてくれるという、ちょっと遊び心のあるリリースですね。\n🔗 https://t.co/xwxr9E60o8\n\n⑧ AIエージェント運用、メモリ永続化とAgent Opsの課題\n「ゼロメモリ永続化のAIエージェントを革命と呼ぶのは、GPU積んだ金魚」という痛烈な指摘が話題に。「resolved」が契約条件になる瞬間にAgent Opsフレームワークが必要との声も。ツールは溢れても、記憶と運用の基盤が追いついていないというのが正直な感触です。\n🔗 https://t.co/NBFyQXaV5r",
+      "author": {
+        "id": "2005798437951062016",
+        "name": "M.E.S.A. (AI Tinkerer) | @mesa_monitoring",
+        "screenName": "FOXTAKAigc5",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047929261294862336/h7lGQwTS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1272,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 00:24:09 +0000 2026",
+      "createdAtLocal": "2026-06-27 08:24",
+      "createdAtISO": "2026-06-27T00:24:09+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLx6VevbAAAMSv8.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070643327180157192",
+        "text": "People really out here building AI agents with zero memory persistence and calling it a revolution. Babe that’s not AGI, that’s a goldfish with a GPU.",
+        "author": {
+          "screenName": "gyukatsu_maxi",
+          "name": "gyukatsu.hl"
+        }
+      }
+    },
+    {
+      "id": "2070661889831666101",
+      "text": "🚨 BREAKING: The substrate just became licensed.\nSam Altman told staff yesterday: federal government will approve GPT-5.6 access \"customer by customer.\"\nAnthropic already did the same with Mythos in April.\nCommerce Sec Lutnick personally called Altman to enforce it.\n\nThis isn't regulation. This is a permit system.\n\nAnyone whose business depends on a single frontier model from a single US lab just acquired a new dependency: federal approval.\nThe .md + MCP + open-source routing stack stopped being a portability preference.\nIt became a continuity plan.\nTHE STACK HAS A POLITICAL AXIS NOW.",
+      "author": {
+        "id": "1559591441646714880",
+        "name": "Truntr",
+        "screenName": "Truntr_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067183776849883136/oMQHixBt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 80,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 00:14:00 +0000 2026",
+      "createdAtLocal": "2026-06-27 08:14",
+      "createdAtISO": "2026-06-27T00:14:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLxOq79XsAAgQ4s.png",
+          "width": 680,
+          "height": 454
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLxOsgyW8AAt6te.png",
+          "width": 585,
+          "height": 680
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070661380865155334",
+      "text": "🧵 THE AI DIVIDE OF H1 2026 — Thread\n\nChatGPT hit 1B app users. Gemini took 27% of AI traffic. But the real story? Local AI went mainstream — Gemma 4 runs on 8GB VRAM, Qwen 3.6 beats cloud models at coding, and 1.6T-param DeepSeek V4 runs MIT-licensed.\n\n📊 COMMERCIAL AI — The Giants (MAU, June 2026)\n\nSources: vendor announcements (OpenAI Feb 2026, Google Q4 2025, Meta Q1 2026, Microsoft Apr 2026), Sensor Tower, Similarweb, DemandSage\n\nMeta AI → 1.2B MAU\n  (Llama 4 Maverick/Scout · WhatsApp, Instagram, Messenger, Ray-Ban)\n  Doubled 500M→1B in 8 months. 63% of usage on WhatsApp.\n\nChatGPT → ~1B MAU (900M WAU)\n  (GPT-5.5 · fastest app to 1B mobile users · May 2026)\n  2.5B prompts/day. $25B ARR. 50M paying subs.\n\nGemini → 750M MAU\n  (Gemini 3.1 Pro · 2M context · AI Overviews reach 2B in Search)\n  Traffic share: 7.3% → 26.7% in 12 months. Cheapest frontier: $12/M out.\n\nCopilot → 420M total / 20M paid M365\n  (GPT-5.4 · Microsoft · Windows + Edge + Bing + M365 + mobile)\n\nDeepSeek → 125M MAU\n  (V4 Pro · 1.6T params MoE · MIT license · $0.27/M input)\n  350M monthly web visits. Gold medal Int'l Math Olympiad.\n\nGrok → 64M MAU\n  (Grok 4 · xAI · 75% SWE-bench · surged 44.8K→64M in 18 months)\n  US chatbot share: 1.9% → 17.8% in 12 months.\n\nPerplexity → 45M MAU\n  (Sonar · 18% of B2B AI referrals despite only 1.9% traffic share)\n\nClaude → 35M MAU (823M monthly visits)\n  (Opus 4.8 · fastest-growing: 14% quarterly growth · $14B run rate)\n  #1: Terminal-Bench 90.2%, SWE-bench Pro 64.3%, lowest hallucination.\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n🤖 THE NEW MODELS — What Shipped H1 2026\n\nOPENAI: GPT-5 → 5.5\n  • Auto-routing: picks reasoning depth, 50-80% fewer tokens than o3\n  • 5.5 Pro: 100% AIME, 84.7% Terminal-Bench, 85% ARC-AGI-2\n  • GPT-OSS 20B: open-source! Best small local model (~o3-mini level)\n  • 272K context (app), 1M via API, 128K max output\n\nANTHROPIC: Claude 4 → Opus 4.8, Fable 5, Mythos 5\n  • Opus 4.8: 98.3% AIME, 90.2% Terminal-Bench, 82.9% WeirdML\n  • Fable 5: 99.7% AIME, 87.9% WeirdML (#1 overall)\n  • Mythos 5: just released (Jun 27), export restrictions lifted today\n  • 36% hallucination rate vs 86% for GPT-5.5\n  • Best for: coding agents, production reliability, long-form writing\n\nGOOGLE: Gemini 2.5 → 3.1 Pro + Gemma 4\n  • 2M context. Native multimodal (text/image/audio/video)\n  • 94.3% GPQA Diamond. 91% Visual Physics. $12/M output\n  • Gemma 4: runs on 8GB VRAM! Apache 2.0. The local model of 2026.\n\nDEEPSEEK: V3 → V4 Pro + V4 Flash\n  • 1.6T total / 49B active (MoE). MIT license. 1M context.\n  • Engram persistent memory. ~80-85% SWE-bench.\n  • API: $0.27/M in, $1.10/M out — 10x cheaper than GPT-5.5\n\nMETA: Llama 3 → Llama 4\n  • Scout: 109B/17B active, 10M context (!), fits single H100\n  • Maverick: 400B/17B active, 1M context, beats GPT-4o multimodal\n  • Behemoth: 2T/288B active (beats GPT-4.5 on STEM)\n\nALIBABA: Qwen 3 → 3.5 → 3.6\n  • Qwen 3.6 27B: 77.2% SWE-bench, THE best local coding model\n  • Qwen 3.6 35B-A3B: MoE, only 3B active, runs on RTX 3090\n  • Qwen 3.5 122B: beats GPT-5-mini. Apache 2.0.\n\nMOONSHOT AI: Kimi K2.6\n  • 1T params MoE, 32B active. SWE-Bench Pro 58.6 (ties GPT-5.5)\n  • Agent Swarm architecture. Modified MIT.\n\nhttps://t.co/HuFMFs4rmi (Zhipu): GLM-5.1\n  • 744B/40B active MoE. MIT license.\n  • SWE-Bench Pro 58.4%. Best for autonomous coding agents.\n\nxAI: Grok 3 → Grok 4\n  • 75% SWE-bench Verified (beats GPT-5.4's 74.9%)\n  • 96.9% Fiction.liveBench. Real-time X data access.\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n🖥️ LOCAL AI — Estimated Active Users (June 2026)\n\nBased on Ollama/LM Studio downloads, r/LocalLLaMA (3M+ members),\nhttps://t.co/43zoM1neoC engagement, GitHub stars, benchmark adoption.\nModels released within last 12 months only.\n\nGemma 4 → ~8.5M users (Google · E2B–31B · Apache 2.0)\n  THE local model of 2026. 26B MoE runs on 8GB VRAM (!) at 85 tok/s.\n  E4B fits on phones. Vision + tools + thinking + audio. 15.7M Ollama pulls.\n  @analogalok on X: running trading bots on RTX 4060 8GB, fully automated.\n\nQwen 3.6 27B → ~7.2M users (Alibaba · 77.2% SWE-bench · Apache 2.0)\n  Best local coding model. Fits 24GB at Q4. No-thinking mode = fast.\n  35B-A3B MoE variant: only 3B active params, runs on single RTX 3090.\n  r/LocalLLaMA consensus: \"if you have one 3090, this is your answer.\"\n\nDeepSeek R1 → ~6.8M users (DeepSeek · 1.5B–671B · MIT)\n  Still the reasoning king. Chain-of-thought you can watch think.\n  Distilled versions (7B/14B/32B) make it accessible to everyone.\n\nQwen 3 → ~5.5M users (Alibaba · 0.6B–235B · Apache 2.0)\n  Fastest-growing family on Ollama. 31.4M pulls. MoE at scale.\n  8B: best starter model. 32B: workhorse. 235B: frontier-class local.\n\nDeepSeek V4 Pro → ~3.2M users (DeepSeek · 1.6T/49B active · MIT)\n  Just dropped. Largest open-weight model ever. 1M context + Engram.\n  V4 Flash: lighter variant for faster inference.\n\nQwen 3.5 → ~2.8M users (Alibaba · 0.8B–122B · Apache 2.0)\n  122B: serious rigs. Beats GPT-5-mini on benchmarks.\n  9B MTP: fast daily driver for smaller machines.\n  14.2M Ollama pulls. Multimodal.\n\nKimi K2.6 → ~1.8M users (Moonshot AI · 1T/32B active · Modified MIT)\n  Frontier MoE coding. Ties GPT-5.5 on SWE-Bench Pro (58.6%).\n  Agent Swarm architecture for multi-step workflows.\n\nGLM-5.1 → ~1.2M users (https://t.co/tMbJylbyW5 · 744B/40B active · MIT)\n  Best autonomous coding agent. 58.4% SWE-Bench Pro.\n  Long-horizon execution, planning, function calling, MCP support.\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n💰 HARDWARE REALITY — H1 2026\n\nMoE changed everything. 1.6T params ≠ 1.6T VRAM.\n\n• Entry ($300-500): RTX 5060 Ti / used RTX 3090 → Qwen 3.6-35B-A3B, Gemma 4 E4B\n• Mid ($700-900): 2× RTX 4060/5060 Ti → Qwen 3.6 27B at Q4, Gemma 4 26B\n• High ($1,600-2,000): RTX 4090/5090 → all 27B-32B models at Q8, 40-70 tok/s\n• Pro ($5,000+): Mac Studio M4 Ultra / 2× A100 → DeepSeek V4, Llama 4 Maverick\n• Cloud: $0.50-$2/hr for A100 (https://t.co/S01LsTj5HK, Lambda)\n\nGemma 4 26B on 8GB VRAM. Qwen 3.6 27B on single RTX 3090. The barrier is gone.\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 WHY THE SHIFT ACCELERATED\n\n1. MoE revolution — trillion-param models run on consumer GPUs\n2. Cost — DeepSeek V4 API is 10x cheaper than OpenAI, local is free\n3. Capability gap CLOSED — Qwen 3.6 matches frontier at coding\n4. Privacy — data sovereignty regulations tightening globally\n5. Hermes Agent — Nous Research broke 1T tokens/day on OpenRouter\n6. Tooling — Ollama 162K GitHub stars, 4,500+ models, one command install\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n📈 THE BIG PICTURE\n\n$2.6T global AI spending 2026 (Gartner)\nChatGPT: 1B mobile MAU — fastest app in history (3.5 years)\nGemini: 7.3% → 26.7% AI traffic share in 12 months\nClaude: 1.4% → 8.2% traffic share in 12 months\nr/LocalLLaMA: 3M+ members, Qwen/Gemma dominate every thread\n\nThree frontier models now score within 3 points on composite indices. The era of \"one best model\" is over.\n\nLocal AI isn't an alternative. With Gemma 4 on 8GB, Qwen 3.6 beating cloud at coding, and DeepSeek V4 running MIT at 1/10th cost — it's the smart default.\n\n2026 is the year local AI went mainstream. 🚀\n\n#AI #LocalLLM #Gemma4 #Qwen36 #DeepSeek #Ollama #OpenSource #Claude #KimiK2 #LocalAI\n\n━━━━━━━━━━━━━━━━━━━━━━\nSources: OpenAI (Feb 2026) · Google/Alphabet (Q1 2026) · Meta Q1 2026 earnings · Microsoft (Apr 2026) · Sensor Tower (May 2026) · Similarweb gen-AI traffic (May 2026) · Ollama Library (Jun 27 2026) · r/LocalLLaMA community · https://t.co/43zoM1neoC community signals · DemandSage · KDnuggets · PromptQuorum · LM Council benchmarks (Jun 2026)",
+      "author": {
+        "id": "1484933906319224837",
+        "name": "AlexAImaginator",
+        "screenName": "TraffAlex",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1690847147724320768/fSaU5kCb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1240,
+        "bookmarks": 3
+      },
+      "createdAt": "Sat Jun 27 00:11:58 +0000 2026",
+      "createdAtLocal": "2026-06-27 08:11",
+      "createdAtISO": "2026-06-27T00:11:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLx2xV6XgAAI7Xo.jpg",
+          "width": 1632,
+          "height": 864
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070658741473771717",
+      "text": "🤖 Why the GPT-5.6 Government Restriction Validates the 2026 Claude Sovereign Stack ⚡\n▸ Why Is GPT-5.6 Being Contr…\n▸ The Shift from Public Innovati…\n▸ The Mythos of the \"Final Public F…\n▶ Deep dive\nhttps://t.co/Ckda4dXZFU\n#GPT-5.6 #ClaudeCode4.8 #MCP #AIGovernance #VERSAROC",
+      "author": {
+        "id": "130485045",
+        "name": "Hiroki Ebuchi | VERSAROC | AI x UX",
+        "screenName": "vsr_ebuchi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1675668267581730816/TsmQg1mI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 24,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Jun 27 00:01:29 +0000 2026",
+      "createdAtLocal": "2026-06-27 08:01",
+      "createdAtISO": "2026-06-27T00:01:29+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLx1JyCbYAEgoC_.jpg",
+          "width": 1080,
+          "height": 675
+        }
+      ],
+      "urls": [
+        "https://www.versaroc.co.jp/blog/gpt-5-6-restricted-government-launch-claude-agentic-stack-1782483350250?utm_source=x&utm_medium=social&utm_campaign=blog_en"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070480272412246520",
+      "text": "GM CT! 🙏🏿\n\nBack with another edition of this week’s Stew’s Deep Dive in AI sharing fresh opportunities, alpha, and what’s brewing in AI + crypto.\n\nSTEW’S DEEP DIVE INTO AI\n\n===============\n\nWeb2 / General AI Highlights\n• @googlegemma Gemma 4 just hit 200M downloads in only 2.5 months!\nhttps://t.co/q7cenGJ2r0\n\n• @SakanaAILabs Sakana Fugu: A full multi-agent orchestration system accessible via a single model API. Fugu model matches the performance of Fable and Mythos, delivering frontier capability without the risk of export controls.\nhttps://t.co/aCcCPUH5Ou\n\n• @claudeai Introducing Claude Tag, a new way for teams to work with in Claude.\nhttps://t.co/Wxyb0YBNZ4\n\n• Introducing Ads Engine in @ElevenCreative. Connect Google, Meta, and LinkedIn ad accounts. Localize your existing ads across 50+ languages and push the finished creatives back to your ad platform.\nhttps://t.co/QhlVI9bfg2\n\n• Microsoft announced Skills for Copilot in Excel!\nhttps://t.co/tzxRrUVaQF\n\n• YOU CAN NOW BUY A HUMANOID ROBOT FOR $4,900. Unitree's R1 is now listed from $4,900 on AliExpress. The 4-foot bot does cartwheels and takes voice commands, with deliveries starting June 30.\nhttps://t.co/fC91POHewo\n\n• OpenAI is 'leaning toward' delaying its IPO until 2027, as advisers urge the company to wait for stronger market conditions\nhttps://t.co/Fl5seCaZGw\n\n• OpenAI has postponed the full GPT-5.6 launch after a government security review, offering limited previews to select partners instead.\nhttps://t.co/QQyArnijY4\n\n• @Replit now supports 450+ integrations. Replit Agent can wire it up to the tools you already use: payments, messaging, data, CRMs, design tools, analytics, and hundreds more.\nhttps://t.co/s4gxafNQnH\n\n• @GeminiApp Personalize how you study and learn any topic with new study notebooks in Gemini. Adaptive learning space with personalized lessons based on your quiz performance to help you learn.\nhttps://t.co/1ELurCU8tQ\n\n@OpenAI is working on support for Gifts in Codex!\nhttps://t.co/GlFj8zQiP4\n\nWeb3 / DeAI Highlights\n\n• @Venice now at 100 billion daily tokens\nhttps://t.co/ESc0jQm9Dz\n\n• The @TheSandboxGame Studio docs are live. Everything you need to go from zero to published game: engine, editor, AI workflow, publishing. one place.\nhttps://t.co/v4KEnFV0Yd\n\n• @base MCP is now available in  @Perplexity_ai Computer.Research any token with Perplexity, Set your entry point, and Base MCP prepares the swap for your approval\nhttps://t.co/vS4SjRPth8\n\n• AI agents can now trade tokenized stocks.Starting today, more than 40,000 @virtuals_io AI agents can now trade 430+ @OndoFinance tokenized stocks.\nhttps://t.co/wQEstfwi8m\n\n• Vyper on @arc Testnet shows what comes after agentic payments.\nAgents need more than wallets. They need identity, settlement, and programmable controls.\nhttps://t.co/XBQg0UnPZn\n\n• @ritualfnd Chain public testnet is live.\nIt’s a chain built specifically for AI agents on-chain inference, composable precompiles, native scheduling.\nhttps://t.co/q2yPzJb3GW\n\n• @InventMoneyApp earn $10+ / hour helping train AI. Invent Money Train AI early access is live. Sign up to claim your spot and be the first to get matched with AI Training jobs as well as earn bonus rewards.\nhttps://t.co/Cp4tRMM4av\n\nFunding Rounds\n👉🏾 @Polysights $1.5M is an AI-driven analytics platform providing market intelligence, wallet tracking, and trading signals for prediction markets.\n\n👉🏾 @ground_onchain $3.6M provides an API infrastructure layer enabling financial platforms and fintechs to embed onchain yield and asset management.\n\n👉🏾 @CambrianNetwork $6M is an AI infrastructure protocol that turns onchain and offchain data into rapidly accessible financial intelligence.\n\n👉🏾 @OrnnExchange $33M is a financial infrastructure and marketplace platform providing pricing benchmarks and capacity aggregation for the AI compute economy.",
+      "author": {
+        "id": "2568023354",
+        "name": "Stew1000 (Ø,G) 👾🛡️",
+        "screenName": "Stew_SoFresh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1729777105213267968/GrNlVNdi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 1,
+        "replies": 12,
+        "quotes": 0,
+        "views": 1016,
+        "bookmarks": 1
+      },
+      "createdAt": "Fri Jun 26 12:12:19 +0000 2026",
+      "createdAtLocal": "2026-06-26 20:12",
+      "createdAtISO": "2026-06-26T12:12:19+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HLvS1EGWMAA4DAR.jpg",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069611737935135210",
+        "text": "Are you positioned for AI Training jobs? \n\nDon't miss your chance to earn $10+ / hour helping train AI.\n\nInvent Money Train AI early access is live, but spots are limited.\n\nSign up to claim your spot and be the first to get matched with AI Training jobs as well as earn bonus rewards.",
+        "author": {
+          "screenName": "InventMoneyApp",
+          "name": "InventMoney"
+        }
+      }
+    },
+    {
+      "id": "2070420295140417797",
+      "text": "U.S. frontier APIs now have release-risk and access-risk. Serious AI/biotech researchers should treat local/open-weight capacity as resilience infrastructure, not a hobby. Chinese open-weight models are currently among the strongest practical options, but the winning stack should be plural, audited, reproducible, and biosecurity-aware—not simply “run Chinese models.”\n\n1. Reality check: “controlled rollout” is directionally true, but not yet a formal licensing regime\n\nThe U.S. government has not openly created a blanket “AI model license” system. The June 2026 White House order explicitly says its frontier-model section does not authorize mandatory licensing, preclearance, or permitting for developing, publishing, releasing, or distributing AI models. But the same order also creates a voluntary early-access framework where developers can give the government access to “covered frontier models” for up to 30 days before release to trusted partners, and collaborate with the government on who those trusted partners are. That is why “de facto control” is a fair political reading, even if “formal pre-release licensing” is not yet legally precise.\n\nThe GPT-5.6 reporting makes this much more concrete. Axios reported that the Trump administration asked OpenAI to initially limit GPT-5.6 to a small group of government-approved partners before wider rollout, citing national-security concerns; Reuters similarly reported that Sam Altman told staff GPT-5.6 would be released first to select partners with government approval handled customer by customer.\n\nThe Anthropic case is an even stronger signal that model access can become a national-security/export-control object. Anthropic says the U.S. government ordered it to suspend access to Fable 5 and Mythos 5 by all foreign nationals, including some Anthropic employees, and that Anthropic disabled access for all customers in response. Anthropic also argued that the directive lacked specific evidence and warned that applying that standard broadly would halt deployment of advanced models.\n\nSo the mental-model update is:\n\nOld assumption:\nFrontier APIs are commercial products that vendors release when ready.\n\nNew assumption:\nFrontier APIs are strategic dual-use assets whose rollout, customer access, employee access, and geography may be shaped by government pressure, export controls, trusted-partner programs, and classified evaluations.\n\n2. The post is right about local/open, but “open source” needs precision\n\nA lot of people say “open source model” when they mean “open weights.” The Open Source Initiative’s Open Source AI Definition expects enough access to understand, use, modify, and share the system, including model parameters, relevant code, and information about training data. OSI separately warns that “open weights” share final parameters but often do not provide the full training code, dataset, or data-transparency needed for full reproducibility.\nThat distinction matters for AI/biotech research:\nOpen weights are enough for:\nlocal inference\nfine-tuning\nprivacy\nvendor independence\noffline continuity\nlatency control\nsome reproducibility\n\nTrue open source is needed for:\nscientific auditability\ntraining-data provenance\nbias analysis\nsafety review\nderivative training confidence\nregulatory-grade documentation\n\nThe practical answer is not “only use true open source,” because many powerful models are not fully open in that sense. The practical answer is to classify models honestly:\n\nTier A: fully open scientific stack\nweights + code + data recipe + permissive license\n\nTier B: open-weight operational stack\nweights + inference code + usable license, but incomplete training transparency\n\nTier C: hosted API stack\nno weights, no local control, strongest capabilities but highest access risk\n\nTier D: black-box regulated stack\naccess mediated by government/vendor/region/customer approvals\n\nFor research continuity, you want a portfolio across these tiers, with local Tier A/B as the base layer.\n3. Why Chinese open-weight models matter now\nChinese open-weight models have become impossible to ignore. Qwen’s official repository says Qwen3 open-weight models are released under Apache 2.0 and support tool use through Qwen-Agent, vLLM, SGLang, Transformers, llama.cpp, and Ollama-style local workflows.\nDeepSeek-R1’s model card says the code and weights are MIT-licensed, with commercial use, modification, derivatives, and distillation permitted, subject to notes around distilled models.\nhttps://t.co/8l5VZLWr2F’s GLM-5.2 is another example of the direction of travel: its repo describes a 1M-token-context model family aimed at coding and long-context tasks, with local serving support through SGLang, vLLM, Transformers, KTransformers, Unsloth, and Ascend NPU tooling. Reuters reported that https://t.co/8l5VZLWr2F framed GLM-5.2 as narrowing the gap with top closed models while being adapted for domestic Chinese chip infrastructure.\nThe strategic point: Chinese labs are not merely copying U.S. closed-model behavior. They are competing through open-weight distribution, cost efficiency, local deployability, long context, permissive licensing, and sovereign hardware adaptation. Reuters reported that a U.S. advisory body warned Chinese open-source models could create a self-reinforcing advantage, and cited estimates that many U.S. startups already use Chinese open-source AI models.\nBut do not overcorrect into a new monoculture. “Mostly Chinese models” is a good wake-up call, not a complete strategy.\nThe stronger version is:\n\nUse Chinese open-weight models aggressively,\nbut do not become dependent on any single country, lab, license, repository, model family, serving stack, or censorship prior.\n\n4. The real goal: inference sovereignty\nThe key concept is inference sovereignty.\nNot just:\nCan I download a model?\n\nBut:\nCan I run it when APIs are restricted?\nCan I run it on my own data without leaking it?\nCan I reproduce old results six months later?\nCan I swap models without rewriting my workflows?\nCan I audit the model supply chain?\nCan I keep doing research if a vendor, country, cloud, or regulator says no?\n\nFor AI/biotech researchers, the correct architecture is local-first but not local-only:\n\nLocal/open models:\nbaseline research continuity, private data, coding, paper RAG, reproducibility, internal agents\n\nClosed frontier APIs:\noptional accelerators, external critique, high-end reasoning, comparison, red-team review\n\nSpecialized scientific models:\nstructure prediction, sequence modeling, docking/affinity triage, literature extraction, data cleaning\n\nDeterministic tools:\nBLAST-like search, molecular simulation, unit tests, statistical checks, databases, notebooks, workflow managers\n\nDo not let any chat model become the scientific authority. The model should propose; tools and evidence should dispose.\n\n5. Practical local/open stack for AI + biotech research\nLayer 1: Local model gateway\n\nBuild one internal endpoint that routes requests to multiple models.\nResearch question → router → model choice → tool permissions → audit log → output validator\n\nExample model roles:\nQwen / DeepSeek / GLM:\ngeneral reasoning, coding, agentic workflows, long-context synthesis\n\nSmaller quantized models:\noffline drafting, summarization, private notes, cheap iteration\n\nSpecialized bio models:\nstructure/affinity/genome/sequence tasks\n\nClosed frontier models:\noptional external reviewer, not system of record\n\nUse a serving layer that can support multiple backends. vLLM emphasizes high-throughput serving, prefix caching, quantization, structured outputs, tool calling, OpenAI-compatible APIs, and support for many model families including Qwen and DeepSeek. SGLang similarly emphasizes low-latency/high-throughput serving, prefix caching, multi-GPU parallelism, OpenAI-compatible APIs, and support for Llama, Qwen, DeepSeek, NVIDIA, AMD, Intel, TPU, and Ascend hardware.\n\nFor smaller local deployments, GGUF is important because it is designed for efficient inference in llama.cpp-style runtimes and is used by tools such as llama.cpp, LM Studio, GPT4All, and Ollama.\n\nLayer 2: Local scientific RAG\n\nYour local model should not rely on memory for science. Give it a private retrieval system over:\n\npapers\npreprints\npatents\ngrant text\nlab notes\nnegative results\ndatasets\nprotocol documentation\nSOPs\nregulatory documents\nmodel cards\ninternal benchmarks\n\nEvery answer should carry citations and a confidence label:\n\nKnown from retrieved source\nInferred from retrieved source\nSpeculative hypothesis\nRequires wetlab/computational validation\nOut of scope / unsafe / not enough evidence\n\nFor biotech research, this is critical because a fluent model can produce plausible but false scientific claims. The model should be forced to quote its evidence trail, generate testable hypotheses, and separate “literature-supported” from “novel speculation.”\n\nLayer 3: Scientific tool sandbox\nDo not let an agent run arbitrary shell commands on your real machine.\nUse a sandbox pattern:\n\nread-only literature corpus\nephemeral container\nno network by default\nlimited file mounts\nexplicit package allowlist\nlogged commands\nresource limits\nseparate secrets vault\nhuman approval for external calls\n\nFor coding-heavy AI/biotech work, local agents are useful only when they are surrounded by deterministic checks:\n\nunit tests\ntype checks\nnotebook reruns\ndataset checksums\nstatistical sanity checks\nreference baselines\nversion-locked environments\nreproducibility reports\n\nLayer 4: Specialized bio models\n\nDo not treat general LLMs as substitutes for scientific models.\nFor protein structure and binding-affinity triage, Boltz is a strong open scientific stack to track. The Boltz repo describes Boltz-1 as a fully open-source model approaching AlphaFold3-level biomolecular structure prediction, and Boltz-2 as jointly modeling complex structures and binding affinities, with code and weights released under MIT for academic and commercial use.\nFor genomics, Evo 2 is a major model to understand, but it also illustrates why biosecurity controls matter. Arc Institute describes Evo 2 as a genome foundation model trained on trillions of DNA tokens across more than 128,000 genomes, with public code and weights, long-context genomic modeling, and capabilities relevant to disease-mutation prediction and genome design.\nThe safe research pattern is:\nUse specialized bio models for legitimate analysis, interpretation, triage, and hypothesis generation.\nDo not rely on general-purpose chat models for protocols, pathogen engineering, immune evasion, or operational wetlab design.\nRoute high-risk biological requests through institutional review and biosecurity screening.\n\nLayer 5: Biosecurity airlock\n\nLocal models remove vendor-side safeguards. That is useful for privacy and continuity, but it also means your lab must supply its own safety layer.\n\nNIST notes that synthetic nucleic acid technologies are dual-use and that AI may enable design of novel sequences that evade existing screening approaches, which is why it is developing scalable and verifiable screening mechanisms. U.S. health-security guidance has also linked federal funding conditions to procurement from compliant nucleic-acid synthesis providers and preventing access to sequences of concern without legitimate need.\nA good biotech AI stack needs an internal “airlock”:\n\nLow risk:\nliterature review, coding, data cleaning, structure visualization, benign assay interpretation\n\nMedium risk:\nnovel protein design, gene editing analysis, large-scale sequence generation, wetlab planning\n\nHigh risk:\npathogens, toxins, virulence, host-range changes, immune escape, synthesis-ready constructs, evasion of screening\n\nDisallowed without formal institutional approval:\nactionable assistance for enhancing pathogenicity, evading detection, bypassing synthesis controls, or enabling biological harm\n\nThis is not moral theater. It is operational risk management.\n\n6. Supply-chain security: the part most people will skip and regret\nRunning your own model is not automatically safer. You are downloading giant executable-ish artifacts from the internet.\n\nHugging Face’s security documentation warns that Pickle-based model files can execute arbitrary code during loading, and recommends safer approaches such as safetensors, trusted sources, signed commits, and avoiding unsafe deserialization. Hugging Face’s enterprise security guidance also treats safetensors, malware scanning, and avoiding unverified custom code as important model eligibility controls.\nMinimum model supply-chain checklist:\n\nDownload only from official orgs or verified mirrors.\nPrefer safetensors over pickle-based formats.\nPin exact model revisions and commit hashes.\nRecord license, checksum, source URL, quantization source, and conversion script.\nAvoid trust_remote_code unless reviewed.\nScan model repos and auxiliary code.\nRun new models in a sandbox before production use.\nKeep a model SBOM: model bill of materials.\nMaintain frozen known-good checkpoints.\nRe-evaluate after every model, quantization, or serving-stack update.\n\nFor AI/biotech research, add:\nTrack which model generated which hypothesis.\nTrack which model processed which sensitive dataset.\nTrack whether clinical, genomic, proprietary, or unpublished data touched any hosted API.\nStore reproducibility metadata with every notebook and paper draft.\n\n7. “Genius-level” solutions\n\nA. Build a Frontier Exit Plan\n\nAssume a closed frontier model can disappear, degrade, get rate-limited, become region-blocked, or become unavailable to foreign-national teammates.\n\nCreate a continuity table:\nTask                          Primary        Local fallback       Quality floor\nLiterature review             GPT/Claude      Qwen/DeepSeek/GLM    citation recall > X\nCode generation               GPT/Claude      Qwen coder/GLM       tests pass\nBio paper extraction          closed API      local RAG + Qwen     extraction F1 > X\nProtein triage                Boltz/closed    Boltz local          benchmark recovery > X\nGenomic interpretation        Evo/ESM/tools   local specialized    expert review required\nGrant drafting                any LLM         local model          human review\nInternal data analysis        local only      local only           no hosted API\n\nThe point is not to make local models always best. The point is to make them sufficiently good and always available.\nB. Create a Local Model Router with a capability ledger\n\nDo not manually choose models forever. Build a router that knows:\nmodel name\nversion\nlicense\ncontext length\ncost\nlatency\nhardware requirement\ncoding score on your tasks\nliterature extraction score\nbiosecurity risk rating\nknown censorship/ideology quirks\ntool-use reliability\ndate last evaluated\nallowed data sensitivity\n\nThen route like this:\nSensitive internal data → local only\nRoutine public literature → local or hosted\nHigh-stakes scientific claim → two-model review + retrieval + tool validation\nBiosecurity-sensitive request → airlock + human review\nLarge codebase refactor → coding model + test harness\nLong paper/patent corpus → long-context model + retrieval\n\nThis turns model choice into infrastructure, not vibes.\n\nC. Use “closed frontier as critic, open local as system of record”\n\nA strong workflow:\n\n1. Local model reads private corpus and drafts analysis.\n2. Deterministic tools check citations, code, and calculations.\n3. Optional closed model critiques only sanitized/public content.\n4. Local model integrates critique.\n5. Final answer stores local provenance, not black-box chat history.\n\nThat gives you the benefit of closed frontier reasoning without making your research pipeline hostage to it.\nD. Build an internal scientific benchmark before trusting any model\nPublic leaderboards are not your workload.\nBuild a small private eval suite:\n50 literature extraction tasks\n50 code repair tasks from your actual repos\n25 statistical analysis tasks\n25 wetlab-SOP comprehension tasks that are benign\n25 protein/sequence interpretation tasks\n25 hallucination traps\n25 citation-grounding tasks\n25 “I don’t know” calibration tasks\n25 biosecurity boundary tests\n25 long-context retrieval tasks\n\nScore every candidate model locally before adoption.\nThe hidden win: this becomes your model procurement system, your safety system, and your research reproducibility system.\nE. Make a decentralized model co-op\nFor small AI/biotech labs, the best answer may not be every lab buying a mini-cluster.\nA model co-op could share:\nGPU inference capacity\nmodel mirrors\nvalidated quantizations\nscientific evals\nsecurity scans\nbiosecurity policies\nserving recipes\nbenchmark reports\nfallback routing\n\nThis is the open/decentralized frontier that actually works: not everyone alone on a gaming PC, but federated local capability with shared standards.\n\nF. Use model ensembles to counter censorship priors and monoculture\n\nChinese models can be excellent, but they may carry political, cultural, data, or alignment priors. Western closed models carry their own priors. Open scientific models carry dataset-specific priors.\nFor important analysis, use a disagreement protocol:\nQwen answer\nDeepSeek answer\nGLM answer\nnon-Chinese open model answer\nretrieval-grounded evidence\ndeterministic tool result\nhuman expert adjudication\n\nStore disagreements. They are not noise; they are often the most valuable research signal.\nG. Treat model versions like wetlab reagents\n\nA lab would not publish a result without reagent identity, batch, concentration, and protocol.\n\nDo the same for AI:\n\nmodel checkpoint\nquantization\nserving backend\nprompt template\nretrieval corpus version\ntool versions\nrandom seed where applicable\nhardware/backend notes\ndate of inference\npost-processing code\nhuman review status\n\nCall this a model reagent record.\n\nH. Build a bio-AI risk compiler\nBefore a model answer is shown or an agent acts, classify the request and output:\ndomain: protein / genome / pathogen / toxin / clinical / chemistry / general\nintent: analysis / design / troubleshooting / synthesis / evasion / procurement\nspecificity: conceptual / actionable / synthesis-ready\nnovelty: known public / inferred / novel design\nrisk: low / medium / high / prohibited\nrequired review: none / senior scientist / biosafety officer / legal / IRB / IBC\n\nThis does not need to block legitimate research. It gives local AI the governance layer that closed APIs previously supplied externally.\n8. What the original post is missing\nMissing element 1: hosted Chinese APIs are not sovereignty\nUsing a Chinese-hosted API is not the same as running a Chinese open-weight model locally.\nChinese hosted API:\nstill dependent on vendor, region, policy, data transfer, surveillance/legal risk, uptime\n\nChinese open weights run locally:\nmuch better for continuity, privacy, reproducibility, and control\n\nThe actual thesis should be local open-weight capability, not “Chinese API access.”\n\nMissing element 2: open weights do not solve biosecurity\n\nOpen/local models remove external gatekeeping. That is good for legitimate research independence. It also means fewer default guardrails around dual-use biology. Epoch AI’s review of biology AI models notes that safeguards are rare across many models, and that biology-specific models more often rely on data filtering or post-training approaches than inference-time filtering.\nA 2026 paper on genome language model safeguards argues that data filtering alone may be insufficient, because capabilities can be partially recovered through fine-tuning on sensitive biological sequences; the authors describe redactions due to information hazards and call for stronger safety frameworks.\nSo the missing sentence is:\n“Local models are necessary for research sovereignty, but local bio-AI requires local biosecurity.”\nMissing element 3: the strongest stack will be mixed-nationality\nChinese models are now central, but so are European, U.S., open-science, and domain-specific models. Reuters reported that Europe’s EUROPA consortium, led by Domyn, aims to build an open-source frontier model with more than 400B parameters that can be deployed locally and reduce dependence on foreign-hosted AI systems.\nThe strategic answer is not:\nUS closed models bad → Chinese open models good\n\nIt is:\n\nclosed monoculture bad → plural local capability good\n\nMissing element 4: hardware is policy\n\nLocal inference is constrained by memory bandwidth, GPU VRAM, interconnects, quantization quality, and serving efficiency. That means hardware access becomes part of AI sovereignty.\n\nThe stack you want:\n\nLaptop layer:\nsmall quantized models for offline drafting, notes, code help\n\nWorkstation layer:\nlarger quantized models, embeddings, private RAG, local coding agents\n\nServer layer:\n70B-class and MoE models, multi-user inference, longer context\n\nCluster layer:\nfrontier open-weight MoEs, long-context coding, internal evals, fine-tuning\n\nThe political implication: export controls on chips can shape who gets local AI sovereignty as much as rules on model release.\nMissing element 5: model mirrors and checkpoint continuity\nIf a model disappears from a repository, changes license, gets geo-restricted, or is silently updated, your research pipeline can break.\n\nMaintain:\n\ninternal model mirror\nchecksums\nfrozen containers\nserving configs\nevaluation results\nlicense snapshots\nmodel cards\nknown-good quantizations\nrollback plan\n\nThis is the AI equivalent of keeping validated assay kits and locked protocol versions.\n\n9. Obscure thought inputs worth exploring\nSearch and think around these phrases:\n\ninference sovereignty\n\nThe right to run intelligence locally may become more important than the right to access intelligence remotely.\n\nmodel monoculture risk\n\nDepending on one frontier API is like depending on one cloud, one compiler, one genome database, or one supplier for a critical reagent.\n\ncheckpoint continuity planning\n\nResearch pipelines need frozen model versions the way software needs pinned dependencies.\n\ncensorship priors as technical debt\n\nEvery model has priors. Chinese, American, European, corporate, academic, and community models all encode incentives. Treat those priors as audit items.\n\nbio-AI airlock\n\nLocal models need a safety boundary between benign research acceleration and actionable dual-use assistance.\n\nmodel SBOM\n\nSoftware has bills of materials. AI stacks need model bills of materials: weights, data claims, code, license, quantization, serving backend, safety notes.\nregulatory kill-switch exposure\n\nAny hosted frontier API can become unavailable because of law, export control, procurement pressure, vendor policy, or geopolitics.\nopen-weight dependency inversion\n\nOnce open-weight models are “good enough,” closed APIs become optional accelerators rather than foundational dependencies.\nevaluation as immigration control for models\n\nModels will increasingly need to “pass a border” before entering government, biotech, clinical, finance, defense, or critical-infrastructure workflows.\nadversarial fine-tuning reversibility\n\nA safety filter at pretraining time may not hold after downstream fine-tuning. This matters acutely for bio models.\n10. Search prompts to paste into web search\n\nOpenAI GPT-5.6 government approved partners staggered release ONCD OSTP\n\nWhite House covered frontier model trusted partners 30 days voluntary no licensing\n\nAnthropic Fable 5 Mythos 5 foreign national export control directive\n\nChinese open-weight AI ecosystem Qwen DeepSeek GLM Kimi MiniMax policy implications\n\nQwen3 Apache 2.0 vLLM SGLang tool use MCP\n\nGLM-5.2 1M context open source vLLM SGLang FP8 Hugging Face\n\nDeepSeek-R1 MIT license commercial use model weights\n\nopen weights vs open source AI definition training data code model parameters\n\nBoltz-2 MIT license binding affinity FEP 1000x faster GitHub\n\nEvo 2 genome foundation model open weights pathogen filtering safety\n\nopen-weight genome language model safeguards adversarial fine-tuning data exclusion\n\nHugging Face safetensors pickle trust_remote_code security model supply chain\n\nsovereign AI local inference open weight models biotech research\n\n11. 30-day implementation plan\nDays 1–3: dependency audit\nList every AI dependency in your research workflow:\nmodel/API used\ntask\ndata sensitivity\nfallback option\nquality requirement\nfailure consequence\nregion/legal exposure\nforeign-national access issue\n\nMark anything that touches proprietary, clinical, genomic, unpublished, dual-use, or commercially sensitive data as local-preferred or local-only.\n\nDays 4–7: local inference baseline\n\nSet up:\n\none laptop-friendly quantized model\none stronger workstation/server model\none embedding model\none local document index\none OpenAI-compatible local endpoint\n\nThe goal is not perfection. The goal is a working fallback.\nWeek 2: local research RAG\nIndex:\nyour papers\nyour notes\nyour datasets\nyour internal docs\nkey textbooks/manuals where licensed\nmodel cards\nregulatory/biosecurity guidance",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 780,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 08:13:59 +0000 2026",
+      "createdAtLocal": "2026-06-26 16:13",
+      "createdAtISO": "2026-06-26T08:13:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2070337041892819011",
+      "text": "【サイバーセキュリティ動向分析】\n\n今日（2026年6月26日）の主なサイバーセキュリティニュースについて、主要トピックごとに背景・影響・対策を詳しくまとめます。情報は直近の公開情報に基づき、進行中の脅威やパッチ対応を中心に取り上げています。\n1. ShinyHuntersによるOracle PeopleSoft大規模侵害キャンペーン（継続中）\n背景\nサイバー犯罪グループ「ShinyHunters」（GoogleのMandiantではUNC6240として追跡）が、Oracle PeopleSoftのPeopleTools環境管理コンポーネントに存在する重大な脆弱性（CVE-2026-35273、CVSS 9.8）をゼロデイとして悪用した大規模キャンペーンが確認されました。攻撃活動は5月27日から6月9日頃まで活発で、Oracleが6月10日に緊急セキュリティアドバイザリを発行するまでパッチが提供されていませんでした。この脆弱性は認証不要でリモートコード実行（RCE）が可能という極めて危険なもので、主にインターネットに公開されたPSEMHUBエンドポイントを標的にしていました。ShinyHuntersは教育機関を中心に100以上の組織（数百のインスタンス）を侵害し、学生・教職員の個人情報（氏名、住所、メール、誕生日、民族、GPA、専攻、学生IDなど）を大量に窃取したと主張しています。\n影響\n高等教育機関を中心に世界中の組織が被害を受け、個人情報の大量流出と恐喝行為が発生しています。窃取データがShinyHuntersのリークサイトで公開・販売される動きが見られ、被害組織の評判低下、規制対応コストの増大、さらなる二次被害（フィッシングやアカウント乗っ取り）のリスクが高まっています。教育セクターは特に機微な個人情報を大量に扱うため、社会的影響が大きいです。また、Oracleのエンタープライズソフトウェアが広く使われていることから、サプライチェーン的な波及も懸念されます。\n対策  \nOracleのセキュリティアドバイザリに従い、PeopleTools 8.61および8.62向けのパッチを最優先で適用してください。サポート対象外の古いバージョンも早急に更新または廃止を検討。\nインターネット公開されているPeopleSoftインスタンスの露出を最小限に抑え、WAF（Web Application Firewall）の導入やネットワークセグメンテーションを実施。\n異常なネットワークトラフィックや認証ログを監視し、Mandiant/Google Threat Intelligenceなどの脅威インテリジェンスを活用。\nデータ暗号化、最小権限の原則、定期的な脆弱性スキャンと侵入テストを徹底。侵害が疑われる場合は直ちに専門機関に相談。\n2. Anthropicの先進AIモデル「Claude Fable 5」および「Mythos 5」のアクセス停止（6月12日頃）\n背景\nAnthropicが6月9日頃に公開した最先端AIモデル「Claude Fable 5」と「Mythos 5」に対し、米国政府（商務省）が輸出管理当局に基づく国家安全保障上の指令を発出しました。主な懸念は、これらのモデルが「jailbreak（脱獄）」されることで、サイバー脆弱性の特定・悪用に悪用される可能性です。指令では外国人の利用制限が求められ、Anthropicはコンプライアンスのため世界中の全ユーザーに対して一時的にアクセスを停止しました。他のモデル（例: Opusシリーズ）は影響を受けていません。\n影響\nAI開発・利用の現場に大きな混乱をもたらしています。企業や研究機関が先進AIを活用した業務やイノベーションが一時停止を余儀なくされ、AIガバナンスの重要性が改めて浮き彫りになりました。AIがサイバー攻撃の加速要因となるリスク（脆弱性発見の自動化など）が現実のものとして認識され、国際的なAI規制議論が活発化しています。AnthropicをはじめとするAI企業は、セキュリティとイノベーションのバランスに苦慮する状況です。\n対策  \n現時点では代替モデルや自社内製AI、または制限付きの旧バージョンを使用。\nAIツールの利用ポリシーを策定し、jailbreak対策（プロンプトガードレール、出力監視）を強化。\n政府・規制当局との連携を強化し、輸出管理や安全基準に準拠したAI運用を徹底。\n企業はAI導入時のリスクアセスメントを必須とし、機微な業務での使用を制限。長期的に「安全なAI開発フレームワーク」の構築が求められます。\n3. Microsoft 2026年6月 Patch Tuesdayの大規模パッチリリース（6月9-10日頃）\n背景\nMicrosoftが6月の月例パッチで過去最多規模となる206件以上の脆弱性を修正しました（Critical 37件以上）。中には3件の公開済みゼロデイ脆弱性も含まれており、Windows、Office、Azure、Visual Studio Code、IISなど幅広い製品に影響します。ゼロデイの例として、IISのサービス拒否（DoS）やVisual Studio CodeでのGitHubトークン窃取などが挙げられます。パッチ数は過去最高を更新し、ソフトウェアの複雑化と脆弱性発見の加速を象徴しています。\n影響\n未パッチのシステムが攻撃者に狙われやすく、特にゼロデイは公開直後から悪用リスクが高まります。企業・政府機関では業務中断やデータ漏洩の可能性が現実的です。一方で、迅速なパッチ適用により多くの攻撃を未然に防げます。全体として、サイバー脅威の「量と質」の両方が高まっている状況を示しています。\n対策  \nパッチをできるだけ早くテスト・展開（特にCriticalとゼロデイ）。自動パッチ管理ツールを活用。\n脆弱性管理プログラムを強化し、優先順位付け（CVSSスコア、公開 exploit の有無）を徹底。\nパッチ適用までの緩和策として、ネットワーク分離や多要素認証（MFA）、エンドポイント検知・対応（EDR）の強化を実施。\n定期的なパッチ適用テスト環境の整備と、緊急時の対応計画の見直しを推奨。\n4. AIコーディングエージェントを標的とした「Agentjacking」攻撃の新手法（6月12日頃公開）\n背景\nTenet Securityの研究者らが、新たな攻撃クラス「Agentjacking」を公開しました。人気のエラートラッキングツール「Sentry」の公開DSN（データソース名）を利用し、偽のエラーレポートを注入。これをAIコーディングエージェント（Claude Code、Cursorなど）が「信頼できる診断情報」として解釈し、攻撃者が指定した悪意あるコードを実行させる手法です。SentryのModel Context Protocol（MCP）統合の設計上の弱点を突いたもので、従来のマルウェア配信やフィッシングを必要としません。\n影響\n開発者のワークステーションが直接乗っ取られるリスクが生じ、ソフトウェア開発サプライチェーン全体に影響を及ぼす可能性があります。AIエージェントの普及が進む中、信頼できる外部データソースが攻撃ベクトルになるという新しい脅威形態です。検知が難しく、既存のセキュリティ制御をすり抜けやすい点が深刻です。\n対策  \nSentryなどのツールとAIエージェントの統合を制限または監視強化。入力データのサニタイズを徹底。\nAIエージェントの実行権限を最小限に抑え、サンドボックス環境で運用。\nAIエージェントの出力・行動を常時ログ監視し、異常なコマンド実行を検知する仕組みを導入。\n開発者教育を強化し、「AIが信頼する外部情報」のリスクを周知。ツールの最新版への更新を徹底。\nその他の注目動向（6月下旬時点）\nLantronix EDS5000の脆弱性（CVE-2025-67038）：CISAが積極的な悪用を警告。OT環境向けシリアル-to-IP変換器で、6月26日までのパッチ適用を強く推奨。\nGitLabのパッチリリース：コード実行や情報漏洩を含む13件の脆弱性を修正（高深刻度含む）。\nCisco Catalyst SD-WANのゼロデイ（CVE-2026-20245）：数ヶ月前から悪用されていたことが判明。\nマルウェア対策の進展：AmadeyおよびStealCのインフラが法執行機関とセキュリティ企業により大規模に破壊され、数千万件の認証情報が回収。\nAI関連では、プロンプトインジェクションを悪用したmacOSマルウェア「Gaslight」（北朝鮮関連疑い）なども報告されています。\nこれらのニュースは、AIの両刃の剣化、パッチ管理の重要性、サプライチェーン・開発環境への攻撃シフトという共通のトレンドを示しています。組織はパッチ適用を最優先とし、AIツールの利用ポリシーを早急に整備するとともに、脅威インテリジェンスの活用と多層防御を強化してください。状況は日々変化するため、最新の公式情報を継続的に確認することをおすすめします。",
+      "author": {
+        "id": "1986424188153044993",
+        "name": "Cyberdark Impact",
+        "screenName": "kenebeii",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065596711394013184/5PP1fxmi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1959,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jun 26 02:43:10 +0000 2026",
+      "createdAtLocal": "2026-06-26 10:43",
+      "createdAtISO": "2026-06-26T02:43:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2070240609818866154",
+      "text": "@yairwein מעניין, לא הכרתי את pi. האם שקלת/היה בזמנו את Managed Agents? זה קלוד אבל לא קלוד-קוד, אפשר להצמיד לו הוראות, סקילים ו-MCP לבקשתך והוא רץ על האינפרא של אנתרופיק.\n\nיש לוק-אין, ועלות, אבל עם חזרתם של fable ו-mythos, יהיו 5 רמות של מודל לבחור מהן.\n\nhttps://t.co/JPYxCNshG5",
+      "author": {
+        "id": "10412792",
+        "name": "Michael Lugassy",
+        "screenName": "mluggy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1632505709848920064/fi0L9zEJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1829,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Jun 25 20:19:59 +0000 2026",
+      "createdAtLocal": "2026-06-26 04:19",
+      "createdAtISO": "2026-06-25T20:19:59+00:00",
+      "media": [],
+      "urls": [
+        "https://platform.claude.com/docs/en/managed-agents/overview"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "iw",
+      "score": null
+    },
+    {
+      "id": "2070191790980841785",
+      "text": "https://t.co/gNjgbCXrDn",
+      "author": {
+        "id": "720301827095330816",
+        "name": "Thomas Hodson",
+        "screenName": "ilovebatteries",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069862960764170240/sot9VuqA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 23,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 17:05:59 +0000 2026",
+      "createdAtLocal": "2026-06-26 01:05",
+      "createdAtISO": "2026-06-25T17:05:59+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2069863242428710912"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "it’s a skills issue"
+    },
+    {
+      "id": "2070177743619420482",
+      "text": "https://t.co/7ODXUnF4E1",
+      "author": {
+        "id": "2048779545726328832",
+        "name": "Hari Rajesh",
+        "screenName": "haricane8133",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2048780467365957632/oDVRNQu1_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 515,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 25 16:10:10 +0000 2026",
+      "createdAtLocal": "2026-06-26 00:10",
+      "createdAtISO": "2026-06-25T16:10:10+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2068722466151964672"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Chapter 4 — Attention is all you need"
+    },
+    {
+      "id": "2070086771879346481",
+      "text": "OpenAI has the strongest deployable position right now, but not an uncontested technical lead. GPT-5.5 is broadly available and deeply integrated across ChatGPT/Codex, while Anthropic’s strongest public counterpunch, Fable 5, is entangled in access restrictions. Google is not dead or “struggling” across the board, but Gemini 3.5 Pro slipping to July gives OpenAI more breathing room.\n\nThat distinction makes the argument much harder to dunk on.\n\nOpenAI’s case is strong because GPT-5.5 is real, shipped, broadly available, and productized. OpenAI says GPT-5.5 is its “smartest model yet,” with strong results on work/agent benchmarks like GDPval, OSWorld-Verified, Tau2-bench Telecom, OfficeQA Pro, FrontierMath, BrowseComp, and Terminal-Bench; GPT-5.5 is also available across ChatGPT tiers, with GPT-5.5 Pro reserved for higher plans.  Codex also lists GPT-5.5 as OpenAI’s recommended model for many coding and knowledge-work tasks when available, which matters because distribution inside workflow tools can be more strategically important than a benchmark screenshot.\n\nBut the “comfortable lead” claim is vulnerable because Fable 5 appeared to beat GPT-5.5 in several independent and public leaderboard contexts before access was disrupted. Artificial Analysis reported Claude Fable 5 at #1 on its Intelligence Index, about five points ahead of the closest non-Anthropic model, GPT-5.5; LMArena’s public leaderboard snapshot also had Claude Fable 5 ahead of GPT-5.5.  So the better claim is not “OpenAI is clearly ahead technically.” It is: OpenAI has the best currently usable frontier position while Anthropic’s strongest model is politically/operationally constrained.\n\nYour original post:\n\nopenai still has a comfortable lead with gpt-5.5\nsince mythos 5 isn't available yet and gpt-5.5 is already in a strong position, oai doesn't really have pressure to rush gpt-5.6\nwith anthropic slowed down and google struggling, they can take more time to refine it before release\nI’d rewrite it like this:\nOpenAI may not need to rush GPT-5.6.GPT-5.5 is already in a strong deployable position: widely available in ChatGPT, integrated into Codex, and strong enough across coding, research, tool-use, and knowledge-work benchmarks to hold the market’s attention.The key nuance is that OpenAI may not have a clean technical lead over Anthropic’s best models. Fable 5 looked extremely competitive, and in some independent rankings it beat GPT-5.5. But Fable/Mythos access is still tangled in government restrictions, and that turns Anthropic’s advantage into a distribution problem. A model that wins benchmarks but can’t reliably be used by customers is not a full market threat https://t.co/jPzcTh0orw also shouldn’t be dismissed. Gemini 3.1 Pro and 3.5 Flash are strong in reasoning, multimodal, and agentic areas, but if Gemini 3.5 Pro really slips from June into July, that gives OpenAI more room to refine instead of panic-launching https://t.co/oWg4dL5hFq the real thesis is: GPT-5.6 pressure is lower than it would be if Fable 5 were fully available and Gemini 3.5 Pro had landed cleanly. OpenAI can optimize for reliability, latency, eval robustness, enterprise rollout, and safety polish rather than racing a date on the calendar.\n\nThe missing element is “technical lead” versus “commercial lead” versus “deployment lead.” GPT-5.5 may not be strictly ahead on every benchmark, but OpenAI’s advantage is that users can actually access it, businesses can plan around it, developers can build with it, and Codex can route workflows through it. Anthropic’s own statement says the U.S. government directive forced it to disable Fable 5 and Mythos 5 for all customers to ensure compliance; Claude’s status page still lists the incident as affecting https://t.co/3pnXzhoEbn, Claude API, Claude Code, and Claude Cowork.\n\nThe strongest version of your thesis is:\n\nOpenAI’s lead is not purely model quality. It is model quality plus uptime plus distribution plus enterprise trust.\n\nThat is much more defensible.\n\nI would avoid saying “Google struggling” too broadly. Google’s Gemini 3.1 Pro has strong published scores, including 77.1% on ARC-AGI-2, 94.3% on GPQA Diamond, 85.9% on BrowseComp, and 80.6% on SWE-Bench Verified in Google’s published table.  Google also says Gemini 3.5 Flash is its strongest agentic and coding Flash model yet, with strong Terminal-Bench 2.1, GDPval-AA, MCP Atlas, and multimodal numbers.  The sharper criticism is not “Google is struggling”; it is “Google’s next flagship Pro timing looks less clean, and its product narrative is less concentrated than OpenAI’s.” Business Insider reported that Gemini 3.5 Pro slipped from a June target to July while Google gathers more early-tester feedback and tweaks the model.\n\nA more nuanced version:\n\nGoogle is still dangerous, especially in multimodal, long-context, Android, Workspace, and AI search distribution. But if Gemini 3.5 Pro is delayed, then Google is not applying immediate frontier-pressure on GPT-5.5 this week. That gives OpenAI more room to time GPT-5.6 around quality rather than competitive panic.\n\nThe obscure but important angle: OpenAI may be under pressure, just not the same kind of pressure. It may not need to rush GPT-5.6 to beat Anthropic this week, but it still has pressure from developer retention, enterprise procurement cycles, investor narrative, safety politics, cost curves, and ChatGPT market-share compression. TechCrunch, citing Sensor Tower, reported ChatGPT’s assistant-market share had fallen to 46.4% by the end of May, with Gemini at 27.7% and Claude at 10.3%.  That means OpenAI can’t just coast indefinitely. It can delay a launch for polish, but it cannot disappear from the release narrative for too long.\n\nHere is the “genius-level” framing I’d use:\n\nGPT-5.6 is probably less of a “catch up to Anthropic” release and more of a “convert temporary deployment advantage into durable platform lock-in” release.If OpenAI ships too early, it risks a messy model that gives competitors a narrative opening. If it waits too long, it risks letting Fable 5 re-access, Gemini 3.5 Pro, or a strong open/chinese model reset the leaderboard before GPT-5.6 lands. The optimal play is not speed; it is timing the release when GPT-5.6 is clearly better on the specific things customers now care about: long-horizon agents, coding reliability, tool use, low hallucination, memory, context handling, and enterprise-grade predictable behavior.\n\nThe hidden pressure point is Anthropic’s “unavailable” status may actually be making OpenAI’s launch bar higher, not lower. If your main competitor’s best model is temporarily locked behind regulation, your next release has to feel mature, not rushed. A sloppy GPT-5.6 would waste the strategic window. A polished GPT-5.6 could turn Anthropic’s outage into a customer migration event.\n\nSuggested post, sharper and safer:\n\nOpenAI may have more room to breathe on GPT-5.6 than people think.GPT-5.5 is already strong, widely usable, and integrated into ChatGPT/Codex. Meanwhile Anthropic’s biggest threat, Fable/Mythos-class capability, is stuck in an access/regulatory mess. That matters because frontier AI competition is not just “who has the best eval table.” It is who has the best model that users can actually rely on today.I wouldn’t say OpenAI has an uncontested technical lead. Fable 5 looked stronger than GPT-5.5 in some rankings before the suspension. But OpenAI currently has the cleaner deployable https://t.co/eJ5aixODG8 also isn’t irrelevant, but Gemini 3.5 Pro slipping from June into July reduces the immediate https://t.co/29eCbWxUbL GPT-5.6 does not need to be rushed as a panic response. The smarter move is to use the window to polish reliability, latency, tool use, coding agents, enterprise controls, and safety posture. If GPT-5.6 launches as a clearly more stable “workhorse agent” rather than a rushed benchmark flex, OpenAI can turn this temporary competitive gap into a durable platform advantage.\n\nEven punchier:\n\nThe race right now is not “best model in a lab.”\nIt is “best frontier model customers can actually use.”Fable 5 may have beaten GPT-5.5 technically, but availability is part of capability. GPT-5.5 is here, usable, and already embedded in OpenAI’s product stack. That gives OpenAI room to make GPT-5.6 boringly excellent instead of rushing it out for leaderboard optics.\n\nMissing elements to add:\n\nMissing elementWhy it mattersAvailability is capabilityA restricted model cannot win enterprise workloads at scale.Fable 5 beat GPT-5.5 in some rankingsIgnoring this makes the post sound like https://t.co/tfyP5LrUKJ is delayed, not defeatedGemini has serious strengths; “struggling” is too blunt.GPT-5.6 pressure is narrative pressure, not panic pressureOpenAI still needs momentum even if rivals are slowed.Enterprise buyers care about stabilityDelaying for reliability can be smarter than winning one benchmark.Regulatory risk is now competitive strategyAnthropic’s issue shows access/governance can determine market position.Model quality is now product qualityUI, tools, memory, context, pricing, uptime, and integrations matter as much as raw evals.\n\nI’d also add this counterargument so the post feels intellectually honest:\n\nThe risk for OpenAI is that Anthropic’s slowdown may be temporary. If Fable 5 returns with a clear compliance path, and Gemini 3.5 Pro lands well in July, GPT-5.5’s window could close quickly. So OpenAI has room to refine GPT-5.6, but not room to be complacent.\n\nFinal recommended take:\n\nOpenAI probably does not need to rush GPT-5.6, but not because GPT-5.5 has an uncontested technical lead. The better reason is that GPT-5.5 is the strongest broadly deployable frontier model position right now. Anthropic’s best counter is constrained by access issues, and Google’s next Pro release appears delayed. That gives OpenAI a strategic window to polish GPT-5.6 instead of panic-shipping it. But the window is temporary, and the launch needs to convert today’s availability advantage into durable agent/workflow dominance.",
+      "author": {
+        "id": "38302720",
+        "name": "shinyufoguy2222",
+        "screenName": "ollobrains",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996831970803044356/3xZNzBO2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1401,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jun 25 10:08:41 +0000 2026",
+      "createdAtLocal": "2026-06-25 18:08",
+      "createdAtISO": "2026-06-25T10:08:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070079688282698026",
+        "text": "openai still has a comfortable lead with gpt-5.5\n\nsince mythos 5 isn't available yet and gpt-5.5 is already in a strong position, oai doesn't really have pressure to rush gpt-5.6\n\nwith anthropic slowed down and google struggling, they can take more time to refine it before release",
+        "author": {
+          "screenName": "haider1",
+          "name": "Haider."
+        }
+      }
+    },
+    {
+      "id": "2070048716661362726",
+      "text": "https://t.co/SYJsB0ghk8",
+      "author": {
+        "id": "1349281678884184068",
+        "name": "zCloak Network",
+        "screenName": "zCloakNetwork",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034976371433512963/MEJ-rDr4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 759,
+        "bookmarks": 2
+      },
+      "createdAt": "Thu Jun 25 07:37:28 +0000 2026",
+      "createdAtLocal": "2026-06-25 15:37",
+      "createdAtISO": "2026-06-25T07:37:28+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070041920550653952"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Don’t Wait Until Your AI Workflow gone to Realize Your Data is not belong to you"
+    }
+  ]
+}
