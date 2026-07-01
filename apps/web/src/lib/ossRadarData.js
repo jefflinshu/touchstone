@@ -1,577 +1,728 @@
 export const OSS_RADAR_UPDATED_AT = "2026-07-01"
 
 export const OSS_RADAR_SOURCE = {
-  "initializedCount": 18,
-  "githubSnapshotAt": "2026-07-01T10:13:22.297Z",
+  "initializedCount": 21,
+  "githubSnapshotAt": "2026-07-01T13:04:48.534Z",
   "xWindow": {
     "from": "",
     "to": "2026-07-01",
     "status": "not-fetched"
   },
-  "note": "GitHub metadata is refreshed from the GitHub API. X-side collection stores monitoring keywords and query URLs; wire twitter-cli fetches before treating X counts as measured."
+  "curationMode": "emerging-ai-devtools",
+  "note": "Curated for discovery value: emerging AI agent, MCP, context-engineering, security, gateway, and workflow projects. Famous baseline projects are intentionally excluded."
 }
 
 export const OSS_RADAR_REPOS = [
   {
-    "id": "n8n",
-    "repo": "n8n-io/n8n",
-    "name": "n8n",
-    "url": "https://github.com/n8n-io/n8n",
-    "homepage": "https://n8n.io",
-    "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-    "language": "TypeScript",
-    "stars": 194743,
-    "forks": 58984,
-    "issues": 1440,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T10:10:21Z",
-    "categories": [
-      "automation"
-    ],
-    "tags": [
-      "automation",
-      "integrations",
-      "self-hosted"
-    ],
-    "decision": "include",
-    "collectReason": "收录。GitHub 数据非常强，X 上传播点清楚，自动化/工作流/自托管三个方向都适合网站长期呈现。",
-    "xKeywords": [
-      "n8n",
-      "workflow automation",
-      "self-hosted automation"
-    ]
-  },
-  {
-    "id": "nextjs",
-    "repo": "vercel/next.js",
-    "name": "Next.js",
-    "url": "https://github.com/vercel/next.js",
-    "homepage": "https://nextjs.org",
-    "description": "The React Framework",
-    "language": "JavaScript",
-    "stars": 140200,
-    "forks": 31286,
-    "issues": 4149,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T09:46:24Z",
-    "categories": [
-      "frontend"
-    ],
-    "tags": [
-      "React",
-      "framework",
-      "full-stack"
-    ],
-    "decision": "include",
-    "collectReason": "收录。前端框架标杆项目，数据稳定且生态影响大，适合作为通用开源项目收录基准。",
-    "xKeywords": [
-      "Next.js",
-      "vercel/next.js",
-      "React framework"
-    ]
-  },
-  {
-    "id": "shadcn-ui",
-    "repo": "shadcn-ui/ui",
-    "name": "shadcn/ui",
-    "url": "https://github.com/shadcn-ui/ui",
-    "homepage": "https://ui.shadcn.com",
-    "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
-    "language": "TypeScript",
-    "stars": 117744,
-    "forks": 9211,
-    "issues": 2079,
-    "license": "MIT",
-    "pushedAt": "2026-06-30T06:34:55Z",
-    "categories": [
-      "frontend"
-    ],
-    "tags": [
-      "components",
-      "React",
-      "Tailwind CSS"
-    ],
-    "decision": "include",
-    "collectReason": "收录。组件分发模式本身有代表性，GitHub 和 X 传播都强，适合做成开源 UI 方向入口。",
-    "xKeywords": [
-      "shadcn/ui",
-      "shadcn ui",
-      "open code components"
-    ]
-  },
-  {
-    "id": "supabase",
-    "repo": "supabase/supabase",
-    "name": "Supabase",
-    "url": "https://github.com/supabase/supabase",
-    "homepage": "https://supabase.com",
-    "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
-    "language": "TypeScript",
-    "stars": 105018,
-    "forks": 12926,
-    "issues": 1086,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T10:10:36Z",
-    "categories": [
-      "backend-data"
-    ],
-    "tags": [
-      "Postgres",
-      "auth",
-      "backend"
-    ],
-    "decision": "include",
-    "collectReason": "收录。开源后端平台代表项目，star/fork 数据高，产品边界清晰，适合网站直接呈现。",
-    "xKeywords": [
-      "Supabase",
-      "supabase/supabase",
-      "open source Firebase"
-    ]
-  },
-  {
-    "id": "tailwindcss",
-    "repo": "tailwindlabs/tailwindcss",
-    "name": "Tailwind CSS",
-    "url": "https://github.com/tailwindlabs/tailwindcss",
-    "homepage": "https://tailwindcss.com/",
-    "description": "A utility-first CSS framework for rapid UI development.",
-    "language": "TypeScript",
-    "stars": 95692,
-    "forks": 5311,
-    "issues": 67,
-    "license": "MIT",
-    "pushedAt": "2026-06-29T14:11:40Z",
-    "categories": [
-      "frontend"
-    ],
-    "tags": [
-      "CSS",
-      "design system",
-      "utility classes"
-    ],
-    "decision": "include",
-    "collectReason": "收录。长期高质量前端基础设施，issue 压力低，生态影响明确，适合稳定收录。",
-    "xKeywords": [
-      "Tailwind CSS",
-      "tailwindlabs/tailwindcss",
-      "utility-first CSS"
-    ]
-  },
-  {
-    "id": "vite",
-    "repo": "vitejs/vite",
-    "name": "Vite",
-    "url": "https://github.com/vitejs/vite",
-    "homepage": "http://vite.dev",
-    "description": "Next generation frontend tooling. It's fast!",
-    "language": "TypeScript",
-    "stars": 81644,
-    "forks": 8368,
-    "issues": 719,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T03:55:08Z",
-    "categories": [
-      "frontend"
-    ],
-    "tags": [
-      "build tool",
-      "dev server",
-      "frontend"
-    ],
-    "decision": "include",
-    "collectReason": "收录。现代前端工具链核心项目，数据好、更新活跃，适合进入开源工具收录页。",
-    "xKeywords": [
-      "Vite",
-      "vitejs/vite",
-      "frontend tooling"
-    ]
-  },
-  {
-    "id": "opencode",
-    "repo": "anomalyco/opencode",
-    "name": "opencode",
-    "url": "https://github.com/anomalyco/opencode",
-    "homepage": "https://opencode.ai",
-    "description": "The open source coding agent.",
-    "language": "TypeScript",
-    "stars": 181115,
-    "forks": 22335,
-    "issues": 7113,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T09:44:42Z",
+    "id": "dao-code",
+    "repo": "tigicion/dao-code",
     "categories": [
       "ai-agents"
     ],
     "tags": [
-      "coding agent",
-      "CLI",
-      "developer tools"
+      "terminal agent",
+      "DeepSeek",
+      "Claude Code compatible"
     ],
-    "decision": "include",
-    "collectReason": "收录。X 传播点非常清楚，开源 coding agent 赛道热度最高，适合做成网站里的重点项目页。",
-    "thesis": "Massive attention, clear positioning, and a simple terminal-native story make it the strongest X-watch candidate.",
-    "watchFor": "Whether issue volume turns into community plugins, hosted workflows, and repeatable enterprise adoption.",
-    "risks": "Very high issue pressure; evaluate governance, release cadence, and extension stability before deep adoption.",
+    "collectReason": "收录。不是通用大项目，而是针对 DeepSeek V4 价格/缓存特性做工程化的终端 coding agent，适合观察低成本 agent 方向。",
+    "thesis": "If prefix-cache economics matter, coding agents may fork into model-native harnesses instead of one-size-fits-all clients.",
+    "watchFor": "Whether byte-stable prompts, cache-reusing forks, and Claude Code-compatible config become reproducible advantages.",
+    "risks": "Young repo, small maintainer surface, and DeepSeek-specific assumptions may age quickly.",
     "xKeywords": [
-      "opencode",
-      "open source coding agent",
-      "opencode ai"
-    ]
-  },
-  {
-    "id": "gemini-cli",
-    "repo": "google-gemini/gemini-cli",
-    "name": "Gemini CLI",
-    "url": "https://github.com/google-gemini/gemini-cli",
-    "homepage": "https://geminicli.com",
-    "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "dao-code",
+      "DeepSeek coding agent",
+      "Claude Code compatible agent"
+    ],
+    "name": "dao-code",
+    "url": "https://github.com/tigicion/dao-code",
+    "homepage": "https://www.npmjs.com/package/dao-code",
+    "description": "Open-source TypeScript terminal coding agent for DeepSeek-V4 — builds on DeepSeek's strong price-performance and ultra-cheap cache pricing, engineering byte-stable prefixes and cache-reusing forks so cross-session memory and a continuous self-correction layer add almost no token cost; 1M context, Skills/MCP/Hooks, Claude Code config compatible.",
     "language": "TypeScript",
-    "stars": 105687,
-    "forks": 14200,
-    "issues": 1347,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T01:49:23Z",
-    "categories": [
-      "ai-agents"
-    ],
-    "tags": [
-      "Gemini",
-      "CLI",
-      "MCP client"
-    ],
-    "decision": "include",
-    "collectReason": "收录。官方开源 CLI、GitHub 热度高，且和 coding agent/MCP 方向强相关，适合长期追踪。",
-    "thesis": "Official distribution plus open-source CLI packaging gives it unusually broad X reach among developers.",
-    "watchFor": "Model routing, MCP usage patterns, and how quickly third-party workflows standardize around it.",
-    "risks": "Platform coupling is the main strategic risk; inspect auth, quota, and local privacy behavior.",
-    "xKeywords": [
-      "Gemini CLI",
-      "google-gemini/gemini-cli",
-      "Gemini coding agent"
-    ]
-  },
-  {
-    "id": "browser-use",
-    "repo": "browser-use/browser-use",
-    "name": "browser-use",
-    "url": "https://github.com/browser-use/browser-use",
-    "homepage": "https://browser-use.com",
-    "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-    "language": "Python",
-    "stars": 101903,
-    "forks": 11311,
-    "issues": 288,
+    "stars": 929,
+    "forks": 19,
+    "issues": 3,
     "license": "MIT",
-    "pushedAt": "2026-07-01T09:57:40Z",
-    "categories": [
-      "ai-agents",
-      "automation"
-    ],
-    "tags": [
-      "browser automation",
-      "Playwright",
-      "AI agents"
-    ],
-    "decision": "include",
-    "collectReason": "收录。浏览器 Agent 是 X 上最容易被 demo 传播的方向，项目成熟度和业务场景都比较明确。",
-    "thesis": "A clean mental model, strong demos, and direct business-task automation make it easy for X to explain.",
-    "watchFor": "Reliability benchmarks, anti-bot constraints, hosted runners, and agent safety defaults.",
-    "risks": "Browser automation can break on real sites; production users need retries, observability, and policy controls.",
-    "xKeywords": [
-      "browser-use",
-      "browser use ai",
-      "browser automation agent"
-    ]
+    "pushedAt": "2026-07-01T13:00:20Z",
+    "createdAt": "2026-06-08T08:10:42Z",
+    "decision": "include"
   },
   {
-    "id": "mcp-servers",
-    "repo": "modelcontextprotocol/servers",
-    "name": "MCP Servers",
-    "url": "https://github.com/modelcontextprotocol/servers",
-    "homepage": "https://modelcontextprotocol.io",
-    "description": "Model Context Protocol Servers",
-    "language": "TypeScript",
-    "stars": 87911,
-    "forks": 11116,
-    "issues": 617,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-06-29T07:13:57Z",
+    "id": "trace-mcp",
+    "repo": "nikolai-vysotskyi/trace-mcp",
     "categories": [
-      "mcp"
+      "mcp",
+      "context"
     ],
     "tags": [
       "MCP",
-      "agent tools",
-      "connectors"
+      "trace",
+      "agent exploration"
     ],
-    "decision": "include",
-    "collectReason": "收录。MCP 是 Agent 工具生态的基础关键词，这个 repo 可以作为 MCP 生态入口页。",
-    "thesis": "MCP has become the default vocabulary for agent-tool integration, so this repo is a protocol weather vane.",
-    "watchFor": "Server quality, security posture, official versus community boundaries, and ecosystem fragmentation.",
-    "risks": "Repo value depends on protocol trust and server maintenance; individual servers need separate review.",
+    "collectReason": "收录。定位很窄：减少 Claude Code/Codex 的探索成本。比泛 MCP server 更像一个可验证的 agent workflow primitive。",
+    "thesis": "Trace-oriented MCP tools can compress the expensive “figure out this codebase” phase of coding agents.",
+    "watchFor": "Real before/after traces, supported languages, and whether agents consistently avoid redundant grep/read loops.",
+    "risks": "Claim depends on project shape; weak if it only helps demo repositories.",
     "xKeywords": [
-      "MCP servers",
-      "modelcontextprotocol servers",
-      "MCP GitHub"
-    ]
-  },
-  {
-    "id": "openhands",
-    "repo": "OpenHands/OpenHands",
-    "name": "OpenHands",
-    "url": "https://github.com/OpenHands/OpenHands",
-    "homepage": "https://openhands.dev",
-    "description": "🙌 OpenHands: AI-Driven Development",
-    "language": "Python",
-    "stars": 78936,
-    "forks": 10043,
-    "issues": 358,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T10:10:29Z",
-    "categories": [
-      "ai-agents"
+      "trace-mcp",
+      "MCP Claude Code Codex",
+      "agent exploration MCP"
     ],
-    "tags": [
-      "SWE agent",
-      "developer tools",
-      "OpenAI"
-    ],
-    "decision": "include",
-    "collectReason": "收录。完整 SWE agent 工作流代表性强，适合和终端类 coding agent 做横向对比。",
-    "thesis": "One of the clearest open-source references for full SWE-agent workflows beyond a chat sidebar.",
-    "watchFor": "Benchmark credibility, sandbox UX, PR automation, and how teams wire it into existing repos.",
-    "risks": "Full-workspace agents require strong permissioning and reproducible evaluation before team rollout.",
-    "xKeywords": [
-      "OpenHands AI",
-      "OpenHands coding agent",
-      "SWE agent open source"
-    ]
-  },
-  {
-    "id": "playwright-mcp",
-    "repo": "microsoft/playwright-mcp",
-    "name": "Playwright MCP",
-    "url": "https://github.com/microsoft/playwright-mcp",
-    "homepage": "https://www.npmjs.com/package/@playwright/mcp",
-    "description": "Playwright MCP server",
+    "name": "trace-mcp",
+    "url": "https://github.com/nikolai-vysotskyi/trace-mcp",
+    "homepage": "https://trace-mcp.com",
+    "description": "MCP server for Claude Code and Codex. One tool call replaces ~42 minutes of agent exploration",
     "language": "TypeScript",
-    "stars": 34558,
-    "forks": 2867,
-    "issues": 1,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-06-29T23:06:50Z",
-    "categories": [
-      "mcp"
-    ],
-    "tags": [
-      "MCP",
-      "Playwright",
-      "browser testing"
-    ],
-    "decision": "include",
-    "collectReason": "收录。它不是独立产品，但非常适合作为“Agent 浏览器能力 / MCP 工具”类条目。",
-    "thesis": "Low issue count and Microsoft-backed Playwright credibility make it an unusually practical MCP pick.",
-    "watchFor": "Agent-browser testing patterns, CI usage, visual QA, and cross-tool adoption.",
-    "risks": "The value is narrow but deep; it is a building block, not a complete agent product.",
-    "xKeywords": [
-      "Playwright MCP",
-      "@playwright/mcp",
-      "browser MCP"
-    ]
-  },
-  {
-    "id": "continue",
-    "repo": "continuedev/continue",
-    "name": "Continue",
-    "url": "https://github.com/continuedev/continue",
-    "homepage": "https://continue.dev",
-    "description": "open-source coding agent",
-    "language": "TypeScript",
-    "stars": 34620,
-    "forks": 4912,
-    "issues": 972,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T08:57:13Z",
-    "categories": [
-      "ai-agents"
-    ],
-    "tags": [
-      "IDE",
-      "coding agent",
-      "developer tools"
-    ],
-    "decision": "watch",
-    "collectReason": "观察。IDE coding assistant 品牌强，但是否作为本站重点收录，需要看它向 agentic workflow 的转化。",
-    "thesis": "Strong open-source brand in IDE-native coding assistance with room to capture agentic workflows.",
-    "watchFor": "Shift from completion/chat into autonomous coding, model choice ergonomics, and team controls.",
-    "risks": "Crowded IDE-agent market; compare setup friction and actual task completion against terminal agents.",
-    "xKeywords": [
-      "Continue dev",
-      "continuedev continue",
-      "open source coding assistant"
-    ]
-  },
-  {
-    "id": "openai-agents-python",
-    "repo": "openai/openai-agents-python",
-    "name": "OpenAI Agents Python",
-    "url": "https://github.com/openai/openai-agents-python",
-    "homepage": "https://openai.github.io/openai-agents-python/",
-    "description": "A lightweight, powerful framework for multi-agent workflows",
-    "language": "Python",
-    "stars": 27547,
-    "forks": 4243,
-    "issues": 76,
+    "stars": 90,
+    "forks": 13,
+    "issues": 11,
     "license": "MIT",
-    "pushedAt": "2026-07-01T04:54:30Z",
-    "categories": [
-      "ai-agents"
-    ],
-    "tags": [
-      "agents",
-      "framework",
-      "Python"
-    ],
-    "decision": "include",
-    "collectReason": "收录。官方 Agents SDK 具有平台风向标价值，适合进入网站的框架/基础设施板块。",
-    "thesis": "Official framework signal matters on X because developers use it to infer OpenAI platform direction.",
-    "watchFor": "Handoffs, tracing, eval hooks, guardrails, and how examples map to production deployments.",
-    "risks": "Framework fit depends on OpenAI stack commitment; verify portability needs before standardizing.",
-    "xKeywords": [
-      "OpenAI Agents SDK",
-      "openai-agents-python",
-      "multi-agent workflows"
-    ]
+    "pushedAt": "2026-07-01T13:04:08Z",
+    "createdAt": "2026-04-03T09:54:03Z",
+    "decision": "include"
   },
   {
-    "id": "graphiti",
-    "repo": "getzep/graphiti",
-    "name": "Graphiti",
-    "url": "https://github.com/getzep/graphiti",
-    "homepage": "https://help.getzep.com/graphiti",
-    "description": "Build Real-Time Knowledge Graphs for AI Agents",
-    "language": "Python",
-    "stars": 28206,
-    "forks": 2819,
-    "issues": 406,
+    "id": "lean-ctx",
+    "repo": "yvgude/lean-ctx",
+    "categories": [
+      "context",
+      "security"
+    ],
+    "tags": [
+      "context engineering",
+      "local-first",
+      "MCP"
+    ],
+    "collectReason": "收录。把“agent 能看到什么、记住什么、改什么”做成本地 Rust context layer，方向比普通 RAG 更接近 agent control plane。",
+    "thesis": "Context control is becoming infrastructure: selection, memory, permissions, and receipts need one local layer.",
+    "watchFor": "Whether it can stay simple while supporting many MCP tools and real coding-agent policies.",
+    "risks": "Large tool surface can become hard to audit; verify security claims before trusting it with private repos.",
+    "xKeywords": [
+      "LeanCTX",
+      "context engineering agents",
+      "MCP context layer"
+    ],
+    "name": "lean-ctx",
+    "url": "https://github.com/yvgude/lean-ctx",
+    "homepage": "https://leanctx.com",
+    "description": "Control what your AI can see. LeanCTX (Lean Context) is the context intelligence layer for AI agents — one local Rust binary that decides what they read, remembers what they learn, guards what they touch, and proves what they save. 60–90% fewer tokens as the receipt. 76 MCP tools, 30+ agents, local-first.",
+    "language": "Rust",
+    "stars": 3043,
+    "forks": 292,
+    "issues": 3,
     "license": "Apache-2.0",
-    "pushedAt": "2026-06-27T17:32:51Z",
-    "categories": [
-      "backend-data",
-      "ai-agents"
-    ],
-    "tags": [
-      "knowledge graph",
-      "agent memory",
-      "RAG"
-    ],
-    "decision": "watch",
-    "collectReason": "观察。Agent memory 是好方向，但需要更多真实应用案例后再决定是否做重点收录。",
-    "thesis": "Agent memory is becoming a repeat topic on X, and graph-based memory is easier to evaluate than vague long-context claims.",
-    "watchFor": "Latency, ingestion ergonomics, benchmark examples, and retrieval quality in multi-step agents.",
-    "risks": "Memory systems are easy to demo and hard to operate; require workload-specific evals.",
-    "xKeywords": [
-      "Graphiti",
-      "agent memory",
-      "real-time knowledge graph"
-    ]
+    "pushedAt": "2026-07-01T12:57:39Z",
+    "createdAt": "2026-03-23T19:48:59Z",
+    "decision": "include"
   },
   {
-    "id": "vercel-ai",
-    "repo": "vercel/ai",
-    "name": "Vercel AI SDK",
-    "url": "https://github.com/vercel/ai",
-    "homepage": "https://ai-sdk.dev",
-    "description": "The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents ",
-    "language": "TypeScript",
-    "stars": 25277,
-    "forks": 4692,
-    "issues": 1731,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T06:46:24Z",
+    "id": "context-mode",
+    "repo": "mksglu/context-mode",
     "categories": [
-      "ai-agents",
+      "context",
       "devtools"
     ],
     "tags": [
-      "AI SDK",
-      "TypeScript",
-      "React"
+      "context window",
+      "hooks",
+      "MCP"
     ],
-    "decision": "include",
-    "collectReason": "收录。它是 AI 应用 UI/工具调用的基础设施，不是纯 X 爆款，但网站内容价值稳定。",
-    "thesis": "Not as flashy as autonomous agents, but it is a practical substrate for shipping AI product UI.",
-    "watchFor": "Agent UI primitives, provider abstraction, tool-calling DX, and migration stories from app teams.",
-    "risks": "Issue count is high; separate framework churn from true defects when assessing adoption.",
+    "collectReason": "收录。聚焦 context window 优化和工具输出沙箱，解决的是 coding agent 实际跑长任务时的成本/噪音问题。",
+    "thesis": "The next agent productivity gain may come from shrinking tool output before it reaches the model.",
+    "watchFor": "Measured token savings, integration quality across clients, and whether routing rules are maintainable.",
+    "risks": "Compression can hide important failure context if policies are too aggressive.",
     "xKeywords": [
-      "Vercel AI SDK",
-      "vercel/ai",
-      "AI SDK agents"
-    ]
+      "context-mode",
+      "AI coding agent context window",
+      "MCP hooks context"
+    ],
+    "name": "context-mode",
+    "url": "https://github.com/mksglu/context-mode",
+    "homepage": "https://context-mode.com",
+    "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
+    "language": "TypeScript",
+    "stars": 18418,
+    "forks": 1293,
+    "issues": 25,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T12:54:06Z",
+    "createdAt": "2026-02-23T05:56:28Z",
+    "decision": "include"
   },
   {
-    "id": "open-swe",
-    "repo": "langchain-ai/open-swe",
-    "name": "Open SWE",
-    "url": "https://github.com/langchain-ai/open-swe",
-    "homepage": "https://www.langchain.com/blog/open-swe-an-open-source-framework-for-internal-coding-agents",
-    "description": "An Open-Source Asynchronous Coding Agent",
+    "id": "headroom",
+    "repo": "headroomlabs-ai/headroom",
+    "categories": [
+      "context",
+      "devtools"
+    ],
+    "tags": [
+      "token compression",
+      "MCP server",
+      "proxy"
+    ],
+    "collectReason": "收录。对 tool outputs/logs/RAG chunks 做压缩，直接对应 agent 成本和上下文污染问题。",
+    "thesis": "Agent infrastructure will need loss-aware compression between tools and models.",
+    "watchFor": "Quality benchmarks under real debugging/log-heavy workloads, not only synthetic compression ratios.",
+    "risks": "High compression ratios are easy to market; harder to preserve rare but important details.",
+    "xKeywords": [
+      "headroomlabs headroom",
+      "tool output compression",
+      "MCP token compression"
+    ],
+    "name": "headroom",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "homepage": "https://headroomlabs-ai.github.io/headroom/",
+    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
     "language": "Python",
-    "stars": 10073,
-    "forks": 1155,
-    "issues": 12,
+    "stars": 55014,
+    "forks": 3967,
+    "issues": 463,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T04:53:00Z",
+    "createdAt": "2026-01-07T19:58:51Z",
+    "decision": "include"
+  },
+  {
+    "id": "codegraph",
+    "repo": "colbymchenry/codegraph",
+    "categories": [
+      "context",
+      "devtools"
+    ],
+    "tags": [
+      "code graph",
+      "local index",
+      "semantic retrieval"
+    ],
+    "collectReason": "收录。预索引 code knowledge graph，面向 Claude Code/Codex/Gemini 等工具，是“少读文件少烧 token”的明确尝试。",
+    "thesis": "Local code graphs can become a standard sidecar for serious coding agents.",
+    "watchFor": "Index freshness, language coverage, and whether graph retrieval beats ripgrep plus embedding search.",
+    "risks": "May be expensive to maintain on large monorepos; stale graph data can mislead agents.",
+    "xKeywords": [
+      "codegraph coding agent",
+      "local code knowledge graph",
+      "Claude Code Codex codegraph"
+    ],
+    "name": "codegraph",
+    "url": "https://github.com/colbymchenry/codegraph",
+    "homepage": "https://colbymchenry.github.io/codegraph/",
+    "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+    "language": "TypeScript",
+    "stars": 56641,
+    "forks": 3493,
+    "issues": 268,
     "license": "MIT",
-    "pushedAt": "2026-07-01T01:55:13Z",
+    "pushedAt": "2026-07-01T11:50:01Z",
+    "createdAt": "2026-01-18T21:45:37Z",
+    "decision": "include"
+  },
+  {
+    "id": "multica",
+    "repo": "multica-ai/multica",
+    "categories": [
+      "ai-agents",
+      "workflow"
+    ],
+    "tags": [
+      "managed agents",
+      "team workflows",
+      "skills"
+    ],
+    "collectReason": "收录。把 coding agents 包装成可分配任务、可跟踪进度、可复用技能的团队协作层，值得观察产品化路径。",
+    "thesis": "The interface for agents may shift from chat/CLI to task assignment and progress tracking.",
+    "watchFor": "Whether it supports real multi-repo work, permission boundaries, and durable skill reuse.",
+    "risks": "Could become another project-management wrapper if execution reliability is not there.",
+    "xKeywords": [
+      "multica agents",
+      "managed coding agents",
+      "agent teammate platform"
+    ],
+    "name": "multica",
+    "url": "https://github.com/multica-ai/multica",
+    "homepage": "https://multica.ai",
+    "description": "The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.",
+    "language": "Go",
+    "stars": 38690,
+    "forks": 4835,
+    "issues": 1131,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T12:12:43Z",
+    "createdAt": "2026-01-13T17:59:46Z",
+    "decision": "include"
+  },
+  {
+    "id": "repoprompt-ce",
+    "repo": "repoprompt/repoprompt-ce",
+    "categories": [
+      "context",
+      "devtools"
+    ],
+    "tags": [
+      "macOS",
+      "context engineering",
+      "MCP CLI"
+    ],
+    "collectReason": "收录。RepoPrompt CE 是面向 coding agents 的本地 context app，不是泛 AI 工具，和日常 repo 工作流贴得很近。",
+    "thesis": "Human-curated context packs may remain valuable even as agents get better retrieval.",
+    "watchFor": "MCP CLI depth, native macOS UX, and whether teams can share reproducible context sets.",
+    "risks": "Desktop-first workflow may limit server/CI agent adoption.",
+    "xKeywords": [
+      "RepoPrompt CE",
+      "context engineering app",
+      "AI coding agents MCP"
+    ],
+    "name": "repoprompt-ce",
+    "url": "https://github.com/repoprompt/repoprompt-ce",
+    "homepage": "https://repoprompt.com",
+    "description": "Community edition of RepoPrompt: a native macOS context engineering app for AI coding agents, with an MCP CLI.",
+    "language": "Swift",
+    "stars": 734,
+    "forks": 92,
+    "issues": 76,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T13:04:16Z",
+    "createdAt": "2026-05-12T19:44:16Z",
+    "decision": "include"
+  },
+  {
+    "id": "mfs",
+    "repo": "zilliztech/mfs",
+    "categories": [
+      "context",
+      "mcp"
+    ],
+    "tags": [
+      "file-like context",
+      "memory",
+      "search"
+    ],
+    "collectReason": "收录。把分散的代码、记忆、文档、数据库、SaaS context 抽成可搜索浏览的 file-like interface，适合 agent 长任务。",
+    "thesis": "Agents need a filesystem metaphor for heterogeneous context, not just separate connectors.",
+    "watchFor": "Connector quality, latency, and whether permissions map cleanly to the file-like abstraction.",
+    "risks": "Broad scope can dilute reliability; enterprise connectors increase security burden.",
+    "xKeywords": [
+      "zilliz mfs",
+      "agent context harness",
+      "file-like interface agents"
+    ],
+    "name": "mfs",
+    "url": "https://github.com/zilliztech/mfs",
+    "homepage": "https://zilliztech.github.io/mfs/",
+    "description": "A context harness for AI agents: all your scattered context — code, memory, docs, databases, SaaS — in one searchable, browsable, file-like interface.",
+    "language": "Python",
+    "stars": 70,
+    "forks": 9,
+    "issues": 1,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T12:58:14Z",
+    "createdAt": "2026-04-20T09:43:04Z",
+    "decision": "include"
+  },
+  {
+    "id": "better-code-review-graph",
+    "repo": "n24q02m/better-code-review-graph",
+    "categories": [
+      "devtools",
+      "context"
+    ],
+    "tags": [
+      "code review",
+      "knowledge graph",
+      "semantic search"
+    ],
+    "collectReason": "收录。小而具体：把语义搜索和调用图用于 token-efficient code review，比大而全 agent 更容易验证价值。",
+    "thesis": "Review agents need structure-aware retrieval more than raw diff summarization.",
+    "watchFor": "Whether call-graph resolution catches real review issues across languages.",
+    "risks": "Low star base and narrow scope; may be prototype-quality.",
+    "xKeywords": [
+      "better-code-review-graph",
+      "AI code review graph",
+      "token efficient code review"
+    ],
+    "name": "better-code-review-graph",
+    "url": "https://github.com/n24q02m/better-code-review-graph",
+    "homepage": "https://mcp.n24q02m.com/servers/better-code-review-graph/",
+    "description": "Knowledge graph for token-efficient code reviews -- semantic search and call-graph resolution across your codebase.",
+    "language": "Python",
+    "stars": 57,
+    "forks": 9,
+    "issues": 2,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T12:59:37Z",
+    "createdAt": "2026-03-20T11:11:32Z",
+    "decision": "include"
+  },
+  {
+    "id": "codex-pooler",
+    "repo": "icoretech/codex-pooler",
+    "categories": [
+      "devtools",
+      "workflow"
+    ],
+    "tags": [
+      "Codex gateway",
+      "self-hosted",
+      "teams"
+    ],
+    "collectReason": "收录。自托管 Codex gateway 是一个明确的团队基础设施需求，不是泛泛的 agent demo。",
+    "thesis": "Teams will want shared gateways for rate limits, routing, audit, and cost control around coding agents.",
+    "watchFor": "Queueing semantics, auth model, and whether it survives concurrent team workloads.",
+    "risks": "Needs careful credential handling; immature gateways can create hidden operational risk.",
+    "xKeywords": [
+      "codex-pooler",
+      "self-hosted Codex gateway",
+      "Codex team gateway"
+    ],
+    "name": "codex-pooler",
+    "url": "https://github.com/icoretech/codex-pooler",
+    "homepage": "https://docs.codex-pooler.com/",
+    "description": "The full featured self-hosted Codex gateway, for teams, agents and you",
+    "language": "Elixir",
+    "stars": 78,
+    "forks": 4,
+    "issues": 6,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T12:54:58Z",
+    "createdAt": "2026-05-24T02:16:31Z",
+    "decision": "include"
+  },
+  {
+    "id": "blade-deepseek",
+    "repo": "echoVic/blade-deepseek",
     "categories": [
       "ai-agents"
     ],
     "tags": [
-      "asynchronous agent",
-      "LangChain",
-      "internal tools"
+      "DeepSeek",
+      "coding agent",
+      "terminal"
     ],
-    "decision": "watch",
-    "collectReason": "观察。异步内部 coding agent 定位有差异化，但 repo 较新，应等更多用户案例。",
-    "thesis": "Smaller than the giants, but the asynchronous internal-agent angle is highly specific and worth tracking.",
-    "watchFor": "PR lifecycle UX, human review loops, queue semantics, and integration into existing eng workflows.",
-    "risks": "Younger repo; wait for more production stories before betting on it as a default workflow.",
+    "collectReason": "收录。DeepSeek-native terminal coding agent，和 dao-code 一起观察“模型原生 coding agent”分叉趋势。",
+    "thesis": "Cheaper reasoning models can create a parallel ecosystem of cost-optimized coding agents.",
+    "watchFor": "Tool loop quality, edit reliability, and whether prefix-cache tricks are real product advantages.",
+    "risks": "Very early project; likely volatile API and small community.",
     "xKeywords": [
-      "Open SWE",
-      "langchain-ai/open-swe",
-      "asynchronous coding agent"
-    ]
+      "blade-deepseek",
+      "DeepSeek-native coding agent",
+      "Orca coding agent"
+    ],
+    "name": "blade-deepseek",
+    "url": "https://github.com/echoVic/blade-deepseek",
+    "homepage": "",
+    "description": "Orca is a DeepSeek-native coding agent.",
+    "language": "Rust",
+    "stars": 134,
+    "forks": 0,
+    "issues": 0,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T12:54:34Z",
+    "createdAt": "2026-06-05T07:19:56Z",
+    "decision": "include"
   },
   {
-    "id": "git-mcp",
-    "repo": "idosal/git-mcp",
-    "name": "GitMCP",
-    "url": "https://github.com/idosal/git-mcp",
-    "homepage": "https://gitmcp.io",
-    "description": "Put an end to code hallucinations! GitMCP is a free, open-source, remote MCP server for any GitHub project",
-    "language": "TypeScript",
-    "stars": 8222,
-    "forks": 727,
-    "issues": 71,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-05-08T14:21:24Z",
+    "id": "clownfish",
+    "repo": "openclaw/clownfish",
     "categories": [
-      "mcp"
+      "workflow",
+      "ai-agents"
     ],
     "tags": [
-      "GitHub context",
-      "MCP",
-      "code hallucinations"
+      "issue triage",
+      "Codex harness",
+      "maintainers"
     ],
-    "decision": "watch",
-    "collectReason": "观察。解决 repo context 很具体，但可能被大 coding agent 内置功能替代，先作为候选。",
-    "thesis": "A focused fix for repo-context hallucination, with a crisp pitch that travels well in X threads.",
-    "watchFor": "Accuracy claims, repo indexing limits, private-repo workflows, and whether IDEs adopt the pattern.",
-    "risks": "A narrow utility can be displaced by native context features in larger coding-agent products.",
+    "collectReason": "收录。面向 maintainer 的批量 issue cluster 处理，切入点比“又一个聊天 agent”更实际。",
+    "thesis": "Maintainer workflows may be one of the first places coding agents become batch infrastructure.",
+    "watchFor": "Issue clustering quality, patch review loop, and safe failure handling at scale.",
+    "risks": "Automation around issue resolution can create noisy PRs if guardrails are weak.",
     "xKeywords": [
-      "GitMCP",
-      "git-mcp",
-      "MCP GitHub context"
-    ]
+      "openclaw clownfish",
+      "maintainer codex harness",
+      "bulk issue coding agent"
+    ],
+    "name": "clownfish",
+    "url": "https://github.com/openclaw/clownfish",
+    "homepage": "",
+    "description": "Clownfish is a maintainer codex harness for resolving clusters of issues identified in bulk at scale. 🐠",
+    "language": "JavaScript",
+    "stars": 56,
+    "forks": 18,
+    "issues": 1,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T12:53:25Z",
+    "createdAt": "2026-04-25T01:05:15Z",
+    "decision": "include"
+  },
+  {
+    "id": "skills-manager",
+    "repo": "Rito-w/skills-manager",
+    "categories": [
+      "skills",
+      "devtools"
+    ],
+    "tags": [
+      "skills marketplace",
+      "Claude",
+      "Cursor"
+    ],
+    "collectReason": "收录。跨 AI IDE 的 skills manager，反映 agent 技能分发开始从 repo 手抄走向 marketplace/installer。",
+    "thesis": "Skills/plugins may become the package manager layer for agent behavior.",
+    "watchFor": "Registry quality, versioning, trust model, and support across Claude/Cursor/Windsurf.",
+    "risks": "Skill marketplaces can become prompt spam without curation and signing.",
+    "xKeywords": [
+      "skills-manager AI IDE",
+      "Claude skills manager",
+      "agent skills marketplace"
+    ],
+    "name": "skills-manager",
+    "url": "https://github.com/Rito-w/skills-manager",
+    "homepage": "https://rito-w.github.io/skills-manager/",
+    "description": "A cross-platform skills manager for AI IDEs. Search marketplace, download locally, and install to Claude, Cursor, Windsurf, and more with one click.",
+    "language": "Vue",
+    "stars": 189,
+    "forks": 14,
+    "issues": 7,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T13:00:52Z",
+    "createdAt": "2026-02-04T16:01:42Z",
+    "decision": "include"
+  },
+  {
+    "id": "caido-mcp-server",
+    "repo": "c0tton-fluff/caido-mcp-server",
+    "categories": [
+      "mcp",
+      "security"
+    ],
+    "tags": [
+      "Caido",
+      "HTTP traffic",
+      "security testing"
+    ],
+    "collectReason": "收录。把 Caido proxy 暴露给 MCP，说明安全测试工具正在变成 agent 可操作环境。",
+    "thesis": "Security agents need controlled access to traffic inspection tools, not just scanners.",
+    "watchFor": "Permissioning, audit logs, and whether it supports safe read-only analysis modes.",
+    "risks": "High misuse potential; should be treated as security tooling, not casual automation.",
+    "xKeywords": [
+      "caido mcp server",
+      "MCP security testing",
+      "Claude Code Caido"
+    ],
+    "name": "caido-mcp-server",
+    "url": "https://github.com/c0tton-fluff/caido-mcp-server",
+    "homepage": "",
+    "description": "MCP server for Caido proxy integration. Enables AI assistants like Claude Code to browse, analyse, and interact with HTTP traffic.",
+    "language": "Go",
+    "stars": 76,
+    "forks": 17,
+    "issues": 0,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T12:51:36Z",
+    "createdAt": "2026-01-29T19:26:12Z",
+    "decision": "include"
+  },
+  {
+    "id": "aigis",
+    "repo": "killertcell428/aigis",
+    "categories": [
+      "security"
+    ],
+    "tags": [
+      "agent firewall",
+      "prompt injection",
+      "compliance"
+    ],
+    "collectReason": "收录。Agent firewall 是真实刚需，尤其是 MCP rug-pull、memory poisoning、exfiltration 这些新型攻击面。",
+    "thesis": "As agents get tool access, policy enforcement needs to sit inside the tool loop.",
+    "watchFor": "Rule transparency, false positives, and coverage against indirect prompt injection.",
+    "risks": "Security claims need adversarial testing; zero-dependency does not imply robust.",
+    "xKeywords": [
+      "aigis agent firewall",
+      "MCP rug-pull",
+      "agent memory poisoning"
+    ],
+    "name": "aigis",
+    "url": "https://github.com/killertcell428/aigis",
+    "homepage": "https://pypi.org/project/pyaigis/",
+    "description": "Deterministic, zero-dependency Python firewall for AI agents — MCP rug-pull, memory poisoning, indirect injection, exfil channels. 44 compliance templates (US/CN/JP/EU).",
+    "language": "Python",
+    "stars": 51,
+    "forks": 6,
+    "issues": 11,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T12:55:08Z",
+    "createdAt": "2026-04-11T02:56:13Z",
+    "decision": "include"
+  },
+  {
+    "id": "acodex",
+    "repo": "maksimzayats/acodex",
+    "categories": [
+      "mcp",
+      "devtools"
+    ],
+    "tags": [
+      "Codex desktop",
+      "automation bridge",
+      "MCP"
+    ],
+    "collectReason": "收录。直接面向 Codex desktop 的本地 MCP automation bridge，贴近实际工作流集成。",
+    "thesis": "Desktop coding agents will need local automation bridges before they become scriptable platforms.",
+    "watchFor": "Tool coverage, permission boundaries, and stability across Codex app updates.",
+    "risks": "Tight coupling to local app internals can break quickly.",
+    "xKeywords": [
+      "acodex",
+      "Codex desktop MCP",
+      "codex_app automation bridge"
+    ],
+    "name": "acodex",
+    "url": "https://github.com/maksimzayats/acodex",
+    "homepage": "http://docs.acodex.dev/",
+    "description": "Local MCP automation bridge for the Codex desktop app, with CLI, HTTP server, and live codex_app.* tool access.",
+    "language": "Python",
+    "stars": 55,
+    "forks": 1,
+    "issues": 0,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T12:38:06Z",
+    "createdAt": "2026-02-14T14:26:20Z",
+    "decision": "include"
+  },
+  {
+    "id": "vibeproxy",
+    "repo": "automazeio/vibeproxy",
+    "categories": [
+      "devtools",
+      "gateways"
+    ],
+    "tags": [
+      "macOS",
+      "subscription bridge",
+      "coding tools"
+    ],
+    "collectReason": "收录。用 macOS 菜单栏把 Claude Code/ChatGPT 订阅接到 coding tools，是“个人 agent 路由层”的现实需求。",
+    "thesis": "Individual developers want local routing over subscriptions and API keys, not another SaaS console.",
+    "watchFor": "Provider compatibility, local privacy model, and reliability under long coding sessions.",
+    "risks": "Subscription bridging may be brittle or policy-sensitive depending on provider terms.",
+    "xKeywords": [
+      "vibeproxy",
+      "Claude Code ChatGPT subscriptions coding tools",
+      "macOS AI coding proxy"
+    ],
+    "name": "vibeproxy",
+    "url": "https://github.com/automazeio/vibeproxy",
+    "homepage": "",
+    "description": "Native macOS menu bar app to use your Claude Code & ChatGPT subscriptions with AI coding tools - no API keys needed",
+    "language": "Swift",
+    "stars": 3074,
+    "forks": 213,
+    "issues": 21,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T12:58:06Z",
+    "createdAt": "2025-10-04T00:36:21Z",
+    "decision": "include"
+  },
+  {
+    "id": "omniroute",
+    "repo": "diegosouzapw/OmniRoute",
+    "categories": [
+      "gateways",
+      "devtools"
+    ],
+    "tags": [
+      "AI gateway",
+      "provider routing",
+      "MCP"
+    ],
+    "collectReason": "收录。AI gateway + provider fallback + MCP/A2A，适合观察个人/团队如何绕开单一模型供应商绑定。",
+    "thesis": "Routing, fallback, and compression are becoming a core layer between coding agents and model providers.",
+    "watchFor": "Real provider support, failure semantics, and whether free-provider claims hold over time.",
+    "risks": "Gateway projects can accumulate fragile provider integrations and unclear terms.",
+    "xKeywords": [
+      "OmniRoute AI gateway",
+      "coding agent provider fallback",
+      "MCP AI gateway"
+    ],
+    "name": "OmniRoute",
+    "url": "https://github.com/diegosouzapw/OmniRoute",
+    "homepage": "https://omniroute.online",
+    "description": "Never stop coding. Free AI gateway: one endpoint, 231+ providers (50+ free), connect Claude Code, Codex, Cursor, Cline & Copilot to FREE Claude/GPT/Gemini. RTK+Caveman stacked compression saves 15-95% tokens, smart auto-fallback, MCP/A2A, multimodal APIs, Desktop/PWA.",
+    "language": "TypeScript",
+    "stars": 9126,
+    "forks": 1432,
+    "issues": 148,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T13:01:53Z",
+    "createdAt": "2026-02-13T12:38:31Z",
+    "decision": "include"
+  },
+  {
+    "id": "openviking",
+    "repo": "volcengine/OpenViking",
+    "categories": [
+      "context",
+      "memory"
+    ],
+    "tags": [
+      "context database",
+      "agent memory",
+      "filesystem paradigm"
+    ],
+    "collectReason": "收录。上下文数据库方向值得看，尤其是把 memory/resources/skills 做成层级文件系统范式。",
+    "thesis": "Agent memory may consolidate into context databases that manage resources and skills together.",
+    "watchFor": "Interoperability with existing agents, local/hosted modes, and migration path from ad hoc memory files.",
+    "risks": "Platform-backed projects can be heavy; verify whether the abstraction is useful outside its ecosystem.",
+    "xKeywords": [
+      "OpenViking",
+      "agent context database",
+      "AI agent memory resources skills"
+    ],
+    "name": "OpenViking",
+    "url": "https://github.com/volcengine/OpenViking",
+    "homepage": "https://openviking.ai",
+    "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
+    "language": "Python",
+    "stars": 26216,
+    "forks": 2036,
+    "issues": 274,
+    "license": "AGPL-3.0",
+    "pushedAt": "2026-07-01T13:03:38Z",
+    "createdAt": "2026-01-05T07:11:17Z",
+    "decision": "include"
+  },
+  {
+    "id": "agent-reach",
+    "repo": "Panniantong/Agent-Reach",
+    "categories": [
+      "mcp",
+      "research"
+    ],
+    "tags": [
+      "social search",
+      "web research",
+      "no API"
+    ],
+    "collectReason": "收录。让 agent 读/搜 X、Reddit、YouTube、GitHub 等信息源，解决 agent research 的入口问题。",
+    "thesis": "Research agents need practical source access layers before synthesis quality matters.",
+    "watchFor": "Rate limits, source fidelity, and whether no-API scraping remains stable.",
+    "risks": "Scraping-based access can break often and may carry compliance concerns.",
+    "xKeywords": [
+      "Agent-Reach",
+      "AI agent internet search CLI",
+      "agent read Twitter Reddit YouTube GitHub"
+    ],
+    "name": "Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "homepage": "",
+    "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "language": "Python",
+    "stars": 47908,
+    "forks": 3802,
+    "issues": 113,
+    "license": "MIT",
+    "pushedAt": "2026-06-29T15:22:51Z",
+    "createdAt": "2026-02-24T02:10:24Z",
+    "decision": "include"
   }
 ]
 
