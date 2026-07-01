@@ -1,0 +1,497 @@
+[
+  {
+    "id": "ghostex_dev-2071173211484467456",
+    "title": "New iOS app launch",
+    "author": "Ghostex.dev Agent Manager",
+    "handle": "@ghostex_dev",
+    "sourceUrl": "https://x.com/ghostex_dev/status/2071173211484467456",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "creative",
+    "categories": [
+      "creative",
+      "devtools",
+      "design",
+      "news"
+    ],
+    "media": "image",
+    "heat": "86 likes · 2 reposts",
+    "tags": [
+      "ios-app",
+      "creative",
+      "devtools",
+      "design",
+      "news",
+      "swift"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "Hey all! \n\nPlease upgrade to 5.0 by clicking on the button on the top left of the app's window if you're a regular user, I'm really proud of this update :)\n\nAnd if you've tried Ghostex before but had any issues with performance or bugs then I hope you try this new version because it's honestly much better! \n\nI just released 5.0 today and it's the biggest jump in performance and features  in all the past releases.\n\nYou should notice that all of these are much faster now: \n\n1. Switching between warm terminals and warm views (source/browser/kanban/docs) is instant now and the delay is fully gone. \n\n2. The sidebar scroll area is much lighter and smoother to scroll and reacts instantly compared to before.\n\n3. The Kanban board actions were optimized heavily (local first design which syncs with the beads db).\n\n(Warm means they aren't sleeping to conserve resources) \n\nThere's also a new project view called docs that combines: \n1. The Claude app's ″Artifacts″ feature\n2. With Excalidraw\n3. Plus Plannonator's md files annotation features :)\n\nJust tell your agent to create or edit one of these in the docs folder: \n- A new html prototype/explainer\n- An excalidraw drawing\n- An md plan or PRD doc\n\nYou'll be able to collaborate with the agent very well because of this feature and being able to annotate & ask for edits or even by just editing things yourself and asking the agent to read the edits :) \n\nOther important things:\n- Fully ported the backend logic for gxserver bg service to Rust for better performance than the old TypeScript code. \n\n- Released an easier to navigate settings modal\n\n- Fixed a ton of bugs\n\n- Made Android & iOS apps auto scale the terminal on connect\n\n- Merged the ability to set any dock/switcher icon you want for the app while it's running (first PR by the app's biggest supporter @Nite_I_Am!)   \n\n- Added instructions on how to use computer use and browser use.\n\n- Made a ton of progress on the port from macOS swift/appkit to Rust/GPUI (Zed IDE's fast framework) which would let this app run on windows and linux (need contributors to help, this is a huge undertaking :)\n+ Much more",
+    "metrics": {
+      "likes": 86,
+      "reposts": 2,
+      "replies": 2,
+      "quotes": 3,
+      "views": 48740,
+      "bookmarks": 183
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL5JCOoaoAAVtUF.jpg",
+      "https://pbs.twimg.com/media/HL5JCz2bEAAB3Gh.jpg",
+      "https://pbs.twimg.com/media/HL5JDNSaYAAdBVc.jpg",
+      "https://pbs.twimg.com/media/HL5JDklaIAA8edJ.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "The post presents a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "design",
+      "medium": "image",
+      "capability": [
+        "native-ios",
+        "product-design"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [
+        "creative",
+        "devtools"
+      ],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/ghostex_dev-2071173211484467456.jpg",
+    "avatarUrl": "/ios-apps-avatars/ghostex_dev.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2053309558538514432/DlZR2FtY_normal.jpg"
+  },
+  {
+    "id": "firststarhana-2071142005259014171",
+    "title": "New iOS app launch",
+    "author": "Lynn",
+    "handle": "@firststarhana",
+    "sourceUrl": "https://x.com/firststarhana/status/2071142005259014171",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "social",
+    "categories": [
+      "social",
+      "games",
+      "app-store",
+      "news"
+    ],
+    "media": "image",
+    "heat": "33 likes · 0 reposts",
+    "tags": [
+      "ios-app",
+      "social",
+      "games",
+      "app-store",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "I didn't even realize it, but my app has already been released..?! Anyway, this is the very first time in my life officially launching an app, so yeah—it feels pretty good.\n\nBut I'm actually uploading a new version with some bug fixes right now, so you can wait and download the next version when it's out. Or you can just try it out now, since it's not like a huge game-breaking bug or anything.\n\nAnyway, I ended up revealing my real name too… um, yeah. But anyway, I'm planning to release this app on all other operating systems as well, like iOS, Android, Windows, Linux, etc.\n\nThe reason I made this app is simple: I just wanted a social media-style notepad. There is a way to do that—you could just make a Twitter account and set it to private. But even then, it doesn't completely solve privacy concerns because the data is still stored externally.\n\nWith this app, everything is saved right on your device, so you don't have to worry about that at all. I made it as comfortable as possible for myself to use, while giving it a vibe similar to social media like Twitter.\n\nIf you had the same need as me, I think you'll really like it!",
+    "metrics": {
+      "likes": 33,
+      "reposts": 0,
+      "replies": 5,
+      "quotes": 0,
+      "views": 662,
+      "bookmarks": 2
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL4q3uWbwAACRLA.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "The post presents a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "app-store",
+      "medium": "image",
+      "capability": [
+        "app-store-release",
+        "product-design"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [
+        "social",
+        "games"
+      ],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/firststarhana-2071142005259014171.jpg",
+    "avatarUrl": "/ios-apps-avatars/firststarhana.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2068841514873348096/WBjZ2jRK_normal.jpg"
+  },
+  {
+    "id": "pierremakesit-2071150458207379469",
+    "title": "New iOS app launch",
+    "author": "Peter Sloboda",
+    "handle": "@pierremakesit",
+    "sourceUrl": "https://x.com/pierremakesit/status/2071150458207379469",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "design",
+    "categories": [
+      "design",
+      "app-store",
+      "news"
+    ],
+    "media": "image",
+    "heat": "3 likes · 1 reposts",
+    "tags": [
+      "ios-app",
+      "design",
+      "app-store",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "🏁 Shipped! Rivalzo is LIVE on the App Store.\n\nFrom first line of code to approved in 19 days. Built solo in Godot. Android's in review now.\n\nIt's a 2-player race on one phone. Split screen, you and a friend grab opposite ends, tap to jump and knock each other off the track.\n\nhttps://t.co/KNX6gC3xdN\n\n#buildinpublic #gamedev #godot #indiedev #rivalzo",
+    "metrics": {
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "quotes": 0,
+      "views": 118,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL4z-LoW4AA3QqP.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "The post presents a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "app-store",
+      "medium": "image",
+      "capability": [
+        "app-store-release",
+        "product-design"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/pierremakesit-2071150458207379469.jpg",
+    "avatarUrl": "/ios-apps-avatars/pierremakesit.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2001656758742208512/Ld1FLEnQ_normal.jpg"
+  },
+  {
+    "id": "viaanos-2070916586576465922",
+    "title": "New iOS app launch",
+    "author": "Viaano",
+    "handle": "@viaanos",
+    "sourceUrl": "https://x.com/viaanos/status/2070916586576465922",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "social",
+    "categories": [
+      "social",
+      "games",
+      "design",
+      "app-store",
+      "news"
+    ],
+    "media": "image",
+    "heat": "1 likes · 1 reposts",
+    "tags": [
+      "ios-app",
+      "social",
+      "games",
+      "design",
+      "app-store",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "Huddle has been updated on the App Store and Play Store!\n\nThis update officially marks Huddle's evolution into a fandom app, following last week's announcement: https://t.co/79FWMqQyCV\n\niOS v2.0.12 & Android v1.6.7 released\n\n✅ Fresh app icon\n✅ New Huddle logo\n✅ New welcome screen\n✅ Tapping \"User joined\" in chats now takes you straight to their profile\n🔧 Fixed journals not appearing in the feed for new users\n🔧 Fixed profile videos not playing on first tap\n🔧 Fixed chat notification issues\n🔧 Fixed a visual bug when opening GIF threads from notifications\n\nMore features and announcements are on the way!",
+    "metrics": {
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "quotes": 0,
+      "views": 76,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL1fDERbkAAdehM.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "The post presents a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "app-store",
+      "medium": "image",
+      "capability": [
+        "app-store-release",
+        "product-design"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [
+        "social",
+        "games"
+      ],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/viaanos-2070916586576465922.jpg",
+    "avatarUrl": "/ios-apps-avatars/viaanos.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2033231285574090752/Ycganjk4_normal.jpg"
+  },
+  {
+    "id": "affirmationlove-2070978354912936216",
+    "title": "✨Moldavite's Wisdom from our new iphone app CRYSTAL GLOW DAILY AFFIRMATIONS ✨",
+    "author": "Healing Art and Gifts from Nature by Robyn Nola",
+    "handle": "@affirmationlove",
+    "sourceUrl": "https://x.com/affirmationlove/status/2070978354912936216",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "app-store",
+    "categories": [
+      "app-store"
+    ],
+    "media": "image",
+    "heat": "2 likes · 0 reposts",
+    "tags": [
+      "ios-app",
+      "app-store",
+      "iphone"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "✨Moldavite's Wisdom from our new iphone app CRYSTAL GLOW DAILY AFFIRMATIONS ✨\nDownload here ➡️ https://t.co/4T8AdUSgsX #DailyAffirmations #SaturdayMotivation #HigherVibration #MindfulLiving #SoulfulLiving #EnergyHealing #affirmations #crystals #iphone #iphoneapp #gemstones #motivation #postivevibes #moldavite #crystalhealing #gems",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 59,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL2XLD_bAAAP9b1.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "The post presents a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "app-store",
+      "medium": "image",
+      "capability": [
+        "app-store-release"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/affirmationlove-2070978354912936216.jpg",
+    "avatarUrl": "/ios-apps-avatars/affirmationlove.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2069109182163484672/Oc1DGgBZ_normal.jpg"
+  },
+  {
+    "id": "armaan535_kh-2071214635336995076",
+    "title": "New iOS app launch",
+    "author": "Armaan Khan",
+    "handle": "@armaan535_kh",
+    "sourceUrl": "https://x.com/armaan535_kh/status/2071214635336995076",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "creative",
+    "categories": [
+      "creative",
+      "devtools",
+      "news"
+    ],
+    "media": "image",
+    "heat": "1 likes · 0 reposts",
+    "tags": [
+      "ios-app",
+      "creative",
+      "devtools",
+      "news",
+      "swiftui",
+      "swift"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "shipped an iOS app 💚\n\nMediin — a medicine inventory tracker built with SwiftUI + SwiftData\n\nfeatures:\n→ batch + expiry tracking\n→ sell items &amp; update stock\n→ overview dashboard \n\ncamera scanning is broken rn but the core works 😂\n\n#buildinpublic #swift #swiftui https://t.co/NbVXjtCZsu",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 30,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL5uul1bEAA2KDC.jpg",
+      "https://pbs.twimg.com/media/HL5uul7boAA71cs.jpg",
+      "https://pbs.twimg.com/media/HL5uuluaMAAcECz.jpg",
+      "https://pbs.twimg.com/media/HL5uul8bQAASx1o.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "The post presents a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "design",
+      "medium": "image",
+      "capability": [
+        "native-ios"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [
+        "creative",
+        "devtools"
+      ],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/armaan535_kh-2071214635336995076.jpg",
+    "avatarUrl": "/ios-apps-avatars/armaan535_kh.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1999765308287156224/_aHDFNHq_normal.jpg"
+  },
+  {
+    "id": "sahilsatralkar-2070903798705644023",
+    "title": "Cold Plunge Timer & Log iOS launch",
+    "author": "Sahil Satralkar",
+    "handle": "@sahilsatralkar",
+    "sourceUrl": "https://x.com/sahilsatralkar/status/2070903798705644023",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "productivity",
+    "categories": [
+      "productivity",
+      "app-store",
+      "news"
+    ],
+    "media": "image",
+    "heat": "1 likes · 0 reposts",
+    "tags": [
+      "ios-app",
+      "productivity",
+      "app-store",
+      "news",
+      "iphone"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "Cold Plunge Timer & Log is now live on the App Store.\nIt’s a privacy-focused iPhone app for timing cold plunges, logging water temperature, tracking progress, and building consistency.\nBuilt for iOS with a local-first approach, Siri/Shortcuts support, and multiple localizations.\nI’d love for fellow iOS devs to try it out and share feedback.\nhttps://t.co/wc7TbTMtfr",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 101,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://pbs.twimg.com/media/HL1UA4_bkAE5Dx2.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T07:33:33.219Z",
+    "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target300"
+    ],
+    "summary": [
+      "Cold Plunge Timer & Log is presented as a newly released iOS app, usually with App Store or download context"
+    ],
+    "facets": {
+      "artifactType": "app-store",
+      "medium": "image",
+      "capability": [
+        "app-store-release"
+      ],
+      "evidence": [
+        "release-claim",
+        "media-backed"
+      ],
+      "domain": [
+        "productivity"
+      ],
+      "tech": [
+        "ios"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/ios-apps-media/sahilsatralkar-2070903798705644023.jpg",
+    "avatarUrl": "/ios-apps-avatars/sahilsatralkar.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1994669862363566080/DAJqBEa7_normal.jpg"
+  }
+]

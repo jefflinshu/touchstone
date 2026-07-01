@@ -6,11 +6,12 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const ROOT = resolve(__dirname, '..')
+const WEB_DIR = join(ROOT, 'apps', 'web')
 const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'fable5')
 const STATE_FILE = join(ARCHIVE_ROOT, 'incremental-state.json')
 const QUERY_FILE = join(ROOT, 'scripts', 'fable5-search-queries.txt')
 const TEMP_QUERY_FILE = join(ARCHIVE_ROOT, '.incremental-queries.txt')
-const CREATORS_FILE = join(ROOT, 'web', 'public', 'fable5-data', 'creators.json')
+const CREATORS_FILE = join(WEB_DIR, 'public', 'fable5-data', 'creators.json')
 
 const CORE_QUERY_INDEXES = [0, 10, 18]
 const CREATOR_QUERY =

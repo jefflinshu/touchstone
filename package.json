@@ -2,23 +2,32 @@
   "name": "touchstone",
   "version": "1.0.0",
   "description": "本地多模型 CLI 任务编排与作品对比展示平台",
+  "private": true,
   "type": "module",
-  "main": "server.js",
+  "workspaces": [
+    "apps/server",
+    "apps/web"
+  ],
   "scripts": {
-    "start": "node server.js",
-    "dev:web": "npm --prefix web run dev",
-    "build": "npm --prefix web run build",
+    "start": "npm --workspace @touchstone/server run start",
+    "dev:server": "npm --workspace @touchstone/server run dev",
+    "dev:web": "npm --workspace @touchstone/web run dev",
+    "build": "npm --workspace @touchstone/web run build",
+    "build:web": "npm --workspace @touchstone/web run build",
     "fable5:fetch:xcli": "node scripts/fetch-fable5-x-window.mjs",
     "fable5:update:incremental": "node scripts/update-fable5-incremental.mjs",
     "fable5:update": "node scripts/update-fable5-showcases.mjs",
     "fable5:update:304": "node scripts/update-fable5-showcases.mjs --limit 304",
     "fable5:update:local": "node scripts/update-fable5-showcases.mjs --cache-assets 0",
     "fable5:validate": "node scripts/validate-fable5-data.mjs",
-    "setup": "npm install && npm --prefix web install && npm --prefix web run build"
-  },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.104.1",
-    "express": "^4.21.2",
-    "ws": "^8.18.0"
+    "figma-motion:fetch:xcli": "node scripts/fetch-figma-motion-x-window.mjs",
+    "figma-motion:update": "node scripts/update-figma-motion-showcases.mjs",
+    "figma-motion:update:local": "node scripts/update-figma-motion-showcases.mjs --cache-assets 0",
+    "ios-apps:fetch:xcli": "node scripts/fetch-ios-apps-x-window.mjs",
+    "ios-apps:update": "node scripts/update-ios-app-showcases.mjs",
+    "ios-apps:update:local": "node scripts/update-ios-app-showcases.mjs --cache-assets 0",
+    "oss-radar:update": "node scripts/update-oss-radar-repos.mjs",
+    "deploy:local": "node scripts/deploy-local-production.mjs",
+    "setup": "npm install && npm run build:web"
   }
 }

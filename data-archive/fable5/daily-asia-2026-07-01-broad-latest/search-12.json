@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2072128750494392690",
+      "text": "CLAUDE FABLE 5 UPDATE WILL REPLACE MANUAL TRADERS\n\nNew update will change everything for devs.\n\nMy current bot i made with Claude is still running.\n\n+5,474.62 PnL in a few days.\n(started with $100 publicly) \n\nAnd it never predicted a single candle to get there.\n\nOne dead simple rule: YES + NO < $1.\n\nOn a BTC Up/Down market, YES and NO must add up to exactly $1 at resolution.\n\nOne side ends at a dollar. \nThe other ends at zero.\n\nBut the orderbook is messy and both sides trade like strangers.\n\nSo for a few seconds YES sits at 47 cents while NO sits at 49.\n\nThat's 96 cents to own BOTH sides of a market that pays a guaranteed dollar.\n\n4 cents locked, and it does not care where Bitcoin goes.\n\nThe whole game is speed. \n\nGaps close in seconds, fees eat the thin ones, and you need both legs filled before it's gone.\n\nHere's where a better model actually changes things for us builders:\n\nIt writes tighter execution code.\n\nMeaning less lag between spotting the gap and firing both legs. \n\nIt also catches edge cases a dumber model misses (phantom fills, partial legs, the stuff that turns free money into a loss ).\n\nAnd it backtests and debugs way faster.\n\nBetter model will open the next door for evey arb bot developer.\n\nThe gap between button-clickers and builders was already wide.\n\nI guess tomorrow it turns into a smth different.\n\nCheck my last articles if you're into arb.\n\nMade them free so our community of builders grow.\n\nPeace.",
+      "author": {
+        "id": "1782106553291591680",
+        "name": "Oracle Boar",
+        "screenName": "bored2boar",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1846496344120180736/ChaiJ1TD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 69,
+        "retweets": 14,
+        "replies": 9,
+        "quotes": 1,
+        "views": 9792,
+        "bookmarks": 92
+      },
+      "createdAt": "Wed Jul 01 01:22:47 +0000 2026",
+      "createdAtLocal": "2026-07-01 09:22",
+      "createdAtISO": "2026-07-01T01:22:47+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072126101569032192/vid/avc1/1826x1232/3KLF0SLxYm0R7ksc.mp4?tag=28",
+          "width": 1826,
+          "height": 1232
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2072106151890809341",
+        "text": "We’ve received notice that the Department of Commerce has lifted export controls on Claude Fable 5 and Mythos 5.\n\nWe'll begin restoring access tomorrow, and will share an update soon.\n\nWe’re grateful to our users for their patience, and to everyone who worked with us on redeploying the models.",
+        "author": {
+          "screenName": "AnthropicAI",
+          "name": "Anthropic"
+        }
+      }
+    }
+  ]
+}

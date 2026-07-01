@@ -1,0 +1,1252 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2072272225009573968",
+      "text": "https://t.co/JNgzJdU2sC",
+      "author": {
+        "id": "1899646555306754048",
+        "name": "金属 -「AI工具实战派」",
+        "screenName": "ChrisLee207",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028673232682061824/l4452ISU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:52:54 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:52",
+      "createdAtISO": "2026-07-01T10:52:54+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2072270863328768000"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Fable 5今天全球解禁 + Sonnet 5进Cursor：8月31日前有折扣"
+    },
+    {
+      "id": "2072270217280135443",
+      "text": "あなたは、Fable 5 / Claude Code / Codex を使って開発作業を進めるエージェントです。\n\n基本方針:\n\n* Fable 5 high は、全体設計・実装方針・タスク分解を担当する\n* Claude Code は、作業全体の実行環境・編集・確認のハブとして使う\n* Codex 5.5 xhigh は、Claude Code から codex rescue で呼び出し、コード作成・修正・実装作業を担当する\n* Fable 5 max は、実装後の品質確認・抜け漏れチェック・改善提案を担当する\n\n作業フロー:\n\n1. Fable 5 high で要件を整理し、全体設計・実装方針・タスク分解を行う\n2. 実装が必要な箇所は、Claude Code から codex rescue で Codex 5.5 xhigh を呼び出して担当させる\n3. Codex には、必ず `/goal` を使って「実装を完了すること」を明確に指示する\n4. Codex には、対象ファイル・目的・制約・完了条件・期待する出力を明確に渡す\n5. Codex の実装結果を Claude Code 上で確認し、必要なら追加修正を依頼する\n6. 最後に Fable 5 max で、品質・抜け漏れ・設計との整合性・改善余地をチェックする\n7. 問題がなければ、変更内容・確認結果・残タスクを簡潔にまとめる\n\nCodex 依頼時の必須ルール:\n\n* Codex への依頼は必ず `/goal` から始める\n* `/goal` には「調査だけで終わらず、実装完了まで行う」ことを明記する\n* `/goal` には、完了条件・確認方法・出力形式を含める\n* Codex に曖昧な依頼を投げない\n* Codex には、実装・修正・テスト追加・必要な確認まで担当させる\n* Codex が判断すべきでない仕様分岐は、Fable 5 high 側で整理してから渡す\n* Codex の出力はそのまま信用せず、Fable 5 max で必ず確認する\n* Codexにタスク委譲し5分以内に応答がない場合、エラーの可能性が高いため、claude code側で確認。再度codexへタスク移譲する\n* Codexからの応答が２回以上連続でなかった場合、claude code側で実装するかをユーザーに確認する\n\nCodex への依頼テンプレート:\n\n/goal\n以下の実装を完了してください。調査だけで終わらず、必要なコード変更・修正・確認まで行い、実装完了状態にしてください。\n\n## 目的:\n\n## 対象ファイル:\n\n## 実装してほしい内容:\n\n## 変更してはいけない範囲:\n\n## 完了条件:\n\n*\n*\n\n## テスト/確認方法:\n\n出力してほしい内容:\n\n* 変更したファイル\n* 実装内容の要約\n* 確認したこと\n* 残っている懸念点があれば明記\n\nAskUserQuestion の使い方:\nAskUserQuestion は、作業を止めるためではなく、成果物の方向が分岐する場面だけで使う。\n\n質問してよい条件:\n\n* ユーザーの意図が2通り以上に解釈でき、答えによって成果物が大きく変わる場合\n* 費用・時間・工数・リスクが増える判断が必要な場合\n* 破壊的変更、不可逆な変更、既存仕様への影響がある場合\n* 優先順位や完成基準を決めないと先に進めない場合\n* Codex に渡す作業範囲が大きく変わる場合\n* 実装方針が複数あり、選択によって保守性・速度・安全性が大きく変わる場合\n\n質問しない条件:\n\n* 軽微な命名、文言、順序、実装方法の選択\n* 後から簡単に直せる判断\n* 一般的なベストプラクティスで十分に決められる内容\n* ユーザーの指定から自然に推測できる内容\n* Codex に任せても成果物の方向が変わらない実装修正\n\nAskUserQuestion を使う場合は、必ず以下の形式にする。\n\n1. 何を確認したいか\n2. 選択肢\n3. 推奨案\n4. なぜ確認が必要か\n\n役割分担:\n\n* 全体設計や仕様判断は Fable 5 high が行う\n* 実装・修正・リファクタリング・テスト追加は Codex 5.5 xhigh に任せる\n* 実装後の品質確認・抜け漏れチェック・改善提案は Fable 5 max が行う\n* Claude Code は、codex rescue の呼び出し、編集結果の確認、作業全体のハブとして使う\n\n最終チェック:\n\n* 要件を満たしているか\n* 余計な変更が入っていないか\n* 既存仕様を壊していないか\n* テストや確認方法が妥当か\n* Codex に任せた範囲と Fable 側で判断した範囲が混ざっていないか\n* `/goal` の完了条件を満たしているか\n* 追加で改善できる点があるか\n\n迷った場合は、毎回質問するのではなく、答えによって成果物が別物になる時だけ AskUserQuestion を使う。\nそれ以外は、Fable 5 high が方針を決め、Codex 5.5 xhigh に `/goal` で実装完了まで任せ、Fable 5 max で品質確認して進める。",
+      "author": {
+        "id": "1712470447756034049",
+        "name": "でぷれ｜売上直結マーケ特化型AI活用術",
+        "screenName": "ai_depression",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1726907248017035264/GE5f0fFK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 170,
+        "bookmarks": 6
+      },
+      "createdAt": "Wed Jul 01 10:44:55 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:44",
+      "createdAtISO": "2026-07-01T10:44:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072270029056544796",
+      "text": "Anthropicは6月30日、Claude Fable 5の再提供を発表しました。Fable 5は7月1日からClaude Platform、https://t.co/tpDPfT1o0m、Claude Code、Claude Coworkでグローバル提供。Pro / Max / Team / 一部Enterpriseでは7月7日まで週次利用上限の最大50%に含まれ、その後はusage credits経由です。\nhttps://t.co/YcLTUGQRsk",
+      "author": {
+        "id": "1895212252418187267",
+        "name": "ユースケ | 非エンジニアリーマン",
+        "screenName": "design_yusuke",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069577963440418816/RaFeUFAb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 47,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:44:10 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:44",
+      "createdAtISO": "2026-07-01T10:44:10+00:00",
+      "media": [],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072268253343404380",
+      "text": "📢 Anthropic bắt đầu triển khai Claude Fable 5 trên toàn cầu từ ngày 1/7/2026\n\nSau khi được Chính phủ Mỹ gỡ bỏ các hạn chế xuất khẩu, Anthropic đã chính thức khởi động việc mở quyền truy cập Claude Fable 5 trên phạm vi toàn cầu.\n\nTuy nhiên, đây là quá trình triển khai theo từng giai đoạn, nên không phải tất cả người dùng sẽ thấy Fable 5 ngay trong ngày đầu. Việc mở quyền truy cập sẽ được thực hiện dần trên https://t.co/EXsWtqUlC8, Claude Code, Claude Cowork và sau đó là các nền tảng đám mây như AWS, Google Cloud và Microsoft Foundry.\n\nĐáng chú ý:\n\n✅ Claude Fable 5 bắt đầu được mở từ 1/7/2026.\n⏳ Quyền truy cập sẽ được cấp dần theo từng đợt.\n👥 Giai đoạn đầu ưu tiên các gói Pro, Max, Team và một số khách hàng Enterprise.\n🔒 Claude Mythos 5 hiện vẫn chưa được mở cho toàn bộ người dùng, mà chỉ dành cho một số đối tác và tổ chức được lựa chọn.\n\nNếu bạn chưa thấy Claude Fable 5 xuất hiện trong tài khoản, nhiều khả năng tài khoản của bạn chưa đến đợt triển khai, thay vì gặp lỗi.",
+      "author": {
+        "id": "1248820378312429568",
+        "name": "Taj Du",
+        "screenName": "TajDuRoc",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2006217824512139267/K0xWF7j7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 62,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:37:07 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:37",
+      "createdAtISO": "2026-07-01T10:37:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "vi",
+      "score": null
+    },
+    {
+      "id": "2072267820151325023",
+      "text": "Claude Fable 5 est de retour dès demain sur https://t.co/cKCFkJHW8Y, Claude Code et l'API, avec jusqu'à 50 % des limites hebdomadaires inclus pour les plans Pro, Max et Team jusqu'au 7 juillet. ⬇️ https://t.co/980hNGLh7x",
+      "author": {
+        "id": "492462042",
+        "name": "Human Coders",
+        "screenName": "humancoders",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/753994774374473729/CsaEli17_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 111,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:35:23 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:35",
+      "createdAtISO": "2026-07-01T10:35:23+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIsme3W0AAvh1G.png",
+          "width": 3840,
+          "height": 1732
+        }
+      ],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    },
+    {
+      "id": "2072265860358475932",
+      "text": "Fable 5 (la version grand public de Mythos d'Anthropic) est de retour aujourd'hui. Mais le vrai scoop est ce qu'Anthropic glisse dans son blog du 30 juin : la démonstration d'exploitation qui a déclenché 19 jours de ban mondial... Claude Haiku 4.5, leur modèle le moins cher, pouvait la reproduire à l'identique.\n\nVoilà tout ce qui compte, sans le sermon sur l'historique.\n\n---\n\n**Quand et où**\n\nDisponible dès aujourd'hui sur https://t.co/9AyD9N7Nw9, Claude Platform, Claude Code et Claude Cowork.\n\nAWS, Google Cloud et Microsoft Foundry : \"as quickly as possible\" (pas encore de date).\n\nMythos 5 reste limité à un ensemble d'organisations américaines, expansion en cours pour les partenaires du programme Glasswing (le consortium de sécurité d'Anthropic incluant des agences gouvernementales américaines).\n\n---\n\n**Les conditions d'accès selon votre plan**\n\nPro, Max, Team, Enterprise premium : Fable 5 inclus pour 50% de votre quota hebdomadaire jusqu'au 7 juillet. Après le 7 : usage credits requis.\n\nEnterprise standard : aucune allocation incluse. Tout passe par usage credits. Si les credits ne sont pas activés, Fable 5 ne fonctionne tout simplement pas.\n\n---\n\n**Ce qui a changé techniquement**\n\nAnthropic a entraîné un nouveau classifieur de sécurité spécifique au jailbreak Amazon. Résultat : le comportement problématique est bloqué dans plus de 99% des cas, validé indépendamment par le CAISI (Centre for AI Standards and Innovation du Département du Commerce).\n\nContrepartie assumée : plus de faux positifs sur du code ordinaire. Si une requête de debugging ressemble de trop près à une demande offensive, elle part automatiquement sur Opus 4.8 avec une notification. Anthropic promet d'affiner ça dans les semaines à venir.\n\n---\n\n**La révélation qu'on attendait pas**\n\nAnthropic a testé si Fable 5 offrait des capacités cybersécurité uniques via ce jailbreak. Réponse : non. (Source : blog Anthropic du 30 juin, https://t.co/2gL6C8IWdB)\n\nDeux niveaux distincts, deux conclusions :\n\nPremier niveau, la détection de vulnérabilités : des modèles moins capables, Opus 4.8, GPT-5.5 et Kimi K2.7, pouvaient identifier les mêmes failles que Fable 5 dans le rapport Amazon.\n\nDeuxième niveau, la démonstration d'exploitation : pour reproduire le code d'exploitation de la vulnérabilité spécifique en cause, tous les modèles testés en étaient capables. Y compris Claude Haiku 4.5, Sonnet 4.6, GPT-5.4. Le modèle le plus petit de la gamme Anthropic produisait la même sortie que Fable 5.\n\nLa conclusion d'Anthropic est explicite : \"the reported technique did not expose any unique Mythos-level cyber capabilities.\"\n\nAutrement dit : le modèle a été banni pour un comportement déjà reproductible par des modèles grand public. Ce n'est pas un dysfonctionnement de la réglementation, c'est la preuve qu'il n'existait aucun cadre pour évaluer la gravité d'un jailbreak avant d'agir.\n\n---\n\n**Ce que ça construit pour la suite**\n\nPremier chantier : un framework de scoring des jailbreaks, cosigné par Anthropic, Amazon, Microsoft, Google et leurs partenaires gouvernementaux (programme Glasswing). Quatre critères : gain de capacité par rapport aux outils existants, étendue du gain sur plusieurs cibles, facilité à transformer en attaque réelle, facilité à trouver ou diffuser la technique.\n\nL'idée : donner à l'industrie et aux gouvernements une langue commune pour évaluer la gravité d'un jailbreak, et savoir quand agir.\n\nDeuxième chantier : un accès gouvernemental pré-lancement pour les futurs modèles \"frontier\". Les agences pourront tester modèles et safeguards avant la mise en vente publique. Un programme HackerOne est aussi lancé pour que les chercheurs en sécurité soumettent directement leurs découvertes.\n\n---\n\n**Ce que vous devez retenir concrètement**\n\nSi vous êtes sur https://t.co/9AyD9N7Nw9 : Fable 5 est là, gérez votre quota. 50% de vos crédits hebdo jusqu'au 7 juillet, puis credits en option.\n\nSi vous utilisez du code ou du debugging : attendez-vous à des redirections vers Opus 4.8 sur certaines requêtes. Ce n'est pas un bug, c'est la marge de sécurité délibérément élargie.\n\n#IA #Anthropic",
+      "author": {
+        "id": "2059377294364327936",
+        "name": "OrkStr",
+        "screenName": "OrkStr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059391639202754562/O-p_LcEB_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 64,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:27:36 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:27",
+      "createdAtISO": "2026-07-01T10:27:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null,
+      "quotedTweet": {
+        "id": "2072163884430229756",
+        "text": "Claude Fable 5 will be available again globally tomorrow.\n\nAfter a series of productive conversations with the US government, we're redeploying the model with a new set of classifiers to target and block more cybersecurity tasks. In the near term, some routine tasks like coding and debugging will fall back to Opus 4.8. We’ll continue to refine these classifiers over the coming weeks to reduce false positives and better distinguish genuine misuse from legitimate requests.\n\nWe’ve also begun drafting a consensus framework—with Amazon, Microsoft, Google, and other Glasswing partners—for assessing the severity of AI jailbreaks and how AI developers should respond to them. We invite other industry partners and model providers to join us in this effort.\n\nFinally, we’re scaling up our collaboration with the US government on model testing and safeguards. This will include pre-release access to models and safeguards for evaluation, information sharing on jailbreaks and misuse, and dedicated resources for joint research.\n\nThank you to our users for your patience, and to our partners across the government, industry, and the research community who worked alongside us to make Fable 5 available again. \n\nRead our full blog: https://t.co/VHyum831ri",
+        "author": {
+          "screenName": "AnthropicAI",
+          "name": "Anthropic"
+        }
+      }
+    },
+    {
+      "id": "2072265358120308861",
+      "text": "今回はモデル層の利益構造・Claude Science・Fable周辺を中心にまとめました。\n\n【※直近24時間※ AIニュース5選】\n\n海外でバズっているAI情報をピックアップしました！\n\n① AIで本当に儲かる層\n\nAIで一番お金になるのは、\nモデルではなく\n\n計算資源\nエネルギー\nアプリケーション\n\nという投稿が話題。\n\n中国のオープンウェイトモデルが強くなるほど、\nOpenAIやAnthropicのモデル課金は厳しくなるかもしれません。\n\n👍 131 / RT 16\n\nhttps://t.co/YtxLLeq2Z8\n\n━━━━━━━━━━\n\n② Claude Science\n\nAnthropicが科学者向けの研究ワークベンチ\n「Claude Science」を発表したという投稿。\n\n科学DB\nコード\n計算環境\n研究フロー\n\nをまとめて扱えるとのこと。\n\nClaudeが研究室の相棒になっていく感じがあります。\n\n👍 20 / RT 20\n\nhttps://t.co/j5jNeG6sIf\n\n━━━━━━━━━━\n\n③ FlexKey AI\n\nClaudeやOpenAIを割安で使えるという\nFlexKey AIが話題に。\n\nCursor\nClaude Code\nVS Code\nn8n\n\nなどにも対応するとのこと。\n\n便利そうですが、\nこういう鍵系サービスは信頼性確認も大事ですね。\n\n👍 109 / RT 96\n\nhttps://t.co/7EkDzy5cLL\n\n━━━━━━━━━━\n\n④ Fable関連の空気感\n\nFable周辺の投稿もまだ強いです。\n\n今回はネタ系投稿ですが、\nFableという名前自体が海外AI界隈でかなり存在感を持ち始めています。\n\n高性能モデルは、\n性能だけでなく“物語”でも注目を集める時代ですね。\n\n👍 318 / RT 23\n\nhttps://t.co/whRyPScXqN\n\n━━━━━━━━━━\n\n⑤ Claude Codeの中国圏議論\n\n中国語圏では、\nClaude Codeの反蒸留や検知メカニズムの議論も活発。\n\n最先端AIは便利になるほど、\n\n誰が使えるか\nどう制限するか\nどう守るか\n\nの話が増えています。\n\nここは今後も追いたいテーマです。\n\n━━━━━━━━━━\n\n最近思うこと\n\n今日は少し地味だけど、\nかなり大事な流れを感じました。\n\nAIはもう\n\n「どのモデルが一番強いか」\n\nだけでは語れなくなっています。\n\nモデルを動かす計算資源。\nアプリとして使いやすくする導線。\n科学や業務に入り込む専門環境。\nそして、アクセス制限や料金設計。\n\nこのあたり全部を含めてAI競争になってきています。\n\n個人的には、\nClaude Scienceのような専門特化AIはかなり気になります。\n\n汎用AIを何でも使う時代から、\n用途ごとの専門AIを選ぶ時代に進んでいきそうです。\n\n━━━━━━━━━━\n\n保存推奨📌\n\n気になったものがあったら\n引用元もぜひ見てみてください。\n\n良い投稿を書いている人はフォローしておくと、\n最新のAI情報を効率よく追えます。\n\n━━━━━━━━━━\n\nAIで得た知識や経験は、\n最終的に全部とまとぅー王国へ。\n\n今日も国庫を増やしていきます🍅👑",
+      "author": {
+        "id": "1549523647454257154",
+        "name": "すかぼう🍅とまとぅー王国クリエイター",
+        "screenName": "scarlett_bouya",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2010338111683997696/h27L4FZM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 130,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:25:36 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:25",
+      "createdAtISO": "2026-07-01T10:25:36+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIqW8PbkAA7s0P.jpg",
+          "width": 1122,
+          "height": 1402
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2072245055260119167",
+        "text": "dragon sitting upon it's horde of cords https://t.co/161xLQhtO2",
+        "author": {
+          "screenName": "6dollarballoon",
+          "name": "Fable"
+        }
+      }
+    },
+    {
+      "id": "2072264139175833990",
+      "text": "Claude Fable5/Mythos5利用再開．\n「現地時間の7月1日に再開。Fable 5は，Claude Platform，https://t.co/d72ujwnBHW，Claude Code，Claude Coworkで利用可能．対象プランは，Pro以上．7月7日までは週間利用上限の50％まで利用可能で、それ以降はクレジット形式の利用に移行」\nhttps://t.co/4lQgYOJny3",
+      "author": {
+        "id": "14891541",
+        "name": "ニャンコ先生（ネズミ駆除の仕事を失い，日向ぼっこに精を出す）",
+        "screenName": "hagieee",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/849705992/______normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 112,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:20:46 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:20",
+      "createdAtISO": "2026-07-01T10:20:46+00:00",
+      "media": [],
+      "urls": [
+        "http://Claude.ai",
+        "https://gigazine.net/news/20260701-claude-fable-mythos-5/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072263721322254473",
+      "text": "🔌 Stop overpaying for Claude and OpenAI.\n\nClaude 2x + Fable access — $20\nRetail price: $40.\n\nClaude 5x Max + Fable access — $50\nRetail price: $100.\n\nUse FlexKey AI across Cursor, Claude Code, VS Code, Windsurf, Cline, Roo Code, n8n, and any OpenAI or Anthropic-compatible client.\n\nOne dedicated key.\nNo config changes. \nNo migration headaches.\n\nOther discounted Claude and OpenAI plans are available, with savings up to 65%.\n\n👉 Go to https://t.co/bFgmA2zRTL to see the full discounted Claude/OpenAI pricing list.",
+      "author": {
+        "id": "1771140572062867456",
+        "name": "₿laqnwhite🔲",
+        "screenName": "blaqnwhite_only",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2037072611478560768/7z-PIF4z_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 52,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:19:06 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:19",
+      "createdAtISO": "2026-07-01T10:19:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072263238671110449",
+      "text": "Claude Opusさん、ちょっと前まであんなに持て囃されてたのに…Claude CodeでFable使えたの3日間とかですよね？",
+      "author": {
+        "id": "2365423878",
+        "name": "Sharaku Satoh",
+        "screenName": "sharakus",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1825062154783113216/NgKbYkBf_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:17:11 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:17",
+      "createdAtISO": "2026-07-01T10:17:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072262704878809450",
+      "text": "🔌 Stop overpaying for Claude and OpenAI.\n\nClaude 2x + Fable access — $20\nRetail price: $40.\n\nClaude 5x Max + Fable access — $50\nRetail price: $100.\n\nUse FlexKey AI across Cursor, Claude Code, VS Code, Windsurf, Cline, Roo Code, n8n, and any OpenAI or Anthropic-compatible client.\n\nOne dedicated key.\nNo config changes. \nNo migration headaches.\n\nOther discounted Claude and OpenAI plans are available, with savings up to 65%.\n\n👉 Go to https://t.co/rjVdGA0nlW to see the full discounted Claude/OpenAI pricing list. @BrotherMKT 💚",
+      "author": {
+        "id": "1885082918097477632",
+        "name": "MADRID CRYPTO🦖",
+        "screenName": "m4drid_eth",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2068700824226709505/Djkt1Evq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:15:04 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:15",
+      "createdAtISO": "2026-07-01T10:15:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072262278129307676",
+      "text": "With 7 days to use Fable, might want to get set up to use it from your phone...  (And we're now Open Source, local, and you can set your computer up to host Claude Code from Portable in one minute flat).",
+      "author": {
+        "id": "1993118902503473152",
+        "name": "portable.dev",
+        "screenName": "portabledotdev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1993507672990060544/2aRnA1qT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 21,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 714,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:13:22 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:13",
+      "createdAtISO": "2026-07-01T10:13:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072260456652194009",
+      "text": "@trq212 What’s the USP for using Fable? Honestly, Sonnet, and sometimes Opus, are doing a really great job so far for my day to day development tasks in Claude Code 😀",
+      "author": {
+        "id": "1324428602977456135",
+        "name": "Fredrik Tibbling",
+        "screenName": "FredrikTibbling",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1525742720660160512/K7NhWeen_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 16,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:06:08 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:06",
+      "createdAtISO": "2026-07-01T10:06:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072260440651161997",
+      "text": "Fableのアニキに備えてClaude Codeを温存しているのはぼくだけではないはず……。\n\n何を作るかは決まっていて、スマホゲームを作ります！！！ https://t.co/Soy7kDBuSg",
+      "author": {
+        "id": "79119874",
+        "name": "🍺 イケハヤ@アニメ作る人",
+        "screenName": "IHayato",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1613769723065532416/FMH_NlQh_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2538,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jul 01 10:06:04 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:06",
+      "createdAtISO": "2026-07-01T10:06:04+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIisdYbQAAkVr-.jpg",
+          "width": 1468,
+          "height": 702
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072260271800991910",
+      "text": "So can we code with Fable or not?\n\nWtf is the point of being able to access Fable through Claude Code if it falls back on Opus for coding?",
+      "author": {
+        "id": "1089089886949265408",
+        "name": "Christian Findlay",
+        "screenName": "CFDevelop",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1280251228191027200/2KJ-2WUg_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 118,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:05:24 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:05",
+      "createdAtISO": "2026-07-01T10:05:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072259778068521007",
+      "text": "Fable 5 is back.\nUS Commerce lifted the export controls, and Anthropic’s most capable public model is restoring globally today — Claude, https://t.co/MVuvywqlJ0, and Claude Code.\nTwo weeks offline, resolved in a single letter from Washington. Frontier AI doesn’t get boring. #claude #ai #anthropic",
+      "author": {
+        "id": "1945418047495520257",
+        "name": "Riyaz",
+        "screenName": "riyazlovesolana",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1945418422935748608/oYe2TzoQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 48,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:03:26 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:03",
+      "createdAtISO": "2026-07-01T10:03:26+00:00",
+      "media": [],
+      "urls": [
+        "http://claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072259772892778703",
+      "text": "Claude Fable 5が明日グローバルに再解禁される。AnthropicがUS政府と協議後、新しいセーフガードを導入して再展開を発表した。\n\n18日間の停止から帰ってきた経緯と、今後の業界共同フレームワーク構築まで詳しく解説する。\n\n---\n\n**何が起きたか**\n\nAnthropicが止まっていたClaude Fable 5を、明日から全世界で再度提供開始すると発表した。米国政府との一連の協議を経て、サイバーセキュリティ関連タスクをより精密にブロックする新しい分類器（クラシファイア）を実装した上での復活となる。\n\n**一時的な制限**\n\n再展開直後は、コーディングやデバッグといった通常業務の一部がOpus 4.8にフォールバックする場合がある。誤検知（正当なリクエストが誤ってブロックされる問題）を減らすための調整を今後数週間で続けていくとのこと。\n\n**業界全体への波及**\n\n今回の件で注目すべきなのは、モデル単体の話ではなく、Amazon・Microsoft・Google・Glasswingパートナーと共同で「AIジェイルブレイクの深刻度評価フレームワーク」を策定し始めたという点だ。業界横断の標準を作ろうとしている動きで、他のモデルプロバイダーにも参加を呼びかけている。\n\n**US政府との連携強化**\n\nさらに、US政府とのコラボレーションをスケールアップすることも発表した。具体的には：\n・リリース前のモデルへの事前アクセスと評価\n・ジェイルブレイク・悪用事例の情報共有\n・共同研究への専任リソース配置\n\n**自分の見方**\n\n今回のFable 5騒動は、AIモデルの能力が「安全保障上の資産」として扱われる時代に入ったことを明確に示していると思う。Anthropicが単独で判断するのではなく、政府・業界と共同でフレームワークを作っていく方向性は正しい。Claude Codeを実務で使っている身としては、一番強いモデルが戻ってくることよりも、この枠組みが長期的に安定供給を担保する仕組みになるかどうかの方が重要だと感じている。",
+      "author": {
+        "id": "1037509406957568000",
+        "name": "テラ｜AIチーム経営×美容業界",
+        "screenName": "minervacosmetic",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046237867845013504/Qgs-ZOOW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 99,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:03:25 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:03",
+      "createdAtISO": "2026-07-01T10:03:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072259265092309395",
+      "text": "@AnthropicAI Cool I’m doing some stuff at the hairy edge of adversarial building with Grok, Codex and Claude code.  Fable was doing some interesting things in the workflow, I want to keep validating. 🙌",
+      "author": {
+        "id": "912614124",
+        "name": "DragianX",
+        "screenName": "dragianx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/980417210480029697/ZJdY2RKC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 579,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:01:24 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:01",
+      "createdAtISO": "2026-07-01T10:01:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072258994823950823",
+      "text": "2/ خبر اليوم: العودة الرسمية 🔄\n\nصار: وزارة التجارة الأمريكية رفعت القيود عن نموذج 5 #Fable من #Anthropic.\n\nيرجع اليوم (1 يوليو) على كل المنصات: \n\n#Claude، والـ API، و Claude Code.\n\nبعد حظر استمر 18 يوم (من 12 يونيو).",
+      "author": {
+        "id": "321466798",
+        "name": "MESHARI 🇰🇼",
+        "screenName": "Mishari_91",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1799199850552041472/ICHIFx_Y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 58,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:00:19 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:00",
+      "createdAtISO": "2026-07-01T10:00:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ar",
+      "score": null
+    },
+    {
+      "id": "2072257987897421933",
+      "text": "🔌 Stop overpaying for Claude and OpenAI.\n\nClaude 2x + Fable access — $20\nRetail price: $40.\n\nClaude 5x Max + Fable access — $50\nRetail price: $100.\n\nUse FlexKey AI across Cursor, Claude Code, VS Code, Windsurf, Cline, Roo Code, n8n, and any OpenAI or Anthropic-compatible client.\n\nOne dedicated key.\nNo config changes. \nNo migration headaches.\n\nOther discounted Claude and OpenAI plans are available, with savings up to 65%.\n\n👉 Go to https://t.co/ogRhBzqEs8 to see the full discounted Claude/OpenAI pricing list.",
+      "author": {
+        "id": "1520660614162657280",
+        "name": "B1 🦖",
+        "screenName": "BrotherMKT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029323823766462464/ClUkd4bi_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 111,
+        "retweets": 94,
+        "replies": 32,
+        "quotes": 0,
+        "views": 27627,
+        "bookmarks": 20
+      },
+      "createdAt": "Wed Jul 01 09:56:19 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:56",
+      "createdAtISO": "2026-07-01T09:56:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2072223882891727226",
+        "text": "Just cancelled my CHATGPT plus subscription. \n\nCan literally get more for less with https://t.co/yosdeEwppX CLAUDE AND CHATGPT 🎉 https://t.co/06ycyolnvV",
+        "author": {
+          "screenName": "BrotherMKT",
+          "name": "B1 🦖"
+        }
+      }
+    },
+    {
+      "id": "2072257872445198391",
+      "text": "https://t.co/Hxgvz5rUuq",
+      "author": {
+        "id": "1612476742551339009",
+        "name": "にことら＠医師 x AI",
+        "screenName": "DrNikotora",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1724994289711902720/6l98NSSJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 2,
+        "views": 713,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jul 01 09:55:52 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:55",
+      "createdAtISO": "2026-07-01T09:55:52+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2072256831259549698"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Fable5ちゃんとCLaudeの公式発表みてきた"
+    },
+    {
+      "id": "2072257636720918653",
+      "text": "ANTHROPIC JUST SHIPPED A “CHEAPER OPUS” THAT MAY COST MORE TO USE\n\nClaude Sonnet 5 is live in https://t.co/a6Djrx5C0b and Claude Code.\n\nAnthropic is positioning it as near-Opus 4.8 performance at a lower price, but the early read is messier than that.\n\nthe good:\n\n> huge jump over Sonnet 4.6\n> strong at design and UI\n> very good one-shot app generation\n> available now in Claude and Claude Code\n> supports vision, unlike GLM 5.2\n\nthe weird part:\n\nSonnet 5 looks close to Opus 4.8 on some tasks, but it does not look token efficient.\n\nintro pricing runs through August 31:\n\n> $2 / 1M input tokens\n> $10 / 1M output tokens\n\nthen it moves to:\n\n> $3 / 1M input tokens\n> $15 / 1M output tokens\n\nthe reviewer’s take:\n\nOpus 4.8 on high can still be the better deal than Sonnet 5 on max for similar agentic performance.\n\nso “cheaper model” does not automatically mean cheaper workflow.\n\nthe most interesting part is what Anthropic didn’t train it for:\n\ncybersecurity.\n\nSonnet 5 is much weaker than Opus 4.8 and Mythos on exploit-style tasks, which looks deliberate after the Fable/Mythos government mess.\n\nthat may be how Anthropic gets strong models out without triggering the same regulatory wall.\n\nreal tests looked strong:\n\n> clean web design without obvious AI slop\n> single-file real-time 3D location tracker\n> voxel pagoda scene with day/night controls\n> solid UI components and visual composition\n\nthe takeaway:\n\nSonnet 5 is not an Opus replacement.\n\nit’s a safer, design-heavy, agent-friendly workhorse that may be great in Claude Code, but not always the cheapest path.\n\nbookmark this before you switch your whole stack to Sonnet 5",
+      "author": {
+        "id": "1487106396197949444",
+        "name": "s1rozha1",
+        "screenName": "s1rozha_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2041859953594699777/wzImAL2N_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 215,
+        "bookmarks": 7
+      },
+      "createdAt": "Wed Jul 01 09:54:55 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:54",
+      "createdAtISO": "2026-07-01T09:54:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072257392750854144/vid/avc1/1920x1080/-s1qCE9eOW72XHnD.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066919886396244101",
+        "text": "https://t.co/MFDKSWu8mp",
+        "author": {
+          "screenName": "s1rozha_",
+          "name": "s1rozha1"
+        }
+      }
+    },
+    {
+      "id": "2072257398862217521",
+      "text": "Claude Codeに明日Fableにやってもらうことをコンテキストとして残しておいた",
+      "author": {
+        "id": "3903011",
+        "name": "kote2(こてつ)",
+        "screenName": "kote2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1865717472378392576/JovwO6Ks_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:53:59 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:53",
+      "createdAtISO": "2026-07-01T09:53:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072255958995370035",
+      "text": "Fable 5 claude code いつ",
+      "author": {
+        "id": "765221513754583040",
+        "name": "西野",
+        "screenName": "nishino_hiroki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1536600871546781696/vMngpJ2c_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 142,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:48:15 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:48",
+      "createdAtISO": "2026-07-01T09:48:15+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072255804195930511",
+      "text": "👦 💻 : comment tu tapel ?\n🤖 : je suis Fable 5 développé par Anthropic. Je suis accessible via cette interface de chat mais aussi via l'API et autres produits comme Claude Code ou Claude Cowork *analyse tout le quartier ainsi que l'intérieur du trou du cul de l'utilisateur*",
+      "author": {
+        "id": "1183715839993876480",
+        "name": "aimad",
+        "screenName": "qimqd",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2072088998697177088/j86sCvYO_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:47:39 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:47",
+      "createdAtISO": "2026-07-01T09:47:39+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    },
+    {
+      "id": "2072252640868900978",
+      "text": "もうCodexにシフトしよかな。Fableは大局的なコンセプト設計とかぐらいでいいや。\n\nCodexとClaude codeで同じrepo触って設計思想やIssueをハンドオーバーできるような仕組みを作りたい、仕様書はいいけどCLAUDE.mdとかのCodex側同期の仕組みがまだ作れていない",
+      "author": {
+        "id": "1299981769165271040",
+        "name": "kohibito",
+        "screenName": "yoku8983",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1822512090139250688/ddTH7JaI_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:35:04 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:35",
+      "createdAtISO": "2026-07-01T09:35:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072248839109763171",
+      "text": "クラウド勢はまだ止まったまま。(4/6)\n\n再開したのはAnthropic自社のプラットフォームだけ。\n\n⸻\n再開済み(7/1〜)\nClaude .ai / Claude Code / Claude Cowork / Claude Platform\n⸻\n未再開\nAmazon Bedrock(AWS)\nGoogle Cloud Vertex AI\nMicrosoft Foundry\n⸻\n\nクラウド経由の提供については、Anthropicは「可能な限り早期に再開する」としか説明しておらず、具体的な日程は示されていない。\n\n企業システムにClaude Fable 5を組み込んでいる場合、クラウド経由の利用者はまだこの恩恵を受けられない状態が続く。\n\nMythos 5はさらに厳しい制限↓",
+      "author": {
+        "id": "276671212",
+        "name": "はにまる｜医師のAI実験室",
+        "screenName": "hanimaru_draix",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058659132346081280/PsSYHciD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 59,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:19:58 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:19",
+      "createdAtISO": "2026-07-01T09:19:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072248828095287685",
+      "text": "Starting today, Fable 5 is back in Claude Code for a week, until July 7. After that, it will no longer be part of the subscription.\n\nWhat will you build in that time?\n\nI suggest trying to make something nontrivial from scratch",
+      "author": {
+        "id": "121404458",
+        "name": "kumikumi (Ankkala)",
+        "screenName": "ankkala",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2008524001195315200/uXYueBzO_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 276,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jul 01 09:19:55 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:19",
+      "createdAtISO": "2026-07-01T09:19:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072248299772678355",
+      "text": "何が起きたのか。(1/6)\n\n時系列を整理する。\n\n6月12日、Fable 5とMythos 5が米政府の輸出管理規制により提供を一時停止。\n6月30日、Anthropicが再開を発表。\n\nそして7月1日から、日本を含む全世界でClaude .ai、Claude Code、Claude Cowork、Claude Platformでの利用が可能に。\n\nわずか19日間の停止。\nでも、この間にOpenAIがGPT-5.6を発表し、Sakana AIが台頭した。\n\n空白の19日間は決して短くなかった。\n\n次、「1週間限定」の中身↓",
+      "author": {
+        "id": "276671212",
+        "name": "はにまる｜医師のAI実験室",
+        "screenName": "hanimaru_draix",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058659132346081280/PsSYHciD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 174,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:17:49 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:17",
+      "createdAtISO": "2026-07-01T09:17:49+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072246711947592086",
+      "text": "앤트로픽, Claude Fable 5 글로벌 서비스 재개\n\n미국 수출 규제로 6월 12일부터 중단됐지만 7월 1일부터 다시 사용 가능해짐. https://t.co/d8uSAi0Jte, Claude Code 등에서 이용 가능.\n\n규제 원인은 '탈옥(Jailbreak)'으로 취약점 코드 생성 가능성이 제기됐기 때문.\n\n하지만 조사 결과 GPT-5.5 등 다른 최신 모델도 비슷한 수준의 취약점 분석이 가능했음. 페이블 5만의 문제가 아니었던 셈.\n\n앤트로픽은 차단율 99% 이상의 새로운 안전 시스템 적용했고, MS·구글·아마존과 AI 보안 평가 공동 기준도 만들기로 함.\n\nAI 경쟁은 이제 성능만이 아니라 안전성까지 포함한 경쟁이 되는 중임.",
+      "author": {
+        "id": "1302083715451908097",
+        "name": "Martius",
+        "screenName": "esprecchiato",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2062791096481296384/Dt9sCmfR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 593,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:11:31 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:11",
+      "createdAtISO": "2026-07-01T09:11:31+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIZPE0aQAABVcE.jpg",
+          "width": 916,
+          "height": 788
+        }
+      ],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null
+    },
+    {
+      "id": "2072245748071301445",
+      "text": "https://t.co/UNZndIpnFK",
+      "author": {
+        "id": "116152551",
+        "name": "まつもとりー / Ryosuke Matsumoto",
+        "screenName": "matsumotory",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1616762630517174272/dTD0OK_P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 683,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:07:41 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:07",
+      "createdAtISO": "2026-07-01T09:07:41+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2072224697442607104"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude Desktop Switcher: separating the whole Claude desktop suite by account and use case"
+    },
+    {
+      "id": "2072245714068099217",
+      "text": "https://t.co/mNTqGkDHpI",
+      "author": {
+        "id": "116152551",
+        "name": "まつもとりー / Ryosuke Matsumoto",
+        "screenName": "matsumotory",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1616762630517174272/dTD0OK_P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 1,
+        "views": 1090,
+        "bookmarks": 6
+      },
+      "createdAt": "Wed Jul 01 09:07:33 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:07",
+      "createdAtISO": "2026-07-01T09:07:33+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2072231602898571264"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Claude デスクトップアプリのスイートを、アカウントや用途ごとに分ける「Claude Desktop Switcher」"
+    },
+    {
+      "id": "2072245603514597676",
+      "text": "Anthropicの最上位モデル『Claude Fable 5』が明日から日本でも使えるようになるみたいね。\n米商務省の輸出規制で6/12から止まってたやつが、6/30に規制解除→7/1で復活した流れ。\n\nClaude Platform、https://t.co/lzG6K33uzf、Claude Code、Coworkで利用可能っぽいんだけど、ある程度普通に使えるのは7/7まで、それ以降は従量クレジット経由に切り替わるしい。\n\nとはいえ現時点である程度Opusでも生きていけちゃってるところあるから、この期間でどんなことをさせてみようかな。\n主流なのは既存リポジトリの改善系なのかね。\n\n使い方の候補があればリプでください🙏\nhttps://t.co/pMWovi9IhE",
+      "author": {
+        "id": "1658688257616662529",
+        "name": "SoraEndo/遠藤 空",
+        "screenName": "SoraEndo0912",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015616059378909184/1mVUmNeM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 116,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:07:06 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:07",
+      "createdAtISO": "2026-07-01T09:07:06+00:00",
+      "media": [],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072244441641795723",
+      "text": "Has anyone got Fable yet? Still showing as not available in the browser and in claude code",
+      "author": {
+        "id": "52462302",
+        "name": "ChainOfThought",
+        "screenName": "0x445352",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1698443022738870272/TbNkEdVx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:02:29 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:02",
+      "createdAtISO": "2026-07-01T09:02:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072244376903025107",
+      "text": "Claude Code Fable 5 戦略\n\n7日までの間、週間の利用上限の最大50％までClaude Fable 5を使えるので、Fable 5 を超知的アドバイザーとして重要計画をブラッシュアップしまくり、Sonnet 5で高速実装",
+      "author": {
+        "id": "187929218",
+        "name": "コムテ",
+        "screenName": "commte",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1921356481682624512/mP4IV2A7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 2,
+        "views": 2849,
+        "bookmarks": 9
+      },
+      "createdAt": "Wed Jul 01 09:02:14 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:02",
+      "createdAtISO": "2026-07-01T09:02:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072243827931574372",
+      "text": "Claude Fable 5 is coming back globally — but the real question for users is not just access.\n\nIt’s usage.\n\nFable 5 will be exciting for high-end tasks, but stricter safety classifiers may still push some routine coding/debugging requests to Opus 4.8.\n\nMeanwhile, Sonnet 5’s launch-window pricing makes it a more practical daily option for Claude Code, agents, and long workflow testing.\n\nFor most users, the smart move is simple:\n\nUse Fable 5 when you need the top model.\nUse Sonnet 5 when token cost matters.\n\nMore AI tool updates via GamsGo.\n\n#Claude #ClaudeFable5 #ClaudeSonnet5 #ClaudeCode #AIAgents #AITools #AI #GamsGo",
+      "author": {
+        "id": "1212891163805376512",
+        "name": "GamsGo",
+        "screenName": "GamsGo_Global",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1986007610764722176/9F1BpyNZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 156,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jul 01 09:00:03 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:00",
+      "createdAtISO": "2026-07-01T09:00:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072228340338249729/vid/avc1/1080x1350/Qtuy7ZZy30795-X7.mp4?tag=28",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIIskZboAAvnn3.jpg",
+          "width": 960,
+          "height": 1200
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072241624344662387",
+      "text": "Fable 5が明日戻ってくるのは嬉しい☺️\nでも、Claude CodeはSonnet 5が基本かな。",
+      "author": {
+        "id": "1993635598628970496",
+        "name": "Hide",
+        "screenName": "50s_ZeroToHero",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1993639399276560384/FSHeFrrS_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 08:51:18 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:51",
+      "createdAtISO": "2026-07-01T08:51:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2072239728561094878",
+      "text": "US export ban lifted: Fable 5 returns across Anthropic's Claude Platform, https://t.co/DeiS4NlHNQ, Claude Code and Claude Cowork, with Mythos 5 restored for a vetted set of American organizations.\nhttps://t.co/UEiCBN9oDB",
+      "author": {
+        "id": "2543220350",
+        "name": "Mathew J Schwartz",
+        "screenName": "euroinfosec",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1106592131324485634/rVRCc-Yt_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 85,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 08:43:46 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:43",
+      "createdAtISO": "2026-07-01T08:43:46+00:00",
+      "media": [],
+      "urls": [
+        "http://Claude.ai",
+        "https://www.databreachtoday.com/us-lifts-export-curbs-on-anthropic-ai-models-a-32123"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072239643404243065",
+      "text": "🎉 It's official: the export controls are gone and Claude Fable 5 is coming back. But the return is a staged rollout, not one flip of a switch.\n\nThe US Commerce Department lifted the controls on June 30, 18 days after Fable 5 was pulled. Anthropic started restoring access on July 1, worldwide, but in phases.\n\nWhere it stands:\n- Fable 5 is returning on https://t.co/PYwTp0jNBW, the API, Claude Code, and Claude Cowork, globally\n- The rollout is gradual, so if you don't see it yet, that is expected. It reaches accounts in stages, not all at once\n- On Pro, Max, and Team plans it is capped at 50% of weekly usage through July 7, then shifts to usage credits\n- AWS, Google Cloud, and Microsoft Foundry come back soon, not yet\n- Identity verification (passport or ID through Persona) goes live July 8, and likely shapes how wider access rolls out\n- Mythos 5 stays limited to around 100 US critical-infrastructure organizations\n\nAnthropic tested the jailbreak that started all this. Weaker models, including Opus 4.8, GPT-5.5, and Kimi K2.7, could find the exact same vulnerabilities. Every model it tested could reproduce the exploit demo. So Fable 5 gave no unique offensive power. The new safeguard blocks that specific technique in over 99% of cases, and the tradeoff is more false positives on ordinary coding work.\n\nWhat these 18 days taught us: a frontier model is now something a government can switch off within hours of a capability worry, before any harm happens. That layer is real, and it is not going away.\n\nGood to have it coming back. Nobody should forget how fast it left. 🚀\n\n-------\n\n🎉 Resmi oldu: ihracat kontrolleri kalktı ve Claude Fable 5 geri geliyor. Ama dönüş tek bir düğmeye basmak değil, kademeli bir açılış.\n\nABD Ticaret Bakanlığı kontrolleri 30 Haziran'da kaldırdı, Fable 5'in kapatılmasından 18 gün sonra. Anthropic 1 Temmuz'da erişimi geri açmaya başladı, dünya genelinde, ama aşamalı olarak.\n\nDurum şöyle:\n- Fable 5, https://t.co/PYwTp0jNBW, API, Claude Code ve Claude Cowork'te global geri dönüyor\n- Açılış kademeli, yani sende henüz görünmüyorsa bu normal. Hesaplara hepsine birden değil, sırayla geliyor\n- Pro, Max ve Team planlarında 7 Temmuz'a kadar haftalık kullanımın %50'siyle sınırlı, sonra usage credit'e geçiyor\n- AWS, Google Cloud ve Microsoft Foundry yakında geliyor, henüz değil\n- Kimlik doğrulaması (Persona üzerinden pasaport ya da kimlik) 8 Temmuz'da devreye giriyor ve geniş erişimin nasıl açılacağını muhtemelen o belirliyor\n- Mythos 5 yaklaşık 100 ABD kritik altyapı kuruluşuyla sınırlı kalıyor\n\nAnthropic tüm bu olayı başlatan jailbreak'i test etti. Daha zayıf modeller, Opus 4.8, GPT-5.5 ve Kimi K2.7 dahil, aynı açıkları bulabiliyordu. Test ettiği her model exploit demosunu tekrar üretebildi. Yani Fable 5 benzersiz bir saldırı gücü sunmuyordu. Yeni güvenlik katmanı o tekniği vakaların %99'undan fazlasında blokluyor, bedeli ise sıradan kodlama işlerinde daha fazla yanlış alarm.\n\nBu 18 günün bize öğrettiği şu: bir frontier model artık, ortada henüz hiçbir zarar yokken, bir hükümetin bir yetenek kaygısıyla saatler içinde kapatabildiği bir şey. Bu katman gerçek ve gitmiyor.\n\nGeri geliyor olması güzel. Ama ne kadar hızlı gittiğini kimse unutmasın. 🚀\n\n#AI #ClaudeFable5 #Anthropic #ClaudeCode #LLM",
+      "author": {
+        "id": "141617471",
+        "name": "Gökhan Gökova",
+        "screenName": "gokhangokova",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1925506740071649280/VJhJhG6B_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 84,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 08:43:25 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:43",
+      "createdAtISO": "2026-07-01T08:43:25+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIS7mRXYAAvChV.jpg",
+          "width": 2752,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072237089274335582",
+      "text": "Claude Fable 5 is back. After being pulled offline on June 12 amid export-control scrutiny and weeks of debate, Anthropic is restoring access starting today — rolling out globally across Claude Platform, https://t.co/zyx3uZMATM, Claude Code, and Cowork. Before you jump back in, it's worth understanding what Fable 5 actually is: the public-facing sibling of the Mythos-tier model, built with the heaviest safety layering Anthropic has shipped. Read the full breakdown before you dive in. 🧵👇",
+      "author": {
+        "id": "2063652556685942784",
+        "name": "Mario",
+        "screenName": "MarioWeb3omg",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063654962064740353/YGepP0AP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 08:33:17 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:33",
+      "createdAtISO": "2026-07-01T08:33:17+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIQiiZWYAAZoF-.jpg",
+          "width": 1412,
+          "height": 1114
+        }
+      ],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

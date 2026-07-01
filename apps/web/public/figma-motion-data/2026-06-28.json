@@ -1,0 +1,799 @@
+[
+  {
+    "id": "motomiya333-2070923752473501784",
+    "title": "Agent-generated Figma Motion workflow",
+    "author": "Miyamoto",
+    "handle": "@motomiya333",
+    "sourceUrl": "https://x.com/motomiya333/status/2070923752473501784",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "agents"
+    ],
+    "media": "video",
+    "heat": "312 likes · 13 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "agents",
+      "agent"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "FigmaでのShader習作。AIみたいなオーブ感を目指してShaderをFigma Agentに作ってもらって、Figma Motionでパラメーターでキーフレームを打って動画を作成。\n質感を追い込むには専門知識が必要だなと感じる🤔 https://t.co/BvGNQyT4b2",
+    "metrics": {
+      "likes": 312,
+      "reposts": 13,
+      "replies": 7,
+      "quotes": 0,
+      "views": 17093,
+      "bookmarks": 207
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2070922697329319936/vid/avc1/3840x2156/c2Rdz_YyHijY0bXL.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows or discusses an AI-assisted Figma Motion workflow, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "agent-workflow",
+      "medium": "video",
+      "capability": [
+        "agentic-motion"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/motomiya333-2070923752473501784.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1549600387166273536/hebuJoOM_normal.png",
+    "avatarCacheError": "Command failed: curl -L --fail --max-time 10 -o /Users/linshu/Downloads/AICoding/touchstone/web/public/figma-motion-avatars/motomiya333.jpg https://pbs.twimg.com/profile_images/1549600387166273536/hebuJoOM_normal.png\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0\ncurl: (28) Connection timed out after 10006 milliseconds\n",
+    "avatarUrl": "/figma-motion-avatars/motomiya333.jpg"
+  },
+  {
+    "id": "asaadmahmood5-2071204003380142279",
+    "title": "Figma Motion tutorial or workflow guide",
+    "author": "Asaad Mahmood - The Small Square",
+    "handle": "@asaadmahmood5",
+    "sourceUrl": "https://x.com/asaadmahmood5/status/2071204003380142279",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "prompts"
+    ],
+    "media": "video",
+    "heat": "141 likes · 12 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "prompts"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "A lot of people using Figma Motion still don’t know about anchor point control and path-based object animation.\n\nAnd honestly, those 2 things alone can make your motion feel way more intentional.\n\nMost people just animate from point A to point B.\n\nBut once you understand how to:\n\n- rotate an object from a specific anchor point\n​- make an object feel like it’s moving along a path\n- fake path animation even when it’s not natively there\n\nHere's a quick breakdown on how to do both in Figma Motion.\n\nIf you’ve been using Motion but haven’t explored anchor points or path-style movement yet, you’re probably missing some of its most useful capabilities.",
+    "metrics": {
+      "likes": 141,
+      "reposts": 12,
+      "replies": 5,
+      "quotes": 1,
+      "views": 7720,
+      "bookmarks": 186
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071203787478327296/vid/avc1/1920x1080/SfLtFVBI2HZ0rul4.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T03:57:34.325Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "seed-figma-motion-latest",
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shares a Figma Motion tutorial, prompt, or reusable workflow note for motion design"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "product-ui"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/asaadmahmood5-2071204003380142279.jpg",
+    "avatarUrl": "/figma-motion-avatars/asaadmahmood5.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1654861113979461632/wY36FZ6J_normal.jpg"
+  },
+  {
+    "id": "kushnirui-2070923121436070039",
+    "title": "Agent-generated Figma Motion workflow",
+    "author": "Kushnir",
+    "handle": "@kushnirui",
+    "sourceUrl": "https://x.com/kushnirui/status/2070923121436070039",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "agents"
+    ],
+    "media": "video",
+    "heat": "27 likes · 1 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "agents",
+      "agent"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "First time testing Figma Motion with shaders, so I made this simple animated background for a quick AI hero concept.\n\nFigma really cooked with this one 🔥 https://t.co/deE3YPrqad",
+    "metrics": {
+      "likes": 27,
+      "reposts": 1,
+      "replies": 13,
+      "quotes": 1,
+      "views": 1280,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2070923011675361280/vid/avc1/2500x1880/kTvS4Uu1ROLgZQLI.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows or discusses an AI-assisted Figma Motion workflow, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "agent-workflow",
+      "medium": "video",
+      "capability": [
+        "agentic-motion",
+        "product-ui"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/kushnirui-2070923121436070039.jpg",
+    "avatarUrl": "/figma-motion-avatars/kushnirui.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2065479400909316096/lRMVBV89_normal.jpg"
+  },
+  {
+    "id": "takashi_m_art-2071229653310730345",
+    "title": "Agent-generated Figma Motion workflow",
+    "author": "向田 嵩 @amoebo",
+    "handle": "@takashi_m_art",
+    "sourceUrl": "https://x.com/takashi_m_art/status/2071229653310730345",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "agents"
+    ],
+    "media": "video",
+    "heat": "19 likes · 0 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "agents",
+      "agent"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Figma motionで作ったものをScaleでリサイズしようと思ったら、移動距離ずれたりしたので、プラグインを作った（AIが）\n\nこれで拡大縮小や任意のフレームサイズに変更しやすくなった👌\n\nプロンプトもコメントに載せてるので是非（Figmaの標準機能でやり方ある場合、こっそり教えてください🙏） https://t.co/WKMU2fgVXS",
+    "metrics": {
+      "likes": 19,
+      "reposts": 0,
+      "replies": 3,
+      "quotes": 0,
+      "views": 1192,
+      "bookmarks": 16
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071229598050971648/vid/avc1/1882x1002/PdTxU-54D2J8wwKM.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows or discusses an AI-assisted Figma Motion workflow, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "agent-workflow",
+      "medium": "video",
+      "capability": [
+        "agentic-motion"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/takashi_m_art-2071229653310730345.jpg",
+    "avatarUrl": "/figma-motion-avatars/takashi_m_art.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1827588833992699905/3-ML_wCJ_normal.jpg"
+  },
+  {
+    "id": "meganejon-2071207048935821720",
+    "title": "Agent-generated Figma Motion workflow",
+    "author": "Jon",
+    "handle": "@meganejon",
+    "sourceUrl": "https://x.com/meganejon/status/2071207048935821720",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "agents"
+    ],
+    "media": "video",
+    "heat": "24 likes · 0 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "agents",
+      "agent"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Just a little weekend exploration with Figma motion, shaders and the agent.\n\nTried a bunch of other attempts, but they were all pretty bad. This was the best I got. https://t.co/VtXidfA61E",
+    "metrics": {
+      "likes": 24,
+      "reposts": 0,
+      "replies": 2,
+      "quotes": 0,
+      "views": 426,
+      "bookmarks": 2
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071206681183485952/vid/avc1/1918x1086/lw0xhmzfIBVbR-B5.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows or discusses an AI-assisted Figma Motion workflow, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "agent-workflow",
+      "medium": "video",
+      "capability": [
+        "agentic-motion"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/meganejon-2071207048935821720.jpg",
+    "avatarUrl": "/figma-motion-avatars/meganejon.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2040714113727565824/nycrMEyz_normal.jpg"
+  },
+  {
+    "id": "nekobato-2071227553533305076",
+    "title": "Agent-generated Figma Motion workflow",
+    "author": "nekobato",
+    "handle": "@nekobato",
+    "sourceUrl": "https://x.com/nekobato/status/2071227553533305076",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "agents"
+    ],
+    "media": "video",
+    "heat": "3 likes · 1 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "agents",
+      "agent"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Figma Motion 手慣れ\nCSS AnimationのGUIなので紙芝居はきつそう\n面倒な反復作業は意図が確定していればAIにやらせることができる https://t.co/0aj527Ptrp",
+    "metrics": {
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "quotes": 0,
+      "views": 205,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071227271235674112/vid/avc1/800x450/oYtI1B9Aqy62A7FP.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows or discusses an AI-assisted Figma Motion workflow, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "agent-workflow",
+      "medium": "video",
+      "capability": [
+        "agentic-motion",
+        "product-ui"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/nekobato-2071227553533305076.jpg",
+    "avatarUrl": "/figma-motion-avatars/nekobato.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/1808705380484341760/5Lvmh8Yq_normal.jpg"
+  },
+  {
+    "id": "designharishp-2071217050866135041",
+    "title": "Product UI motion demo in Figma Motion",
+    "author": "Harish",
+    "handle": "@designharishp",
+    "sourceUrl": "https://x.com/designharishp/status/2071217050866135041",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "news"
+    ],
+    "media": "video",
+    "heat": "3 likes · 0 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "news"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Tried @figma Motion (Beta) in my version.  \nBuilt this onboarding animation directly inside Figma.\n\n#Figma #UIDesign #ProductDesign https://t.co/ePWzLZYux5",
+    "metrics": {
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 202,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071151796916244480/vid/avc1/1112x720/Fk-1qkerIx1iDSoC.mp4?tag=14",
+      "https://pbs.twimg.com/media/HL44PvpbUAAyG6W.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T03:57:34.325Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "seed-figma-motion-latest",
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows a product interface or prototype motion demo made around Figma Motion"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "product-ui"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "product-design"
+      ],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/designharishp-2071217050866135041.jpg",
+    "avatarUrl": "/figma-motion-avatars/designharishp.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2064749391039406083/uwfrgaVq_normal.jpg"
+  },
+  {
+    "id": "kaysarzamy-2070923085096911118",
+    "title": "Product UI motion demo in Figma Motion",
+    "author": "Kaysar zami",
+    "handle": "@kaysarzamy",
+    "sourceUrl": "https://x.com/kaysarzamy/status/2070923085096911118",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design"
+    ],
+    "media": "video",
+    "heat": "1 likes · 0 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Created this animated flight UI card using the new @figma  Motion ✈️\n\nSource file? Check the replies. https://t.co/jGBb5YIobQ",
+    "metrics": {
+      "likes": 1,
+      "reposts": 0,
+      "replies": 1,
+      "quotes": 0,
+      "views": 93,
+      "bookmarks": 1
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2070922227365908480/vid/avc1/1920x1080/OMscO6f2An1X8Biv.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows a product interface or prototype motion demo made around Figma Motion"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "product-ui"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/kaysarzamy-2070923085096911118.jpg",
+    "avatarUrl": "/figma-motion-avatars/kaysarzamy.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2009596771836817408/hosDcBnf_normal.jpg"
+  },
+  {
+    "id": "ak4sh_ks-2071231415862358275",
+    "title": "Motion design demo made with Figma Motion",
+    "author": "Akash",
+    "handle": "@ak4sh_ks",
+    "sourceUrl": "https://x.com/ak4sh_ks/status/2071231415862358275",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design"
+    ],
+    "media": "video",
+    "heat": "2 likes · 0 reposts",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Created this small animation in figma motion.\n\n#figma #sass #motion #design https://t.co/bhlUMQSuJv",
+    "metrics": {
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 140,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071231297444540416/vid/avc1/1254x720/LEhcz1INhwZyHnuI.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows a video-backed Figma Motion demo, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/ak4sh_ks-2071231415862358275.jpg",
+    "avatarUrl": "/figma-motion-avatars/ak4sh_ks.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2041411205361971200/2zjMZD5P_normal.jpg"
+  },
+  {
+    "id": "amaaan_designs-2071140296562495769",
+    "title": "Agent-generated Figma Motion workflow",
+    "author": "amaaan",
+    "handle": "@amaaan_designs",
+    "sourceUrl": "https://x.com/amaaan_designs/status/2071140296562495769",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "research"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "research",
+      "timeline",
+      "agent"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "First render with @Figma Motion (Free Version)\n\nGood:\n- quick motion explorations\n- simple UI that doesn't boil brain\n- right inside canvas, easy asset handling\n\nBad:\n- caps at 1080p30fps\n- timeline controls need improvement &amp; shortcuts\n\nNext post I'll compare it with @rive_app https://t.co/rlt7FNlzAJ",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 1,
+      "views": 351,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2071140195601469440/vid/avc1/1280x720/yQvk781SmvzqXSiE.mp4?tag=14",
+      "https://video.twimg.com/amplify_video/2071140219710291968/vid/avc1/1280x720/SPOLtcMNSc2w-9bm.mp4?tag=14",
+      "https://pbs.twimg.com/media/HL4rHQ8bkAAhsv7.jpg"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows or discusses an AI-assisted Figma Motion workflow, with the original X post preserved as the source"
+    ],
+    "facets": {
+      "artifactType": "agent-workflow",
+      "medium": "video",
+      "capability": [
+        "agentic-motion",
+        "timeline-animation",
+        "product-ui"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/amaaan_designs-2071140296562495769.jpg",
+    "avatarUrl": "/figma-motion-avatars/amaaan_designs.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2043683552269905920/oPum1s45_normal.jpg"
+  },
+  {
+    "id": "reumialab-2070975420179058754",
+    "title": "Product UI motion demo in Figma Motion",
+    "author": "reumia",
+    "handle": "@reumialab",
+    "sourceUrl": "https://x.com/reumialab/status/2070975420179058754",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "apps"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "apps"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Tried recreating the pre-iOS 26 app opening animation with Figma Motion. Had so much fun making this. https://t.co/y2dNQkcYlc",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 53,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2070974534451154945/vid/avc1/720x1564/QUks3j50Dvha_COp.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows a product interface or prototype motion demo made around Figma Motion"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "product-ui"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [
+        "mobile-design"
+      ],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/reumialab-2070975420179058754.jpg",
+    "avatarUrl": "/figma-motion-avatars/reumialab.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2021583558209318912/-BqKp6eh_normal.jpg"
+  },
+  {
+    "id": "tylerblu31-2070930419210662097",
+    "title": "Product UI motion demo in Figma Motion",
+    "author": "Tyler Blu",
+    "handle": "@tylerblu31",
+    "sourceUrl": "https://x.com/tylerblu31/status/2070930419210662097",
+    "date": "2026-06-28",
+    "kind": "showcase",
+    "scene": "videos",
+    "categories": [
+      "videos",
+      "design",
+      "apps"
+    ],
+    "media": "video",
+    "heat": "X post",
+    "tags": [
+      "figma-motion",
+      "videos",
+      "design",
+      "apps"
+    ],
+    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a source-linked Figma Motion reference.",
+    "originalText": "Tried Figma Motion for the first time today.\n\nIt's surprisingly easy to add subtle animations that make a UI feel more like a product than a static mockup.\n\nBuilt in Figma. https://t.co/IMEakegzs0",
+    "metrics": {
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "quotes": 0,
+      "views": 39,
+      "bookmarks": 0
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2070930411866431491/vid/avc1/960x720/5GaxOvHe1XfeDsvC.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-06-30T04:12:49.713Z",
+    "lastFetchedAt": "2026-07-01T11:32:42.095Z",
+    "fetchRuns": [
+      "broad-2026-06-24-to-2026-06-30-latest-target500"
+    ],
+    "summary": [
+      "Shows a product interface or prototype motion demo made around Figma Motion"
+    ],
+    "facets": {
+      "artifactType": "app",
+      "medium": "video",
+      "capability": [
+        "product-ui"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [
+        "product-design"
+      ],
+      "tech": [
+        "figma"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/figma-motion-media/tylerblu31-2070930419210662097.jpg",
+    "avatarUrl": "/figma-motion-avatars/tylerblu31.jpg",
+    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2041609284082110464/B8HHJxNs_normal.jpg"
+  }
+]

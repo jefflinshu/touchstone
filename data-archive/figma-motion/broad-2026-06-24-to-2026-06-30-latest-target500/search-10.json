@@ -1,0 +1,1536 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2071718845832966235",
+      "text": "Smart animate decking before @figma had motion tools ngmi deck pt 1 https://t.co/cYjLDQKqEf",
+      "author": {
+        "id": "1412302916250083329",
+        "name": "Karissa",
+        "screenName": "karissawongg",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1907180696906739712/Pg0GGxsp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 27,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 523,
+        "bookmarks": 8
+      },
+      "createdAt": "Mon Jun 29 22:13:58 +0000 2026",
+      "createdAtLocal": "2026-06-30 06:13",
+      "createdAtISO": "2026-06-29T22:13:58+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HMA5BGXbQAAiS44.mp4",
+          "width": 1500,
+          "height": 844
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071704474117136401",
+      "text": "Elastic band and object detection shaders (and a few more for stylisation), combined with @figma motion https://t.co/o8F4tEe9qy",
+      "author": {
+        "id": "5204991",
+        "name": "Piers Cowburn",
+        "screenName": "pierscowburn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1734895002268971008/eyy9gug9_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 68,
+        "retweets": 3,
+        "replies": 5,
+        "quotes": 0,
+        "views": 1563,
+        "bookmarks": 12
+      },
+      "createdAt": "Mon Jun 29 21:16:51 +0000 2026",
+      "createdAtLocal": "2026-06-30 05:16",
+      "createdAtISO": "2026-06-29T21:16:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071703996121624576/vid/avc1/1348x1858/cXd2vGx-ftmTz3kr.mp4?tag=28",
+          "width": 1348,
+          "height": 1858
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071676996216561737",
+      "text": "Hey guys Hope we had a great day ?🚀🔥💜\n\nI'm gradually testing FIGMA MOTION across different directions and on this one I made a liquid animation. \n\nI'm getting use to it, might hold a Live class or Make a YouTube video. \n\nCheck it out and share your thoughts . \n\n@figma https://t.co/3jfCR7XqkI",
+      "author": {
+        "id": "837728438328885248",
+        "name": "Khlaseek designer",
+        "screenName": "Khlaseek_dsgner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995459482122416128/J68vPonP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 14,
+        "retweets": 3,
+        "replies": 8,
+        "quotes": 0,
+        "views": 583,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 19:27:40 +0000 2026",
+      "createdAtLocal": "2026-06-30 03:27",
+      "createdAtISO": "2026-06-29T19:27:40+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071676889538654208/vid/avc1/1080x1920/xZgVREhQlr2df-Hs.mp4?tag=28",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071609198471729407",
+        "text": "This was the first time I attempted creating a liquid animation in Figma 2 years ago with components. Today I did it again with FIGMA MOTION. \n\nIt's quite different creating it using key frames instead of components, I can't say it's simpler I think it's more complex but it's better. \n\nVideo dropping soon!",
+        "author": {
+          "screenName": "Khlaseek_dsgner",
+          "name": "Khlaseek designer"
+        }
+      }
+    },
+    {
+      "id": "2071675327877722468",
+      "text": "On Figma Motion, my demo & review. \n\nThis is one of those updates that clicked swiftly into my workflow. Like in my 3D pipeline, using this stick shift animation, I emphasize hardware feedback with motion from Figma Motion. \n\nAssets are animated in Fig Motion and loaded into Blender as video textures for mesh and material control. \n\nIt's advantageous since it is built into an ubiquitous ecosystem. A lot of work these days start in Figma even for someone like me that works outside the tool frequently. \n\nCan't over-emphasize my appreciation for the schema used to introduce motion to nearly all properties. Reminds me of how motion works in Blender - with better complexity management. Better than introducing more menus for those. Ease curves iD between keyframes is also an improvement over existing systems. \n\nHaving spent some time on the tool, here are updates I'll like to see to Figma Motion. These are based on my immediate needs as at the time of working on this demo:\n\n• Using modifier keys (CMD, Shift, Ctrl) to jump / nudge across the timeline. E.g: holding down Shift key to make the playhead jump 100ms etc.\n\n• Jump to previous or next keyframe.\n\n• Better anchor point trails\n\n• Renaming layers from the timeline as well.\n\n• Editable custom bezier styles: after saving a style, I should be able to edit the curve - just as you can edit colour styles.\n\n• Enable transform on the timeline. I should be able to flip or scale keyframes.\n\nI hope to continue trying more ideas. Craft focused tools have had to take a backseat in recent times. Pleasing to see this come to light.",
+      "author": {
+        "id": "1687611227957088256",
+        "name": "seyi",
+        "screenName": "leveredman",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1687623028279025664/69URuTgL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 193,
+        "retweets": 19,
+        "replies": 6,
+        "quotes": 2,
+        "views": 12108,
+        "bookmarks": 95
+      },
+      "createdAt": "Mon Jun 29 19:21:02 +0000 2026",
+      "createdAtLocal": "2026-06-30 03:21",
+      "createdAtISO": "2026-06-29T19:21:02+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071660491663908864/vid/avc1/2412x1606/TMY8JItnsfbboleJ.mp4?tag=28",
+          "width": 2412,
+          "height": 1606
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071659399701995532",
+      "text": "More generative plugin + @figma Motion exploration. For this one, I wanted to try to create a @cavalry__app  style duplicator. \n\n@jjcall @miggi https://t.co/icj5SDZzBG",
+      "author": {
+        "id": "17126142",
+        "name": "Bryce Driesenga",
+        "screenName": "brycedriesenga",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028930166517301248/iLQqBTfD_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 60,
+        "retweets": 4,
+        "replies": 3,
+        "quotes": 0,
+        "views": 3969,
+        "bookmarks": 46
+      },
+      "createdAt": "Mon Jun 29 18:17:45 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:17",
+      "createdAtISO": "2026-06-29T18:17:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071658804228337664/vid/avc1/930x720/2y6Kydl1m0QGWzwb.mp4?tag=14",
+          "width": 2982,
+          "height": 2304
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071657876616048663",
+      "text": "Figma loading animation\nMade with Figma motion https://t.co/7AuZ9qeUFQ",
+      "author": {
+        "id": "1516923863359279108",
+        "name": "Designer",
+        "screenName": "osehfavvy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1897181509481607168/v8u8ueTG_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 34,
+        "retweets": 1,
+        "replies": 5,
+        "quotes": 1,
+        "views": 800,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jun 29 18:11:41 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:11",
+      "createdAtISO": "2026-06-29T18:11:41+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071657852792356864/vid/avc1/616x668/5MtqvToDjbJqgrap.mp4?tag=28",
+          "width": 616,
+          "height": 668
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071656517598642536",
+      "text": "Generative plugins + Figma Motion are prettty good. Working on this motion path recorder and working quite well so far!\n\n@miggi @jjcall @figma https://t.co/6yKxNsCoUu",
+      "author": {
+        "id": "17126142",
+        "name": "Bryce Driesenga",
+        "screenName": "brycedriesenga",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028930166517301248/iLQqBTfD_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 22,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2743,
+        "bookmarks": 17
+      },
+      "createdAt": "Mon Jun 29 18:06:17 +0000 2026",
+      "createdAtLocal": "2026-06-30 02:06",
+      "createdAtISO": "2026-06-29T18:06:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071653992313016320/vid/avc1/1138x720/LtAeZqF6wcpY21Wz.mp4?tag=14",
+          "width": 2628,
+          "height": 1662
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069894537225314533",
+        "text": "@miggi @figma Y'all gonna add motion recording so you could record this mouse movement? 👀",
+        "author": {
+          "screenName": "brycedriesenga",
+          "name": "Bryce Driesenga"
+        }
+      }
+    },
+    {
+      "id": "2071654306747731984",
+      "text": "second time using @figma motion (i’m addicted) https://t.co/pInhuX24X3",
+      "author": {
+        "id": "2028603414314463232",
+        "name": "jaz 🍊",
+        "screenName": "jazlynnkurni",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067760400553426944/C_ypLITv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1374,
+        "retweets": 65,
+        "replies": 4,
+        "quotes": 4,
+        "views": 26145,
+        "bookmarks": 392
+      },
+      "createdAt": "Mon Jun 29 17:57:30 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:57",
+      "createdAtISO": "2026-06-29T17:57:30+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071654235977175040/vid/avc1/1868x1180/HrzgGU9J7Jmn4Rs8.mp4?tag=28",
+          "width": 1868,
+          "height": 1180
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071645874296369447",
+      "text": "I experimented with objects along a curved path in FIGMA MOTION . It requires a bit of manual handling though, I wished I could just draw a path and assign an object to move along it.\n\nRegardless this works well and I can't wait to use it on a project. https://t.co/yuz9hT4YjQ",
+      "author": {
+        "id": "837728438328885248",
+        "name": "Khlaseek designer",
+        "screenName": "Khlaseek_dsgner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995459482122416128/J68vPonP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 14,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 457,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 17:24:00 +0000 2026",
+      "createdAtLocal": "2026-06-30 01:24",
+      "createdAtISO": "2026-06-29T17:24:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071644859161518080/vid/avc1/1802x1080/HgzC1OWscXDMOYAk.mp4?tag=28",
+          "width": 1802,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071610755854614762",
+        "text": "It was great knowing we could animate along a curved path but I would really love to animate along a path I drew. \n\nFor instance I draw a path and select an object and assign the objects animation position on that path. After Effects does this. \n\nTo achieve this in Figma I had to manually take the object and try to align its path to be similar to the vector path I drew.  https://t.co/iNHco6qosQ",
+        "author": {
+          "screenName": "Khlaseek_dsgner",
+          "name": "Khlaseek designer"
+        }
+      }
+    },
+    {
+      "id": "2071621289123643665",
+      "text": "Just playing around with @Figma Motion!\n\nThe only thing missing is Lottie file support. https://t.co/va1sbsdQAO",
+      "author": {
+        "id": "2596933206",
+        "name": "ZAAD",
+        "screenName": "Ishanzaad",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067603340746543104/FByvlZyH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 19,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 939,
+        "bookmarks": 7
+      },
+      "createdAt": "Mon Jun 29 15:46:18 +0000 2026",
+      "createdAtLocal": "2026-06-29 23:46",
+      "createdAtISO": "2026-06-29T15:46:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071621259201499136/vid/avc1/1080x1080/M8o_bAxBK15gwxbU.mp4?tag=28",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071619246430265420",
+      "text": "alright figma motion is kind of insane https://t.co/3Su4g5g3Hy",
+      "author": {
+        "id": "706311673351688192",
+        "name": "paul",
+        "screenName": "pauldesign",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2061570134733459456/0M4HmInH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1224,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 29 15:38:11 +0000 2026",
+      "createdAtLocal": "2026-06-29 23:38",
+      "createdAtISO": "2026-06-29T15:38:11+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071619032780804096/vid/avc1/3840x2160/AQF-aiLS3TFyzKjq.mp4?tag=28",
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069827742800253230",
+        "text": "FIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \n\nLive from Config 2026 https://t.co/ut7OFVZKQS",
+        "author": {
+          "screenName": "figma",
+          "name": "Figma"
+        }
+      }
+    },
+    {
+      "id": "2071608013333410209",
+      "text": "playing with @figma motion to amp up my carousel posts\n\nvery simple at the moment but i don't think we all really grasp how insane it is to have motion...in...Figma???? literally a dream product https://t.co/0lCMxFa2Eo",
+      "author": {
+        "id": "1061159447152730112",
+        "name": "techbimbo",
+        "screenName": "jameygannon",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996721908004343808/lPnecCcQ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 45,
+        "retweets": 0,
+        "replies": 6,
+        "quotes": 1,
+        "views": 2909,
+        "bookmarks": 22
+      },
+      "createdAt": "Mon Jun 29 14:53:33 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:53",
+      "createdAtISO": "2026-06-29T14:53:33+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071422719170650112/vid/avc1/1728x2160/mHlupkaV8j8uvOKv.mp4?tag=28",
+          "width": 1728,
+          "height": 2160
+        },
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071422719149613056/vid/avc1/1728x2160/R3RU8Rx_NrWxCgvX.mp4?tag=28",
+          "width": 1728,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071596574845575224",
+      "text": "messing around with @figma generative plugins x motion to create custom kinetic type presets 🔠 https://t.co/AUcTgBizEw",
+      "author": {
+        "id": "1180886020318871552",
+        "name": "Jamie Haberman",
+        "screenName": "jme_xyz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1945316952588595200/m9aAUuKY_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 79,
+        "retweets": 5,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3494,
+        "bookmarks": 46
+      },
+      "createdAt": "Mon Jun 29 14:08:06 +0000 2026",
+      "createdAtLocal": "2026-06-29 22:08",
+      "createdAtISO": "2026-06-29T14:08:06+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071595187722129408/vid/avc1/720x720/rshKqhmRkdVD4SOE.mp4?tag=14",
+          "width": 2160,
+          "height": 2160
+        },
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071595234819985408/vid/avc1/914x720/CSY0ZkE34ULmDdAL.mp4?tag=14",
+          "width": 2118,
+          "height": 1666
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069824816279154840",
+        "text": "Generative plugins, built by you and the Figma agent\n\nDescribe the tool you need: behaviors, controls, parameters and get exactly what you want for your workflow\n\nLive from Config 2026 https://t.co/voa39IXgr6",
+        "author": {
+          "screenName": "figma",
+          "name": "Figma"
+        }
+      }
+    },
+    {
+      "id": "2071582900005351620",
+      "text": "Figma ahora es una bestia para motion.\n\nViktor acaba de grabar un tutorial de 13 minutos sobre cómo usar Figma para diseñar y construir sitios web animados de 10.000$ (paso a paso)  https://t.co/0PHK7KJaQv",
+      "author": {
+        "id": "1538636735843794947",
+        "name": "Marco",
+        "screenName": "maarcoofdezz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2059406434412986379/XgpHRwgm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 90,
+        "retweets": 11,
+        "replies": 11,
+        "quotes": 0,
+        "views": 5860,
+        "bookmarks": 62
+      },
+      "createdAt": "Mon Jun 29 13:13:46 +0000 2026",
+      "createdAtLocal": "2026-06-29 21:13",
+      "createdAtISO": "2026-06-29T13:13:46+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2070826923798966273/vid/avc1/3324x2160/jdIbPezBQthUc2IE.mp4?tag=28",
+          "width": 3324,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2071570933467300180",
+      "text": "experimenting with Figma shader + motion https://t.co/Za0KQoBKZD",
+      "author": {
+        "id": "745864393183862784",
+        "name": "ørllar",
+        "screenName": "HAFEEZOLAMIDE1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064988153987883008/AU6OKILb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 462,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 12:26:13 +0000 2026",
+      "createdAtLocal": "2026-06-29 20:26",
+      "createdAtISO": "2026-06-29T12:26:13+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL-yyE1XcAA5h6h.jpg",
+          "width": 2048,
+          "height": 1536
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071570665463771324",
+      "text": "You can create amazing animations with the new @Figma Motion features — and now, you can showcase them with realistic video mockups. Present your motion designs in context with the Artboard Mockups plugin and bring your animations to life. https://t.co/Ke0WCHo8ry",
+      "author": {
+        "id": "973559573176078338",
+        "name": "Artboard Studio",
+        "screenName": "artboard_studio",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1533775541358272514/xxI4Cfsd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 421,
+        "retweets": 27,
+        "replies": 7,
+        "quotes": 2,
+        "views": 18544,
+        "bookmarks": 323
+      },
+      "createdAt": "Mon Jun 29 12:25:09 +0000 2026",
+      "createdAtLocal": "2026-06-29 20:25",
+      "createdAtISO": "2026-06-29T12:25:09+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071569957192605696/vid/avc1/2294x1440/8h_h0Lg5bfWhriVB.mp4?tag=28",
+          "width": 2294,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071570139321967015",
+      "text": "Happy new week ✨\n\nMade this scoreboard animation with Figma motion, then added sound using capcut\n\nHow did I do? https://t.co/4g0Jn0yDgE",
+      "author": {
+        "id": "1688140342137110530",
+        "name": "OMOWASOLA | UI UX",
+        "screenName": "wasoladesigns",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2017652274193973248/Ok4_hJLg_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 4,
+        "replies": 7,
+        "quotes": 1,
+        "views": 1377,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 12:23:03 +0000 2026",
+      "createdAtLocal": "2026-06-29 20:23",
+      "createdAtISO": "2026-06-29T12:23:03+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071570121621929984/vid/avc1/1280x720/VGjBKcAidhq_NMRb.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071342116975120830",
+        "text": "FIFA world cup scoreboard animation WIP🚧 https://t.co/O03pf4WpFG",
+        "author": {
+          "screenName": "wasoladesigns",
+          "name": "OMOWASOLA | UI UX"
+        }
+      }
+    },
+    {
+      "id": "2071567857092296819",
+      "text": "Wow motion in figma by @figgai 🥰😍🔥 https://t.co/a1zq9g8GUG",
+      "author": {
+        "id": "1219668499448156166",
+        "name": "uixamjad",
+        "screenName": "uixamjad",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2040833403403313152/PesHM_U9_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 976,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Jun 29 12:13:59 +0000 2026",
+      "createdAtLocal": "2026-06-29 20:13",
+      "createdAtISO": "2026-06-29T12:13:59+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071036262212157440/vid/avc1/1126x720/E6-rsK4mdgJz_zQk.mp4?tag=14",
+          "width": 4096,
+          "height": 2618
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071553849211416814",
+      "text": "An open-source Figma Motion is coming soon. \n\nTell us what you'd want below 👇",
+      "author": {
+        "id": "2029813579025637376",
+        "name": "Open Design",
+        "screenName": "OpenDesignHQ",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065807259691536384/hDiRwfFv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 37,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 3583,
+        "bookmarks": 13
+      },
+      "createdAt": "Mon Jun 29 11:18:19 +0000 2026",
+      "createdAtLocal": "2026-06-29 19:18",
+      "createdAtISO": "2026-06-29T11:18:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071550314302357711",
+        "text": "最近@figma 发了 Figma Motion，不过既付费又闭源\n\n我们做了个开源版的👇\n· 内置一批效果顶尖的动效模板，选中即用、一键复用到你的html/视频\n· 动效活在真实运行的网页/视频里，对话即改，每个组件单独微调\n· 任意动效一键导出成 skill，丢给你的 AI 复用\n\n还顺手治了 AI 做 launch 视频总像\"视频版 PPT\"的毛病——转场丝滑，能做出 Apple 发布会那种质感。\n\n大家需要的话我们就尽快开放🙌",
+        "author": {
+          "screenName": "tuturetom",
+          "name": "Tom Huang"
+        }
+      }
+    },
+    {
+      "id": "2071550314302357711",
+      "text": "最近@figma 发了 Figma Motion，不过既付费又闭源\n\n我们做了个开源版的👇\n· 内置一批效果顶尖的动效模板，选中即用、一键复用到你的html/视频\n· 动效活在真实运行的网页/视频里，对话即改，每个组件单独微调\n· 任意动效一键导出成 skill，丢给你的 AI 复用\n\n还顺手治了 AI 做 launch 视频总像\"视频版 PPT\"的毛病——转场丝滑，能做出 Apple 发布会那种质感。\n\n大家需要的话我们就尽快开放🙌",
+      "author": {
+        "id": "806464682823282688",
+        "name": "Tom Huang",
+        "screenName": "tuturetom",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1033199673035522048/WI-JLSAc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 112,
+        "retweets": 12,
+        "replies": 11,
+        "quotes": 4,
+        "views": 22999,
+        "bookmarks": 103
+      },
+      "createdAt": "Mon Jun 29 11:04:17 +0000 2026",
+      "createdAtLocal": "2026-06-29 19:04",
+      "createdAtISO": "2026-06-29T11:04:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071545984866189314/vid/avc1/2560x1440/3-WOJJglJVoBAgut.mp4?tag=28",
+          "width": 2560,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069827742800253230",
+        "text": "FIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \n\nLive from Config 2026 https://t.co/ut7OFVZKQS",
+        "author": {
+          "screenName": "figma",
+          "name": "Figma"
+        }
+      }
+    },
+    {
+      "id": "2071548830844100711",
+      "text": "thanks to figma i'm now a motion designer! https://t.co/kTtI9LxWea",
+      "author": {
+        "id": "1562335678352232449",
+        "name": "Léa | Creative Partner",
+        "screenName": "leasdsgn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2069809128722104321/gGZtiCE4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 759,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 10:58:23 +0000 2026",
+      "createdAtLocal": "2026-06-29 18:58",
+      "createdAtISO": "2026-06-29T10:58:23+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071548662476312576/vid/avc1/2160x2160/7uWIafLme2b35fyS.mp4?tag=28",
+          "width": 2160,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071540100073472028",
+      "text": "10 FREE WEBSITES THAT REPLACE THE ENTIRE ADOBE CREATIVE CLOUD.\n\nPhotoshop, Illustrator, Premiere, After Effects. Zero monthly fee.\n\n1. https://t.co/rm7EPs1dve\nThe full Photoshop in a browser tab. Opens PSD, AI, Sketch, and XD files natively. Free forever. Runs with ads.\n\n2. https://t.co/xraPfq6pn4\nThe original Photoshop killer. Open source since 1996. The 2026 update finally smoothed out the interface and added a single window mode.\n\n3. https://t.co/3wAqDREQn2\nWhat Photoshop used to be for digital artists before Adobe added 14 subscription tiers. The brush engine is better than Photoshop's in 2026.\n\n4. https://t.co/vsoWo5s0Gr\nReplaces Adobe Illustrator entirely. Vector pen tool, node editing, SVG filter effects, boolean path operations. Free.\n\n5. https://t.co/NUsq5XKneW\nDaVinci Resolve replaces Premiere Pro, After Effects, and Audition in one free download. Used on actual Hollywood films like Avatar 2 and Dune.\n\n6. https://t.co/ITgDLQ3G0E\nPhoto, Designer, and Publisher were $169 each. Canva acquired Serif in 2024 and made the whole suite free. The Photoshop, Illustrator, and InDesign replacement nobody is talking about.\n\n7. https://t.co/SMd0Noo5fd\nThe 3D and motion graphics replacement for After Effects. Pixar uses it. Disney uses it. You can download it tonight.\n\n8. https://t.co/Enn7OZiHJX\nThe open source Figma and Adobe XD killer. Self-host it or use the free cloud. No per-seat pricing forever.\n\n9. https://t.co/57Eo0lDiZh\nThe lightweight Premiere Pro alternative. Multi-track timeline, keyframe animation, proxy editing. Free.\n\n10. https://t.co/abFnHYGlxo\nReplaces Adobe Audition. Multi-track audio editing, noise removal, podcast workflows. Free since 1999.\n\nAdobe's all apps plan is now $90 a month. That is $1,080 a year.\n\nThese 10 do 95% of what you actually use Adobe for.",
+      "author": {
+        "id": "1690225420908810240",
+        "name": "Harman",
+        "screenName": "itsharmanjot",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026685520466853888/rfjlGyl8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 9,
+        "replies": 0,
+        "quotes": 0,
+        "views": 806,
+        "bookmarks": 6
+      },
+      "createdAt": "Mon Jun 29 10:23:41 +0000 2026",
+      "createdAtLocal": "2026-06-29 18:23",
+      "createdAtISO": "2026-06-29T10:23:41+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL-WvM2akAARI17.jpg",
+          "width": 1930,
+          "height": 1762
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL-Wvfxa8AACKRs.jpg",
+          "width": 1930,
+          "height": 1762
+        }
+      ],
+      "urls": [
+        "http://photopea.com"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071529323350069315",
+      "text": "https://t.co/k6TyJv1ck1",
+      "author": {
+        "id": "1314849881400451073",
+        "name": "Oriola Basit",
+        "screenName": "BasitOriola",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1967297274720964608/ZMnbdBmK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 15,
+        "retweets": 4,
+        "replies": 4,
+        "quotes": 3,
+        "views": 1614,
+        "bookmarks": 8
+      },
+      "createdAt": "Mon Jun 29 09:40:52 +0000 2026",
+      "createdAtLocal": "2026-06-29 17:40",
+      "createdAtISO": "2026-06-29T09:40:52+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071525076218830848"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Design Evolution: From Cave Walls to AI Canvases"
+    },
+    {
+      "id": "2071525990866534611",
+      "text": "Trying out Figma Motion. https://t.co/jP3KRFG4uA",
+      "author": {
+        "id": "1631345178970660899",
+        "name": "E.",
+        "screenName": "the_ellajames",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1919153043615952897/Zz7YEOnl_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 61,
+        "retweets": 1,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1138,
+        "bookmarks": 10
+      },
+      "createdAt": "Mon Jun 29 09:27:37 +0000 2026",
+      "createdAtLocal": "2026-06-29 17:27",
+      "createdAtISO": "2026-06-29T09:27:37+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071525899904716800/vid/avc1/2878x1682/9Lf2kbbq4yNOJ8y_.mp4?tag=28",
+          "width": 2878,
+          "height": 1682
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071525969777840359",
+      "text": "Create beautiful animations in seconds. Already 186 motion templates and more are coming. \n\nNo After effects, no Jitter and no complex Figma Motion. \n\nCheck it out here: https://t.co/W6VOb8yAfg https://t.co/I8kqoij38Q",
+      "author": {
+        "id": "1609964859143163909",
+        "name": "ena.supply",
+        "screenName": "ena_supply",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1800882542104764417/gvM1Wh5Y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 701,
+        "bookmarks": 11
+      },
+      "createdAt": "Mon Jun 29 09:27:32 +0000 2026",
+      "createdAtLocal": "2026-06-29 17:27",
+      "createdAtISO": "2026-06-29T09:27:32+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071525689824878592/vid/avc1/1920x1080/yF3N4gN6EOvjCd6z.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "http://arqe.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071525910961107455",
+      "text": "Another hero section with a dithered background made using Figma Motion. What do you think? https://t.co/1POC14v6k1",
+      "author": {
+        "id": "1126875629524279296",
+        "name": "Kushnir",
+        "screenName": "KushnirUI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065479400909316096/lRMVBV89_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 1,
+        "views": 487,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 09:27:18 +0000 2026",
+      "createdAtLocal": "2026-06-29 17:27",
+      "createdAtISO": "2026-06-29T09:27:18+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071522587482456064/vid/avc1/2500x1888/VJT0HTpa-Ki3lIp5.mp4?tag=28",
+          "width": 2500,
+          "height": 1888
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070923121436070039",
+        "text": "First time testing Figma Motion with shaders, so I made this simple animated background for a quick AI hero concept.\n\nFigma really cooked with this one 🔥 https://t.co/deE3YPrqad",
+        "author": {
+          "screenName": "KushnirUI",
+          "name": "Kushnir"
+        }
+      }
+    },
+    {
+      "id": "2071515437096165744",
+      "text": "Same way good design isn't tied to @figma, it's tied to the designer. \n\nGood motion also is not tied to after effects or any tool.  (Been defending this statement for YEARSSS now lol, I'm a keyboard warrior at this point)\n\nLearn the principles, pick up any tool. your eyes will know good motion before your hands do.\n\nAnimated in @LottielabHQ  \nhttps://t.co/7nCzlUjMdC",
+      "author": {
+        "id": "964869523751944192",
+        "name": "Daryl Patigas",
+        "screenName": "darel023",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1861354370731778048/d0YMq3fT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1061,
+        "bookmarks": 6
+      },
+      "createdAt": "Mon Jun 29 08:45:41 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:45",
+      "createdAtISO": "2026-06-29T08:45:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "1768664863746805998",
+        "text": "Listing the 12 Principles of UX in Motion in \n@LottielabHQ \n\nOnce you get the hang of these 12 Principles, it's like unlocking a new level in design\n\nRemix 👉https://t.co/SCRX5GXEL7\n\nPrinciples by \n@UX_in_Motion https://t.co/HoUOIsDgh2",
+        "author": {
+          "screenName": "darel023",
+          "name": "Daryl Patigas"
+        }
+      }
+    },
+    {
+      "id": "2071515069796569381",
+      "text": "✅ 피그마의 새 기능, Motion 소개\n\nConfig 2026에서 공개된 Figma Motion이에요(현재 오픈 베타)\n- 디자인하던 캔버스 안에서 모션까지 바로 만드는 기능\n- Design·Draw·Dev 옆에 생긴 Motion 모드에서 사용 가능\n\n📍 Motion으로 할 수 있는 작업:\n- 타임라인에서 위치·크기·회전·투명도를 키프레임으로 잡고, 프리셋으로 빠르게 시작\n- 모션이 처음이면 에이전트에 말로 설명하면, 컴포넌트·토큰에 맞춰 키프레임을 생성\n- 컴포넌트에 모션을 한 번 입히면 색·글꼴처럼 모든 화면과 협업자 파일로 전파 (디자인 시스템의 일부로)\n- Dev 모드에서 타임라인 그대로 열어 CSS·JSON·React로 복사, MCP로 코딩 에이전트에 전달\n- MP4·GIF·WebM·Animated SVG로 내보내기\n\n기본 기능은 모든 플랜에서 써볼 수 있고, 애니메이션 컴포넌트 공유·모션 에이전트·고해상도 내보내기는 유료 플랜용입니다",
+      "author": {
+        "id": "1387654036933935106",
+        "name": "요즘IT",
+        "screenName": "yozm_it",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1950792216139743232/6F8I2fh4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 27,
+        "retweets": 4,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2903,
+        "bookmarks": 21
+      },
+      "createdAt": "Mon Jun 29 08:44:14 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:44",
+      "createdAtISO": "2026-06-29T08:44:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071514865051848704/vid/avc1/1920x1080/DJ-fh_WLtXf6CD6N.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071514874455470080/vid/avc1/1920x1080/ILKa6EWszoYRpOzY.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null
+    },
+    {
+      "id": "2071509834130735519",
+      "text": "Still can't believe Figma does shaders and motion natively now https://t.co/sfG82zRxhE",
+      "author": {
+        "id": "1727654155680968704",
+        "name": "hewar",
+        "screenName": "hewarsaber",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055949227142877184/b0w4Q_38_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 27,
+        "retweets": 2,
+        "replies": 3,
+        "quotes": 0,
+        "views": 930,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 08:23:25 +0000 2026",
+      "createdAtLocal": "2026-06-29 16:23",
+      "createdAtISO": "2026-06-29T08:23:25+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071509799615774720/vid/avc1/1080x1080/YaIxUFyBjmk0iqpR.mp4?tag=28",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071500476777156683",
+      "text": "3分钟学会Figma Motion! 零基础入门。\nfigma前两天更新了动画和着色器。实测效果真的不错，但挺多人跟我反馈不知道如何上手，所以本期我做一个新手向的操作教程从动画制作到开发交付一次性学会 https://t.co/3DOvUPpXQA",
+      "author": {
+        "id": "1729075801491116032",
+        "name": "Paidax",
+        "screenName": "xin_pai88825",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1747877404532776960/uUTVQ-2P_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 29,
+        "retweets": 3,
+        "replies": 7,
+        "quotes": 1,
+        "views": 4428,
+        "bookmarks": 30
+      },
+      "createdAt": "Mon Jun 29 07:46:14 +0000 2026",
+      "createdAtLocal": "2026-06-29 15:46",
+      "createdAtISO": "2026-06-29T07:46:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071487581490188288/vid/avc1/1536x2048/sVdvLyJLyEr1qiEo.mp4?tag=28",
+          "width": 1536,
+          "height": 2048
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069827742800253230",
+        "text": "FIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \n\nLive from Config 2026 https://t.co/ut7OFVZKQS",
+        "author": {
+          "screenName": "figma",
+          "name": "Figma"
+        }
+      }
+    },
+    {
+      "id": "2071478659144147357",
+      "text": "Made with Figma Motion https://t.co/RbJdJS8WX2",
+      "author": {
+        "id": "2014414880808591360",
+        "name": "Aizal Khan | Video Editor",
+        "screenName": "aizal_mov",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2024080989392457728/JHwMfYis_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 121,
+        "retweets": 1,
+        "replies": 10,
+        "quotes": 0,
+        "views": 4869,
+        "bookmarks": 68
+      },
+      "createdAt": "Mon Jun 29 06:19:33 +0000 2026",
+      "createdAtLocal": "2026-06-29 14:19",
+      "createdAtISO": "2026-06-29T06:19:33+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/ext_tw_video/2071478382538485760/pu/vid/avc1/1280x720/gy8F2_NhBxLciHWk.mp4?tag=12",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2069827742800253230",
+        "text": "FIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \nFIGMA MOTION IS HERE \n\nLive from Config 2026 https://t.co/ut7OFVZKQS",
+        "author": {
+          "screenName": "figma",
+          "name": "Figma"
+        }
+      }
+    },
+    {
+      "id": "2071470404565360654",
+      "text": "公式のFigma Motionの動画わかりやすかった💡AIエージェントつかったら数値のカウンターアニメーションとかまでできるすごい。色々ためしてみたい。\n\nとりあえず昨日作った子をうごかしてみたけど、かわいい🟢\n\n▼参考動画\nhttps://t.co/XBf5CRBLfF https://t.co/bGuaxSqUvV",
+      "author": {
+        "id": "1566019676928618496",
+        "name": "ゆま｜クオートワークス",
+        "screenName": "yumadesign__",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1769749410941149184/9rjYMxaB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 56,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2119,
+        "bookmarks": 16
+      },
+      "createdAt": "Mon Jun 29 05:46:45 +0000 2026",
+      "createdAtLocal": "2026-06-29 13:46",
+      "createdAtISO": "2026-06-29T05:46:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071469830994333696/vid/avc1/2166x1176/yHS_wk4EW9wwSRjF.mp4?tag=28",
+          "width": 2166,
+          "height": 1176
+        }
+      ],
+      "urls": [
+        "https://www.youtube.com/watch?v=wpGI6BmhbJU"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071461465966485874",
+      "text": "first motion design in @figma. thanks to @designcoursecom. Happy new week guys! https://t.co/EjMtTwBcJP",
+      "author": {
+        "id": "1522275922166128646",
+        "name": "ayo | product designer",
+        "screenName": "ayodsgn",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060953887872319493/DzIrXSaD_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 24,
+        "retweets": 2,
+        "replies": 4,
+        "quotes": 0,
+        "views": 427,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jun 29 05:11:14 +0000 2026",
+      "createdAtLocal": "2026-06-29 13:11",
+      "createdAtISO": "2026-06-29T05:11:14+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071460931620507650/vid/avc1/1920x1080/nvfiUh6HmTsv2alW.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071451424110858666",
+      "text": "簡単にアニメーションが作れるようになった「Figma Motion」\n\nでもタイムラインやキーフレームって聞くと難しそう、と思う人でも大丈夫。\n\nFigmaのAI機能「Figma Agent」に作りたいものをテキストで伝えるだけでok\n\n例えばこちらは、\n「ブラジルvs日本の対決アニメーションを作って」\nと伝えて作ったもの。\n\nもちろんポン出しだとクオリティは低いので、何度かやりとりしながら調整する必要はあるけど、最初からマニュアルで細かい設定をしなくても形にできるのはかなり便利。",
+      "author": {
+        "id": "878648919298682880",
+        "name": "❖ ken｜旅するデザイナー",
+        "screenName": "ken_tbdz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029739046810058752/Rpx4w5JE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 74,
+        "retweets": 7,
+        "replies": 2,
+        "quotes": 0,
+        "views": 8188,
+        "bookmarks": 70
+      },
+      "createdAt": "Mon Jun 29 04:31:19 +0000 2026",
+      "createdAtLocal": "2026-06-29 12:31",
+      "createdAtISO": "2026-06-29T04:31:19+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071450596742430720/vid/avc1/2940x1756/-GSwakjDsgUb6LR4.mp4?tag=28",
+          "width": 2940,
+          "height": 1756
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071450302105153793",
+      "text": "先週のAIトレンド＆ニュースをお知らせ🤗💌💭\n(今回でSNSでの一般公開は終了かも🥲)\n\nAIと一緒に働く時代💭\nそう感じるアップデートがまたまた続きました❕\n\n✅ Figma Motion \nデザインからアニメ制作まで一元化🎨✨️\n✅ Notion External Agents\nClaudeやCursorをチームメンバーのように活用\n✅ Zaro\n企業データを活用するAIワークスペースを提供開始\n✅ Gemini 3.5 Flash\nComputer Useを標準搭載👀✨️\n\nAIはチームの一員として仕事を任せる存在になっています☺️🌸\n皆さんはどんな仕事を任せていますか？🖊\nぜひ教えてくださいね🙆🏻‍♀️ ̖́-\n\n#生成AI #AIニュース #ChatGPT #Claude #Gemini #Notion #Figma #AIエージェント",
+      "author": {
+        "id": "1826777727783104512",
+        "name": "x3d（クロスサード）株式会社🫧広報",
+        "screenName": "x3d_haibootcamp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1996881913638957056/gcgbigoA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 163,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jun 29 04:26:52 +0000 2026",
+      "createdAtLocal": "2026-06-29 12:26",
+      "createdAtISO": "2026-06-29T04:26:52+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HL9FEgPacAAZ7U6.jpg",
+          "width": 1659,
+          "height": 948
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2071437595993948354",
+      "text": "这次 Config2026 Figma 又更新了很多的新功能，\n其中大家最感兴趣的，就是shader和Figma motion，\n那这个motion它到底该怎么使用，它和别的AE或者Rive的动效，工具又有什么样的区别，这\n些制作好的动效又如何去对接开发？对接AI？\n\n我录了一期小白向视频来一起把这些搞明白（如有疏漏欢迎指正😄 https://t.co/qPyZyGARpv",
+      "author": {
+        "id": "1276042073616121856",
+        "name": "三秋十李 Sergio",
+        "screenName": "LgyLight",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1507557562946048002/nUwFMSiz_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 59,
+        "retweets": 3,
+        "replies": 4,
+        "quotes": 1,
+        "views": 7748,
+        "bookmarks": 42
+      },
+      "createdAt": "Mon Jun 29 03:36:22 +0000 2026",
+      "createdAtLocal": "2026-06-29 11:36",
+      "createdAtISO": "2026-06-29T03:36:22+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071238161645375488/vid/avc1/2880x1800/EPA53uzrdiUHZ_B7.mp4?tag=28",
+          "width": 2880,
+          "height": 1800
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2071436509757227281",
+      "text": "Some snaps from Config'26. I used @figma Motion to create this reel, but I still believe that @jittervideo is much faster and easier to use. https://t.co/e3K3KG7lSP",
+      "author": {
+        "id": "1245712421995466758",
+        "name": "Rakshit",
+        "screenName": "RakshitKeswani4",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1721023211255857152/mZKriTQP_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 20,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1518,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jun 29 03:32:04 +0000 2026",
+      "createdAtLocal": "2026-06-29 11:32",
+      "createdAtISO": "2026-06-29T03:32:04+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071436483974868992/vid/avc1/720x720/6vK2omD44zlqW9LB.mp4?tag=14",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071357689930653837",
+      "text": "5 Variation of Logo Animation of X done in FIGMA MOTION.\n\nTbh I don't think anyone is as excited as I am about Figma Motion.\n\nIf you need a design partner grounded in Design, No-code Dev &amp; Motion design, I'M THAT GUY!🔥🚀💜\n\nYo! @figma come look at these. https://t.co/zIHx4ZpYOf",
+      "author": {
+        "id": "837728438328885248",
+        "name": "Khlaseek designer",
+        "screenName": "Khlaseek_dsgner",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995459482122416128/J68vPonP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 67,
+        "retweets": 6,
+        "replies": 10,
+        "quotes": 1,
+        "views": 4017,
+        "bookmarks": 13
+      },
+      "createdAt": "Sun Jun 28 22:18:51 +0000 2026",
+      "createdAtLocal": "2026-06-29 06:18",
+      "createdAtISO": "2026-06-28T22:18:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071356243537543168/vid/avc1/1080x1350/bOwObIfZjFzVjPjR.mp4?tag=28",
+          "width": 1080,
+          "height": 1350
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071297139678888399",
+        "text": "Because I created this, I decide that I'm going to make 5 different logo animation of the X logo in FIGMA MOTION.\n\nI've created 3 already 2 more to go🚀💜\n\nNgl I'm impressed by the result.",
+        "author": {
+          "screenName": "Khlaseek_dsgner",
+          "name": "Khlaseek designer"
+        }
+      }
+    },
+    {
+      "id": "2071327175299473729",
+      "text": "Figma Motion https://t.co/qdys7VLnim",
+      "author": {
+        "id": "1829613628569296896",
+        "name": "Katya N.",
+        "screenName": "ktnr23",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065564509981261824/7yji41O3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 201,
+        "retweets": 10,
+        "replies": 11,
+        "quotes": 0,
+        "views": 4561,
+        "bookmarks": 45
+      },
+      "createdAt": "Sun Jun 28 20:17:36 +0000 2026",
+      "createdAtLocal": "2026-06-29 04:17",
+      "createdAtISO": "2026-06-28T20:17:36+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071327100359811072/vid/avc1/2160x2880/yI9r8i_RukduuLP0.mp4?tag=28",
+          "width": 2160,
+          "height": 2880
+        },
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071327100401811456/vid/avc1/2160x2880/LLQnOZrqRbvcBblw.mp4?tag=28",
+          "width": 2160,
+          "height": 2880
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2071325978307989942",
+      "text": "Just tried the AI agent for motion in @figma \n\nAs expected, it's far from great\n\nBut it's not completely useless\n\nIt can do simple slideshows, mass update keyframes, easing, etc\n\nGood way to eliminate repetitive work\n\nThis is the prompt i used btw:\n\nShowcase animation: move the group to reveal each child frame one at a time, centered in the viewport. Jump between frames in a non-sequential order so the camera feels like it's exploring, no row-by-row pattern. Use smooth, human-like panning: gentle ease-in out of rest, long deceleration into each stop (cubic bezier ~0.4, 0, 0.2, 1). Hold each frame briefly before moving on. At the end, pan back to the first frame so the animation loops seamlessly",
+      "author": {
+        "id": "1727654155680968704",
+        "name": "hewar",
+        "screenName": "hewarsaber",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055949227142877184/b0w4Q_38_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 57,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 1,
+        "views": 6364,
+        "bookmarks": 35
+      },
+      "createdAt": "Sun Jun 28 20:12:51 +0000 2026",
+      "createdAtLocal": "2026-06-29 04:12",
+      "createdAtISO": "2026-06-28T20:12:51+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071325272142487552/vid/avc1/1920x1080/yQO4DHMNWx_lR3x0.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2070545716477370689",
+        "text": "Quick little intro to @figma Motion, and doing things the old fashioned manual way. https://t.co/PNk3zjr3st",
+        "author": {
+          "screenName": "designcoursecom",
+          "name": "Gary Simon"
+        }
+      }
+    }
+  ]
+}

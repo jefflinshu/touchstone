@@ -2,8 +2,9 @@ import { existsSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 
 const ROOT = resolve(import.meta.dirname, '..')
-const DATA_DIR = join(ROOT, 'web', 'public', 'fable5-data')
-const PUBLIC_DIR = join(ROOT, 'web', 'public')
+const WEB_DIR = join(ROOT, 'apps', 'web')
+const DATA_DIR = join(WEB_DIR, 'public', 'fable5-data')
+const PUBLIC_DIR = join(WEB_DIR, 'public')
 
 function readJson(filePath) {
   return JSON.parse(readFileSync(filePath, 'utf8'))

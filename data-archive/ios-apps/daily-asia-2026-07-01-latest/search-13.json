@@ -1,0 +1,471 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2072265885298074002",
+      "text": "🔥 Cursor released an iOS app as well \n\n&gt; Users will be able to check live activities and follow up on ongoing tasks. \n\n&gt; PR reviews with diff viewer will be supported as well. \n\nIt is now available in the EU. https://t.co/ogRRzWgVqY",
+      "author": {
+        "id": "1579754929605861376",
+        "name": "Tips Excel",
+        "screenName": "gudanglifehack",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1591216099403567105/DiHCpCPq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 3330,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:27:42 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:27",
+      "createdAtISO": "2026-07-01T10:27:42+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIq0uIbwAA1H0U.jpg",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072260684013093118",
+      "text": "## dante's AI News\n\n1. Anthropic released Claude Sonnet 5, positioning it as its most agentic Sonnet model yet. The practical bits for builders: default on Free/Pro, available across Claude Code and the API, stronger coding/tool-use/reasoning than Sonnet 4.6, and intro API pricing of $2/M input + $10/M output tokens through August 31.\nhttps://t.co/5M19SOuFRB\n\n2. GitHub made Claude Sonnet 5 generally available in Copilot for Pro, Pro+, Max, Business, and Enterprise users. It is rolling into the model picker for Copilot CLI, GitHub Copilot cloud agent, and the Copilot App, with GitHub calling out CLI-style task performance, prompt-cache use, and latency at lower effort levels.\nhttps://t.co/v37PQnqQ2y\n\n3. @ClaudeDevs shipped a useful batch of Claude Managed Agents updates: streaming session event deltas, per-session agent overrides, new webhook event types, reverse pagination, scoped credential injection, and an observability tab with session-level token and tool-use metrics.\nhttps://t.co/Ij1UurhbPe\n\n4. Google released Nano Banana 2 Lite and Gemini Omni Flash for developers. Nano Banana 2 Lite is the fast, cheaper Gemini Image model for high-throughput image generation; Omni Flash brings video generation and conversational editing to Google AI Studio, the Gemini API, and Gemini Enterprise Agent Platform.\nhttps://t.co/RCc3SQJrR3\n\n5. Google shipped ADK for Go 2.0 with a graph-based workflow engine for multi-agent apps. The update adds first-class graph composition, built-in human-in-the-loop pauses, dynamic orchestration in ordinary Go, LLM agent modes, and one node runtime for single agents and full workflows.\nhttps://t.co/YP8DNvIhtt\n\n6. Anthropic launched Claude Science in beta for Pro, Max, Team, and Enterprise users. It is a scientist-focused workbench with 60+ curated skills and connectors, reproducible artifacts, native rendering for scientific objects, local or remote compute, and reviewer agents that check citations and calculations.\nhttps://t.co/SFwzUWd9Bp\n\n7. Google Cloud made Conversational Analytics in BigQuery generally available. Business and technical users can ask natural-language questions, run multi-step analysis, and generate visual reports where the data already lives, while teams can publish specialized agents grounded in governed BigQuery sources.\nhttps://t.co/1MVjRSR7Q6\n\n8. Simon Willison released `shot-scraper video`, a new command in shot-scraper 1.10 that records browser demos from a storyboard YAML file. This is a small but sharp pattern for coding agents: make them prove UI work by producing a runnable, reviewable video demo.\nhttps://t.co/ZSvIovsSUx\n\n9. Godot is tightening its contribution policy around AI-authored work. PC Gamer reports the project plans to reject AI-authored code, PRs submitted by agents, and AI-generated text in maintainer communication, while still allowing limited disclosed AI help for menial work.\nhttps://t.co/mJCSPKrQJo\n\n10. TechCrunch covered Acti, a new agentic keyboard for iOS and Android. The interesting product bet: instead of making users jump into a chatbot, Acti puts Gemini-powered actions and user-created “Skills” directly into the keyboard surface across messaging, email, and social apps.\nhttps://t.co/iB5vdLRtR0\n\n11. NVIDIA released Nemotron-Labs-TwoTower, an open-weight diffusion language model built on a frozen Nemotron-3-Nano-30B-A3B backbone. The reported tradeoff is the headline: 98.7% of the AR baseline’s aggregate benchmark quality with 2.42x higher wall-clock generation throughput.\nhttps://t.co/xrzYjicd3I\n\n12. @NotebookLM rolled out Short Video Overviews to all English-language web users. The feature turns source material into short explanatory videos, which is a sign that “AI summary” products are moving from text/audio into lightweight generated media.\nhttps://t.co/kJLlpum3Sl\n\n13. @AndrewYNg wrote a useful framing of “loop engineering” for agentic software: the agent loop, the developer feedback loop, and the product/world feedback loop. The best part is the reminder that taste is often a context advantage, not magic.\nhttps://t.co/TqOrEZUOMf\n\nFollow me for more daily AI, dev tools, and product design signals. Tap my profile for the next digest.",
+      "author": {
+        "id": "1756648970951315456",
+        "name": "dante",
+        "screenName": "danteisshipping",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1850949069033873408/uiD91jdP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 207,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:07:02 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:07",
+      "createdAtISO": "2026-07-01T10:07:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071988145667928442",
+        "text": "“Loop engineering” is a hot buzzphrase after mentions of it by Boris Cherny (Claude Code’s creator) and Peter Steinberger (OpenClaw's creator) went viral on social media. Loops are now a key part of how we get AI agents to iterate at length to build software. In this letter, I’d like to share my 3 key loops, shown in the image below, for building 0-to-1 products. These loops guide not just how I build software, but also how I decide what software to build.\n\nAgentic coding loop: Given a product specification and optionally a set of evals (that is, a dataset against which to measure performance), we can have an AI agent write code, test its work, and keep iterating until the code is bug-free and meets its specification. This idea of closing the loop took off around the end of last year, and it has been a game changer in enabling coding agents to work longer productively without human intervention. For example, over the weekend, I was building an app for my daughter to practice typing, and my coding agent could easily work for around an hour, using a web browser to check what it had built multiple times before getting back to me, without needing my intervention.\n\nThe engineering loop executes quickly. Every few minutes, the coding agent might build and test a new version of the software. I hear frequently from developers who are finding new ways to engineer more effective engineering loops. This is an active area of invention!\n\nDeveloper feedback loop: In this loop, a developer examines the current product and steers the coding agent to improve it. Last year, a lot of developers (including me) were acting as the QA (quality assurance) function for our coding agents, manually finding bugs and then asking the agent to fix them. But with coding agents much more able to test their own code, the amount of time we need to spend on this function has decreased significantly. This allows us to make higher-level product decisions, such as what key features to offer, where the UI needs improvement, and so on.\n\nThe developer-feedback loop operates over time intervals between tens of minutes and hours — that's how frequently a developer might review a product and give feedback. In the case of the typing app, I changed my mind a few times about the visual design, what cat costumes she can unlock as she learns (she loves cats), and the user flow for a grown-up to log in and steer the child's learning experience.\n\nWhen a developer has a clear vision for what to build, it is still a lot of work to translate that vision into a specification for a coding agent to implement. Further, after the developer has seen an implementation, they might update (or perhaps clarify) the spec to steer it toward what they want. If you find that the system repeatedly runs into certain problems, building a set of evals for the agent becomes useful.\n\nAI-native teams are increasingly using AI to help shape product direction, for example, automating the gathering and analysis of usage data, summarizing written and verbal customer feedback, or carrying out competitive analysis. However, for pretty much all the products I’m involved in, I see humans as having a significant context advantage over current AI systems — we know a lot more than the AI system about the users and the context the product has to operate in — and thus humans play a critical role. Many people describe this human contribution as “taste,” but I prefer to think of it as humans having a context advantage, since that gives us a clearer path to helping AI systems get better. This also speaks to why this step can’t be automated: So long as the human knows something the AI does not, human-in-the-loop is needed to to inject that knowledge into the system.\n\nExternal feedback loop: This includes a wide range of tactics like asking a few friends for feedback, launching to alpha testers, or putting the code into production with A/B testing. These tactics are usually slow, rarely taking less than hours and sometimes taking days or even weeks. This data informs the developer vision, which in turn continues to drive the detailed product spec, which in turn drives the coding agent.\n\nWith coding agents speeding up software development, more engineers are starting to play a partial product management role. For many engineers who are growing into this role, the hardest part is shaping the product vision and striking a balance between building (bridging the gap between vision and spec) and getting user feedback to evolve the vision. It is important to do both!\n\nI will write more about how to do this in future posts, but for now, I find it encouraging that engineers are playing an expanded role (just as product managers and designers now do more engineering).\n\n[Original text: The Batch]",
+        "author": {
+          "screenName": "AndrewYNg",
+          "name": "Andrew Ng"
+        }
+      }
+    },
+    {
+      "id": "2072252864018194925",
+      "text": "🚨Plugin Alert🚨 Nembrini Audio has released ‘Blue Clipper’ on iOS!!\n\nBlue Clipper is modeled on the Lavry Blue 4496, capturing the character of its saturation and clipping behavior in a simple, modern plug-in format. Available NOW in the App Store!!\n\nhttps://t.co/LlKxV9TJ1Z https://t.co/uonJtUILKo",
+      "author": {
+        "id": "26011248",
+        "name": "Nino",
+        "screenName": "ninobeatz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1812618199420047360/7xTSowoE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 75,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:35:58 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:35",
+      "createdAtISO": "2026-07-01T09:35:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIe_1DWcAACMYY.jpg",
+          "width": 1280,
+          "height": 1062
+        }
+      ],
+      "urls": [
+        "https://apps.apple.com/us/app/blue-clipper/id6774183975"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072242022358880546",
+      "text": "🚨Plugin Alert🚨 @RobJacksonMusic has released ‘FinalFX’ on iOS!!\n\nFinalFX is a collection of audio processors useful for mixing and mastering, often referred to as a \"channel strip\". Typically you'd add FinalFX literally as your final effects on a stereo master or mix bus channel. Available NOW in the App Store!!\n\nhttps://t.co/MROMCyDa1d",
+      "author": {
+        "id": "26011248",
+        "name": "Nino",
+        "screenName": "ninobeatz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1812618199420047360/7xTSowoE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 98,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jul 01 08:52:53 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:52",
+      "createdAtISO": "2026-07-01T08:52:53+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIVIx1WUAANwiv.jpg",
+          "width": 1280,
+          "height": 1084
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072230780663701887",
+      "text": "Apple has released emergency security updates for iPhone, iPad and  Mac devices ahead of schedule, patching more than 25 vulnerabilities as  it moves to stay ahead of increasingly sophisticated AI-assisted cyber  threats.\n\nThe updates -- iOS 26.5.2, iPadOS 26.5.2 and macOS Tahoe  26.5.2 -- were released earlier than planned after Apple said advances  in artificial intelligence are enabling attackers to develop exploit  tools more rapidly. The company said it shortened the time between  identifying security flaws and making patches available to users rather  than waiting for the planned 26.6 releases.\n\nRead more here: https://t.co/zDpmWRE82X\n\n#Apple #technology #emergency #security #cyberthreat #gulftimes",
+      "author": {
+        "id": "2203232041",
+        "name": "Gulf Times",
+        "screenName": "GulfTimes_QATAR",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1844665184385638400/MBkW_VuS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 560,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 08:08:12 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:08",
+      "createdAtISO": "2026-07-01T08:08:12+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIKw4aXwAA81We.jpg",
+          "width": 800,
+          "height": 600
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072226944725160182",
+      "text": "Tx super app released both on iOS and andriod. Join me on TX and we both get rewarded.  You will need to complete the kyc where it will ask you for the code at the end of the link.  \n\n Use my referral code:\n\nhttps://t.co/WFTmzSU5iQ",
+      "author": {
+        "id": "28489266",
+        "name": "no one",
+        "screenName": "new4matt",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064955016046153728/amaYnDcC_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 14,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 07:52:58 +0000 2026",
+      "createdAtLocal": "2026-07-01 15:52",
+      "createdAtISO": "2026-07-01T07:52:58+00:00",
+      "media": [],
+      "urls": [
+        "https://tx.market/referral?ref=MNUhgCF243UxMFreLTnvkJgpzo73"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072196726698488176",
+      "text": "now this is a real gem...\n\nrunning Cursor from your phone\n\nCursor has finally released an iOS app\n\nnow you can manage AI agents right from your phone.\n\njust voice-dictate your task, and you'll get a notification once it's done\n\nthe result is sent straight to your project right from the app.",
+      "author": {
+        "id": "1317755071",
+        "name": "sandra",
+        "screenName": "sandraaasol",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027803154285215744/8k_MxuOE_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 23,
+        "retweets": 1,
+        "replies": 11,
+        "quotes": 0,
+        "views": 1496,
+        "bookmarks": 4
+      },
+      "createdAt": "Wed Jul 01 05:52:53 +0000 2026",
+      "createdAtLocal": "2026-07-01 13:52",
+      "createdAtISO": "2026-07-01T05:52:53+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMHrpnWWcAAKp7h.jpg",
+          "width": 749,
+          "height": 934
+        },
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072196403741294592/vid/avc1/1920x1080/1zqrDEitM3uFkV5j.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072186022344180149",
+      "text": "https://t.co/F1ChLE6ywr",
+      "author": {
+        "id": "1429063730575278080",
+        "name": "Bin",
+        "screenName": "HLRC2405",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2005494189556183041/5wSbMgxb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 152,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 05:10:21 +0000 2026",
+      "createdAtLocal": "2026-07-01 13:10",
+      "createdAtISO": "2026-07-01T05:10:21+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071892092440473600"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Minara Recap: 6 Months of Building the Future of AI Finance"
+    },
+    {
+      "id": "2072164584807416165",
+      "text": "Nothing on the internet is secure. I've known this for years. And other people have known it for years. Most security passwords (your mother's maiden name, your street name, your dog's name, etc) are all easy to get if you want them).\n\nPasswords were always a terrible idea. The passkey apps that change the login code every minute offer much better security. \n\nBut nothing is going to save you if a hacker is using something like Pegasus. As of September 2023, Pegasus operators were able to remotely install the spyware on iOS versions through 16.6 using a zero-click exploit.\n\nPegasus is generally capable of reading text messages, call snooping, collecting passwords, location tracking, accessing the target device's microphone and camera, and harvesting information from apps. The software installs itself and collects all communications and locations of targeted iPhones. It can also collect Wi-Fi passwords.\n\nRegarding how widespread the issue was, Lookout explained in a blog post: \"We believe that this spyware has been in the wild for a significant amount of time based on some of the indicators within the code\" and pointed out that the code shows signs of a \"kernel mapping table that has values all the way back to iOS 7\" (released 2013).\n\nRather than being a specific exploit, Pegasus is a suite of exploits that uses many vulnerabilities in the system. Infection vectors include clicking links, the Photos app, the Apple Music app, and iMessage. Some of the exploits Pegasus uses are zero-click — that is, they can run without any interaction from the victim.\n\nOnce installed, Pegasus has been reported to be able to run arbitrary code, extract contacts, call logs, messages, photos, web browsing history, settings, as well as gather information from apps including but not limited to communications apps iMessage, Gmail, Viber, Facebook, WhatsApp, Telegram, Skype, and Signal.\n\nPegasus can also self-destruct on command. If it is not possible to compromise a target device by simpler means, Pegasus can be installed by setting up a wireless transceiver near a target device, or by gaining physical access to the device.\n\nDue to the covert nature of its installation, Pegasus was previously only able to be detected via digital forensics.\n\nOn January 16, 2024, Kaspersky labs developed a tool that extracts, analyzes, and parses the shutdown.log file to ease the process of locating the malicious signature. But this method is only effective if the device is rebooted on the same day that it is infected with Pegasus.\n\nAlthough Pegasus is stated as intended to be used against criminals and terrorists, it has also been used by both authoritarian and democratic governments to spy on critics and opponents. A UN special rapporteur on freedom of opinion found that the use of the spyware by abusive governments could \"facilitate extrajudicial, summary or arbitrary executions and killings, or enforced disappearance of persons.\n\nWhile Pegasus can bypass encryption once it has root access to your device, secure channels still make interception during transit nearly impossible. This is why end-to-end encrypted apps like Signal are better than most. \n\nFor individuals facing extreme privacy risks, technology alone is never completely foolproof.\n\n• Restart your phone daily. Some iterations of advanced spyware cannot survive a full device restart, meaning a daily reboot can temporarily disrupt their processes.\n\n• Separate your high-risk communication from your casual daily browsing by utilizing multiple devices.\n\n• Store devices in Faraday bags when not in use, or leave connected devices at home when engaging in highly sensitive, in-person meetings.\n\nAlso watch what you say in the presence of other people carrying smartphones or in homes with devices like Alexa or  Google Home. These can convert your speech to text without your knowledge. \n\nDrones are no also longer just flying cameras; they are highly mobile, airborne electronic warfare and surveillance platforms. Instead of attacking a phone from across the globe via software like Pegasus, drones exploit physical proximity to vacuum up data from the air.\n\nThe most common way drones sweep cellular communication is by carrying miniature cell-site simulators, colloquially known as Stingrays. \n\nThe drone flies over an area and broadcasts a signal mimicking a legitimate cell phone tower. Because the drone is closer or has a stronger line-of-sight than the actual cell tower, all mobile phones in the radius are forced to disconnect from their provider and connect to the drone.\n\nOnce connected, the drone sweeps up the unique identities (IMSI numbers) of every phone in the area, tracks their exact GPS locations, and can even log any unencrypted metadata like who you call or text.\n\nIf the network or the websites you visit are unencrypted, the drone can intercept passwords, browsing history, and message.\n\nEven if you aren't actively sending messages, a drone sweeping an area can log the unique MAC addresses of every Wi-Fi and Bluetooth-enabled device in the vicinity, mapping out exactly who is present.\n\nBeyond digital radio frequencies, surveillance drones can carry directional, high-gain microphones or laser microphones. By hovering near an upper-floor office or home window, they can literally sweep up audio or measure the micro-vibrations of the window glass to reconstruct spoken conversations inside a room.\n\nA VPN can stop a drone from harvesting your internet traffic, but it cannot stop a drone from tracking your physical location or device identity.\n\nThe drone operator can see when you are online and how much data you are transferring. Even if they can't read the messages, they can deduce your activity patterns.\n\nIf you don't use a faraday bag, you could completely disable Wi-Fi, bluetooth, and cellular data in your device's system settings when you do not actively need them.\n\nBut who does this 100% of the time?\n\nSo... yeah. Sounds to me like we are all pretty much f'd.\n\nThis is why the most sensitive government and military data is kept on networks that are completely physically isolated from the internet and all civilian systems.\n\nData centers holding state secrets are built like military bunkers to withstand both physical attacks and digital spying.\n\nModern governments are moving away from the old \"castle-and-moat\" model (where anyone inside the network is trusted). Instead, they enforce a Zero Trust policy.\n\nEvery single user, device, and application must continuously authenticate its identity and permission level, even if they are already logged into the system.\n\nData is broken into tiny, isolated compartments. A user with access to one specific project cannot see files in an adjacent folder without explicit, separate authorization.\n\nBut while major Silicon Valley firms publicly market themselves as defenders of user privacy, historical leaks and recent cyber investigations prove that backdoors—both intentional and forced—are a recurring reality in the tech industry.\n\nGovernment intelligence agencies frequently pressure manufacturers to pre-install vulnerabilities directly onto devices before they even leave the factory.\n\nFinally, the government needs to better protect its personnel from compromise. System administrators - who protect everyone else's data - should have been at the top of the list.",
+      "author": {
+        "id": "3356532321",
+        "name": "Jessica McGuire",
+        "screenName": "jezzaica",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1977684024618262528/Io-Ufv2R_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 179,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 03:45:10 +0000 2026",
+      "createdAtLocal": "2026-07-01 11:45",
+      "createdAtISO": "2026-07-01T03:45:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072157537701384493",
+      "text": "@ALTIC_DEV @alexhillman I cannot wait until the iOS app is released",
+      "author": {
+        "id": "18140340",
+        "name": "John Corcoran",
+        "screenName": "JohnCorcoran",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1473559260789305345/BspIdqZE_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 22,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 03:17:10 +0000 2026",
+      "createdAtLocal": "2026-07-01 11:17",
+      "createdAtISO": "2026-07-01T03:17:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072145669507448873",
+      "text": "🚨 Apple has released iOS 26.5.2 and iPadOS 26.5.2 with a major set of security fixes.\n\nThe update patches vulnerabilities affecting:\n• WebKit (Safari)\n• Kernel\n• GPU\n• WebRTC\n• libxslt\n• Web Extensions\n\nIf you're on an eligible iPhone or iPad, update ASAP to stay protected. \n\n#Apple #iOS2652 #iPadOS #iPhone #iPad #CyberSecurity #AppleUpdate #TechNews",
+      "author": {
+        "id": "2814816828",
+        "name": "Ashok Mor",
+        "screenName": "_techibee",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2057689704494243840/qDuKVDfS_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 586,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 02:30:00 +0000 2026",
+      "createdAtLocal": "2026-07-01 10:30",
+      "createdAtISO": "2026-07-01T02:30:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HME8_Wbb0AAPqt7.jpg",
+          "width": 1095,
+          "height": 796
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072141946798350721",
+      "text": "Anthropic looks set to bring back Claude Fable 5, its most capable  widely released model, and the latest build of the Claude app for iOS  offers the clearest sign yet of how that return might be structured.",
+      "author": {
+        "id": "1579754929605861376",
+        "name": "Tips Excel",
+        "screenName": "gudanglifehack",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1591216099403567105/DiHCpCPq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 60,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 02:15:13 +0000 2026",
+      "createdAtLocal": "2026-07-01 10:15",
+      "createdAtISO": "2026-07-01T02:15:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072126931752067560",
+      "text": "【Update Notice】\nWe have released Medibang Paletta Ver.4.12.1 for iOS!\n\nThis update includes the following improvement:\n\n・Reduced app size\n\nFor the best experience, please update the app to the latest version.\nThank you for your continued support of Medibang Paletta! https://t.co/oiYwQTeFsM",
+      "author": {
+        "id": "3013913012",
+        "name": "MediBang Paint (EN)",
+        "screenName": "MediBangPaint_e",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1783322331504668672/szxhjiIj_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 2,
+        "replies": 0,
+        "quotes": 0,
+        "views": 503,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 01:15:33 +0000 2026",
+      "createdAtLocal": "2026-07-01 09:15",
+      "createdAtISO": "2026-07-01T01:15:33+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMGsc2ibkAA2hFM.jpg",
+          "width": 920,
+          "height": 920
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072109328924909924",
+      "text": "https://t.co/sS61PKLBiF",
+      "author": {
+        "id": "1234183597583740929",
+        "name": "S.E. Robinson, Jr.",
+        "screenName": "SERobinsonJr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2035540824889741312/t2mkjAEr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 31,
+        "retweets": 5,
+        "replies": 2,
+        "quotes": 1,
+        "views": 48377,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jul 01 00:05:36 +0000 2026",
+      "createdAtLocal": "2026-07-01 08:05",
+      "createdAtISO": "2026-07-01T00:05:36+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071239838464958464"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "ELON CHRON: 30th of June, 2026"
+    }
+  ]
+}

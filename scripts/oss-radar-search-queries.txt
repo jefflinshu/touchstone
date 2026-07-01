@@ -1,0 +1,8 @@
+# GitHub open-source projects on X. These discover candidates; the website
+# should only render projects that pass the collection filter.
+("GitHub" OR repo OR repository) ("open source" OR opensource) ("stars" OR "launched" OR "trending")
+("self-hosted" OR "open-source") (tool OR app OR platform) GitHub
+("frontend" OR "React" OR "TypeScript") ("open source" OR GitHub) (library OR framework OR components)
+("database" OR "backend" OR "Postgres") ("open source" OR GitHub)
+("automation" OR workflow OR integrations) ("open source" OR GitHub)
+("AI agent" OR "coding agent" OR MCP) ("open source" OR GitHub)

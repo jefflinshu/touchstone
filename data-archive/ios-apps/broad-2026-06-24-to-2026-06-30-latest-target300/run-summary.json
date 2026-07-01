@@ -1,0 +1,31 @@
+{
+  "from": "2026-06-24",
+  "to": "2026-06-30",
+  "mode": "latest",
+  "officialOnly": false,
+  "withReplies": false,
+  "maxReplies": 12,
+  "minViews": 0,
+  "target": 300,
+  "queries": [
+    "((\"iOS app\" OR \"iPhone app\") (\"just launched\" OR launched OR \"now available\" OR \"is live\" OR \"on the App Store\" OR \"App Store\"))",
+    "((\"my iOS app\" OR \"our iOS app\" OR \"new iOS app\") (launched OR released OR shipped OR \"App Store\" OR TestFlight))",
+    "((\"built an iOS app\" OR \"made an iOS app\" OR \"shipped an iOS app\") (App OR \"App Store\" OR TestFlight OR iPhone))",
+    "((\"indie iOS app\" OR \"indie app\") (launched OR released OR shipped OR \"App Store\" OR TestFlight))",
+    "((\"App Store\" \"iOS\") (\"new app\" OR \"just launched\" OR \"now available\" OR \"is live\"))",
+    "((\"apps.apple.com\" OR \"testflight.apple.com\") (\"iOS app\" OR \"iPhone app\" OR \"new app\" OR launched OR released))",
+    "((\"Product Hunt\" \"iOS app\") (launched OR \"now live\" OR \"App Store\"))",
+    "((\"SwiftUI app\" OR \"Swift app\") (launched OR shipped OR released OR \"App Store\" OR TestFlight))",
+    "((\"iPhone app\" (\"download\" OR \"try it\" OR \"beta\" OR TestFlight)) -hiring)",
+    "((\"new app for iPhone\" OR \"available for iPhone\") (\"App Store\" OR \"download\" OR launched))",
+    "((\"just shipped\" \"iOS\") (\"app\" OR \"App Store\" OR TestFlight))",
+    "((\"launched\" \"iOS\") (\"app\" OR \"App Store\" OR \"iPhone\"))",
+    "((\"released\" \"iOS\") (\"app\" OR \"App Store\" OR \"iPhone\"))",
+    "((\"now live\" \"iOS app\") OR (\"live on the App Store\"))",
+    "((\"design\" OR \"redesign\" OR \"UI\" OR \"screens\") (\"iOS app\" \"App Store\" OR \"iPhone app\"))"
+  ],
+  "candidates": 205,
+  "conversationFetchFailures": 0,
+  "failedHandles": 0,
+  "generatedAt": "2026-06-30T07:24:43.031Z"
+}

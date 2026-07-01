@@ -1,0 +1,253 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2072259769721827785",
+      "text": "https://t.co/QwC524nYId",
+      "author": {
+        "id": "1463679609019387910",
+        "name": "AndyAI",
+        "screenName": "AndyAI_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1699189031224160257/0VsQoPtL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 71,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:03:24 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:03",
+      "createdAtISO": "2026-07-01T10:03:24+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2072259074721501184"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "The Faceless Wellness Brand Playbook: Claude Writes It, Wireflow Films It"
+    },
+    {
+      "id": "2072257636720918653",
+      "text": "ANTHROPIC JUST SHIPPED A “CHEAPER OPUS” THAT MAY COST MORE TO USE\n\nClaude Sonnet 5 is live in https://t.co/a6Djrx5C0b and Claude Code.\n\nAnthropic is positioning it as near-Opus 4.8 performance at a lower price, but the early read is messier than that.\n\nthe good:\n\n> huge jump over Sonnet 4.6\n> strong at design and UI\n> very good one-shot app generation\n> available now in Claude and Claude Code\n> supports vision, unlike GLM 5.2\n\nthe weird part:\n\nSonnet 5 looks close to Opus 4.8 on some tasks, but it does not look token efficient.\n\nintro pricing runs through August 31:\n\n> $2 / 1M input tokens\n> $10 / 1M output tokens\n\nthen it moves to:\n\n> $3 / 1M input tokens\n> $15 / 1M output tokens\n\nthe reviewer’s take:\n\nOpus 4.8 on high can still be the better deal than Sonnet 5 on max for similar agentic performance.\n\nso “cheaper model” does not automatically mean cheaper workflow.\n\nthe most interesting part is what Anthropic didn’t train it for:\n\ncybersecurity.\n\nSonnet 5 is much weaker than Opus 4.8 and Mythos on exploit-style tasks, which looks deliberate after the Fable/Mythos government mess.\n\nthat may be how Anthropic gets strong models out without triggering the same regulatory wall.\n\nreal tests looked strong:\n\n> clean web design without obvious AI slop\n> single-file real-time 3D location tracker\n> voxel pagoda scene with day/night controls\n> solid UI components and visual composition\n\nthe takeaway:\n\nSonnet 5 is not an Opus replacement.\n\nit’s a safer, design-heavy, agent-friendly workhorse that may be great in Claude Code, but not always the cheapest path.\n\nbookmark this before you switch your whole stack to Sonnet 5",
+      "author": {
+        "id": "1487106396197949444",
+        "name": "s1rozha1",
+        "screenName": "s1rozha_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2041859953594699777/wzImAL2N_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 218,
+        "bookmarks": 7
+      },
+      "createdAt": "Wed Jul 01 09:54:55 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:54",
+      "createdAtISO": "2026-07-01T09:54:55+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072257392750854144/vid/avc1/1920x1080/-s1qCE9eOW72XHnD.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2066919886396244101",
+        "text": "https://t.co/MFDKSWu8mp",
+        "author": {
+          "screenName": "s1rozha_",
+          "name": "s1rozha1"
+        }
+      }
+    },
+    {
+      "id": "2072223219852222601",
+      "text": "⚔️ Closed-source frontier vs open-source local — I put them head to head\n\n♠ Claude Sonnet 5 🆚 Ornith 1.0 35B, running on my own GPU\n\n🔹Sonnet 5 — Anthropic's most agentic Sonnet yet, near Opus 4.8 at a fraction of the cost\n🔹Ornith 35B — open-source MoE coding model, MIT licensed, runs fully local\n🔹Same tests, same prompts: autonomous bug-fixing 🐛 + one-shot code generation 🚂\n🔹Can a model on your own hardware keep up with a frontier closed model? 👀\n\n🔥 full video below 👇\n\nhttps://t.co/sR19tN6kKu",
+      "author": {
+        "id": "2453301",
+        "name": "Fahd Mirza",
+        "screenName": "fahdmirza",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2030895118342098944/a0I9Ur4u_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 520,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jul 01 07:38:10 +0000 2026",
+      "createdAtLocal": "2026-07-01 15:38",
+      "createdAtISO": "2026-07-01T07:38:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072212837578195099",
+      "text": "Here are 10 Claude Code skills that do the job of an entire agency:\n\n→ Claude SEO\nThe full SEO agency in a folder. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, semantic clustering, and PDF reporting.\nhttps://t.co/7zVXjLGaK2\n\n→ digital-marketing-pro\n158 skills + 25 specialist agents. 12-Part Strategy Flow per brand. Built for agencies running 50+ clients. EU AI Act Article 50 ready. Installs on Claude Code, Cowork, Codex, and Cursor.\nhttps://t.co/o3LRjyYqNu\n\n→ Claude Blog\n30 sub-skills, 5 agents, and a 5-gate delivery contract. Every draft passes Capability, Format, Visual, Content Review, and Asset Integrity, or it iterates up to 3 times. Ships to Next.js, Astro, WordPress, Ghost.\nhttps://t.co/VEudH9EDAj\n\n→ claude-skills\n337 skills covering 30+ agents and 70+ commands. C-level personas for CFO, CMO, CRO, CPO, COO, CHRO, CISO. Works with Claude Code, Codex, Gemini CLI, and 9 more agents.\nhttps://t.co/p2JJvdjigL\n\n→ ai-marketing-claude\n15 marketing skills with 5 parallel subagents. Type /market audit + any URL and get a full scored breakdown across content, CRO, SEO, positioning, brand, and growth in one shot.\nhttps://t.co/pRpHEJBjoz\n\n→ social-media-skills\nThe actual stack behind Charlie Hills' content system. 350K+ followers across LinkedIn, Instagram, Substack, X, and YouTube. Voice builder, post scorer, carousel generator, reels scripting.\nhttps://t.co/j0g44hrDXT\n\n→ marketingskills (Corey Haines)\nThe CRO and copywriting consultancy in skill form. Built by Corey Haines of Swipe Files and Conversion Factory. CRO, copy, SEO, analytics, email sequences, A/B test plans, ad creative.\nhttps://t.co/xLVVujEGEW\n\n→ OpenClaudia\n67+ open-source marketing skills. SEO audits, blog writing, email sequences, competitor analysis, ad copy, Discord bots. Slash commands like /audit-seo, /write-blog, /email-sequence.\nhttps://t.co/k1KiGVEmOM\n\n→ Claude Code Video Toolkit\nThe Remotion docs baked into a skill. Generate React-based programmatic videos without hallucinating the API. Launch announcement videos, weekly metrics videos, shorts, all in code.\nhttps://t.co/CHvPP64l0k\n\n→ head-of-content\nViral content research via Apify + Gemini. Tracks X, Instagram, TikTok, and YouTube accounts you specify, identifies outlier posts, and reverse-engineers the patterns into briefs.\nhttps://t.co/YntoFvWvZk\n\nThe agency stack used to live in a Notion board with 12 retainers.\n\nNow it lives in `.claude/skills/`.\n\nBookmark this.",
+      "author": {
+        "id": "1690225420908810240",
+        "name": "Harman",
+        "screenName": "itsharmanjot",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2026685520466853888/rfjlGyl8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 3,
+        "replies": 1,
+        "quotes": 0,
+        "views": 498,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jul 01 06:56:54 +0000 2026",
+      "createdAtLocal": "2026-07-01 14:56",
+      "createdAtISO": "2026-07-01T06:56:54+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMH6lRfbwAEx5ms.jpg",
+          "width": 1848,
+          "height": 1434
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMH6lgNbAAAK-U0.jpg",
+          "width": 1860,
+          "height": 2108
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMH6lvibcAALW_p.jpg",
+          "width": 1862,
+          "height": 2136
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMH6l98bEAAnX8b.jpg",
+          "width": 1848,
+          "height": 1770
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072210339048079577",
+      "text": "https://t.co/ic05uiouyd",
+      "author": {
+        "id": "1402082661993222144",
+        "name": "Mark Vassilevskiy",
+        "screenName": "MarkKnd",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1923971076276502528/uw7iJX4A_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 53,
+        "retweets": 1,
+        "replies": 3,
+        "quotes": 2,
+        "views": 2314,
+        "bookmarks": 32
+      },
+      "createdAt": "Wed Jul 01 06:46:59 +0000 2026",
+      "createdAtLocal": "2026-07-01 14:46",
+      "createdAtISO": "2026-07-01T06:46:59+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2070580579456987136"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Our client got 1.5M+ views & thousands of signups ORGANICALLY"
+    },
+    {
+      "id": "2072193970382254557",
+      "text": "Alright kids take out your chromebooks navigate to the orange app. This is claude, from here on out you will no longer need to think critically. We'll teach you how to write a Skill, prompt claude to create an mcp on times tables and then we're going to one shot a plinko app.\n\nIn all seriousness, primary school should be focused on teaching kids to begin problem solving. Introduce the dopamine loop of AI to that process too early and they'll be cooked for life. Lets not repeat social media.",
+      "author": {
+        "id": "2051767057495035912",
+        "name": "Sephiroth",
+        "screenName": "RonaldRateLimit",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2051848040005136390/JTeVtFc6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 93,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 05:41:56 +0000 2026",
+      "createdAtLocal": "2026-07-01 13:41",
+      "createdAtISO": "2026-07-01T05:41:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072126831319478755",
+      "text": "https://t.co/0lpYKCFT4I",
+      "author": {
+        "id": "1882304765717286912",
+        "name": "BestBlogs",
+        "screenName": "BestBlogsDev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063468241960534016/avI9OuOt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 1,
+        "views": 698,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 01:15:09 +0000 2026",
+      "createdAtLocal": "2026-07-01 09:15",
+      "createdAtISO": "2026-07-01T01:15:09+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2072126162948726785"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "07-01 · Sonnet 5 narrows the Opus gap, Google cuts media-gen costs, and Andrew Ng on agentic loops"
+    }
+  ]
+}

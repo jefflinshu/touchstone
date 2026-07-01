@@ -1,12 +1,18 @@
 # Deploy Touchstone on touchstone.jefflin.ai
 
-This app should run as a normal Node.js service behind Cloudflare. Do not deploy only `web/dist` to Cloudflare Pages unless you intentionally want a static preview without login, API, WebSocket, task execution, or workspace previews.
+This app should run as a normal Node.js service behind Cloudflare. Do not deploy only `apps/web/dist` to Cloudflare Pages unless you intentionally want a static preview without login, API, WebSocket, task execution, or workspace previews.
 
 ## Target
 
 - Public URL: `https://touchstone.jefflin.ai`
 - Node origin: `http://localhost:3000`
 - Google OAuth callback: `https://touchstone.jefflin.ai/api/auth/callback`
+
+## Repository Boundaries
+
+The public GitHub repository `jefflinshu/touchstone` should contain the Touchstone web/server code and public showcase data only. Private macOS product work should not be committed here; keep it in a private repository or local-only workspace.
+
+The primary domain `jefflin.ai` should be managed by its own site/deployment. This project deploys to the subdomain `touchstone.jefflin.ai`; do not point the main domain at this repo unless that is an intentional product decision.
 
 ## Server Environment
 
@@ -39,10 +45,18 @@ In Google Cloud Console, create or update an OAuth 2.0 Web application client:
 
 ```bash
 npm install
-npm --prefix web install
+npm install
 npm run build
 npm start
 ```
+
+On the local macOS production host used for `touchstone.jefflin.ai`, prefer the guarded deployment command instead of manually copying build files:
+
+```bash
+npm run deploy:local
+```
+
+It builds the web UI, syncs root workspace metadata, `apps/server/`, and `apps/web/dist/` into `/Users/linshu/Deploy/touchstone`, installs root dependencies, restarts `ai.jefflin.touchstone`, and verifies that both local and public HTML reference the newly built bundle. This prevents stale top navigation or old SPA assets from staying live after a deploy.
 
 Verify locally:
 
@@ -61,9 +75,9 @@ Expected shape:
 The public Fable5 showcase output should be committed to the GitHub repository:
 
 ```text
-web/public/fable5-data/
-web/public/fable5-media/
-web/public/fable5-avatars/
+apps/web/public/fable5-data/
+apps/web/public/fable5-media/
+apps/web/public/fable5-avatars/
 ```
 
 The frontend reads these files directly from `/fable5-data`, `/fable5-media`, and `/fable5-avatars`. Keeping them in Git means a fresh deploy can show the Fable5 page immediately after `git clone` and `npm run build`, without rerunning the X scraping pipeline.
@@ -83,6 +97,7 @@ Use the sample at `deploy/cloudflared/config.example.yml` as the tunnel ingress 
 ```yaml
 tunnel: touchstone-jefflin-ai
 credentials-file: /etc/cloudflared/touchstone-jefflin-ai.json
+protocol: http2
 
 ingress:
   - hostname: touchstone.jefflin.ai
@@ -91,6 +106,8 @@ ingress:
 ```
 
 Then route `touchstone.jefflin.ai` to the tunnel in Cloudflare.
+
+`protocol: http2` is intentional. Some local/proxy networks block Cloudflare Tunnel QUIC traffic on UDP 7844; forcing HTTP/2 keeps the tunnel connected over TCP and avoids Cloudflare 1033 errors caused by an inactive connector.
 
 ## Production Notes
 

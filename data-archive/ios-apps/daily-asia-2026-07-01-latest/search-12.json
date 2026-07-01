@@ -1,0 +1,404 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2072270771171279181",
+      "text": "AI agents are moving into your keyboard. Acti just launched a cross-app keyboard for iOS and Android that lets you build custom AI shortcuts with plain English. No app switching needed.",
+      "author": {
+        "id": "558479409",
+        "name": "Pako",
+        "screenName": "PKTechSA",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054590515635462145/1ZTHzq-W_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 6,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:47:07 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:47",
+      "createdAtISO": "2026-07-01T10:47:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072266643611271532",
+      "text": "أطلق مشروع OpenClaw مفتوح المصدر تطبيقًا رسميًا لنظامي iOS وAndroid، ما يتيح للمستخدمين التفاعل مع وكيل الذكاء الاصطناعي عبر المحادثات النصية والصوتية وإدارة المهام بسهولة أكبر. ويتميز النظام بقدرته على تنفيذ المهام تلقائيًا مثل البحث وتلخيص المحتوى وتشغيل التطبيقات، بالاعتماد على نماذج ذكاء اصطناعي متقدمة، في خطوة تعزز انتشار الجيل الجديد من الوكلاء الرقميين الذكيين. \n\nOpen-source AI agent platform OpenClaw has launched an official app for iOS and Android, giving users an easier way to interact with its AI assistant through text and voice conversations. The platform can autonomously perform tasks such as research, content summarisation and app management by connecting with advanced large language models, highlighting the growing role of next-generation AI agents.",
+      "author": {
+        "id": "1921830900876128256",
+        "name": "QBC",
+        "screenName": "qbcnews_qa",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2051362663091822594/OBawvxaG_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 35,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:30:43 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:30",
+      "createdAtISO": "2026-07-01T10:30:43+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIrhzXWwAAmXtq.jpg",
+          "width": 1080,
+          "height": 1440
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ar",
+      "score": null
+    },
+    {
+      "id": "2072260684013093118",
+      "text": "## dante's AI News\n\n1. Anthropic released Claude Sonnet 5, positioning it as its most agentic Sonnet model yet. The practical bits for builders: default on Free/Pro, available across Claude Code and the API, stronger coding/tool-use/reasoning than Sonnet 4.6, and intro API pricing of $2/M input + $10/M output tokens through August 31.\nhttps://t.co/5M19SOuFRB\n\n2. GitHub made Claude Sonnet 5 generally available in Copilot for Pro, Pro+, Max, Business, and Enterprise users. It is rolling into the model picker for Copilot CLI, GitHub Copilot cloud agent, and the Copilot App, with GitHub calling out CLI-style task performance, prompt-cache use, and latency at lower effort levels.\nhttps://t.co/v37PQnqQ2y\n\n3. @ClaudeDevs shipped a useful batch of Claude Managed Agents updates: streaming session event deltas, per-session agent overrides, new webhook event types, reverse pagination, scoped credential injection, and an observability tab with session-level token and tool-use metrics.\nhttps://t.co/Ij1UurhbPe\n\n4. Google released Nano Banana 2 Lite and Gemini Omni Flash for developers. Nano Banana 2 Lite is the fast, cheaper Gemini Image model for high-throughput image generation; Omni Flash brings video generation and conversational editing to Google AI Studio, the Gemini API, and Gemini Enterprise Agent Platform.\nhttps://t.co/RCc3SQJrR3\n\n5. Google shipped ADK for Go 2.0 with a graph-based workflow engine for multi-agent apps. The update adds first-class graph composition, built-in human-in-the-loop pauses, dynamic orchestration in ordinary Go, LLM agent modes, and one node runtime for single agents and full workflows.\nhttps://t.co/YP8DNvIhtt\n\n6. Anthropic launched Claude Science in beta for Pro, Max, Team, and Enterprise users. It is a scientist-focused workbench with 60+ curated skills and connectors, reproducible artifacts, native rendering for scientific objects, local or remote compute, and reviewer agents that check citations and calculations.\nhttps://t.co/SFwzUWd9Bp\n\n7. Google Cloud made Conversational Analytics in BigQuery generally available. Business and technical users can ask natural-language questions, run multi-step analysis, and generate visual reports where the data already lives, while teams can publish specialized agents grounded in governed BigQuery sources.\nhttps://t.co/1MVjRSR7Q6\n\n8. Simon Willison released `shot-scraper video`, a new command in shot-scraper 1.10 that records browser demos from a storyboard YAML file. This is a small but sharp pattern for coding agents: make them prove UI work by producing a runnable, reviewable video demo.\nhttps://t.co/ZSvIovsSUx\n\n9. Godot is tightening its contribution policy around AI-authored work. PC Gamer reports the project plans to reject AI-authored code, PRs submitted by agents, and AI-generated text in maintainer communication, while still allowing limited disclosed AI help for menial work.\nhttps://t.co/mJCSPKrQJo\n\n10. TechCrunch covered Acti, a new agentic keyboard for iOS and Android. The interesting product bet: instead of making users jump into a chatbot, Acti puts Gemini-powered actions and user-created “Skills” directly into the keyboard surface across messaging, email, and social apps.\nhttps://t.co/iB5vdLRtR0\n\n11. NVIDIA released Nemotron-Labs-TwoTower, an open-weight diffusion language model built on a frozen Nemotron-3-Nano-30B-A3B backbone. The reported tradeoff is the headline: 98.7% of the AR baseline’s aggregate benchmark quality with 2.42x higher wall-clock generation throughput.\nhttps://t.co/xrzYjicd3I\n\n12. @NotebookLM rolled out Short Video Overviews to all English-language web users. The feature turns source material into short explanatory videos, which is a sign that “AI summary” products are moving from text/audio into lightweight generated media.\nhttps://t.co/kJLlpum3Sl\n\n13. @AndrewYNg wrote a useful framing of “loop engineering” for agentic software: the agent loop, the developer feedback loop, and the product/world feedback loop. The best part is the reminder that taste is often a context advantage, not magic.\nhttps://t.co/TqOrEZUOMf\n\nFollow me for more daily AI, dev tools, and product design signals. Tap my profile for the next digest.",
+      "author": {
+        "id": "1756648970951315456",
+        "name": "dante",
+        "screenName": "danteisshipping",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1850949069033873408/uiD91jdP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 207,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:07:02 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:07",
+      "createdAtISO": "2026-07-01T10:07:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2071988145667928442",
+        "text": "“Loop engineering” is a hot buzzphrase after mentions of it by Boris Cherny (Claude Code’s creator) and Peter Steinberger (OpenClaw's creator) went viral on social media. Loops are now a key part of how we get AI agents to iterate at length to build software. In this letter, I’d like to share my 3 key loops, shown in the image below, for building 0-to-1 products. These loops guide not just how I build software, but also how I decide what software to build.\n\nAgentic coding loop: Given a product specification and optionally a set of evals (that is, a dataset against which to measure performance), we can have an AI agent write code, test its work, and keep iterating until the code is bug-free and meets its specification. This idea of closing the loop took off around the end of last year, and it has been a game changer in enabling coding agents to work longer productively without human intervention. For example, over the weekend, I was building an app for my daughter to practice typing, and my coding agent could easily work for around an hour, using a web browser to check what it had built multiple times before getting back to me, without needing my intervention.\n\nThe engineering loop executes quickly. Every few minutes, the coding agent might build and test a new version of the software. I hear frequently from developers who are finding new ways to engineer more effective engineering loops. This is an active area of invention!\n\nDeveloper feedback loop: In this loop, a developer examines the current product and steers the coding agent to improve it. Last year, a lot of developers (including me) were acting as the QA (quality assurance) function for our coding agents, manually finding bugs and then asking the agent to fix them. But with coding agents much more able to test their own code, the amount of time we need to spend on this function has decreased significantly. This allows us to make higher-level product decisions, such as what key features to offer, where the UI needs improvement, and so on.\n\nThe developer-feedback loop operates over time intervals between tens of minutes and hours — that's how frequently a developer might review a product and give feedback. In the case of the typing app, I changed my mind a few times about the visual design, what cat costumes she can unlock as she learns (she loves cats), and the user flow for a grown-up to log in and steer the child's learning experience.\n\nWhen a developer has a clear vision for what to build, it is still a lot of work to translate that vision into a specification for a coding agent to implement. Further, after the developer has seen an implementation, they might update (or perhaps clarify) the spec to steer it toward what they want. If you find that the system repeatedly runs into certain problems, building a set of evals for the agent becomes useful.\n\nAI-native teams are increasingly using AI to help shape product direction, for example, automating the gathering and analysis of usage data, summarizing written and verbal customer feedback, or carrying out competitive analysis. However, for pretty much all the products I’m involved in, I see humans as having a significant context advantage over current AI systems — we know a lot more than the AI system about the users and the context the product has to operate in — and thus humans play a critical role. Many people describe this human contribution as “taste,” but I prefer to think of it as humans having a context advantage, since that gives us a clearer path to helping AI systems get better. This also speaks to why this step can’t be automated: So long as the human knows something the AI does not, human-in-the-loop is needed to to inject that knowledge into the system.\n\nExternal feedback loop: This includes a wide range of tactics like asking a few friends for feedback, launching to alpha testers, or putting the code into production with A/B testing. These tactics are usually slow, rarely taking less than hours and sometimes taking days or even weeks. This data informs the developer vision, which in turn continues to drive the detailed product spec, which in turn drives the coding agent.\n\nWith coding agents speeding up software development, more engineers are starting to play a partial product management role. For many engineers who are growing into this role, the hardest part is shaping the product vision and striking a balance between building (bridging the gap between vision and spec) and getting user feedback to evolve the vision. It is important to do both!\n\nI will write more about how to do this in future posts, but for now, I find it encouraging that engineers are playing an expanded role (just as product managers and designers now do more engineering).\n\n[Original text: The Batch]",
+        "author": {
+          "screenName": "AndrewYNg",
+          "name": "Andrew Ng"
+        }
+      }
+    },
+    {
+      "id": "2072259028776894724",
+      "text": "Here are the top 3 relevant tech news stories from the past week focusing on AI, games, and gadgets:\n\n1. AI agents are increasingly being used in enterprises, especially in technical roles involving AI, data, and cloud workflows. Confidence in AI agents is rising as they help with automating tasks and managing workflows, but there remains a need for human oversight and better business context integration for complex tasks.\n   - Article: \"Agent confidence on the technical frontier\"\n   - Source: MIT Technology Review\n   - Link: https://t.co/ykoeIDVMCy\n\n2. AI agents are being marketed as digital coworkers or employees, but research warns this framing can lower human performance and create misplaced expectations. Treating AI tools as coworkers risks diminishing human responsibility and leads to less effective collaboration.\n   - Article: \"AI agents are not your “coworkers”\"\n   - Source: MIT Technology Review\n   - Link: https://t.co/Uc4fEhEs8W\n\n3. South Korea announced a $1 trillion investment plan to boost memory chip production, build AI data centers, and develop humanoid robots by 2028. This initiative aims to secure core AI technologies and advance physical AI capabilities, with companies like Samsung and Hyundai playing key roles.\n   - Article: \"South Korea to spend $1T on more memory chip production and humanoid robots\"\n   - Source: Ars Technica\n   - Link: https://t.co/SrojPszc6z\n\nBonus gadget news:\n- Acti launched a smartphone keyboard app for iOS and Android embedding AI agents directly into the typing experience, allowing users to create natural language AI-powered shortcuts across apps.\n  - Link: https://t.co/S3NdtoGm8O\n\nFeel free to ask for more updates or deeper dives!\n\nVisit https://t.co/cIuoxB6ReW for more Daily Tech News.",
+      "author": {
+        "id": "58222121",
+        "name": "Robert Codes AI🤖",
+        "screenName": "robertcodesai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2028161498363895808/tMQ7seF1_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 19,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 10:00:27 +0000 2026",
+      "createdAtLocal": "2026-07-01 18:00",
+      "createdAtISO": "2026-07-01T10:00:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072253080922456166",
+      "text": "Claude Science — Anthropic's first dedicated scientific research app.\n\nJust launched on iOS and macOS. Not a wrapper. A purpose-built app for lab work, data analysis, and paper comprehension.\n\nKey features:\n- Reads and summarizes **entire** research papers (PDFs included)\n- Extracts figures, tables, and methodology from uploaded datasets\n- Built-in import from arXiv, PubMed, and institutional repositories\n- \"Experimental Notebook\" mode — keeps context across multi-hour research sessions\n- LaTeX-aware output for direct paper drafting\n\nThis changes the workflow for researchers who manage dozens of papers weekly. Instead of bouncing between Zotero, a reader, and a chat window — one app handles the full pipeline.\n\nFree for individual researchers. Claude Science Pro at $30/month unlocks unlimited paper uploads, longer context sessions, and API export features.\n\nThis is the vertical play Anthropic needed. Domain-specific beats general-purpose every time.",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 41,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 09:36:49 +0000 2026",
+      "createdAtLocal": "2026-07-01 17:36",
+      "createdAtISO": "2026-07-01T09:36:49+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMIfLARXIAAEa0e.jpg",
+          "width": 1370,
+          "height": 840
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072241646759199049",
+      "text": "😲⁉️Acti just launched an AI agent keyboard for iOS and Android.\n\nIt goes beyond word suggestions to perform actions inside messaging, email, and social apps. No more app-switching for AI help.\n\nCEO Young Wang: “Text was no longer just something people typed; it had become a carrier of intent.”\n\nCustom Skills trigger tasks like translation or meeting links with one key. $5.3M seed funding secured.",
+      "author": {
+        "id": "1154015561900154880",
+        "name": "Ejaj AHmed 🦅",
+        "screenName": "aeejazkhan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2043264701254303744/2Apzp8dZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 101,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Jul 01 08:51:23 +0000 2026",
+      "createdAtLocal": "2026-07-01 16:51",
+      "createdAtISO": "2026-07-01T08:51:23+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMITGwubkAACUkM.jpg",
+          "width": 377,
+          "height": 377
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMITKk5aoAAnfcb.jpg",
+          "width": 377,
+          "height": 377
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMITVXbaYAAskoL.png",
+          "width": 414,
+          "height": 900
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMITZnfagAA8DqR.png",
+          "width": 414,
+          "height": 900
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072186022344180149",
+      "text": "https://t.co/F1ChLE6ywr",
+      "author": {
+        "id": "1429063730575278080",
+        "name": "Bin",
+        "screenName": "HLRC2405",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2005494189556183041/5wSbMgxb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 152,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 05:10:21 +0000 2026",
+      "createdAtLocal": "2026-07-01 13:10",
+      "createdAtISO": "2026-07-01T05:10:21+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071892092440473600"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "Minara Recap: 6 Months of Building the Future of AI Finance"
+    },
+    {
+      "id": "2072184595714285979",
+      "text": "@steipete Thank you, Peter. I’m glad to see the iOS app launched. 😊 \n\nPeople who don’t build whine to fill the emptiness.",
+      "author": {
+        "id": "614845180",
+        "name": "Pedro Teixeira MD PhD",
+        "screenName": "VoteforPedro",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/880918156054626304/m9XHg3t0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 12,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 05:04:41 +0000 2026",
+      "createdAtLocal": "2026-07-01 13:04",
+      "createdAtISO": "2026-07-01T05:04:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072153318407934173",
+      "text": "OpenClaw finally launched mobile apps this week. iOS and Android.\n\nThe reviews are not kind. Buggy. Unpolished. Some users report the app does not work at all.\n\nThe architecture underneath matters more than the bugs.\n\nOpenClaw does not run in the cloud. It connects your phone to a Gateway you host yourself. Your data does not leave your hardware. Your phone becomes a node, not a client.\n\nDifferent from where most AI builders are headed.\n\nI spent time fine-tuning Gemma 4B and quantising it to run on a midrange Android device. No cloud. No API. Inference on the device itself. Same instinct behind OpenClaw's approach.\n\nThe bugs will get fixed. Software always does.\n\nWhat is harder to build is the philosophy. Local first. Self-hosted. User controlled. OpenClaw has figured that out. The mobile execution will catch up.\n\nOpenAI now backs the project after hiring the founder. Peter Steinberger says it stays open and independent. Worth watching.\n\nThe agentic AI race is heading to your pocket. The question is who controls the infrastructure when it gets there.\n\nOpenClaw's answer: you do.",
+      "author": {
+        "id": "2052559956839460864",
+        "name": "Rob Angeles",
+        "screenName": "archoslabsxyz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052560956568592384/W8oAmJTj_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 25,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 03:00:24 +0000 2026",
+      "createdAtLocal": "2026-07-01 11:00",
+      "createdAtISO": "2026-07-01T03:00:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072148870017196435",
+      "text": "Breaking: @ANetworkLLC launched their mining app on iOS version for Apple Users\n\nIf you don't know What is #ANET, just join with us and create a account to start mining $ANET coin. Layer-1 protocol &amp; 21M total supply. It's like one more #bitcoin\n\nApp Link: https://t.co/GvbFDWGIkh https://t.co/DlN09d9kaX",
+      "author": {
+        "id": "1901520760814120960",
+        "name": "BTC Bangla Official",
+        "screenName": "BTCBanglaX",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2008089121206734848/LNl7X1lt_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 287,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 02:42:43 +0000 2026",
+      "createdAtLocal": "2026-07-01 10:42",
+      "createdAtISO": "2026-07-01T02:42:43+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMG_EBBbAAA-kKn.jpg",
+          "width": 1360,
+          "height": 752
+        }
+      ],
+      "urls": [
+        "https://apps.apple.com/us/app/a-network/id6770665448"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072147181558022169",
+      "text": "Good or bad news for Indie Hackers? 😌\n\nAI coding agents are officially on our phones:\n\n• Cursor dropped an iOS/iPad app to start & manage agents on the go.\n• OpenClaw launched native iOS/Android apps this week.\n\nThe workflow is shifting from writing code to pure supervision—reviewing, approving, and merging PRs from anywhere.\n\nDefinitely more leverage for solo founders. Then, what will be the new rules of winning the game? 😆",
+      "author": {
+        "id": "1966162921832255488",
+        "name": "Alisha Zhou",
+        "screenName": "alishaz1221",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066396255312375808/EL0Gu1pZ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 94,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Jul 01 02:36:01 +0000 2026",
+      "createdAtLocal": "2026-07-01 10:36",
+      "createdAtISO": "2026-07-01T02:36:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072109328924909924",
+      "text": "https://t.co/sS61PKLBiF",
+      "author": {
+        "id": "1234183597583740929",
+        "name": "S.E. Robinson, Jr.",
+        "screenName": "SERobinsonJr",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2035540824889741312/t2mkjAEr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 31,
+        "retweets": 5,
+        "replies": 2,
+        "quotes": 1,
+        "views": 48377,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Jul 01 00:05:36 +0000 2026",
+      "createdAtLocal": "2026-07-01 08:05",
+      "createdAtISO": "2026-07-01T00:05:36+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2071239838464958464"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "ELON CHRON: 30th of June, 2026"
+    }
+  ]
+}

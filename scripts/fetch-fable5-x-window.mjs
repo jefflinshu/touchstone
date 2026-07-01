@@ -7,12 +7,16 @@ import { loadTwitterAuthEnv } from './twitter-auth-env.mjs'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const ROOT = resolve(__dirname, '..')
-const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'fable5')
+const EARLY_ARGS = parseArgs(process.argv.slice(2))
+const ARCHIVE_KEY = String(EARLY_ARGS['archive-key'] || 'fable5').replace(/[^a-z0-9_-]/gi, '-')
+const LOG_LABEL = ARCHIVE_KEY === 'fable5' ? 'Fable 5' : ARCHIVE_KEY
+const ARCHIVE_ROOT = join(ROOT, 'data-archive', ARCHIVE_KEY)
 const TWITTER_BIN = existsSync('/Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter')
   ? '/Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter'
   : 'twitter'
 
 const DEFAULT_QUERY =
+  EARLY_ARGS['default-query'] ||
   '(("Claude Fable 5" OR "Fable 5" OR "claude-fable-5") (prompt OR prompts OR built OR build OR game OR website OR demo OR showcase))'
 
 const OFFICIAL_HANDLES = [
@@ -44,7 +48,7 @@ const OFFICIAL_HANDLES = [
 
 function usage() {
   console.error(
-    'Usage: node scripts/fetch-fable5-x-window.mjs --from YYYY-MM-DD --to YYYY-MM-DD [--query-file path] [--target 500] [--max 40] [--min-likes 10] [--min-views 0] [--run-id name] [--mode top|latest] [--official-only 0|1] [--handles a,b,c] [--handle-query query] [--with-replies 1|0] [--max-replies 12] [--seed-tweets url,id] [--seed-search id,url]'
+    'Usage: node scripts/fetch-fable5-x-window.mjs --from YYYY-MM-DD --to YYYY-MM-DD [--archive-key fable5] [--default-query query] [--query-file path] [--target 500] [--max 40] [--min-likes 10] [--min-views 0] [--run-id name] [--mode top|latest] [--official-only 0|1] [--handles a,b,c] [--handle-query query] [--with-replies 1|0] [--max-replies 12] [--seed-tweets url,id] [--seed-search id,url]'
   )
   process.exit(1)
 }
@@ -196,7 +200,7 @@ function runTwitter(args, timeoutMs = 45_000) {
   return JSON.parse(raw)
 }
 
-const args = parseArgs(process.argv.slice(2))
+const args = EARLY_ARGS
 const from = args.from
 const to = args.to
 if (!from || !to || !isDate(from) || !isDate(to) || from > to) usage()
@@ -224,7 +228,7 @@ const requestedHandles = String(args.handles || '')
   .filter(Boolean)
 const handles = requestedHandles.length ? requestedHandles : OFFICIAL_HANDLES
 const untilExclusive = dayAfter(to)
-const runId = args['run-id'] || `fable5-${from}-to-${to}`
+const runId = args['run-id'] || `${ARCHIVE_KEY}-${from}-to-${to}`
 const outDir = join(ARCHIVE_ROOT, runId)
 mkdirSync(outDir, { recursive: true })
 
@@ -482,5 +486,5 @@ writeDailyPosts(enrichedPosts)
 writeFileSync(join(outDir, 'failed-handles.json'), `${JSON.stringify(failed, null, 2)}\n`)
 writeFileSync(join(outDir, 'run-summary.json'), `${JSON.stringify(summary, null, 2)}\n`)
 
-console.log(`Collected Fable 5 candidate posts: ${posts.length}`)
+console.log(`Collected ${LOG_LABEL} candidate posts: ${posts.length}`)
 console.log(`Raw archive dir: ${outDir}`)

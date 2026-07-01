@@ -27,6 +27,15 @@ npm run setup   # one-time: install deps + build the web UI
 npm start       # http://localhost:3000
 ```
 
+## Repository layout
+
+Touchstone is organized as a small monorepo:
+
+- `apps/web` — React/Vite web UI and public showcase assets.
+- `apps/server` — Express API, WebSocket runner, OAuth, publishing, and static hosting.
+- `scripts` — data collection, validation, and deployment utilities.
+- `runs` / `data` — local runtime output and persisted server state.
+
 Google sign-in uses a standard OAuth 2.0 Web application client. In Google Cloud Console, create an OAuth client with:
 
 - Application type: `Web application`
@@ -111,6 +120,15 @@ Everything runs on your machine — your prompts and API usage stay local unless
 npm run setup   # 一次性：安装依赖 + 构建前端
 npm start       # http://localhost:3000
 ```
+
+## 仓库结构
+
+Touchstone 现在按 monorepo 组织：
+
+- `apps/web` — React/Vite 网页端和公开 showcase 静态资产
+- `apps/server` — Express API、WebSocket runner、OAuth、发布和静态托管
+- `scripts` — 数据采集、校验和部署工具
+- `runs` / `data` — 本地运行产物和服务端持久状态
 
 Google 登录使用标准 OAuth 2.0 Web application client。请在 Google Cloud Console 创建 OAuth client：
 

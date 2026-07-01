@@ -6,11 +6,12 @@ import { fileURLToPath } from 'node:url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const ROOT = resolve(__dirname, '..')
-const OUT_DIR = join(ROOT, 'web', 'public', 'fable5-data')
+const WEB_DIR = join(ROOT, 'apps', 'web')
+const OUT_DIR = join(WEB_DIR, 'public', 'fable5-data')
 const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'fable5')
 const CURATION_OVERRIDES_PATH = join(ARCHIVE_ROOT, 'curation-overrides.json')
-const PUBLIC_MEDIA_DIR = join(ROOT, 'web', 'public', 'fable5-media')
-const PUBLIC_AVATAR_DIR = join(ROOT, 'web', 'public', 'fable5-avatars')
+const PUBLIC_MEDIA_DIR = join(WEB_DIR, 'public', 'fable5-media')
+const PUBLIC_AVATAR_DIR = join(WEB_DIR, 'public', 'fable5-avatars')
 const CHUNK_SIZE = 24
 let CACHE_ASSETS = true
 let previousShardFiles = []

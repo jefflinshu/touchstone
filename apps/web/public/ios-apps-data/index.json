@@ -1,0 +1,152 @@
+{
+  "updatedAt": "2026-07-01",
+  "lastFetchedAt": "2026-07-01T11:34:13.102Z",
+  "cliStatus": "Loaded 269 locally archived X posts from 2 fetch runs; collection now has 67 media-backed iOS app cards and 74 creator profiles.",
+  "sourceRun": "local-archive",
+  "fetchRuns": [
+    "daily-asia-2026-07-01-latest",
+    "broad-2026-06-24-to-2026-06-30-latest-target300"
+  ],
+  "total": 67,
+  "categoryCounts": [
+    {
+      "key": "productivity",
+      "count": 10
+    },
+    {
+      "key": "utilities",
+      "count": 4
+    },
+    {
+      "key": "health",
+      "count": 3
+    },
+    {
+      "key": "finance",
+      "count": 3
+    },
+    {
+      "key": "education",
+      "count": 2
+    },
+    {
+      "key": "creative",
+      "count": 18
+    },
+    {
+      "key": "social",
+      "count": 10
+    },
+    {
+      "key": "devtools",
+      "count": 7
+    },
+    {
+      "key": "games",
+      "count": 15
+    },
+    {
+      "key": "design",
+      "count": 12
+    },
+    {
+      "key": "app-store",
+      "count": 44
+    },
+    {
+      "key": "testflight",
+      "count": 6
+    },
+    {
+      "key": "news",
+      "count": 56
+    },
+    {
+      "key": "experiments",
+      "count": 1
+    }
+  ],
+  "pageSize": 24,
+  "pages": [
+    {
+      "file": "pages/000.json",
+      "count": 24,
+      "fromDate": "2026-07-01",
+      "toDate": "2026-06-29"
+    },
+    {
+      "file": "pages/001.json",
+      "count": 24,
+      "fromDate": "2026-06-29",
+      "toDate": "2026-06-26"
+    },
+    {
+      "file": "pages/002.json",
+      "count": 19,
+      "fromDate": "2026-06-26",
+      "toDate": "2026-06-24"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "chunks/000.json",
+      "count": 24,
+      "fromDate": "2026-07-01",
+      "toDate": "2026-06-29"
+    },
+    {
+      "file": "chunks/001.json",
+      "count": 24,
+      "fromDate": "2026-06-29",
+      "toDate": "2026-06-26"
+    },
+    {
+      "file": "chunks/002.json",
+      "count": 19,
+      "fromDate": "2026-06-26",
+      "toDate": "2026-06-24"
+    }
+  ],
+  "shards": [
+    {
+      "date": "2026-07-01",
+      "file": "2026-07-01.json",
+      "count": 17
+    },
+    {
+      "date": "2026-06-30",
+      "file": "2026-06-30.json",
+      "count": 3
+    },
+    {
+      "date": "2026-06-29",
+      "file": "2026-06-29.json",
+      "count": 8
+    },
+    {
+      "date": "2026-06-28",
+      "file": "2026-06-28.json",
+      "count": 7
+    },
+    {
+      "date": "2026-06-27",
+      "file": "2026-06-27.json",
+      "count": 6
+    },
+    {
+      "date": "2026-06-26",
+      "file": "2026-06-26.json",
+      "count": 10
+    },
+    {
+      "date": "2026-06-25",
+      "file": "2026-06-25.json",
+      "count": 11
+    },
+    {
+      "date": "2026-06-24",
+      "file": "2026-06-24.json",
+      "count": 5
+    }
+  ]
+}

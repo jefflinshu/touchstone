@@ -1,5 +1,6 @@
 tunnel: touchstone-jefflin-ai
 credentials-file: /etc/cloudflared/touchstone-jefflin-ai.json
+protocol: http2
 
 ingress:
   - hostname: touchstone.jefflin.ai
