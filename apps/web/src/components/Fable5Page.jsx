@@ -1018,62 +1018,60 @@ export default function Fable5Page({
             </span>
           </button>
 
-          <div className="showcase-control-shell relative z-10 rounded-[22px] border border-white/10 bg-black/32 p-1.5 shadow-[0_18px_64px_rgba(0,0,0,0.20)] backdrop-blur-2xl lg:ml-auto lg:w-[min(800px,58vw)]">
-            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
-              <label className="relative flex h-9 w-full shrink-0 items-center rounded-full border border-white/70 bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.08)] transition-colors focus-within:border-acid sm:w-[240px] lg:w-[300px]">
-                <Search className="pointer-events-none absolute left-3 h-3.5 w-3.5 text-black/45" />
-                <input
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder={t('common.search')}
-                  className="h-full w-full rounded-full bg-transparent pr-3 pl-9 text-sm text-black outline-none placeholder:text-black/42"
-                />
-              </label>
+          <div className="relative z-10 flex w-full flex-col gap-2 lg:ml-auto lg:w-auto lg:max-w-[780px] lg:flex-row lg:items-center lg:justify-end">
+            <label className="showcase-control-pill relative flex h-9 w-full shrink-0 items-center rounded-full px-3 text-white transition-colors focus-within:border-acid sm:w-[220px] lg:w-[260px]">
+              <Search className="pointer-events-none h-3.5 w-3.5 shrink-0 text-white/45" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t('common.search')}
+                className="h-full min-w-0 flex-1 bg-transparent pl-2 text-[13px] text-white outline-none placeholder:text-white/42"
+              />
+            </label>
 
-              <div className="flex w-full min-w-0 flex-1 items-center gap-1.5 sm:w-auto">
-                {scenes.length > 0 && (
-                  <label className="grid min-w-0 flex-1 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-2 sm:max-w-[270px]">
-                    <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.categories')}</span>
-                    <select
-                      value={scene}
-                      onChange={(event) => setScene(event.target.value)}
-                      className="h-9 min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none"
-                    >
-                      <option value="all" className="bg-[#09090b] text-white">
-                        {t('common.all')} · {n(totalCount || items?.length || 0)}
-                      </option>
-                      {scenes.map(([key, count]) => (
-                        <option key={key} value={key} className="bg-[#09090b] text-white">
-                          {categoryLabel(t, key)} · {n(count)}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                )}
-                <label className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-2">
-                  <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.sortBy')}</span>
+            <div className="flex w-full min-w-0 items-center gap-2 lg:w-auto">
+              {scenes.length > 0 && (
+                <label className="showcase-control-pill grid h-9 min-w-0 flex-1 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full px-3 lg:w-[220px] lg:flex-none">
+                  <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.categories')}</span>
                   <select
-                    id="fable-sort"
-                    value={sortKey}
-                    onChange={(e) => setSortKey(e.target.value)}
-                    className="h-9 max-w-[110px] min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none sm:max-w-none"
+                    value={scene}
+                    onChange={(event) => setScene(event.target.value)}
+                    className="h-full min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none"
                   >
-                    {SORT_OPTIONS.map((option) => (
-                      <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
-                        {t(option.labelKey)}
+                    <option value="all" className="bg-[#09090b] text-white">
+                      {t('common.all')} · {n(totalCount || items?.length || 0)}
+                    </option>
+                    {scenes.map(([key, count]) => (
+                      <option key={key} value={key} className="bg-[#09090b] text-white">
+                        {categoryLabel(t, key)} · {n(count)}
                       </option>
                     ))}
                   </select>
                 </label>
-                <button
-                  type="button"
-                  onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
-                  title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
-                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.045] text-white/50 transition-colors hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
+              )}
+              <label className="showcase-control-pill grid h-9 min-w-0 flex-1 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full px-3 lg:w-[170px] lg:flex-none">
+                <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.sortBy')}</span>
+                <select
+                  id="fable-sort"
+                  value={sortKey}
+                  onChange={(e) => setSortKey(e.target.value)}
+                  className="h-full min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none"
                 >
-                  {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
-                </button>
-              </div>
+                  {SORT_OPTIONS.map((option) => (
+                    <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
+                      {t(option.labelKey)}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button
+                type="button"
+                onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
+                title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
+                className="showcase-control-pill flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-white/50 transition-colors hover:border-white/25 hover:bg-white/[0.09] hover:text-white"
+              >
+                {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
+              </button>
             </div>
           </div>
         </div>
