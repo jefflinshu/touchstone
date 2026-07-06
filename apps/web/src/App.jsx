@@ -580,7 +580,7 @@ export default function App() {
     <>
       <div className="bg-arena" />
       <header className="sticky top-0 z-40 bg-[#09090b]/72 px-3 py-2 backdrop-blur-xl sm:px-6">
-        <div className="mx-auto flex h-12 max-w-[1400px] items-center gap-2.5 rounded-full border border-white/10 bg-black/36 px-3 shadow-[0_18px_64px_rgba(0,0,0,0.30)] backdrop-blur-2xl sm:gap-4 sm:px-4">
+        <div className="top-nav-shell mx-auto flex h-12 max-w-[1400px] items-center gap-2.5 rounded-full border border-white/10 bg-black/36 px-3 shadow-[0_18px_64px_rgba(0,0,0,0.30)] backdrop-blur-2xl sm:gap-4 sm:px-4">
           <a
             href="/"
             onClick={(e) => {
@@ -612,14 +612,14 @@ export default function App() {
           >
             {t('nav.ossRadarShort')}
           </button>
-          <nav className="ml-2 hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.035] p-1 md:flex">
+          <nav className="ml-2 hidden items-center gap-1 md:flex">
             <button
               type="button"
               onClick={goFable5}
               className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'fable5'
                   ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
+                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
               }`}
             >
               {t('nav.fable5')}
@@ -630,7 +630,7 @@ export default function App() {
               className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'figmaMotion'
                   ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
+                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
               }`}
             >
               {t('nav.figmaMotion')}
@@ -641,7 +641,7 @@ export default function App() {
               className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'iosApps'
                   ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
+                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
               }`}
             >
               {t('nav.iosApps')}
@@ -652,7 +652,7 @@ export default function App() {
               className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'ossRadar'
                   ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
+                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
               }`}
             >
               {t('nav.ossRadar')}
@@ -661,7 +661,7 @@ export default function App() {
               href={X1_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex h-8 items-center gap-1 rounded-full border border-transparent px-3 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-white/8 hover:text-white"
+              className="flex h-8 items-center gap-1 rounded-full border border-transparent px-3 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-black/5 hover:text-white"
             >
               x-1.dev
               <ExternalLink className="h-3 w-3 opacity-55" />

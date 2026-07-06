@@ -915,7 +915,7 @@ export default function Fable5Page({
 
       <section className="sticky top-14 z-30 mt-5 py-3 sm:mt-6">
         <div className="pointer-events-none absolute inset-0 z-0 rounded-[24px] bg-[#09090b]/86 backdrop-blur-xl" />
-        <div className="relative z-10 rounded-[22px] border border-white/10 bg-black/32 p-1.5 shadow-[0_18px_64px_rgba(0,0,0,0.28)] backdrop-blur-2xl">
+        <div className="showcase-control-shell relative z-10 rounded-[22px] border border-white/10 bg-black/32 p-1.5 shadow-[0_18px_64px_rgba(0,0,0,0.28)] backdrop-blur-2xl">
           <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
             <label className="relative flex h-9 w-full shrink-0 items-center rounded-full border border-white/70 bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.08)] transition-colors focus-within:border-acid sm:w-[260px] lg:w-[320px]">
               <Search className="pointer-events-none absolute left-3 h-3.5 w-3.5 text-black/45" />
