@@ -40,8 +40,9 @@ const SORT_OPTIONS = [
   { key: 'replies', labelKey: 'fable.sort.replies' },
 ]
 
-const SHARD_LOAD_STEP = 1
+const SHARD_LOAD_STEP = 2
 const INITIAL_PRIORITY_IMAGES = 6
+const PRELOAD_AHEAD_COUNT = 24
 const TRANSLATION_BATCH_SIZE = 12
 const CATEGORY_ORDER = ['games', 'apps', 'websites', 'videos', '3d', 'design', 'agents', 'prompts', 'code', 'research', 'news', 'safety', 'experiments']
 
@@ -53,11 +54,10 @@ function mediaItemsFor(item) {
     seen.add(url)
     urls.push(url)
   }
-  add(item.mediaThumbUrl)
   for (const url of item.mediaUrls || []) {
-    if (item.mediaThumbUrl && /\.mp4(\?|$)/i.test(url)) continue
     add(url)
   }
+  if (!urls.length) add(item.mediaThumbUrl)
   return urls.map((url) => ({
     url,
     type: /\.mp4(\?|$)/i.test(url) ? 'video' : 'image',
@@ -111,9 +111,16 @@ function useMasonryColumnCount(enabled) {
 }
 
 function estimatedMasonryHeight(item) {
-  const size = readCachedImageSize(firstPreviewUrl(item))
-  if (!size) return 1
-  return Math.max(0.45, Math.min(2.2, size.height / size.width))
+  if (item.media === 'video') return 0.78
+  const text = `${item.title || ''} ${item.originalText || ''} ${item.mediaThumbUrl || ''}`.toLowerCase()
+  if (text.includes('phone') || text.includes('iphone') || text.includes('app store') || text.includes('testflight')) return 1.18
+  if (text.includes('poster') || text.includes('portrait')) return 1.28
+  return 0.82
+}
+
+function stableMasonryAspectRatio(item) {
+  const heightToWidth = estimatedMasonryHeight(item)
+  return `1 / ${heightToWidth}`
 }
 
 function distributeMasonryItems(items, columnCount) {
@@ -161,6 +168,16 @@ function mergeShowcaseItems(current, nextItems) {
   const byId = new Map((current || []).map((item) => [item.id, item]))
   for (const item of nextItems) byId.set(item.id, item)
   return [...byId.values()]
+}
+
+function preloadImageUrls(urls) {
+  if (typeof window === 'undefined') return
+  for (const url of urls) {
+    if (!url) continue
+    const image = new Image()
+    image.decoding = 'async'
+    image.src = url
+  }
 }
 
 function localizedShowcaseCopy(item, translation) {
@@ -283,7 +300,6 @@ function MasonryImage({ item, priority = false }) {
   const { t } = useI18n()
   const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = firstPreviewUrl(item)
-  const [size, setSize] = useState(() => readCachedImageSize(imageUrl))
   const [imageLoaded, setImageLoaded] = useState(false)
 
   if (!imageUrl || imageFailed) {
@@ -295,7 +311,7 @@ function MasonryImage({ item, priority = false }) {
   }
 
   return (
-    <div className="relative overflow-hidden bg-black" style={{ aspectRatio: size ? `${size.width} / ${size.height}` : '4 / 3' }}>
+    <div className="relative overflow-hidden bg-black" style={{ aspectRatio: stableMasonryAspectRatio(item) }}>
       {!imageLoaded && <ImageSkeleton />}
       <img
         src={imageUrl}
@@ -316,14 +332,7 @@ function MasonryImage({ item, priority = false }) {
           'absolute inset-0 z-10 h-full w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)] transition-opacity duration-300',
           imageLoaded ? 'opacity-100' : 'opacity-0'
         )}
-        onLoad={(event) => {
-          const next = { width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight }
-          if (next.width && next.height && (!size || size.width !== next.width || size.height !== next.height)) {
-            writeCachedImageSize(imageUrl, event.currentTarget)
-            setSize(next)
-          }
-          setImageLoaded(true)
-        }}
+        onLoad={() => setImageLoaded(true)}
         onError={() => setImageFailed(true)}
       />
     </div>
@@ -383,7 +392,7 @@ function VisualMasonryCard({ item, index, onOpen }) {
 function DetailImageFrame({ src, alt }) {
   const [imageLoaded, setImageLoaded] = useState(false)
   return (
-    <div className="relative overflow-hidden rounded-md border border-white/10 bg-black">
+    <div className="relative flex h-full items-center justify-center overflow-hidden rounded-md border border-white/10 bg-black">
       {!imageLoaded && <ImageSkeleton className="rounded-md" />}
       <img
         src={src}
@@ -403,7 +412,7 @@ function DetailImageFrame({ src, alt }) {
         loading="lazy"
         decoding="async"
         className={cn(
-          'relative z-10 max-h-[78vh] w-full object-contain p-2 drop-shadow-[0_16px_32px_rgba(0,0,0,0.42)] transition-opacity duration-300',
+          'relative z-10 h-full max-h-full w-full object-contain p-2 drop-shadow-[0_16px_32px_rgba(0,0,0,0.42)] transition-opacity duration-300',
           imageLoaded ? 'opacity-100' : 'opacity-0'
         )}
         onLoad={() => setImageLoaded(true)}
@@ -460,48 +469,48 @@ function VisualDetailDialog({ item, translation, open, onOpenChange }) {
                   </div>
                 )}
                 {media.length > 1 && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={() => goMedia(-1)}
-                      className="absolute top-1/2 left-3 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-black/55 text-white/80 backdrop-blur transition-colors hover:bg-white hover:text-black"
-                      title="Previous media"
-                    >
-                      <ChevronLeft className="h-5 w-5" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => goMedia(1)}
-                      className="absolute top-1/2 right-3 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-black/55 text-white/80 backdrop-blur transition-colors hover:bg-white hover:text-black"
-                      title="Next media"
-                    >
-                      <ChevronRight className="h-5 w-5" />
-                    </button>
-                    <div className="absolute right-3 bottom-3 z-20 rounded-full border border-white/15 bg-black/60 px-2 py-1 font-mono text-[10px] text-white/70 backdrop-blur">
-                      {activeMediaIndex + 1}/{media.length}
-                    </div>
-                  </>
+                  <div className="absolute top-3 right-3 z-20 rounded-full border border-white/20 bg-white px-2 py-1 font-mono text-[10px] text-black shadow-[0_10px_24px_rgba(0,0,0,0.22)]">
+                    {activeMediaIndex + 1}/{media.length}
+                  </div>
                 )}
               </div>
               {media.length > 1 && (
-                <div className="flex shrink-0 gap-2 overflow-x-auto pb-1">
-                  {media.map((entry, index) => (
-                    <button
-                      key={entry.url}
-                      type="button"
-                      onClick={() => setActiveMediaIndex(index)}
-                      className={cn(
-                        'h-12 w-16 shrink-0 cursor-pointer overflow-hidden rounded border bg-white/[0.04] font-mono text-[10px] text-white/55 transition-colors',
-                        index === activeMediaIndex ? 'border-acid text-acid' : 'border-white/12 hover:border-white/30'
-                      )}
-                    >
-                      {entry.type === 'image' ? (
-                        <img src={entry.url} alt="" className="h-full w-full object-cover" loading="lazy" />
-                      ) : (
-                        <span className="flex h-full w-full items-center justify-center">MP4</span>
-                      )}
-                    </button>
-                  ))}
+                <div className="grid shrink-0 grid-cols-[40px_minmax(0,1fr)_40px] items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => goMedia(-1)}
+                    className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/70 bg-white text-black shadow-[0_12px_28px_rgba(0,0,0,0.22)] transition-colors hover:border-acid hover:bg-acid"
+                    title="Previous media"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <div className="flex min-w-0 items-center justify-evenly gap-3 overflow-x-auto px-1 pb-1">
+                    {media.map((entry, index) => (
+                      <button
+                        key={entry.url}
+                        type="button"
+                        onClick={() => setActiveMediaIndex(index)}
+                        className={cn(
+                          'h-14 w-20 shrink-0 cursor-pointer overflow-hidden rounded-md border bg-white/[0.04] font-mono text-[10px] text-white/55 transition-colors',
+                          index === activeMediaIndex ? 'border-acid text-acid shadow-[0_0_0_1px_rgba(212,255,79,0.42)]' : 'border-white/12 hover:border-white/45'
+                        )}
+                      >
+                        {entry.type === 'image' ? (
+                          <img src={entry.url} alt="" className="h-full w-full object-cover" loading="lazy" />
+                        ) : (
+                          <span className="flex h-full w-full items-center justify-center">MP4</span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => goMedia(1)}
+                    className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/70 bg-white text-black shadow-[0_12px_28px_rgba(0,0,0,0.22)] transition-colors hover:border-acid hover:bg-acid"
+                    title="Next media"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
                 </div>
               )}
             </div>
@@ -821,7 +830,7 @@ export default function Fable5Page({
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) loadMore()
       },
-      { rootMargin: '900px 0px' }
+      { rootMargin: '2400px 0px' }
     )
     observer.observe(target)
     return () => observer.disconnect()
@@ -833,7 +842,7 @@ export default function Fable5Page({
     const maybeLoadMore = () => {
       ticking = false
       const remaining = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight)
-      if (remaining < 1200) loadMore()
+      if (remaining < 2600) loadMore()
     }
     const onScroll = () => {
       if (ticking) return
@@ -972,6 +981,12 @@ export default function Fable5Page({
     }
     return [...list].sort((a, b) => compareShowcases(a, b, sortKey, sortDirection))
   }, [items, scene, query, sortKey, sortDirection, language, translationsByLanguage])
+
+  useEffect(() => {
+    if (!visualMode || !filtered.length) return
+    preloadImageUrls(filtered.slice(0, PRELOAD_AHEAD_COUNT).map(firstPreviewUrl))
+  }, [filtered, visualMode])
+
   const visualColumnCount = useMasonryColumnCount(visualMode)
   const visualColumns = useMemo(
     () => (visualMode ? distributeMasonryItems(filtered, visualColumnCount) : []),

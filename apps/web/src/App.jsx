@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react'
 import { Check, ExternalLink, Globe2, Heart, Loader2, LogOut, Menu, Monitor, Moon, Search, Sun, User, X } from 'lucide-react'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
 import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import ProfilePage from './components/ProfilePage.jsx'
@@ -293,6 +294,7 @@ export default function App() {
   }, [])
   const [themeMode, setThemeMode] = useState(getStoredThemeMode)
   const [resolvedTheme, setResolvedTheme] = useState(() => resolveTheme(getStoredThemeMode()))
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const wsRef = useRef(null)
 
   useEffect(() => {
@@ -575,6 +577,12 @@ export default function App() {
     const byCategory = catFilter === 'all' ? groups : groups.filter((g) => g.category === catFilter)
     return activeSearchQuery ? byCategory.filter((g) => projectGroupMatchesSearch(g, activeSearchQuery, users)) : byCategory
   }, [activeSearchQuery, catFilter, groups, users])
+  const navItems = [
+    { key: 'fable5', label: 'FABLE', onSelect: goFable5, event: 'nav_fable5' },
+    { key: 'figmaMotion', label: 'MOTION', onSelect: goFigmaMotion, event: 'nav_figma_motion' },
+    { key: 'iosApps', label: 'iOS', onSelect: goIosApps, event: 'nav_ios_apps' },
+    { key: 'ossRadar', label: 'OSS', onSelect: goOssRadar, event: 'nav_oss_radar' },
+  ]
 
   return (
     <>
@@ -601,75 +609,34 @@ export default function App() {
               </span>
             </span>
           </a>
-          <button
-            type="button"
-            onClick={goOssRadar}
-            className={`ml-1 h-8 shrink-0 cursor-pointer rounded-full border px-3 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors md:hidden ${
-              route.page === 'ossRadar'
-                ? 'border-acid bg-acid text-black'
-                : 'border-white/12 bg-white/[0.025] text-white/62 hover:border-white/28 hover:text-white'
-            }`}
-          >
-            {t('nav.ossRadarShort')}
-          </button>
           <nav className="ml-2 hidden items-center gap-1 md:flex">
-            <button
-              type="button"
-              onClick={goFable5}
-              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
-                route.page === 'fable5'
-                  ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
-              }`}
-            >
-              {t('nav.fable5')}
-            </button>
-            <button
-              type="button"
-              onClick={goFigmaMotion}
-              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
-                route.page === 'figmaMotion'
-                  ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
-              }`}
-            >
-              {t('nav.figmaMotion')}
-            </button>
-            <button
-              type="button"
-              onClick={goIosApps}
-              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
-                route.page === 'iosApps'
-                  ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
-              }`}
-            >
-              {t('nav.iosApps')}
-            </button>
-            <button
-              type="button"
-              onClick={goOssRadar}
-              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
-                route.page === 'ossRadar'
-                  ? 'border border-acid bg-acid text-black'
-                  : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
-              }`}
-            >
-              {t('nav.ossRadar')}
-            </button>
+            {navItems.map((item) => (
+              <button
+                key={item.key}
+                type="button"
+                onClick={item.onSelect}
+                className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+                  route.page === item.key
+                    ? 'border border-acid bg-acid text-black'
+                    : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
             <a
               href={X1_URL}
               target="_blank"
               rel="noreferrer"
               className="flex h-8 items-center gap-1 rounded-full border border-transparent px-3 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-black/5 hover:text-white"
             >
-              x-1.dev
+              X-1
               <ExternalLink className="h-3 w-3 opacity-55" />
             </a>
           </nav>
           <div className="ml-auto flex items-center gap-2.5 sm:gap-4">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+            <DialogPrimitive.Root open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
+              <DialogPrimitive.Trigger asChild>
                 <button
                   type="button"
                   title="Menu"
@@ -677,52 +644,52 @@ export default function App() {
                 >
                   <Menu className="h-4 w-4" />
                 </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-[180px] font-mono text-[11px]">
-                <DropdownMenuItem
-                  onSelect={() => {
-                    goFable5()
-                    trackEvent('nav_fable5_mobile')
-                  }}
-                  className={route.page === 'fable5' ? 'bg-acid/15 text-acid focus:bg-acid/15 focus:text-acid' : ''}
-                >
-                  {t('nav.fable5')}
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onSelect={() => {
-                    goFigmaMotion()
-                    trackEvent('nav_figma_motion_mobile')
-                  }}
-                  className={route.page === 'figmaMotion' ? 'bg-acid/15 text-acid focus:bg-acid/15 focus:text-acid' : ''}
-                >
-                  {t('nav.figmaMotion')}
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onSelect={() => {
-                    goIosApps()
-                    trackEvent('nav_ios_apps_mobile')
-                  }}
-                  className={route.page === 'iosApps' ? 'bg-acid/15 text-acid focus:bg-acid/15 focus:text-acid' : ''}
-                >
-                  {t('nav.iosApps')}
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onSelect={() => {
-                    goOssRadar()
-                    trackEvent('nav_oss_radar_mobile')
-                  }}
-                  className={route.page === 'ossRadar' ? 'bg-acid/15 text-acid focus:bg-acid/15 focus:text-acid' : ''}
-                >
-                  {t('nav.ossRadar')}
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href={X1_URL} target="_blank" rel="noreferrer">
-                    x-1.dev
-                    <ExternalLink className="ml-auto h-3.5 w-3.5" />
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </DialogPrimitive.Trigger>
+              <DialogPrimitive.Portal>
+                <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/45 backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in md:hidden" />
+                <DialogPrimitive.Content className="fixed top-0 right-0 bottom-0 z-50 flex w-[min(320px,86vw)] flex-col border-l border-white/12 bg-[#0c0c0f] p-4 shadow-2xl outline-none data-[state=open]:animate-in data-[state=open]:slide-in-from-right md:hidden">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <img src="/brand/touchstone-mark.svg" alt="" className="h-7 w-7 rounded-[7px]" />
+                      <span className="font-pixel text-[14px] tracking-[0.18em] text-white">MENU</span>
+                    </div>
+                    <DialogPrimitive.Close className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/12 text-white/55 transition-colors hover:border-white/28 hover:text-white">
+                      <X className="h-4 w-4" />
+                    </DialogPrimitive.Close>
+                  </div>
+                  <nav className="mt-8 flex flex-col gap-2">
+                    {navItems.map((item) => (
+                      <button
+                        key={item.key}
+                        type="button"
+                        onClick={() => {
+                          item.onSelect()
+                          trackEvent(`${item.event}_mobile`)
+                          setMobileNavOpen(false)
+                        }}
+                        className={`flex h-12 cursor-pointer items-center justify-between rounded-full border px-4 font-mono text-[12px] tracking-[0.16em] uppercase transition-colors ${
+                          route.page === item.key
+                            ? 'border-acid bg-acid text-black'
+                            : 'border-white/12 bg-white/[0.04] text-white/70 hover:border-white/30 hover:text-white'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                    <a
+                      href={X1_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setMobileNavOpen(false)}
+                      className="flex h-12 items-center justify-between rounded-full border border-white/12 bg-white/[0.04] px-4 font-mono text-[12px] tracking-[0.16em] text-white/70 uppercase transition-colors hover:border-white/30 hover:text-white"
+                    >
+                      X-1
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </nav>
+                </DialogPrimitive.Content>
+              </DialogPrimitive.Portal>
+            </DialogPrimitive.Root>
             {active > 0 && (
               <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-acid uppercase">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
