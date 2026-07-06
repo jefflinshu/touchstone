@@ -1,65 +1,66 @@
 {
-  "updatedAt": "2026-07-01",
-  "lastFetchedAt": "2026-07-01T11:34:13.102Z",
-  "cliStatus": "Loaded 269 locally archived X posts from 2 fetch runs; collection now has 67 media-backed iOS app cards and 74 creator profiles.",
+  "updatedAt": "2026-07-06",
+  "lastFetchedAt": "2026-07-06T04:30:24.137Z",
+  "cliStatus": "Loaded 452 locally archived X posts from 3 fetch runs; collection now has 125 media-backed iOS app cards and 116 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
+    "daily-asia-2026-07-02-to-2026-07-06-latest",
     "daily-asia-2026-07-01-latest",
     "broad-2026-06-24-to-2026-06-30-latest-target300"
   ],
-  "total": 67,
+  "total": 125,
   "categoryCounts": [
     {
       "key": "productivity",
-      "count": 10
+      "count": 19
     },
     {
       "key": "utilities",
-      "count": 4
-    },
-    {
-      "key": "health",
-      "count": 3
-    },
-    {
-      "key": "finance",
-      "count": 3
-    },
-    {
-      "key": "education",
-      "count": 2
-    },
-    {
-      "key": "creative",
-      "count": 18
-    },
-    {
-      "key": "social",
-      "count": 10
-    },
-    {
-      "key": "devtools",
-      "count": 7
-    },
-    {
-      "key": "games",
-      "count": 15
-    },
-    {
-      "key": "design",
-      "count": 12
-    },
-    {
-      "key": "app-store",
-      "count": 44
-    },
-    {
-      "key": "testflight",
       "count": 6
     },
     {
+      "key": "health",
+      "count": 6
+    },
+    {
+      "key": "finance",
+      "count": 8
+    },
+    {
+      "key": "education",
+      "count": 3
+    },
+    {
+      "key": "creative",
+      "count": 31
+    },
+    {
+      "key": "social",
+      "count": 17
+    },
+    {
+      "key": "devtools",
+      "count": 14
+    },
+    {
+      "key": "games",
+      "count": 23
+    },
+    {
+      "key": "design",
+      "count": 26
+    },
+    {
+      "key": "app-store",
+      "count": 81
+    },
+    {
+      "key": "testflight",
+      "count": 12
+    },
+    {
       "key": "news",
-      "count": 56
+      "count": 101
     },
     {
       "key": "experiments",
@@ -71,19 +72,37 @@
     {
       "file": "pages/000.json",
       "count": 24,
-      "fromDate": "2026-07-01",
-      "toDate": "2026-06-29"
+      "fromDate": "2026-07-06",
+      "toDate": "2026-07-04"
     },
     {
       "file": "pages/001.json",
       "count": 24,
-      "fromDate": "2026-06-29",
-      "toDate": "2026-06-26"
+      "fromDate": "2026-07-04",
+      "toDate": "2026-07-03"
     },
     {
       "file": "pages/002.json",
-      "count": 19,
-      "fromDate": "2026-06-26",
+      "count": 24,
+      "fromDate": "2026-07-03",
+      "toDate": "2026-07-01"
+    },
+    {
+      "file": "pages/003.json",
+      "count": 24,
+      "fromDate": "2026-07-01",
+      "toDate": "2026-06-27"
+    },
+    {
+      "file": "pages/004.json",
+      "count": 24,
+      "fromDate": "2026-06-27",
+      "toDate": "2026-06-25"
+    },
+    {
+      "file": "pages/005.json",
+      "count": 5,
+      "fromDate": "2026-06-24",
       "toDate": "2026-06-24"
     }
   ],
@@ -91,23 +110,66 @@
     {
       "file": "chunks/000.json",
       "count": 24,
-      "fromDate": "2026-07-01",
-      "toDate": "2026-06-29"
+      "fromDate": "2026-07-06",
+      "toDate": "2026-07-04"
     },
     {
       "file": "chunks/001.json",
       "count": 24,
-      "fromDate": "2026-06-29",
-      "toDate": "2026-06-26"
+      "fromDate": "2026-07-04",
+      "toDate": "2026-07-03"
     },
     {
       "file": "chunks/002.json",
-      "count": 19,
-      "fromDate": "2026-06-26",
+      "count": 24,
+      "fromDate": "2026-07-03",
+      "toDate": "2026-07-01"
+    },
+    {
+      "file": "chunks/003.json",
+      "count": 24,
+      "fromDate": "2026-07-01",
+      "toDate": "2026-06-27"
+    },
+    {
+      "file": "chunks/004.json",
+      "count": 24,
+      "fromDate": "2026-06-27",
+      "toDate": "2026-06-25"
+    },
+    {
+      "file": "chunks/005.json",
+      "count": 5,
+      "fromDate": "2026-06-24",
       "toDate": "2026-06-24"
     }
   ],
   "shards": [
+    {
+      "date": "2026-07-06",
+      "file": "2026-07-06.json",
+      "count": 6
+    },
+    {
+      "date": "2026-07-05",
+      "file": "2026-07-05.json",
+      "count": 17
+    },
+    {
+      "date": "2026-07-04",
+      "file": "2026-07-04.json",
+      "count": 11
+    },
+    {
+      "date": "2026-07-03",
+      "file": "2026-07-03.json",
+      "count": 19
+    },
+    {
+      "date": "2026-07-02",
+      "file": "2026-07-02.json",
+      "count": 5
+    },
     {
       "date": "2026-07-01",
       "file": "2026-07-01.json",

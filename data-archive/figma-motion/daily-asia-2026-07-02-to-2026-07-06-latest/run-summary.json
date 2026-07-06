@@ -1,0 +1,26 @@
+{
+  "from": "2026-07-02",
+  "to": "2026-07-06",
+  "mode": "latest",
+  "officialOnly": false,
+  "withReplies": false,
+  "maxReplies": 12,
+  "minViews": 0,
+  "target": 500,
+  "queries": [
+    "((\"Figma Motion\" OR \"FigmaMotion\") (motion OR animation OR animated OR timeline OR keyframe OR keyframes OR prototype OR demo))",
+    "((\"Figma Motion\" OR \"FigmaMotion\") (Agent OR AI OR prompt OR generate OR generated OR \"make it move\" OR workflow))",
+    "((\"Figma Motion\" OR \"FigmaMotion\") (app OR mobile OR dashboard OR product OR interface OR UI OR UX))",
+    "((\"Figma Motion\" OR \"FigmaMotion\") (Config OR launch OR released OR beta OR \"open beta\" OR \"new feature\"))",
+    "((\"Figma Motion\" OR \"FigmaMotion\") (tutorial OR guide OR walkthrough OR tips OR \"how to\"))",
+    "((\"Figma Motion\" OR \"FigmaMotion\") has:videos)",
+    "((\"Figma Motion\" OR \"FigmaMotion\") has:media)",
+    "((\"Figma\" \"Motion\") (timeline OR keyframes OR presets OR easing OR \"motion design\"))",
+    "((\"Figma\" \"Motion\") (prototype OR interaction OR animation OR microinteraction OR transition))",
+    "((\"Figma\" \"Motion\") min_faves:10)"
+  ],
+  "candidates": 0,
+  "conversationFetchFailures": 0,
+  "failedHandles": 10,
+  "generatedAt": "2026-07-06T04:24:22.874Z"
+}

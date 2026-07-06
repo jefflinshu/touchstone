@@ -1,0 +1,52 @@
+[
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") (motion OR animation OR animated OR timeline OR keyframe OR keyframes OR prototype OR demo))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.0s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 11.4s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.8s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") (Agent OR AI OR prompt OR generate OR generated OR \"make it move\" OR workflow))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.1s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.9s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.1s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") (app OR mobile OR dashboard OR product OR interface OR UI OR UX))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.0s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 11.4s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.7s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") (Config OR launch OR released OR beta OR \"open beta\" OR \"new feature\"))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.2s (attempt 1/3)\n"
+  },
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") (tutorial OR guide OR walkthrough OR tips OR \"how to\"))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.0s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 11.2s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.3s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") has:videos)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.8s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.5s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.2s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma Motion\" OR \"FigmaMotion\") has:media)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.2s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.6s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.3s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma\" \"Motion\") (timeline OR keyframes OR presets OR easing OR \"motion design\"))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.2s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.5s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.0s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma\" \"Motion\") (prototype OR interaction OR animation OR microinteraction OR transition))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.2s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 11.8s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.9s (attempt 3/3)\n"
+  },
+  {
+    "query": "((\"Figma\" \"Motion\") min_faves:10)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.5s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.4s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.8s (attempt 3/3)\n"
+  }
+]

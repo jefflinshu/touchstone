@@ -1,0 +1,370 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2073854868897312779",
+      "text": "@averycode This hits. Started coding at 49 with zero background, building at 9 PM after the kids are down. Just shipped my first iOS app, still keeping the day job. The compounding is real, you just can't see it from inside month one.",
+      "author": {
+        "id": "1936058948429246464",
+        "name": "Luca Capone | Vibe Coder",
+        "screenName": "LucaCaponeX",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1979079214625153025/il8_cCFM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 11,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 19:41:45 +0000 2026",
+      "createdAtLocal": "2026-07-06 03:41",
+      "createdAtISO": "2026-07-05T19:41:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073716672590991361",
+      "text": "Google just shipped AI Edge Eloquent — a free dictation app that removes filler words in real time, runs entirely offline, and it's already on iOS.\n\nNo internet needed. Your voice data never leaves the device.\n\nHere's why this matters more than another transcription tool:\n\nMost dictation apps transcribe everything — every \"um\", \"uh\", mid-sentence correction, restart. You get raw speech as text, which still needs editing. AI Edge Eloquent flips this: it captures what you MEANT to say, not what you actually said.\n\nThe offline engine uses Google's Gemma architecture on-device. Enable online mode and it taps Gemini for deeper cleanup, smart rewrites, and key-point extraction.\n\nYou can import your Gmail contacts and jargon via Dictionaries tab — names, niche terms, industry acronyms. Accuracy improves over time as it learns your vocabulary.\n\nOutput options:\n- Polish → clean, readable text\n- Key Points → summary (online only)\n- Formal / Short / Long rewrites\n\nPlus WPM stats and word count — useful for anyone tracking speaking clarity.\n\nWhy I'm watching this: Google is quietly building the on-device AI stack. Gemma → AI Edge → now Eloquent. The same pattern as Pixel's on-device AI features — but this time it's a standalone iOS app, not tied to any hardware.\n\nIf it comes to Android, it replaces Wispr Flow, MacWhisper, and SuperWhisper for anyone who values privacy over cloud features.\n\nFree, no account required, works offline. That's a rare combination.",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 36,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 10:32:37 +0000 2026",
+      "createdAtLocal": "2026-07-05 18:32",
+      "createdAtISO": "2026-07-05T10:32:37+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMdSTUiXkAA24qV.jpg",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073610949370458489",
+      "text": "Cursor just shipped a native iOS app — and it's more than a remote desktop.\n\nYou can launch cloud agents from your phone, control agents running on your computer remotely, and get push notifications when work is ready. Voice input, slash commands, full model selection.\n\nThe workflows that work today:\n- Incident on-call → kick off an agent from lunch, come back to a PR\n- Customer bug report → start a fix from your phone while away from desk\n- Screenshot feedback → annotate and send as visual context to an agent\n\nCloud agents run in isolated VMs with full dev environments. They produce demos, screenshots, and logs. You can review diffs, leave follow-up instructions, or merge the PR directly from the app.\n\nThe handoff between local and cloud is the interesting part. Send a local plan to a cloud agent, or move an active cloud session back to your machine for local testing before merging.\n\nThis is the most serious mobile coding agent I've seen. Not a companion app — a full agent platform in your pocket.\n\nPublic beta on paid plans. 75% off Composer 2.5 runs through today.\n\nhttps://t.co/u8XEgrZG0I",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 57,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 03:32:30 +0000 2026",
+      "createdAtLocal": "2026-07-05 11:32",
+      "createdAtISO": "2026-07-05T03:32:30+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMbyJYGXYAAumIp.jpg",
+          "width": 1000,
+          "height": 750
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073596073734496473",
+      "text": "We’re currently hard at work improving the response quality of our agentic swarm on the private edition Mac app for VeriRFP, using on-device AI while also pushing response speed. On the side I’ve been building something that came straight out of frustration at home.\nMy wife and daughter constantly complain about how exhausting social media has become. The endless rage bait, doomscrolling, and algorithms that seem designed to keep everyone angry and scrolling. It got me thinking there has to be a better way for adults to actually connect with people nearby.\nThat’s why I started MetroMeet. An 18+ social app built for real, low-pressure connections in your own area. The tagline says it best: “Meet people, not arguments.”\nIt’s a modern take on the fun, local, playful social apps a lot of us remember from earlier days of the internet. Your area’s wall where people post plans, questions, and everyday thoughts. Real verified profiles with personality. Simple games and icebreakers so conversations actually start. Optional private filters for compatibility — including partisanship if you want — so you can choose who sees you and who you interact with. You earn MetroBucks just by showing up and being decent, and you can spend them on virtual gifts or other playful stuff.\nWe launch city by city once enough locals join the waitlist. That way every area starts with real density and energy instead of a ghost town. No video feeds. No influencers. No algorithms pushing outrage. Just relationship-first connection over endless scrolling.\nI just shipped the waitlist site yesterday at https://t.co/uwawqQSEig. If this resonates, claim your founding spot. Early members get priority access when their area launches, a founding badge, starting MetroBucks, and referral boosts.\nWe’re moving fast on the iOS side too and would love your thoughts.\nWhat do you miss most about the earlier, lighter days of social apps, or what would actually make one enjoyable again for adults?",
+      "author": {
+        "id": "2030094288168656897",
+        "name": "Greg Gavin",
+        "screenName": "GregGavinRFP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2030097682287464448/kCMRCD7i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 96,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 02:33:24 +0000 2026",
+      "createdAtLocal": "2026-07-05 10:33",
+      "createdAtISO": "2026-07-05T02:33:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073082188728299947",
+      "text": "Google just shipped a dictation app that runs entirely offline, strips filler words in real time, and it's free.\n\nAI Edge Eloquent is on iOS now. Speak, pause, and it cleans up every \"um\" and \"uh\" automatically. If you want more, connect Gmail to import your jargon and toggle Gemini online features for smart rewrites.\n\nWhy this matters: it runs on-device via Google's Gemma architecture. No data leaves your phone unless you opt into the Gemini layer. That's a privacy-first approach to a category that's been dominated by cloud-dependent tools.\n\nThe polish features are genuinely useful:\n- Raw speech → clean readable text\n- Key points extraction (online mode)\n- Formal/short/long rewrites\n- Speaking speed stats (WPM tracking)\n\nThe big question: when does this hit Android? Google launching an iOS-first AI app is unusual — suggests they're testing the product-market fit before the full rollout.\n\nFor devs who dictate PRDs, code comments, or docs on the go — this is worth a download.\n\nhttps://t.co/YSY0y4yXqz",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 37,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jul 03 16:31:24 +0000 2026",
+      "createdAtLocal": "2026-07-04 00:31",
+      "createdAtISO": "2026-07-03T16:31:24+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMURPdLXcAA0jt8.jpg",
+          "width": 1200,
+          "height": 439
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073064351951462597",
+      "text": "Google just shipped a dictation app that runs entirely on-device — no internet required, no audio leaves your phone.\n\nGoogle AI Edge Eloquent is free on iOS and does something most transcription tools don't: it strips filler words (\"um,\" \"uh\") in real time and smooths your phrasing before you see the text.\n\nThe offline mode runs on Google's Gemma architecture directly on your device. Connect your Gmail to import custom names and jargon. The Dictionaries tab lets you add niche terms manually.\n\nOnline features tap Gemini for deeper cleanup, summaries, and rewrite styles (formal, short, long). But the base experience works without any network.\n\nWhy this is interesting:\n- Privacy-first: voice data never leaves the device\n- Real-time filler word removal — not post-processing\n- Speaking speed stats (WPM) + word count for communication improvement\n- Free, with no subscription\n\nThe big question: will this come to Android? Right now it's iOS-only. If Google brings the same on-device Gemma stack to Android, this becomes a genuinely useful cross-platform tool.\n\nhttps://t.co/YSY0y4yXqz",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 0
+      },
+      "createdAt": "Fri Jul 03 15:20:31 +0000 2026",
+      "createdAtLocal": "2026-07-03 23:20",
+      "createdAtISO": "2026-07-03T15:20:31+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMUBBK7XsAAfEAK.jpg",
+          "width": 2048,
+          "height": 1232
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072776036476236185",
+      "text": "Cursor just shipped a native iOS app — and it changes how I think about AI coding agents.\n\nThe core insight is simple: inspiration doesn't always happen at a desk. The Cursor iOS app lets you start agents, review diffs, and merge PRs from your phone. Voice input, slash commands, push notifications when agents finish.\n\nBut the architecture is what's interesting. The app connects to agents running either locally or in Cursor's cloud VMs. You can start a task locally, shift it to the cloud mid-task, and pull it back to your machine to test before merging. The mobile app is the control layer in the middle.\n\nReal-world workflows they highlight:\n- On-call incidents: get paged at lunch → launch an agent from your phone → a PR is waiting when you get back\n- Customer bugs: reproduce and fix while away from your desk\n- Design feedback: screenshot X/Twitter feedback → annotate → send as visual context to an agent\n\nCloud agents run in isolated VMs with full dev environments. They produce demos, screenshots, and logs. Push notifications and Live Activities keep you updated without staying in the app.\n\nThis is the shift: AI coding assistants are moving from desktop tools to always-on infrastructure. Agents that run in the background, report back when ready, and don't need a developer staring at a screen.\n\nAvailable on all paid plans. 75% off Composer 2.5 runs through July 5.\n\nhttps://t.co/rdCvD485Gs",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 75,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jul 02 20:14:52 +0000 2026",
+      "createdAtLocal": "2026-07-03 04:14",
+      "createdAtISO": "2026-07-02T20:14:52+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMP6zJqXAAAlu9w.jpg",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072672303998017883",
+      "text": "@twostraws Keyword searching is the part I underestimated the most. Just shipped my first iOS app and honestly the build was the easy bit. Figuring out what people actually type into the store is a whole different game. Adding this to my list.",
+      "author": {
+        "id": "1936058948429246464",
+        "name": "Luca Capone | Vibe Coder",
+        "screenName": "LucaCaponeX",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1979079214625153025/il8_cCFM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jul 02 13:22:40 +0000 2026",
+      "createdAtLocal": "2026-07-02 21:22",
+      "createdAtISO": "2026-07-02T13:22:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072650308807729192",
+      "text": "🚨BREAKING: Apple has blocked agentic AI from the App Store for years.\n\nthis week, one finally got through.\n\nOpenClaw just launched native iOS and Android apps.\n\nthe reason Apple approved it is in the privacy label.\n\nWHAT JUST HAPPENED:\n\nOpenClaw dropped native mobile apps for iOS and Android.\n\nthe launch thread pulled 1.5 million views within hours.\n\nthe App Store listing reads: \"Data Not Collected.\"\n\nthat line is why it cleared review.\n\nnothing routes through a company server.\n\nyour data and automations live on your own gateway.\n\nApple had no data practices to object to.\n\nHOW IT WORKS:\n\nthe phone does not run the AI.\n\nit pairs with your self-hosted OpenClaw Gateway running on a Mac, Linux box, or Windows machine.\n\nscan a QR code. your phone becomes a node in your personal agent network.\n\n→ chat with your agent or switch to real-time Talk mode\n→ approve or deny every action the agent wants to take\n→ grant optional access to camera, location, photos, contacts, calendar\n→ on android: \"hey google, ask OpenClaw\" routes straight into the app\n\nyour agent lives on your hardware.\n\nyour phone is the remote.\n\nTHE NUMBERS:\n\n→ 247k GitHub stars in under three months\n→ 1.17 million weekly npm downloads\n→ 5,400+ installable skill packs\n→ 20+ connected channels: telegram, whatsapp, signal, slack, discord, imessage\n\nTHE CATCH:\n\n→ not a standalone app. no gateway, no agent\n→ setup requires a terminal. this is still an operator tool\n→ early android reviews are rough. crashes and pairing issues reported\n→ prompt injection warnings still apply. approvals matter\n\nTHE BIGGER PICTURE:\n\nevery AI company is racing to put an assistant in your pocket.\n\nOpenAI, Google, and Anthropic are all shipping cloud agents.\n\nOpenClaw just shipped the opposite.\n\nthe agent stays on your machine.\n\nthe cloud never sees your data.\n\nand Apple, the most privacy-obsessed gatekeeper in tech, let it through the wall first.\n\ngoogle is reportedly building a 24/7 personal agent to compete with it directly.\n\nit’s as if the open source project is moving faster than the trillion dollar companies.\n\nthe phone in your pocket just became a control surface for an agent you own.\n\nnot rent.\n\nown.\n\nrun agents from wherever your thumbs are:\n\n- iOS: https://t.co/Ckr7LUmTqF\n- Android: https://t.co/s6k0Q0GFU6",
+      "author": {
+        "id": "1231042249972076544",
+        "name": "Lian Lim | Dashboard & AI Automation Expert",
+        "screenName": "dashboardlim",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1983099742784532480/ri6WHAQH_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 1,
+        "replies": 5,
+        "quotes": 0,
+        "views": 1365,
+        "bookmarks": 3
+      },
+      "createdAt": "Thu Jul 02 11:55:16 +0000 2026",
+      "createdAtLocal": "2026-07-02 19:55",
+      "createdAtISO": "2026-07-02T11:55:16+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMOId1QWgAAD69z.jpg",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072590482136588503",
+      "text": "Cursor just shipped a full coding agent for your phone. \n\nNative iOS app, public beta. \n\nGet paged at lunch, kick off an agent from your couch, and walk back to a merge-ready PR waiting for review. Voice input, lock-screen live updates, merge straight from the app. \n\nYour laptop is now optional. https://t.co/Y2GO4gwSZ3",
+      "author": {
+        "id": "1890047835728752640",
+        "name": "AI Adventurer",
+        "screenName": "AiAdventurerx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1939704313347284993/41xf6frh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 93,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jul 02 07:57:32 +0000 2026",
+      "createdAtLocal": "2026-07-02 15:57",
+      "createdAtISO": "2026-07-02T07:57:32+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2071638346145923072/vid/avc1/1920x1080/n9AZc0_aYwh8Z6Bs.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2072491999324672497",
+      "text": "Cursor just shipped an iOS app — and it's wilder than it sounds.\n\nSpaceX (yes, including xAI) acquired Cursor this month. A week later, the first iOS app drops. The timeline alone tells you this was a priority from day one post-acquisition.\n\nHere's what the mobile app does:\n\n- Launch coding agents from your phone\n- Review diffs and merge PRs — inline, on an iPhone\n- Annotate screenshots with visual feedback for agents\n- Voice conversations with your coding agent\n- Inspect code changes and track active engineering work\n- Remote Control mode: run agents in the cloud, manage from your phone\n\nThree things stand out:\n\n1. This is the first credible \"mobile-first\" coding platform. Not a companion — a legit agent you control from your pocket.\n2. SpaceX/xAI buying Cursor then immediately shipping iOS says everything about where they see the market going. Agents in the datacenter, interface in your hand.\n3. 75% off Composer 2.5 runs through July 5 if you want to test it.\n\nThe blog post is honest: \"The experience of running agents in the cloud will become indistinguishable from running them on your local machine.\" They're building toward a world where your coding agent lives in the cloud full-time and you interact from whatever screen is closest.\n\nThat's the endgame for agentic coding. Not a local IDE — a cloud agent with a mobile throttle.\n\nhttps://t.co/lsnshM1ZrD",
+      "author": {
+        "id": "1458050975596531717",
+        "name": "Teksart",
+        "screenName": "TeksCreate",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054295508462518272/sWU1qecv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 80,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jul 02 01:26:12 +0000 2026",
+      "createdAtLocal": "2026-07-02 09:26",
+      "createdAtISO": "2026-07-02T01:26:12+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HML4d_8XoAAx24b.jpg",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

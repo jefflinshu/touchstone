@@ -1,728 +1,1405 @@
-export const OSS_RADAR_UPDATED_AT = "2026-07-01"
+export const OSS_RADAR_UPDATED_AT = "2026-07-02"
 
 export const OSS_RADAR_SOURCE = {
-  "initializedCount": 21,
-  "githubSnapshotAt": "2026-07-01T13:04:48.534Z",
+  "initializedCount": 43,
+  "githubSnapshotAt": "2026-07-02T01:38:01.143Z",
+  "discoveryWindow": {
+    "createdFrom": "2026-06-01",
+    "createdTo": "2026-07-02",
+    "status": "github-search-curated"
+  },
   "xWindow": {
     "from": "",
-    "to": "2026-07-01",
+    "to": "2026-07-02",
     "status": "not-fetched"
   },
-  "curationMode": "emerging-ai-devtools",
-  "note": "Curated for discovery value: emerging AI agent, MCP, context-engineering, security, gateway, and workflow projects. Famous baseline projects are intentionally excluded."
+  "curationMode": "recent-emerging-ai-devtools",
+  "curationRules": [
+    "Prefer repos created within the last month, especially agent, MCP, skills, context, security, sandbox, eval, and workflow tooling.",
+    "Exclude famous baseline infrastructure and generic already-known projects unless the repo itself is new and agent-specific.",
+    "Require a concrete workflow angle: what changes for builders, agents, reviewers, security, or deployment.",
+    "Exclude obvious credential harvesters, exploit dumps, pure hype repos, and projects whose main value is only a PDF/tutorial.",
+    "Every included repo needs collectReason, thesis, watchFor, and risks so it reads like a radar, not a star leaderboard."
+  ],
+  "note": "Expanded to recent GitHub discovery candidates from 2026-06-01 onward. Stars are used as a weak signal; curation favors novelty, workflow specificity, and agent/devtool relevance."
 }
 
 export const OSS_RADAR_REPOS = [
   {
-    "id": "dao-code",
-    "repo": "tigicion/dao-code",
+    "id": "ponytail",
+    "repo": "DietrichGebert/ponytail",
+    "name": "ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "homepage": "https://ponytail.dev",
+    "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "language": "JavaScript",
+    "stars": 70530,
+    "forks": 3639,
+    "issues": 115,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T23:34:52Z",
+    "createdAt": "2026-06-12T00:52:37Z",
     "categories": [
       "ai-agents"
     ],
     "tags": [
-      "terminal agent",
-      "DeepSeek",
-      "Claude Code compatible"
+      "agent-behavior",
+      "ai-agents"
     ],
-    "collectReason": "收录。不是通用大项目，而是针对 DeepSeek V4 价格/缓存特性做工程化的终端 coding agent，适合观察低成本 agent 方向。",
-    "thesis": "If prefix-cache economics matter, coding agents may fork into model-native harnesses instead of one-size-fits-all clients.",
-    "watchFor": "Whether byte-stable prompts, cache-reusing forks, and Claude Code-compatible config become reproducible advantages.",
-    "risks": "Young repo, small maintainer surface, and DeepSeek-specific assumptions may age quickly.",
+    "decision": "include",
+    "collectReason": "让 agent 少写没必要的代码，切的是“判断力/懒惰高级工程师”这个很具体的行为层。",
+    "thesis": "Behavior constraints may beat bigger prompts in everyday coding.",
+    "watchFor": "Look for smaller diffs, fewer files changed, and less overengineering beyond jokes.",
+    "risks": "Could be mostly prompt packaging if it lacks repeatable evals.",
     "xKeywords": [
-      "dao-code",
-      "DeepSeek coding agent",
-      "Claude Code compatible agent"
+      "ponytail",
+      "DietrichGebert/ponytail",
+      "agent-behavior"
+    ]
+  },
+  {
+    "id": "mimo-code",
+    "repo": "XiaomiMiMo/MiMo-Code",
+    "name": "MiMo-Code",
+    "url": "https://github.com/XiaomiMiMo/MiMo-Code",
+    "homepage": "https://mimo.xiaomi.com/mimocode",
+    "description": "MiMo Code: Where Models and Agents Co-Evolve",
+    "language": "TypeScript",
+    "stars": 11221,
+    "forks": 1096,
+    "issues": 699,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T17:25:37Z",
+    "createdAt": "2026-06-10T11:52:41Z",
+    "categories": [
+      "ai-agents"
     ],
+    "tags": [
+      "model-agent co-evolution",
+      "ai-agents"
+    ],
+    "decision": "include",
+    "collectReason": "模型和 agent 协同进化，来自小米 MiMo 生态，适合观察模型厂开始做自家 agent harness。",
+    "thesis": "Model labs may ship agent runtimes tuned to their own model behavior.",
+    "watchFor": "Look for open evals, tool-loop details, and whether it works outside MiMo models.",
+    "risks": "Vendor-native harnesses can become closed ecosystem demos.",
+    "xKeywords": [
+      "MiMo-Code",
+      "XiaomiMiMo/MiMo-Code",
+      "model-agent co-evolution"
+    ]
+  },
+  {
+    "id": "omnigent",
+    "repo": "omnigent-ai/omnigent",
+    "name": "omnigent",
+    "url": "https://github.com/omnigent-ai/omnigent",
+    "homepage": "https://omnigent.ai",
+    "description": "Omnigent is an open-source AI agent framework and meta-harness: orchestrate Claude Code, Codex, Cursor, Pi, and custom agents — swap harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device.",
+    "language": "Python",
+    "stars": 5959,
+    "forks": 755,
+    "issues": 397,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-02T01:17:17Z",
+    "createdAt": "2026-06-11T12:18:13Z",
+    "categories": [
+      "ai-agents"
+    ],
+    "tags": [
+      "meta-harness",
+      "ai-agents"
+    ],
+    "decision": "include",
+    "collectReason": "把 Claude Code、Codex、Cursor 等不同 harness 抽象成可切换 meta-harness，命中多 agent 工具碎片化问题。",
+    "thesis": "Agent work may need orchestration above individual coding CLIs.",
+    "watchFor": "Policy, sandboxing, real-time collaboration, and adapter quality across tools.",
+    "risks": "Abstraction layers often leak when underlying CLIs change.",
+    "xKeywords": [
+      "omnigent",
+      "omnigent-ai/omnigent",
+      "meta-harness"
+    ]
+  },
+  {
+    "id": "loop-engineering",
+    "repo": "cobusgreyling/loop-engineering",
+    "name": "loop-engineering",
+    "url": "https://github.com/cobusgreyling/loop-engineering",
+    "homepage": "https://cobusgreyling.github.io/loop-engineering/",
+    "description": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.",
+    "language": "JavaScript",
+    "stars": 4697,
+    "forks": 596,
+    "issues": 11,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T15:07:45Z",
+    "createdAt": "2026-06-09T06:28:20Z",
+    "categories": [
+      "workflow"
+    ],
+    "tags": [
+      "loop engineering",
+      "workflow"
+    ],
+    "decision": "include",
+    "collectReason": "专门讲/做 agent loop 的 starter 和 CLI，不是单次 prompt，而是重复执行系统。",
+    "thesis": "Loop design is becoming a practical engineering discipline for coding agents.",
+    "watchFor": "Whether loop-audit/loop-cost produce measurable savings or fewer runaway sessions.",
+    "risks": "Could drift into content/guide repo rather than executable tooling.",
+    "xKeywords": [
+      "loop-engineering",
+      "cobusgreyling/loop-engineering",
+      "loop engineering"
+    ]
+  },
+  {
+    "id": "lottie",
+    "repo": "diffusionstudio/lottie",
+    "name": "lottie",
+    "url": "https://github.com/diffusionstudio/lottie",
+    "homepage": "https://diffusion.studio",
+    "description": "Generate production-ready Lottie animations with Claude Code or Codex",
+    "language": "TypeScript",
+    "stars": 4300,
+    "forks": 231,
+    "issues": 2,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T13:23:14Z",
+    "createdAt": "2026-06-04T13:39:32Z",
+    "categories": [
+      "media-tools"
+    ],
+    "tags": [
+      "agent-generated animation",
+      "media-tools"
+    ],
+    "decision": "include",
+    "collectReason": "让 Claude Code/Codex 生成 production-ready Lottie，属于 agent 进入专业设计交付的窄场景。",
+    "thesis": "Agents will specialize into asset pipelines, not just app scaffolding.",
+    "watchFor": "Quality of generated animations and whether designers can edit the output cleanly.",
+    "risks": "May be impressive demos but weak production control.",
+    "xKeywords": [
+      "lottie",
+      "diffusionstudio/lottie",
+      "agent-generated animation"
+    ]
+  },
+  {
+    "id": "eve",
+    "repo": "vercel/eve",
+    "name": "eve",
+    "url": "https://github.com/vercel/eve",
+    "homepage": "https://eve.dev",
+    "description": "The Framework for Building Agents",
+    "language": "TypeScript",
+    "stars": 3040,
+    "forks": 235,
+    "issues": 141,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T23:18:58Z",
+    "createdAt": "2026-06-16T10:51:20Z",
+    "categories": [
+      "ai-agents"
+    ],
+    "tags": [
+      "agent framework",
+      "ai-agents"
+    ],
+    "decision": "include",
+    "collectReason": "Vercel 新 agent framework，虽然背后是大厂，但项目新且方向直接影响 Web agent 开发栈。",
+    "thesis": "Agent frameworks are moving into mainstream app frameworks.",
+    "watchFor": "Runtime model, deployment path, and whether it avoids being another abstraction wrapper.",
+    "risks": "Vercel projects can become platform-coupled quickly.",
+    "xKeywords": [
+      "eve",
+      "vercel/eve",
+      "agent framework"
+    ]
+  },
+  {
+    "id": "skills",
+    "repo": "BuilderIO/skills",
+    "name": "skills",
+    "url": "https://github.com/BuilderIO/skills",
+    "homepage": "https://www.agent-native.com/",
+    "description": "Skills for coding agents",
+    "language": "JavaScript",
+    "stars": 3031,
+    "forks": 153,
+    "issues": 1,
+    "license": "MIT",
+    "pushedAt": "2026-06-29T18:17:40Z",
+    "createdAt": "2026-06-10T16:04:20Z",
+    "categories": [
+      "skills"
+    ],
+    "tags": [
+      "coding-agent skills",
+      "skills"
+    ],
+    "decision": "include",
+    "collectReason": "Builder.io 做 coding-agent skills，说明技能分发正在从个人 prompt 变成产品化资产。",
+    "thesis": "Skills may become the npm layer for agent behavior.",
+    "watchFor": "Versioning, install UX, and whether skills survive across Claude/Codex/Cursor.",
+    "risks": "Skill repos can become prompt dumps without quality control.",
+    "xKeywords": [
+      "skills",
+      "BuilderIO/skills",
+      "coding-agent skills"
+    ]
+  },
+  {
+    "id": "devspace",
+    "repo": "Waishnav/devspace",
+    "name": "devspace",
+    "url": "https://github.com/Waishnav/devspace",
+    "homepage": "",
+    "description": "Turn ChatGPT into Codex!",
+    "language": "TypeScript",
+    "stars": 2764,
+    "forks": 291,
+    "issues": 15,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T12:36:00Z",
+    "createdAt": "2026-06-14T16:57:27Z",
+    "categories": [
+      "devtools"
+    ],
+    "tags": [
+      "ChatGPT-to-Codex bridge",
+      "devtools"
+    ],
+    "decision": "include",
+    "collectReason": "把 ChatGPT 变成 Codex 式本地 coding flow，切的是用户已有订阅和本地 repo 工作流之间的缝。",
+    "thesis": "Developers want bridges from chat subscriptions into coding agents.",
+    "watchFor": "Auth model, local privacy, and whether edits are reviewable.",
+    "risks": "Subscription bridging is brittle and may be policy-sensitive.",
+    "xKeywords": [
+      "devspace",
+      "Waishnav/devspace",
+      "ChatGPT-to-Codex bridge"
+    ]
+  },
+  {
+    "id": "loopy",
+    "repo": "Forward-Future/loopy",
+    "name": "loopy",
+    "url": "https://github.com/Forward-Future/loopy",
+    "homepage": "https://signals.forwardfuture.ai/loop-library/",
+    "description": "A library of practical AI-agent loops and an installable skill for finding, adapting, and designing repeatable agent workflows.",
+    "language": "JavaScript",
+    "stars": 2252,
+    "forks": 199,
+    "issues": 2,
+    "license": "MIT",
+    "pushedAt": "2026-06-27T15:33:13Z",
+    "createdAt": "2026-06-12T14:44:22Z",
+    "categories": [
+      "workflow"
+    ],
+    "tags": [
+      "agent loops library",
+      "workflow"
+    ],
+    "decision": "include",
+    "collectReason": "可安装 skill + agent loop pattern 库，适合观察 loop 模式能否复用。",
+    "thesis": "Reusable loops may become a higher-level primitive than reusable prompts.",
+    "watchFor": "Whether loops include stop conditions, verification, and cost controls.",
+    "risks": "Loop libraries can encourage automation without enough guardrails.",
+    "xKeywords": [
+      "loopy",
+      "Forward-Future/loopy",
+      "agent loops library"
+    ]
+  },
+  {
+    "id": "baoyu-design",
+    "repo": "JimLiu/baoyu-design",
+    "name": "baoyu-design",
+    "url": "https://github.com/JimLiu/baoyu-design",
+    "homepage": "",
+    "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.",
+    "language": "JavaScript",
+    "stars": 2223,
+    "forks": 173,
+    "issues": 1,
+    "license": "MIT",
+    "pushedAt": "2026-06-28T07:18:42Z",
+    "createdAt": "2026-06-07T01:16:18Z",
+    "categories": [
+      "skills"
+    ],
+    "tags": [
+      "local Claude Design skill",
+      "skills"
+    ],
+    "decision": "include",
+    "collectReason": "把 Claude Design 风格本地化成 agent skill，用 HTML 交付 UI mock/prototype/deck，设计工作流价值明确。",
+    "thesis": "Design generation may move into local skills around coding agents.",
+    "watchFor": "Output polish, editability, and compatibility with real product design constraints.",
+    "risks": "Could overfit to one aesthetic or model behavior.",
+    "xKeywords": [
+      "baoyu-design",
+      "JimLiu/baoyu-design",
+      "local Claude Design skill"
+    ]
+  },
+  {
+    "id": "security-audit-skill",
+    "repo": "cloudflare/security-audit-skill",
+    "name": "security-audit-skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "homepage": "",
+    "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "stars": 2177,
+    "forks": 152,
+    "issues": 1,
+    "license": "MIT",
+    "pushedAt": "2026-06-29T13:48:05Z",
+    "createdAt": "2026-06-18T14:08:44Z",
+    "categories": [
+      "security"
+    ],
+    "tags": [
+      "machine-readable audit skill",
+      "security"
+    ],
+    "decision": "include",
+    "collectReason": "多阶段安全审计 skill，要求独立验证和机器可读 findings，比普通“让 AI 审代码”更靠谱。",
+    "thesis": "Security review agents need structured evidence, not prose confidence.",
+    "watchFor": "Finding schema, verification steps, and false-positive rate.",
+    "risks": "Even audited skills need human review for security-critical changes.",
+    "xKeywords": [
+      "security-audit-skill",
+      "cloudflare/security-audit-skill",
+      "machine-readable audit skill"
+    ]
+  },
+  {
+    "id": "open-knowledge",
+    "repo": "inkeep/open-knowledge",
+    "name": "open-knowledge",
+    "url": "https://github.com/inkeep/open-knowledge",
+    "homepage": "https://openknowledge.ai",
+    "description": "Beautiful, AI-native markdown editor and LLM Wiki",
+    "language": "TypeScript",
+    "stars": 1731,
+    "forks": 84,
+    "issues": 15,
+    "license": "GPL-3.0",
+    "pushedAt": "2026-07-02T01:27:43Z",
+    "createdAt": "2026-06-03T11:12:40Z",
+    "categories": [
+      "knowledge"
+    ],
+    "tags": [
+      "AI-native wiki/editor",
+      "knowledge"
+    ],
+    "decision": "include",
+    "collectReason": "AI-native markdown editor和 LLM wiki，偏知识库但对 agent knowledge workflow 有意义。",
+    "thesis": "Agent work needs editable knowledge surfaces, not only chat history.",
+    "watchFor": "Import/export, source fidelity, and whether agents can update docs safely.",
+    "risks": "May be more editor product than agent infrastructure.",
+    "xKeywords": [
+      "open-knowledge",
+      "inkeep/open-knowledge",
+      "AI-native wiki/editor"
+    ]
+  },
+  {
+    "id": "org2",
+    "repo": "yorgai/ORG2",
+    "name": "ORG2",
+    "url": "https://github.com/yorgai/ORG2",
+    "homepage": "",
+    "description": "Open-source Cursor-style agent IDE — but built for reviewability and control. Built-in rust harness; supports 10+ CLIs.",
+    "language": "TypeScript",
+    "stars": 1386,
+    "forks": 118,
+    "issues": 51,
+    "license": "AGPL-3.0",
+    "pushedAt": "2026-07-01T17:04:25Z",
+    "createdAt": "2026-06-01T12:52:57Z",
+    "categories": [
+      "ide"
+    ],
+    "tags": [
+      "reviewable agent IDE",
+      "ide"
+    ],
+    "decision": "include",
+    "collectReason": "Cursor-style agent IDE，但强调 reviewability/control 和 Rust harness，切中 agent IDE 可控性问题。",
+    "thesis": "The agent IDE race may split around control and review, not just autocomplete.",
+    "watchFor": "Diff review, permissioning, CLI support, and harness transparency.",
+    "risks": "New IDEs are hard to sustain against incumbents.",
+    "xKeywords": [
+      "ORG2",
+      "yorgai/ORG2",
+      "reviewable agent IDE"
+    ]
+  },
+  {
+    "id": "effective-html",
+    "repo": "plannotator/effective-html",
+    "name": "effective-html",
+    "url": "https://github.com/plannotator/effective-html",
+    "homepage": "https://plannotator.ai",
+    "description": "Agent skill for elegant and simple html plans, architecture diagrams, or whatever else you can think of.",
+    "language": "HTML",
+    "stars": 1216,
+    "forks": 87,
+    "issues": 3,
+    "license": "MIT",
+    "pushedAt": "2026-06-19T20:54:33Z",
+    "createdAt": "2026-06-09T23:24:51Z",
+    "categories": [
+      "skills"
+    ],
+    "tags": [
+      "HTML planning skill",
+      "skills"
+    ],
+    "decision": "include",
+    "collectReason": "用 agent skill 生成优雅 HTML plan/diagram，把规划从 markdown 拉到可视化交付。",
+    "thesis": "Agent planning artifacts can become visual, inspectable files.",
+    "watchFor": "Whether outputs stay simple and useful under real architecture planning.",
+    "risks": "Could become decorative if not tied to execution and review.",
+    "xKeywords": [
+      "effective-html",
+      "plannotator/effective-html",
+      "HTML planning skill"
+    ]
+  },
+  {
+    "id": "agent-apprenticeship",
+    "repo": "Forsy-AI/agent-apprenticeship",
+    "name": "agent-apprenticeship",
+    "url": "https://github.com/Forsy-AI/agent-apprenticeship",
+    "homepage": "https://agentapprenticeship.org/",
+    "description": "The living ecosystem where AI agents run automated workflow loops on any task, improve through execution, and turn each run into reusable work experience + data to improve future agents.",
+    "language": "",
+    "stars": 1140,
+    "forks": 50,
+    "issues": 0,
+    "license": "MIT",
+    "pushedAt": "2026-06-24T15:29:11Z",
+    "createdAt": "2026-06-19T16:19:37Z",
+    "categories": [
+      "workflow"
+    ],
+    "tags": [
+      "self-improving workflow loops",
+      "workflow"
+    ],
+    "decision": "include",
+    "collectReason": "把每次 agent run 变成可复用经验/数据，直接命中 agent 学习闭环。",
+    "thesis": "Future agents may improve through accumulated run experience rather than static prompts.",
+    "watchFor": "Data format, replayability, and whether improvement is measurable.",
+    "risks": "Self-improvement claims are easy to overstate without evals.",
+    "xKeywords": [
+      "agent-apprenticeship",
+      "Forsy-AI/agent-apprenticeship",
+      "self-improving workflow loops"
+    ]
+  },
+  {
+    "id": "anima",
+    "repo": "Fullive-AI/Anima",
+    "name": "Anima",
+    "url": "https://github.com/Fullive-AI/Anima",
+    "homepage": "",
+    "description": "Make Every Hardware Intelligent — an open-source Agent OS for hardware intelligence",
+    "language": "Python",
+    "stars": 1119,
+    "forks": 35,
+    "issues": 7,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T23:16:47Z",
+    "createdAt": "2026-06-01T10:06:21Z",
+    "categories": [
+      "hardware"
+    ],
+    "tags": [
+      "agent OS for hardware",
+      "hardware"
+    ],
+    "decision": "include",
+    "collectReason": "面向硬件智能的 open-source Agent OS，和纯软件 coding agent 不同，有跨设备想象空间。",
+    "thesis": "Agent operating systems may extend into hardware orchestration.",
+    "watchFor": "Device abstraction, safety boundaries, and real hardware demos.",
+    "risks": "Hardware-agent claims need strict safety and reproducibility.",
+    "xKeywords": [
+      "Anima",
+      "Fullive-AI/Anima",
+      "agent OS for hardware"
+    ]
+  },
+  {
+    "id": "codexpro",
+    "repo": "rebel0789/codexpro",
+    "name": "codexpro",
+    "url": "https://github.com/rebel0789/codexpro",
+    "homepage": "https://rebel0789.github.io/codexpro/",
+    "description": "Use ChatGPT Developer Mode as a local coding agent for your repo through MCP.",
+    "language": "JavaScript",
+    "stars": 1082,
+    "forks": 96,
+    "issues": 8,
+    "license": "MIT",
+    "pushedAt": "2026-06-30T06:09:43Z",
+    "createdAt": "2026-06-16T21:22:43Z",
+    "categories": [
+      "mcp"
+    ],
+    "tags": [
+      "ChatGPT developer mode coding agent",
+      "mcp"
+    ],
+    "decision": "include",
+    "collectReason": "通过 MCP 把 ChatGPT Developer Mode 接成本地 repo coding agent，方向有争议但需求真实。",
+    "thesis": "MCP is enabling unofficial bridges between chat products and local coding workflows.",
+    "watchFor": "Local file permissions, auth handling, and reviewable edits.",
+    "risks": "Can break quickly if upstream UI/API changes.",
+    "xKeywords": [
+      "codexpro",
+      "rebel0789/codexpro",
+      "ChatGPT developer mode coding agent"
+    ]
+  },
+  {
+    "id": "dao-code",
+    "repo": "tigicion/dao-code",
     "name": "dao-code",
     "url": "https://github.com/tigicion/dao-code",
     "homepage": "https://www.npmjs.com/package/dao-code",
     "description": "Open-source TypeScript terminal coding agent for DeepSeek-V4 — builds on DeepSeek's strong price-performance and ultra-cheap cache pricing, engineering byte-stable prefixes and cache-reusing forks so cross-session memory and a continuous self-correction layer add almost no token cost; 1M context, Skills/MCP/Hooks, Claude Code config compatible.",
     "language": "TypeScript",
-    "stars": 929,
-    "forks": 19,
+    "stars": 1078,
+    "forks": 21,
     "issues": 3,
     "license": "MIT",
-    "pushedAt": "2026-07-01T13:00:20Z",
+    "pushedAt": "2026-07-01T15:15:00Z",
     "createdAt": "2026-06-08T08:10:42Z",
-    "decision": "include"
-  },
-  {
-    "id": "trace-mcp",
-    "repo": "nikolai-vysotskyi/trace-mcp",
     "categories": [
-      "mcp",
-      "context"
+      "ai-agents"
     ],
     "tags": [
-      "MCP",
-      "trace",
-      "agent exploration"
+      "DeepSeek-native terminal agent",
+      "ai-agents"
     ],
-    "collectReason": "收录。定位很窄：减少 Claude Code/Codex 的探索成本。比泛 MCP server 更像一个可验证的 agent workflow primitive。",
-    "thesis": "Trace-oriented MCP tools can compress the expensive “figure out this codebase” phase of coding agents.",
-    "watchFor": "Real before/after traces, supported languages, and whether agents consistently avoid redundant grep/read loops.",
-    "risks": "Claim depends on project shape; weak if it only helps demo repositories.",
+    "decision": "include",
+    "collectReason": "DeepSeek V4 原生终端 coding agent，利用低价/cache 经济性，适合观察模型原生 agent 分叉。",
+    "thesis": "Cheap model economics may create separate coding-agent stacks.",
+    "watchFor": "Cache reuse, edit reliability, and Claude Code compatibility.",
+    "risks": "Young project and DeepSeek-specific assumptions may age quickly.",
     "xKeywords": [
-      "trace-mcp",
-      "MCP Claude Code Codex",
-      "agent exploration MCP"
-    ],
-    "name": "trace-mcp",
-    "url": "https://github.com/nikolai-vysotskyi/trace-mcp",
-    "homepage": "https://trace-mcp.com",
-    "description": "MCP server for Claude Code and Codex. One tool call replaces ~42 minutes of agent exploration",
-    "language": "TypeScript",
-    "stars": 90,
-    "forks": 13,
-    "issues": 11,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T13:04:08Z",
-    "createdAt": "2026-04-03T09:54:03Z",
-    "decision": "include"
+      "dao-code",
+      "tigicion/dao-code",
+      "DeepSeek-native terminal agent"
+    ]
   },
   {
-    "id": "lean-ctx",
-    "repo": "yvgude/lean-ctx",
+    "id": "superlog",
+    "repo": "superloglabs/superlog",
+    "name": "superlog",
+    "url": "https://github.com/superloglabs/superlog",
+    "homepage": "https://superlog.sh",
+    "description": "Open-source observability tool that uses AI agents to self-heal your software",
+    "language": "TypeScript",
+    "stars": 966,
+    "forks": 72,
+    "issues": 27,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T18:28:22Z",
+    "createdAt": "2026-06-02T19:13:48Z",
     "categories": [
-      "context",
+      "observability"
+    ],
+    "tags": [
+      "self-healing observability",
+      "observability"
+    ],
+    "decision": "include",
+    "collectReason": "AI agents 做软件自愈 observability，属于 agent 进入 production ops 的有趣方向。",
+    "thesis": "Observability tools may evolve from alerting to agentic repair loops.",
+    "watchFor": "Rollback safety, audit trails, and boundaries between suggestion and action.",
+    "risks": "Self-healing can create production risk if actions are too autonomous.",
+    "xKeywords": [
+      "superlog",
+      "superloglabs/superlog",
+      "self-healing observability"
+    ]
+  },
+  {
+    "id": "guard-skills",
+    "repo": "amElnagdy/guard-skills",
+    "name": "guard-skills",
+    "url": "https://github.com/amElnagdy/guard-skills",
+    "homepage": "https://skills.sh/amElnagdy/guard-skills",
+    "description": "Guard skills for coding agents, quality gates that catch AI-generated failure modes in code, tests, and docs",
+    "language": "",
+    "stars": 942,
+    "forks": 110,
+    "issues": 5,
+    "license": "MIT",
+    "pushedAt": "2026-06-20T20:36:16Z",
+    "createdAt": "2026-06-06T16:59:27Z",
+    "categories": [
       "security"
     ],
     "tags": [
-      "context engineering",
-      "local-first",
-      "MCP"
+      "AI failure guard skills",
+      "security"
     ],
-    "collectReason": "收录。把“agent 能看到什么、记住什么、改什么”做成本地 Rust context layer，方向比普通 RAG 更接近 agent control plane。",
-    "thesis": "Context control is becoming infrastructure: selection, memory, permissions, and receipts need one local layer.",
-    "watchFor": "Whether it can stay simple while supporting many MCP tools and real coding-agent policies.",
-    "risks": "Large tool surface can become hard to audit; verify security claims before trusting it with private repos.",
+    "decision": "include",
+    "collectReason": "专门抓 AI 生成代码/测试/文档常见失败模式，是 agent 质量门方向。",
+    "thesis": "Guard skills could become standard CI gates for agent-generated work.",
+    "watchFor": "Coverage of real failure modes and integration into PR/CI workflows.",
+    "risks": "Quality gates can become noisy if too generic.",
     "xKeywords": [
-      "LeanCTX",
-      "context engineering agents",
-      "MCP context layer"
-    ],
-    "name": "lean-ctx",
-    "url": "https://github.com/yvgude/lean-ctx",
-    "homepage": "https://leanctx.com",
-    "description": "Control what your AI can see. LeanCTX (Lean Context) is the context intelligence layer for AI agents — one local Rust binary that decides what they read, remembers what they learn, guards what they touch, and proves what they save. 60–90% fewer tokens as the receipt. 76 MCP tools, 30+ agents, local-first.",
-    "language": "Rust",
-    "stars": 3043,
-    "forks": 292,
-    "issues": 3,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T12:57:39Z",
-    "createdAt": "2026-03-23T19:48:59Z",
-    "decision": "include"
+      "guard-skills",
+      "amElnagdy/guard-skills",
+      "AI failure guard skills"
+    ]
   },
   {
-    "id": "context-mode",
-    "repo": "mksglu/context-mode",
-    "categories": [
-      "context",
-      "devtools"
-    ],
-    "tags": [
-      "context window",
-      "hooks",
-      "MCP"
-    ],
-    "collectReason": "收录。聚焦 context window 优化和工具输出沙箱，解决的是 coding agent 实际跑长任务时的成本/噪音问题。",
-    "thesis": "The next agent productivity gain may come from shrinking tool output before it reaches the model.",
-    "watchFor": "Measured token savings, integration quality across clients, and whether routing rules are maintainable.",
-    "risks": "Compression can hide important failure context if policies are too aggressive.",
-    "xKeywords": [
-      "context-mode",
-      "AI coding agent context window",
-      "MCP hooks context"
-    ],
-    "name": "context-mode",
-    "url": "https://github.com/mksglu/context-mode",
-    "homepage": "https://context-mode.com",
-    "description": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and   enforces routing across 17 platforms via MCP + hooks.",
-    "language": "TypeScript",
-    "stars": 18418,
-    "forks": 1293,
-    "issues": 25,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T12:54:06Z",
-    "createdAt": "2026-02-23T05:56:28Z",
-    "decision": "include"
-  },
-  {
-    "id": "headroom",
-    "repo": "headroomlabs-ai/headroom",
-    "categories": [
-      "context",
-      "devtools"
-    ],
-    "tags": [
-      "token compression",
-      "MCP server",
-      "proxy"
-    ],
-    "collectReason": "收录。对 tool outputs/logs/RAG chunks 做压缩，直接对应 agent 成本和上下文污染问题。",
-    "thesis": "Agent infrastructure will need loss-aware compression between tools and models.",
-    "watchFor": "Quality benchmarks under real debugging/log-heavy workloads, not only synthetic compression ratios.",
-    "risks": "High compression ratios are easy to market; harder to preserve rare but important details.",
-    "xKeywords": [
-      "headroomlabs headroom",
-      "tool output compression",
-      "MCP token compression"
-    ],
-    "name": "headroom",
-    "url": "https://github.com/headroomlabs-ai/headroom",
-    "homepage": "https://headroomlabs-ai.github.io/headroom/",
-    "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "id": "autocve",
+    "repo": "larlarua/AutoCVE",
+    "name": "AutoCVE",
+    "url": "https://github.com/larlarua/AutoCVE",
+    "homepage": "",
+    "description": "Agent-driven automated CVE discovery platform for source code auditing, vulnerability verification, and report generation.",
     "language": "Python",
-    "stars": 55014,
-    "forks": 3967,
-    "issues": 463,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T04:53:00Z",
-    "createdAt": "2026-01-07T19:58:51Z",
-    "decision": "include"
+    "stars": 874,
+    "forks": 54,
+    "issues": 4,
+    "license": "AGPL-3.0",
+    "pushedAt": "2026-06-27T04:16:17Z",
+    "createdAt": "2026-06-15T14:50:47Z",
+    "categories": [
+      "security"
+    ],
+    "tags": [
+      "agent-driven CVE discovery",
+      "security"
+    ],
+    "decision": "include",
+    "collectReason": "自动化 CVE 发现/验证/报告，安全方向很强也有风险，适合谨慎观察。",
+    "thesis": "Security agents are moving from review assistant to vulnerability discovery pipeline.",
+    "watchFor": "Verification rigor, scope limits, and responsible disclosure support.",
+    "risks": "Dual-use risk is high; should not be promoted as casual automation.",
+    "xKeywords": [
+      "AutoCVE",
+      "larlarua/AutoCVE",
+      "agent-driven CVE discovery"
+    ]
   },
   {
-    "id": "codegraph",
-    "repo": "colbymchenry/codegraph",
+    "id": "fanbox",
+    "repo": "alchaincyf/fanbox",
+    "name": "fanbox",
+    "url": "https://github.com/alchaincyf/fanbox",
+    "homepage": "https://github.com/alchaincyf/fanbox/releases/latest",
+    "description": "vibe coding 的驾驶舱：左边文件，右边/下边终端，中间看清每一次改动。 / The cockpit for vibe coding: browse files on the left, command agents on the right, watch every change in between.",
+    "language": "JavaScript",
+    "stars": 838,
+    "forks": 115,
+    "issues": 13,
+    "license": "MIT",
+    "pushedAt": "2026-07-02T01:32:29Z",
+    "createdAt": "2026-06-10T01:01:42Z",
     "categories": [
-      "context",
       "devtools"
     ],
     "tags": [
-      "code graph",
-      "local index",
-      "semantic retrieval"
+      "vibe coding cockpit",
+      "devtools"
     ],
-    "collectReason": "收录。预索引 code knowledge graph，面向 Claude Code/Codex/Gemini 等工具，是“少读文件少烧 token”的明确尝试。",
-    "thesis": "Local code graphs can become a standard sidecar for serious coding agents.",
-    "watchFor": "Index freshness, language coverage, and whether graph retrieval beats ripgrep plus embedding search.",
-    "risks": "May be expensive to maintain on large monorepos; stale graph data can mislead agents.",
+    "decision": "include",
+    "collectReason": "文件、终端、diff 可视化 cockpit，解决 vibe coding 看不清 agent 每一步的问题。",
+    "thesis": "Agent UIs need cockpit views for review, not only chat panes.",
+    "watchFor": "Change visualization, terminal control, and multi-agent ergonomics.",
+    "risks": "Can become another IDE wrapper if workflow is shallow.",
     "xKeywords": [
-      "codegraph coding agent",
-      "local code knowledge graph",
-      "Claude Code Codex codegraph"
-    ],
-    "name": "codegraph",
-    "url": "https://github.com/colbymchenry/codegraph",
-    "homepage": "https://colbymchenry.github.io/codegraph/",
-    "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
-    "language": "TypeScript",
-    "stars": 56641,
-    "forks": 3493,
-    "issues": 268,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T11:50:01Z",
-    "createdAt": "2026-01-18T21:45:37Z",
-    "decision": "include"
+      "fanbox",
+      "alchaincyf/fanbox",
+      "vibe coding cockpit"
+    ]
   },
   {
-    "id": "multica",
-    "repo": "multica-ai/multica",
+    "id": "qiaomu-goal-meta-skill",
+    "repo": "joeseesun/qiaomu-goal-meta-skill",
+    "name": "qiaomu-goal-meta-skill",
+    "url": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
+    "homepage": "",
+    "description": "Turn vague or complex Codex tasks into strong `/goal` commands with outcome, verification, constraints, boundaries, iteration policy, completion evide",
+    "language": "Python",
+    "stars": 741,
+    "forks": 54,
+    "issues": 4,
+    "license": "MIT",
+    "pushedAt": "2026-06-11T15:10:56Z",
+    "createdAt": "2026-06-11T15:10:51Z",
     "categories": [
-      "ai-agents",
-      "workflow"
-    ],
-    "tags": [
-      "managed agents",
-      "team workflows",
       "skills"
     ],
-    "collectReason": "收录。把 coding agents 包装成可分配任务、可跟踪进度、可复用技能的团队协作层，值得观察产品化路径。",
-    "thesis": "The interface for agents may shift from chat/CLI to task assignment and progress tracking.",
-    "watchFor": "Whether it supports real multi-repo work, permission boundaries, and durable skill reuse.",
-    "risks": "Could become another project-management wrapper if execution reliability is not there.",
-    "xKeywords": [
-      "multica agents",
-      "managed coding agents",
-      "agent teammate platform"
+    "tags": [
+      "goal shaping skill",
+      "skills"
     ],
-    "name": "multica",
-    "url": "https://github.com/multica-ai/multica",
-    "homepage": "https://multica.ai",
-    "description": "The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.",
-    "language": "Go",
-    "stars": 38690,
-    "forks": 4835,
-    "issues": 1131,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T12:12:43Z",
-    "createdAt": "2026-01-13T17:59:46Z",
-    "decision": "include"
+    "decision": "include",
+    "collectReason": "把模糊 Codex 任务转成强 `/goal` 命令，解决 agent 任务定义质量问题。",
+    "thesis": "Task framing may be as important as model capability for long-running agents.",
+    "watchFor": "Whether generated goals improve completion rate and verification quality.",
+    "risks": "Meta-skills can become verbose boilerplate if not measured.",
+    "xKeywords": [
+      "qiaomu-goal-meta-skill",
+      "joeseesun/qiaomu-goal-meta-skill",
+      "goal shaping skill"
+    ]
   },
   {
-    "id": "repoprompt-ce",
-    "repo": "repoprompt/repoprompt-ce",
-    "categories": [
-      "context",
-      "devtools"
-    ],
-    "tags": [
-      "macOS",
-      "context engineering",
-      "MCP CLI"
-    ],
-    "collectReason": "收录。RepoPrompt CE 是面向 coding agents 的本地 context app，不是泛 AI 工具，和日常 repo 工作流贴得很近。",
-    "thesis": "Human-curated context packs may remain valuable even as agents get better retrieval.",
-    "watchFor": "MCP CLI depth, native macOS UX, and whether teams can share reproducible context sets.",
-    "risks": "Desktop-first workflow may limit server/CI agent adoption.",
-    "xKeywords": [
-      "RepoPrompt CE",
-      "context engineering app",
-      "AI coding agents MCP"
-    ],
-    "name": "repoprompt-ce",
-    "url": "https://github.com/repoprompt/repoprompt-ce",
-    "homepage": "https://repoprompt.com",
-    "description": "Community edition of RepoPrompt: a native macOS context engineering app for AI coding agents, with an MCP CLI.",
-    "language": "Swift",
-    "stars": 734,
-    "forks": 92,
-    "issues": 76,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T13:04:16Z",
-    "createdAt": "2026-05-12T19:44:16Z",
-    "decision": "include"
-  },
-  {
-    "id": "mfs",
-    "repo": "zilliztech/mfs",
-    "categories": [
-      "context",
-      "mcp"
-    ],
-    "tags": [
-      "file-like context",
-      "memory",
-      "search"
-    ],
-    "collectReason": "收录。把分散的代码、记忆、文档、数据库、SaaS context 抽成可搜索浏览的 file-like interface，适合 agent 长任务。",
-    "thesis": "Agents need a filesystem metaphor for heterogeneous context, not just separate connectors.",
-    "watchFor": "Connector quality, latency, and whether permissions map cleanly to the file-like abstraction.",
-    "risks": "Broad scope can dilute reliability; enterprise connectors increase security burden.",
-    "xKeywords": [
-      "zilliz mfs",
-      "agent context harness",
-      "file-like interface agents"
-    ],
-    "name": "mfs",
-    "url": "https://github.com/zilliztech/mfs",
-    "homepage": "https://zilliztech.github.io/mfs/",
-    "description": "A context harness for AI agents: all your scattered context — code, memory, docs, databases, SaaS — in one searchable, browsable, file-like interface.",
-    "language": "Python",
-    "stars": 70,
-    "forks": 9,
-    "issues": 1,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T12:58:14Z",
-    "createdAt": "2026-04-20T09:43:04Z",
-    "decision": "include"
-  },
-  {
-    "id": "better-code-review-graph",
-    "repo": "n24q02m/better-code-review-graph",
-    "categories": [
-      "devtools",
-      "context"
-    ],
-    "tags": [
-      "code review",
-      "knowledge graph",
-      "semantic search"
-    ],
-    "collectReason": "收录。小而具体：把语义搜索和调用图用于 token-efficient code review，比大而全 agent 更容易验证价值。",
-    "thesis": "Review agents need structure-aware retrieval more than raw diff summarization.",
-    "watchFor": "Whether call-graph resolution catches real review issues across languages.",
-    "risks": "Low star base and narrow scope; may be prototype-quality.",
-    "xKeywords": [
-      "better-code-review-graph",
-      "AI code review graph",
-      "token efficient code review"
-    ],
-    "name": "better-code-review-graph",
-    "url": "https://github.com/n24q02m/better-code-review-graph",
-    "homepage": "https://mcp.n24q02m.com/servers/better-code-review-graph/",
-    "description": "Knowledge graph for token-efficient code reviews -- semantic search and call-graph resolution across your codebase.",
-    "language": "Python",
-    "stars": 57,
-    "forks": 9,
-    "issues": 2,
+    "id": "oh-my-taiyiforge",
+    "repo": "Dong90/oh-my-taiyiforge",
+    "name": "oh-my-taiyiforge",
+    "url": "https://github.com/Dong90/oh-my-taiyiforge",
+    "homepage": "",
+    "description": "AI workflow automation plugin for intelligent code generation with Claude/Codex",
+    "language": "TypeScript",
+    "stars": 729,
+    "forks": 15,
+    "issues": 0,
     "license": "MIT",
-    "pushedAt": "2026-07-01T12:59:37Z",
-    "createdAt": "2026-03-20T11:11:32Z",
-    "decision": "include"
-  },
-  {
-    "id": "codex-pooler",
-    "repo": "icoretech/codex-pooler",
+    "pushedAt": "2026-06-30T07:36:19Z",
+    "createdAt": "2026-06-05T02:25:33Z",
     "categories": [
-      "devtools",
       "workflow"
     ],
     "tags": [
-      "Codex gateway",
-      "self-hosted",
-      "teams"
+      "Claude/Codex workflow plugin",
+      "workflow"
     ],
-    "collectReason": "收录。自托管 Codex gateway 是一个明确的团队基础设施需求，不是泛泛的 agent demo。",
-    "thesis": "Teams will want shared gateways for rate limits, routing, audit, and cost control around coding agents.",
-    "watchFor": "Queueing semantics, auth model, and whether it survives concurrent team workloads.",
-    "risks": "Needs careful credential handling; immature gateways can create hidden operational risk.",
+    "decision": "include",
+    "collectReason": "AI workflow automation plugin，面向 Claude/Codex 的智能代码生成流程。",
+    "thesis": "Agent workflow plugins may become user-level automation layers.",
+    "watchFor": "Plugin hooks, repeatability, and compatibility with common coding CLIs.",
+    "risks": "Potential overlap with existing skill/plugin managers.",
     "xKeywords": [
-      "codex-pooler",
-      "self-hosted Codex gateway",
-      "Codex team gateway"
+      "oh-my-taiyiforge",
+      "Dong90/oh-my-taiyiforge",
+      "Claude/Codex workflow plugin"
+    ]
+  },
+  {
+    "id": "sandboxd",
+    "repo": "tastyeffectco/sandboxd",
+    "name": "sandboxd",
+    "url": "https://github.com/tastyeffectco/sandboxd",
+    "homepage": "https://www.sandboxd.io/",
+    "description": "Self-hosted dev sandboxes with preview URLs. One command. No Kubernetes, perfect for coding agents and Saas factories",
+    "language": "Go",
+    "stars": 706,
+    "forks": 33,
+    "issues": 10,
+    "license": "MIT",
+    "pushedAt": "2026-06-29T04:21:32Z",
+    "createdAt": "2026-06-03T18:55:02Z",
+    "categories": [
+      "sandboxes"
     ],
-    "name": "codex-pooler",
-    "url": "https://github.com/icoretech/codex-pooler",
-    "homepage": "https://docs.codex-pooler.com/",
-    "description": "The full featured self-hosted Codex gateway, for teams, agents and you",
-    "language": "Elixir",
-    "stars": 78,
-    "forks": 4,
+    "tags": [
+      "self-hosted dev sandboxes",
+      "sandboxes"
+    ],
+    "decision": "include",
+    "collectReason": "一条命令起 self-hosted dev sandbox + preview URL，正好服务 coding agents 和 SaaS factory。",
+    "thesis": "Agent coding needs cheap, isolated, previewable sandboxes.",
+    "watchFor": "Startup speed, isolation model, preview routing, and cleanup behavior.",
+    "risks": "Sandbox security is easy to get subtly wrong.",
+    "xKeywords": [
+      "sandboxd",
+      "tastyeffectco/sandboxd",
+      "self-hosted dev sandboxes"
+    ]
+  },
+  {
+    "id": "qwen-agentworld",
+    "repo": "QwenLM/Qwen-AgentWorld",
+    "name": "Qwen-AgentWorld",
+    "url": "https://github.com/QwenLM/Qwen-AgentWorld",
+    "homepage": "https://arxiv.org/abs/2606.24597",
+    "description": "Qwen-AgentWorld: Language World Models for General Agents",
+    "language": "Python",
+    "stars": 699,
+    "forks": 61,
+    "issues": 3,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-06-25T06:57:43Z",
+    "createdAt": "2026-06-22T13:48:37Z",
+    "categories": [
+      "evals"
+    ],
+    "tags": [
+      "language world models",
+      "evals"
+    ],
+    "decision": "include",
+    "collectReason": "Qwen-AgentWorld 偏通用 agent world/eval，能观察模型厂如何定义 general agents。",
+    "thesis": "Agent evaluation may shift toward simulated worlds and long-horizon tasks.",
+    "watchFor": "Benchmark design, task diversity, and reproducibility.",
+    "risks": "Model-lab benchmarks can be hard to compare independently.",
+    "xKeywords": [
+      "Qwen-AgentWorld",
+      "QwenLM/Qwen-AgentWorld",
+      "language world models"
+    ]
+  },
+  {
+    "id": "flock",
+    "repo": "duckbugio/flock",
+    "name": "flock",
+    "url": "https://github.com/duckbugio/flock",
+    "homepage": "https://roost.duckbug.io",
+    "description": "Autonomous AI dev-team bot",
+    "language": "Go",
+    "stars": 685,
+    "forks": 3,
+    "issues": 0,
+    "license": "MIT",
+    "pushedAt": "2026-06-30T10:32:43Z",
+    "createdAt": "2026-06-08T15:48:15Z",
+    "categories": [
+      "workflow"
+    ],
+    "tags": [
+      "autonomous dev-team bot",
+      "workflow"
+    ],
+    "decision": "include",
+    "collectReason": "Autonomous AI dev-team bot，直接挑战“agent team”协作场景。",
+    "thesis": "Multi-agent dev teams need coordination and review mechanics more than more agents.",
+    "watchFor": "Task decomposition, PR quality, and human approval flow.",
+    "risks": "Autonomous teams can generate low-quality volume fast.",
+    "xKeywords": [
+      "flock",
+      "duckbugio/flock",
+      "autonomous dev-team bot"
+    ]
+  },
+  {
+    "id": "fablize",
+    "repo": "fivetaku/fablize",
+    "name": "fablize",
+    "url": "https://github.com/fivetaku/fablize",
+    "homepage": "",
+    "description": "A Claude Code plugin that makes Opus behave like Fable — completion, evidence, and verification enforced as procedure. Ships only what a Fable-vs-Opus comparison proved transferable.",
+    "language": "Python",
+    "stars": 669,
+    "forks": 85,
     "issues": 6,
     "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T12:54:58Z",
-    "createdAt": "2026-05-24T02:16:31Z",
-    "decision": "include"
-  },
-  {
-    "id": "blade-deepseek",
-    "repo": "echoVic/blade-deepseek",
+    "pushedAt": "2026-06-19T09:41:18Z",
+    "createdAt": "2026-06-14T05:49:06Z",
     "categories": [
-      "ai-agents"
+      "skills"
     ],
     "tags": [
-      "DeepSeek",
-      "coding agent",
-      "terminal"
+      "Fable-like verification skill",
+      "skills"
     ],
-    "collectReason": "收录。DeepSeek-native terminal coding agent，和 dao-code 一起观察“模型原生 coding agent”分叉趋势。",
-    "thesis": "Cheaper reasoning models can create a parallel ecosystem of cost-optimized coding agents.",
-    "watchFor": "Tool loop quality, edit reliability, and whether prefix-cache tricks are real product advantages.",
-    "risks": "Very early project; likely volatile API and small community.",
+    "decision": "include",
+    "collectReason": "把 Fable 风格的 completion/evidence/verification 迁移为 Claude Code plugin，切 verification 这个关键点。",
+    "thesis": "Agent behavior can be ported as procedural skills across models.",
+    "watchFor": "Whether verification reduces bad completions on non-demo tasks.",
+    "risks": "May overfit to Fable-vs-Opus comparison anecdotes.",
     "xKeywords": [
-      "blade-deepseek",
-      "DeepSeek-native coding agent",
-      "Orca coding agent"
-    ],
-    "name": "blade-deepseek",
-    "url": "https://github.com/echoVic/blade-deepseek",
-    "homepage": "",
-    "description": "Orca is a DeepSeek-native coding agent.",
-    "language": "Rust",
-    "stars": 134,
-    "forks": 0,
-    "issues": 0,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T12:54:34Z",
-    "createdAt": "2026-06-05T07:19:56Z",
-    "decision": "include"
+      "fablize",
+      "fivetaku/fablize",
+      "Fable-like verification skill"
+    ]
   },
   {
-    "id": "clownfish",
-    "repo": "openclaw/clownfish",
-    "categories": [
-      "workflow",
-      "ai-agents"
-    ],
-    "tags": [
-      "issue triage",
-      "Codex harness",
-      "maintainers"
-    ],
-    "collectReason": "收录。面向 maintainer 的批量 issue cluster 处理，切入点比“又一个聊天 agent”更实际。",
-    "thesis": "Maintainer workflows may be one of the first places coding agents become batch infrastructure.",
-    "watchFor": "Issue clustering quality, patch review loop, and safe failure handling at scale.",
-    "risks": "Automation around issue resolution can create noisy PRs if guardrails are weak.",
-    "xKeywords": [
-      "openclaw clownfish",
-      "maintainer codex harness",
-      "bulk issue coding agent"
-    ],
-    "name": "clownfish",
-    "url": "https://github.com/openclaw/clownfish",
+    "id": "luban-skill",
+    "repo": "LearnPrompt/luban-skill",
+    "name": "luban-skill",
+    "url": "https://github.com/LearnPrompt/luban-skill",
     "homepage": "",
-    "description": "Clownfish is a maintainer codex harness for resolving clusters of issues identified in bulk at scale. 🐠",
-    "language": "JavaScript",
-    "stars": 56,
-    "forks": 18,
+    "description": "鲁班 | Luban — 把'能用的Skill'打磨成'能被装、能传播、能验证、能进化'的公共资产。Agent skill-polishing workshop: 验料·访行·过尺·慢刨·回炉",
+    "language": "Shell",
+    "stars": 653,
+    "forks": 117,
     "issues": 1,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T12:53:25Z",
-    "createdAt": "2026-04-25T01:05:15Z",
-    "decision": "include"
-  },
-  {
-    "id": "skills-manager",
-    "repo": "Rito-w/skills-manager",
+    "license": "MIT",
+    "pushedAt": "2026-06-12T18:49:09Z",
+    "createdAt": "2026-06-11T08:49:42Z",
     "categories": [
-      "skills",
-      "devtools"
+      "skills"
     ],
     "tags": [
-      "skills marketplace",
-      "Claude",
-      "Cursor"
+      "skill polishing workshop",
+      "skills"
     ],
-    "collectReason": "收录。跨 AI IDE 的 skills manager，反映 agent 技能分发开始从 repo 手抄走向 marketplace/installer。",
-    "thesis": "Skills/plugins may become the package manager layer for agent behavior.",
-    "watchFor": "Registry quality, versioning, trust model, and support across Claude/Cursor/Windsurf.",
-    "risks": "Skill marketplaces can become prompt spam without curation and signing.",
+    "decision": "include",
+    "collectReason": "把 skill 打磨成可安装、可传播、可验证资产，关注 skill 质量而不是数量。",
+    "thesis": "Skill ecosystems need packaging and QA norms.",
+    "watchFor": "Validation workflow, distribution format, and community quality bar.",
+    "risks": "May be more methodology than tooling.",
     "xKeywords": [
-      "skills-manager AI IDE",
-      "Claude skills manager",
-      "agent skills marketplace"
-    ],
-    "name": "skills-manager",
-    "url": "https://github.com/Rito-w/skills-manager",
-    "homepage": "https://rito-w.github.io/skills-manager/",
-    "description": "A cross-platform skills manager for AI IDEs. Search marketplace, download locally, and install to Claude, Cursor, Windsurf, and more with one click.",
-    "language": "Vue",
-    "stars": 189,
-    "forks": 14,
-    "issues": 7,
-    "license": "NOASSERTION",
-    "pushedAt": "2026-07-01T13:00:52Z",
-    "createdAt": "2026-02-04T16:01:42Z",
-    "decision": "include"
+      "luban-skill",
+      "LearnPrompt/luban-skill",
+      "skill polishing workshop"
+    ]
   },
   {
-    "id": "caido-mcp-server",
-    "repo": "c0tton-fluff/caido-mcp-server",
-    "categories": [
-      "mcp",
-      "security"
-    ],
-    "tags": [
-      "Caido",
-      "HTTP traffic",
-      "security testing"
-    ],
-    "collectReason": "收录。把 Caido proxy 暴露给 MCP，说明安全测试工具正在变成 agent 可操作环境。",
-    "thesis": "Security agents need controlled access to traffic inspection tools, not just scanners.",
-    "watchFor": "Permissioning, audit logs, and whether it supports safe read-only analysis modes.",
-    "risks": "High misuse potential; should be treated as security tooling, not casual automation.",
-    "xKeywords": [
-      "caido mcp server",
-      "MCP security testing",
-      "Claude Code Caido"
-    ],
-    "name": "caido-mcp-server",
-    "url": "https://github.com/c0tton-fluff/caido-mcp-server",
+    "id": "junction",
+    "repo": "Plaer1/junction",
+    "name": "junction",
+    "url": "https://github.com/Plaer1/junction",
     "homepage": "",
-    "description": "MCP server for Caido proxy integration. Enables AI assistants like Claude Code to browse, analyse, and interact with HTTP traffic.",
-    "language": "Go",
-    "stars": 76,
-    "forks": 17,
-    "issues": 0,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T12:51:36Z",
-    "createdAt": "2026-01-29T19:26:12Z",
-    "decision": "include"
-  },
-  {
-    "id": "aigis",
-    "repo": "killertcell428/aigis",
-    "categories": [
-      "security"
-    ],
-    "tags": [
-      "agent firewall",
-      "prompt injection",
-      "compliance"
-    ],
-    "collectReason": "收录。Agent firewall 是真实刚需，尤其是 MCP rug-pull、memory poisoning、exfiltration 这些新型攻击面。",
-    "thesis": "As agents get tool access, policy enforcement needs to sit inside the tool loop.",
-    "watchFor": "Rule transparency, false positives, and coverage against indirect prompt injection.",
-    "risks": "Security claims need adversarial testing; zero-dependency does not imply robust.",
-    "xKeywords": [
-      "aigis agent firewall",
-      "MCP rug-pull",
-      "agent memory poisoning"
-    ],
-    "name": "aigis",
-    "url": "https://github.com/killertcell428/aigis",
-    "homepage": "https://pypi.org/project/pyaigis/",
-    "description": "Deterministic, zero-dependency Python firewall for AI agents — MCP rug-pull, memory poisoning, indirect injection, exfil channels. 44 compliance templates (US/CN/JP/EU).",
-    "language": "Python",
-    "stars": 51,
-    "forks": 6,
-    "issues": 11,
-    "license": "Apache-2.0",
-    "pushedAt": "2026-07-01T12:55:08Z",
-    "createdAt": "2026-04-11T02:56:13Z",
-    "decision": "include"
-  },
-  {
-    "id": "acodex",
-    "repo": "maksimzayats/acodex",
-    "categories": [
-      "mcp",
-      "devtools"
-    ],
-    "tags": [
-      "Codex desktop",
-      "automation bridge",
-      "MCP"
-    ],
-    "collectReason": "收录。直接面向 Codex desktop 的本地 MCP automation bridge，贴近实际工作流集成。",
-    "thesis": "Desktop coding agents will need local automation bridges before they become scriptable platforms.",
-    "watchFor": "Tool coverage, permission boundaries, and stability across Codex app updates.",
-    "risks": "Tight coupling to local app internals can break quickly.",
-    "xKeywords": [
-      "acodex",
-      "Codex desktop MCP",
-      "codex_app automation bridge"
-    ],
-    "name": "acodex",
-    "url": "https://github.com/maksimzayats/acodex",
-    "homepage": "http://docs.acodex.dev/",
-    "description": "Local MCP automation bridge for the Codex desktop app, with CLI, HTTP server, and live codex_app.* tool access.",
-    "language": "Python",
-    "stars": 55,
-    "forks": 1,
-    "issues": 0,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T12:38:06Z",
-    "createdAt": "2026-02-14T14:26:20Z",
-    "decision": "include"
-  },
-  {
-    "id": "vibeproxy",
-    "repo": "automazeio/vibeproxy",
-    "categories": [
-      "devtools",
-      "gateways"
-    ],
-    "tags": [
-      "macOS",
-      "subscription bridge",
-      "coding tools"
-    ],
-    "collectReason": "收录。用 macOS 菜单栏把 Claude Code/ChatGPT 订阅接到 coding tools，是“个人 agent 路由层”的现实需求。",
-    "thesis": "Individual developers want local routing over subscriptions and API keys, not another SaaS console.",
-    "watchFor": "Provider compatibility, local privacy model, and reliability under long coding sessions.",
-    "risks": "Subscription bridging may be brittle or policy-sensitive depending on provider terms.",
-    "xKeywords": [
-      "vibeproxy",
-      "Claude Code ChatGPT subscriptions coding tools",
-      "macOS AI coding proxy"
-    ],
-    "name": "vibeproxy",
-    "url": "https://github.com/automazeio/vibeproxy",
-    "homepage": "",
-    "description": "Native macOS menu bar app to use your Claude Code & ChatGPT subscriptions with AI coding tools - no API keys needed",
-    "language": "Swift",
-    "stars": 3074,
-    "forks": 213,
-    "issues": 21,
-    "license": "MIT",
-    "pushedAt": "2026-07-01T12:58:06Z",
-    "createdAt": "2025-10-04T00:36:21Z",
-    "decision": "include"
-  },
-  {
-    "id": "omniroute",
-    "repo": "diegosouzapw/OmniRoute",
-    "categories": [
-      "gateways",
-      "devtools"
-    ],
-    "tags": [
-      "AI gateway",
-      "provider routing",
-      "MCP"
-    ],
-    "collectReason": "收录。AI gateway + provider fallback + MCP/A2A，适合观察个人/团队如何绕开单一模型供应商绑定。",
-    "thesis": "Routing, fallback, and compression are becoming a core layer between coding agents and model providers.",
-    "watchFor": "Real provider support, failure semantics, and whether free-provider claims hold over time.",
-    "risks": "Gateway projects can accumulate fragile provider integrations and unclear terms.",
-    "xKeywords": [
-      "OmniRoute AI gateway",
-      "coding agent provider fallback",
-      "MCP AI gateway"
-    ],
-    "name": "OmniRoute",
-    "url": "https://github.com/diegosouzapw/OmniRoute",
-    "homepage": "https://omniroute.online",
-    "description": "Never stop coding. Free AI gateway: one endpoint, 231+ providers (50+ free), connect Claude Code, Codex, Cursor, Cline & Copilot to FREE Claude/GPT/Gemini. RTK+Caveman stacked compression saves 15-95% tokens, smart auto-fallback, MCP/A2A, multimodal APIs, Desktop/PWA.",
+    "description": "VS Code chat sidebar for local AI coding agents",
     "language": "TypeScript",
-    "stars": 9126,
-    "forks": 1432,
-    "issues": 148,
+    "stars": 646,
+    "forks": 10,
+    "issues": 0,
     "license": "MIT",
-    "pushedAt": "2026-07-01T13:01:53Z",
-    "createdAt": "2026-02-13T12:38:31Z",
-    "decision": "include"
+    "pushedAt": "2026-06-29T03:47:59Z",
+    "createdAt": "2026-06-17T05:27:09Z",
+    "categories": [
+      "ide"
+    ],
+    "tags": [
+      "VS Code sidebar for local agents",
+      "ide"
+    ],
+    "decision": "include",
+    "collectReason": "VS Code chat sidebar for local AI coding agents，轻量但命中本地 agent UI。",
+    "thesis": "Local agents need native editor surfaces that expose state and edits.",
+    "watchFor": "Supported agents, review UX, and how it handles long tasks.",
+    "risks": "Could be thin UI over existing CLIs.",
+    "xKeywords": [
+      "junction",
+      "Plaer1/junction",
+      "VS Code sidebar for local agents"
+    ]
   },
   {
-    "id": "openviking",
-    "repo": "volcengine/OpenViking",
+    "id": "recall",
+    "repo": "raiyanyahya/recall",
+    "name": "recall",
+    "url": "https://github.com/raiyanyahya/recall",
+    "homepage": "https://recallplugin.dev",
+    "description": "Stop wasting tokens and re-explaining your project every session. Recall gives Claude Code durable memory — entirely offline.",
+    "language": "Python",
+    "stars": 645,
+    "forks": 37,
+    "issues": 3,
+    "license": "MIT",
+    "pushedAt": "2026-06-26T08:06:59Z",
+    "createdAt": "2026-06-19T20:36:41Z",
     "categories": [
-      "context",
       "memory"
     ],
     "tags": [
-      "context database",
-      "agent memory",
-      "filesystem paradigm"
+      "offline Claude Code memory",
+      "memory"
     ],
-    "collectReason": "收录。上下文数据库方向值得看，尤其是把 memory/resources/skills 做成层级文件系统范式。",
-    "thesis": "Agent memory may consolidate into context databases that manage resources and skills together.",
-    "watchFor": "Interoperability with existing agents, local/hosted modes, and migration path from ad hoc memory files.",
-    "risks": "Platform-backed projects can be heavy; verify whether the abstraction is useful outside its ecosystem.",
+    "decision": "include",
+    "collectReason": "给 Claude Code 提供离线 durable memory，解决每次重讲项目的问题。",
+    "thesis": "Local memory may become standard for serious coding-agent sessions.",
+    "watchFor": "Privacy model, retrieval quality, and stale memory handling.",
+    "risks": "Memory can mislead agents if not scoped/versioned.",
     "xKeywords": [
-      "OpenViking",
-      "agent context database",
-      "AI agent memory resources skills"
-    ],
-    "name": "OpenViking",
-    "url": "https://github.com/volcengine/OpenViking",
-    "homepage": "https://openviking.ai",
-    "description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
-    "language": "Python",
-    "stars": 26216,
-    "forks": 2036,
-    "issues": 274,
-    "license": "AGPL-3.0",
-    "pushedAt": "2026-07-01T13:03:38Z",
-    "createdAt": "2026-01-05T07:11:17Z",
-    "decision": "include"
+      "recall",
+      "raiyanyahya/recall",
+      "offline Claude Code memory"
+    ]
   },
   {
-    "id": "agent-reach",
-    "repo": "Panniantong/Agent-Reach",
+    "id": "threejs-game-skills",
+    "repo": "majidmanzarpour/threejs-game-skills",
+    "name": "threejs-game-skills",
+    "url": "https://github.com/majidmanzarpour/threejs-game-skills",
+    "homepage": "",
+    "description": "Agent skills for building playable, polished Three.js browser games with gameplay, AAA-style graphics, UI, QA, and optional AI-generated 3D, image, and audio assets.",
+    "language": "Python",
+    "stars": 637,
+    "forks": 72,
+    "issues": 0,
+    "license": "MIT",
+    "pushedAt": "2026-06-16T11:18:44Z",
+    "createdAt": "2026-06-14T04:06:26Z",
     "categories": [
-      "mcp",
-      "research"
+      "skills"
     ],
     "tags": [
-      "social search",
-      "web research",
-      "no API"
+      "game-building agent skills",
+      "skills"
     ],
-    "collectReason": "收录。让 agent 读/搜 X、Reddit、YouTube、GitHub 等信息源，解决 agent research 的入口问题。",
-    "thesis": "Research agents need practical source access layers before synthesis quality matters.",
-    "watchFor": "Rate limits, source fidelity, and whether no-API scraping remains stable.",
-    "risks": "Scraping-based access can break often and may carry compliance concerns.",
+    "decision": "include",
+    "collectReason": "面向 Three.js 游戏的 agent skills，垂直技能包比泛 coding prompt 更有用。",
+    "thesis": "Domain-specific skills may outperform generic coding agents for creative software.",
+    "watchFor": "Playable outputs, QA loop, and asset pipeline quality.",
+    "risks": "Game demos are easy to look good but hard to make robust.",
     "xKeywords": [
-      "Agent-Reach",
-      "AI agent internet search CLI",
-      "agent read Twitter Reddit YouTube GitHub"
-    ],
-    "name": "Agent-Reach",
-    "url": "https://github.com/Panniantong/Agent-Reach",
+      "threejs-game-skills",
+      "majidmanzarpour/threejs-game-skills",
+      "game-building agent skills"
+    ]
+  },
+  {
+    "id": "awesome-evals",
+    "repo": "benchflow-ai/awesome-evals",
+    "name": "awesome-evals",
+    "url": "https://github.com/benchflow-ai/awesome-evals",
     "homepage": "",
-    "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "description": "A curated, non-BS library of the best resources for building and evaluating AI agents — papers, blogs, talks, tools, benchmarks. Maintained by BenchFlow.",
+    "language": "",
+    "stars": 627,
+    "forks": 45,
+    "issues": 2,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T22:53:19Z",
+    "createdAt": "2026-06-24T08:10:33Z",
+    "categories": [
+      "evals"
+    ],
+    "tags": [
+      "agent eval library",
+      "evals"
+    ],
+    "decision": "include",
+    "collectReason": "非 BS 的 agent eval 资源库，虽然是 curated list，但能帮助判断哪些项目真有评估。",
+    "thesis": "The agent ecosystem needs better eval literacy to filter hype.",
+    "watchFor": "Whether it links to runnable benchmarks and maintained tools.",
+    "risks": "Awesome lists can decay without strong curation.",
+    "xKeywords": [
+      "awesome-evals",
+      "benchflow-ai/awesome-evals",
+      "agent eval library"
+    ]
+  },
+  {
+    "id": "launch-your-agent",
+    "repo": "anthropics/launch-your-agent",
+    "name": "launch-your-agent",
+    "url": "https://github.com/anthropics/launch-your-agent",
+    "homepage": "",
+    "description": "Claude Code skills that take a founder from idea to a live Claude Managed Agent: interview, scope a v0, launch in their own account, grade it, iterate, and schedule it",
+    "language": "HTML",
+    "stars": 598,
+    "forks": 119,
+    "issues": 1,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T15:54:13Z",
+    "createdAt": "2026-06-16T14:49:50Z",
+    "categories": [
+      "skills"
+    ],
+    "tags": [
+      "founder-to-agent launch skills",
+      "skills"
+    ],
+    "decision": "include",
+    "collectReason": "从 idea 到 Claude Managed Agent 的 launch skills，展示 skills 能覆盖产品化流程。",
+    "thesis": "Skills can encode whole business workflows, not just coding techniques.",
+    "watchFor": "How much is executable versus guidance, and whether grading/iteration is grounded.",
+    "risks": "Vendor-specific workflow may not generalize.",
+    "xKeywords": [
+      "launch-your-agent",
+      "anthropics/launch-your-agent",
+      "founder-to-agent launch skills"
+    ]
+  },
+  {
+    "id": "agentspace",
+    "repo": "HKUDS/AgentSpace",
+    "name": "AgentSpace",
+    "url": "https://github.com/HKUDS/AgentSpace",
+    "homepage": "https://hire-an-agent.online/",
+    "description": "\"AgentSpace: Human + Agents. One Team. One Workspace\"",
+    "language": "TypeScript",
+    "stars": 595,
+    "forks": 71,
+    "issues": 6,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-07-01T07:23:31Z",
+    "createdAt": "2026-06-22T04:08:03Z",
+    "categories": [
+      "workspace"
+    ],
+    "tags": [
+      "human-agent workspace",
+      "workspace"
+    ],
+    "decision": "include",
+    "collectReason": "Human + Agents 的协作 workspace，关注人和 agent 同队工作。",
+    "thesis": "Agent products may converge on shared workspaces rather than chat windows.",
+    "watchFor": "Role assignment, activity visibility, and artifact ownership.",
+    "risks": "Workspace products need strong execution primitives to avoid being dashboards.",
+    "xKeywords": [
+      "AgentSpace",
+      "HKUDS/AgentSpace",
+      "human-agent workspace"
+    ]
+  },
+  {
+    "id": "visa-vulnerability-agentic-harness",
+    "repo": "visa/visa-vulnerability-agentic-harness",
+    "name": "visa-vulnerability-agentic-harness",
+    "url": "https://github.com/visa/visa-vulnerability-agentic-harness",
+    "homepage": "",
+    "description": "Visa Vulnerability Agentic Harness",
     "language": "Python",
-    "stars": 47908,
-    "forks": 3802,
-    "issues": 113,
+    "stars": 591,
+    "forks": 96,
+    "issues": 0,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-07-01T16:22:33Z",
+    "createdAt": "2026-06-05T00:26:33Z",
+    "categories": [
+      "security"
+    ],
+    "tags": [
+      "vulnerability agent harness",
+      "security"
+    ],
+    "decision": "include",
+    "collectReason": "Visa 做 vulnerability agentic harness，企业安全 agent 方向值得看。",
+    "thesis": "Large organizations are experimenting with agentic security harnesses.",
+    "watchFor": "Disclosure workflow, benchmark tasks, and guardrails.",
+    "risks": "Security automation needs conservative defaults.",
+    "xKeywords": [
+      "visa-vulnerability-agentic-harness",
+      "visa/visa-vulnerability-agentic-harness",
+      "vulnerability agent harness"
+    ]
+  },
+  {
+    "id": "fable-mode",
+    "repo": "mrtooher/fable-mode",
+    "name": "fable-mode",
+    "url": "https://github.com/mrtooher/fable-mode",
+    "homepage": "",
+    "description": "A Claude skill that activates Fable-style agentic behavior: explicit multi-stage planning, sub-agent delegation, and self-verification.",
+    "language": "",
+    "stars": 578,
+    "forks": 62,
+    "issues": 0,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-06-19T22:54:05Z",
+    "createdAt": "2026-06-13T05:33:14Z",
+    "categories": [
+      "skills"
+    ],
+    "tags": [
+      "Fable-style agent behavior",
+      "skills"
+    ],
+    "decision": "include",
+    "collectReason": "Claude skill 激活 Fable-style multi-stage planning/sub-agent/self-verification，适合观察行为模式移植。",
+    "thesis": "Model behavior may be shaped by reusable operating modes.",
+    "watchFor": "Whether planning/delegation improves outcomes or adds overhead.",
+    "risks": "Can become ritualized prompting without measurable gains.",
+    "xKeywords": [
+      "fable-mode",
+      "mrtooher/fable-mode",
+      "Fable-style agent behavior"
+    ]
+  },
+  {
+    "id": "opentag",
+    "repo": "amplifthq/opentag",
+    "name": "opentag",
+    "url": "https://github.com/amplifthq/opentag",
+    "homepage": "",
+    "description": "Open-source @agent mentions for Slack and GitHub. OpenTag routes tagged requests to Codex, Claude Code, then returns results in thread.",
+    "language": "TypeScript",
+    "stars": 528,
+    "forks": 43,
+    "issues": 4,
     "license": "MIT",
-    "pushedAt": "2026-06-29T15:22:51Z",
-    "createdAt": "2026-02-24T02:10:24Z",
-    "decision": "include"
+    "pushedAt": "2026-07-01T13:59:41Z",
+    "createdAt": "2026-06-24T08:05:12Z",
+    "categories": [
+      "workflow"
+    ],
+    "tags": [
+      "agent mentions for Slack/GitHub",
+      "workflow"
+    ],
+    "decision": "include",
+    "collectReason": "Open-source @agent mentions，Slack/GitHub 里 tag Codex/Claude Code 并回线程，工作流很现实。",
+    "thesis": "Agents may enter teams through existing collaboration surfaces.",
+    "watchFor": "Auth, routing, result threading, and auditability.",
+    "risks": "Chatops agents need strict permission and noise controls.",
+    "xKeywords": [
+      "opentag",
+      "amplifthq/opentag",
+      "agent mentions for Slack/GitHub"
+    ]
+  },
+  {
+    "id": "codeseek",
+    "repo": "CodeBendKit/codeseek",
+    "name": "codeseek",
+    "url": "https://github.com/CodeBendKit/codeseek",
+    "homepage": "",
+    "description": "Rust-powered code intelligence CLI for AI coding agents. Builds call graphs and hybrid semantic search indexes (Dense + Sparse + RRF + Reranker) across 7 languages. Ships as native MCP tools for Claude Code and Codex CLI.",
+    "language": "Rust",
+    "stars": 462,
+    "forks": 32,
+    "issues": 0,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T14:05:37Z",
+    "createdAt": "2026-06-03T05:41:22Z",
+    "categories": [
+      "context"
+    ],
+    "tags": [
+      "code intelligence MCP",
+      "context"
+    ],
+    "decision": "include",
+    "collectReason": "Rust code intelligence CLI，call graph + hybrid semantic search + MCP，直接服务 Claude Code/Codex。",
+    "thesis": "Code intelligence sidecars can reduce blind file exploration.",
+    "watchFor": "Language coverage, index speed, and retrieval precision under real repos.",
+    "risks": "Complex indexing may be heavy for small projects.",
+    "xKeywords": [
+      "codeseek",
+      "CodeBendKit/codeseek",
+      "code intelligence MCP"
+    ]
+  },
+  {
+    "id": "tau",
+    "repo": "huggingface/tau",
+    "name": "tau",
+    "url": "https://github.com/huggingface/tau",
+    "homepage": "http://twotimespi.dev/",
+    "description": "a minimalist agent that teaches you to create coding agents",
+    "language": "Python",
+    "stars": 452,
+    "forks": 52,
+    "issues": 34,
+    "license": "MIT",
+    "pushedAt": "2026-07-01T14:33:15Z",
+    "createdAt": "2026-06-11T16:33:44Z",
+    "categories": [
+      "learning"
+    ],
+    "tags": [
+      "minimalist coding-agent teacher",
+      "learning"
+    ],
+    "decision": "include",
+    "collectReason": "Hugging Face 的 minimalist agent 教你创建 coding agents，偏教育但对理解 agent primitives 有价值。",
+    "thesis": "Small teaching agents can clarify what is essential in coding-agent design.",
+    "watchFor": "Whether examples are runnable and minimal enough to adapt.",
+    "risks": "Education repos may not become production tools.",
+    "xKeywords": [
+      "tau",
+      "huggingface/tau",
+      "minimalist coding-agent teacher"
+    ]
+  },
+  {
+    "id": "nubase",
+    "repo": "OtterMind/Nubase",
+    "name": "Nubase",
+    "url": "https://github.com/OtterMind/Nubase",
+    "homepage": "https://nubase.ai",
+    "description": "🔥🔥🔥 Turn AI-written code into real apps. Nubase is an open-source, AI-native backend platform for AI Coding, agentic applications, and modern product teams: Memory, Database, Storage, and Auth in one self-hostable service.",
+    "language": "Java",
+    "stars": 445,
+    "forks": 40,
+    "issues": 1,
+    "license": "Apache-2.0",
+    "pushedAt": "2026-06-29T08:47:23Z",
+    "createdAt": "2026-06-08T08:42:51Z",
+    "categories": [
+      "backend"
+    ],
+    "tags": [
+      "AI-native backend platform",
+      "backend"
+    ],
+    "decision": "include",
+    "collectReason": "把 memory/database/storage/auth 打包给 AI-written apps，解决 vibe coding 从 demo 到真实 app 的后端缺口。",
+    "thesis": "AI coding workflows need backend platforms designed for generated apps.",
+    "watchFor": "Migration path, self-hosting, and data model clarity.",
+    "risks": "Platform scope is broad; reliability matters more than demo speed.",
+    "xKeywords": [
+      "Nubase",
+      "OtterMind/Nubase",
+      "AI-native backend platform"
+    ]
+  },
+  {
+    "id": "canary",
+    "repo": "wizenheimer/canary",
+    "name": "canary",
+    "url": "https://github.com/wizenheimer/canary",
+    "homepage": "",
+    "description": "QA harness built for Claude Code | E2E testing with screen recordings, console logs, network HARs, and Playwright traces",
+    "language": "TypeScript",
+    "stars": 427,
+    "forks": 33,
+    "issues": 2,
+    "license": "NOASSERTION",
+    "pushedAt": "2026-06-20T23:05:12Z",
+    "createdAt": "2026-06-03T19:16:55Z",
+    "categories": [
+      "qa"
+    ],
+    "tags": [
+      "QA harness for Claude Code",
+      "qa"
+    ],
+    "decision": "include",
+    "collectReason": "E2E 测试、录屏、console、HAR、Playwright traces 给 Claude Code，命中 verification。",
+    "thesis": "Coding agents need rich QA artifacts to self-correct frontend work.",
+    "watchFor": "Trace packaging, replayability, and integration with agent loops.",
+    "risks": "QA harnesses can be noisy if failures are not summarized well.",
+    "xKeywords": [
+      "canary",
+      "wizenheimer/canary",
+      "QA harness for Claude Code"
+    ]
+  },
+  {
+    "id": "metaharness",
+    "repo": "ruvnet/metaharness",
+    "name": "metaharness",
+    "url": "https://github.com/ruvnet/metaharness",
+    "homepage": "https://github.com/ruvnet/ruflo",
+    "description": "🛠️ The meta-harness for AI agents — scaffold your own focused, branded agent harness with its own npx CLI, MCP server, memory, learning loop, and witness-signed releases. Works with Claude Code, Codex, pi.dev, Hermes, OpenClaw, and RVM (hardware-isolated sandbox).",
+    "language": "TypeScript",
+    "stars": 348,
+    "forks": 34,
+    "issues": 13,
+    "license": "MIT",
+    "pushedAt": "2026-06-29T21:33:34Z",
+    "createdAt": "2026-06-13T18:29:11Z",
+    "categories": [
+      "ai-agents"
+    ],
+    "tags": [
+      "agent harness scaffolder",
+      "ai-agents"
+    ],
+    "decision": "include",
+    "collectReason": "生成专注的 branded agent harness，带 CLI/MCP/memory/learning loop，适合观察 agent factory 方向。",
+    "thesis": "Teams may scaffold custom harnesses instead of using one generic agent.",
+    "watchFor": "Template quality, witness-signed releases, and hardware sandbox story.",
+    "risks": "Scaffolders can produce shallow forks without maintenance.",
+    "xKeywords": [
+      "metaharness",
+      "ruvnet/metaharness",
+      "agent harness scaffolder"
+    ]
   }
 ]
 

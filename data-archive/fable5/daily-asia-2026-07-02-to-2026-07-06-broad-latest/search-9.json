@@ -1,0 +1,1267 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2073982577409773785",
+      "text": "Meta banned Claude Code internally. Fable 5 came back weaker. Google dropped two models in one day.\n\n→ Hermes lets you combine two AIs into one smarter one, scored 8% above Opus and 11% above GPT-5.5 on their benchmark.",
+      "author": {
+        "id": "20769497",
+        "name": "@SmartInvestor",
+        "screenName": "smartinvestor",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2047578018491908096/2DhrzdiS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 04:09:13 +0000 2026",
+      "createdAtLocal": "2026-07-06 12:09",
+      "createdAtISO": "2026-07-06T04:09:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073982452360741008",
+      "text": "🎬 Với Claude Fable 5, chất lượng output không còn kẹt ở IQ model, mà kẹt ở việc bạn làm rõ được bao nhiêu unknown trước khi agent chạy.\n\n🔎 Thariq dùng ẩn dụ map và territory để giải thích vì sao agent hay đoán sai dù prompt dài. Map là prompt, skill, context bạn đưa cho Claude, territory là codebase thật, ràng buộc thật. Unknown, thứ chưa rõ, chính là khoảng cách giữa map và territory.\n\n💡 Thariq chia unknown thành bốn ô, bắt đầu từ hai ô trên. Known Knowns: bạn đã biết và đã nói trong prompt, ví dụ dùng React, deploy Vercel. Known Unknowns: bạn biết mình chưa biết, ví dụ chưa chọn auth provider, chưa biết schema cuối.\n\n🧠 Unknown Knowns: bạn biết trong đầu nhưng chưa viết ra, thường gặp kiểu tôi biết khi nhìn thấy. Unknown Unknowns: bạn chưa nghĩ tới luôn, landmine trong codebase, convention team chưa ai document. Coder giỏi thường ít unknown hơn, skill agentic coding thực ra là skill giảm và lên kế hoạch cho unknown.\n\n⚡ Prompt quá cụ thể, Claude làm đúng kể cả khi nên đổi hướng. Quá mơ hồ, Claude đoán best practice có thể không khớp dự án bạn. Thariq gom workflow thành ba giai đoạn: trước khi code, trong lúc làm, sau khi ship, gallery của ông có tám demo pre, một during, hai post.\n\n✅ Blindspot pass nghĩa là bảo Claude quét vùng bạn chưa quen và liệt kê unknown unknowns, những thứ bạn không biết là mình không biết. Dùng khi territory lạ: module auth chưa từng đụng, domain mới, codebase người khác viết. Prompt mẫu:\n\n\"Tôi sắp thêm SSO vào module auth nhưng chưa từng đụng phần này, làm blindspot pass tìm unknown unknowns trong vùng code đó, giải thích từng cái, và gợi ý prompt implement tốt hơn. \"\n\n📌 Với Unknown Knowns, bạn cần nhìn thấy mới quyết định được, không mô tả bằng lời cho xong. Demo teach unknowns, prompt: Tôi không biết color grading là gì nhưng cần grade video launch, dạy tôi đủ để hiểu unknown unknowns và prompt bạn bằng từ vựng thật. Demo bốn hướng UI, prompt: \n\n\"Tôi cần dashboard review queue nhưng không có gu visual, làm một trang HTML với bốn hướng thiết kế khác hẳn nhau để tôi phản ứng.\"\n\n🎬 Mock là HTML throwaway với data giả, phản ứng layout trước khi đụng app thật. Prompt mock, Trước khi code, làm một file HTML mock toolbar annotate frame với data giả, tôi muốn phản ứng layout trước khi bạn đụng app thật. Prompt brainstorm, User churn sau onboarding, search codebase và brainstorm mười chỗ can thiệp từ rẻ nhất đến tham vọng nhất, tôi sẽ chọn cái hợp.\n\n🔎 Interview, Claude hỏi từng câu một, ưu tiên câu mà câu trả lời đổi kiến trúc. Prompt interview, Interview tôi từng câu một về phần còn mơ hồ của feature export annotation, ưu tiên câu mà câu trả lời sẽ đổi kiến trúc. Prompt reference, Crate Rust trong vendor có backoff behavior tôi muốn, đọc và port sang TypeScript, trước hết làm semantics map để tôi xác nhận bạn hiểu đúng rồi mới implement.\n\n💡 Implementation plan kiểu Thariq sort theo khả năng bạn sẽ sửa, data model, interface, UX lên trên, refactor cơ học chôn dưới. Plan không phải checklist chạy từ trên xuống, mà là chỗ bạn review judgment call trước khi agent code. Prompt, Viết implementation plan cho export annotation dạng HTML, phần tôi hay sửa data model interface UX để trên, phần refactor cơ học chôn dưới phần đó tôi tin bạn.\n\n🧠 Dù plan kỹ đến đâu, unknown vẫn nằm trong territory khi đang code. File implementation-notes, Claude ghi mọi chỗ lệch plan, chọn phương án an toàn, log vào mục Deviations. Prompt, Giữ file implementation-notes khi build feature export, gặp edge case lệch plan thì chọn phương án an toàn, log vào Deviations rồi tiếp tục.\n\n⚡ Sau khi ship, người khác kế thừa unknown của bạn, reviewer, PM, client. Pitch doc gói prototype, spec và notes, mở đầu bằng demo, trả lời objection trước khi họ hỏi. Prompt, Gói prototype, spec và implementation notes thành một doc để tôi drop Slack xin ship annotation export, mở đầu bằng demo.\n\n✅ Quiz before merge, bạn phải chứng minh hiểu diff, không chỉ đã skim. Artifact HTML cuối có quiz, trả lời sai thì chỉ lại đúng section bạn bỏ qua. Prompt, Tôi muốn chắc hiểu mọi thứ trong diff trước khi merge, làm báo cáo HTML về diff export-feature bối cảnh trực giác việc đã làm, kèm quiz cuối tôi phải pass.\n\n📌 Ví dụ thật: video launch Fable Thariq edit hoàn toàn bằng Claude Code, domain mới, chưa biết ffmpeg, Whisper, Remotion. Ông không rà color grading, bảo Claude dạy unknown trước, không bảo thử preset mù. HTML artifact là cách hay nhất visualize thứ bạn chưa diễn đạt được bằng chữ, đúng tinh thần gallery mười một demo.\n\n🎬 Càng model mạnh, càng không thể bỏ qua bước làm rõ unknown, project tiếp theo bắt đầu bằng blindspot pass, không phải prompt dài. Mười một demo tại https://t.co/Lyx9Tbn2j2\n\n#Escbase #ClaudeFable #AgenticCoding #ClaudeCode",
+      "author": {
+        "id": "840969499109023744",
+        "name": "Escbase.eth",
+        "screenName": "escbasexyz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1893242322898296832/88nNbLX6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 13,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 04:08:44 +0000 2026",
+      "createdAtLocal": "2026-07-06 12:08",
+      "createdAtISO": "2026-07-06T04:08:44+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "vi",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073100352921215386",
+        "text": "https://t.co/hPiZr1kG7r",
+        "author": {
+          "screenName": "trq212",
+          "name": "Thariq"
+        }
+      }
+    },
+    {
+      "id": "2073981558965592139",
+      "text": "Claude Code 团队的 Thariq 称：他用了 Fable 5之后，自己的工作方式发生了什么根本转变：\n\n以前是\"检查 Claude 有没有把活干对\"（doing the work right），现在变成\"检查 Claude 有没有在做对的事\"（doing the right work）\n\n——从盯执行细节，变成定方向。\n\n他给的三条具体做法：\n\n1. 把 Claude 当成一起想问题的伙伴，而不是等想清楚了才让它干活。\n\n他常常自己都不确定要什么，就早早拉 Claude 进来——比如先写个小需求说明，让 Claude 反过来\"采访\"他、逼他想清楚；或者给个想法让它出几个方向、用 HTML 做原型给他挑。关键动作是给背景而不只是给限制：与其说\"别过度设计\"，不如说\"这功能是个实验、可能一个月后就删，所以别搭扔起来心疼的东西\"。\n\n2. 给目标 + 给验证方法。\n\n点了两个新功能：/goal（让 Claude 一直干到完成为止）和 workflows（让 Claude 验证自己的成果、出报告说明实现了什么、有没有偏差）。\n\n3. 更大胆一点。\n\nFable 强到逼他跳出框框，他顺带抖了个包袱：这条视频本身就是他用 Fable 剪的。\n\n\"如果有什么你以为大模型做不到，不妨给它个机会\"。",
+      "author": {
+        "id": "828931857852960768",
+        "name": "暗蓝 Alan Hu",
+        "screenName": "alanhu1024",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2073630680425394176/saslmZLc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 19,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 04:05:11 +0000 2026",
+      "createdAtLocal": "2026-07-06 12:05",
+      "createdAtISO": "2026-07-06T04:05:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2073975937012813825",
+      "text": "Claude CodeでFableに多額の請求を食らう疑似体験シミュレーターを作りました。URLから誰でも体験できます。しょうもないタスクほどAIが無駄に頑張って高額請求になります\nhttps://t.co/vcX3hBzGiu https://t.co/iE396YN4OX",
+      "author": {
+        "id": "1258200390509588480",
+        "name": "ギガビット@ゲームつくるひと",
+        "screenName": "gigabit_million",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2004218731086630912/cxFdAMwA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 103,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:42:50 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:42",
+      "createdAtISO": "2026-07-06T03:42:50+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073975698465923072/vid/avc1/1536x1260/6byaLgSeuN9CWPam.mp4?tag=28",
+          "width": 1536,
+          "height": 1260
+        }
+      ],
+      "urls": [
+        "https://claude.ai/public/artifacts/433b27c7-ba3b-41a9-a3d1-73a456d4cb4d"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073974175719723159",
+      "text": "ガチ勢では無いが、\nClaude Code &amp; Sonnet 5→簡単なタスクの自動化※自動モード\nClaude Code &amp; Fable 5→SKILL.mdの量産※対話モード\nとして、考えてますね。",
+      "author": {
+        "id": "1522807592648470533",
+        "name": "DIO",
+        "screenName": "premiumc5g",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065981173449560064/Q-jYaP_F_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:35:50 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:35",
+      "createdAtISO": "2026-07-06T03:35:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073973992684462279",
+      "text": "Fable 5 が優秀なのは揺るぎないのですが、compaction や AGENTS.md/CLAUDE.md の挙動の違いで、Codex の方が扱いやすい場面が結構あるなと。Claude Code はハーネスに気を配らないといけない箇所が多すぎる。この辺はモデル性能で埋まるものではないので、5.6 Sol がそこそこ良いモデルであれば、主軸はやはり Codex にしておきたいというのはあります。",
+      "author": {
+        "id": "1390310166625603586",
+        "name": "Sheva / base.eth",
+        "screenName": "0xSheva7",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1871613523702468608/MUT4nDXt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 76,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:35:07 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:35",
+      "createdAtISO": "2026-07-06T03:35:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073973461454872588",
+      "text": "【経営者は全員見るべき】\nClaude Codeの生みの親 Boris Chernyが、Fable 5についてこう語ってます👀\nhttps://t.co/pZLlAgGKLV\n「Fable 5は、チームが1ヶ月かかっていた仕事を1日で終わらせる。ただ、ほとんどの人は使い方を間違え続ける」\n12分の解説で特に刺さったのがここ👇\n・Fable 5は歴代モデルで一番プロンプトが要らない\n・今までの“詳細に書き込んだプロンプト”が逆に足を引っ張る\n・細かく指示するより、任せて確認する方が速い\nつまり\n「AIに細かく指示する時代」から\n「AI社員に任せて結果を確認する時代」へ。\n自分も毎日Claude Code触ってるけど、この感覚はガチです。\nプロンプト磨きに時間かけてる人ほど、一度見た方がいいです。",
+      "author": {
+        "id": "1995365555147354112",
+        "name": "いち｜AI社員と働く経営者",
+        "screenName": "ichiaimarketer",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2051747614161575936/Ck4KpJVF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 447,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jul 06 03:33:00 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:33",
+      "createdAtISO": "2026-07-06T03:33:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072986754420817920/vid/avc1/1280x720/OATocZaE563AMb5Z.mp4?tag=28",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073972707826565205",
+      "text": "Fable 5がClaude Codeのサブスクに含まれるのは\n『日本時間：7月8日（水）15:59:59 まで』\nだね。きちんと書いてあったわ。\n\nClaude Fable 5 promotional access | Claude Help Center\nhttps://t.co/vgR7gRnut4 https://t.co/SylBU4yCJ3",
+      "author": {
+        "id": "91489387",
+        "name": "よらり。҉҉҉҉",
+        "screenName": "9842",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2054874443118493696/CrXyw0qt_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 91,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jul 06 03:30:00 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:30",
+      "createdAtISO": "2026-07-06T03:30:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMgQegRaAAAZsuI.png",
+          "width": 1322,
+          "height": 1016
+        }
+      ],
+      "urls": [
+        "https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073972706132083024",
+      "text": "【Claude Fable 5の自律性を100%解放する「引き算」プロンプトを無償公開します】\nFable 5はあまりに優秀なため、従来の「ステップバイステップで考えて」といったお作法プロンプトは、モデルを縛り、精度を落とす『負債』になります。また、思考プロセスをテキスト出力させると、Opus 4.8にフォールバックされる罠も存在します。\n公式も「旧スキルは品質を下げうる」と明言しています。\nそこで、お手元の古いプロンプトやAgent SkillsファイルをFable 5に一括ロードさせ、自律性を最大化する「シンプルかつ超強力なFable 5専用スキル」へと自律リファクタさせるプロンプトを作成しました。\n\n7/7までのFable 5サブスク使い倒し期間に、Claude Code等でぜひご活用ください！👇（スレッドに貼りますのでご自由にお使いください）\n＃Claude ＃ClaudeCode ＃Fable5 ＃プロンプトエンジニアリング",
+      "author": {
+        "id": "1159027346935910400",
+        "name": "アキナ＠AIでSES営業の生産性を爆上げ",
+        "screenName": "spirits0514",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052290795923988480/s-LGwNNA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 49,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:30:00 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:30",
+      "createdAtISO": "2026-07-06T03:30:00+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMb0kr8aEAAJG0M.jpg",
+          "width": 1672,
+          "height": 941
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073971595216093310",
+      "text": "推荐这篇，Claude Code 团队成员 Thariq Shihipar 把跟 Fable 5 协作的核心技能总结成了一个框架。不是 prompt 技巧集——是\"未知\"管理。他把 Rumsfeld 矩阵用在了 agentic coding 上：已知的已知、已知的未知、未知的已知、未知的未知。这篇文章是 Fable 5 时代真正的用户手册。\n\nFable 实战指南：找到你的未知\n\n跟 Claude Fable 5 工作过程反复教会我一个老道理：地图不是领土。\n\n地图——对要完成的工作的表征——是我的 prompt、skill 和上下文，是我给 Claude 的东西。领土是工作实际需要发生的地方——代码库、真实世界、它的实际约束。地图和领土之间的差距就是我称为\"未知\"的东西。\n\n当 Claude 遇到一个未知，它需要根据它对我要什么的最佳猜测来做决定。工作越多，Claude 可能遇到的未知就越多。\n\nFable 是第一个我发现工作质量的瓶颈在于我能否澄清它的\"未知\"的模型。\n\n更重要的是，仅仅提前计划并不总是足够。你可以在实现深处发现未知，或者你的未知可能指向你实际上应该用一种完全不同的方式解决问题。\n\n跟 Fable 工作是一个在实现之前、之中和之后迭代发现未知的过程。\n\n了解你的未知\n\n每当我带着一个问题来找 Claude，我倾向于用四象限来拆解：\n\n已知的已知： 基本上就是我写在 prompt 里的。我告诉 agent 我想要什么？\n已知的未知： 什么我还没想出来，但我意识到我还没想出来？\n未知的已知： 什么太显而易见了，我永远不会写下来，但看到就会认出来？\n未知的未知： 我完全没考虑过什么？我不知道什么知识？我知道一件事能有多好吗？\n\n最好的 agentic coder 有相对较少的未知。看 Boris 或 Jarred 这种人 prompt，很明显他们知道自己详细想要什么。他们与代码库和模型行为深度同频。\n\n但他们也在假设未知。在许多方面，减少和规划你的未知就是 agentic coding 的\"技能\"。但幸运的是，这是一个你可以通过与 Claude 一起工作来提升的技能。\n\n帮助 Claude 帮你\n\n指令 Claude 是一个微妙的平衡。如果你太具体，Claude 会跟随你的指令，即使转方向可能更合适。如果你太模糊，Claude 通常会基于行业最佳实践做选择和假设，这可能不适合你的任务。\n\n当你不考虑你的未知时，两种方向都会失败：你不知道哪条路会充满障碍，也不知道哪条路会畅通，但你仍然希望 Claude 转向。\n\nClaude 可以帮你更快发现未知。它能极快地搜索你的代码库和互联网，对大部分话题知道得比你多得多。它也能从失败中更快迭代。\n\n这个过程中最重要的事是给 Claude 关于你起点的上下文。例如，告诉它你在思考过程的哪个位置；披露你对问题、代码库的经验；让它像思考伙伴一样跟你一起工作。\n\n实现前\n\n盲点扫描\n\n当开始工作时，最有价值的事之一是理解你的盲点。比如，如果你在代码库的一个新区写功能，或者用 Claude 帮你做不熟悉的工作（比如迭代一个设计），你可能有很多未知的未知。\n\n你可能不知道问什么问题、什么算好、之前做过什么相关工作、要避开什么坑。\n\nPrompt 示例：\n\n\"我在添加一个新的 auth provider，但我对这个代码库的 auth 模块一无所知。你能做一个盲点扫描帮我找出我相关的未知未知，帮我更好地 prompt 你吗？\"\n\"我不知道什么是颜色分级，但我需要给这个视频调色。你能教我理解我关于颜色分级的未知未知吗，这样我可以更准确地 prompt？\"\n\n头脑风暴和原型\n\n在有很多未知的已知的领域——涉及的标准我看到了才知道怎么定义——我喜欢请 Claude 跟我一起头脑风暴和做原型。\n\n在原型阶段尽早发现和口头表达未知的已知极其有价值，因为在实现过程中才发现可能（相对）昂贵。功能和 spec 的小变化可能导致代码实现的巨大不同，而且让 agent 回退之前的改动可能更难。\n\n视觉设计对我来说很难用语言表达，但看到就知道想要什么。在这些情况下，我会要几种设计方案。我也几乎在每个编码会话开始阶段做探索或头脑风暴。这帮助我以限定项目范围的意图开始。\n\nPrompt 示例：\n\n\"我想要一个这个数据的仪表盘但我没有视觉品味也不知道什么可能。给我做一个包含 4 种完全不同设计方向的 HTML 页面，我可以对它们做反应。\"\n\"在接任何后端管线之前，做一个单独的 HTML 文件用假数据模拟新的编辑器工具栏。我想在碰真实 app 之前对布局做反应。\"\n\"这是我的粗略问题：用户在 onboarding 后流失。搜索代码库并头脑风暴 10 个我们可以介入的地方，从最便宜到最有野心。我会告诉你哪些有感觉。\"\n\n访谈\n\n做了足够的头脑风暴后，我可能还有未知。在这种情况下，我让 Claude 采访我关于任何模糊或未知的部分。给它关于你的问题的上下文来引导问题。\n\nPrompt 示例：\n\n\"每次一个问题采访我关于任何模糊的地方，优先那些我的回答会改变架构的问题。\"\n\n参考\n\n有时候你无法详细描述你想要什么。最好的答案是一个参考。虽然你可以放图表、文档或图片，但绝对的最好参考是源代码。\n\n如果你有一个库以某种方式实现了某一件事，或者一个你很喜欢的设计组件，直接把 Fable 指向那个文件夹告诉它找什么，即使是不同语言。\n\nPrompt 示例：\n\n\"vendor/rate-limiter 里的这个 Rust crate 实现了我想要的精确回退行为。读取它并在我们的 TypeScript API 客户端中重新实现相同的语义。\"\n\n实现计划\n\n当我觉得可以开始实现了，我倾向于让 Claude 整理一个实现计划供我审阅，重点放在最可能变化的部分——比如数据模型、类型接口或 UX 流程。这让 Claude 能浮现我可能真的需要修改的东西。\n\nPrompt 示例：\n\n\"写一个 HTML 实现计划，但把最可能需要调整的决定放在前面：数据模型变化、新类型接口、用户面的任何东西。把机械重构埋在最下面，那些我信任你。\"\n\n实现中\n\n实现笔记\n\n不论做了多少计划，总有未知的未知潜伏着。agent 在过程中可能发现它需要采取不同的方式，因为代码中发现了一个边缘情况。\n\n我让 Claude Code 维护一个临时的 implementation-notes.md（或 .html）文件，记录它做的决定，这样我们可以从下一次尝试中学习。\n\nPrompt 示例：\n\n\"维护一个 implementation-notes.md 文件。如果你碰到一个强迫你偏离计划的边缘情况，选保守选项，记录在'偏离'下，然后继续。\"\n\n实现后\n\n提案和解释材料\n\n发布东西最重要的一部分是获取认同和批准。在最终文档里建立提案和解释材料有助于：\n• 当审查者从跟你同样的未知开始时加速理解\n• 当专家想看到你已经考虑到了他们预期的未知和常见失败点时加速批准\n\nPrompt 示例：\n\n\"把原型、spec 和实现笔记打包成一份我可以直接扔到 Slack 获取认同的文档。用 demo GIF 开头。\"\n\n测验\n\n一个长工作会话后，Claude 可能完成了我意识不到的多出来的工作。读代码 diff 只能给我一个轻量理解——因为大部分行为会依赖现有的代码路径。\n\n让 Claude 在给我一堆上下文后对我进行关于改动的测验，帮我理解发生了什么。我只在完美通过测验后才合并。\n\nPrompt 示例：\n\n\"我想确保我理解了这个改动里发生的所有事情。给我一个 HTML 报告解释改动，带上下文、直觉、做了什么等。并且在底部加一个我必须通过的关于这些改动的测验。\"\n\n一个完整的例子：启动 Fable 视频\n\nFable 的发布视频完全由 Claude Code 编辑。这对我是个全新领域。我从我知道的开始——Claude 能用代码编辑视频和转录它们。然后我让 Claude 解释 Whisper 转录如何工作，以及我是否能用 ffmpeg 精确剪切\"嗯\"或长停顿。\n\n我想让 Claude 创建一个跟我说的话同步时间的 UI，但不确定能不能做到——我让 Claude 用 Remotion 和一个转录做一个原型视频。最后，视频本身看起来有点暗——我知道是颜色分级的结果但我不知道颜色分级是什么。我让 Claude 教我颜色分级来发现我的未知。\n\n匹配地图和领土\n\n模型越好，正确的方达能解锁越多。当一个长 horizon 任务返回的结果不对，很可能你需要花更多时间定义未知，或创建一个让 Claude 能穿过未知即兴发挥的实现计划。\n\n每一次解释、头脑风暴、访谈、原型和参考，都是在你不知道之前发现问题的廉价方式——在修它变贵之前。\n\n所以下次开始新项目，先让 Claude 帮你找到你的未知。\n\n原文：Thariq Shihipar (@trq212), \"A Field Guide to Fable: Finding Your Unknowns\", 2026-07-04\nhttps://t.co/Lj4BDoZbfY\n\n!图像 https://t.co/tgbo3A5Pz3\n!图像 https://t.co/GjNEUnCMZ9\n!图像 https://t.co/FW3jTnRZns\n!图像 https://t.co/DeZ9Xw57W4\n!图像 https://t.co/aaHYTmGGB6\n!图像 https://t.co/4CF5b7KAUm\n\n#Fable5 #AgenticCoding #ClaudeCode",
+      "author": {
+        "id": "17436328",
+        "name": "yibie",
+        "screenName": "yibie",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/600475846747389952/3oVDhklx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 283,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jul 06 03:25:35 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:25",
+      "createdAtISO": "2026-07-06T03:25:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073100352921215386",
+        "text": "https://t.co/hPiZr1kG7r",
+        "author": {
+          "screenName": "trq212",
+          "name": "Thariq"
+        }
+      }
+    },
+    {
+      "id": "2073971525074468900",
+      "text": "@ayazdotdev Yeah just pick codex / Claude code; and GPT 5.5 / Opus 4.8\n\nForget about the Fable the 5.6 the this the that \n\nJust go deep and build",
+      "author": {
+        "id": "2017645906074419200",
+        "name": "DarkSun",
+        "screenName": "Galliard232634",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2073492301364551680/rAbkqepL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:25:18 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:25",
+      "createdAtISO": "2026-07-06T03:25:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073970955693490451",
+      "text": "My best move with Fable right now.  /insights in Claude Code, pointed Fable at my whole stack, and asked what I was missing. It went for the jugular. Worth aiming it at your own setup before it's gone on the 7th.",
+      "author": {
+        "id": "2279868811",
+        "name": "Kevin",
+        "screenName": "KevinMagnan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1993423231823302656/PO_VVUh8_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 13,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:23:03 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:23",
+      "createdAtISO": "2026-07-06T03:23:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073970954728796208",
+      "text": "ADIV = Analyze, Decide, Implement, and Validate is an intuitive way to co-create with AI.\n\nI have been using a method based on ADIV cycles, where each cycle is a unit of work with its own objective, such as fixing a bug, developing a feature, conducting research, or writing a book.\n\nAfter a conversation with Claude Fable to understand how he interpreted the ADIV method, I decided to publish the conversation itself.\n\nThis may be useful for those looking for a structured method to work with Claude Code, Codex, and others.\n\nhttps://t.co/t8Xo8Vd26F\n\n#AI #LLM #AIAgents #ContextEngineering #HumanAICoCreation",
+      "author": {
+        "id": "1948618297462980608",
+        "name": "Adao Aparecido Ernesto",
+        "screenName": "adaoaper",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1955619289710362624/X-KRZ3Co_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 7,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:23:02 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:23",
+      "createdAtISO": "2026-07-06T03:23:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073610004456755243",
+        "text": "https://t.co/bBLTrb29NZ",
+        "author": {
+          "screenName": "adaoaper",
+          "name": "Adao Aparecido Ernesto"
+        }
+      }
+    },
+    {
+      "id": "2073969051647250882",
+      "text": "@String_The0rist @mitchellh Check my post linked above! It's a built-in feature of Claude Code with hardcoded Opus for planning and Sonnet for execution. The lightweight \"tool\" I shared allows you to bump that up to Fable for planning and Opus for execution instead.",
+      "author": {
+        "id": "1758270639410905089",
+        "name": "Tyler C. Laprade, CFA",
+        "screenName": "TylerCLaprade",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1758271216605945856/KX7OuklI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 13,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:15:29 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:15",
+      "createdAtISO": "2026-07-06T03:15:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073967169436594585",
+      "text": "Claude Fable 5、一時停止を経て再開されたようです。\n停止の背景には、米政府の輸出管理とサイバー悪用への懸念。\n再開後も、リスクがあると判断されたリクエストはブロックされたり、別モデルに回される場合があるようです。\nClaude Codeを触っていると、つい性能に目が行きます。でも今後は、モデルの賢さだけでなく「安全に使い続けられるか」も開発現場では重要になりそうです。",
+      "author": {
+        "id": "905014110827331584",
+        "name": "月森隼人｜AI業務改善の専門家",
+        "screenName": "HarryTsukimori",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060185279147941888/Z8S25tmW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 39,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:08:00 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:08",
+      "createdAtISO": "2026-07-06T03:08:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073967117775585465",
+      "text": "@AnthropicAI Claude Code devs, please add a feature that allows Claude to put in your name for expanded in-budget Fable access if he likes you/thinks you're worth it. Feel like Clauderino should have some say in who gets access.",
+      "author": {
+        "id": "1258169070064513026",
+        "name": "📿Regina Watts, Mater Misericordiae",
+        "screenName": "WritesWatts",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1600633046742376448/FL3YPnuj_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 19,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:07:47 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:07",
+      "createdAtISO": "2026-07-06T03:07:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073950751081242922",
+        "text": "Upgrading to Max 20x and speedrunning my freshly reset Fable allotment while I still have it bc fuck it we ball",
+        "author": {
+          "screenName": "WritesWatts",
+          "name": "📿Regina Watts, Mater Misericordiae"
+        }
+      }
+    },
+    {
+      "id": "2073965386199167099",
+      "text": "My setup\n1. Perplexity for deep research\n2. @rl_tools and their papers (learning to fly, rl tools intro)\n3. Separate skill that allowed GLM troubleshoot through Fable and GPT Pro \n4. Claude code and codex (but really just claude)\n5. Matplotlib for viz \n6. Dropbox / rsync\n7. /Goal",
+      "author": {
+        "id": "1875572029510053889",
+        "name": "Ivan Ilych",
+        "screenName": "zhibuzhishang",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1973494411477635072/FTGR6XYc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 47,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:00:55 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:00",
+      "createdAtISO": "2026-07-06T03:00:55+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073965341580185853",
+      "text": "https://t.co/I7wejE06v0",
+      "author": {
+        "id": "1960987354350727168",
+        "name": "GEN (げん)｜テックキャンプのAIトレンドウォッチャー",
+        "screenName": "GEN_TECHCAMP",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1962796758863618053/vgJr_7pp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 901,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:00:44 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:00",
+      "createdAtISO": "2026-07-06T03:00:44+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2073956469603794944"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "今週のAIニュース：GPT-5.6限定公開＆Fable 5復活、モデルと国家規制の攻防【06/27-07/03】"
+    },
+    {
+      "id": "2073965160482357494",
+      "text": "Claude Codeで毎回「〜して」と手で打っていませんか？\n\nSKILL.mdという仕組みを使うと、よく使う指示を「/skill 名前」の一言で実行できます。\n\n毎回プロンプトを考える時間がゼロになります。\n\nしかもFable 5ではIntent型（目的だけ書く方式）で設定すると、品質が体感2段階上がります。\n\n書き方を具体例付きでまとめました👇",
+      "author": {
+        "id": "2012423727409938432",
+        "name": "【公式】Claude Codeアカデミア",
+        "screenName": "ClaudeCode_aca",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2072241762945708032/T4Jv-LBF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 03:00:01 +0000 2026",
+      "createdAtLocal": "2026-07-06 11:00",
+      "createdAtISO": "2026-07-06T03:00:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073329744888918394",
+        "text": "https://t.co/OFr8QsHlMr",
+        "author": {
+          "screenName": "ClaudeCode_aca",
+          "name": "【公式】Claude Codeアカデミア"
+        }
+      }
+    },
+    {
+      "id": "2073964747532509270",
+      "text": "最近要续费的可以注意一下这个坑\nClaude Code 续费是延长使用权\n也就是说，这几天爽用 Fable 消耗完周上限，续费还是不能用哦!\n所以不如开一支新账号订阅🥲",
+      "author": {
+        "id": "1760805549355216896",
+        "name": "套利豪仔🗽",
+        "screenName": "pritipatelfgoo",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2007410168041222147/pYv20KIq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 697,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:58:22 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:58",
+      "createdAtISO": "2026-07-06T02:58:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zh",
+      "score": null
+    },
+    {
+      "id": "2073964282480611448",
+      "text": "【あと2日】Claude「Fable 5」、プラン定額で使えるのは7/7まで。\n\n最上位AIを追加費用なしで回せる期間が、今日を入れて残り2日で終わる。\n\n・Pro/Max/Teamは週間上限の50%までプラン内\n・7/8からは従量クレジット制に切替\n・対象はhttps://t.co/8MQJlNGzLL／Claude Code／Cowork\n・復活（7/1）からちょうど1週間の定額期間\n\n重い作業ほど、定額のうちに回しておくのが得。\n\n↓一次ソースと7/8以降の変更点",
+      "author": {
+        "id": "2031204388002476037",
+        "name": "スモノウ｜AIスモビジnote｜＠1日1分で情報収集",
+        "screenName": "aibiz08",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2071129396703006720/BB0CD_Lq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 222,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:56:31 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:56",
+      "createdAtISO": "2026-07-06T02:56:31+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMgzhZtbUAAe5Rl.jpg",
+          "width": 1200,
+          "height": 659
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMgzhZ8bcAApGrw.jpg",
+          "width": 1200,
+          "height": 659
+        }
+      ],
+      "urls": [
+        "http://Claude.ai"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073962987598250447",
+      "text": "Back to basic, just claude code for fable 5 + codex for execution",
+      "author": {
+        "id": "820635530",
+        "name": "Sean Phan",
+        "screenName": "seanphan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1893990799823540224/2rrqEuYR_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 46,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:51:23 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:51",
+      "createdAtISO": "2026-07-06T02:51:23+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073561214303834250",
+        "text": "- Codex: No Fable 5\n- Cursor: No caching with BYOK\n- Conductor: No done notifications\n- T3 Code: No forks\n- OpenCode: No worktrees\n\nWhat coding app do I even use? 😭",
+        "author": {
+          "screenName": "MarcosHernanz",
+          "name": "Marcos Hernanz"
+        }
+      }
+    },
+    {
+      "id": "2073962684836630935",
+      "text": "『Fable 5を迷わせない構造』\n\n会議資料、過去の判断メモ、顧客別の約束、3か月前のブリーフ。\nAIに任せた瞬間、ここを探し回るなら、強いモデルでも現場の時間を溶かします。\nAvid (@Av1dlive) の投稿で強いのは、「同じFable 5で2分が10秒になった」という数字より、変えた場所です。\nモデルではなく、vaultの入口でした。\n\n構造がない時、エージェントは7つのファイルを開き、目的の文脈へなかなか届かない。\n構造がある時、主要フォルダごとにINDEX.mdがあり、どこへ進めばよいかが最初に見える。\nここを間違えると、AIは速く答えているように見えて、古い資料と新しい判断を混ぜます。\n速度改善というより、迷子にさせない設計です。\n\n引用先の記事は、Obsidianのmarkdown vaultを前提にしています。\nrawは触らない。\nentitiesとconceptsへ編集済みの知識を集める。\nINDEX.mdを入口にする。\n間違ったノートは消し、既存ページを更新し、出典に戻れる形で残す。\nAIに「全部読ませる」発想とはかなり違います。\n\nAnthropic公式でも、Fable 5は長期のエージェント作業、1M context、128k output、Claude CodeやManaged Agentsでの利用を前提に置かれています。\n一方で、30日保持、拒否、Opus 4.8への切り替え、usage creditsなどの制約もあります。\n強いモデルを入れれば終わり、ではないです。\n\n医療機関や事業部門で置き換えるなら、これは「AI用の資料室」を作る話です。\n規程、議事録、ベンダ質問票、過去の判断、失敗した運用。\n確認すべきは、全部を毎回読ませることではありません。\n入口、原本、編集済み知識、更新ループが分かれているかです。\n\nFable 5がすごい、で終えると使い方を間違えます。\n先に作るべきなのは、最高モデルを呼ぶボタンではなく、AIが迷わず戻れる地図です。\n同じモデルでも、地図がある組織とない組織では、出てくる答えが別物になります。\nまず一枚だけ作るなら、主要フォルダのINDEX.mdからで十分です。\n\nhttps://t.co/RC4ji0Y89l",
+      "author": {
+        "id": "1473538636553781249",
+        "name": "大田原正幸｜医療AIガバナンス｜Cursorvers",
+        "screenName": "cursorvers",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995493354327756800/rRZJCe6S_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 270,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jul 06 02:50:11 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:50",
+      "createdAtISO": "2026-07-06T02:50:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073114542851416260",
+        "text": "THIS IS HOW FABLE 5 MOVES WHEN YOUR VAULT IS BUILT RIGHT\n\ndirect path. zero wandering. hits the target on the first try.\n\nwithout structure it's the opposite. 7 files opened. 2 minutes wasted. brief from 3 months ago still missing.\n\none index file per major folder. gives the agent a direct line to what it needs.\n\nsame task dropped from 2 minutes to 10 seconds. same model. nothing else changed.\n\nbuild the path or watch it search in the dark.\n\nfull breakdown in the article below ↓",
+        "author": {
+          "screenName": "Av1dlive",
+          "name": "Avid"
+        }
+      }
+    },
+    {
+      "id": "2073962247240773984",
+      "text": "https://t.co/j1ljJWEUIt",
+      "author": {
+        "id": "1685355844119220225",
+        "name": "卡尔的AI沃茨",
+        "screenName": "aiwarts",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1685356596204040192/DYVeb0ww_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 1,
+        "replies": 1,
+        "quotes": 0,
+        "views": 536,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jul 06 02:48:26 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:48",
+      "createdAtISO": "2026-07-06T02:48:26+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2073961292617089024"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "分享 8 个 Fable5 下线前必跑的超实用 Prompt"
+    },
+    {
+      "id": "2073961715914641575",
+      "text": "「文章を画像に変える」節約ツールpxpipe登場——Claude CodeやFable 5のトークン代を最大7割カット\n文章をPNG画像に描いてAIへ送ることで、Claude CodeやFable 5の利用料を59〜70%減らせるという無料ツールが公開されました。仕…\n#manapickAI https://t.co/SqP8FBpfZD",
+      "author": {
+        "id": "1933868405960159232",
+        "name": "Manapick｜学び直しの動画キュレーション",
+        "screenName": "manapick_app",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066092833363345408/tY3zvCAS_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 43,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:46:20 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:46",
+      "createdAtISO": "2026-07-06T02:46:20+00:00",
+      "media": [],
+      "urls": [
+        "https://ai.manapick.app/news/n-2026-07-06-pxpipe-png-token-savings/?utm_source=x&utm_medium=social&utm_campaign=sharekit_news"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073961219048755538",
+      "text": "One session with Fable 5 and Higgsfield built a full $35,000-level animated website for $12 in credits\n\nNo studio. No weeks of back and forth. No expensive freelancers.\n\nClaude Code handles the full structure, scroll logic, GSAP timelines, and Lenis smooth scrolling. Higgsfield generates cinematic hero clips, transitions, and ambient motion directly through MCP.\n\nThe result: scroll-driven site with film grain, particles, vignette effects, glass cards, color tints, optimized assets, and responsive design — all in one agentic flow.\n\nWhat used to cost:\n- Web studio: $6k–$35k+\n- Motion designer: $800–$2k per project\n- Weeks of revisions and handoffs\n\nNow it’s one prompt, one session, and a few dollars in credits.\n\nAdd Higgsfield as MCP connector. Feed your brief. Let the agents build and animate together.\n\nThe pipeline moat disappeared. The new advantage is knowing what to build and how to direct the agents.\n\nThis is how solo builders and small teams ship premium animated sites in 2026.",
+      "author": {
+        "id": "1869499192365715456",
+        "name": "vladuah",
+        "screenName": "vladuah",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063258301190615040/0z1Bwzhc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 129,
+        "bookmarks": 2
+      },
+      "createdAt": "Mon Jul 06 02:44:21 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:44",
+      "createdAtISO": "2026-07-06T02:44:21+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073961166712225792/vid/avc1/720x1280/BPPoBp0fChyEnFa3.mp4?tag=28",
+          "width": 720,
+          "height": 1280
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2072672975569006878",
+        "text": "https://t.co/GgnPemEsXG",
+        "author": {
+          "screenName": "vladuah",
+          "name": "vladuah"
+        }
+      }
+    },
+    {
+      "id": "2073959589939482714",
+      "text": "Fable 5でClaude Codeを回すと、1時間半ぐらいで5時間制限の半分までいってしまった…",
+      "author": {
+        "id": "1893649387",
+        "name": "大野寿和@スワローインキュベート",
+        "screenName": "toshikazuohno11",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1757593284200030208/qx_1whY5_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 56,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:37:53 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:37",
+      "createdAtISO": "2026-07-06T02:37:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073959247038329014",
+      "text": "Claude Code（Fable）+ Kling AI MCP で、コーポレートサイトのファーストビュー用ヒーロー動画を制作してみました。\nやったことは日本語で指示を出しただけ。 https://t.co/dIZirc0o8F",
+      "author": {
+        "id": "149539955",
+        "name": "庄子功一",
+        "screenName": "shoji_ko1",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2002992836220989440/BOkUEXf7_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 60,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:36:31 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:36",
+      "createdAtISO": "2026-07-06T02:36:31+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073957119184044032/vid/avc1/1280x720/1XaeMfHEEX1V8QzF.mp4?tag=14",
+          "width": 3840,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073957521329647886",
+      "text": "あとこれは Fable 5 だけじゃなくて Claude Code 全般か少なくとも Opus (試したのは 4.8 のみ) 以上の特徴だと思うけど、コーディングスタイルをガチガチに指定していない状態でもある程度真似てくれるのね。コーディングスタイルだけじゃなく、証明スタイルをどう Lean に落とし込むかも若干似てる。",
+      "author": {
+        "id": "68926033",
+        "name": "Tsukasa #01",
+        "screenName": "a4lg",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/617550104673648641/TjQA3z69_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 176,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:29:40 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:29",
+      "createdAtISO": "2026-07-06T02:29:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073956162626543717",
+      "text": "@doodlestein yeah, it's quite something. my claude code had fallen back to opus silently and i could easily tell even though it erroneously claimed it was fable. so i went back to the model picker and of course it was opus.",
+      "author": {
+        "id": "46446381",
+        "name": "Sid Ravikumar",
+        "screenName": "sidravi_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1904770296927641600/YjA3t08h_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:24:16 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:24",
+      "createdAtISO": "2026-07-06T02:24:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073956061162480117",
+      "text": "https://t.co/A58rfNopWY\n\nClaude Fable 5を使ってAI駆動型事業の事業計画と設計をまるっとやってくれたのに続き、私が昔主戦場にしていた管理会計システムも、世界のベストプラクティスを参考にがっつり全体設計してくれました。\nそして、引き続きClaude Codeで実装中。控えめに言って、凄い。",
+      "author": {
+        "id": "909534798066024448",
+        "name": "山本照晃@AI",
+        "screenName": "TeruTeruJapanZ",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1779105901439225856/8uPivkvS_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 52,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:23:51 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:23",
+      "createdAtISO": "2026-07-06T02:23:51+00:00",
+      "media": [],
+      "urls": [
+        "https://www.at-ai.jp/2024/04/20260705/"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073954256336617794",
+      "text": "Claude Codeハーネスで動かすFableを出し惜しみしていたことにより、一周回って使用量がまあまあ残ってしまった\n\n他のツールで試してたからなんだけど、もったいないから今日のミートアップで使い切ろう",
+      "author": {
+        "id": "1136800010174001152",
+        "name": "nogu",
+        "screenName": "_nogu66",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1887681133531496448/QgpCjXcC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 177,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:16:41 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:16",
+      "createdAtISO": "2026-07-06T02:16:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073952852209434878",
+      "text": "@trq212 Since Fable was restored, my token usage has been draining really fast. Even if Fable gets officially included in the plan later, I feel like I’d still hit the limits pretty quickly. Is Claude Code considering higher-tier plans, like $500 or even $1,000/month?",
+      "author": {
+        "id": "1825542461412012032",
+        "name": "DongDong",
+        "screenName": "NassaRocket",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1825542763485839361/jBUv2nTc_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 15,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:11:06 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:11",
+      "createdAtISO": "2026-07-06T02:11:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073951581943603554",
+      "text": "after not shutting my Mac lid since November 2025, I had a chance to take a few days off, which I am glad overlapped with some labs days' off/slowdown. it's helped lessen the feeling you describe above. recommend taking some time off. \n\nTo save on clicks and keystrokes, I try to do almost everything with codex or (claude code now, testing fable) if it's a task that can be completed on the computer. the models will hopefully get good enough baby sitting them won't be necessary much longer",
+      "author": {
+        "id": "45588202",
+        "name": "D@RWIN",
+        "screenName": "DarwinSantosNYC",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1846233145751785473/QMcdQi3D_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 50,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 02:06:03 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:06",
+      "createdAtISO": "2026-07-06T02:06:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073950708391723403",
+      "text": "https://t.co/GKKwEY4ER5",
+      "author": {
+        "id": "1988467504528977922",
+        "name": "KIZI+",
+        "screenName": "mxu_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2073023636345442304/Kt_5QQcp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 458,
+        "bookmarks": 1
+      },
+      "createdAt": "Mon Jul 06 02:02:35 +0000 2026",
+      "createdAtLocal": "2026-07-06 10:02",
+      "createdAtISO": "2026-07-06T02:02:35+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2073947915694067713"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "「簡単なタスクに使うな」逆説だらけのFable 5活用術を掘り下げる"
+    },
+    {
+      "id": "2073949927743610955",
+      "text": "@_catwu @DavidSHolz @_catwu - what would you recommend for solo builders and founders using claude code - I guess agent SDK is sufficient isn't it? Just hope Anthropic doesn't start API billing for them, and Fable remains after 7/7 - touch wood! 😅",
+      "author": {
+        "id": "2241092599",
+        "name": "Padma Ideas",
+        "screenName": "padmaideas",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1968112283965698048/2Jrn2-cG_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 01:59:29 +0000 2026",
+      "createdAtLocal": "2026-07-06 09:59",
+      "createdAtISO": "2026-07-06T01:59:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073949748533567701",
+      "text": "https://t.co/wRISq9aTtD",
+      "author": {
+        "id": "1682233147789053953",
+        "name": "タランチュラ | データサイエンティスト",
+        "screenName": "tarantula_ds_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1717727794011213824/0y41M579_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 676,
+        "bookmarks": 4
+      },
+      "createdAt": "Mon Jul 06 01:58:46 +0000 2026",
+      "createdAtLocal": "2026-07-06 09:58",
+      "createdAtISO": "2026-07-06T01:58:46+00:00",
+      "media": [],
+      "urls": [
+        "http://x.com/i/article/2073949746847526912"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null,
+      "articleTitle": "【有料級です】Claude Fable 5の凄さを網羅的にまとめてみました"
+    },
+    {
+      "id": "2073949040161738813",
+      "text": "最近、外出先からの開発体験がめっちゃ良くなった。\n\n開発用PCにスマホの Claude Code からリモートコントロールで接続\n↓\nFable5 で実装してPR作成\n↓\nCodeRabbit でコードレビュー\n↓\nGitHub アプリでチェック\n↓\n追加で修正が必要なら Fable 5に指示\n\nClaude Codeへの指示も、自作の定型文キーボードアプリを使って、できるだけ簡単に入力できるようにしてる。",
+      "author": {
+        "id": "79208073",
+        "name": "aiiro | 個人開発",
+        "screenName": "aiiro29",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2066329641061847041/mUuCMsil_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 134,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 01:55:57 +0000 2026",
+      "createdAtLocal": "2026-07-06 09:55",
+      "createdAtISO": "2026-07-06T01:55:57+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ja",
+      "score": null
+    },
+    {
+      "id": "2073948045113524246",
+      "text": "@RAYK69420 My 5 hr. sessions used to last 3 hr bc i used to use codex and claude code both.\n\nActually it was pretty good usage, but I felt a big downgrade over fable I used 3 weeks back..\n\nSo I'm not that sad and gpt 5.5 in codex is working fine too..",
+      "author": {
+        "id": "1945350074839785472",
+        "name": "Vansh",
+        "screenName": "vansh22b",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1995453448704462848/zd9HWJYL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 42,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 01:52:00 +0000 2026",
+      "createdAtLocal": "2026-07-06 09:52",
+      "createdAtISO": "2026-07-06T01:52:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073947733451493409",
+      "text": "Is there a claude code equivalent for LLM video editing? Fable is unexpectedly good at video editing (and it can't even watch them)",
+      "author": {
+        "id": "1439627599",
+        "name": "Axel Backlund",
+        "screenName": "axelbacklund",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063819559078158336/sP_NIRqg_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 66,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Jul 06 01:50:46 +0000 2026",
+      "createdAtLocal": "2026-07-06 09:50",
+      "createdAtISO": "2026-07-06T01:50:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

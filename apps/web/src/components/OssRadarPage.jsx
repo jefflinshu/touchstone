@@ -18,7 +18,27 @@ import { cn } from '@/lib/utils'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
 
-const CATEGORY_ORDER = ['ai-agents', 'context', 'mcp', 'devtools', 'security', 'gateways', 'skills', 'workflow', 'research']
+const CATEGORY_ORDER = [
+  'ai-agents',
+  'workflow',
+  'skills',
+  'context',
+  'mcp',
+  'devtools',
+  'security',
+  'sandboxes',
+  'evals',
+  'ide',
+  'workspace',
+  'observability',
+  'qa',
+  'knowledge',
+  'media-tools',
+  'backend',
+  'hardware',
+  'memory',
+  'learning',
+]
 
 const SORT_OPTIONS = [
   { key: 'stars', labelKey: 'oss.sort.stars' },

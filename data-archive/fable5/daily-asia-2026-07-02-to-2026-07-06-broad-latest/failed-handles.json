@@ -1,0 +1,42 @@
+[
+  {
+    "query": "(\"one prompt\" (Claude OR Fable OR Mythos) (game OR website OR app OR video OR animation OR 3d))",
+    "mode": "global-search",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter search (\"one prompt\" (Claude OR Fable OR Mythos) (game OR website OR app OR video OR animation OR 3d)) --type latest --since 2026-07-02 --until 2026-07-07 --exclude retweets --min-likes 0 -n 40 --json"
+  },
+  {
+    "query": "(\"one shot\" (Claude OR Fable OR Mythos) (game OR website OR app OR video OR animation OR 3d))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.3s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.7s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.1s (attempt 3/3)\n"
+  },
+  {
+    "query": "(\"one-shotted\" (Claude OR Fable OR Mythos))",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.8s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.3s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.3s (attempt 3/3)\n"
+  },
+  {
+    "query": "(\"Fable\" \"MCP\")",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.6s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 11.4s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.9s (attempt 3/3)\n"
+  },
+  {
+    "query": "(\"Mythos\" \"MCP\")",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.4s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.9s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 20.9s (attempt 3/3)\n"
+  },
+  {
+    "query": "(\"Fable\" \"Three.js\" OR \"Fable\" threejs OR \"Fable\" WebGL)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.1s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.7s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.4s (attempt 3/3)\n"
+  },
+  {
+    "query": "(\"Mythos\" \"Three.js\" OR \"Mythos\" threejs OR \"Mythos\" WebGL)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 6.7s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 10.2s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.5s (attempt 3/3)\n"
+  },
+  {
+    "query": "(\"Fable\" Blender OR \"Mythos\" Blender)",
+    "mode": "global-search",
+    "error": "WARNING twitter_cli.client: Rate limited (429), retrying in 5.3s (attempt 1/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 11.2s (attempt 2/3)\nWARNING twitter_cli.client: Rate limited (429), retrying in 21.2s (attempt 3/3)\n"
+  }
+]

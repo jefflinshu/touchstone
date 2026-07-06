@@ -1,0 +1,84 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2073502652374069456",
+      "text": "Diane Penn, Head of PM for Research at Anthropic:\n\n“Fable 5 can run for days on a single goal and stay coherent the entire way”\n\nif that sounds like a flex, it is also the warning\n\nFable 5 is built for work that survives past the first reply\n\nthe waste happens when you use it like regular Claude:\n\none prompt, one answer, more nudging, more spend\n\nthe specs make the setup worth doing:\n- 1M context\n- 128k output\n- $10 per million input tokens\n- $50 per million output tokens\n\nenough autonomy to waste money fast when the goal is mushy\n\nthe move is giving Fable a workroom before you give it work\n\n1. create a context folder\n\n- business summary\n- current priorities\n- SOPs\n- client or product notes\n- decision log\n\n> keep each file short\n> one page per topic\n> plain markdown\n\n2. create claude-memory .md\n\nthis is where Fable saves what it learns about your business, preferences, clients, and decisions\n\ntell it to update the file when major context changes, date-stamp the update, and keep entries under 3 sentences\n\n3. create claude-instructions .md\n\ntell Fable how to begin, what files to read, how to format output, when to ask, and what to report when work is done\n\n4. use /goal only when done can be checked\n\ngood:\nall unit tests in /tests/ pass, only modify /src, stop after 3 failed fix attempts and report why\n\nbad:\nimprove the code\n\n5. add a failure path\n\nan uncapped hard goal can burn tokens for 40 minutes because the missing info was never there\n\ntell it when to stop, what to revert, what to report, and what budget it has\n\nuse Fable for the 20% where it earns the price:\n\n- long-context work across 100+ pages\n- planning complex projects\n- final review and verification\n- dense charts, PDFs, tables, screenshots\n- autonomous coding sessions\n\nuse cheaper models for routine emails, formatting, short copy, and simple code edits\n\nthe 60-80% cost cut comes from model routing:\n> Fable plans\n> Sonnet or Haiku executes\n> Fable checks the result\n\n> start with one small /goal today\n> watch the first full cycle\n> then let the model earn the longer run",
+      "author": {
+        "id": "22136598",
+        "name": "Blum",
+        "screenName": "Blum_OG",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1706990273740394496/irGG3-CU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 14,
+        "retweets": 0,
+        "replies": 6,
+        "quotes": 0,
+        "views": 3437,
+        "bookmarks": 11
+      },
+      "createdAt": "Sat Jul 04 20:22:10 +0000 2026",
+      "createdAtLocal": "2026-07-05 04:22",
+      "createdAtISO": "2026-07-04T20:22:10+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073489676220993536/vid/avc1/1920x1080/nF6XKgwttPhR3y_g.mp4?tag=28",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073050543027638443",
+        "text": "https://t.co/WIiwHACcxb",
+        "author": {
+          "screenName": "free_ai_guides",
+          "name": "AI Guides"
+        }
+      }
+    },
+    {
+      "id": "2072553827761590408",
+      "text": "THIS GUY BUILT A CLAUDE AGENT THAT MAKES WEBSITES IN 45 MINUTES… AND IT PAID HIM $31,529 LAST MONTH\n\npeople are still spending 8-12 hours building one website\n\nthis guy gets it done in 45 minutes with a claude agent\n\nclients on Fiverr and Upwork happily pay $150-500 for simple business websites\n\nall he does is give Claude one prompt:\n\n- business type\n- brand colors\n- website sections\n- writing style\n\nthen Claude builds the whole thing clean HTML, mobile-friendly, fast loading, working contact form, everything in one file\n\nthe crazy part isn’t the AI\n\nit’s that he packaged it into a service, found clients, and repeated the process until it turned into $31,529 in a single month\n\nClaude builds the websites.\n\nhe focuses on getting clients.\n\nthat’s where the money is.",
+      "author": {
+        "id": "628528486",
+        "name": "🚀🚀ROCKET AIRDROPS 🚀🚀π²",
+        "screenName": "radhemohan00721",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1352874687546544129/5pApDYv8_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 36,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Jul 02 05:31:53 +0000 2026",
+      "createdAtLocal": "2026-07-02 13:31",
+      "createdAtISO": "2026-07-02T05:31:53+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2072553768034701312/vid/avc1/576x1024/P-J5VXXSrbSdnIV2.mp4?tag=28",
+          "width": 576,
+          "height": 1024
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}
