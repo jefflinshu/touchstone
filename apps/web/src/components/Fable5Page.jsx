@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Repeat2, Search, X } from 'lucide-react'
+import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, ChevronLeft, ChevronRight, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Repeat2, Search, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Dialog, DialogClose, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
@@ -198,6 +198,16 @@ function MediaLoadingOverlay() {
   )
 }
 
+function ImageSkeleton({ className }) {
+  return (
+    <div className={cn('absolute inset-0 overflow-hidden bg-[#101013]', className)}>
+      <div className="absolute inset-0 animate-pulse bg-[linear-gradient(110deg,rgba(255,255,255,0.035),rgba(255,255,255,0.12),rgba(255,255,255,0.035))]" />
+      <div className="absolute inset-x-5 bottom-5 h-2 rounded-full bg-white/10" />
+      <div className="absolute bottom-9 left-5 h-2 w-1/2 rounded-full bg-white/8" />
+    </div>
+  )
+}
+
 function LoadingCard() {
   return (
     <article className="h-[420px] overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] sm:h-[460px]">
@@ -274,6 +284,7 @@ function MasonryImage({ item, priority = false }) {
   const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = firstPreviewUrl(item)
   const [size, setSize] = useState(() => readCachedImageSize(imageUrl))
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   if (!imageUrl || imageFailed) {
     return (
@@ -285,13 +296,14 @@ function MasonryImage({ item, priority = false }) {
 
   return (
     <div className="relative overflow-hidden bg-black" style={{ aspectRatio: size ? `${size.width} / ${size.height}` : '4 / 3' }}>
+      {!imageLoaded && <ImageSkeleton />}
       <img
         src={imageUrl}
         alt=""
         aria-hidden="true"
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-55 blur-2xl saturate-125"
+        className={cn('absolute inset-0 h-full w-full scale-125 object-cover opacity-55 blur-2xl saturate-125 transition-opacity duration-300', imageLoaded ? 'opacity-55' : 'opacity-0')}
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02),rgba(0,0,0,0.58))]" />
       <img
@@ -300,13 +312,17 @@ function MasonryImage({ item, priority = false }) {
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority={priority ? 'high' : 'auto'}
-        className="absolute inset-0 z-10 h-full w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)]"
+        className={cn(
+          'absolute inset-0 z-10 h-full w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)] transition-opacity duration-300',
+          imageLoaded ? 'opacity-100' : 'opacity-0'
+        )}
         onLoad={(event) => {
           const next = { width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight }
           if (next.width && next.height && (!size || size.width !== next.width || size.height !== next.height)) {
             writeCachedImageSize(imageUrl, event.currentTarget)
             setSize(next)
           }
+          setImageLoaded(true)
         }}
         onError={() => setImageFailed(true)}
       />
@@ -365,15 +381,20 @@ function VisualMasonryCard({ item, index, onOpen }) {
 }
 
 function DetailImageFrame({ src, alt }) {
+  const [imageLoaded, setImageLoaded] = useState(false)
   return (
     <div className="relative overflow-hidden rounded-md border border-white/10 bg-black">
+      {!imageLoaded && <ImageSkeleton className="rounded-md" />}
       <img
         src={src}
         alt=""
         aria-hidden="true"
         loading="lazy"
         decoding="async"
-        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-50 blur-2xl saturate-125"
+        className={cn(
+          'absolute inset-0 h-full w-full scale-125 object-cover opacity-50 blur-2xl saturate-125 transition-opacity duration-300',
+          imageLoaded ? 'opacity-50' : 'opacity-0'
+        )}
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.03),rgba(0,0,0,0.66))]" />
       <img
@@ -381,7 +402,11 @@ function DetailImageFrame({ src, alt }) {
         alt={alt}
         loading="lazy"
         decoding="async"
-        className="relative z-10 max-h-[78vh] w-full object-contain p-2 drop-shadow-[0_16px_32px_rgba(0,0,0,0.42)]"
+        className={cn(
+          'relative z-10 max-h-[78vh] w-full object-contain p-2 drop-shadow-[0_16px_32px_rgba(0,0,0,0.42)] transition-opacity duration-300',
+          imageLoaded ? 'opacity-100' : 'opacity-0'
+        )}
+        onLoad={() => setImageLoaded(true)}
       />
     </div>
   )
@@ -390,7 +415,9 @@ function DetailImageFrame({ src, alt }) {
 function VisualDetailDialog({ item, translation, open, onOpenChange }) {
   const { t, language } = useI18n()
   const [copiedId, setCopiedId] = useState(false)
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0)
   const media = item ? mediaItemsFor(item) : []
+  const activeMedia = media[Math.min(activeMediaIndex, Math.max(0, media.length - 1))]
   const copy = item ? localizedShowcaseCopy(item, translation) : { title: '', summary: [] }
   const metrics = item?.metrics || {}
   const dateLabel = item?.date
@@ -403,27 +430,78 @@ function VisualDetailDialog({ item, translation, open, onOpenChange }) {
     setCopiedId(true)
     setTimeout(() => setCopiedId(false), 1200)
   }
+  const goMedia = (delta) => {
+    if (!media.length) return
+    setActiveMediaIndex((index) => (index + delta + media.length) % media.length)
+  }
+
+  useEffect(() => {
+    setActiveMediaIndex(0)
+    setCopiedId(false)
+  }, [item?.id])
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent aria-describedby={undefined} className="flex h-[92vh] w-[min(1120px,calc(100vw-24px))] flex-col overflow-hidden rounded-lg">
         <DialogTitle className="sr-only">{copy.title || item?.author || 'Showcase detail'}</DialogTitle>
         <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
-          <div className="min-h-0 overflow-y-auto bg-black">
-            <div className="flex flex-col gap-3 p-3 sm:p-4">
-              {media.length > 0 ? (
-                media.map((entry) => (
-                  <div key={entry.url}>
-                    {entry.type === 'video' ? (
-                      <video src={entry.url} controls playsInline className="max-h-[78vh] w-full rounded-md border border-white/10 bg-black object-contain" />
-                    ) : (
-                      <DetailImageFrame src={entry.url} alt={copy.title || item.author} />
-                    )}
+          <div className="min-h-0 bg-black">
+            <div className="flex h-full min-h-0 flex-col gap-3 p-3 sm:p-4">
+              <div className="relative min-h-0 flex-1">
+                {activeMedia ? (
+                  activeMedia.type === 'video' ? (
+                    <video src={activeMedia.url} controls playsInline className="h-full max-h-[78vh] w-full rounded-md border border-white/10 bg-black object-contain" />
+                  ) : (
+                    <DetailImageFrame src={activeMedia.url} alt={copy.title || item.author} />
+                  )
+                ) : (
+                  <div className="aspect-[4/3] overflow-hidden rounded-md border border-white/10">
+                    <MediaPlaceholder />
                   </div>
-                ))
-              ) : (
-                <div className="aspect-[4/3] overflow-hidden rounded-md border border-white/10">
-                  <MediaPlaceholder />
+                )}
+                {media.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => goMedia(-1)}
+                      className="absolute top-1/2 left-3 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-black/55 text-white/80 backdrop-blur transition-colors hover:bg-white hover:text-black"
+                      title="Previous media"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => goMedia(1)}
+                      className="absolute top-1/2 right-3 z-20 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/15 bg-black/55 text-white/80 backdrop-blur transition-colors hover:bg-white hover:text-black"
+                      title="Next media"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                    <div className="absolute right-3 bottom-3 z-20 rounded-full border border-white/15 bg-black/60 px-2 py-1 font-mono text-[10px] text-white/70 backdrop-blur">
+                      {activeMediaIndex + 1}/{media.length}
+                    </div>
+                  </>
+                )}
+              </div>
+              {media.length > 1 && (
+                <div className="flex shrink-0 gap-2 overflow-x-auto pb-1">
+                  {media.map((entry, index) => (
+                    <button
+                      key={entry.url}
+                      type="button"
+                      onClick={() => setActiveMediaIndex(index)}
+                      className={cn(
+                        'h-12 w-16 shrink-0 cursor-pointer overflow-hidden rounded border bg-white/[0.04] font-mono text-[10px] text-white/55 transition-colors',
+                        index === activeMediaIndex ? 'border-acid text-acid' : 'border-white/12 hover:border-white/30'
+                      )}
+                    >
+                      {entry.type === 'image' ? (
+                        <img src={entry.url} alt="" className="h-full w-full object-cover" loading="lazy" />
+                      ) : (
+                        <span className="flex h-full w-full items-center justify-center">MP4</span>
+                      )}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
@@ -930,73 +1008,72 @@ export default function Fable5Page({
   return (
     <main className="pb-20">
       <section className="mt-7 sm:mt-10">
-        <button type="button" onClick={onBack} className="cursor-pointer text-left">
-          <span className="flex items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
-              <img src={iconSrc} alt="" className="h-6 w-6 sm:h-8 sm:w-8" />
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end">
+          <button type="button" onClick={onBack} className="shrink-0 cursor-pointer text-left">
+            <span className="flex items-center gap-3">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
+                <img src={iconSrc} alt="" className="h-6 w-6 sm:h-8 sm:w-8" />
+              </span>
+              <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">{title}</span>
             </span>
-            <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">{title}</span>
-          </span>
-        </button>
-      </section>
+          </button>
 
-      <section className="sticky top-14 z-30 mt-5 py-3 sm:mt-6">
-        <div className="pointer-events-none absolute inset-0 z-0 rounded-[24px] bg-[#09090b]/86 backdrop-blur-xl" />
-        <div className="showcase-control-shell relative z-10 rounded-[22px] border border-white/10 bg-black/32 p-1.5 shadow-[0_18px_64px_rgba(0,0,0,0.28)] backdrop-blur-2xl">
-          <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
-            <label className="relative flex h-9 w-full shrink-0 items-center rounded-full border border-white/70 bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.08)] transition-colors focus-within:border-acid sm:w-[260px] lg:w-[320px]">
-              <Search className="pointer-events-none absolute left-3 h-3.5 w-3.5 text-black/45" />
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={t('common.search')}
-                className="h-full w-full rounded-full bg-transparent pr-3 pl-9 text-sm text-black outline-none placeholder:text-black/42"
-              />
-            </label>
+          <div className="showcase-control-shell relative z-10 rounded-[22px] border border-white/10 bg-black/32 p-1.5 shadow-[0_18px_64px_rgba(0,0,0,0.20)] backdrop-blur-2xl lg:ml-auto lg:w-[min(800px,58vw)]">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+              <label className="relative flex h-9 w-full shrink-0 items-center rounded-full border border-white/70 bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.08)] transition-colors focus-within:border-acid sm:w-[240px] lg:w-[300px]">
+                <Search className="pointer-events-none absolute left-3 h-3.5 w-3.5 text-black/45" />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={t('common.search')}
+                  className="h-full w-full rounded-full bg-transparent pr-3 pl-9 text-sm text-black outline-none placeholder:text-black/42"
+                />
+              </label>
 
-            <div className="flex w-full min-w-0 flex-1 items-center gap-1.5 sm:w-auto">
-              {scenes.length > 0 && (
-                <label className="min-w-0 flex-1 sm:max-w-[240px]">
-                  <span className="sr-only">{t('common.categories')}</span>
+              <div className="flex w-full min-w-0 flex-1 items-center gap-1.5 sm:w-auto">
+                {scenes.length > 0 && (
+                  <label className="grid min-w-0 flex-1 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-2 sm:max-w-[270px]">
+                    <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.categories')}</span>
+                    <select
+                      value={scene}
+                      onChange={(event) => setScene(event.target.value)}
+                      className="h-9 min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none"
+                    >
+                      <option value="all" className="bg-[#09090b] text-white">
+                        {t('common.all')} · {n(totalCount || items?.length || 0)}
+                      </option>
+                      {scenes.map(([key, count]) => (
+                        <option key={key} value={key} className="bg-[#09090b] text-white">
+                          {categoryLabel(t, key)} · {n(count)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                )}
+                <label className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-2">
+                  <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.sortBy')}</span>
                   <select
-                    value={scene}
-                    onChange={(event) => setScene(event.target.value)}
-                    className="h-9 w-full rounded-full border border-white/10 bg-white/[0.045] px-3 font-mono text-[10px] tracking-[0.10em] text-white/62 uppercase outline-none transition-colors hover:border-white/24 hover:bg-white/[0.07] focus:border-white/28"
+                    id="fable-sort"
+                    value={sortKey}
+                    onChange={(e) => setSortKey(e.target.value)}
+                    className="h-9 max-w-[110px] min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none sm:max-w-none"
                   >
-                    <option value="all" className="bg-[#09090b] text-white">
-                      {t('common.all')} · {n(totalCount || items?.length || 0)}
-                    </option>
-                    {scenes.map(([key, count]) => (
-                      <option key={key} value={key} className="bg-[#09090b] text-white">
-                        {categoryLabel(t, key)} · {n(count)}
+                    {SORT_OPTIONS.map((option) => (
+                      <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
+                        {t(option.labelKey)}
                       </option>
                     ))}
                   </select>
                 </label>
-              )}
-              <label className="sr-only" htmlFor="fable-sort">
-                {t('common.sortBy')}
-              </label>
-              <select
-                id="fable-sort"
-                value={sortKey}
-                onChange={(e) => setSortKey(e.target.value)}
-                className="h-9 max-w-[132px] rounded-full border border-white/10 bg-white/[0.045] px-3 font-mono text-[10px] tracking-[0.10em] text-white/62 uppercase outline-none transition-colors hover:border-white/24 hover:bg-white/[0.07] focus:border-white/28 sm:max-w-none"
-              >
-                {SORT_OPTIONS.map((option) => (
-                  <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
-                    {t(option.labelKey)}
-                  </option>
-                ))}
-              </select>
-              <button
-                type="button"
-                onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
-                title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
-                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.045] text-white/50 transition-colors hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
-              >
-                {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
+                  title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.045] text-white/50 transition-colors hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
+                >
+                  {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
+                </button>
+              </div>
             </div>
           </div>
         </div>

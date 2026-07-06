@@ -138,6 +138,7 @@ html[data-theme='light'] .text-white\/45 { color: rgb(24 24 27 / 0.58) !importan
 html[data-theme='light'] .text-white\/42 { color: rgb(24 24 27 / 0.56) !important; }
 html[data-theme='light'] .text-white\/40 { color: rgb(24 24 27 / 0.54) !important; }
 html[data-theme='light'] .text-white\/38 { color: rgb(24 24 27 / 0.52) !important; }
+html[data-theme='light'] .text-white\/36 { color: rgb(24 24 27 / 0.5) !important; }
 html[data-theme='light'] .text-white\/35 { color: rgb(24 24 27 / 0.5) !important; }
 html[data-theme='light'] .text-white\/30 { color: rgb(24 24 27 / 0.46) !important; }
 html[data-theme='light'] .text-white\/25 { color: rgb(24 24 27 / 0.36) !important; }
@@ -222,6 +223,7 @@ html[data-theme='light'] .placeholder\:text-white\/24::placeholder {
 /* 浅色下荧光绿文字/边框换成同色相的深橄榄绿（#d4ff4f → hsl(74) 深档），
    bg-acid 色块不动：黑字压在荧光绿上本来就清晰 */
 html[data-theme='light'] .text-acid { color: #55750a !important; }
+html[data-theme='light'] .text-white\/68 { color: rgb(24 24 27 / 0.74) !important; }
 html[data-theme='light'] .text-acid\/80 { color: rgb(85 117 10 / 0.85) !important; }
 html[data-theme='light'] .text-acid\/70 { color: rgb(85 117 10 / 0.78) !important; }
 html[data-theme='light'] .text-acid\/60 { color: rgb(85 117 10 / 0.7) !important; }

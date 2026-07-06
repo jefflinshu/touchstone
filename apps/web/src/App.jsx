@@ -807,7 +807,7 @@ export default function App() {
 
       <div className="mx-auto max-w-[1400px] px-4 pb-28 sm:px-6">
         {route.page === 'fable5' ? (
-          <Fable5Page onBack={goHome} authLoaded={auth.loaded} authEmail={auth.email} onLogin={login} loggingIn={loggingIn} />
+          <Fable5Page onBack={goHome} authLoaded={auth.loaded} authEmail={auth.email} onLogin={login} loggingIn={loggingIn} visualMode />
         ) : route.page === 'figmaMotion' ? (
           <FigmaMotionPage onBack={goHome} />
         ) : route.page === 'iosApps' ? (
