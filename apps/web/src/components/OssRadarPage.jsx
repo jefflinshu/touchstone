@@ -111,24 +111,6 @@ function localizedRepoCopy(item, translation) {
   }
 }
 
-function CategoryChip({ label, count, active, onClick }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cn(
-        'inline-flex h-6 cursor-pointer items-center gap-1 rounded border px-2 font-mono text-[10px] tracking-[0.12em] uppercase transition-colors',
-        active
-          ? 'border-acid/30 bg-acid/10 text-acid'
-          : 'border-white/10 text-white/40 hover:border-white/25 hover:text-white'
-      )}
-    >
-      {label}
-      <span className={active ? 'text-acid/60' : 'text-white/25'}>{count}</span>
-    </button>
-  )
-}
-
 function MediaPlaceholder({ label }) {
   const { t } = useI18n()
   return (
@@ -157,14 +139,14 @@ function MediaLoadingOverlay() {
   )
 }
 
-function MediaBlock({ item, priority = false }) {
+function MediaBlock({ item, priority = false, className }) {
   const { t } = useI18n()
   const [imageFailed, setImageFailed] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
   const imageUrl = repoCoverUrl(item)
 
   return (
-    <div className="relative h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]">
+    <div className={cn('relative h-[180px] shrink-0 overflow-hidden bg-black sm:h-[210px]', className)}>
       {imageUrl && !imageFailed ? (
         <>
           {!imageLoaded && <MediaLoadingOverlay />}
@@ -199,12 +181,12 @@ function RepoCard({ item, index, language, translation }) {
   const copy = localizedRepoCopy(item, translation)
   return (
     <article
-      className="flex h-[420px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-colors hover:border-white/25 sm:h-[460px]"
+      className="flex flex-col overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] transition-colors hover:border-white/25 sm:h-[460px]"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '420px' }}
     >
-      <MediaBlock item={item} priority={index < INITIAL_PRIORITY_IMAGES} />
+      <MediaBlock item={item} priority={index < INITIAL_PRIORITY_IMAGES} className="hidden sm:block" />
 
-      <div className="flex min-h-0 flex-1 flex-col p-4">
+      <div className="flex min-h-0 flex-1 flex-col p-4 sm:p-4">
         <div className="flex min-h-10 shrink-0 items-start gap-3">
           <a href={item.url} target="_blank" rel="noreferrer" className="min-w-0 flex-1">
             <div className="flex min-w-0 items-center gap-2.5">
@@ -248,12 +230,12 @@ function RepoCard({ item, index, language, translation }) {
           </div>
         )}
 
-        <a href={item.url} target="_blank" rel="noreferrer" className="mt-2 block h-[104px] shrink-0 overflow-hidden">
-          <h2 className="line-clamp-2 text-[15px] leading-6 font-medium text-white/90">{copy.title}</h2>
+        <a href={item.url} target="_blank" rel="noreferrer" className="mt-3 block shrink-0 overflow-hidden sm:mt-2 sm:h-[104px]">
+          <h2 className="line-clamp-2 text-[19px] leading-7 font-semibold text-white/90 sm:text-[15px] sm:leading-6 sm:font-medium">{copy.title}</h2>
           <p className="mt-1 line-clamp-3 text-[13px] leading-5 text-white/55">{copy.summary}</p>
         </a>
 
-        <div className="mt-3 flex h-7 shrink-0 items-start gap-2">
+        <div className="mt-3 flex min-h-7 shrink-0 items-start gap-2">
           <a
             href={xUrl}
             target="_blank"
@@ -267,7 +249,7 @@ function RepoCard({ item, index, language, translation }) {
           <span className="min-w-0 truncate font-mono text-[10px] leading-6 text-white/35">{item.xKeywords.join(' · ')}</span>
         </div>
 
-        <div className="mt-2 flex h-7 shrink-0 flex-wrap gap-1.5 overflow-hidden">
+        <div className="mt-2 flex max-h-14 shrink-0 flex-wrap gap-1.5 overflow-hidden sm:h-7">
           {[item.language, item.license, ...item.tags.slice(0, 3)].filter(Boolean).map((tag) => (
             <span key={tag} className="inline-flex h-6 max-w-full items-center gap-1 rounded border border-white/10 bg-white/[0.03] px-2 font-mono text-[10px] tracking-[0.08em] text-white/42">
               <Tags className="h-3 w-3 shrink-0 text-white/30" />
@@ -276,7 +258,7 @@ function RepoCard({ item, index, language, translation }) {
           ))}
         </div>
 
-        <div className="mt-auto flex shrink-0 items-center gap-3 border-t border-white/8 pt-3 font-mono text-[10px] text-white/35 sm:gap-4">
+        <div className="mt-4 flex shrink-0 items-center gap-3 border-t border-white/8 pt-3 font-mono text-[10px] text-white/35 sm:mt-auto sm:gap-4">
           <span className="flex items-center gap-1">
             <Star className="h-3 w-3" />
             {n(item.stars)}
@@ -410,29 +392,43 @@ export default function OssRadarPage({ onBack }) {
         </button>
       </section>
 
-      <section className="sticky top-14 z-30 mt-5 py-3 sm:mt-6">
-        <div className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-screen -translate-x-1/2 bg-[#09090b]/86 backdrop-blur-xl" />
-        <div className="relative z-10">
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto]">
-            <label className="relative block">
-              <Search className="pointer-events-none absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-white/30" />
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder={t('oss.searchPlaceholder')}
-                className="h-9 w-full rounded-md border border-white/10 bg-black/30 pr-3 pl-9 text-sm text-white outline-none placeholder:text-white/24 focus:border-white/25"
-              />
+      <section className="mt-5 sm:mt-6">
+        <div className="relative z-10 flex flex-col gap-2 lg:flex-row lg:items-center">
+          <label className="showcase-control-pill relative flex h-10 w-full items-center rounded-full px-3 text-white transition-colors focus-within:border-acid lg:h-9 lg:flex-1">
+            <Search className="pointer-events-none h-3.5 w-3.5 shrink-0 text-white/45" />
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={t('oss.searchPlaceholder')}
+              className="h-full min-w-0 flex-1 bg-transparent pl-2 text-sm text-white outline-none placeholder:text-white/42"
+            />
+          </label>
+          <div className="grid grid-cols-[minmax(0,1.08fr)_minmax(0,0.78fr)_40px] items-center gap-2 lg:grid-cols-[220px_170px_36px]">
+            <label className="showcase-control-pill grid h-10 min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full px-3 lg:h-9">
+              <span className="font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase">{t('common.categories')}</span>
+              <select
+                value={category}
+                onChange={(event) => setCategory(event.target.value)}
+                className="h-full min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none"
+              >
+                <option value="all" className="bg-[#09090b] text-white">
+                  {t('common.all')} · {publishedRepos.length}
+                </option>
+                {categories.map(([key, count]) => (
+                  <option key={key} value={key} className="bg-[#09090b] text-white">
+                    {categoryLabel(t, key)} · {count}
+                  </option>
+                ))}
+              </select>
             </label>
-            <div className="grid grid-cols-[minmax(0,1fr)_36px] items-center gap-2 sm:grid-cols-[auto_minmax(0,170px)_36px]">
-              <span className="hidden font-mono text-[10px] tracking-[0.16em] whitespace-nowrap text-white/30 uppercase sm:inline">{t('common.sortBy')}</span>
-              <label className="sr-only" htmlFor="oss-sort">
-                {t('common.sortBy')}
-              </label>
+            <label className="showcase-control-pill grid h-10 min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-full px-3 lg:h-9">
+              <span className="hidden font-mono text-[9px] tracking-[0.14em] whitespace-nowrap text-white/36 uppercase sm:inline">{t('common.sortBy')}</span>
               <select
                 id="oss-sort"
+                aria-label={t('common.sortBy')}
                 value={sortKey}
                 onChange={(event) => setSortKey(event.target.value)}
-                className="h-9 rounded-md border border-white/10 bg-black/30 px-3 font-mono text-[11px] tracking-[0.08em] text-white/70 uppercase outline-none focus:border-white/25"
+                className="h-full min-w-0 rounded-full bg-transparent font-mono text-[10px] tracking-[0.10em] text-white/68 uppercase outline-none"
               >
                 {SORT_OPTIONS.map((option) => (
                   <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
@@ -440,24 +436,15 @@ export default function OssRadarPage({ onBack }) {
                   </option>
                 ))}
               </select>
-              <button
-                type="button"
-                onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
-                title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
-                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-black/30 text-white/50 transition-colors hover:border-white/25 hover:text-white"
-              >
-                {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
-              </button>
-            </div>
-          </div>
-          <div className="mt-2">
-            <div className="mb-1.5 font-mono text-[10px] tracking-[0.16em] text-white/30 uppercase">{t('common.categories')}</div>
-            <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
-              <CategoryChip label={t('common.all')} count={publishedRepos.length} active={category === 'all'} onClick={() => setCategory('all')} />
-              {categories.map(([key, count]) => (
-                <CategoryChip key={key} label={categoryLabel(t, key)} count={count} active={category === key} onClick={() => setCategory(key)} />
-              ))}
-            </div>
+            </label>
+            <button
+              type="button"
+              onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
+              title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
+              className="showcase-control-pill flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white/50 transition-colors hover:border-white/25 hover:bg-white/[0.09] hover:text-white lg:h-9 lg:w-9"
+            >
+              {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
+            </button>
           </div>
         </div>
       </section>
