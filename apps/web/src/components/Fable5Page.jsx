@@ -32,24 +32,6 @@ function n(num) {
   return value.toLocaleString()
 }
 
-function SceneChip({ label, count, active, onClick }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cn(
-        'inline-flex h-8 shrink-0 cursor-pointer items-center gap-1 rounded-full border px-3 font-mono text-[10px] tracking-[0.12em] uppercase transition-colors',
-        active
-          ? 'border-acid/45 bg-acid/14 text-acid shadow-[0_0_18px_rgba(212,255,79,0.10)]'
-          : 'border-white/10 bg-white/[0.035] text-white/42 hover:border-white/25 hover:bg-white/[0.065] hover:text-white'
-      )}
-    >
-      {label}
-      <span className={cn('tabular-nums', active ? 'text-acid/65' : 'text-white/28')}>{count}</span>
-    </button>
-  )
-}
-
 const SORT_OPTIONS = [
   { key: 'date', labelKey: 'fable.sort.created' },
   { key: 'score', labelKey: 'fable.sort.score' },
@@ -105,6 +87,46 @@ function writeCachedImageSize(url, img) {
   try {
     localStorage.setItem(imageSizeKey(url), JSON.stringify({ width: img.naturalWidth, height: img.naturalHeight }))
   } catch {}
+}
+
+function masonryColumnCountForWidth(width) {
+  if (width >= 1280) return 4
+  if (width >= 1024) return 3
+  if (width >= 640) return 2
+  return 1
+}
+
+function useMasonryColumnCount(enabled) {
+  const [count, setCount] = useState(() => (typeof window === 'undefined' ? 3 : masonryColumnCountForWidth(window.innerWidth)))
+
+  useEffect(() => {
+    if (!enabled) return undefined
+    const update = () => setCount(masonryColumnCountForWidth(window.innerWidth))
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [enabled])
+
+  return count
+}
+
+function estimatedMasonryHeight(item) {
+  const size = readCachedImageSize(firstPreviewUrl(item))
+  if (!size) return 1
+  return Math.max(0.45, Math.min(2.2, size.height / size.width))
+}
+
+function distributeMasonryItems(items, columnCount) {
+  const columns = Array.from({ length: Math.max(1, columnCount) }, () => ({ height: 0, items: [] }))
+  for (const item of items) {
+    let target = columns[0]
+    for (const column of columns) {
+      if (column.height < target.height) target = column
+    }
+    target.items.push(item)
+    target.height += estimatedMasonryHeight(item) + 0.08
+  }
+  return columns.map((column) => column.items)
 }
 
 function sortValue(item, sortKey) {
@@ -872,6 +894,11 @@ export default function Fable5Page({
     }
     return [...list].sort((a, b) => compareShowcases(a, b, sortKey, sortDirection))
   }, [items, scene, query, sortKey, sortDirection, language, translationsByLanguage])
+  const visualColumnCount = useMasonryColumnCount(visualMode)
+  const visualColumns = useMemo(
+    () => (visualMode ? distributeMasonryItems(filtered, visualColumnCount) : []),
+    [filtered, visualColumnCount, visualMode]
+  )
 
   const toggleFavorite = (id) => {
     if (!authLoaded) return
@@ -927,16 +954,26 @@ export default function Fable5Page({
               />
             </label>
 
-            {scenes.length > 0 && (
-              <div className="flex min-w-0 gap-1.5 overflow-x-auto sm:flex-1">
-                <SceneChip label={t('common.all')} count={totalCount || items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
-                {scenes.map(([key, count]) => (
-                  <SceneChip key={key} label={categoryLabel(t, key)} count={count} active={scene === key} onClick={() => setScene(key)} />
-                ))}
-              </div>
-            )}
-
-            <div className="ml-auto flex w-full shrink-0 items-center justify-end gap-1.5 sm:w-auto">
+            <div className="flex w-full min-w-0 flex-1 items-center gap-1.5 sm:w-auto">
+              {scenes.length > 0 && (
+                <label className="min-w-0 flex-1 sm:max-w-[240px]">
+                  <span className="sr-only">{t('common.categories')}</span>
+                  <select
+                    value={scene}
+                    onChange={(event) => setScene(event.target.value)}
+                    className="h-9 w-full rounded-full border border-white/10 bg-white/[0.045] px-3 font-mono text-[10px] tracking-[0.10em] text-white/62 uppercase outline-none transition-colors hover:border-white/24 hover:bg-white/[0.07] focus:border-white/28"
+                  >
+                    <option value="all" className="bg-[#09090b] text-white">
+                      {t('common.all')} · {n(totalCount || items?.length || 0)}
+                    </option>
+                    {scenes.map(([key, count]) => (
+                      <option key={key} value={key} className="bg-[#09090b] text-white">
+                        {categoryLabel(t, key)} · {n(count)}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
               <label className="sr-only" htmlFor="fable-sort">
                 {t('common.sortBy')}
               </label>
@@ -970,14 +1007,19 @@ export default function Fable5Page({
         className={cn(
           'mt-5 scroll-mt-32',
           visualMode
-            ? 'columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4'
+            ? 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
             : 'grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]'
         )}
       >
-        {filtered.map((item, itemIndex) =>
-          visualMode ? (
-            <VisualMasonryCard key={item.id} item={item} index={itemIndex} onOpen={setSelectedItem} />
-          ) : (
+        {visualMode
+          ? visualColumns.map((column, columnIndex) => (
+              <div key={columnIndex} className="min-w-0">
+                {column.map((item, itemIndex) => (
+                  <VisualMasonryCard key={item.id} item={item} index={itemIndex} onOpen={setSelectedItem} />
+                ))}
+              </div>
+            ))
+          : filtered.map((item, itemIndex) => (
             <ShowcaseCard
               key={item.id}
               item={item}
@@ -992,8 +1034,7 @@ export default function Fable5Page({
               onToggleFavorite={toggleFavorite}
               onCopy={copyPrompt}
             />
-          )
-        )}
+          ))}
         {!items && !loadError && Array.from({ length: 9 }, (_, index) => <LoadingCard key={index} />)}
       </div>
 
