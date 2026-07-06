@@ -1,7 +1,7 @@
 const DEFAULT_DATA_BASE = '/fable5-data'
 
 function cacheBustedUrl(dataBase, path, version = '') {
-  const suffix = version ? `?v=${encodeURIComponent(version)}` : `?t=${Date.now()}`
+  const suffix = version ? `?v=${encodeURIComponent(version)}` : ''
   return `${dataBase}/${path}${suffix}`
 }
 
@@ -19,14 +19,53 @@ export function showcaseScore(metrics = {}) {
 const indexPendingByBase = new Map()
 const shardCache = new Map()
 
+function cacheKey(...parts) {
+  return `touchstone:showcase:${parts.join(':')}`
+}
+
+function readSessionJson(key) {
+  try {
+    const raw = sessionStorage.getItem(key)
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
+
+function writeSessionJson(key, value) {
+  try {
+    sessionStorage.setItem(key, JSON.stringify(value))
+  } catch {}
+}
+
+export function readCachedShowcases({ dataBase = DEFAULT_DATA_BASE, start = 0, count = 2 } = {}) {
+  const index = readSessionJson(cacheKey(dataBase, 'index'))
+  if (!index) return null
+  const pages = pageListFromIndex(index).slice(start, start + count)
+  const version = index.lastFetchedAt || index.updatedAt || ''
+  const pagePayloads = pages.map((page) => readSessionJson(cacheKey(dataBase, version, page.file)))
+  if (pagePayloads.some((page) => !page)) return null
+  const items = pagePayloads.flatMap((page) => (Array.isArray(page) ? page : page.items || []))
+  items.sort(
+    (a, b) =>
+      String(b.date || '').localeCompare(String(a.date || '')) ||
+      showcaseScore(b.metrics) - showcaseScore(a.metrics)
+  )
+  return { index, items, loadedPages: pages.length, totalPages: pageListFromIndex(index).length }
+}
+
 export function loadShowcaseIndex({ dataBase = DEFAULT_DATA_BASE, label = 'showcase' } = {}) {
+  const cached = readSessionJson(cacheKey(dataBase, 'index'))
+  if (cached) return Promise.resolve(cached)
   if (!indexPendingByBase.has(dataBase)) {
     indexPendingByBase.set(
       dataBase,
       (async () => {
-        const res = await fetch(cacheBustedUrl(dataBase, 'index.json'), { cache: 'no-store' })
+        const res = await fetch(cacheBustedUrl(dataBase, 'index.json'), { cache: 'force-cache' })
         if (!res.ok) throw new Error(`${label} index: HTTP ${res.status}`)
-        return res.json()
+        const index = await res.json()
+        writeSessionJson(cacheKey(dataBase, 'index'), index)
+        return index
       })().catch((err) => {
         indexPendingByBase.delete(dataBase)
         throw err
@@ -43,21 +82,26 @@ function pageListFromIndex(index) {
 }
 
 async function loadPage(page, { dataBase = DEFAULT_DATA_BASE, version = '', label = 'showcase' } = {}) {
-  const cacheKey = `${dataBase}:${version}:${page.file}`
-  if (!shardCache.has(cacheKey)) {
+  const memoryKey = `${dataBase}:${version}:${page.file}`
+  const sessionKey = cacheKey(dataBase, version, page.file)
+  const cached = readSessionJson(sessionKey)
+  if (cached) return cached
+  if (!shardCache.has(memoryKey)) {
     shardCache.set(
-      cacheKey,
+      memoryKey,
       (async () => {
-        const res = await fetch(cacheBustedUrl(dataBase, page.file, version), { cache: 'no-store' })
+        const res = await fetch(cacheBustedUrl(dataBase, page.file, version), { cache: 'force-cache' })
         if (!res.ok) throw new Error(`${label} page ${page.file}: HTTP ${res.status}`)
-        return res.json()
+        const pageData = await res.json()
+        writeSessionJson(sessionKey, pageData)
+        return pageData
       })().catch((err) => {
-        shardCache.delete(cacheKey)
+        shardCache.delete(memoryKey)
         throw err
       })
     )
   }
-  return shardCache.get(cacheKey)
+  return shardCache.get(memoryKey)
 }
 
 export async function loadShowcases({ dataBase = DEFAULT_DATA_BASE, label = 'showcase', start = 0, count = 2 } = {}) {

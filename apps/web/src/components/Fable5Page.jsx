@@ -3,7 +3,7 @@ import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLi
 import { cn } from '@/lib/utils'
 import { Dialog, DialogClose, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
-import { loadShowcases, showcaseScore } from '@/lib/fable5Data'
+import { loadShowcases, readCachedShowcases, showcaseScore } from '@/lib/fable5Data'
 import { trackEvent } from '@/lib/analytics'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
 import { useI18n } from '@/i18n.jsx'
@@ -38,14 +38,14 @@ function SceneChip({ label, count, active, onClick }) {
       type="button"
       onClick={onClick}
       className={cn(
-        'inline-flex h-6 cursor-pointer items-center gap-1 rounded border px-2 font-mono text-[10px] tracking-[0.12em] uppercase transition-colors',
+        'inline-flex h-8 shrink-0 cursor-pointer items-center gap-1 rounded-full border px-3 font-mono text-[10px] tracking-[0.12em] uppercase transition-colors',
         active
-          ? 'border-acid/40 bg-acid/10 text-acid'
-          : 'border-white/10 text-white/40 hover:border-white/25 hover:text-white'
+          ? 'border-acid/45 bg-acid/14 text-acid shadow-[0_0_18px_rgba(212,255,79,0.10)]'
+          : 'border-white/10 bg-white/[0.035] text-white/42 hover:border-white/25 hover:bg-white/[0.065] hover:text-white'
       )}
     >
       {label}
-      <span className={active ? 'text-acid/60' : 'text-white/25'}>{count}</span>
+      <span className={cn('tabular-nums', active ? 'text-acid/65' : 'text-white/28')}>{count}</span>
     </button>
   )
 }
@@ -72,7 +72,10 @@ function mediaItemsFor(item) {
     urls.push(url)
   }
   add(item.mediaThumbUrl)
-  for (const url of item.mediaUrls || []) add(url)
+  for (const url of item.mediaUrls || []) {
+    if (item.mediaThumbUrl && /\.mp4(\?|$)/i.test(url)) continue
+    add(url)
+  }
   return urls.map((url) => ({
     url,
     type: /\.mp4(\?|$)/i.test(url) ? 'video' : 'image',
@@ -81,6 +84,27 @@ function mediaItemsFor(item) {
 
 function firstPreviewUrl(item) {
   return item.mediaThumbUrl || item.mediaUrls?.find((url) => !/\.mp4(\?|$)/i.test(url)) || ''
+}
+
+function imageSizeKey(url) {
+  return `touchstone:image-size:${url}`
+}
+
+function readCachedImageSize(url) {
+  if (!url) return null
+  try {
+    const value = JSON.parse(localStorage.getItem(imageSizeKey(url)) || 'null')
+    return value?.width > 0 && value?.height > 0 ? value : null
+  } catch {
+    return null
+  }
+}
+
+function writeCachedImageSize(url, img) {
+  if (!url || !img?.naturalWidth || !img?.naturalHeight) return
+  try {
+    localStorage.setItem(imageSizeKey(url), JSON.stringify({ width: img.naturalWidth, height: img.naturalHeight }))
+  } catch {}
 }
 
 function sortValue(item, sortKey) {
@@ -227,6 +251,7 @@ function MasonryImage({ item, priority = false }) {
   const { t } = useI18n()
   const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = firstPreviewUrl(item)
+  const [size, setSize] = useState(() => readCachedImageSize(imageUrl))
 
   if (!imageUrl || imageFailed) {
     return (
@@ -237,7 +262,7 @@ function MasonryImage({ item, priority = false }) {
   }
 
   return (
-    <div className="relative overflow-hidden bg-black">
+    <div className="relative overflow-hidden bg-black" style={{ aspectRatio: size ? `${size.width} / ${size.height}` : '4 / 3' }}>
       <img
         src={imageUrl}
         alt=""
@@ -253,7 +278,14 @@ function MasonryImage({ item, priority = false }) {
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority={priority ? 'high' : 'auto'}
-        className="relative z-10 h-auto w-full drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)]"
+        className="absolute inset-0 z-10 h-full w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)]"
+        onLoad={(event) => {
+          const next = { width: event.currentTarget.naturalWidth, height: event.currentTarget.naturalHeight }
+          if (next.width && next.height && (!size || size.width !== next.width || size.height !== next.height)) {
+            writeCachedImageSize(imageUrl, event.currentTarget)
+            setSize(next)
+          }
+        }}
         onError={() => setImageFailed(true)}
       />
     </div>
@@ -335,16 +367,24 @@ function DetailImageFrame({ src, alt }) {
 
 function VisualDetailDialog({ item, translation, open, onOpenChange }) {
   const { t, language } = useI18n()
+  const [copiedId, setCopiedId] = useState(false)
   const media = item ? mediaItemsFor(item) : []
   const copy = item ? localizedShowcaseCopy(item, translation) : { title: '', summary: [] }
   const metrics = item?.metrics || {}
   const dateLabel = item?.date
     ? new Date(`${item.date}T00:00:00`).toLocaleDateString(language, { year: 'numeric', month: 'short', day: 'numeric' })
     : ''
+  const itemId = item?.id || ''
+  const copyId = () => {
+    if (!itemId) return
+    navigator.clipboard.writeText(itemId)
+    setCopiedId(true)
+    setTimeout(() => setCopiedId(false), 1200)
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex h-[92vh] w-[min(1120px,calc(100vw-24px))] flex-col overflow-hidden rounded-lg">
+      <DialogContent aria-describedby={undefined} className="flex h-[92vh] w-[min(1120px,calc(100vw-24px))] flex-col overflow-hidden rounded-lg">
         <DialogTitle className="sr-only">{copy.title || item?.author || 'Showcase detail'}</DialogTitle>
         <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="min-h-0 overflow-y-auto bg-black">
@@ -385,6 +425,18 @@ function VisualDetailDialog({ item, translation, open, onOpenChange }) {
             </div>
 
             <div className="mt-5 space-y-3">
+              {itemId && (
+                <button
+                  type="button"
+                  onClick={copyId}
+                  className="grid max-w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 rounded-md border border-white/70 bg-white px-3 py-2 text-left font-mono text-[11px] text-black shadow-[0_12px_28px_rgba(255,255,255,0.08)]"
+                  title="Copy ID"
+                >
+                  <span className="rounded-full bg-black px-2 py-0.5 text-[9px] tracking-[0.14em] text-white uppercase">ID</span>
+                  <span className="truncate">{itemId}</span>
+                  {copiedId ? <Check className="h-3.5 w-3.5 text-emerald-600" /> : <Copy className="h-3.5 w-3.5 text-black/58" />}
+                </button>
+              )}
               {dateLabel && (
                 <span className="inline-flex items-center gap-1.5 rounded border border-white/10 bg-white/[0.03] px-2 py-1 font-mono text-[10px] tracking-[0.08em] text-white/45 uppercase">
                   <CalendarDays className="h-3 w-3" />
@@ -392,9 +444,9 @@ function VisualDetailDialog({ item, translation, open, onOpenChange }) {
                 </span>
               )}
               {copy.title && <h2 className="text-xl leading-7 font-semibold tracking-tight text-white">{copy.title}</h2>}
-              {copy.summary?.[0] && <p className="text-sm leading-6 text-white/62">{copy.summary[0]}</p>}
+              {copy.summary?.[0] && <p className="text-sm leading-6 text-white/78">{copy.summary[0]}</p>}
               {item?.originalText && (
-                <p className="max-h-56 overflow-y-auto rounded-md border border-white/10 bg-black/24 p-3 text-xs leading-5 whitespace-pre-wrap text-white/48">
+                <p className="max-h-64 overflow-y-auto rounded-md border border-white/14 bg-white/[0.06] p-3 text-[13px] leading-5 whitespace-pre-wrap text-white/74">
                   {item.originalText}
                 </p>
               )}
@@ -567,9 +619,10 @@ export default function Fable5Page({
   visualMode = false,
 }) {
   const { t, language } = useI18n()
-  const [items, setItems] = useState(null)
-  const [index, setIndex] = useState(null)
-  const [loadedPageCount, setLoadedPageCount] = useState(0)
+  const [cachedInitial] = useState(() => readCachedShowcases({ dataBase, start: 0, count: SHARD_LOAD_STEP }))
+  const [items, setItems] = useState(() => cachedInitial?.items || null)
+  const [index, setIndex] = useState(() => cachedInitial?.index || null)
+  const [loadedPageCount, setLoadedPageCount] = useState(() => cachedInitial?.loadedPages || 0)
   const [loadError, setLoadError] = useState('')
   const [loadingMore, setLoadingMore] = useState(false)
   const [query, setQuery] = useState('')
@@ -583,6 +636,7 @@ export default function Fable5Page({
   const translationsByLanguageRef = useRef({})
   const translationInflight = useRef(new Set())
   const autoLoadRef = useRef(null)
+  const loadingMoreRef = useRef(false)
 
   useEffect(() => {
     if (!enableFavorites) return undefined
@@ -615,12 +669,14 @@ export default function Fable5Page({
 
   useEffect(() => {
     let alive = true
-    setItems(null)
-    setIndex(null)
-    setLoadedPageCount(0)
+    const cached = readCachedShowcases({ dataBase, start: 0, count: SHARD_LOAD_STEP })
+    setItems(cached?.items || null)
+    setIndex(cached?.index || null)
+    setLoadedPageCount(cached?.loadedPages || 0)
     setLoadError('')
     setScene('all')
     setQuery('')
+    loadingMoreRef.current = false
     loadShowcases({ dataBase, label: dataLabel, start: 0, count: SHARD_LOAD_STEP }).then(
       ({ index: nextIndex, items: nextItems, loadedPages }) => {
         if (!alive) return
@@ -640,16 +696,19 @@ export default function Fable5Page({
   const canLoadMore = totalPageCount > loadedPageCount
 
   const loadMore = () => {
-    if (!canLoadMore || loadingMore) return
+    if (!canLoadMore || loadingMoreRef.current || loadingMore) return
+    loadingMoreRef.current = true
     setLoadingMore(true)
     loadShowcases({ dataBase, label: dataLabel, start: loadedPageCount, count: SHARD_LOAD_STEP }).then(
       ({ items: nextItems, loadedPages }) => {
         setItems((current) => mergeShowcaseItems(current, nextItems))
         setLoadedPageCount((count) => count + loadedPages)
+        loadingMoreRef.current = false
         setLoadingMore(false)
       },
       (err) => {
         setLoadError(String(err?.message || err))
+        loadingMoreRef.current = false
         setLoadingMore(false)
       }
     )
@@ -707,6 +766,7 @@ export default function Fable5Page({
     if (!items || !index || loadedPageCount >= totalPageCount) return undefined
     if (scene === 'all' && !query.trim()) return undefined
     let cancelled = false
+    loadingMoreRef.current = true
     setLoadingMore(true)
     ;(async () => {
       let start = loadedPageCount
@@ -722,11 +782,15 @@ export default function Fable5Page({
       } catch (err) {
         if (!cancelled) setLoadError(String(err?.message || err))
       } finally {
-        if (!cancelled) setLoadingMore(false)
+        if (!cancelled) {
+          loadingMoreRef.current = false
+          setLoadingMore(false)
+        }
       }
     })()
     return () => {
       cancelled = true
+      loadingMoreRef.current = false
     }
   }, [scene, query, index, dataBase, dataLabel])
 
@@ -850,20 +914,29 @@ export default function Fable5Page({
       </section>
 
       <section className="sticky top-14 z-30 mt-5 py-3 sm:mt-6">
-        <div className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-screen -translate-x-1/2 bg-[#09090b]/86 backdrop-blur-xl" />
-        <div className="relative z-10">
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_auto]">
-            <label className="relative block">
-              <Search className="pointer-events-none absolute top-1/2 left-3 h-3.5 w-3.5 -translate-y-1/2 text-white/30" />
+        <div className="pointer-events-none absolute inset-0 z-0 rounded-[24px] bg-[#09090b]/86 backdrop-blur-xl" />
+        <div className="relative z-10 rounded-[22px] border border-white/10 bg-black/32 p-1.5 shadow-[0_18px_64px_rgba(0,0,0,0.28)] backdrop-blur-2xl">
+          <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center">
+            <label className="relative flex h-9 w-full shrink-0 items-center rounded-full border border-white/70 bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.08)] transition-colors focus-within:border-acid sm:w-[260px] lg:w-[320px]">
+              <Search className="pointer-events-none absolute left-3 h-3.5 w-3.5 text-black/45" />
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t('common.search')}
-                className="h-9 w-full rounded-md border border-white/10 bg-black/30 pr-3 pl-9 text-sm text-white outline-none placeholder:text-white/24 focus:border-white/25"
+                className="h-full w-full rounded-full bg-transparent pr-3 pl-9 text-sm text-black outline-none placeholder:text-black/42"
               />
             </label>
-            <div className="grid grid-cols-[minmax(0,1fr)_36px] items-center gap-2 sm:grid-cols-[auto_minmax(0,170px)_36px]">
-              <span className="hidden font-mono text-[10px] tracking-[0.16em] whitespace-nowrap text-white/32 uppercase sm:inline">{t('common.sortBy')}</span>
+
+            {scenes.length > 0 && (
+              <div className="flex min-w-0 gap-1.5 overflow-x-auto sm:flex-1">
+                <SceneChip label={t('common.all')} count={totalCount || items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
+                {scenes.map(([key, count]) => (
+                  <SceneChip key={key} label={categoryLabel(t, key)} count={count} active={scene === key} onClick={() => setScene(key)} />
+                ))}
+              </div>
+            )}
+
+            <div className="ml-auto flex w-full shrink-0 items-center justify-end gap-1.5 sm:w-auto">
               <label className="sr-only" htmlFor="fable-sort">
                 {t('common.sortBy')}
               </label>
@@ -871,7 +944,7 @@ export default function Fable5Page({
                 id="fable-sort"
                 value={sortKey}
                 onChange={(e) => setSortKey(e.target.value)}
-                className="h-9 rounded-md border border-white/10 bg-black/30 px-3 font-mono text-[11px] tracking-[0.08em] text-white/70 uppercase outline-none focus:border-white/25"
+                className="h-9 max-w-[132px] rounded-full border border-white/10 bg-white/[0.045] px-3 font-mono text-[10px] tracking-[0.10em] text-white/62 uppercase outline-none transition-colors hover:border-white/24 hover:bg-white/[0.07] focus:border-white/28 sm:max-w-none"
               >
                 {SORT_OPTIONS.map((option) => (
                   <option key={option.key} value={option.key} className="bg-[#09090b] text-white">
@@ -883,23 +956,12 @@ export default function Fable5Page({
                 type="button"
                 onClick={() => setSortDirection((value) => (value === 'asc' ? 'desc' : 'asc'))}
                 title={sortDirection === 'asc' ? t('fable.sort.ascending') : t('fable.sort.descending')}
-                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-black/30 text-white/50 transition-colors hover:border-white/25 hover:text-white"
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/[0.045] text-white/50 transition-colors hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
               >
                 {sortDirection === 'asc' ? <ArrowUpAZ className="h-4 w-4" /> : <ArrowDownAZ className="h-4 w-4" />}
               </button>
             </div>
           </div>
-          {scenes.length > 0 && (
-            <div className="mt-2">
-              <div className="mb-1.5 font-mono text-[10px] tracking-[0.16em] text-white/32 uppercase">{t('common.categories')}</div>
-              <div className="flex gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
-                <SceneChip label={t('common.all')} count={totalCount || items?.length || 0} active={scene === 'all'} onClick={() => setScene('all')} />
-                {scenes.map(([key, count]) => (
-                  <SceneChip key={key} label={categoryLabel(t, key)} count={count} active={scene === key} onClick={() => setScene(key)} />
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

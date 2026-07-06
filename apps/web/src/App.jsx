@@ -579,8 +579,8 @@ export default function App() {
   return (
     <>
       <div className="bg-arena" />
-      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#09090b]/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-2.5 px-4 sm:gap-4 sm:px-6">
+      <header className="sticky top-0 z-40 bg-[#09090b]/72 px-3 py-2 backdrop-blur-xl sm:px-6">
+        <div className="mx-auto flex h-12 max-w-[1400px] items-center gap-2.5 rounded-full border border-white/10 bg-black/36 px-3 shadow-[0_18px_64px_rgba(0,0,0,0.30)] backdrop-blur-2xl sm:gap-4 sm:px-4">
           <a
             href="/"
             onClick={(e) => {
@@ -604,7 +604,7 @@ export default function App() {
           <button
             type="button"
             onClick={goOssRadar}
-            className={`ml-1 h-7 shrink-0 cursor-pointer rounded border px-2.5 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors md:hidden ${
+            className={`ml-1 h-8 shrink-0 cursor-pointer rounded-full border px-3 font-mono text-[10px] tracking-[0.14em] uppercase transition-colors md:hidden ${
               route.page === 'ossRadar'
                 ? 'border-acid bg-acid text-black'
                 : 'border-white/12 bg-white/[0.025] text-white/62 hover:border-white/28 hover:text-white'
@@ -612,11 +612,11 @@ export default function App() {
           >
             {t('nav.ossRadarShort')}
           </button>
-          <nav className="ml-2 hidden items-center gap-1 rounded-md border border-white/8 bg-white/[0.025] p-1 md:flex">
+          <nav className="ml-2 hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.035] p-1 md:flex">
             <button
               type="button"
               onClick={goFable5}
-              className={`h-7 cursor-pointer rounded px-2.5 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'fable5'
                   ? 'border border-acid bg-acid text-black'
                   : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
@@ -627,7 +627,7 @@ export default function App() {
             <button
               type="button"
               onClick={goFigmaMotion}
-              className={`h-7 cursor-pointer rounded px-2.5 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'figmaMotion'
                   ? 'border border-acid bg-acid text-black'
                   : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
@@ -638,7 +638,7 @@ export default function App() {
             <button
               type="button"
               onClick={goIosApps}
-              className={`h-7 cursor-pointer rounded px-2.5 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'iosApps'
                   ? 'border border-acid bg-acid text-black'
                   : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
@@ -649,7 +649,7 @@ export default function App() {
             <button
               type="button"
               onClick={goOssRadar}
-              className={`h-7 cursor-pointer rounded px-2.5 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+              className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
                 route.page === 'ossRadar'
                   ? 'border border-acid bg-acid text-black'
                   : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-white/8 hover:text-white'
@@ -661,7 +661,7 @@ export default function App() {
               href={X1_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex h-7 items-center gap-1 rounded border border-transparent px-2.5 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-white/8 hover:text-white"
+              className="flex h-8 items-center gap-1 rounded-full border border-transparent px-3 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-white/8 hover:text-white"
             >
               x-1.dev
               <ExternalLink className="h-3 w-3 opacity-55" />
@@ -673,7 +673,7 @@ export default function App() {
                 <button
                   type="button"
                   title="Menu"
-                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white md:hidden"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white md:hidden"
                 >
                   <Menu className="h-4 w-4" />
                 </button>
@@ -752,7 +752,7 @@ export default function App() {
                 <button
                   type="button"
                   title={t('common.language')}
-                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white"
                 >
                   <Globe2 className="h-4 w-4" />
                 </button>
@@ -791,7 +791,7 @@ export default function App() {
                   size="sm"
                   disabled={loggingIn}
                   onClick={login}
-                  className="h-7 gap-2 font-mono text-[10px] tracking-[0.15em] uppercase"
+                  className="h-8 rounded-full gap-2 font-mono text-[10px] tracking-[0.15em] uppercase"
                 >
                   {loggingIn ? <Loader2 className="h-3 w-3 animate-spin" /> : <GoogleIcon className="h-3 w-3" />}
                   {loggingIn ? t('nav.waitingAuth') : t('nav.signIn')}
