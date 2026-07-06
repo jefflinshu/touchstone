@@ -6,6 +6,7 @@ import { loadShowcases, showcaseScore } from '@/lib/fable5Data'
 import { trackEvent } from '@/lib/analytics'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
 import { useI18n } from '@/i18n.jsx'
+import PreviewImage from './PreviewImage.jsx'
 
 function getFavorites(favoritesKey) {
   return readFavoriteSet(favoritesKey)
@@ -184,16 +185,11 @@ function MediaBlock({ item, priority = false }) {
       {showImage ? (
         <>
           {!imageLoaded && <MediaLoadingOverlay />}
-          <img
+          <PreviewImage
             src={imageUrl}
             alt={`${item.title} by ${item.author}`}
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-            fetchpriority={priority ? 'high' : 'auto'}
-            className={cn(
-              'h-full w-full object-cover transition duration-300 hover:scale-[1.02]',
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            )}
+            loaded={imageLoaded}
+            priority={priority}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageFailed(true)}
           />

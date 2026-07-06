@@ -3,6 +3,7 @@ import { ArrowLeft, Copy, Check, Share2, ChevronLeft, ChevronRight, Folder } fro
 import RunCard from './RunCard.jsx'
 import AgentIcon from './AgentIcon.jsx'
 import { ProjectLikeButton, CategoryTag } from './ProjectCard.jsx'
+import PreviewImage from './PreviewImage.jsx'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useI18n } from '@/i18n.jsx'
@@ -18,11 +19,9 @@ function MiniProjectCard({ group: g, onOpen }) {
     >
       <div className="aspect-[16/10] overflow-hidden border-b border-white/8 bg-black">
         {previewRun ? (
-          <img
+          <PreviewImage
             src={`/api/runs/${previewRun.id}/preview`}
             alt=""
-            loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center">

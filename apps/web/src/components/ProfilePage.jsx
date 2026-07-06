@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { FABLE5_FAVORITES_KEY, FAVORITES_CHANGED_EVENT, LIKED_PROJECTS_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadFable5Showcases } from '@/lib/fable5Data'
 import { useI18n } from '@/i18n.jsx'
+import PreviewImage from './PreviewImage.jsx'
 
 function EditForm({ profile, onSave, onCancel }) {
   const { t } = useI18n()
@@ -79,12 +80,9 @@ function ProductCard({ group: g, views, likes, onOpen }) {
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-black">
         {previewRun ? (
-          <img
+          <PreviewImage
             src={`/api/runs/${previewRun.id}/preview`}
             alt={`${g.project} preview`}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-white/[0.03]">
@@ -135,11 +133,9 @@ function FableFavoriteCard({ item }) {
     >
       <div className="aspect-[16/10] overflow-hidden border-b border-white/8 bg-black">
         {thumb && (
-          <img
+          <PreviewImage
             src={thumb}
             alt={item.title}
-            loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           />
         )}
       </div>
