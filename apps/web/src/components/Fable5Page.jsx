@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Repeat2, Search } from 'lucide-react'
+import { ArrowDownAZ, ArrowUpAZ, Bookmark, CalendarDays, Check, Copy, ExternalLink, Eye, Heart, ImageOff, Loader2, MessageCircle, Repeat2, Search, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Dialog, DialogClose, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { FABLE5_FAVORITES_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { loadShowcases, showcaseScore } from '@/lib/fable5Data'
 import { trackEvent } from '@/lib/analytics'
@@ -61,6 +62,26 @@ const SHARD_LOAD_STEP = 1
 const INITIAL_PRIORITY_IMAGES = 6
 const TRANSLATION_BATCH_SIZE = 12
 const CATEGORY_ORDER = ['games', 'apps', 'websites', 'videos', '3d', 'design', 'agents', 'prompts', 'code', 'research', 'news', 'safety', 'experiments']
+
+function mediaItemsFor(item) {
+  const seen = new Set()
+  const urls = []
+  const add = (url) => {
+    if (!url || seen.has(url)) return
+    seen.add(url)
+    urls.push(url)
+  }
+  add(item.mediaThumbUrl)
+  for (const url of item.mediaUrls || []) add(url)
+  return urls.map((url) => ({
+    url,
+    type: /\.mp4(\?|$)/i.test(url) ? 'video' : 'image',
+  }))
+}
+
+function firstPreviewUrl(item) {
+  return item.mediaThumbUrl || item.mediaUrls?.find((url) => !/\.mp4(\?|$)/i.test(url)) || ''
+}
 
 function sortValue(item, sortKey) {
   const metrics = item.metrics || {}
@@ -199,6 +220,208 @@ function MediaBlock({ item, priority = false }) {
       )}
       <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
     </div>
+  )
+}
+
+function MasonryImage({ item, priority = false }) {
+  const { t } = useI18n()
+  const [imageFailed, setImageFailed] = useState(false)
+  const imageUrl = firstPreviewUrl(item)
+
+  if (!imageUrl || imageFailed) {
+    return (
+      <div className="aspect-[4/5]">
+        <MediaPlaceholder label={item.media === 'text' ? t('fable.textOnly') : t('fable.noPreview')} />
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative overflow-hidden bg-black">
+      <img
+        src={imageUrl}
+        alt=""
+        aria-hidden="true"
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
+        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-55 blur-2xl saturate-125"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02),rgba(0,0,0,0.58))]" />
+      <img
+        src={imageUrl}
+        alt={`${item.title} by ${item.author}`}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
+        fetchPriority={priority ? 'high' : 'auto'}
+        className="relative z-10 h-auto w-full drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)]"
+        onError={() => setImageFailed(true)}
+      />
+    </div>
+  )
+}
+
+function VisualMasonryCard({ item, index, onOpen }) {
+  const { language } = useI18n()
+  const [avatarFailed, setAvatarFailed] = useState(false)
+  const metrics = item.metrics || {}
+  const dateLabel = item.date
+    ? new Date(`${item.date}T00:00:00`).toLocaleDateString(language, { month: 'short', day: 'numeric' })
+    : ''
+
+  return (
+    <button
+      type="button"
+      onClick={() => onOpen(item)}
+      className="group mb-4 w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0f] text-left shadow-[0_24px_80px_rgba(0,0,0,0.22)] transition-all hover:-translate-y-0.5 hover:border-white/30"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '360px' }}
+    >
+      <div className="relative">
+        <MasonryImage item={item} priority={index < INITIAL_PRIORITY_IMAGES} />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/82 via-black/36 to-transparent p-3 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
+          <div className="flex min-w-0 items-center gap-2">
+            {item.avatarUrl && !avatarFailed ? (
+              <img
+                src={item.avatarUrl}
+                alt={item.author}
+                loading="lazy"
+                decoding="async"
+                className="h-7 w-7 shrink-0 rounded-full object-cover ring-1 ring-white/15"
+                onError={() => setAvatarFailed(true)}
+              />
+            ) : (
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/12 font-mono text-[10px] text-white/55">
+                {(item.handle || '?')[1] || '?'}
+              </span>
+            )}
+            <div className="min-w-0 flex-1">
+              <div className="truncate text-xs font-medium text-white/90">{item.author}</div>
+              <div className="truncate font-mono text-[9px] tracking-[0.12em] text-white/42 uppercase">
+                {dateLabel || item.handle}
+              </div>
+            </div>
+            <div className="flex shrink-0 items-center gap-1.5 font-mono text-[10px] text-white/55">
+              <Heart className="h-3 w-3" />
+              {n(metrics.likes)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
+  )
+}
+
+function DetailImageFrame({ src, alt }) {
+  return (
+    <div className="relative overflow-hidden rounded-md border border-white/10 bg-black">
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-50 blur-2xl saturate-125"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.03),rgba(0,0,0,0.66))]" />
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className="relative z-10 max-h-[78vh] w-full object-contain p-2 drop-shadow-[0_16px_32px_rgba(0,0,0,0.42)]"
+      />
+    </div>
+  )
+}
+
+function VisualDetailDialog({ item, translation, open, onOpenChange }) {
+  const { t, language } = useI18n()
+  const media = item ? mediaItemsFor(item) : []
+  const copy = item ? localizedShowcaseCopy(item, translation) : { title: '', summary: [] }
+  const metrics = item?.metrics || {}
+  const dateLabel = item?.date
+    ? new Date(`${item.date}T00:00:00`).toLocaleDateString(language, { year: 'numeric', month: 'short', day: 'numeric' })
+    : ''
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="flex h-[92vh] w-[min(1120px,calc(100vw-24px))] flex-col overflow-hidden rounded-lg">
+        <DialogTitle className="sr-only">{copy.title || item?.author || 'Showcase detail'}</DialogTitle>
+        <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="min-h-0 overflow-y-auto bg-black">
+            <div className="flex flex-col gap-3 p-3 sm:p-4">
+              {media.length > 0 ? (
+                media.map((entry) => (
+                  <div key={entry.url}>
+                    {entry.type === 'video' ? (
+                      <video src={entry.url} controls playsInline className="max-h-[78vh] w-full rounded-md border border-white/10 bg-black object-contain" />
+                    ) : (
+                      <DetailImageFrame src={entry.url} alt={copy.title || item.author} />
+                    )}
+                  </div>
+                ))
+              ) : (
+                <div className="aspect-[4/3] overflow-hidden rounded-md border border-white/10">
+                  <MediaPlaceholder />
+                </div>
+              )}
+            </div>
+          </div>
+          <aside className="min-h-0 overflow-y-auto border-t border-white/10 bg-[#0c0c0f] p-4 lg:border-t-0 lg:border-l">
+            <div className="flex items-start gap-3">
+              {item?.avatarUrl ? (
+                <img src={item.avatarUrl} alt={item.author} className="h-10 w-10 rounded-full object-cover" />
+              ) : (
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 font-mono text-xs text-white/55">
+                  {(item?.handle || '?')[1] || '?'}
+                </span>
+              )}
+              <div className="min-w-0 flex-1">
+                <div className="truncate text-sm font-medium text-white">{item?.author}</div>
+                <div className="mt-0.5 truncate font-mono text-[10px] tracking-[0.12em] text-white/35 uppercase">{item?.handle}</div>
+              </div>
+              <DialogClose className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-md border border-white/10 text-white/45 transition-colors hover:text-white">
+                <X className="h-4 w-4" />
+              </DialogClose>
+            </div>
+
+            <div className="mt-5 space-y-3">
+              {dateLabel && (
+                <span className="inline-flex items-center gap-1.5 rounded border border-white/10 bg-white/[0.03] px-2 py-1 font-mono text-[10px] tracking-[0.08em] text-white/45 uppercase">
+                  <CalendarDays className="h-3 w-3" />
+                  {dateLabel}
+                </span>
+              )}
+              {copy.title && <h2 className="text-xl leading-7 font-semibold tracking-tight text-white">{copy.title}</h2>}
+              {copy.summary?.[0] && <p className="text-sm leading-6 text-white/62">{copy.summary[0]}</p>}
+              {item?.originalText && (
+                <p className="max-h-56 overflow-y-auto rounded-md border border-white/10 bg-black/24 p-3 text-xs leading-5 whitespace-pre-wrap text-white/48">
+                  {item.originalText}
+                </p>
+              )}
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-2 border-t border-white/8 pt-4 font-mono text-[10px] text-white/42">
+              <span className="flex items-center gap-1.5"><Heart className="h-3 w-3" /> {n(metrics.likes)}</span>
+              <span className="flex items-center gap-1.5"><Bookmark className="h-3 w-3" /> {n(metrics.bookmarks)}</span>
+              <span className="flex items-center gap-1.5"><MessageCircle className="h-3 w-3" /> {n(metrics.replies)}</span>
+              <span className="flex items-center gap-1.5"><Eye className="h-3 w-3" /> {n(metrics.views)}</span>
+            </div>
+
+            {item?.sourceUrl && (
+              <a
+                href={item.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex h-9 items-center gap-2 rounded-md border border-white/12 px-3 font-mono text-[10px] tracking-[0.14em] text-white/60 uppercase transition-colors hover:border-white/25 hover:text-white"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+                {t('common.sourcePost')}
+              </a>
+            )}
+          </aside>
+        </div>
+      </DialogContent>
+    </Dialog>
   )
 }
 
@@ -341,6 +564,7 @@ export default function Fable5Page({
   favoritesApiBase = '/api/fable5',
   analyticsPrefix = 'fable5',
   enableFavorites = true,
+  visualMode = false,
 }) {
   const { t, language } = useI18n()
   const [items, setItems] = useState(null)
@@ -354,6 +578,7 @@ export default function Fable5Page({
   const [sortDirection, setSortDirection] = useState('desc')
   const [favorites, setFavorites] = useState(() => getFavorites(favoritesKey))
   const [copiedId, copy] = useCopy()
+  const [selectedItem, setSelectedItem] = useState(null)
   const [translationsByLanguage, setTranslationsByLanguage] = useState({})
   const translationsByLanguageRef = useRef({})
   const translationInflight = useRef(new Set())
@@ -678,25 +903,46 @@ export default function Fable5Page({
         </div>
       </section>
 
-      <div id="showcases" className="mt-5 grid grid-cols-1 scroll-mt-32 gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]">
-        {filtered.map((item, itemIndex) => (
-          <ShowcaseCard
-            key={item.id}
-            item={item}
-            index={itemIndex}
-            translation={translationsByLanguage[language]?.[item.id]}
-            favorite={Boolean(authEmail) && favorites.has(item.id)}
-            copied={copiedId === item.id}
-            authLoaded={authLoaded}
-            loginRequired={authLoaded && !authEmail}
-            loggingIn={loggingIn}
-            enableFavorite={enableFavorites}
-            onToggleFavorite={toggleFavorite}
-            onCopy={copyPrompt}
-          />
-        ))}
+      <div
+        id="showcases"
+        className={cn(
+          'mt-5 scroll-mt-32',
+          visualMode
+            ? 'columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4'
+            : 'grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(auto-fill,minmax(300px,1fr))]'
+        )}
+      >
+        {filtered.map((item, itemIndex) =>
+          visualMode ? (
+            <VisualMasonryCard key={item.id} item={item} index={itemIndex} onOpen={setSelectedItem} />
+          ) : (
+            <ShowcaseCard
+              key={item.id}
+              item={item}
+              index={itemIndex}
+              translation={translationsByLanguage[language]?.[item.id]}
+              favorite={Boolean(authEmail) && favorites.has(item.id)}
+              copied={copiedId === item.id}
+              authLoaded={authLoaded}
+              loginRequired={authLoaded && !authEmail}
+              loggingIn={loggingIn}
+              enableFavorite={enableFavorites}
+              onToggleFavorite={toggleFavorite}
+              onCopy={copyPrompt}
+            />
+          )
+        )}
         {!items && !loadError && Array.from({ length: 9 }, (_, index) => <LoadingCard key={index} />)}
       </div>
+
+      {visualMode && (
+        <VisualDetailDialog
+          item={selectedItem}
+          translation={selectedItem ? translationsByLanguage[language]?.[selectedItem.id] : null}
+          open={Boolean(selectedItem)}
+          onOpenChange={(open) => !open && setSelectedItem(null)}
+        />
+      )}
 
       {items && canLoadMore && (
         <div ref={autoLoadRef} className="mt-6 flex justify-center">

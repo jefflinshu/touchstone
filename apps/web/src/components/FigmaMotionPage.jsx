@@ -11,6 +11,7 @@ export default function FigmaMotionPage({ onBack }) {
       iconSrc={figmaIcon}
       analyticsPrefix="figma_motion"
       enableFavorites={false}
+      visualMode
     />
   )
 }

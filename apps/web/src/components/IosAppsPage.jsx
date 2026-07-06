@@ -11,6 +11,7 @@ export default function IosAppsPage({ onBack }) {
       iconSrc={appleIcon}
       analyticsPrefix="ios_apps"
       enableFavorites={false}
+      visualMode
     />
   )
 }
