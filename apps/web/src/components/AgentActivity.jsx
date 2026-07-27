@@ -108,13 +108,14 @@ function ProgressBlock({ event }) {
   )
 }
 
-function QuestionBlock({ event, run }) {
+export function QuestionBlock({ event, run }) {
   const { language } = useI18n()
   const [answer, setAnswer] = useState(event.answer || '')
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const answered = event.status === 'answered'
-  const supportsInput = run.interaction?.input === true
+  const supportsInput =
+    run.interaction?.input === true && (run.status === 'running' || run.status === 'pending')
   const question = event.questions?.[0] || {}
   const options = question.options || []
 
@@ -168,9 +169,13 @@ function QuestionBlock({ event, run }) {
       )}
       {!answered && !supportsInput && (
         <p className="mt-2 rounded border border-white/8 bg-black/25 px-2.5 py-2 text-[10px] leading-4 text-white/45">
-          {language === 'zh'
-            ? `当前 ${run.agentName || 'Agent'} 使用一次性 CLI 模式，只能展示这个问题，暂时不能在网页中续答。切换到 ${run.interaction?.upgrade || '原生会话协议'} 后可用。`
-            : `${run.agentName || 'This agent'} is running in one-shot CLI mode. Touchstone can show this question but cannot answer it until the ${run.interaction?.upgrade || 'native session'} adapter is enabled.`}
+          {run.status !== 'running' && run.status !== 'pending'
+            ? language === 'zh'
+              ? '这个运行已经结束，无法再回复这条问题。'
+              : 'This run has ended, so the question can no longer be answered.'
+            : language === 'zh'
+              ? `当前 ${run.agentName || 'Agent'} 使用单次运行模式，只能展示这个问题。切换到 ${run.interaction?.upgrade || '原生会话协议'} 后可用。`
+              : `${run.agentName || 'This agent'} is running in one-shot mode. Touchstone can show this question but cannot answer it until the ${run.interaction?.upgrade || 'native session'} adapter is enabled.`}
         </p>
       )}
       {answered && <p className="mt-2 border-l border-emerald-400/35 pl-2 text-[11px] text-white/55">{event.answer}</p>}

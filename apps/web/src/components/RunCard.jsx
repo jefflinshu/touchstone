@@ -116,7 +116,7 @@ function LikeButton({ run }) {
   )
 }
 
-export default function RunCard({ run, log, events, onStop, onDelete, onFetchActivity }) {
+export default function RunCard({ run, log, events, onStop, onDelete, onFetchActivity, forceView = null }) {
   const { t } = useI18n()
   const [showActivity, setShowActivity] = useState(() => run.status === 'running' || run.status === 'pending')
   const [showFull, setShowFull] = useState(false)
@@ -128,6 +128,7 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
   const model = run.model || run.resolvedModel
   const visibility = runVisibility(run)
   const VisibilityIcon = visibility === 'community' ? Globe2 : HardDrive
+  const displayActivity = forceView === 'activity' || (forceView !== 'preview' && showActivity)
 
   useEffect(() => {
     if (!isLive) return
@@ -141,8 +142,8 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
   }, [run.status, run.entry])
 
   useEffect(() => {
-    if (showActivity && events == null) onFetchActivity(run.id)
-  }, [showActivity, events, run.id, onFetchActivity])
+    if (displayActivity && events == null) onFetchActivity(run.id)
+  }, [displayActivity, events, run.id, onFetchActivity])
 
   const previewUrl = artifactUrlOf(run)
   const artifactType = artifactTypeOf(run)
@@ -156,10 +157,10 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
     >
       {/* 预览区 */}
       <div
-        className={cn('relative aspect-[16/10] bg-black', previewUrl && !showActivity && 'cursor-zoom-in')}
-        onClick={() => previewUrl && !showActivity && setShowFull(true)}
+        className={cn('relative aspect-[16/10] bg-black', previewUrl && !displayActivity && 'cursor-zoom-in')}
+        onClick={() => previewUrl && !displayActivity && setShowFull(true)}
       >
-        {showActivity ? (
+        {displayActivity ? (
           <AgentActivity run={run} events={events || []} rawLog={log || ''} />
         ) : previewUrl ? (
           <ArtifactPreview run={run} frameKey={frameKey} />
@@ -193,15 +194,17 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
               </Button>
             </>
           )}
-          <Button
-            variant="ghost"
-            size="icon"
-            className={cn('bg-black/70 backdrop-blur', showActivity && 'text-acid')}
-            title={showActivity ? t('common.preview') : t('common.log')}
-            onClick={() => setShowActivity((s) => !s)}
-          >
-            <Terminal className="h-3.5 w-3.5" />
-          </Button>
+          {!forceView && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn('bg-black/70 backdrop-blur', showActivity && 'text-acid')}
+              title={showActivity ? t('common.preview') : t('common.log')}
+              onClick={() => setShowActivity((s) => !s)}
+            >
+              <Terminal className="h-3.5 w-3.5" />
+            </Button>
+          )}
           {isLive ? (
             <Button variant="ghost" size="icon" className="bg-black/70 backdrop-blur hover:text-red-400" title={t('common.stop')} onClick={() => onStop(run.id)}>
               <Square className="h-3.5 w-3.5" />

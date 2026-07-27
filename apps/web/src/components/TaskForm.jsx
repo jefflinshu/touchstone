@@ -11,6 +11,9 @@ import {
   Sparkles,
   SlidersHorizontal,
   Download,
+  FileCode2,
+  FileText,
+  Shapes,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
@@ -274,6 +277,51 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
           onChange={(e) => setPrompt(e.target.value)}
         />
 
+        <div className="flex flex-wrap items-center gap-2 border-y border-white/8 py-2.5">
+          <span className="mr-1 font-mono text-[9px] tracking-[0.18em] text-white/35 uppercase">
+            {t('task.artifactType')}
+          </span>
+          {[
+            ['single-html', FileCode2, t('task.deliverySingleHtml'), 'index.html'],
+            ['single-svg', Shapes, t('task.deliverySingleSvg'), 'index.svg'],
+            ['single-markdown', FileText, t('task.deliverySingleMarkdown'), 'plan.md'],
+          ].map(([value, Icon, label, filename]) => (
+            <button
+              key={value}
+              type="button"
+              onClick={() => chooseDeliveryPreset(value)}
+              className={cn(
+                'flex h-8 items-center gap-1.5 rounded-md border px-2.5 transition-colors',
+                deliveryPreset === value
+                  ? 'border-acid bg-acid/10 text-acid'
+                  : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
+              )}
+            >
+              <Icon className="h-3.5 w-3.5" />
+              <span className="text-[11px] font-medium">{label}</span>
+              <span className="hidden font-mono text-[9px] text-current opacity-45 sm:inline">{filename}</span>
+            </button>
+          ))}
+          <button
+            type="button"
+            onClick={() => setShowDelivery((value) => !value)}
+            className={cn(
+              'ml-auto flex h-8 items-center gap-1.5 rounded-md border px-2.5 font-mono text-[9px] tracking-[0.12em] uppercase transition-colors',
+              showDelivery || deliveryPreset === 'static-folder' || deliveryPreset === 'custom'
+                ? 'border-white/30 text-white/75'
+                : 'border-white/10 text-white/30 hover:border-white/25 hover:text-white/70'
+            )}
+          >
+            <SlidersHorizontal className="h-3.5 w-3.5" />
+            {t('task.deliveryAdvanced')}
+          </button>
+          <span className="w-full font-mono text-[9px] text-white/25 sm:w-auto">
+            {deliveryPreset === 'single-html' && t('task.artifactSingleFile', { file: 'index.html' })}
+            {deliveryPreset === 'single-svg' && t('task.artifactSingleFile', { file: 'index.svg' })}
+            {deliveryPreset === 'single-markdown' && t('task.artifactSingleFile', { file: 'plan.md' })}
+          </span>
+        </div>
+
         <div className="flex flex-wrap items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -352,26 +400,6 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
               )}
             </DropdownMenuContent>
           </DropdownMenu>
-
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={() => setShowDelivery((value) => !value)}
-            className={cn(
-              'h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase',
-              showDelivery && 'border-acid/50 text-acid'
-            )}
-          >
-            <SlidersHorizontal className="h-3.5 w-3.5" />
-            {deliveryPreset === 'single-html'
-              ? t('task.deliverySingleHtml')
-              : deliveryPreset === 'single-svg'
-                ? t('task.deliverySingleSvg')
-                : deliveryPreset === 'single-markdown'
-                  ? t('task.deliverySingleMarkdown')
-                  : t('task.delivery')}
-          </Button>
 
           {selectedSkills.map((id) => (
             <button

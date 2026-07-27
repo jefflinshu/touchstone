@@ -5,27 +5,27 @@
 /* Geist Pixel（Vercel）：像素网格位图风格，仅用于 display 场景（Logo/大标题/数字） */
 @font-face {
   font-family: 'Geist Pixel Square';
-  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2') format('woff2');
+  src: url('../../../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Square.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Pixel Grid';
-  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Grid.woff2') format('woff2');
+  src: url('../../../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Grid.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Pixel Circle';
-  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Circle.woff2') format('woff2');
+  src: url('../../../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Circle.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Pixel Triangle';
-  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Triangle.woff2') format('woff2');
+  src: url('../../../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Triangle.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Pixel Line';
-  src: url('../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Line.woff2') format('woff2');
+  src: url('../../../node_modules/geist/dist/fonts/geist-pixel/GeistPixel-Line.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -253,4 +253,48 @@ html[data-theme='light'] .bg-acid\/\[0\.04\] { background-color: rgb(110 150 18 
 html[data-theme='light'] .pulse-dot.bg-acid,
 html[data-theme='light'] span.h-1\.5.bg-acid {
   background-color: #6e9612 !important;
+}
+
+/* Markdown artifacts are an isolated dark document canvas in both app themes. */
+.artifact-markdown-surface {
+  background: #111114 !important;
+}
+.artifact-markdown-document {
+  color: rgb(255 255 255 / 0.76);
+}
+.artifact-markdown-document h1,
+.artifact-markdown-document h2 {
+  color: #fff;
+}
+.artifact-markdown-document h3 {
+  color: rgb(255 255 255 / 0.9);
+}
+.artifact-markdown-document h1,
+.artifact-markdown-document hr,
+.artifact-markdown-document pre,
+.artifact-markdown-document th,
+.artifact-markdown-document td {
+  border-color: rgb(255 255 255 / 0.12);
+}
+.artifact-markdown-document a {
+  color: #d4ff4f;
+}
+.artifact-markdown-document blockquote {
+  border-color: rgb(212 255 79 / 0.45);
+  color: rgb(255 255 255 / 0.52);
+}
+.artifact-markdown-document pre {
+  background: rgb(0 0 0 / 0.55);
+  color: rgb(255 255 255 / 0.7);
+}
+.artifact-markdown-document :not(pre) > code {
+  background: rgb(255 255 255 / 0.08);
+  color: rgb(255 255 255 / 0.86);
+}
+.artifact-markdown-document th {
+  background: rgb(255 255 255 / 0.05);
+  color: rgb(255 255 255 / 0.82);
+}
+.artifact-markdown-document td {
+  color: rgb(255 255 255 / 0.64);
 }

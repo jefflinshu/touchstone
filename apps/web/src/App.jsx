@@ -866,6 +866,7 @@ export default function App() {
               onStop={stopRun}
               onDelete={deleteRun}
               onFetchActivity={fetchActivity}
+              currentUser={auth.email}
             />
           ) : (
             <div className="mt-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">

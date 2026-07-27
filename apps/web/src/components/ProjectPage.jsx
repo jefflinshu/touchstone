@@ -1,7 +1,21 @@
-import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, Copy, Check, Share2, ChevronLeft, ChevronRight, Folder } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import {
+  Activity,
+  ArrowLeft,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Columns3,
+  Copy,
+  Eye,
+  Folder,
+  MessageCircleQuestion,
+  Share2,
+} from 'lucide-react'
 import RunCard from './RunCard.jsx'
 import AgentIcon from './AgentIcon.jsx'
+import ArtifactCompare from './ArtifactCompare.jsx'
+import { QuestionBlock } from './AgentActivity.jsx'
 import { ProjectLikeButton, CategoryTag } from './ProjectCard.jsx'
 import PreviewImage from './PreviewImage.jsx'
 import { Button } from '@/components/ui/button'
@@ -73,10 +87,19 @@ export default function ProjectPage({
   onStop,
   onDelete,
   onFetchActivity,
+  currentUser,
 }) {
   const { t, language } = useI18n()
   const [layout, setLayout] = useState('2')
   const [hidden, setHidden] = useState(() => new Set())
+  const [activeView, setActiveView] = useState('results')
+  const activityRequests = useRef(new Set())
+
+  useEffect(() => {
+    setActiveView('results')
+    setHidden(new Set())
+    activityRequests.current.clear()
+  }, [project])
 
   useEffect(() => {
     if (viewedProjects.has(project)) return
@@ -101,6 +124,40 @@ export default function ProjectPage({
   const prompt = latest?.prompt || ''
 
   const visibleRuns = useMemo(() => runs.filter((r) => !hidden.has(r.id)), [runs, hidden])
+  const activityRuns = useMemo(
+    () => visibleRuns.filter((run) => currentUser && run.user === currentUser),
+    [currentUser, visibleRuns]
+  )
+  const pendingRequests = useMemo(
+    () =>
+      runs.flatMap((run) => {
+        if (
+          !currentUser ||
+          run.user !== currentUser ||
+          (run.status !== 'running' && run.status !== 'pending')
+        ) {
+          return []
+        }
+        return (activities[run.id] || [])
+          .filter((event) => event.kind === 'question' && event.status !== 'answered')
+          .map((event) => ({ run, event }))
+      }),
+    [activities, currentUser, runs]
+  )
+
+  useEffect(() => {
+    if (!currentUser) return
+    for (const run of runs) {
+      if (
+        run.user === currentUser &&
+        activities[run.id] == null &&
+        !activityRequests.current.has(run.id)
+      ) {
+        activityRequests.current.add(run.id)
+        Promise.resolve(onFetchActivity(run.id)).catch(() => activityRequests.current.delete(run.id))
+      }
+    }
+  }, [activities, currentUser, onFetchActivity, runs])
 
   const gridStyle =
     layout === 'auto'
@@ -220,20 +277,84 @@ export default function ProjectPage({
             })}
           </div>
 
-          <div className="grid gap-4" style={gridStyle}>
-            {visibleRuns.map((run) => (
-              <RunCard
-                key={run.id}
-                run={run}
-                log={logs[run.id]}
-                events={activities[run.id]}
-                onStop={onStop}
-                onDelete={onDelete}
-                onFetchActivity={onFetchActivity}
-              />
+          {pendingRequests.length > 0 && (
+            <section className="mb-4 overflow-hidden rounded-lg border border-amber-300/25 bg-amber-300/[0.035]">
+              <header className="flex items-center gap-2 border-b border-amber-300/15 px-3.5 py-2.5">
+                <MessageCircleQuestion className="h-4 w-4 text-amber-300" />
+                <h2 className="text-xs font-medium text-amber-100/85">{t('project.needsAttention')}</h2>
+                <span className="rounded-full bg-amber-300 px-1.5 font-mono text-[9px] font-semibold text-black">
+                  {pendingRequests.length}
+                </span>
+              </header>
+              <div className="grid gap-3 p-3 md:grid-cols-2">
+                {pendingRequests.map(({ run, event }) => (
+                  <div key={`${run.id}-${event.id}`} className="min-w-0">
+                    <div className="mb-1.5 flex items-center gap-1.5 px-1">
+                      <AgentIcon agentId={run.agentId} color={run.color} className="h-3 w-3" />
+                      <span className="text-[10px] text-white/50">{run.agentName}</span>
+                      {(run.model || run.resolvedModel) && (
+                        <span className="truncate font-mono text-[9px] text-white/25">{run.model || run.resolvedModel}</span>
+                      )}
+                    </div>
+                    <QuestionBlock event={event} run={run} />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <div className="mb-4 flex items-center gap-1.5 border-b border-white/10 pb-2">
+            {[
+              ['results', Eye, t('project.viewResults')],
+              ['compare', Columns3, t('project.viewCompare')],
+              ['activity', Activity, t('project.viewActivity')],
+            ].map(([value, Icon, label]) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setActiveView(value)}
+                className={cn(
+                  'flex h-8 items-center gap-1.5 rounded-md border px-2.5 font-mono text-[9px] tracking-[0.12em] uppercase transition-colors',
+                  activeView === value
+                    ? 'border-acid bg-acid text-black'
+                    : 'border-transparent text-white/35 hover:border-white/12 hover:text-white/75'
+                )}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {label}
+                {value === 'activity' && pendingRequests.length > 0 && (
+                  <span className={cn('rounded-full px-1 text-[8px]', activeView === value ? 'bg-black/15' : 'bg-amber-300 text-black')}>
+                    {pendingRequests.length}
+                  </span>
+                )}
+              </button>
             ))}
           </div>
-          {visibleRuns.length === 0 && (
+
+          {activeView === 'compare' ? (
+            <ArtifactCompare runs={visibleRuns} />
+          ) : (
+            <div className="grid gap-4" style={gridStyle}>
+              {(activeView === 'activity' ? activityRuns : visibleRuns).map((run) => (
+                <RunCard
+                  key={run.id}
+                  run={run}
+                  log={logs[run.id]}
+                  events={activities[run.id]}
+                  onStop={onStop}
+                  onDelete={onDelete}
+                  onFetchActivity={onFetchActivity}
+                  forceView={activeView === 'activity' ? 'activity' : 'preview'}
+                />
+              ))}
+            </div>
+          )}
+          {activeView === 'activity' && activityRuns.length === 0 && (
+            <div className="rounded-lg border border-dashed border-white/12 py-16 text-center font-mono text-xs tracking-[0.15em] text-white/30 uppercase">
+              {t('project.activityPrivate')}
+            </div>
+          )}
+          {activeView === 'results' && visibleRuns.length === 0 && (
             <div className="rounded-lg border border-dashed border-white/12 py-16 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">
               {t('project.allHidden')}
             </div>

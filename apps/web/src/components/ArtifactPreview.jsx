@@ -26,28 +26,28 @@ function MarkdownDocument({ content, compact }) {
     <article
       className={
         compact
-          ? 'mx-auto min-h-full max-w-3xl bg-[#111114] px-8 py-7 text-[17px] leading-7 text-white/75'
-          : 'mx-auto min-h-full max-w-4xl px-8 py-10 text-[15px] leading-7 text-white/75 sm:px-12'
+          ? 'artifact-markdown-document mx-auto min-h-full max-w-3xl px-8 py-7 text-[17px] leading-7'
+          : 'artifact-markdown-document mx-auto min-h-full max-w-4xl px-8 py-10 text-[15px] leading-7 sm:px-12'
       }
     >
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          a: ({ children, ...props }) => <a {...props} target="_blank" rel="noreferrer" className="text-acid underline underline-offset-2">{children}</a>,
-          h1: ({ children }) => <h1 className="mb-5 border-b border-white/10 pb-4 text-3xl font-semibold tracking-tight text-white">{children}</h1>,
-          h2: ({ children }) => <h2 className="mb-3 mt-8 text-xl font-semibold text-white">{children}</h2>,
-          h3: ({ children }) => <h3 className="mb-2 mt-6 text-base font-semibold text-white/90">{children}</h3>,
+          a: ({ children, ...props }) => <a {...props} target="_blank" rel="noreferrer" className="underline underline-offset-2">{children}</a>,
+          h1: ({ children }) => <h1 className="mb-5 border-b pb-4 text-3xl font-semibold tracking-tight">{children}</h1>,
+          h2: ({ children }) => <h2 className="mb-3 mt-8 text-xl font-semibold">{children}</h2>,
+          h3: ({ children }) => <h3 className="mb-2 mt-6 text-base font-semibold">{children}</h3>,
           p: ({ children }) => <p className="my-3">{children}</p>,
           ul: ({ children }) => <ul className="my-3 list-disc space-y-1 pl-6">{children}</ul>,
           ol: ({ children }) => <ol className="my-3 list-decimal space-y-1 pl-6">{children}</ol>,
-          blockquote: ({ children }) => <blockquote className="my-4 border-l-2 border-acid/45 pl-4 text-white/50">{children}</blockquote>,
-          pre: ({ children }) => <pre className="my-4 overflow-auto rounded-md border border-white/10 bg-black/55 p-4 font-mono text-[12px] leading-6 text-white/65">{children}</pre>,
+          blockquote: ({ children }) => <blockquote className="my-4 border-l-2 pl-4">{children}</blockquote>,
+          pre: ({ children }) => <pre className="my-4 overflow-auto rounded-md border p-4 font-mono text-[12px] leading-6">{children}</pre>,
           code: ({ className, children, ...props }) =>
-            className ? <code className={className} {...props}>{children}</code> : <code className="rounded bg-white/8 px-1.5 py-0.5 font-mono text-[0.9em] text-white/85" {...props}>{children}</code>,
+            className ? <code className={className} {...props}>{children}</code> : <code className="rounded px-1.5 py-0.5 font-mono text-[0.9em]" {...props}>{children}</code>,
           table: ({ children }) => <div className="my-4 overflow-auto"><table className="w-full border-collapse text-left text-[13px]">{children}</table></div>,
-          th: ({ children }) => <th className="border border-white/12 bg-white/5 px-3 py-2 text-white/80">{children}</th>,
-          td: ({ children }) => <td className="border border-white/10 px-3 py-2 text-white/60">{children}</td>,
-          hr: () => <hr className="my-7 border-white/10" />,
+          th: ({ children }) => <th className="border px-3 py-2">{children}</th>,
+          td: ({ children }) => <td className="border px-3 py-2">{children}</td>,
+          hr: () => <hr className="my-7" />,
         }}
       >
         {content}
@@ -81,7 +81,7 @@ function MarkdownPreview({ run, frameKey, compact }) {
     return <div className="flex h-full items-center justify-center gap-2 px-6 text-xs text-red-300"><TriangleAlert className="h-4 w-4" />{state.error}</div>
   }
   return (
-    <div className={compact ? 'absolute inset-0 overflow-hidden bg-[#111114] pointer-events-none' : 'h-full overflow-auto bg-[#111114]'}>
+    <div className={compact ? 'artifact-markdown-surface pointer-events-none absolute inset-0 overflow-hidden' : 'artifact-markdown-surface h-full overflow-auto'}>
       <MarkdownDocument content={state.content} compact={compact} />
     </div>
   )
@@ -143,4 +143,3 @@ export default function ArtifactPreview({ run, frameKey, compact = true }) {
     />
   )
 }
-
