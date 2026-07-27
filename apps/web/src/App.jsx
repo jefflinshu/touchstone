@@ -5,6 +5,7 @@ import TaskForm from './components/TaskForm.jsx'
 import ProjectPage from './components/ProjectPage.jsx'
 import ProfilePage from './components/ProfilePage.jsx'
 import Fable5Page from './components/Fable5Page.jsx'
+import Gpt56Page from './components/Gpt56Page.jsx'
 import FigmaMotionPage from './components/FigmaMotionPage.jsx'
 import IosAppsPage from './components/IosAppsPage.jsx'
 import OssRadarPage from './components/OssRadarPage.jsx'
@@ -214,6 +215,7 @@ function useRoute() {
   }, [])
   const hash = loc.hash
   if (hash === '#/fable5') return { page: 'fable5' }
+  if (hash === '#/gpt5-6') return { page: 'gpt56' }
   if (hash === '#/figma-motion') return { page: 'figmaMotion' }
   if (hash === '#/ios-apps') return { page: 'iosApps' }
   if (hash === '#/oss-radar') return { page: 'ossRadar' }
@@ -222,6 +224,7 @@ function useRoute() {
   m = hash.match(/^#\/u\/(.+)$/)
   if (m) return { page: 'user', email: decodeURIComponent(m[1]) }
   if (loc.pathname === '/fable5') return { page: 'fable5' }
+  if (loc.pathname === '/gpt5-6') return { page: 'gpt56' }
   if (loc.pathname === '/figma-motion') return { page: 'figmaMotion' }
   if (loc.pathname === '/ios-apps') return { page: 'iosApps' }
   if (loc.pathname === '/oss-radar') return { page: 'ossRadar' }
@@ -236,6 +239,7 @@ const goProject = (project) => navigate(`/p/${encodeURIComponent(project)}`)
 const goUser = (email, tab) => navigate(`/u/${encodeURIComponent(email)}${tab ? `?tab=${encodeURIComponent(tab)}` : ''}`)
 const goHome = () => navigate('/')
 const goFable5 = () => navigate('/fable5')
+const goGpt56 = () => navigate('/gpt5-6')
 const goFigmaMotion = () => navigate('/figma-motion')
 const goIosApps = () => navigate('/ios-apps')
 const goOssRadar = () => navigate('/oss-radar')
@@ -244,8 +248,9 @@ const X_PROFILE_URL = 'https://x.com/jefflinshu'
 
 function getAnalyticsPage(route) {
   if (route.page === 'fable5') return { path: '/fable5', title: 'Fable 5' }
+  if (route.page === 'gpt56') return { path: '/gpt5-6', title: 'GPT 5.6' }
   if (route.page === 'figmaMotion') return { path: '/figma-motion', title: 'Figma Motion' }
-  if (route.page === 'iosApps') return { path: '/ios-apps', title: 'iOS Apps' }
+  if (route.page === 'iosApps') return { path: '/ios-apps', title: 'Design' }
   if (route.page === 'ossRadar') return { path: '/oss-radar', title: 'OSS Radar' }
   if (route.page === 'project') return { path: '/p/:project', title: 'Project detail' }
   if (route.page === 'user') return { path: route.tab ? `/u/:user?tab=${route.tab}` : '/u/:user', title: 'User profile' }
@@ -268,10 +273,10 @@ export default function App() {
   const [showGuide, setShowGuide] = useState(() => {
     const params = new URLSearchParams(window.location.search)
     const isMobile = window.matchMedia?.('(max-width: 640px)').matches
-    return !['fable5', 'figmaMotion', 'iosApps', 'ossRadar'].includes(route.page) && !isMobile && params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
+    return !['fable5', 'gpt56', 'figmaMotion', 'iosApps', 'ossRadar'].includes(route.page) && !isMobile && params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
   })
   useEffect(() => {
-    if (route.page === 'fable5' || route.page === 'figmaMotion' || route.page === 'iosApps' || route.page === 'ossRadar') {
+    if (route.page === 'fable5' || route.page === 'gpt56' || route.page === 'figmaMotion' || route.page === 'iosApps' || route.page === 'ossRadar') {
       setShowGuide(false)
       return
     }
@@ -500,6 +505,15 @@ export default function App() {
       })
       return
     }
+    if (route.page === 'gpt56') {
+      setPageSeo({
+        title: 'GPT-5.6 Prompts & Showcases · Touchstone',
+        description: t('seo.gpt56Description'),
+        canonicalPath: '/gpt5-6',
+        type: 'website',
+      })
+      return
+    }
     if (route.page === 'figmaMotion') {
       setPageSeo({
         title: 'Figma Motion Showcases · Touchstone',
@@ -511,7 +525,7 @@ export default function App() {
     }
     if (route.page === 'iosApps') {
       setPageSeo({
-        title: 'New iOS App Launches · Touchstone',
+        title: 'Design and iOS References · Touchstone',
         description: t('seo.iosAppsDescription'),
         canonicalPath: '/ios-apps',
         type: 'website',
@@ -579,8 +593,9 @@ export default function App() {
   }, [activeSearchQuery, catFilter, groups, users])
   const navItems = [
     { key: 'fable5', label: 'FABLE', onSelect: goFable5, event: 'nav_fable5' },
+    { key: 'gpt56', label: 'GPT 5.6', onSelect: goGpt56, event: 'nav_gpt56' },
     { key: 'figmaMotion', label: 'MOTION', onSelect: goFigmaMotion, event: 'nav_figma_motion' },
-    { key: 'iosApps', label: 'iOS', onSelect: goIosApps, event: 'nav_ios_apps' },
+    { key: 'iosApps', label: 'DESIGN', onSelect: goIosApps, event: 'nav_ios_apps' },
     { key: 'ossRadar', label: 'OSS', onSelect: goOssRadar, event: 'nav_oss_radar' },
   ]
 
@@ -775,6 +790,8 @@ export default function App() {
       <div className="mx-auto max-w-[1400px] px-4 pb-28 sm:px-6">
         {route.page === 'fable5' ? (
           <Fable5Page onBack={goHome} authLoaded={auth.loaded} authEmail={auth.email} onLogin={login} loggingIn={loggingIn} visualMode />
+        ) : route.page === 'gpt56' ? (
+          <Gpt56Page onBack={goHome} />
         ) : route.page === 'figmaMotion' ? (
           <FigmaMotionPage onBack={goHome} />
         ) : route.page === 'iosApps' ? (
@@ -902,7 +919,7 @@ export default function App() {
         )}
       </div>
 
-      {!['fable5', 'figmaMotion', 'iosApps', 'ossRadar'].includes(route.page) && (
+      {!['fable5', 'gpt56', 'figmaMotion', 'iosApps', 'ossRadar'].includes(route.page) && (
         <GuideCard
           agents={agents}
           open={showGuide}

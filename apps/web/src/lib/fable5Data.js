@@ -55,19 +55,21 @@ export function readCachedShowcases({ dataBase = DEFAULT_DATA_BASE, start = 0, c
 }
 
 export function loadShowcaseIndex({ dataBase = DEFAULT_DATA_BASE, label = 'showcase' } = {}) {
-  const cached = readSessionJson(cacheKey(dataBase, 'index'))
-  if (cached) return Promise.resolve(cached)
   if (!indexPendingByBase.has(dataBase)) {
     indexPendingByBase.set(
       dataBase,
       (async () => {
-        const res = await fetch(cacheBustedUrl(dataBase, 'index.json'), { cache: 'force-cache' })
+        const sessionKey = cacheKey(dataBase, 'index')
+        const res = await fetch(cacheBustedUrl(dataBase, 'index.json', Date.now()), { cache: 'no-cache' })
         if (!res.ok) throw new Error(`${label} index: HTTP ${res.status}`)
         const index = await res.json()
-        writeSessionJson(cacheKey(dataBase, 'index'), index)
+        writeSessionJson(sessionKey, index)
+        indexPendingByBase.delete(dataBase)
         return index
       })().catch((err) => {
+        const cached = readSessionJson(cacheKey(dataBase, 'index'))
         indexPendingByBase.delete(dataBase)
+        if (cached) return cached
         throw err
       })
     )

@@ -288,8 +288,18 @@ function MediaBlock({ item, priority = false }) {
             onError={() => setImageFailed(true)}
           />
         </>
+      ) : videoUrl ? (
+        <video
+          src={videoUrl}
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload={priority ? 'auto' : 'metadata'}
+          className="h-full w-full object-cover"
+        />
       ) : (
-        <MediaPlaceholder label={videoUrl ? t('fable.videoPreviewUnavailable') : t('fable.noPreview')} />
+        <MediaPlaceholder label={t('fable.noPreview')} />
       )}
       <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={t('common.sourcePost')} />
     </div>
@@ -300,9 +310,26 @@ function MasonryImage({ item, priority = false }) {
   const { t } = useI18n()
   const [imageFailed, setImageFailed] = useState(false)
   const imageUrl = firstPreviewUrl(item)
+  const videoUrl = item.media === 'video' ? item.mediaUrls?.find((url) => /\.mp4(\?|$)/i.test(url)) : ''
   const [imageLoaded, setImageLoaded] = useState(false)
 
   if (!imageUrl || imageFailed) {
+    if (videoUrl) {
+      return (
+        <div className="relative overflow-hidden bg-black" style={{ aspectRatio: stableMasonryAspectRatio(item) }}>
+          <video
+            src={videoUrl}
+            muted
+            loop
+            playsInline
+            autoPlay
+            preload={priority ? 'auto' : 'metadata'}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02),rgba(0,0,0,0.22))]" />
+        </div>
+      )
+    }
     return (
       <div className="aspect-[4/5]">
         <MediaPlaceholder label={item.media === 'text' ? t('fable.textOnly') : t('fable.noPreview')} />
@@ -327,7 +354,7 @@ function MasonryImage({ item, priority = false }) {
         alt={`${item.title} by ${item.author}`}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        fetchPriority={priority ? 'high' : 'auto'}
+        fetchpriority={priority ? 'high' : 'auto'}
         className={cn(
           'absolute inset-0 z-10 h-full w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.38)] transition-opacity duration-300',
           imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -723,9 +750,11 @@ export default function Fable5Page({
   iconSrc = claudeIcon,
   favoritesKey = FABLE5_FAVORITES_KEY,
   favoritesApiBase = '/api/fable5',
+  translationApiBase = '/api/fable5/translations',
   analyticsPrefix = 'fable5',
   enableFavorites = true,
   visualMode = false,
+  accentColor = '',
 }) {
   const { t, language } = useI18n()
   const [cachedInitial] = useState(() => readCachedShowcases({ dataBase, start: 0, count: SHARD_LOAD_STEP }))
@@ -931,7 +960,7 @@ export default function Fable5Page({
         const controller = new AbortController()
         controllers.push(controller)
         try {
-          const res = await fetch('/api/fable5/translations', {
+          const res = await fetch(translationApiBase, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             signal: controller.signal,
@@ -960,7 +989,7 @@ export default function Fable5Page({
       cancelled = true
       controllers.forEach((controller) => controller.abort())
     }
-  }, [items, language])
+  }, [items, language, translationApiBase])
 
   const filtered = useMemo(() => {
     const languageTranslations = translationsByLanguage[language] || {}
@@ -1027,10 +1056,18 @@ export default function Fable5Page({
           <h1 className="shrink-0">
             <button type="button" onClick={onBack} className="cursor-pointer text-left">
               <span className="flex items-center gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14"
+                  style={accentColor ? { boxShadow: `0 0 34px color-mix(in srgb, ${accentColor} 28%, transparent)` } : undefined}
+                >
                   <img src={iconSrc} alt="" className="h-6 w-6 sm:h-8 sm:w-8" />
                 </span>
-                <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">{title}</span>
+                <span
+                  className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]"
+                  style={accentColor ? { color: accentColor } : undefined}
+                >
+                  {title}
+                </span>
               </span>
             </button>
           </h1>
