@@ -1,15 +1,15 @@
 import { cn } from '@/lib/utils'
 import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg'
-import openaiIcon from '@lobehub/icons-static-svg/icons/openai.svg'
+import codexIcon from '@lobehub/icons-static-svg/icons/codex-color.svg'
 import geminiIcon from '@lobehub/icons-static-svg/icons/gemini-color.svg'
 import opencodeIcon from '@lobehub/icons-static-svg/icons/opencode.svg'
 
 // CLI → 品牌图标（lobe-icons）。未知 agent 回退为配置色圆点
 const ICONS = {
   claude: { src: claudeIcon },
-  codex: { src: openaiIcon, invert: true }, // openai.svg 是单色黑，深色底上反转为白
+  codex: { src: codexIcon },
   gemini: { src: geminiIcon },
-  opencode: { src: opencodeIcon, invert: true },
+  opencode: { src: opencodeIcon, monochrome: true },
 }
 
 export default function AgentIcon({ agentId, color, className = 'h-3.5 w-3.5' }) {
@@ -17,5 +17,17 @@ export default function AgentIcon({ agentId, color, className = 'h-3.5 w-3.5' })
   if (!icon) {
     return <span className={cn('inline-block shrink-0 rounded-full', className)} style={{ background: color }} />
   }
-  return <img src={icon.src} alt="" className={cn('shrink-0', icon.invert && 'invert', className)} />
+  if (icon.monochrome) {
+    return (
+      <span
+        aria-hidden="true"
+        className={cn('inline-block shrink-0 bg-current text-foreground', className)}
+        style={{
+          WebkitMask: `url(${icon.src}) center / contain no-repeat`,
+          mask: `url(${icon.src}) center / contain no-repeat`,
+        }}
+      />
+    )
+  }
+  return <img src={icon.src} alt="" className={cn('shrink-0', className)} />
 }
