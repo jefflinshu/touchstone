@@ -16,7 +16,7 @@ const todoItems = (items = []) =>
   items
     .map((item, index) => ({
       id: String(item.id || index),
-      content: String(item.content || item.text || item.title || item.description || '').trim(),
+      content: String(item.content || item.text || item.title || item.description || item.step || '').trim(),
       status: statusOf(item.status),
     }))
     .filter((item) => item.content)
@@ -32,18 +32,27 @@ const toolTitle = (name, input = {}) => {
 function mapCodexItem(item = {}, phase) {
   const id = String(item.id || `codex-${item.type || 'item'}`)
   const status = phase === 'completed' ? statusOf(item.status === 'failed' ? 'failed' : 'completed') : statusOf(item.status)
+  const itemType = String(item.type || '')
 
-  if (item.type === 'agent_message') {
+  if (itemType === 'agent_message' || itemType === 'agentMessage') {
     return { id, kind: 'assistant', status, content: clip(item.text || item.content) }
   }
-  if (item.type === 'reasoning') {
+  if (itemType === 'reasoning') {
     return { id, kind: 'status', status, title: 'Thinking', content: clip(item.text || item.summary || item.content) }
   }
-  if (item.type === 'todo_list') {
+  if (itemType === 'todo_list') {
     return { id, kind: 'progress', status, title: 'Task progress', items: todoItems(item.items || item.todos) }
   }
+  if (itemType === 'plan') {
+    return { id, kind: 'status', status, title: 'Proposed plan', content: clip(item.text || item.content) }
+  }
 
-  const name = item.type === 'command_execution' ? 'Shell' : item.tool || item.name || item.type || 'Tool'
+  const name =
+    itemType === 'command_execution' || itemType === 'commandExecution'
+      ? 'Shell'
+      : itemType === 'fileChange'
+        ? 'File changes'
+        : item.tool || item.name || itemType || 'Tool'
   const input =
     item.input ||
     (item.command ? { command: item.command } : null) ||
@@ -202,23 +211,45 @@ export function createAgentEventParser({ agentId, emit, onResult }) {
   }
 
   const parseCodex = (event) => {
-    if (/^item\.(started|updated|completed)$/.test(event.type)) {
-      send(mapCodexItem(event.item, event.type.split('.')[1]))
+    const type = event.type || event.method || ''
+    const params = event.params || event
+    if (/^item[./](started|updated|completed)$/.test(type)) {
+      send(mapCodexItem(event.item || params.item, type.split(/[./]/)[1]))
       return true
     }
-    if (event.type === 'turn.started') {
+    if (type === 'turn/plan/updated') {
+      send({
+        id: params.turnId ? `plan-${params.turnId}` : 'turn-plan',
+        kind: 'progress',
+        status: 'running',
+        title: params.explanation || 'Task progress',
+        items: todoItems(params.plan),
+      })
+      return true
+    }
+    if (type === 'item/tool/requestUserInput') {
+      send({
+        id: String(event.id || params.itemId || 'request-user-input'),
+        kind: 'question',
+        status: 'pending',
+        title: params.title || 'Agent needs input',
+        questions: params.questions || [],
+      })
+      return true
+    }
+    if (type === 'turn.started' || type === 'turn/started') {
       send({ id: 'turn-status', kind: 'status', status: 'running', title: 'Working' })
       return true
     }
-    if (event.type === 'turn.completed') {
+    if (type === 'turn.completed' || type === 'turn/completed') {
       send({ id: 'turn-status', kind: 'status', status: 'completed', title: 'Completed', metrics: event.usage })
       return true
     }
-    if (event.type === 'turn.failed' || event.type === 'error') {
+    if (type === 'turn.failed' || type === 'turn/failed' || type === 'error') {
       send({ id: 'turn-status', kind: 'status', status: 'failed', title: 'Run failed', content: clip(event.error || event.message) })
       return true
     }
-    return event.type === 'thread.started'
+    return type === 'thread.started' || type === 'thread/started'
   }
 
   const parseGemini = (event) => {

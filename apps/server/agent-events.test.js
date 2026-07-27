@@ -26,6 +26,36 @@ test('normalizes Codex JSONL tool updates and assistant markdown', () => {
   assert.match(events[3].content, /## Done/)
 })
 
+test('normalizes Codex app-server plan and input request messages', () => {
+  const events = parse('codex', [
+    {
+      method: 'turn/plan/updated',
+      params: {
+        turnId: 'turn-1',
+        explanation: 'Implementation plan',
+        plan: [
+          { step: 'Inspect', status: 'completed' },
+          { step: 'Build', status: 'inProgress' },
+        ],
+      },
+    },
+    {
+      id: 42,
+      method: 'item/tool/requestUserInput',
+      params: {
+        itemId: 'question-1',
+        questions: [{ question: 'Choose a format', options: [{ label: 'SVG' }] }],
+      },
+    },
+  ])
+
+  assert.equal(events[0].kind, 'progress')
+  assert.equal(events[0].items[0].status, 'completed')
+  assert.equal(events[0].items[1].status, 'running')
+  assert.equal(events[1].kind, 'question')
+  assert.equal(events[1].questions[0].options[0].label, 'SVG')
+})
+
 test('normalizes Claude questions and task progress', () => {
   const events = parse('claude', [
     {

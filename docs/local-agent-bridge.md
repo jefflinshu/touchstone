@@ -113,11 +113,38 @@ companion 配对流程：
 - [anomalyco/opencode](https://github.com/anomalyco/opencode)：原生 ACP、headless server、REST/SSE。
 - [coder/agentapi](https://github.com/coder/agentapi)：多 CLI HTTP/SSE fallback，覆盖 Codex、Claude、Gemini、OpenCode 等。
 - [tiann/hapi](https://github.com/tiann/hapi)：最接近 Touchstone 的多 Agent 远程 gateway 参考。
-- [summon-app/happy](https://github.com/summon-app/happy)：远程启动、查看和管理本机 coding session 的产品参考。
+- [slopus/happy](https://github.com/slopus/happy) / [happier-dev/happier](https://github.com/happier-dev/happier)：远程启动、查看、接管和管理本机 coding session 的产品参考。
 - [aaif-goose/goose](https://github.com/aaif-goose/goose)：多 provider、API、ACP 和 MCP 的组合参考。
 - [coder/coder](https://github.com/coder/coder)：设备/工作区控制面、网络与审计参考。
 - [MDN native-messaging example](https://github.com/mdn/webextensions-examples/tree/master/native-messaging)：只有需要浏览器 Cookie/标签页能力时才采用的扩展桥。
 - [tauri-apps/plugins-workspace](https://github.com/tauri-apps/plugins-workspace)：companion 的深链、shell、WebSocket 与更新能力参考。
+
+## 采用结论
+
+Touchstone 不直接复刻某一个仓库，而是按能力层借鉴：
+
+| 层 | 首选实现 | Touchstone 采用什么 | 不采用什么 |
+| --- | --- | --- | --- |
+| Codex | 官方 `codex app-server` | initialize 能力协商、thread/turn/item、`turn/plan/updated`、用户输入、approval、interrupt | 长期依赖 `codex exec --json` 伪装成交互会话 |
+| OpenCode | `opencode acp`；也可用 `opencode serve` | ACP 统一会话接口，或 OpenAPI session/message/event/permission API | 只解析 `opencode run` 的终端文本 |
+| Claude | stream-json；后续 Claude Agent SDK / `claude-agent-acp` | 现阶段保留结构化 stdin/stdout，逐步收敛到 ACP adapter | 为了统一而退回 PTY 文本解析 |
+| Gemini 与其他 CLI | 原生结构化协议优先 | 如果没有稳定双向协议，再使用 PTY fallback | 把 PTY fallback 宣称为完整协议支持 |
+| 远程链路 | HAPI / Happy | 本地 runner 主动连接 hub、会话接管、E2E/设备授权、权限请求回传 | 让公网网页扫描或直接访问用户 localhost |
+| 通用兜底 | `coder/agentapi` | HTTP/SSE 与 PTY adapter 的边界设计 | 把易随 TUI 变化的文本切分作为主链路 |
+
+所有 adapter 对上层暴露同一组能力，而不是只暴露一个布尔值：
+
+```text
+inspect() -> version, auth, models, protocol, capabilities
+start() -> sessionId, runId
+events(cursor) -> assistant, tool, plan, question, approval, status
+sendInput(requestId, value)
+respondApproval(requestId, decision)
+interrupt()
+collectArtifacts() -> html | svg | markdown
+```
+
+Web 组件只根据协商后的 capabilities 开启交互。一次性 CLI 可以展示已有事件，但不能显示一个实际上无法提交的反问或审批控件。
 
 ## 分阶段落地
 

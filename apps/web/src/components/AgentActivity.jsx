@@ -108,12 +108,13 @@ function ProgressBlock({ event }) {
   )
 }
 
-function QuestionBlock({ event, runId }) {
+function QuestionBlock({ event, run }) {
   const { language } = useI18n()
   const [answer, setAnswer] = useState(event.answer || '')
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const answered = event.status === 'answered'
+  const supportsInput = run.interaction?.input === true
   const question = event.questions?.[0] || {}
   const options = question.options || []
 
@@ -123,7 +124,7 @@ function QuestionBlock({ event, runId }) {
     setSending(true)
     setError('')
     try {
-      const response = await fetch(`/api/runs/${runId}/input`, {
+      const response = await fetch(`/api/runs/${run.id}/input`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ questionId: event.id, answer: text }),
@@ -146,7 +147,7 @@ function QuestionBlock({ event, runId }) {
         {answered && <span className="ml-auto font-mono text-[9px] text-emerald-400 uppercase">answered</span>}
       </div>
       <p className="text-[12px] leading-5 text-white/80">{question.question || question.header}</p>
-      {!answered && (
+      {!answered && supportsInput && (
         <>
           {options.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-1.5">
@@ -165,12 +166,19 @@ function QuestionBlock({ event, runId }) {
           {error && <p className="mt-1.5 text-[10px] text-red-400">{error}</p>}
         </>
       )}
+      {!answered && !supportsInput && (
+        <p className="mt-2 rounded border border-white/8 bg-black/25 px-2.5 py-2 text-[10px] leading-4 text-white/45">
+          {language === 'zh'
+            ? `当前 ${run.agentName || 'Agent'} 使用一次性 CLI 模式，只能展示这个问题，暂时不能在网页中续答。切换到 ${run.interaction?.upgrade || '原生会话协议'} 后可用。`
+            : `${run.agentName || 'This agent'} is running in one-shot CLI mode. Touchstone can show this question but cannot answer it until the ${run.interaction?.upgrade || 'native session'} adapter is enabled.`}
+        </p>
+      )}
       {answered && <p className="mt-2 border-l border-emerald-400/35 pl-2 text-[11px] text-white/55">{event.answer}</p>}
     </section>
   )
 }
 
-function EventBlock({ event, runId }) {
+function EventBlock({ event, run }) {
   if (event.kind === 'assistant') {
     return (
       <div className="flex items-start gap-2.5">
@@ -186,7 +194,7 @@ function EventBlock({ event, runId }) {
   }
   if (event.kind === 'tool') return <ToolBlock event={event} />
   if (event.kind === 'progress') return <ProgressBlock event={event} />
-  if (event.kind === 'question') return <QuestionBlock event={event} runId={runId} />
+  if (event.kind === 'question') return <QuestionBlock event={event} run={run} />
   if (event.kind === 'raw') {
     return <pre className="max-h-48 overflow-auto rounded-md border border-white/8 bg-black/45 p-3 whitespace-pre-wrap font-mono text-[10px] leading-5 text-white/45">{event.content}</pre>
   }
@@ -217,7 +225,16 @@ export default function AgentActivity({ run, events = [], rawLog = '' }) {
       <header className="flex h-9 shrink-0 items-center gap-2 border-b border-white/8 px-3">
         <span className={cn('h-1.5 w-1.5 rounded-full', run.status === 'running' || run.status === 'pending' ? 'bg-acid shadow-[0_0_7px_rgba(212,255,79,.7)]' : run.status === 'done' ? 'bg-emerald-400' : 'bg-red-400')} />
         <span className="font-mono text-[9px] tracking-[0.16em] text-white/45 uppercase">{run.status === 'running' ? 'live activity' : 'agent activity'}</span>
-        {toolCount > 0 && <span className="ml-auto flex items-center gap-1 font-mono text-[9px] text-white/25"><Terminal className="h-3 w-3" />{toolCount}</span>}
+        <span
+          title={run.interaction?.input ? 'This adapter accepts follow-up input' : `One-shot CLI${run.interaction?.upgrade ? ` · upgrade: ${run.interaction.upgrade}` : ''}`}
+          className={cn(
+            'ml-auto rounded border px-1.5 py-0.5 font-mono text-[8px] tracking-[0.12em] uppercase',
+            run.interaction?.input ? 'border-emerald-300/20 text-emerald-300/65' : 'border-white/10 text-white/25'
+          )}
+        >
+          {run.interaction?.input ? 'interactive' : 'one-shot'}
+        </span>
+        {toolCount > 0 && <span className="flex items-center gap-1 font-mono text-[9px] text-white/25"><Terminal className="h-3 w-3" />{toolCount}</span>}
       </header>
       <div
         ref={scrollRef}
@@ -228,7 +245,7 @@ export default function AgentActivity({ run, events = [], rawLog = '' }) {
         className="min-h-0 flex-1 space-y-2.5 overflow-y-auto px-3 py-3 [scrollbar-color:rgba(255,255,255,.16)_transparent]"
       >
         {visibleEvents.length ? (
-          visibleEvents.map((event) => <EventBlock key={event.id} event={event} runId={run.id} />)
+          visibleEvents.map((event) => <EventBlock key={event.id} event={event} run={run} />)
         ) : (
           <div className="flex h-full items-center justify-center gap-2 font-mono text-[10px] tracking-wider text-white/25 uppercase">
             {run.status === 'running' && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
