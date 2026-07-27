@@ -3,7 +3,14 @@ import { join, resolve } from 'node:path'
 
 const ROOT = resolve(import.meta.dirname, '..')
 const WEB_DIR = join(ROOT, 'apps', 'web')
-const DATA_DIR = join(WEB_DIR, 'public', 'fable5-data')
+const args = Object.fromEntries(
+  process.argv
+    .slice(2)
+    .map((token, index, list) => (token.startsWith('--') ? [token.slice(2), list[index + 1]] : null))
+    .filter(Boolean)
+)
+const LABEL = args.label || 'fable5'
+const DATA_DIR = resolve(ROOT, args['data-dir'] || join(WEB_DIR, 'public', 'fable5-data'))
 const PUBLIC_DIR = join(WEB_DIR, 'public')
 
 function readJson(filePath) {
@@ -11,7 +18,7 @@ function readJson(filePath) {
 }
 
 function fail(message) {
-  console.error(`[fable5:validate] ${message}`)
+  console.error(`[${LABEL}:validate] ${message}`)
   process.exitCode = 1
 }
 
@@ -97,6 +104,6 @@ for (const shard of index.shards || []) {
 
 if (!process.exitCode) {
   console.log(
-    `[fable5:validate] ok: ${index.total} items, ${pages.length} pages, ${index.shards?.length || 0} date shards`
+    `[${LABEL}:validate] ok: ${index.total} items, ${pages.length} pages, ${index.shards?.length || 0} date shards`
   )
 }
