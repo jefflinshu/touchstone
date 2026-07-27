@@ -30,7 +30,7 @@ let CACHE_ASSETS = true
 
 function usage() {
   console.error(
-    'Usage: node scripts/update-figma-motion-showcases.mjs [--input data-archive/figma-motion/<run-id>/window-posts.json | --archive-root data-archive/figma-motion] [--limit N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
+    'Usage: node scripts/update-figma-motion-showcases.mjs [--input data-archive/figma-motion/<run-id>/window-posts.json | --archive-root data-archive/figma-motion] [--limit N] [--min-bookmarks N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
   )
   process.exit(1)
 }
@@ -50,6 +50,11 @@ function parseArgs(argv) {
 function flag(value, fallback = false) {
   if (value == null) return fallback
   return ['1', 'true', 'yes', 'y'].includes(String(value).trim().toLowerCase())
+}
+
+function nonNegativeNumber(value, fallback = 0) {
+  const numeric = Number(value ?? fallback)
+  return Number.isFinite(numeric) ? Math.max(0, numeric) : fallback
 }
 
 function slugify(input) {
@@ -112,6 +117,10 @@ function scoreMetrics(metrics = {}) {
     Number(metrics.bookmarks || 0) * 3 +
     Number(metrics.views || 0) / 1000
   )
+}
+
+function bookmarkCount(metrics = {}) {
+  return Number(metrics.bookmarks || 0)
 }
 
 function tierFor(score) {
@@ -213,6 +222,18 @@ function promptStatus(text) {
   return extractPrompt(text) ? 'prompted' : 'commentary'
 }
 
+function isManualSeedRun(value) {
+  return /\bmanual[-_]/i.test(String(value || ''))
+}
+
+function isManualSeedPost(post) {
+  return isManualSeedRun(post?.sourceRun) || isManualSeedRun(post?.sourceSeed)
+}
+
+function isManualSeedItem(item) {
+  return (item?.fetchRuns || []).some(isManualSeedRun)
+}
+
 function hasFigmaMotionMention(text) {
   return /\bfigma\s*motion\b|\bfigmamotion\b|@figma\b.{0,100}\bmotion\b|\bmotion\b.{0,100}@figma\b/i.test(text)
 }
@@ -270,9 +291,11 @@ function isLowSignalPost(post) {
 }
 
 function curationDecision(post) {
+  const manualSeed = isManualSeedPost(post)
+  if (!manualSeed && bookmarkCount(post?.metrics) < minBookmarks) return { keep: false, reason: 'below-min-bookmarks' }
   if (!post?.url || !post?.author || !post?.text) return { keep: false, reason: 'missing-url-author-or-text' }
-  if (isLowSignalPost(post)) return { keep: false, reason: 'low-signal-or-not-figma-motion' }
-  return { keep: true, reason: 'figma-motion-evidence' }
+  if (!manualSeed && isLowSignalPost(post)) return { keep: false, reason: 'low-signal-or-not-figma-motion' }
+  return { keep: true, reason: manualSeed ? 'manual-seed-curated' : 'figma-motion-evidence' }
 }
 
 function actionSummaryFromText(text, media = 'text') {
@@ -582,6 +605,7 @@ const args = parseArgs(process.argv.slice(2))
 if (args.help || args.h) usage()
 const explicitLimit = args.limit != null
 const limit = explicitLimit ? Math.max(1, Math.min(Number(args.limit), 5000)) : Number.POSITIVE_INFINITY
+const minBookmarks = nonNegativeNumber(args['min-bookmarks'], 20)
 const cacheMedia = flag(args['cache-media'], true)
 const cacheFrom = String(args['cache-from'] || '')
 const reviewLimit = Math.max(1, Math.min(Number(args['review-drops'] || 40), 200))
@@ -589,19 +613,20 @@ CACHE_ASSETS = args['cache-assets'] !== '0'
 
 const generatedAt = new Date().toISOString()
 const batches = loadInputBatches(args)
-const allPosts = batches.flatMap((batch) => batch.posts)
+const allPosts = batches.flatMap((batch) => batch.posts.map((post) => ({ ...post, sourceRun: batch.sourceRun })))
 const curationByUrl = new Map()
 const candidateByUrl = new Map()
 
 for (const batch of batches) {
   for (const post of batch.posts) {
-    const decision = curationDecision(post)
-    if (post?.url && !curationByUrl.has(post.url)) curationByUrl.set(post.url, { post: { ...post, sourceRun: batch.sourceRun }, decision })
-    if (!decision.keep || !post?.url) continue
-    const prev = candidateByUrl.get(post.url)
+    const sourcedPost = { ...post, sourceRun: batch.sourceRun }
+    const decision = curationDecision(sourcedPost)
+    if (sourcedPost?.url && !curationByUrl.has(sourcedPost.url)) curationByUrl.set(sourcedPost.url, { post: sourcedPost, decision })
+    if (!decision.keep || !sourcedPost?.url) continue
+    const prev = candidateByUrl.get(sourcedPost.url)
     const fetchRuns = [...new Set([...(prev?.fetchRuns || []), batch.sourceRun])]
-    if (!prev || scoreMetrics(post.metrics || {}) > scoreMetrics(prev.metrics || {})) {
-      candidateByUrl.set(post.url, { ...post, fetchRuns, sourceRun: batch.sourceRun })
+    if (!prev || scoreMetrics(sourcedPost.metrics || {}) > scoreMetrics(prev.metrics || {})) {
+      candidateByUrl.set(sourcedPost.url, { ...sourcedPost, fetchRuns })
     } else {
       prev.fetchRuns = fetchRuns
     }
@@ -644,9 +669,10 @@ for (const item of selected) {
 
 const collection = [...byUrl.values()]
   .filter((item) => /^https:\/\/x\.com\//i.test(item.sourceUrl || ''))
-  .filter((item) => hasFigmaMotionMention(item.originalText || item.title || ''))
+  .filter((item) => isManualSeedItem(item) || bookmarkCount(item.metrics) >= minBookmarks)
+  .filter((item) => isManualSeedItem(item) || hasFigmaMotionMention(item.originalText || item.title || ''))
   .filter((item) => item.media !== 'text')
-  .filter((item) => !isLowSignalPost(itemAsPost(item)))
+  .filter((item) => isManualSeedItem(item) || !isLowSignalPost(itemAsPost(item)))
   .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')) || scoreMetrics(b.metrics || {}) - scoreMetrics(a.metrics || {}))
   .slice(0, limit)
 
@@ -761,6 +787,11 @@ const shardList = [...shardMap.keys()]
   })
   .map((day) => ({ date: day, file: `${day}.json`, count: shardMap.get(day).length }))
 for (const shard of shardList) writeJsonIfChanged(join(OUT_DIR, shard.file), shardMap.get(shard.date))
+const activeShardFiles = new Set(shardList.map((shard) => shard.file))
+for (const entry of readdirSync(OUT_DIR, { withFileTypes: true })) {
+  if (!entry.isFile() || !/^\d{4}-\d{2}-\d{2}\.json$/.test(entry.name)) continue
+  if (!activeShardFiles.has(entry.name)) rmSync(join(OUT_DIR, entry.name), { force: true })
+}
 
 const categoryCounts = new Map()
 for (const item of collection) {
@@ -779,6 +810,10 @@ writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   cliStatus: `Loaded ${allPosts.length} locally archived X posts from ${batches.length} fetch runs; collection now has ${collection.length} source-linked cards and ${creatorPool.length} creator profiles.`,
   sourceRun: 'local-archive',
   fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
+  filters: {
+    minBookmarks,
+    manualSeedOverride: true,
+  },
   total: collection.length,
   categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
   pageSize: CHUNK_SIZE,
@@ -815,3 +850,4 @@ writeJsonIfChanged(join(ARCHIVE_ROOT, 'curation-review-latest.json'), {
 
 console.log(`Loaded ${allPosts.length} archived Figma Motion posts from ${batches.length} runs`)
 console.log(`Merged ${selected.length} local candidates into ${collection.length} total cards and ${creatorPool.length} creators at ${OUT_DIR}`)
+console.log(`Applied filters: min-bookmarks=${minBookmarks}`)

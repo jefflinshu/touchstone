@@ -1,42 +1,46 @@
 {
-  "updatedAt": "2026-07-06",
-  "lastFetchedAt": "2026-07-06T04:29:29.701Z",
-  "cliStatus": "Loaded 376 locally archived X posts from 5 fetch runs; collection now has 92 source-linked cards and 129 creator profiles.",
+  "updatedAt": "2026-07-27",
+  "lastFetchedAt": "2026-07-27T07:54:14.074Z",
+  "cliStatus": "Loaded 390 locally archived X posts from 7 fetch runs; collection now has 33 source-linked cards and 32 creator profiles.",
   "sourceRun": "local-archive",
   "fetchRuns": [
-    "daily-asia-2026-07-01-latest",
+    "manual-figma-motion-seeds-2026-07-06",
     "broad-2026-06-24-to-2026-06-30-latest-target500",
     "seed-figma-motion-latest"
   ],
-  "total": 92,
+  "filters": {
+    "minBookmarks": 20,
+    "manualSeedOverride": true
+  },
+  "total": 33,
   "categoryCounts": [
     {
       "key": "videos",
-      "count": 90
+      "count": 31
     },
     {
       "key": "design",
-      "count": 91
+      "count": 32
     },
     {
       "key": "apps",
-      "count": 12
+      "count": 1
     },
     {
       "key": "agents",
-      "count": 21
+      "count": 8
     },
     {
       "key": "prompts",
-      "count": 19
+      "count": 6
     },
     {
       "key": "news",
-      "count": 17
+      "count": 4
     },
     {
       "key": "research",
-      "count": 4
+      "count": 3
     },
     {
       "key": "experiments",
@@ -48,89 +52,80 @@
     {
       "file": "pages/000.json",
       "count": 24,
-      "fromDate": "2026-07-01",
-      "toDate": "2026-06-30"
+      "fromDate": "2026-07-06",
+      "toDate": "2026-06-26"
     },
     {
       "file": "pages/001.json",
-      "count": 24,
-      "fromDate": "2026-06-30",
-      "toDate": "2026-06-29"
-    },
-    {
-      "file": "pages/002.json",
-      "count": 24,
-      "fromDate": "2026-06-29",
-      "toDate": "2026-06-28"
-    },
-    {
-      "file": "pages/003.json",
-      "count": 20,
-      "fromDate": "2026-06-28",
-      "toDate": "2026-06-25"
+      "count": 9,
+      "fromDate": "2026-06-26",
+      "toDate": "2026-02-12"
     }
   ],
   "chunks": [
     {
       "file": "chunks/000.json",
       "count": 24,
-      "fromDate": "2026-07-01",
-      "toDate": "2026-06-30"
+      "fromDate": "2026-07-06",
+      "toDate": "2026-06-26"
     },
     {
       "file": "chunks/001.json",
-      "count": 24,
-      "fromDate": "2026-06-30",
-      "toDate": "2026-06-29"
-    },
-    {
-      "file": "chunks/002.json",
-      "count": 24,
-      "fromDate": "2026-06-29",
-      "toDate": "2026-06-28"
-    },
-    {
-      "file": "chunks/003.json",
-      "count": 20,
-      "fromDate": "2026-06-28",
-      "toDate": "2026-06-25"
+      "count": 9,
+      "fromDate": "2026-06-26",
+      "toDate": "2026-02-12"
     }
   ],
   "shards": [
     {
-      "date": "2026-07-01",
-      "file": "2026-07-01.json",
-      "count": 8
+      "date": "2026-07-06",
+      "file": "2026-07-06.json",
+      "count": 2
+    },
+    {
+      "date": "2026-07-05",
+      "file": "2026-07-05.json",
+      "count": 1
+    },
+    {
+      "date": "2026-07-04",
+      "file": "2026-07-04.json",
+      "count": 1
     },
     {
       "date": "2026-06-30",
       "file": "2026-06-30.json",
-      "count": 26
+      "count": 3
     },
     {
       "date": "2026-06-29",
       "file": "2026-06-29.json",
-      "count": 28
+      "count": 11
     },
     {
       "date": "2026-06-28",
       "file": "2026-06-28.json",
-      "count": 12
+      "count": 3
     },
     {
       "date": "2026-06-27",
       "file": "2026-06-27.json",
-      "count": 8
+      "count": 2
     },
     {
       "date": "2026-06-26",
       "file": "2026-06-26.json",
-      "count": 7
+      "count": 2
     },
     {
       "date": "2026-06-25",
       "file": "2026-06-25.json",
-      "count": 3
+      "count": 7
+    },
+    {
+      "date": "2026-02-12",
+      "file": "2026-02-12.json",
+      "count": 1
     }
   ]
 }

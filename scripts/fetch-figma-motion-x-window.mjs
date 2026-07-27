@@ -24,6 +24,6 @@ const args = [
 execFileSync(process.execPath, args, {
   cwd: ROOT,
   stdio: 'inherit',
-  timeout: 10 * 60_000,
+  timeout: Number(process.env.X_FETCH_TIMEOUT_MS || 60 * 60_000),
   maxBuffer: 32 * 1024 * 1024,
 })
