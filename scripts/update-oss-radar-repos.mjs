@@ -86,15 +86,20 @@ for (const seed of seeds) {
 
 const updatedAt = todayShanghai()
 const snapshotAt = new Date().toISOString()
+const previousSource = current.OSS_RADAR_SOURCE || {}
 const source = {
+  ...previousSource,
   initializedCount: refreshed.length,
   githubSnapshotAt: snapshotAt,
   xWindow: {
+    ...(previousSource.xWindow || {}),
     from: xFrom,
     to: xTo,
     status: xFrom ? 'query-window-defined' : 'not-fetched',
   },
-  note: 'GitHub metadata is refreshed from the GitHub API. X-side collection stores monitoring keywords and query URLs; wire twitter-cli fetches before treating X counts as measured.',
+  note:
+    previousSource.note ||
+    'GitHub metadata is refreshed from the GitHub API. X-side collection stores monitoring keywords and query URLs; wire twitter-cli fetches before treating X counts as measured.',
 }
 
 const body = `export const OSS_RADAR_UPDATED_AT = ${JSON.stringify(updatedAt)}
