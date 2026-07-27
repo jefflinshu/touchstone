@@ -1,0 +1,56 @@
+topic: "Web control plane invoking local coding agents"
+as_of: "2026-07-27"
+time_range: "unlimited, with current protocol and browser behavior verified as of 2026-07-27"
+items:
+  - id: codex-app-server
+    name: "OpenAI Codex app-server"
+    role: "Native structured Codex adapter"
+  - id: claude-code-stream-json
+    name: "Claude Code stream-json and Agent SDK"
+    role: "Native structured Claude adapter"
+  - id: gemini-cli-headless
+    name: "Gemini CLI headless stream-json"
+    role: "Native structured Gemini adapter"
+  - id: opencode-acp
+    name: "OpenCode ACP and headless server"
+    role: "Native structured OpenCode adapter"
+  - id: acp
+    name: "Agent Client Protocol"
+    role: "Cross-agent capability and session protocol"
+  - id: coder-agentapi
+    name: "coder/agentapi"
+    role: "HTTP/SSE fallback for CLI and TUI agents"
+  - id: hapi
+    name: "tiann/hapi"
+    role: "Closest multi-agent remote coding gateway reference"
+  - id: happy
+    name: "summon-app/happy"
+    role: "Product reference for remote session control"
+  - id: goose
+    name: "Block/AAIF Goose"
+    role: "Multi-provider agent with API, ACP, and MCP"
+  - id: coder-control-plane
+    name: "Coder"
+    role: "Mature workspace, agent, networking, and audit control-plane reference"
+  - id: browser-native-messaging
+    name: "Browser extension plus Native Messaging"
+    role: "Optional bridge for browser-session capabilities"
+  - id: tauri-companion
+    name: "Tauri desktop companion"
+    role: "Signed local installation, deep-link bootstrap, and update channel"
+execution:
+  batch_size: 4
+  items_per_agent: 3
+  output_dir: "./results"
+sources:
+  - "https://learn.chatgpt.com/docs/app-server"
+  - "https://github.com/openai/codex/tree/main/codex-rs/app-server"
+  - "https://docs.anthropic.com/en/docs/claude-code/cli-usage"
+  - "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/headless.md"
+  - "https://github.com/anomalyco/opencode"
+  - "https://github.com/agentclientprotocol/agent-client-protocol"
+  - "https://github.com/coder/agentapi"
+  - "https://github.com/tiann/hapi"
+  - "https://github.com/summon-app/happy"
+  - "https://github.com/aaif-goose/goose"
+  - "https://github.com/coder/coder"

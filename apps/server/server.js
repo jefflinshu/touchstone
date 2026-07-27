@@ -8,6 +8,9 @@ import { fileURLToPath } from 'node:url'
 import crypto from 'node:crypto'
 import os from 'node:os'
 import Anthropic from '@anthropic-ai/sdk'
+import { createAgentEventParser } from './agent-events.js'
+import { probeAgentCapabilityAsync, validateAgentSelection } from './agent-capabilities.js'
+import { canManageRun, canReadRun, isRunPublished, visibleRunsFor } from './run-access.js'
 
 const APP_DIR = path.dirname(fileURLToPath(import.meta.url))
 const WORKSPACE_ROOT = path.resolve(APP_DIR, '../..')
@@ -31,6 +34,12 @@ const COLLECTION_ROUTES = {
     description: '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。',
     dataFolder: 'fable5-data',
   },
+  '/gpt5-6': {
+    title: 'GPT-5.6 Prompts & Showcases · Touchstone',
+    heading: 'GPT-5.6 prompts and showcases',
+    description: '浏览带原帖来源的 GPT-5.6 社区案例、编程实验、游戏、3D 场景、前端作品和可复用提示词。',
+    dataFolder: 'gpt5-6-data',
+  },
   '/figma-motion': {
     title: 'Figma Motion Showcases · Touchstone',
     heading: 'Figma Motion showcases and animation references',
@@ -53,6 +62,7 @@ const COLLECTION_ROUTES = {
 const CORE_NAV_LINKS = [
   ['/', 'AI Coding Arena'],
   ['/fable5', 'Claude Fable 5'],
+  ['/gpt5-6', 'GPT-5.6'],
   ['/figma-motion', 'Figma Motion'],
   ['/ios-apps', 'Design & iOS'],
   ['/oss-radar', 'OSS Radar'],
@@ -276,7 +286,7 @@ function seoForPath(req) {
     const userMatch = pathname.match(/^\/u\/([^/]+)$/)
     if (projectMatch) {
       const project = safeDecodeURIComponent(projectMatch[1])
-      const projectRuns = runs.filter((r) => r.project === project)
+      const projectRuns = runs.filter((r) => r.project === project && isRunPublished(r))
       if (projectRuns.length) {
         found = true
         const latest = projectRuns[projectRuns.length - 1]
@@ -291,8 +301,8 @@ function seoForPath(req) {
     } else if (userMatch) {
       const email = safeDecodeURIComponent(userMatch[1])
       const profile = users[email] || {}
-      const userRuns = runs.filter((run) => run.user === email)
-      if (users[email] || userRuns.length) {
+      const userRuns = runs.filter((run) => run.user === email && isRunPublished(run))
+      if (userRuns.length) {
         found = true
         const name = profile.name || email
         title = `${name} · Touchstone Profile`
@@ -374,6 +384,40 @@ function renderSeoHtml(html, seo) {
 
 function loadAgentsConfig() {
   return JSON.parse(fs.readFileSync(AGENTS_FILE, 'utf8'))
+}
+
+const agentCapabilityCache = new Map()
+
+async function getAgentCapability(agent, force = false) {
+  const now = Date.now()
+  const fingerprint = JSON.stringify({
+    command: agent.command,
+    versionArgs: agent.versionArgs,
+    minimumVersion: agent.minimumVersion,
+    models: agent.models,
+    modelsCommand: agent.modelsCommand,
+    modelsRequired: agent.modelsRequired,
+    modelRequirements: agent.modelRequirements,
+    auth: agent.auth,
+  })
+  const cached = agentCapabilityCache.get(agent.id)
+  if (!force && cached?.fingerprint === fingerprint && cached.expiresAt > now) {
+    return cached.value || cached.promise
+  }
+  const entry = {
+    fingerprint,
+    expiresAt: now + 60_000,
+    promise: probeAgentCapabilityAsync(agent),
+    value: null,
+  }
+  agentCapabilityCache.set(agent.id, entry)
+  try {
+    entry.value = await entry.promise
+    return entry.value
+  } catch (error) {
+    agentCapabilityCache.delete(agent.id)
+    throw error
+  }
 }
 
 // ---------- 实际执行模型识别 ----------
@@ -542,9 +586,28 @@ app.use((req, res, next) => {
   next()
 })
 
-function broadcast(msg) {
+function broadcast(msg, visibilityRun = null) {
+  const run = visibilityRun || msg.run || (msg.runId ? runs.find((item) => item.id === msg.runId) : null)
   const data = JSON.stringify(msg)
   for (const client of wss.clients) {
+    if (run && !isRunPublished(run) && client.touchstoneEmail !== run.user) continue
+    if (
+      msg.type === 'user' &&
+      client.touchstoneEmail !== msg.email &&
+      !runs.some((item) => item.user === msg.email && isRunPublished(item))
+    ) {
+      continue
+    }
+    if (
+      msg.project &&
+      !runs.some(
+        (item) =>
+          item.project === msg.project &&
+          (isRunPublished(item) || (client.touchstoneEmail && item.user === client.touchstoneEmail))
+      )
+    ) {
+      continue
+    }
     if (client.readyState === 1) client.send(data)
   }
 }
@@ -728,6 +791,10 @@ function publishToken() {
 async function publishCompletedRun(run) {
   const target = communityPublishUrl()
   if (!target) {
+    run.publishState = 'published'
+    run.publishedAt = new Date().toISOString()
+    saveRegistry()
+    broadcast({ type: 'run', run: publicRun(run) })
     autoCommitRun(run)
     return
   }
@@ -800,7 +867,7 @@ function capturePreview(run) {
         new Promise((resolve) => {
           const out = previewPath(run)
           const folderPath = run.folder.split('/').map(encodeURIComponent).join('/')
-          const url = `http://localhost:${PORT}/workspace/${folderPath}/${run.entry}`
+          const url = `http://localhost:${PORT}/workspace/${folderPath}/${run.entry}?__capture=${WORKSPACE_CAPTURE_TOKEN}`
           execFile(
             chromeBin,
             [
@@ -872,7 +939,7 @@ function autoCommitRun(run) {
 
 // ---------- 任务执行 ----------
 
-const liveProcs = new Map() // runId -> ChildProcess
+const liveProcs = new Map() // runId -> { proc, agent, emitEvent }
 const publishCredentials = new Map() // runId -> { idToken }
 
 function startRun(run, agent, prompt, timeoutMinutes) {
@@ -880,23 +947,38 @@ function startRun(run, agent, prompt, timeoutMinutes) {
   fs.mkdirSync(dir, { recursive: true })
   writeRunContract(dir)
   const logFile = path.join(dir, '.touchstone.log')
+  const eventsFile = path.join(dir, '.touchstone-events.jsonl')
 
   const args = agent.args.map((a) => a.replaceAll('{{PROMPT}}', prompt))
   if (run.model && agent.modelFlag) args.push(agent.modelFlag, run.model)
   const startNote = `$ ${agent.command} ${args.map((a) => (a.length > 200 ? a.slice(0, 200) + '…' : a)).join(' ')}\n\n`
   fs.writeFileSync(logFile, startNote)
+  fs.writeFileSync(eventsFile, '')
+
+  const emitEvent = (event) => {
+    fs.appendFileSync(eventsFile, `${JSON.stringify(event)}\n`)
+    broadcast({ type: 'agent_event', runId: run.id, event })
+  }
+  let proc
+  const eventParser = createAgentEventParser({
+    agentId: agent.id,
+    emit: emitEvent,
+    onResult: () => {
+      if (agent.inputFormat === 'claude-stream-json' && proc?.stdin?.writable) proc.stdin.end()
+    },
+  })
+  eventParser.status('running', 'Starting agent')
 
   run.status = 'running'
   run.startedAt = new Date().toISOString()
   saveRegistry()
   broadcast({ type: 'run', run: publicRun(run) })
 
-  let proc
   try {
     proc = spawn(agent.command, args, {
       cwd: dir,
       env: { ...process.env, FORCE_COLOR: '0', NO_COLOR: '1' },
-      stdio: ['ignore', 'pipe', 'pipe'],
+      stdio: ['pipe', 'pipe', 'pipe'],
     })
   } catch (err) {
     run.status = 'failed'
@@ -907,12 +989,21 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     return
   }
 
-  liveProcs.set(run.id, proc)
+  liveProcs.set(run.id, { proc, agent, emitEvent })
+  if (agent.inputFormat === 'claude-stream-json') {
+    proc.stdin.write(
+      `${JSON.stringify({
+        type: 'user',
+        message: { role: 'user', content: [{ type: 'text', text: prompt }] },
+      })}\n`
+    )
+  }
 
-  const onChunk = (buf) => {
+  const onChunk = (channel) => (buf) => {
     const text = buf.toString('utf8')
     fs.appendFileSync(logFile, text)
     broadcast({ type: 'log', runId: run.id, chunk: text })
+    eventParser.push(channel, text)
     // 运行过程中可能已经产出了 html，顺手刷新入口
     const entry = findEntry(run.folder)
     if (entry !== run.entry) {
@@ -921,8 +1012,8 @@ function startRun(run, agent, prompt, timeoutMinutes) {
       broadcast({ type: 'run', run: publicRun(run) })
     }
   }
-  proc.stdout.on('data', onChunk)
-  proc.stderr.on('data', onChunk)
+  proc.stdout.on('data', onChunk('stdout'))
+  proc.stderr.on('data', onChunk('stderr'))
 
   const timeout = setTimeout(() => {
     fs.appendFileSync(logFile, `\n[touchstone] 超过 ${timeoutMinutes} 分钟超时，已终止\n`)
@@ -932,6 +1023,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
 
   proc.on('close', (code) => {
     clearTimeout(timeout)
+    eventParser.end()
     liveProcs.delete(run.id)
     run.exitCode = code
     run.endedAt = new Date().toISOString()
@@ -946,6 +1038,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     } else {
       run.status = code === 0 ? 'done' : 'failed'
     }
+    eventParser.status(run.status === 'done' ? 'completed' : 'failed', run.status === 'done' ? 'Run completed' : run.error || 'Run stopped')
     fs.appendFileSync(logFile, `\n[touchstone] 进程退出，exit code = ${code}\n`)
     saveRegistry()
     broadcast({ type: 'run', run: publicRun(run) })
@@ -974,17 +1067,30 @@ app.get('/api/health', (req, res) => {
   })
 })
 
-app.get('/api/agents', (req, res) => {
+app.get('/api/agents', async (req, res) => {
   const cfg = loadAgentsConfig()
   res.json({
-    agents: cfg.agents.map((a) => ({
-      id: a.id,
-      name: a.name,
-      color: a.color,
-      install: a.install || null,
-      // 本地配置探测到的模型优先（默认选中），agents.json 列表兜底
-      models: [...new Set([...probeLocalModels(a.id), ...(a.models || [])])],
-      health: agentHealth(a),
+    agents: await Promise.all(cfg.agents.map(async (a) => {
+      const capability = await getAgentCapability(a, req.query.refresh === '1')
+      const modelHealth = { ...capability.health.modelHealth }
+      const models = [...new Set([...probeLocalModels(a.id), ...capability.discoveredModels, ...(a.models || [])])]
+      for (const model of models) {
+        modelHealth[model] ||= {
+          available: capability.health.ready,
+          minimumVersion: null,
+          fix: capability.health.ready ? null : capability.health.fix,
+        }
+      }
+      models.sort((left, right) => Number(modelHealth[right]?.available) - Number(modelHealth[left]?.available))
+      return {
+        id: a.id,
+        name: a.name,
+        color: a.color,
+        install: a.install || null,
+        preferredProtocol: a.preferredProtocol || null,
+        models,
+        health: { ...capability.health, modelHealth },
+      }
     })),
     defaults: cfg.defaults,
   })
@@ -1199,7 +1305,7 @@ function translateFable5BatchViaCodexCli(language, items) {
       }
     }
     try {
-      const proc = spawn('codex', ['exec', '--skip-git-repo-check', '--full-auto', buildFable5TranslationPrompt(language, items)], {
+      const proc = spawn('codex', ['exec', '--skip-git-repo-check', '--sandbox', 'workspace-write', buildFable5TranslationPrompt(language, items)], {
         env: process.env,
         stdio: ['ignore', 'pipe', 'ignore'],
       })
@@ -1262,51 +1368,6 @@ async function autoNameProject(prompt) {
     res.name = `task-${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`
   }
   return res
-}
-
-// ---------- 本地 CLI 健康检查 ----------
-// installed：PATH 中能找到命令；authed：按 agents.json 中 auth.files / auth.env 动态检测。
-
-function checkInstalled(command) {
-  const paths = (process.env.PATH || '').split(path.delimiter)
-  return paths.some((p) => {
-    try {
-      fs.accessSync(path.join(p, command), fs.constants.X_OK)
-      return true
-    } catch {
-      return false
-    }
-  })
-}
-
-function expandHome(value) {
-  return String(value || '').replace(/^~(?=$|\/|\\)/, os.homedir())
-}
-
-function checkAuthed(agent) {
-  const auth = agent.auth || {}
-  const files = Array.isArray(auth.files) ? auth.files : []
-  const env = Array.isArray(auth.env) ? auth.env : []
-
-  if (files.length === 0 && env.length === 0) return true
-
-  try {
-    if (files.some((file) => fs.existsSync(expandHome(file)))) return true
-    if (env.some((key) => Boolean(process.env[key]))) return true
-  } catch {}
-  return false
-}
-
-function agentHealth(agent) {
-  const installed = checkInstalled(agent.command)
-  const authed = installed && checkAuthed(agent)
-  const installCmd = agent.install?.cmd ? `，可运行：${agent.install.cmd}` : ''
-  return {
-    installed,
-    authed,
-    ready: installed && authed,
-    fix: !installed ? `未检测到 ${agent.command} 命令，请先安装${installCmd}` : !authed ? agent.auth?.loginHint || '请先完成 CLI 登录' : null,
-  }
 }
 
 // ---------- Community publish ----------
@@ -1587,6 +1648,25 @@ function currentSession(req) {
   return { sid, ...data }
 }
 
+wss.on('connection', (socket, req) => {
+  socket.touchstoneEmail = currentSession(req)?.email || null
+})
+
+function authorizedRun(req, res, mode = 'read') {
+  const run = runs.find((item) => item.id === req.params.id)
+  if (!run) {
+    res.status(404).json({ error: 'not found' })
+    return null
+  }
+  const email = currentSession(req)?.email || null
+  const allowed = mode === 'manage' ? canManageRun(run, email) : canReadRun(run, email)
+  if (!allowed) {
+    res.status(email ? 403 : 401).json({ error: email ? '无权访问这个任务' : '请先登录' })
+    return null
+  }
+  return run
+}
+
 function getGoogleAccount(req) {
   return Promise.resolve(currentSession(req)?.email || null)
 }
@@ -1727,6 +1807,27 @@ app.post('/api/tasks', async (req, res) => {
     return res.status(401).json({ error: '请先登录 Google 账号' })
   }
   const cfg = loadAgentsConfig()
+  const plannedRunners = await Promise.all(runners.map(async (runner) => {
+    const agent = cfg.agents.find((item) => item.id === runner?.agentId)
+    if (!agent) return { runner, error: `未知 Agent：${runner?.agentId || ''}` }
+    const model = typeof runner.model === 'string' ? runner.model.trim() : ''
+    const validationModel = model || probeDefaultModel(agent.id) || ''
+    const capability = await getAgentCapability(agent)
+    return {
+      runner,
+      agent,
+      model,
+      capability,
+      error: validateAgentSelection(agent, capability, validationModel),
+    }
+  }))
+  const compatibilityErrors = plannedRunners.filter((item) => item.error).map((item) => item.error)
+  if (compatibilityErrors.length) {
+    return res.status(409).json({
+      error: `本地 Agent 预检失败：${compatibilityErrors.join('；')}`,
+      issues: compatibilityErrors,
+    })
+  }
   let category = null
   if (!project || !String(project).trim()) {
     const named = await autoNameProject(prompt)
@@ -1739,10 +1840,8 @@ app.post('/api/tasks', async (req, res) => {
   const batchId = crypto.randomUUID()
   const created = []
 
-  for (const r of runners) {
-    const agent = cfg.agents.find((a) => a.id === r?.agentId)
-    if (!agent) continue
-    const model = typeof r.model === 'string' ? r.model.trim() : ''
+  for (const plan of plannedRunners) {
+    const { agent, capability, model } = plan
     // 目录结构：runs/<项目>/<模型>，同名冲突时追加 _2、_3…
     const projectSlug = slugify(project)
     const base = model ? `${agent.id}-${slugify(model)}` : agent.id
@@ -1770,14 +1869,18 @@ app.post('/api/tasks', async (req, res) => {
     runs.unshift(run)
     if (run.publish && sessionUser?.idToken) publishCredentials.set(run.id, { idToken: sessionUser.idToken })
     created.push(run)
-    startRun(run, agent, finalPrompt, cfg.defaults.timeoutMinutes || 20)
+    startRun(run, { ...agent, command: capability.executable }, finalPrompt, cfg.defaults.timeoutMinutes || 20)
   }
   saveRegistry()
   res.json({ batchId, project, runs: created.map(publicRun) })
 })
 
 app.get('/api/runs', (req, res) => {
-  res.json({ runs: runs.map(publicRun), views: stats.views, projectLikes: stats.projectLikes, users })
+  const email = currentSession(req)?.email || null
+  const visibleRuns = visibleRunsFor(runs, email)
+  const visibleEmails = new Set(visibleRuns.map((run) => run.user).filter(Boolean))
+  const visibleUsers = Object.fromEntries(Object.entries(users).filter(([userEmail]) => visibleEmails.has(userEmail) || userEmail === email))
+  res.json({ runs: visibleRuns.map(publicRun), views: stats.views, projectLikes: stats.projectLikes, users: visibleUsers })
 })
 
 app.post('/api/publish', async (req, res) => {
@@ -1910,8 +2013,8 @@ app.post('/api/projects/:project/view', (req, res) => {
 })
 
 app.post('/api/runs/:id/like', (req, res) => {
-  const run = runs.find((r) => r.id === req.params.id)
-  if (!run) return res.status(404).json({ error: 'not found' })
+  const run = authorizedRun(req, res)
+  if (!run) return
   const delta = req.body?.action === 'unlike' ? -1 : 1
   stats.likes[run.id] = Math.max(0, (stats.likes[run.id] || 0) + delta)
   saveStats()
@@ -1920,8 +2023,8 @@ app.post('/api/runs/:id/like', (req, res) => {
 })
 
 app.get('/api/runs/:id/preview', (req, res) => {
-  const run = runs.find((r) => r.id === req.params.id)
-  if (!run) return res.status(404).json({ error: 'not found' })
+  const run = authorizedRun(req, res)
+  if (!run) return
   const f = previewPath(run)
   if (!fs.existsSync(f)) return res.status(404).json({ error: 'no preview' })
   res.setHeader('Cache-Control', 'no-store')
@@ -1929,28 +2032,75 @@ app.get('/api/runs/:id/preview', (req, res) => {
 })
 
 app.get('/api/runs/:id/log', (req, res) => {
-  const run = runs.find((r) => r.id === req.params.id)
-  if (!run) return res.status(404).json({ error: 'not found' })
+  const run = authorizedRun(req, res, 'manage')
+  if (!run) return
   const logFile = path.join(RUNS_DIR, run.folder, '.touchstone.log')
   res.type('text/plain; charset=utf-8')
   if (fs.existsSync(logFile)) res.send(fs.readFileSync(logFile, 'utf8'))
   else res.send('')
 })
 
+app.get('/api/runs/:id/events', (req, res) => {
+  const run = authorizedRun(req, res, 'manage')
+  if (!run) return
+  const eventsFile = path.join(RUNS_DIR, run.folder, '.touchstone-events.jsonl')
+  const byId = new Map()
+  if (fs.existsSync(eventsFile)) {
+    for (const line of fs.readFileSync(eventsFile, 'utf8').split(/\r?\n/)) {
+      if (!line.trim()) continue
+      try {
+        const event = JSON.parse(line)
+        const previous = byId.get(event.id) || {}
+        byId.set(event.id, { ...previous, ...event })
+      } catch {}
+    }
+  }
+  res.json({ events: [...byId.values()] })
+})
+
+app.post('/api/runs/:id/input', (req, res) => {
+  const run = authorizedRun(req, res, 'manage')
+  if (!run) return
+  const live = liveProcs.get(run.id)
+  if (!live) return res.status(409).json({ error: '任务当前没有运行' })
+  const answer = String(req.body?.answer || '').trim()
+  const questionId = String(req.body?.questionId || '').trim()
+  if (!answer || !questionId) return res.status(400).json({ error: '缺少回答或问题 ID' })
+  if (live.agent.id !== 'claude' || !live.proc.stdin?.writable) {
+    return res.status(409).json({ error: '当前 Agent 暂不支持运行中回复' })
+  }
+  const input = {
+    type: 'user',
+    message: {
+      role: 'user',
+      content: [{ type: 'text', text: `Answer to pending question ${questionId}: ${answer}` }],
+    },
+  }
+  live.proc.stdin.write(`${JSON.stringify(input)}\n`)
+  live.emitEvent({
+    id: questionId,
+    kind: 'question',
+    status: 'answered',
+    answer,
+    timestamp: new Date().toISOString(),
+  })
+  res.json({ ok: true })
+})
+
 app.get('/api/runs/:id/files', (req, res) => {
-  const run = runs.find((r) => r.id === req.params.id)
-  if (!run) return res.status(404).json({ error: 'not found' })
+  const run = authorizedRun(req, res, 'manage')
+  if (!run) return
   res.json({ files: listFiles(run.folder) })
 })
 
 app.post('/api/runs/:id/stop', (req, res) => {
-  const run = runs.find((r) => r.id === req.params.id)
-  if (!run) return res.status(404).json({ error: 'not found' })
-  const proc = liveProcs.get(run.id)
-  if (proc) {
+  const run = authorizedRun(req, res, 'manage')
+  if (!run) return
+  const live = liveProcs.get(run.id)
+  if (live) {
     run.status = 'stopped'
-    proc.kill('SIGTERM')
-    setTimeout(() => proc.kill('SIGKILL'), 5000).unref()
+    live.proc.kill('SIGTERM')
+    setTimeout(() => live.proc.kill('SIGKILL'), 5000).unref()
   }
   saveRegistry()
   res.json({ ok: true })
@@ -1960,6 +2110,8 @@ app.delete('/api/runs/:id', (req, res) => {
   const idx = runs.findIndex((r) => r.id === req.params.id)
   if (idx === -1) return res.status(404).json({ error: 'not found' })
   const run = runs[idx]
+  const email = currentSession(req)?.email || null
+  if (!canManageRun(run, email)) return res.status(email ? 403 : 401).json({ error: email ? '无权删除这个任务' : '请先登录' })
   if (liveProcs.get(run.id)) {
     return res.status(400).json({ error: '请先停止运行中的任务' })
   }
@@ -1977,7 +2129,7 @@ app.delete('/api/runs/:id', (req, res) => {
   delete stats.likes[run.id]
   saveStats()
   saveRegistry()
-  broadcast({ type: 'removed', runId: run.id })
+  broadcast({ type: 'removed', runId: run.id }, run)
   res.json({ ok: true })
 })
 
@@ -2004,16 +2156,18 @@ app.get('/sitemap.xml', (req, res) => {
       routeCollectionUpdatedAt(config),
     ])
   )
-  const homeUpdatedAt = latestIsoValue([latestIso(runs), ...Object.values(collectionUpdatedAt), serverModifiedIso()])
+  const publishedRuns = runs.filter(isRunPublished)
+  const homeUpdatedAt = latestIsoValue([latestIso(publishedRuns), ...Object.values(collectionUpdatedAt), serverModifiedIso()])
   const urls = [
     { loc: `${origin}/`, priority: '1.0', changefreq: 'weekly', lastmod: homeUpdatedAt },
     { loc: `${origin}/fable5`, priority: '0.9', changefreq: 'weekly', lastmod: collectionUpdatedAt['/fable5'] },
+    { loc: `${origin}/gpt5-6`, priority: '0.9', changefreq: 'weekly', lastmod: collectionUpdatedAt['/gpt5-6'] },
     { loc: `${origin}/figma-motion`, priority: '0.8', changefreq: 'weekly', lastmod: collectionUpdatedAt['/figma-motion'] },
     { loc: `${origin}/ios-apps`, priority: '0.8', changefreq: 'weekly', lastmod: collectionUpdatedAt['/ios-apps'] },
     { loc: `${origin}/oss-radar`, priority: '0.8', changefreq: 'weekly', lastmod: collectionUpdatedAt['/oss-radar'] },
   ]
   const projects = new Map()
-  for (const run of runs) {
+  for (const run of publishedRuns) {
     const existing = projects.get(run.project)
     if (!existing || (run.createdAt || '') > (existing.createdAt || '')) projects.set(run.project, run)
   }
@@ -2025,12 +2179,13 @@ app.get('/sitemap.xml', (req, res) => {
       lastmod: run.endedAt || run.createdAt,
     })
   }
-  for (const [email, profile] of Object.entries(users)) {
+  const publishedUsers = new Set(publishedRuns.map((run) => run.user).filter(Boolean))
+  for (const [email, profile] of Object.entries(users).filter(([email]) => publishedUsers.has(email))) {
     urls.push({
       loc: `${origin}/u/${encodeURIComponent(email)}`,
       priority: '0.5',
       changefreq: 'monthly',
-      lastmod: profile.updatedAt || latestIso(runs.filter((r) => r.user === email)),
+      lastmod: profile.updatedAt || latestIso(publishedRuns.filter((r) => r.user === email)),
     })
   }
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
@@ -2043,7 +2198,55 @@ app.get('/sitemap.xml', (req, res) => {
   res.type('application/xml; charset=utf-8').send(body)
 })
 
-// 作品静态托管，供 iframe 预览与文件下载
+// 作品静态托管：私有 run 仅所有者可读；已发布作品使用独立的 sandbox origin。
+const WORKSPACE_CAPTURE_TOKEN = crypto.randomBytes(32).toString('base64url')
+const WORKSPACE_CAPTURE_COOKIE = 'touchstone_workspace_capture'
+
+function workspaceRunForPath(requestPath) {
+  const relative = safeDecodeURIComponent(String(requestPath || '')).replace(/^\/+/, '')
+  return [...runs]
+    .sort((left, right) => right.folder.length - left.folder.length)
+    .find((run) => relative === run.folder || relative.startsWith(`${run.folder}/`))
+}
+
+app.use('/workspace', (req, res, next) => {
+  const run = workspaceRunForPath(req.path)
+  if (!run) return res.status(404).type('text/plain; charset=utf-8').send('not found')
+  const captureQuery = String(req.query.__capture || '')
+  if (captureQuery === WORKSPACE_CAPTURE_TOKEN) {
+    res.setHeader(
+      'Set-Cookie',
+      `${WORKSPACE_CAPTURE_COOKIE}=${WORKSPACE_CAPTURE_TOKEN}; HttpOnly; SameSite=Strict; Path=/workspace; Max-Age=120`
+    )
+  }
+  const captureAllowed =
+    captureQuery === WORKSPACE_CAPTURE_TOKEN || parseCookies(req)[WORKSPACE_CAPTURE_COOKIE] === WORKSPACE_CAPTURE_TOKEN
+  const email = currentSession(req)?.email || null
+  if (!captureAllowed && !canReadRun(run, email)) {
+    return res.status(email ? 403 : 401).type('text/plain; charset=utf-8').send(email ? 'forbidden' : 'login required')
+  }
+  res.setHeader('X-Content-Type-Options', 'nosniff')
+  res.setHeader('Referrer-Policy', 'no-referrer')
+  res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
+  res.setHeader(
+    'Content-Security-Policy',
+    [
+      'sandbox allow-scripts allow-modals allow-pointer-lock allow-popups allow-downloads',
+      "default-src 'self' data: blob:",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:",
+      "style-src 'self' 'unsafe-inline' data:",
+      "img-src 'self' data: blob:",
+      "media-src 'self' data: blob:",
+      "font-src 'self' data:",
+      "worker-src 'self' blob:",
+      "connect-src 'self'",
+      "base-uri 'none'",
+      "form-action 'none'",
+    ].join('; ')
+  )
+  next()
+})
+
 app.use(
   '/workspace',
   express.static(RUNS_DIR, {
@@ -2059,6 +2262,8 @@ function setPublicAssetCacheHeaders(res, filePath) {
   if (
     normalized.includes('/fable5-media/') ||
     normalized.includes('/fable5-avatars/') ||
+    normalized.includes('/gpt5-6-media/') ||
+    normalized.includes('/gpt5-6-avatars/') ||
     normalized.includes('/figma-motion-media/') ||
     normalized.includes('/figma-motion-avatars/') ||
     normalized.includes('/ios-apps-media/') ||
@@ -2067,11 +2272,21 @@ function setPublicAssetCacheHeaders(res, filePath) {
     res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
     return
   }
-  if (normalized.endsWith('/fable5-data/index.json') || normalized.endsWith('/figma-motion-data/index.json') || normalized.endsWith('/ios-apps-data/index.json')) {
+  if (
+    normalized.endsWith('/fable5-data/index.json') ||
+    normalized.endsWith('/gpt5-6-data/index.json') ||
+    normalized.endsWith('/figma-motion-data/index.json') ||
+    normalized.endsWith('/ios-apps-data/index.json')
+  ) {
     res.setHeader('Cache-Control', 'no-store, must-revalidate')
     return
   }
-  if (normalized.includes('/fable5-data/') || normalized.includes('/figma-motion-data/') || normalized.includes('/ios-apps-data/')) {
+  if (
+    normalized.includes('/fable5-data/') ||
+    normalized.includes('/gpt5-6-data/') ||
+    normalized.includes('/figma-motion-data/') ||
+    normalized.includes('/ios-apps-data/')
+  ) {
     res.setHeader('Cache-Control', 'no-store, must-revalidate')
   }
 }

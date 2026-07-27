@@ -1,0 +1,77 @@
+topic: "Web control plane invoking local coding agents"
+categories:
+  - name: identity
+    fields:
+      - name: repository
+        description: "Canonical repository and maintainer."
+        detail_level: brief
+      - name: license
+        description: "License and commercial embedding constraints."
+        detail_level: moderate
+      - name: maintenance
+        description: "Release activity, protocol stability, and ownership."
+        detail_level: moderate
+  - name: integration
+    fields:
+      - name: structured_protocol
+        description: "JSON-RPC, ACP, REST/SSE, JSONL, or PTY scraping."
+        detail_level: detailed
+      - name: capability_negotiation
+        description: "How models, tools, permissions, versions, and optional features are discovered."
+        detail_level: detailed
+      - name: session_lifecycle
+        description: "Create, resume, fork, interrupt, recover, and replay behavior."
+        detail_level: detailed
+      - name: event_model
+        description: "Streaming text, reasoning, tool calls, approvals, questions, progress, and usage."
+        detail_level: detailed
+      - name: artifact_contract
+        description: "How files and previews are identified, packaged, transferred, and retained."
+        detail_level: detailed
+  - name: topology
+    fields:
+      - name: transport
+        description: "Local stdio, loopback HTTP, outbound WSS, extension relay, or private overlay."
+        detail_level: detailed
+      - name: pairing_and_bootstrap
+        description: "Enrollment token, device binding, revocation, and deep-link responsibilities."
+        detail_level: detailed
+      - name: trust_termination
+        description: "Whether trust terminates at the web page, extension, companion, or agent adapter."
+        detail_level: detailed
+      - name: offline_behavior
+        description: "What remains usable when the public control plane is unavailable."
+        detail_level: moderate
+  - name: security
+    fields:
+      - name: browser_compatibility
+        description: "PNA, CORS, secure-context, extension, and Native Messaging constraints."
+        detail_level: detailed
+      - name: secret_delegation
+        description: "Placement of CLI credentials, API keys, browser cookies, SSH keys, and device tokens."
+        detail_level: detailed
+      - name: authorization
+        description: "Run ownership, device scope, approval handling, command allowlists, and audit."
+        detail_level: detailed
+      - name: preview_isolation
+        description: "Origin separation, iframe sandbox, CSP, and publication boundary."
+        detail_level: detailed
+  - name: operations
+    fields:
+      - name: compatibility_matrix
+        description: "CLI version, model availability, protocol version, and minimum supported combinations."
+        detail_level: detailed
+      - name: install_and_update
+        description: "Signing, auto-update, rollback, and minimum-version enforcement."
+        detail_level: detailed
+      - name: observability
+        description: "Health, latency, disconnects, retries, resource usage, and redacted diagnostics."
+        detail_level: moderate
+      - name: portability_and_replay
+        description: "Event durability, reconnect cursors, artifact integrity, and device migration."
+        detail_level: detailed
+uncertain:
+  - "Exact Codex minimum CLI version for models other than gpt-5.6-sol must come from live model/list capabilities."
+  - "OpenCode REST endpoints and event payloads should be pinned to the installed server version."
+  - "Claude remote-control service terms and self-hosting boundary need separate product/legal review."
+  - "Browser Local Network Access rollout differs by browser version and enterprise policy."

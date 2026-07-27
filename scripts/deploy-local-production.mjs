@@ -58,6 +58,7 @@ async function main() {
     throw new Error(`Deploy target does not exist: ${TARGET_DIR}`)
   }
 
+  run('npm', ['--workspace', '@touchstone/server', 'run', 'test'])
   run('npm', ['--workspace', '@touchstone/web', 'run', 'build'])
 
   const sourceIndex = readFileSync(join(WEB_DIST_DIR, 'index.html'), 'utf8')
@@ -71,8 +72,8 @@ async function main() {
   mkdirSync(join(TARGET_DIR, 'apps', 'server'), { recursive: true })
   mkdirSync(join(TARGET_DIR, 'apps', 'web'), { recursive: true })
 
-  run('rsync', ['-a', 'package.json', 'package-lock.json', `${TARGET_DIR}/`])
-  run('rsync', ['-a', 'apps/server/package.json', 'apps/server/server.js', `${TARGET_DIR}/apps/server/`])
+  run('rsync', ['-a', 'package.json', 'package-lock.json', 'agents.json', `${TARGET_DIR}/`])
+  run('rsync', ['-a', '--exclude', '*.test.js', 'apps/server/', `${TARGET_DIR}/apps/server/`])
   writeFileSync(join(TARGET_DIR, 'server.js'), "import './apps/server/server.js'\n")
   run('rsync', ['-a', 'apps/web/package.json', `${TARGET_DIR}/apps/web/`])
   run('rsync', ['-a', '--delete', 'apps/web/dist/', `${TARGET_DIR}/apps/web/dist/`])
@@ -90,6 +91,13 @@ async function main() {
   const health = await fetchText(`${LOCAL_BASE_URL}/api/health`)
   const parsedHealth = JSON.parse(health)
   if (!parsedHealth.ok) throw new Error(`Local health check failed: ${health}`)
+  const localAgents = JSON.parse(await fetchText(`${LOCAL_BASE_URL}/api/agents`))
+  const codex = localAgents.agents?.find((agent) => agent.id === 'codex')
+  const opencode = localAgents.agents?.find((agent) => agent.id === 'opencode')
+  if (!codex?.health || typeof codex.health.compatible !== 'boolean') {
+    throw new Error('Local agent capability preflight is missing')
+  }
+  if (!opencode) throw new Error('Local OpenCode adapter is missing')
 
   const localHtml = await fetchText(`${LOCAL_BASE_URL}/`)
   const localAsset = assetPathFromHtml(localHtml)
@@ -102,6 +110,11 @@ async function main() {
   if (publicAsset !== sourceAsset) {
     throw new Error(`Public HTML references ${publicAsset}, expected ${sourceAsset}`)
   }
+  const publicRuns = JSON.parse(await fetchText(`${PUBLIC_BASE_URL}/api/runs`))
+  const leakedRun = publicRuns.runs?.find(
+    (run) => run.publishState !== 'published' && run.publishSource !== 'community-api'
+  )
+  if (leakedRun) throw new Error(`Public API exposed an unpublished run: ${leakedRun.id}`)
 
   console.log(
     JSON.stringify(
@@ -112,6 +125,10 @@ async function main() {
         bundle: sourceAsset,
         publicUrl: PUBLIC_BASE_URL,
         health: parsedHealth,
+        agents: {
+          codex: { version: codex.health.version, compatible: codex.health.compatible },
+          opencode: { version: opencode.health.version, compatible: opencode.health.compatible },
+        },
       },
       null,
       2
