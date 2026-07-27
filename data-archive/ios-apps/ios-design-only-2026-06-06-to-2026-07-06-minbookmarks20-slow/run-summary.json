@@ -1,0 +1,23 @@
+{
+  "from": "2026-06-06",
+  "to": "2026-07-06",
+  "mode": "top",
+  "officialOnly": false,
+  "withReplies": false,
+  "maxReplies": 12,
+  "minBookmarks": 20,
+  "minViews": 0,
+  "queryDelayMs": 60000,
+  "rateLimitCooldownMs": 300000,
+  "target": 200,
+  "queries": [
+    "((\"iOS app design\" OR \"iPhone app design\" OR \"iPad app design\") (UI OR UX OR screens OR mockup OR prototype OR redesign OR concept OR Figma))",
+    "((\"iPhone UI\" OR \"iOS UI\" OR \"SwiftUI design\") (app OR screens OR prototype OR redesign OR interaction OR \"product design\"))",
+    "((\"mobile app design\" OR \"app UI design\") (iPhone OR iOS OR iPad OR SwiftUI) (screens OR mockup OR prototype OR concept OR redesign))",
+    "((\"designed an iOS app\" OR \"designed and built\" OR \"i designed\") (iPhone OR iOS OR \"App Store\" OR TestFlight OR SwiftUI))"
+  ],
+  "candidates": 0,
+  "conversationFetchFailures": 0,
+  "failedHandles": 0,
+  "generatedAt": "2026-07-06T11:38:01.387Z"
+}

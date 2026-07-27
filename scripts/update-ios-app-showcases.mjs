@@ -12,8 +12,37 @@ const ARCHIVE_ROOT = join(ROOT, 'data-archive', 'ios-apps')
 const PUBLIC_MEDIA_DIR = join(WEB_DIR, 'public', 'ios-apps-media')
 const PUBLIC_AVATAR_DIR = join(WEB_DIR, 'public', 'ios-apps-avatars')
 const CHUNK_SIZE = 24
-const CATEGORY_ORDER = ['productivity', 'utilities', 'health', 'finance', 'education', 'creative', 'social', 'devtools', 'games', 'design', 'app-store', 'testflight', 'news', 'experiments']
+const CATEGORY_ORDER = [
+  'design',
+  'ios',
+  'icons',
+  'resources',
+  'motion',
+  'productivity',
+  'utilities',
+  'health',
+  'finance',
+  'education',
+  'creative',
+  'social',
+  'devtools',
+  'games',
+  'app-store',
+  'testflight',
+  'news',
+  'experiments',
+]
 const KEYWORDS = [
+  'design',
+  'ui',
+  'ux',
+  'figma',
+  'icon',
+  'animation',
+  'interaction',
+  'component',
+  'shader',
+  'lottie',
   'ios app',
   'iphone app',
   'app store',
@@ -31,7 +60,7 @@ let CACHE_ASSETS = true
 
 function usage() {
   console.error(
-    'Usage: node scripts/update-ios-app-showcases.mjs [--input data-archive/ios-apps/<run-id>/window-posts.json | --archive-root data-archive/ios-apps] [--limit N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
+    'Usage: node scripts/update-ios-app-showcases.mjs [--input data-archive/ios-apps/<run-id>/window-posts.json | --archive-root data-archive/ios-apps] [--limit N] [--min-bookmarks N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
   )
   process.exit(1)
 }
@@ -51,6 +80,11 @@ function parseArgs(argv) {
 function flag(value, fallback = false) {
   if (value == null) return fallback
   return ['1', 'true', 'yes', 'y'].includes(String(value).trim().toLowerCase())
+}
+
+function nonNegativeNumber(value, fallback = 0) {
+  const numeric = Number(value ?? fallback)
+  return Number.isFinite(numeric) ? Math.max(0, numeric) : fallback
 }
 
 function slugify(input) {
@@ -113,6 +147,10 @@ function scoreMetrics(metrics = {}) {
     Number(metrics.bookmarks || 0) * 3 +
     Number(metrics.views || 0) / 1000
   )
+}
+
+function bookmarkCount(metrics = {}) {
+  return Number(metrics.bookmarks || 0)
 }
 
 function tierFor(score) {
@@ -200,8 +238,9 @@ function titleFromText(text) {
   if (/testflight|beta/.test(lower)) return 'New iOS app beta on TestFlight'
   if (/app store|apps\.apple\.com|now available|now live|launched|released|shipped/.test(lower)) return 'New iOS app launch'
   if (/swiftui|swift app/.test(lower)) return 'SwiftUI app shipped for iPhone'
-  if (/redesign|screens|ui|interface|design/.test(lower)) return 'iOS app design launch'
-  return titleFromSentence(informativeSentences(text)[0] || clean) || 'iOS app launch'
+  if (/icons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit/.test(lower)) return 'Design icon resource'
+  if (/redesign|screens|ui|ux|interface|design|figma|prototype|concept/.test(lower)) return 'Product design reference'
+  return titleFromSentence(informativeSentences(text)[0] || clean) || 'Design reference'
 }
 
 function categoriesFor(text) {
@@ -216,11 +255,18 @@ function categoriesFor(text) {
   add('health', /\b(?:health|fitness|workout|sleep|meditation|mental|nutrition|wellness|period|cycle)\b/)
   add('finance', /\b(?:finance|budget|expense|money|invest|portfolio|crypto|invoice|receipt)\b/)
   add('education', /\b(?:learn|language|course|study|flashcard|school|student|education|reading)\b/)
-  add('creative', /\b(?:photo|video|camera|music|audio|design|draw|writing|creator|edit|editor)\b/)
+  add('creative', /\b(?:photo|video|camera|music|audio|design|draw|drawing|illustration|writing|creator|edit|editor|shader|p5js|creative coding)\b/)
   add('social', /\b(?:social|community|dating|friends|chat|message|sharing)\b/)
   add('devtools', /\b(?:developer|devtool|github|api|debug|server|terminal|xcode|swiftui|swift)\b/)
   add('games', /\b(?:game|puzzle|arcade|wordle|rpg|play)\b/)
-  add('design', /\b(?:ui|ux|design|redesign|screens?|interface|figma|mockup)\b/)
+  add(
+    'design',
+    /\b(?:ui|ux|design|redesign|screens?|interface|figma|mockup|prototype|product design|mobile design|app design|dynamic island|material|component|components|website|portfolio|hero page|illustration|gradient|border beam|rebrand)\b/
+  )
+  add('ios', /\b(?:ios|iphone|ipad|swiftui|swift app|app store|testflight)\b|apps\.apple\.com|testflight\.apple\.com/)
+  add('icons', /\b(?:icons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit)\b/)
+  add('resources', /\b(?:resources?|toolkit|library|kit|templates?|components?|assets?|free|open source|oss|iconly|lucide|pikaicons?|nucleo|iconsax|originkit)\b/)
+  add('motion', /\b(?:motion|animation|animated|interaction|prototype|transition|microinteraction|micro interactions|lottie|shader|shaders|p5js|effect)\b/)
   add('app-store', /\b(?:app store|apps\.apple\.com|download)\b/)
   add('testflight', /\b(?:testflight|beta)\b/)
   add('news', /\b(?:launch|launched|released|shipped|now available|now live|introducing)\b/)
@@ -235,7 +281,7 @@ function sceneFor(text) {
 
 function tagsFor(text) {
   const lower = String(text || '').toLowerCase()
-  const tags = ['ios-app', ...categoriesFor(text)]
+  const tags = ['design', ...categoriesFor(text)]
   if (/app store|apps\.apple\.com/.test(lower)) tags.push('app-store')
   if (/testflight|beta/.test(lower)) tags.push('testflight')
   if (/swiftui/.test(lower)) tags.push('swiftui')
@@ -257,24 +303,48 @@ function promptStatus() {
   return 'commentary'
 }
 
+function isManualSeedRun(value) {
+  return /\bmanual[-_]/i.test(String(value || '')) || String(value || '').includes('recent-design')
+}
+
+function isManualSeedPost(post) {
+  return isManualSeedRun(post?.sourceRun) || isManualSeedRun(post?.sourceSeed)
+}
+
+function isManualSeedItem(item) {
+  return (item?.fetchRuns || []).some(isManualSeedRun)
+}
+
 function hasIosAppMention(text) {
   return /\b(?:ios|iphone|ipad|swiftui|swift app|app store|testflight)\b|apps\.apple\.com|testflight\.apple\.com/i.test(text)
+}
+
+function hasDesignOrIosMention(text) {
+  return (
+    hasIosAppMention(text) ||
+    /\b(?:design(?:ed)?|redesign(?:ed)?|ui|ux|screens?|mockups?|prototype|concept|interface|interaction|figma|product design|mobile design|app design|icons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit|components?|design system|styleguide|dynamic island|material|shader|shaders|lottie|animation|animated|micro interactions?|hero page|website|portfolio|illustrations?|gradient|border beam|rebrand|p5js|creative coding)\b/i.test(text)
+  )
 }
 
 function hasReleaseSignal(text) {
   return /\b(?:launch(?:ed|ing)?|released?|shipped?|now available|now live|just dropped|introducing|download|try it|beta|testflight|apps\.apple\.com|testflight\.apple\.com)\b/i.test(text)
 }
 
+function hasDesignSignal(text) {
+  return /\b(?:design(?:ed)?|redesign(?:ed)?|ui|ux|screens?|mockups?|prototype|concept|interface|interaction|figma|product design|mobile design|app design|icons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit|components?|design system|styleguide|dynamic island|material|shader|shaders|lottie|animation|animated|micro interactions?|hero page|website|portfolio|illustrations?|gradient|border beam|rebrand|p5js|creative coding)\b/i.test(text)
+}
+
 function hasProductSignal(text) {
-  return /\b(?:my|our|new|indie|built|made|created|designed|app|product|screens?|ui|interface|download|try it)\b/i.test(text)
+  return /\b(?:my|our|new|indie|built|made|created|designed|app|product|screens?|ui|ux|interface|download|try it|icons?|resource|toolkit|library|kit|figma|prototype|interaction|animation|animated|component|components|shader|shaders|lottie|dynamic island|material|website|portfolio|hero page|illustrations?|gradient|effect|rebrand|p5js)\b/i.test(text)
 }
 
 function isLowSignalPost(post) {
   const text = String(post?.text || '')
   const lower = cleanText(text).toLowerCase()
   const media = Array.isArray(post?.media) ? post.media : []
-  if (!hasIosAppMention(text)) return true
-  if (!hasReleaseSignal(text) && !/apps\.apple\.com|testflight\.apple\.com/i.test(text)) return true
+  const designCase = hasDesignSignal(text) && (media.length > 0 || /\b(?:iconly|lucide|pikaicons?|nucleo|iconsax|originkit)\b/i.test(text))
+  if (!hasDesignOrIosMention(text)) return true
+  if (!designCase && !hasReleaseSignal(text) && !/apps\.apple\.com|testflight\.apple\.com/i.test(text)) return true
   if (!hasProductSignal(text)) return true
   if (/\b(?:pro tip|commission|in-app purchase|app store rejection|apple'?s guidelines|before you submit|binary validation|privacy manifests|data declarations)\b/.test(lower)) return true
   if (/\b(?:booster packs|promo cards|sam'?s club|membership|#ad|coupon|restock)\b/.test(lower)) return true
@@ -294,9 +364,11 @@ function isLowSignalPost(post) {
 }
 
 function curationDecision(post) {
+  const manualSeed = isManualSeedPost(post)
+  if (!manualSeed && bookmarkCount(post?.metrics) < minBookmarks) return { keep: false, reason: 'below-min-bookmarks' }
   if (!post?.url || !post?.author || !post?.text) return { keep: false, reason: 'missing-url-author-or-text' }
-  if (isLowSignalPost(post)) return { keep: false, reason: 'low-signal-or-not-ios-app-launch' }
-  return { keep: true, reason: 'ios-app-release-evidence' }
+  if (!manualSeed && isLowSignalPost(post)) return { keep: false, reason: 'low-signal-or-not-design-reference' }
+  return { keep: true, reason: manualSeed ? 'manual-seed-curated' : 'design-or-ios-evidence' }
 }
 
 function actionSummaryFromText(text, media = 'text') {
@@ -307,8 +379,9 @@ function actionSummaryFromText(text, media = 'text') {
   if (/testflight|beta/.test(lower)) return `${prefix} an iOS beta or TestFlight release, with the original X post kept as the source.`
   if (/app store|apps\.apple\.com|download|now available|now live|launched|released|shipped/.test(lower)) return `${prefix} a newly released iOS app, usually with App Store or download context.`
   if (/swiftui|swift app/.test(lower)) return `${prefix} a Swift or SwiftUI-built iPhone app that has been shipped publicly.`
-  if (/redesign|screens|ui|interface|design/.test(lower)) return `${prefix} an iOS app launch or update with visible product/interface design material.`
-  if (media === 'video') return `${prefix} a video-backed iOS app demo, with the source post preserved for verification.`
+  if (/icons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit/.test(lower)) return `${prefix} a design icon or interface resource, with the original X post kept as the source.`
+  if (/redesign|screens|ui|ux|interface|design|figma|prototype|concept/.test(lower)) return `${prefix} a product/interface design reference with visible design material.`
+  if (media === 'video') return `${prefix} a video-backed design or app demo, with the source post preserved for verification.`
   const primary = informativeSentences(text).find((line) => line.length > 28) || clean
   return limitText(primary, 165)
 }
@@ -321,7 +394,8 @@ function artifactTypeFor(text, media) {
   const lower = String(text || '').toLowerCase()
   if (/testflight|beta/.test(lower)) return 'testflight'
   if (/app store|apps\.apple\.com|download/.test(lower)) return 'app-store'
-  if (/redesign|screens|ui|interface|design/.test(lower)) return 'design'
+  if (/icons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit/.test(lower)) return 'resource'
+  if (/redesign|screens|ui|ux|interface|design|figma|prototype|concept/.test(lower)) return 'design'
   if (/launch|released|shipped|now available|now live/.test(lower)) return 'launch'
   return media === 'video' ? 'video' : media === 'image' ? 'image' : 'case-study'
 }
@@ -337,7 +411,8 @@ function facetFields(post, media) {
     [/\bapp store|apps\.apple\.com|download/, 'app-store-release'],
     [/\btestflight|beta/, 'beta-release'],
     [/\bswiftui|swift\b|xcode/, 'native-ios'],
-    [/\bui|ux|design|screens?|interface|figma/, 'product-design'],
+    [/\bui|ux|design|screens?|interface|figma|prototype|concept/, 'product-design'],
+    [/\bicons?|iconly|lucide|pikaicons?|nucleo|iconsax|originkit/, 'design-resource'],
   ])
   const evidence = []
   if (/apps\.apple\.com/i.test(text)) evidence.push('app-store-link')
@@ -351,7 +426,7 @@ function facetFields(post, media) {
     capability: [...new Set(capability)],
     evidence: [...new Set(evidence)],
     domain: categoriesFor(text).filter((category) => !['app-store', 'testflight', 'news', 'design'].includes(category)),
-    tech: ['ios'],
+    tech: hasIosAppMention(text) ? ['ios'] : [],
     risk: [],
   }
 }
@@ -470,7 +545,7 @@ function cacheMediaPreview(item) {
           '5',
           abs,
         ],
-        { cwd: ROOT, timeout: 25_000, stdio: ['ignore', 'ignore', 'pipe'] }
+        { cwd: ROOT, timeout: 60_000, stdio: ['ignore', 'ignore', 'pipe'] }
       )
     } else {
       let lastError
@@ -521,12 +596,14 @@ function cacheAvatar(item, post) {
 function toShowcase(post, sourceRun, generatedAt, options = {}) {
   const media = mediaKind(post)
   const status = promptStatus(post.text)
+  const sourceUrl = isManualSeedPost(post) && /^https:\/\/x\.com\//i.test(post.sourceSeed || '') ? post.sourceSeed : post.url
   const item = {
     id: `${post.author}-${slugify(post.id || post.url || post.text)}`,
     title: titleFromText(post.text),
     author: post.authorName || post.author,
     handle: `@${post.author}`,
-    sourceUrl: post.url,
+    sourceUrl,
+    seedSourceUrl: /^https:\/\/x\.com\//i.test(post.sourceSeed || '') ? post.sourceSeed : '',
     date: asiaShanghaiDate(post.createdAtISO) || post.date || '',
     kind: 'showcase',
     scene: sceneFor(post.text),
@@ -586,6 +663,7 @@ const args = parseArgs(process.argv.slice(2))
 if (args.help || args.h) usage()
 const explicitLimit = args.limit != null
 const limit = explicitLimit ? Math.max(1, Math.min(Number(args.limit), 5000)) : Number.POSITIVE_INFINITY
+const minBookmarks = nonNegativeNumber(args['min-bookmarks'], 20)
 const cacheMedia = flag(args['cache-media'], true)
 const cacheFrom = String(args['cache-from'] || '')
 const reviewLimit = Math.max(1, Math.min(Number(args['review-drops'] || 40), 200))
@@ -594,20 +672,21 @@ CACHE_ASSETS = args['cache-assets'] !== '0'
 
 const generatedAt = new Date().toISOString()
 const batches = loadInputBatches(args)
-const allPosts = batches.flatMap((batch) => batch.posts)
+const allPosts = batches.flatMap((batch) => batch.posts.map((post) => ({ ...post, sourceRun: batch.sourceRun })))
 const curationByUrl = new Map()
 const candidateByKey = new Map()
 
 for (const batch of batches) {
   for (const post of batch.posts) {
-    const decision = curationDecision(post)
-    if (post?.url && !curationByUrl.has(post.url)) curationByUrl.set(post.url, { post: { ...post, sourceRun: batch.sourceRun }, decision })
-    if (!decision.keep || !post?.url) continue
-    const key = dedupeKeyForText(post.text) || post.url
+    const sourcedPost = { ...post, sourceRun: batch.sourceRun }
+    const decision = curationDecision(sourcedPost)
+    if (sourcedPost?.url && !curationByUrl.has(sourcedPost.url)) curationByUrl.set(sourcedPost.url, { post: sourcedPost, decision })
+    if (!decision.keep || !sourcedPost?.url) continue
+    const key = dedupeKeyForText(sourcedPost.text) || sourcedPost.url
     const prev = candidateByKey.get(key)
     const fetchRuns = [...new Set([...(prev?.fetchRuns || []), batch.sourceRun])]
-    if (!prev || scoreMetrics(post.metrics || {}) > scoreMetrics(prev.metrics || {})) {
-      candidateByKey.set(key, { ...post, fetchRuns, sourceRun: batch.sourceRun })
+    if (!prev || scoreMetrics(sourcedPost.metrics || {}) > scoreMetrics(prev.metrics || {})) {
+      candidateByKey.set(key, { ...sourcedPost, fetchRuns })
     } else {
       prev.fetchRuns = fetchRuns
     }
@@ -633,7 +712,7 @@ const byUrl = new Map()
 if (mergeExisting) {
   for (const item of loadExistingItems()) {
     if (!/^https:\/\/x\.com\//i.test(item?.sourceUrl || '')) continue
-    if (item?.sourceUrl && hasIosAppMention(item.originalText || item.title || '')) byUrl.set(item.sourceUrl, item)
+    if (item?.sourceUrl && hasDesignOrIosMention(item.originalText || item.title || '')) byUrl.set(item.sourceUrl, item)
   }
 }
 for (const item of selected) {
@@ -641,6 +720,7 @@ for (const item of selected) {
   byUrl.set(item.sourceUrl, {
     ...prev,
     ...item,
+    sourceUrl: item.seedSourceUrl || item.sourceUrl,
     firstSeenAt: prev?.firstSeenAt || item.firstSeenAt,
     lastFetchedAt: generatedAt,
     fetchRuns: [...new Set([...(prev?.fetchRuns || []), ...(item.fetchRuns || [])])],
@@ -652,14 +732,19 @@ const dedupedCollection = new Map()
 for (const item of byUrl.values()) {
   const key = dedupeKeyForText(item.originalText || item.title || '') || item.sourceUrl
   const prev = dedupedCollection.get(key)
-  if (!prev || scoreMetrics(item.metrics || {}) > scoreMetrics(prev.metrics || {})) dedupedCollection.set(key, item)
+  const itemHasSeedSource = Boolean(item.seedSourceUrl)
+  const prevHasSeedSource = Boolean(prev?.seedSourceUrl)
+  if (!prev || (itemHasSeedSource && !prevHasSeedSource) || scoreMetrics(item.metrics || {}) > scoreMetrics(prev.metrics || {})) {
+    dedupedCollection.set(key, item)
+  }
 }
 
 const collection = [...dedupedCollection.values()]
   .filter((item) => /^https:\/\/x\.com\//i.test(item.sourceUrl || ''))
-  .filter((item) => hasIosAppMention(item.originalText || item.title || ''))
+  .filter((item) => isManualSeedItem(item) || bookmarkCount(item.metrics) >= minBookmarks)
+  .filter((item) => isManualSeedItem(item) || hasDesignOrIosMention(item.originalText || item.title || ''))
   .filter((item) => item.media !== 'text')
-  .filter((item) => !isLowSignalPost(itemAsPost(item)))
+  .filter((item) => isManualSeedItem(item) || !isLowSignalPost(itemAsPost(item)))
   .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')) || scoreMetrics(b.metrics || {}) - scoreMetrics(a.metrics || {}))
   .slice(0, limit)
 
@@ -764,6 +849,11 @@ const shardList = [...shardMap.keys()]
   })
   .map((day) => ({ date: day, file: `${day}.json`, count: shardMap.get(day).length }))
 for (const shard of shardList) writeJsonIfChanged(join(OUT_DIR, shard.file), shardMap.get(shard.date))
+const activeShardFiles = new Set(shardList.map((shard) => shard.file))
+for (const entry of readdirSync(OUT_DIR, { withFileTypes: true })) {
+  if (!entry.isFile() || !/^\d{4}-\d{2}-\d{2}\.json$/.test(entry.name)) continue
+  if (!activeShardFiles.has(entry.name)) rmSync(join(OUT_DIR, entry.name), { force: true })
+}
 
 const categoryCounts = new Map()
 for (const item of collection) {
@@ -779,9 +869,13 @@ writeJsonIfChanged(join(OUT_DIR, 'featured.json'), collection.slice(0, 24))
 writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   updatedAt: generatedAt.slice(0, 10),
   lastFetchedAt: generatedAt,
-  cliStatus: `Loaded ${allPosts.length} locally archived X posts from ${batches.length} fetch runs; collection now has ${collection.length} media-backed iOS app cards and ${creatorPool.length} creator profiles.`,
+  cliStatus: `Loaded ${allPosts.length} locally archived X posts from ${batches.length} fetch runs; collection now has ${collection.length} media-backed design/iOS cards and ${creatorPool.length} creator profiles.`,
   sourceRun: 'local-archive',
   fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
+  filters: {
+    minBookmarks,
+    manualSeedOverride: true,
+  },
   total: collection.length,
   categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
   pageSize: CHUNK_SIZE,
@@ -819,3 +913,4 @@ writeJsonIfChanged(join(ARCHIVE_ROOT, 'curation-review-latest.json'), {
 
 console.log(`Loaded ${allPosts.length} archived iOS app posts from ${batches.length} runs`)
 console.log(`Merged ${selected.length} local candidates into ${collection.length} total cards and ${creatorPool.length} creators at ${OUT_DIR}`)
+console.log(`Applied filters: min-bookmarks=${minBookmarks}`)

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "jh3yy-2019918728440283481",
+    "title": "one way w/ css 🪄",
+    "author": "jhey ʕ•ᴥ•ʔ",
+    "handle": "@jh3yy",
+    "sourceUrl": "https://x.com/jh3yy/status/2019918728440283481",
+    "seedSourceUrl": "https://x.com/jh3yy/status/2019918728440283481",
+    "date": "2026-02-07",
+    "kind": "showcase",
+    "scene": "motion",
+    "categories": [
+      "motion"
+    ],
+    "media": "video",
+    "heat": "2,887 likes · 150 reposts",
+    "tags": [
+      "design",
+      "motion"
+    ],
+    "verification": "Fetched from X via twitter-cli from seed-tweet; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "AI-style summary and product labels are generated from the original post text. Verify App Store availability from the source before publishing claims.",
+    "originalText": "one way w/ css 🪄\n\nstack an image 2x\nfilter 1st, unclip 2nd on :hover 🤙\n\na img { grid-area: 1 / 1; }\nimg:first-of-type { filter: grayscale(1) invert(1); }\nimg:last-of-type {\n  clip-path: circle(0); transition: clip-path;\n}\na:hover img:last-of-type { clip-path: circle(100%); } https://t.co/x3rAD0shsC",
+    "metrics": {
+      "likes": 2887,
+      "reposts": 150,
+      "replies": 25,
+      "quotes": 19,
+      "views": 320570,
+      "bookmarks": 2550
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2019918657023840258/vid/avc1/1080x1080/bXj8pNZCxC6JCgOj.mp4?tag=21"
+    ],
+    "firstSeenAt": "2026-07-27T07:54:14.075Z",
+    "lastFetchedAt": "2026-07-27T07:54:14.075Z",
+    "fetchRuns": [
+      "recent-design-sitemap-all-batch2-fast-2026-07-07"
+    ],
+    "summary": [
+      "The post presents a video-backed design or app demo, with the source post preserved for verification"
+    ],
+    "facets": {
+      "artifactType": "video",
+      "medium": "video",
+      "capability": [],
+      "evidence": [
+        "media-backed"
+      ],
+      "domain": [
+        "motion"
+      ],
+      "tech": [],
+      "risk": []
+    },
+    "mediaThumbUrl": ""
+  }
+]

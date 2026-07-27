@@ -13,3 +13,7 @@
 (("released" "iOS") ("app" OR "App Store" OR "iPhone"))
 (("now live" "iOS app") OR ("live on the App Store"))
 (("design" OR "redesign" OR "UI" OR "screens") ("iOS app" "App Store" OR "iPhone app"))
+(("iOS app design" OR "iPhone app design" OR "iPad app design") (UI OR UX OR screens OR mockup OR prototype OR redesign OR concept OR Figma))
+(("iPhone UI" OR "iOS UI" OR "SwiftUI design") (app OR screens OR prototype OR redesign OR interaction OR "product design"))
+(("mobile app design" OR "app UI design") (iPhone OR iOS OR iPad OR SwiftUI) (screens OR mockup OR prototype OR concept OR redesign))
+(("designed an iOS app" OR "designed and built" OR "i designed") (iPhone OR iOS OR "App Store" OR TestFlight OR SwiftUI))

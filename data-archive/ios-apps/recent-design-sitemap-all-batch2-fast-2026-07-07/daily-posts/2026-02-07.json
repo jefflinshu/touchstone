@@ -1,0 +1,27 @@
+[
+  {
+    "id": "2019918728440283481",
+    "author": "jh3yy",
+    "authorName": "jhey ʕ•ᴥ•ʔ",
+    "url": "https://x.com/jh3yy/status/2019918728440283481",
+    "text": "one way w/ css 🪄\n\nstack an image 2x\nfilter 1st, unclip 2nd on :hover 🤙\n\na img { grid-area: 1 / 1; }\nimg:first-of-type { filter: grayscale(1) invert(1); }\nimg:last-of-type {\n  clip-path: circle(0); transition: clip-path;\n}\na:hover img:last-of-type { clip-path: circle(100%); } https://t.co/x3rAD0shsC",
+    "createdAtISO": "2026-02-06T23:38:47.000Z",
+    "date": "2026-02-07",
+    "metrics": {
+      "likes": 2887,
+      "reposts": 150,
+      "replies": 25,
+      "quotes": 19,
+      "views": 320570,
+      "bookmarks": 2550
+    },
+    "media": [
+      {
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2019918657023840258/vid/avc1/1080x1080/bXj8pNZCxC6JCgOj.mp4?tag=21"
+      }
+    ],
+    "sourceMode": "seed-tweet",
+    "sourceSeed": "https://x.com/jh3yy/status/2019918728440283481"
+  }
+]

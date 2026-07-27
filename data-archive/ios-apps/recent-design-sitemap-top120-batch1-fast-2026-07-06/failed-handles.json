@@ -1,0 +1,42 @@
+[
+  {
+    "seed": "https://x.com/tdeser/status/2071603161886826825",
+    "mode": "seed-conversation",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter tweet https://x.com/tdeser/status/2071603161886826825 -n 1 --json"
+  },
+  {
+    "seed": "https://x.com/jondotvio/status/2070262357922832565",
+    "mode": "seed-conversation",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter tweet https://x.com/jondotvio/status/2070262357922832565 -n 1 --json"
+  },
+  {
+    "seed": "https://x.com/jmtrivedi/status/2000678707137036637",
+    "mode": "seed-conversation",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter tweet https://x.com/jmtrivedi/status/2000678707137036637 -n 1 --json"
+  },
+  {
+    "seed": "https://x.com/thisisgrey/status/2070099501558444323",
+    "mode": "seed-conversation",
+    "error": "Command failed: /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter tweet https://x.com/thisisgrey/status/2070099501558444323 -n 1 --json"
+  },
+  {
+    "seed": "https://x.com/naturlichturism/status/2069552827324584434",
+    "mode": "seed-conversation",
+    "error": "spawnSync /Users/linshu/.local/pipx/venvs/twitter-cli/bin/twitter ETIMEDOUT"
+  },
+  {
+    "seed": "https://x.com/ebuberpg/status/2069939959482474612",
+    "mode": "seed-conversation",
+    "error": "WARNING twitter_cli.client: Failed to init ClientTransaction: Failed to perform, curl: (28) Connection timed out after 54358 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.\n"
+  },
+  {
+    "seed": "https://x.com/urboib/status/2069841344831586373",
+    "mode": "seed-conversation",
+    "error": "WARNING twitter_cli.client: Failed to init ClientTransaction: Failed to perform, curl: (56) CONNECT tunnel failed, response 503. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.\n"
+  },
+  {
+    "seed": "https://x.com/azhassan_/status/2069797705409613872",
+    "mode": "seed-conversation",
+    "error": "WARNING twitter_cli.client: Failed to init ClientTransaction: Failed to perform, curl: (28) Operation timed out after 266541 milliseconds with 32393 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.\n"
+  }
+]

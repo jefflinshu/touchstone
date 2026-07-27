@@ -7,7 +7,7 @@ export default function IosAppsPage({ onBack }) {
       onBack={onBack}
       dataBase="/ios-apps-data"
       dataLabel="ios-apps"
-      title="iOS APPS"
+      title="DESIGN"
       iconSrc={appleIcon}
       analyticsPrefix="ios_apps"
       enableFavorites={false}

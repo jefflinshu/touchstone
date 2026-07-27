@@ -1,0 +1,375 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2073787052600995901",
+      "text": "text-to-lottie now supports text editing\n\nGenerate Lottie templates with Claude Code, Codex or Cursor\n\nPerfect for teams: create once, reuse anytime\n\nTry it: $ npx skills add diffusionstudio/lottie https://t.co/TUhAj7zBUM",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 456,
+        "retweets": 24,
+        "replies": 14,
+        "quotes": 0,
+        "views": 28877,
+        "bookmarks": 562
+      },
+      "createdAt": "Sun Jul 05 15:12:17 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:12",
+      "createdAtISO": "2026-07-05T15:12:17+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073772800817410048/vid/avc1/3284x2160/uF6CflCE7lIWt9s5.mp4?tag=28",
+          "width": 3284,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073787054966661384",
+      "text": "What's new:\n- Native text rendering \n- Bundled scene fonts in exports\n- Instant canvas updates for text edit\n- Multiline text wrapping\n- Unicode safe text persistence\n- Grouped controls for repeated text, color and number slots\n- Bug fixes\n\nhttps://t.co/1ZfLCLFWVB",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 8,
+        "retweets": 2,
+        "replies": 1,
+        "quotes": 0,
+        "views": 901,
+        "bookmarks": 12
+      },
+      "createdAt": "Sun Jul 05 15:12:17 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:12",
+      "createdAtISO": "2026-07-05T15:12:17+00:00",
+      "media": [],
+      "urls": [
+        "https://github.com/diffusionstudio/lottie"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073795440672190524",
+      "text": "Big credit to @konstipaulus for the core text rendering work behind this update 🔥\n\nI worked on the template experience, controls and docs side around it\n\nMore on the way!",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 724,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 15:45:36 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:45",
+      "createdAtISO": "2026-07-05T15:45:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073827803020087436",
+      "text": "@konstipaulus Example use case: announcement templates\n\nI recreated @vercel_dev 's OG image as a reference for this example\n\nCreate the template once, then reuse it by changing the content anytime https://t.co/klLj6pUvJK",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 468,
+        "bookmarks": 3
+      },
+      "createdAt": "Sun Jul 05 17:54:12 +0000 2026",
+      "createdAtLocal": "2026-07-06 01:54",
+      "createdAtISO": "2026-07-05T17:54:12+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073827472735436801/vid/avc1/3296x2160/ZUvfjmC7UED-cdwi.mp4?tag=28",
+          "width": 3296,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073829105892524433",
+      "text": "@konstipaulus @vercel_dev Another variation on the announcement template\n\nSame brand, different layout\n\nOnce you have a few scenes, the skill can use them as context to create new ones more consistently and on brand https://t.co/UxP1CFPGzb",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 429,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jul 05 17:59:23 +0000 2026",
+      "createdAtLocal": "2026-07-06 01:59",
+      "createdAtISO": "2026-07-05T17:59:23+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073827985552011264/vid/avc1/3296x2160/UVMd0KVQs3pHnxeU.mp4?tag=28",
+          "width": 3296,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073829366652367056",
+      "text": "@konstipaulus @vercel_dev 👇\n\nhttps://t.co/8GEk45hjOC",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 549,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 18:00:25 +0000 2026",
+      "createdAtLocal": "2026-07-06 02:00",
+      "createdAtISO": "2026-07-05T18:00:25+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/konstipaulus/status/2073828940225868199?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073828940225868199",
+        "text": "@dorukkavcioglu @vercel_dev GIFs are technically supported as Open Graph images 👀",
+        "author": {
+          "screenName": "konstipaulus",
+          "name": "konstantinpaulus"
+        }
+      }
+    },
+    {
+      "id": "2073809269410181515",
+      "text": "@dorukkavcioglu This is great Doruk. If you want to render these animations consistently cross platform, we’ve got a runtime that might help.",
+      "author": {
+        "id": "15556862",
+        "name": "Nattu",
+        "screenName": "reallynattu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1360267204818653184/2xzJY9w6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 518,
+        "bookmarks": 2
+      },
+      "createdAt": "Sun Jul 05 16:40:33 +0000 2026",
+      "createdAtLocal": "2026-07-06 00:40",
+      "createdAtISO": "2026-07-05T16:40:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073838122282910162",
+      "text": "@reallynattu thanks Nattu, appreciate it! will take a look",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 158,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 18:35:13 +0000 2026",
+      "createdAtLocal": "2026-07-06 02:35",
+      "createdAtISO": "2026-07-05T18:35:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073841328966746574",
+      "text": "@dorukkavcioglu cursor too, nice. does it pick up the SKILL.md natively or you had to adapt something for its agent?",
+      "author": {
+        "id": "1599038993991180288",
+        "name": "Marco Rossini",
+        "screenName": "PinoZlatan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064280036681637888/c27RZejW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 196,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 18:47:57 +0000 2026",
+      "createdAtLocal": "2026-07-06 02:47",
+      "createdAtISO": "2026-07-05T18:47:57+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073859220915507584",
+      "text": "@PinoZlatan that’s all you need. once installed, text-to-lottie is ready to use",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 164,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 19:59:03 +0000 2026",
+      "createdAtLocal": "2026-07-06 03:59",
+      "createdAtISO": "2026-07-05T19:59:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073795566576767165",
+      "text": "@dorukkavcioglu doing gods work",
+      "author": {
+        "id": "1567305898791428096",
+        "name": "aron",
+        "screenName": "designbyaron",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2053882101674512384/G2aKVOmh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 438,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 15:46:06 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:46",
+      "createdAtISO": "2026-07-05T15:46:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073799920973205692",
+      "text": "@designbyaron haha appreciate it Aron, that means a lot 🙏",
+      "author": {
+        "id": "968231742",
+        "name": "Doruk",
+        "screenName": "dorukkavcioglu",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2015829562970533912/eQ84sFnB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 233,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 16:03:25 +0000 2026",
+      "createdAtLocal": "2026-07-06 00:03",
+      "createdAtISO": "2026-07-05T16:03:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2019918728440283481",
+      "text": "one way w/ css 🪄\n\nstack an image 2x\nfilter 1st, unclip 2nd on :hover 🤙\n\na img { grid-area: 1 / 1; }\nimg:first-of-type { filter: grayscale(1) invert(1); }\nimg:last-of-type {\n  clip-path: circle(0); transition: clip-path;\n}\na:hover img:last-of-type { clip-path: circle(100%); } https://t.co/x3rAD0shsC",
+      "author": {
+        "id": "2396811776",
+        "name": "jhey ʕ•ᴥ•ʔ",
+        "screenName": "jh3yy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1534700564810018816/anAuSfkp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2887,
+        "retweets": 150,
+        "replies": 25,
+        "quotes": 19,
+        "views": 320570,
+        "bookmarks": 2550
+      },
+      "createdAt": "Fri Feb 06 23:38:47 +0000 2026",
+      "createdAtLocal": "2026-02-07 07:38",
+      "createdAtISO": "2026-02-06T23:38:47+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2019918657023840258/vid/avc1/1080x1080/bXj8pNZCxC6JCgOj.mp4?tag=21",
+          "width": 2160,
+          "height": 2160
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2014323631032025591",
+        "text": "One language: clarity and focus. ✨ https://t.co/RxQtHhbkKL",
+        "author": {
+          "screenName": "HypeopleStudio",
+          "name": "Hypeople"
+        }
+      }
+    }
+  ]
+}
