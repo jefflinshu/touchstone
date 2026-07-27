@@ -7,7 +7,12 @@ import { I18nProvider } from './i18n.jsx'
 
 initAnalytics()
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root')
+// The server places a semantic, crawlable preview in #root. The interactive SPA
+// renders the same page content after JavaScript loads, so clear the preview first.
+rootElement.replaceChildren()
+
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <I18nProvider>
       <App />

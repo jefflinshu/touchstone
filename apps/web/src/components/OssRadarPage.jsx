@@ -382,14 +382,16 @@ export default function OssRadarPage({ onBack }) {
   return (
     <main className="pb-20">
       <section className="mt-7 sm:mt-10">
-        <button type="button" onClick={onBack} className="cursor-pointer text-left">
-          <span className="flex items-center gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
-              <GitHubMark className="h-6 w-6 sm:h-8 sm:w-8" />
+        <h1>
+          <button type="button" onClick={onBack} className="cursor-pointer text-left">
+            <span className="flex items-center gap-3">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
+                <GitHubMark className="h-6 w-6 sm:h-8 sm:w-8" />
+              </span>
+              <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">OSS RADAR</span>
             </span>
-            <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">OSS RADAR</span>
-          </span>
-        </button>
+          </button>
+        </h1>
       </section>
 
       <section className="mt-5 sm:mt-6">

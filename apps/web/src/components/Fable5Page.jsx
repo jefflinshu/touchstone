@@ -1024,14 +1024,16 @@ export default function Fable5Page({
     <main className="pb-20">
       <section className="mt-7 sm:mt-10">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end">
-          <button type="button" onClick={onBack} className="shrink-0 cursor-pointer text-left">
-            <span className="flex items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
-                <img src={iconSrc} alt="" className="h-6 w-6 sm:h-8 sm:w-8" />
+          <h1 className="shrink-0">
+            <button type="button" onClick={onBack} className="cursor-pointer text-left">
+              <span className="flex items-center gap-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-[0_0_28px_rgba(255,255,255,0.12)] sm:h-14 sm:w-14">
+                  <img src={iconSrc} alt="" className="h-6 w-6 sm:h-8 sm:w-8" />
+                </span>
+                <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">{title}</span>
               </span>
-              <span className="block font-pixel text-[30px] leading-none text-white sm:text-[48px]">{title}</span>
-            </span>
-          </button>
+            </button>
+          </h1>
 
           <div className="relative z-10 flex w-full flex-col gap-2 lg:ml-auto lg:w-auto lg:max-w-[780px] lg:flex-row lg:items-center lg:justify-end">
             <label className="showcase-control-pill relative flex h-9 w-full shrink-0 items-center rounded-full px-3 text-white transition-colors focus-within:border-acid sm:w-[220px] lg:w-[260px]">

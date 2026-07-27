@@ -12,6 +12,8 @@ import Anthropic from '@anthropic-ai/sdk'
 const APP_DIR = path.dirname(fileURLToPath(import.meta.url))
 const WORKSPACE_ROOT = path.resolve(APP_DIR, '../..')
 const WEB_DIR = process.env.TOUCHSTONE_WEB_DIR || path.join(WORKSPACE_ROOT, 'apps', 'web')
+const WEB_PUBLIC_DIR = path.join(WEB_DIR, 'public')
+const WEB_DIST_DIR = path.join(WEB_DIR, 'dist')
 const RUNS_DIR = process.env.TOUCHSTONE_RUNS_DIR || path.join(WORKSPACE_ROOT, 'runs')
 const DATA_DIR = process.env.TOUCHSTONE_DATA_DIR || path.join(WORKSPACE_ROOT, 'data')
 const REGISTRY_FILE = path.join(DATA_DIR, 'runs.json')
@@ -22,6 +24,39 @@ const SITE_DESCRIPTION =
   'Touchstone 是一个多模型 AI coding 作品对比平台，用同一个 prompt 同时运行 Codex、Claude、Gemini 等 coding agent，并展示可交互作品、提示词、运行指标和社区案例。'
 const DEFAULT_SOCIAL_IMAGE = '/brand/touchstone-og.svg'
 const DEFAULT_COMMUNITY_PUBLISH_URL = 'https://touchstone.jefflin.ai/api/publish'
+const COLLECTION_ROUTES = {
+  '/fable5': {
+    title: 'Claude Fable 5 Prompts & Showcases · Touchstone',
+    heading: 'Claude Fable 5 prompts and showcases',
+    description: '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。',
+    dataFolder: 'fable5-data',
+  },
+  '/figma-motion': {
+    title: 'Figma Motion Showcases · Touchstone',
+    heading: 'Figma Motion showcases and animation references',
+    description: '浏览 Figma Motion 发布信息、时间线动画案例、Agent 生成 motion 示例和可复用的动效设计灵感。',
+    dataFolder: 'figma-motion-data',
+  },
+  '/ios-apps': {
+    title: 'Design and iOS References · Touchstone',
+    heading: 'Design and iOS app references',
+    description: '浏览从 X 上收集的设计与 iOS App 案例，保留原帖来源、App Store/TestFlight 信号、设计截图或视频封面，并生成简短总结。',
+    dataFolder: 'ios-apps-data',
+  },
+  '/oss-radar': {
+    title: 'GitHub Open Source Projects · Touchstone',
+    heading: 'Emerging AI and developer tools on GitHub',
+    description: '浏览已收录的 GitHub 开源项目，展示项目分类、GitHub 指标和可复用的 X 搜索关键词。',
+    previewFile: 'oss-radar-seo.json',
+  },
+}
+const CORE_NAV_LINKS = [
+  ['/', 'AI Coding Arena'],
+  ['/fable5', 'Claude Fable 5'],
+  ['/figma-motion', 'Figma Motion'],
+  ['/ios-apps', 'Design & iOS'],
+  ['/oss-radar', 'OSS Radar'],
+]
 const PUBLISH_LIMITS = {
   maxFiles: Number(process.env.PUBLISH_MAX_FILES || 500),
   maxTotalBytes: Number(process.env.PUBLISH_MAX_TOTAL_BYTES || 50 * 1024 * 1024),
@@ -60,7 +95,30 @@ function cleanText(value, max = 180) {
     .slice(0, max)
 }
 
+function safeDecodeURIComponent(value) {
+  try {
+    return decodeURIComponent(value)
+  } catch {
+    return value
+  }
+}
+
+function safeHttpUrl(value) {
+  try {
+    const url = new URL(value)
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : ''
+  } catch {
+    return ''
+  }
+}
+
 function requestOrigin(req) {
+  const configuredBaseUrl = process.env.PUBLIC_BASE_URL || process.env.BASE_URL
+  if (configuredBaseUrl) {
+    try {
+      return new URL(configuredBaseUrl).origin
+    } catch {}
+  }
   const proto = req.get('x-forwarded-proto') || req.protocol || 'http'
   return `${proto}://${req.get('host')}`
 }
@@ -76,50 +134,180 @@ function latestIso(list) {
   }, '')
 }
 
+function latestIsoValue(values) {
+  return values.filter(Boolean).reduce((max, value) => (value > max ? value : max), '')
+}
+
+function readWebJson(...segments) {
+  for (const root of [WEB_PUBLIC_DIR, WEB_DIST_DIR]) {
+    try {
+      return JSON.parse(fs.readFileSync(path.join(root, ...segments), 'utf8'))
+    } catch {}
+  }
+  return null
+}
+
+function collectionIndex(dataFolder) {
+  return readWebJson(dataFolder, 'index.json') || {}
+}
+
+function collectionPreview(dataFolder, limit = 12) {
+  const index = collectionIndex(dataFolder)
+  const firstPage = index.pages?.[0]?.file || 'pages/000.json'
+  const items = readWebJson(dataFolder, ...firstPage.split('/'))
+  return Array.isArray(items) ? items.slice(0, limit) : []
+}
+
+function routeCollectionPreview(config, limit = 12) {
+  if (config.dataFolder) return collectionPreview(config.dataFolder, limit)
+  if (config.previewFile) {
+    const preview = readWebJson(config.previewFile)
+    return Array.isArray(preview?.items) ? preview.items.slice(0, limit) : []
+  }
+  return []
+}
+
+function routeCollectionUpdatedAt(config) {
+  if (config.dataFolder) return collectionIndex(config.dataFolder).updatedAt || ''
+  if (config.previewFile) return readWebJson(config.previewFile)?.updatedAt || serverModifiedIso()
+  return serverModifiedIso()
+}
+
+function serverModifiedIso() {
+  try {
+    return fs.statSync(path.join(APP_DIR, 'server.js')).mtime.toISOString()
+  } catch {
+    return ''
+  }
+}
+
+function renderCoreNav() {
+  return `<nav aria-label="Touchstone sections"><ul>${CORE_NAV_LINKS.map(
+    ([href, label]) => `<li><a href="${href}">${escapeHtml(label)}</a></li>`
+  ).join('')}</ul></nav>`
+}
+
+function renderHomeSeoBody() {
+  return `<main class="seo-shell">
+    <h1>Touchstone AI Coding Arena</h1>
+    <p>${escapeHtml(SITE_DESCRIPTION)}</p>
+    <p>Compare real output from Codex, Claude and Gemini coding agents, then explore prompts, interactive cases, design references and emerging open-source tools.</p>
+    ${renderCoreNav()}
+    <section>
+      <h2>Explore AI building references</h2>
+      <p>Touchstone collects reproducible prompts, source-linked community showcases, motion design references, iOS product examples and GitHub projects for people building with AI.</p>
+    </section>
+  </main>`
+}
+
+function renderCollectionSeoBody(config, items) {
+  const list = items.length
+    ? `<section><h2>Latest source-linked examples</h2><ol>${items
+        .map((item) => {
+          const sourceUrl = safeHttpUrl(item.sourceUrl)
+          const title = cleanText(item.title || item.originalText || 'Community showcase', 140)
+          const summary = cleanText(Array.isArray(item.summary) ? item.summary[0] : item.summary || item.note, 220)
+          const byline = [cleanText(item.author || item.handle, 80), cleanText(item.date, 20)].filter(Boolean).join(' · ')
+          return `<li><article><h3>${sourceUrl ? `<a href="${escapeHtml(sourceUrl)}" rel="nofollow">${escapeHtml(title)}</a>` : escapeHtml(title)}</h3>${
+            byline ? `<p>${escapeHtml(byline)}</p>` : ''
+          }${summary ? `<p>${escapeHtml(summary)}</p>` : ''}</article></li>`
+        })
+        .join('')}</ol></section>`
+    : `<section><h2>What you can explore</h2><p>Browse curated examples, original sources, practical notes and reusable discovery keywords in this collection.</p></section>`
+
+  return `<main class="seo-shell">
+    <h1>${escapeHtml(config.heading)}</h1>
+    <p>${escapeHtml(config.description)}</p>
+    ${renderCoreNav()}
+    ${list}
+  </main>`
+}
+
+function renderProjectSeoBody(project, projectRuns, description) {
+  const agents = [...new Set(projectRuns.map((run) => run.agentName).filter(Boolean))]
+  return `<main class="seo-shell">
+    <h1>${escapeHtml(project)} · AI coding case</h1>
+    <p>${escapeHtml(description)}</p>
+    ${agents.length ? `<p>Compared agents: ${agents.map(escapeHtml).join(', ')}.</p>` : ''}
+    ${renderCoreNav()}
+  </main>`
+}
+
+function renderProfileSeoBody(name, description) {
+  return `<main class="seo-shell">
+    <h1>${escapeHtml(name)} · Touchstone profile</h1>
+    <p>${escapeHtml(description)}</p>
+    ${renderCoreNav()}
+  </main>`
+}
+
 function seoForPath(req) {
   const origin = requestOrigin(req)
   let pathname = publicPath(req.path || '/')
   let title = SITE_NAME
   let description = SITE_DESCRIPTION
   let type = 'WebSite'
+  let body = renderHomeSeoBody()
+  let found = pathname === '/'
+  let mainEntity
 
-  if (pathname === '/fable5') {
-    title = 'Claude Fable 5 Prompts & Showcases · Touchstone'
-    description = '浏览 Claude Fable 5 社区真实案例、热门 prompt、网页、游戏、设计、动画等分类作品，并复制可复用提示词。'
+  const collection = COLLECTION_ROUTES[pathname]
+  if (collection) {
+    found = true
+    title = collection.title
+    description = collection.description
     type = 'CollectionPage'
-  } else if (pathname === '/figma-motion') {
-    title = 'Figma Motion Showcases · Touchstone'
-    description = '浏览 Figma Motion 发布信息、时间线动画案例、Agent 生成 motion 示例和可复用的动效设计灵感。'
-    type = 'CollectionPage'
-  } else if (pathname === '/ios-apps') {
-    title = 'New iOS App Launches · Touchstone'
-    description = '浏览从 X 上收集的新发布 iOS App，保留原帖来源、App Store/TestFlight 信号、设计截图或视频封面，并生成简短总结。'
-    type = 'CollectionPage'
-  } else if (pathname === '/oss-radar') {
-    title = 'GitHub Open Source Projects · Touchstone'
-    description = '浏览已收录的 GitHub 开源项目，展示项目分类、GitHub 指标和可复用的 X 搜索关键词。'
-    type = 'CollectionPage'
+    const items = routeCollectionPreview(collection)
+    body = renderCollectionSeoBody(collection, items)
+    if (items.length) {
+      mainEntity = {
+        '@type': 'ItemList',
+        numberOfItems: items.length,
+        itemListElement: items.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: cleanText(item.title || item.originalText || 'Community showcase', 140),
+          ...(safeHttpUrl(item.sourceUrl) ? { url: safeHttpUrl(item.sourceUrl) } : {}),
+        })),
+      }
+    }
   } else {
     const projectMatch = pathname.match(/^\/p\/([^/]+)$/)
     const userMatch = pathname.match(/^\/u\/([^/]+)$/)
     if (projectMatch) {
-      const project = decodeURIComponent(projectMatch[1])
+      const project = safeDecodeURIComponent(projectMatch[1])
       const projectRuns = runs.filter((r) => r.project === project)
-      const latest = projectRuns[projectRuns.length - 1]
-      title = `${project} · Touchstone Case`
-      const prompt = latest?.prompt ? `Prompt: ${cleanText(latest.prompt, 120)}` : '查看这个 AI coding case 的多模型作品对比。'
-      description = `${prompt}${latest?.prompt?.length > 120 ? '...' : ''} ${projectRuns.length || ''} runs across ${
-        new Set(projectRuns.map((r) => r.agentName)).size || 'multiple'
-      } agents.`.trim()
-      type = 'CreativeWork'
+      if (projectRuns.length) {
+        found = true
+        const latest = projectRuns[projectRuns.length - 1]
+        title = `${project} · Touchstone Case`
+        const prompt = latest?.prompt ? `Prompt: ${cleanText(latest.prompt, 120)}` : '查看这个 AI coding case 的多模型作品对比。'
+        description = `${prompt}${latest?.prompt?.length > 120 ? '...' : ''} ${projectRuns.length} runs across ${
+          new Set(projectRuns.map((r) => r.agentName)).size || 'multiple'
+        } agents.`.trim()
+        type = 'CreativeWork'
+        body = renderProjectSeoBody(project, projectRuns, description)
+      }
     } else if (userMatch) {
-      const email = decodeURIComponent(userMatch[1])
+      const email = safeDecodeURIComponent(userMatch[1])
       const profile = users[email] || {}
-      const name = profile.name || email
-      title = `${name} · Touchstone Profile`
-      description = cleanText(profile.bio, 180) || `查看 ${name} 在 Touchstone 发布和参与的 AI coding cases。`
-      type = 'ProfilePage'
+      const userRuns = runs.filter((run) => run.user === email)
+      if (users[email] || userRuns.length) {
+        found = true
+        const name = profile.name || email
+        title = `${name} · Touchstone Profile`
+        description = cleanText(profile.bio, 180) || `查看 ${name} 在 Touchstone 发布和参与的 AI coding cases。`
+        type = 'ProfilePage'
+        body = renderProfileSeoBody(name, description)
+      }
     }
+  }
+
+  if (!found) {
+    title = `Page not found · ${SITE_NAME}`
+    description = 'The requested Touchstone page could not be found.'
+    type = 'WebPage'
+    body = `<main class="seo-shell"><h1>Page not found</h1><p>${escapeHtml(description)}</p>${renderCoreNav()}</main>`
   }
 
   const canonical = `${origin}${pathname}`
@@ -130,6 +318,9 @@ function seoForPath(req) {
     canonical,
     image,
     type,
+    body,
+    found,
+    robots: found ? 'index,follow,max-image-preview:large' : 'noindex,nofollow',
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': type,
@@ -139,6 +330,7 @@ function seoForPath(req) {
       image,
       inLanguage: 'zh-CN',
       isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: origin },
+      ...(mainEntity ? { mainEntity } : {}),
     },
   }
 }
@@ -158,6 +350,7 @@ function replaceMeta(html, selector, attrs) {
 function renderSeoHtml(html, seo) {
   let out = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(seo.title)}</title>`)
   out = replaceMeta(out, { kind: 'name', value: 'description' }, { name: 'description', content: seo.description })
+  out = replaceMeta(out, { kind: 'name', value: 'robots' }, { name: 'robots', content: seo.robots })
   out = replaceMeta(out, { kind: 'property', value: 'og:title' }, { property: 'og:title', content: seo.title })
   out = replaceMeta(out, { kind: 'property', value: 'og:description' }, { property: 'og:description', content: seo.description })
   out = replaceMeta(out, { kind: 'property', value: 'og:url' }, { property: 'og:url', content: seo.canonical })
@@ -171,9 +364,10 @@ function renderSeoHtml(html, seo) {
     ? out.replace(/<link[^>]+rel=["']canonical["'][^>]*>/i, canonicalTag)
     : out.replace('</head>', `    ${canonicalTag}\n  </head>`)
   const jsonLd = `<script type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`
-  return /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i.test(out)
+  out = /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i.test(out)
     ? out.replace(/<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i, jsonLd)
     : out.replace('</head>', `    ${jsonLd}\n  </head>`)
+  return out.replace(/<div\s+id=["']root["']\s*><\/div>/i, `<div id="root">${seo.body}</div>`)
 }
 
 // ---------- 配置与注册表 ----------
@@ -1804,11 +1998,19 @@ app.get('/robots.txt', (req, res) => {
 
 app.get('/sitemap.xml', (req, res) => {
   const origin = requestOrigin(req)
+  const collectionUpdatedAt = Object.fromEntries(
+    Object.entries(COLLECTION_ROUTES).map(([pathname, config]) => [
+      pathname,
+      routeCollectionUpdatedAt(config),
+    ])
+  )
+  const homeUpdatedAt = latestIsoValue([latestIso(runs), ...Object.values(collectionUpdatedAt), serverModifiedIso()])
   const urls = [
-    { loc: `${origin}/`, priority: '1.0', changefreq: 'daily', lastmod: latestIso(runs) },
-    { loc: `${origin}/fable5`, priority: '0.9', changefreq: 'weekly', lastmod: latestIso(runs) },
-    { loc: `${origin}/figma-motion`, priority: '0.8', changefreq: 'weekly', lastmod: '2026-06-24' },
-    { loc: `${origin}/ios-apps`, priority: '0.8', changefreq: 'daily', lastmod: '2026-06-30' },
+    { loc: `${origin}/`, priority: '1.0', changefreq: 'weekly', lastmod: homeUpdatedAt },
+    { loc: `${origin}/fable5`, priority: '0.9', changefreq: 'weekly', lastmod: collectionUpdatedAt['/fable5'] },
+    { loc: `${origin}/figma-motion`, priority: '0.8', changefreq: 'weekly', lastmod: collectionUpdatedAt['/figma-motion'] },
+    { loc: `${origin}/ios-apps`, priority: '0.8', changefreq: 'weekly', lastmod: collectionUpdatedAt['/ios-apps'] },
+    { loc: `${origin}/oss-radar`, priority: '0.8', changefreq: 'weekly', lastmod: collectionUpdatedAt['/oss-radar'] },
   ]
   const projects = new Map()
   for (const run of runs) {
@@ -1837,6 +2039,7 @@ app.get('/sitemap.xml', (req, res) => {
         `  <url>\n    <loc>${escapeXml(u.loc)}</loc>${u.lastmod ? `\n    <lastmod>${escapeXml(u.lastmod.slice(0, 10))}</lastmod>` : ''}\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
     )
     .join('\n')}\n</urlset>\n`
+  res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate')
   res.type('application/xml; charset=utf-8').send(body)
 })
 
@@ -1881,16 +2084,16 @@ function setDistCacheHeaders(res, filePath) {
 }
 
 // web public 优先于 dist：fable5 数据/媒体由脚本直接写入 public，更新后无需重新构建
-app.use(express.static(path.join(WEB_DIR, 'public'), { index: false, maxAge: '5m', setHeaders: setPublicAssetCacheHeaders }))
+app.use(express.static(WEB_PUBLIC_DIR, { index: false, maxAge: '5m', setHeaders: setPublicAssetCacheHeaders }))
 
 // 生产模式：托管前端构建产物
-const distDir = path.join(WEB_DIR, 'dist')
-if (fs.existsSync(distDir)) {
-  app.use(express.static(distDir, { index: false, setHeaders: setDistCacheHeaders }))
+if (fs.existsSync(WEB_DIST_DIR)) {
+  app.use(express.static(WEB_DIST_DIR, { index: false, setHeaders: setDistCacheHeaders }))
   app.get(/^\/(?!api|ws|workspace|avatars).*/, (req, res) => {
-    const indexHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8')
+    const indexHtml = fs.readFileSync(path.join(WEB_DIST_DIR, 'index.html'), 'utf8')
+    const seo = seoForPath(req)
     res.setHeader('Cache-Control', 'no-store, must-revalidate')
-    res.type('html').send(renderSeoHtml(indexHtml, seoForPath(req)))
+    res.status(seo.found ? 200 : 404).type('html').send(renderSeoHtml(indexHtml, seo))
   })
 }
 
