@@ -18,6 +18,15 @@ import {
 import { probeAgentCapabilityAsync, validateAgentSelection } from './agent-capabilities.js'
 import { canManageRun, canReadRun, isRunPublished, visibleRunsFor } from './run-access.js'
 import {
+  ProviderRegistry,
+  listProviderPresets,
+  modelDiscoveryUrls,
+  parseDiscoveredModels,
+  providerRequestHeaders,
+  providerRuntimeEnv,
+} from './provider-registry.js'
+import { ModelCatalog } from './model-catalog.js'
+import {
   buildSelectedSkillsPrompt,
   discoverInstalledSkills,
   installBundledSkill,
@@ -36,6 +45,7 @@ const WEB_DIST_DIR = path.join(WEB_DIR, 'dist')
 const RUNS_DIR = process.env.TOUCHSTONE_RUNS_DIR || path.join(WORKSPACE_ROOT, 'runs')
 const DATA_DIR = process.env.TOUCHSTONE_DATA_DIR || path.join(WORKSPACE_ROOT, 'data')
 const REGISTRY_FILE = path.join(DATA_DIR, 'runs.json')
+const PROVIDERS_FILE = path.join(DATA_DIR, 'providers.json')
 const AGENTS_FILE = process.env.TOUCHSTONE_AGENTS_FILE || path.join(WORKSPACE_ROOT, 'agents.json')
 const SKILLS_CATALOG_FILE =
   process.env.TOUCHSTONE_SKILLS_CATALOG_FILE || path.join(WORKSPACE_ROOT, 'skills', 'catalog.json')
@@ -103,6 +113,8 @@ const RUN_CONTRACT = `# Touchstone Run Output Contract
 
 fs.mkdirSync(RUNS_DIR, { recursive: true })
 fs.mkdirSync(DATA_DIR, { recursive: true })
+const providerRegistry = new ProviderRegistry(PROVIDERS_FILE)
+const modelCatalog = new ModelCatalog({ fetchJson: fetchProviderJson })
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -414,6 +426,37 @@ function listLocalSkills() {
 function publicSkill(skill) {
   const { locations, ...safe } = skill
   return safe
+}
+
+function providerMessagesUrl(baseUrl) {
+  return baseUrl.endsWith('/v1') ? `${baseUrl}/messages` : `${baseUrl}/v1/messages`
+}
+
+async function fetchProviderJson(url, options = {}) {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), Number(process.env.PROVIDER_PROBE_TIMEOUT_MS || 15_000))
+  timer.unref()
+  try {
+    const response = await fetch(url, { ...options, signal: controller.signal })
+    const raw = await response.text()
+    let data
+    try {
+      data = raw ? JSON.parse(raw) : {}
+    } catch {
+      data = { error: raw }
+    }
+    if (!response.ok) {
+      const detail =
+        data?.error?.message ||
+        data?.error ||
+        data?.message ||
+        `${response.status} ${response.statusText}`
+      throw new Error(String(detail).slice(0, 1000))
+    }
+    return data
+  } finally {
+    clearTimeout(timer)
+  }
 }
 
 function skillInstallEnabled(req) {
@@ -991,7 +1034,7 @@ function autoCommitRun(run) {
 const liveProcs = new Map() // runId -> { proc, agent, emitEvent }
 const publishCredentials = new Map() // runId -> { idToken }
 
-function startRun(run, agent, prompt, timeoutMinutes) {
+function startRun(run, agent, prompt, timeoutMinutes, runtimeEnv = {}) {
   const dir = path.join(RUNS_DIR, run.folder)
   fs.mkdirSync(dir, { recursive: true })
   writeRunContract(dir, run)
@@ -1026,7 +1069,7 @@ function startRun(run, agent, prompt, timeoutMinutes) {
   try {
     proc = spawn(agent.command, args, {
       cwd: dir,
-      env: { ...process.env, FORCE_COLOR: '0', NO_COLOR: '1' },
+      env: { ...process.env, ...runtimeEnv, FORCE_COLOR: '0', NO_COLOR: '1' },
       stdio: ['pipe', 'pipe', 'pipe'],
     })
   } catch (err) {
@@ -1147,6 +1190,124 @@ app.get('/api/agents', async (req, res) => {
     })),
     defaults: cfg.defaults,
   })
+})
+
+app.get('/api/providers', (req, res) => {
+  const user = currentSession(req)?.email
+  if (!user) return res.status(401).json({ error: '请先登录后读取本地 Provider' })
+  res.json({ providers: providerRegistry.list(user) })
+})
+
+app.get('/api/provider-presets', (_req, res) => {
+  res.json({ presets: listProviderPresets() })
+})
+
+app.get('/api/model-catalog', async (req, res) => {
+  const providerId = String(req.query.provider || '').trim()
+  if (!/^[a-z0-9_-]{1,80}$/i.test(providerId)) {
+    return res.status(400).json({ error: 'Provider catalog ID 无效' })
+  }
+  try {
+    const catalog = await modelCatalog.provider(providerId)
+    if (!catalog) return res.status(404).json({ error: 'models.dev 中没有这个 Provider' })
+    res.json({ catalog })
+  } catch (error) {
+    res.status(502).json({
+      error: `models.dev 模型目录暂时不可用：${error.name === 'AbortError' ? '请求超时' : error.message}`,
+    })
+  }
+})
+
+app.post('/api/providers', (req, res) => {
+  const user = currentSession(req)?.email
+  if (!user) return res.status(401).json({ error: '请先登录后配置 Provider' })
+  try {
+    const provider = providerRegistry.upsert(user, req.body || {})
+    res.json({ provider, providers: providerRegistry.list(user) })
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+})
+
+app.delete('/api/providers/:id', (req, res) => {
+  const user = currentSession(req)?.email
+  if (!user) return res.status(401).json({ error: '请先登录后配置 Provider' })
+  const removed = providerRegistry.remove(user, req.params.id)
+  if (!removed) return res.status(404).json({ error: 'Provider 不存在' })
+  res.json({ ok: true, providers: providerRegistry.list(user) })
+})
+
+app.post('/api/providers/:id/discover', async (req, res) => {
+  const user = currentSession(req)?.email
+  if (!user) return res.status(401).json({ error: '请先登录后同步模型' })
+  const provider = providerRegistry.resolve(user, req.params.id)
+  if (!provider) return res.status(404).json({ error: 'Provider 不存在' })
+  const errors = []
+  for (const url of modelDiscoveryUrls(provider.baseUrl)) {
+    try {
+      const data = await fetchProviderJson(url, {
+        headers: providerRequestHeaders(provider),
+      })
+      const models = parseDiscoveredModels(data)
+      if (!models.length) throw new Error('接口没有返回模型 ID')
+      const updated = providerRegistry.replaceModels(user, provider.id, models)
+      return res.json({ provider: updated, providers: providerRegistry.list(user) })
+    } catch (error) {
+      errors.push(`${url}: ${error.name === 'AbortError' ? '请求超时' : error.message}`)
+    }
+  }
+  res.status(502).json({ error: `模型同步失败：${errors.join('；')}` })
+})
+
+app.post('/api/providers/:id/test', async (req, res) => {
+  const user = currentSession(req)?.email
+  if (!user) return res.status(401).json({ error: '请先登录后测试 Provider' })
+  const provider = providerRegistry.resolve(user, req.params.id)
+  if (!provider) return res.status(404).json({ error: 'Provider 不存在' })
+  const model = String(req.body?.model || provider.models?.[0] || '').trim()
+  if (!model) return res.status(400).json({ error: '请先填写至少一个模型 ID' })
+  try {
+    const data = await fetchProviderJson(providerMessagesUrl(provider.baseUrl), {
+      method: 'POST',
+      headers: providerRequestHeaders(provider),
+      body: JSON.stringify({
+        model,
+        max_tokens: 64,
+        messages: [{ role: 'user', content: 'Call the touchstone_probe tool with value "ok".' }],
+        tools: [
+          {
+            name: 'touchstone_probe',
+            description: 'A no-op compatibility probe.',
+            input_schema: {
+              type: 'object',
+              properties: { value: { type: 'string' } },
+              required: ['value'],
+            },
+          },
+        ],
+        tool_choice: { type: 'tool', name: 'touchstone_probe' },
+      }),
+    })
+    const toolUse = Array.isArray(data.content)
+      ? data.content.find((item) => item?.type === 'tool_use' && item?.name === 'touchstone_probe')
+      : null
+    if (!toolUse) {
+      return res.status(409).json({
+        error: 'Provider 请求成功，但模型没有返回 Anthropic tool_use；不建议用于 Claude Code。',
+        model: data.model || model,
+      })
+    }
+    res.json({
+      ok: true,
+      model: data.model || model,
+      toolUse: true,
+      message: 'Anthropic Messages 与 tool_use 预检通过',
+    })
+  } catch (error) {
+    res.status(502).json({
+      error: `Provider 预检失败：${error.name === 'AbortError' ? '请求超时' : error.message}`,
+    })
+  }
 })
 
 app.get('/api/skills', (req, res) => {
@@ -1575,6 +1736,8 @@ function registerPublishedRun({ sourceRun, identity, folder, totalBytes }) {
     agentName: sourceRun.agentName || sourceRun.agentId || 'Unknown Agent',
     model: sourceRun.model || null,
     resolvedModel: sourceRun.resolvedModel || null,
+    providerName: sourceRun.providerName || null,
+    modelMode: sourceRun.modelMode || 'default',
     color: sourceRun.color || '#d4ff4f',
     project,
     prompt: String(sourceRun.prompt || '').slice(0, 20000),
@@ -1928,14 +2091,30 @@ app.post('/api/tasks', async (req, res) => {
     const agent = cfg.agents.find((item) => item.id === runner?.agentId)
     if (!agent) return { runner, error: `未知 Agent：${runner?.agentId || ''}` }
     const model = typeof runner.model === 'string' ? runner.model.trim() : ''
+    const providerId = typeof runner.providerId === 'string' ? runner.providerId.trim() : ''
+    const strictModel = runner.strictModel !== false
+    const provider = providerId ? providerRegistry.resolve(user, providerId) : null
     const validationModel = model || probeDefaultModel(agent.id) || ''
     const capability = await getAgentCapability(agent)
+    let error = null
+    if (providerId && !provider) error = '选择的 Provider 不存在或不属于当前用户'
+    else if (provider && agent.id !== 'claude') error = '自定义 Anthropic Provider 目前仅支持 Claude Code'
+    else if (provider && !model) error = '使用自定义 Provider 时必须选择模型'
+    else if (provider && (!capability.health.installed || !capability.health.compatible)) {
+      error = capability.health.fix || `${agent.name} 未安装或版本不兼容`
+    } else if (provider && capability.health.modelHealth?.[model]?.available === false) {
+      error = capability.health.modelHealth[model].fix || `${model} 当前不可用`
+    } else if (!provider) {
+      error = validateAgentSelection(agent, capability, validationModel)
+    }
     return {
       runner,
       agent,
       model,
+      provider,
+      strictModel,
       capability,
-      error: validateAgentSelection(agent, capability, validationModel),
+      error,
     }
   }))
   const compatibilityErrors = plannedRunners.filter((item) => item.error).map((item) => item.error)
@@ -1981,7 +2160,7 @@ app.post('/api/tasks', async (req, res) => {
   const created = []
 
   for (const plan of plannedRunners) {
-    const { agent, capability, model } = plan
+    const { agent, capability, model, provider, strictModel } = plan
     // 目录结构：runs/<项目>/<模型>，同名冲突时追加 _2、_3…
     const projectSlug = slugify(project)
     const base = model ? `${agent.id}-${slugify(model)}` : agent.id
@@ -1995,6 +2174,8 @@ app.post('/api/tasks', async (req, res) => {
       agentName: agent.name,
       model: model || null,
       resolvedModel: model ? null : probeDefaultModel(agent.id),
+      providerName: provider?.name || null,
+      modelMode: provider ? (strictModel ? 'strict' : 'routed') : 'default',
       color: agent.color,
       project: String(project).trim(),
       prompt,
@@ -2016,7 +2197,13 @@ app.post('/api/tasks', async (req, res) => {
     runs.unshift(run)
     if (run.publish && sessionUser?.idToken) publishCredentials.set(run.id, { idToken: sessionUser.idToken })
     created.push(run)
-    startRun(run, { ...agent, command: capability.executable }, finalPrompt, cfg.defaults.timeoutMinutes || 20)
+    startRun(
+      run,
+      { ...agent, command: capability.executable },
+      finalPrompt,
+      cfg.defaults.timeoutMinutes || 20,
+      providerRuntimeEnv(provider, model, strictModel)
+    )
   }
   saveRegistry()
   res.json({ batchId, project, runs: created.map(publicRun) })
