@@ -16,6 +16,8 @@ import Avatar from './components/Avatar.jsx'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { trackEvent, trackPageView } from '@/lib/analytics'
+import { isCommunityRun } from '@/lib/runVisibility'
+import { cn } from '@/lib/utils'
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -133,6 +135,22 @@ function projectGroupMatchesSearch(group, query, users) {
     const compactToken = compactSearchText(token)
     return haystacks.some((field) => field.includes(normalizedToken) || (compactToken && field.includes(compactToken)))
   })
+}
+
+function groupRuns(runs) {
+  const map = new Map()
+  for (const run of runs) {
+    if (!map.has(run.project)) map.set(run.project, [])
+    map.get(run.project).push(run)
+  }
+  const groups = [...map.entries()].map(([project, list]) => ({
+    project,
+    runs: [...list].sort((a, b) => (a.createdAt < b.createdAt ? -1 : 1)),
+    latest: list.reduce((max, run) => (run.createdAt > max ? run.createdAt : max), ''),
+    category: list.find((run) => run.category)?.category || 'other',
+  }))
+  groups.sort((a, b) => (a.latest > b.latest ? -1 : 1))
+  return groups
 }
 
 function GithubIcon({ className }) {
@@ -276,6 +294,7 @@ export default function App() {
     const isMobile = window.matchMedia?.('(max-width: 640px)').matches
     return !['fable5', 'gpt56', 'figmaMotion', 'iosApps', 'ossRadar'].includes(route.page) && !isMobile && params.get('guide') !== '0' && !localStorage.getItem('ts:guide:dismissed')
   })
+  const [feedScope, setFeedScope] = useState('community')
   useEffect(() => {
     if (route.page === 'fable5' || route.page === 'gpt56' || route.page === 'figmaMotion' || route.page === 'iosApps' || route.page === 'ossRadar') {
       setShowGuide(false)
@@ -500,19 +519,7 @@ export default function App() {
   }, [])
 
   const groups = useMemo(() => {
-    const map = new Map()
-    for (const run of runs) {
-      if (!map.has(run.project)) map.set(run.project, [])
-      map.get(run.project).push(run)
-    }
-    const arr = [...map.entries()].map(([project, list]) => ({
-      project,
-      runs: [...list].sort((a, b) => (a.createdAt < b.createdAt ? -1 : 1)),
-      latest: list.reduce((m, r) => (r.createdAt > m ? r.createdAt : m), ''),
-      category: list.find((r) => r.category)?.category || 'other',
-    }))
-    arr.sort((a, b) => (a.latest > b.latest ? -1 : 1))
-    return arr
+    return groupRuns(runs)
   }, [runs])
 
   const active = runs.filter((r) => r.status === 'running' || r.status === 'pending').length
@@ -610,11 +617,31 @@ export default function App() {
   const [catFilter, setCatFilter] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
   const activeSearchQuery = searchQuery.trim()
-  const categories = useMemo(() => [...new Set(groups.map((g) => g.category))], [groups])
+  const communityRuns = useMemo(() => runs.filter(isCommunityRun), [runs])
+  const localRuns = useMemo(
+    () => runs.filter((run) => !isCommunityRun(run) && auth.email && run.user === auth.email),
+    [auth.email, runs]
+  )
+  const homeGroups = useMemo(
+    () => groupRuns(feedScope === 'local' ? localRuns : communityRuns),
+    [communityRuns, feedScope, localRuns]
+  )
+  const communityCount = useMemo(() => groupRuns(communityRuns).length, [communityRuns])
+  const localCount = useMemo(() => groupRuns(localRuns).length, [localRuns])
+  const categories = useMemo(() => [...new Set(homeGroups.map((g) => g.category))], [homeGroups])
   const filteredGroups = useMemo(() => {
-    const byCategory = catFilter === 'all' ? groups : groups.filter((g) => g.category === catFilter)
+    const byCategory = catFilter === 'all' ? homeGroups : homeGroups.filter((g) => g.category === catFilter)
     return activeSearchQuery ? byCategory.filter((g) => projectGroupMatchesSearch(g, activeSearchQuery, users)) : byCategory
-  }, [activeSearchQuery, catFilter, groups, users])
+  }, [activeSearchQuery, catFilter, homeGroups, users])
+
+  useEffect(() => {
+    setCatFilter('all')
+    setSearchQuery('')
+  }, [feedScope])
+
+  useEffect(() => {
+    if (!auth.email && feedScope === 'local') setFeedScope('community')
+  }, [auth.email, feedScope])
   const navItems = [
     { key: 'fable5', label: 'FABLE', onSelect: goFable5, event: 'nav_fable5' },
     { key: 'gpt56', label: 'GPT 5.6', onSelect: goGpt56, event: 'nav_gpt56' },
@@ -874,7 +901,44 @@ export default function App() {
 
             <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} />
 
-            <div className="mt-10 mb-4 flex flex-col gap-3 lg:flex-row lg:items-center">
+            <div className="mt-10 flex items-center gap-1 border-b border-white/10">
+              {[
+                ['community', t('home.communityTab'), communityCount],
+                ['local', t('home.localTab'), localCount],
+              ].map(([scope, label, count]) => {
+                const disabled = scope === 'local' && !auth.email
+                return (
+                  <button
+                    key={scope}
+                    type="button"
+                    disabled={disabled}
+                    title={disabled ? t('home.localLoginHint') : undefined}
+                    onClick={() => {
+                      setFeedScope(scope)
+                      trackEvent('feed_scope', { scope })
+                    }}
+                    className={cn(
+                      'relative flex h-10 items-center gap-2 px-3 font-mono text-[10px] tracking-[0.15em] uppercase transition-colors',
+                      feedScope === scope ? 'text-white' : 'text-white/35 hover:text-white/70',
+                      disabled && 'cursor-not-allowed opacity-40'
+                    )}
+                  >
+                    {label}
+                    <span className={cn('rounded-full px-1.5 py-0.5 text-[9px]', feedScope === scope ? 'bg-acid text-black' : 'bg-white/8 text-white/40')}>
+                      {count}
+                    </span>
+                    {feedScope === scope && <span className="absolute right-2 bottom-0 left-2 h-0.5 bg-acid" />}
+                  </button>
+                )
+              })}
+              {feedScope === 'local' && (
+                <span className="ml-auto hidden px-2 text-[10px] text-white/30 sm:inline">
+                  {t('task.publishHelpFoot')}
+                </span>
+              )}
+            </div>
+
+            <div className="mt-4 mb-4 flex flex-col gap-3 lg:flex-row lg:items-center">
               <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
                 {['all', ...categories].map((c) => (
                   <button

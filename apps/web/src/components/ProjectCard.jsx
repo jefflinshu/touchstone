@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Folder, Eye, Heart } from 'lucide-react'
+import { Folder, Eye, Heart, Globe2, HardDrive } from 'lucide-react'
 import Avatar, { displayName } from './Avatar.jsx'
 import AgentIcon from './AgentIcon.jsx'
 import PreviewImage from './PreviewImage.jsx'
@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { LIKED_PROJECTS_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
+import { groupVisibility } from '@/lib/runVisibility'
 
 const getLikedProjects = () => {
   return readFavoriteSet(LIKED_PROJECTS_KEY)
@@ -77,6 +78,8 @@ export default function ProjectCard({ group: g, views, likes, users, onOpen, onO
   // demo 缩略图：优先完成且有截图的 run
   const previewRun = g.runs.find((r) => r.preview && r.status === 'done') || g.runs.find((r) => r.preview)
   const category = g.category || g.runs.find((r) => r.category)?.category
+  const visibility = groupVisibility(g)
+  const VisibilityIcon = visibility === 'community' ? Globe2 : HardDrive
 
   return (
     <div
@@ -102,11 +105,22 @@ export default function ProjectCard({ group: g, views, likes, users, onOpen, onO
           </div>
         )}
         <CategoryTag category={category} className="absolute top-2 left-2" />
-        {running > 0 && (
-          <span className="absolute top-2 right-2 flex items-center gap-1.5 rounded border border-acid/30 bg-black/60 px-1.5 py-0.5 font-mono text-[9px] tracking-[0.15em] text-acid uppercase backdrop-blur">
-            <span className="pulse-dot h-1 w-1 rounded-full bg-acid" /> Live
+        <div className="absolute top-2 right-2 flex flex-col items-end gap-1.5">
+          <span
+            className={cn(
+              'flex items-center gap-1 rounded border bg-black/70 px-1.5 py-0.5 font-mono text-[8px] tracking-[0.13em] uppercase backdrop-blur',
+              visibility === 'community' ? 'border-sky-300/25 text-sky-200' : 'border-amber-300/25 text-amber-200'
+            )}
+          >
+            <VisibilityIcon className="h-2.5 w-2.5" />
+            {t(`run.visibility.${visibility}`)}
           </span>
-        )}
+          {running > 0 && (
+            <span className="flex items-center gap-1.5 rounded border border-acid/30 bg-black/60 px-1.5 py-0.5 font-mono text-[9px] tracking-[0.15em] text-acid uppercase backdrop-blur">
+              <span className="pulse-dot h-1 w-1 rounded-full bg-acid" /> Live
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="p-4">

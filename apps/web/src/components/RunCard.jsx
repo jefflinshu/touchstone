@@ -11,6 +11,8 @@ import {
   Heart,
   Wrench,
   Coins,
+  Globe2,
+  HardDrive,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -19,6 +21,7 @@ import AgentActivity from './AgentActivity.jsx'
 import { cn } from '@/lib/utils'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
+import { runVisibility } from '@/lib/runVisibility'
 
 const STATUS = {
   pending: { labelKey: 'run.status.pending', dot: 'bg-white/40', text: 'text-white/40' },
@@ -162,6 +165,8 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
   const isLive = run.status === 'running' || run.status === 'pending'
   const st = STATUS[run.status] || STATUS.pending
   const model = run.model || run.resolvedModel
+  const visibility = runVisibility(run)
+  const VisibilityIcon = visibility === 'community' ? Globe2 : HardDrive
 
   useEffect(() => {
     if (!isLive) return
@@ -262,6 +267,18 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
             {model}
           </span>
         )}
+        <span
+          className={cn(
+            'flex shrink-0 items-center gap-1 rounded border px-1.5 py-0.5 font-mono text-[8px] tracking-[0.12em] uppercase',
+            visibility === 'community' && 'border-sky-300/20 text-sky-200',
+            visibility === 'local' && 'border-amber-300/20 text-amber-200',
+            visibility === 'publishing' && 'border-violet-300/20 text-violet-200',
+            visibility === 'publish-failed' && 'border-red-300/20 text-red-300'
+          )}
+        >
+          <VisibilityIcon className="h-2.5 w-2.5" />
+          {t(`run.visibility.${visibility}`)}
+        </span>
         <span className="flex w-full shrink-0 items-center justify-end gap-3 sm:ml-auto sm:w-auto">
           <Metrics metrics={run.metrics} />
           <LikeButton run={run} />
