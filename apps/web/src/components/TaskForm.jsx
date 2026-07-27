@@ -13,7 +13,10 @@ import {
   Download,
   FileCode2,
   FileText,
+  LockKeyhole,
+  Route,
   Shapes,
+  Zap,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
@@ -24,6 +27,7 @@ import {
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
 import AgentIcon from './AgentIcon.jsx'
+import ProviderManager from './ProviderManager.jsx'
 import { cn } from '@/lib/utils'
 import { useI18n } from '@/i18n.jsx'
 
@@ -55,8 +59,20 @@ function initialDeliveryMode() {
   }
 }
 
-function ModelPicker({ agent, value, onChange }) {
-  const selectedHealth = agent.health?.modelHealth?.[value]
+function ModelPicker({ agent, provider, catalog, value, onChange }) {
+  const { t } = useI18n()
+  const [query, setQuery] = useState('')
+  const selectedHealth = provider ? null : agent.health?.modelHealth?.[value]
+  const models = provider?.models || agent.models || []
+  const metadata = new Map((catalog?.models || []).map((model) => [model.id, model]))
+  const normalizedQuery = query.trim().toLowerCase()
+  const visibleModels = normalizedQuery
+    ? models.filter((id) => {
+        const model = metadata.get(id)
+        return id.toLowerCase().includes(normalizedQuery) || model?.name?.toLowerCase().includes(normalizedQuery)
+      })
+    : models
+  const exactModel = models.find((id) => id.toLowerCase() === normalizedQuery)
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -69,17 +85,96 @@ function ModelPicker({ agent, value, onChange }) {
           <ChevronDown className="h-3 w-3 opacity-50" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="font-mono text-[11px]">
-        {(agent.models || []).map((m) => {
+      <DropdownMenuContent align="start" className="max-h-[360px] w-[min(320px,calc(100vw-32px))] overflow-y-auto font-mono text-[11px]">
+        {provider && (
+          <div
+            className="sticky top-0 z-10 flex gap-1.5 border-b border-white/8 bg-[#0c0c0f] p-1.5"
+            onKeyDown={(event) => event.stopPropagation()}
+          >
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search or enter provider/model"
+              className="h-7 min-w-0 flex-1 rounded border border-white/12 bg-white/[0.03] px-2 text-[10px] text-white outline-none placeholder:text-white/20 focus:border-sky-300/45"
+              spellCheck={false}
+            />
+            <button
+              type="button"
+              disabled={!query.trim()}
+              onClick={() => {
+                onChange(exactModel || query.trim())
+                setQuery('')
+              }}
+              className="rounded bg-sky-300 px-2 text-[9px] font-semibold text-black disabled:opacity-35"
+            >
+              {exactModel ? 'SELECT' : 'USE'}
+            </button>
+          </div>
+        )}
+        {visibleModels.map((m) => {
           const modelHealth = agent.health?.modelHealth?.[m]
+          const model = metadata.get(m)
           return (
           <DropdownMenuItem key={m} onSelect={() => onChange(m)} title={modelHealth?.fix || undefined}>
             <AgentIcon agentId={agent.id} color={agent.color} className="h-3 w-3" />
-            <span className={cn(modelHealth?.available === false && 'text-amber-400')}>{m}</span>
+            <span className={cn('min-w-0 flex-1', modelHealth?.available === false && 'text-amber-400')}>
+              <span className="block truncate">{model?.name || m}</span>
+              {model?.name && model.name !== m && (
+                <span className="block truncate text-[8px] text-white/25">{m}</span>
+              )}
+            </span>
+            {model?.reasoning && <span className="text-[8px] text-violet-300/50">R</span>}
+            {model?.toolCall && <span className="text-[8px] text-emerald-300/50">T</span>}
             {modelHealth?.available === false && <TriangleAlert className="ml-auto h-3 w-3 text-amber-400" />}
           </DropdownMenuItem>
           )
         })}
+        {provider && visibleModels.length === 0 && (
+          <div className="px-2 py-3 text-center text-[10px] text-white/30">{t('provider.noModelMatch')}</div>
+        )}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}
+
+function ProviderPicker({ providers, value, onChange }) {
+  const { t } = useI18n()
+  const selected = providers.find((provider) => provider.id === value)
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          className={cn(
+            'flex h-full max-w-[145px] items-center gap-1.5 border-l border-white/10 px-2 font-mono text-[9px] outline-none transition-colors',
+            selected ? 'text-sky-200' : 'text-white/35 hover:text-white/65'
+          )}
+        >
+          {selected ? <Route className="h-3 w-3 shrink-0" /> : null}
+          <span className="truncate">{selected?.name || t('provider.claudeAccount')}</span>
+          <ChevronDown className="h-3 w-3 shrink-0 opacity-45" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="min-w-[220px] font-mono text-[10px]">
+        <DropdownMenuItem onSelect={() => onChange('')}>
+          <AgentIcon agentId="claude" className="h-3 w-3" />
+          {t('provider.claudeAccount')}
+        </DropdownMenuItem>
+        {providers.map((provider) => (
+          <DropdownMenuItem key={provider.id} onSelect={() => onChange(provider.id)}>
+            {provider.catalogProviderId ? (
+              <img
+                src={`https://models.dev/logos/${provider.catalogProviderId}.svg`}
+                alt=""
+                className="h-3 w-3 object-contain text-sky-300"
+              />
+            ) : (
+              <Route className="h-3 w-3 text-sky-300" />
+            )}
+            <span className="min-w-0 flex-1 truncate">{provider.name}</span>
+            <span className="text-[8px] text-white/25">{provider.models.length}</span>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )
@@ -120,6 +215,8 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   const [selectedSkills, setSelectedSkills] = useState([])
   const [installingSkill, setInstallingSkill] = useState('')
   const [skillsError, setSkillsError] = useState('')
+  const [providers, setProviders] = useState([])
+  const [modelCatalogs, setModelCatalogs] = useState({})
   const [showDelivery, setShowDelivery] = useState(false)
   const [deliveryPreset, setDeliveryPreset] = useState(initialDeliveryMode)
   const [deliveryConstraint, setDeliveryConstraint] = useState(initialDeliveryConstraint)
@@ -130,7 +227,13 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   useEffect(() => {
     if (agents.length && runners.length === 0) {
       const readyAgents = agents.filter((agent) => agent.health?.ready !== false)
-      setRunners((readyAgents.length ? readyAgents : agents).map((a) => ({ key: ++uid, agentId: a.id, model: a.models?.[0] || '' })))
+      setRunners((readyAgents.length ? readyAgents : agents).map((a) => ({
+        key: ++uid,
+        agentId: a.id,
+        model: a.models?.[0] || '',
+        providerId: '',
+        strictModel: true,
+      })))
     }
   }, [agents]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -161,6 +264,36 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   useEffect(() => {
     refreshSkills()
   }, [user]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!user) {
+      setProviders([])
+      return
+    }
+    fetch('/api/providers')
+      .then(async (response) => {
+        const data = await response.json().catch(() => ({}))
+        if (!response.ok) throw new Error(data.error || 'failed')
+        return data
+      })
+      .then((data) => setProviders(data.providers || []))
+      .catch(() => setProviders([]))
+  }, [user])
+
+  useEffect(() => {
+    const providerIds = [...new Set(providers.map((provider) => provider.catalogProviderId).filter(Boolean))]
+    for (const providerId of providerIds) {
+      if (modelCatalogs[providerId]) continue
+      fetch(`/api/model-catalog?provider=${encodeURIComponent(providerId)}`)
+        .then(async (response) => {
+          const data = await response.json().catch(() => ({}))
+          if (!response.ok) throw new Error(data.error || 'failed')
+          return data.catalog
+        })
+        .then((catalog) => setModelCatalogs((current) => ({ ...current, [providerId]: catalog })))
+        .catch(() => setModelCatalogs((current) => ({ ...current, [providerId]: { models: [] } })))
+    }
+  }, [providers, modelCatalogs])
 
   useEffect(() => {
     try {
@@ -238,6 +371,14 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
       .map((runner) => {
         const agent = agentOf(runner.agentId)
         if (!agent) return `Unknown agent: ${runner.agentId}`
+        const provider = providers.find((item) => item.id === runner.providerId)
+        if (runner.providerId && !provider) return t('provider.errorMissing')
+        if (provider) {
+          if (agent.id !== 'claude') return t('provider.errorClaudeOnly')
+          if (!agent.health?.installed || !agent.health?.compatible) return agent.health?.fix
+          if (!runner.model.trim()) return t('provider.errorModel')
+          return null
+        }
         if (agent.health?.ready === false) return agent.health.fix
         return agent.health?.modelHealth?.[runner.model]?.available === false
           ? agent.health.modelHealth[runner.model].fix
@@ -252,7 +393,12 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
     try {
       await onSubmit({
         prompt: prompt.trim(),
-        runners: runners.map(({ agentId, model }) => ({ agentId, model: model.trim() })),
+        runners: runners.map(({ agentId, model, providerId, strictModel }) => ({
+          agentId,
+          model: model.trim(),
+          providerId: providerId || null,
+          strictModel,
+        })),
         publish,
         selectedSkills,
         deliveryMode: deliveryPreset,
@@ -323,6 +469,13 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
+          <ProviderManager
+            providers={providers}
+            onChange={setProviders}
+            user={user}
+            onLogin={onLogin}
+          />
+
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button type="button" variant="outline" size="sm" className="h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase">
@@ -460,8 +613,11 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
           {runners.map((r) => {
             const a = agentOf(r.agentId)
             if (!a) return null
+            const provider = providers.find((item) => item.id === r.providerId)
             const modelHealth = a.health?.modelHealth?.[r.model]
-            const ready = a.health?.ready !== false && modelHealth?.available !== false
+            const ready = provider
+              ? a.health?.installed !== false && a.health?.compatible !== false && Boolean(r.model)
+              : a.health?.ready !== false && modelHealth?.available !== false
             const healthAgent =
               modelHealth?.available === false ? { ...a, health: { ...a.health, fix: modelHealth.fix } } : a
             return (
@@ -478,11 +634,50 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
                   {a.name.replace(/\s+(Code|CLI)$/i, '')}
                   {!ready && <HealthHint agent={healthAgent} />}
                 </span>
+                {a.id === 'claude' && (
+                  <ProviderPicker
+                    providers={providers}
+                    value={r.providerId}
+                    onChange={(providerId) => {
+                      const nextProvider = providers.find((item) => item.id === providerId)
+                      setRunners((current) =>
+                        current.map((item) =>
+                          item.key === r.key
+                            ? {
+                                ...item,
+                                providerId,
+                                model: nextProvider?.models?.[0] || (providerId ? '' : a.models?.[0] || ''),
+                              }
+                            : item
+                        )
+                      )
+                    }}
+                  />
+                )}
                 <ModelPicker
                   agent={a}
+                  provider={provider}
+                  catalog={provider?.catalogProviderId ? modelCatalogs[provider.catalogProviderId] : null}
                   value={r.model}
                   onChange={(v) => setRunners((rs) => rs.map((x) => (x.key === r.key ? { ...x, model: v } : x)))}
                 />
+                {provider && (
+                  <button
+                    type="button"
+                    title={r.strictModel ? t('provider.strictOn') : t('provider.strictOff')}
+                    onClick={() =>
+                      setRunners((current) =>
+                        current.map((item) => item.key === r.key ? { ...item, strictModel: !item.strictModel } : item)
+                      )
+                    }
+                    className={cn(
+                      'flex h-full items-center border-l border-white/10 px-1.5 transition-colors',
+                      r.strictModel ? 'text-emerald-300' : 'text-amber-300/60'
+                    )}
+                  >
+                    {r.strictModel ? <LockKeyhole className="h-3 w-3" /> : <Route className="h-3 w-3" />}
+                  </button>
+                )}
                 <button
                   type="button"
                   className="flex h-full cursor-pointer items-center px-1.5 text-white/30 transition-colors hover:text-red-400"
@@ -505,7 +700,13 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
                 <DropdownMenuItem
                   key={a.id}
                   onSelect={() =>
-                    setRunners((rs) => [...rs, { key: ++uid, agentId: a.id, model: a.models?.[0] || '' }])
+                    setRunners((rs) => [...rs, {
+                      key: ++uid,
+                      agentId: a.id,
+                      model: a.models?.[0] || '',
+                      providerId: '',
+                      strictModel: true,
+                    }])
                   }
                 >
                   <AgentIcon agentId={a.id} color={a.color} className="h-3.5 w-3.5" />
@@ -517,6 +718,15 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
           </DropdownMenu>
 
           <div className="ml-auto flex items-center gap-3">
+            {runners.length > 1 && (
+              <span
+                className="hidden items-center gap-1 font-mono text-[9px] tracking-[0.1em] text-emerald-300/65 uppercase sm:flex"
+                title={t('provider.concurrentHelp')}
+              >
+                <Zap className="h-3 w-3" />
+                {t('provider.concurrent', { count: runners.length })}
+              </span>
+            )}
             {error && <span className="font-mono text-xs text-red-400">{error}</span>}
             <span className="flex items-center gap-1">
               <label className="flex cursor-pointer items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase select-none">

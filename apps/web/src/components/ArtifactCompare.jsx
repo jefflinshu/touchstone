@@ -60,6 +60,9 @@ function RunHeader({ run }) {
     <div className="flex min-w-0 items-center gap-2 border-b border-white/10 bg-[#0c0c0f] px-3 py-2.5">
       <AgentIcon agentId={run.agentId} color={run.color} className="h-3.5 w-3.5" />
       <span className="truncate text-xs font-medium text-white/80">{run.agentName}</span>
+      {run.providerName && (
+        <span className="min-w-0 truncate font-mono text-[9px] text-sky-300/55">{run.providerName}</span>
+      )}
       {(run.model || run.resolvedModel) && (
         <span className="min-w-0 truncate font-mono text-[9px] text-white/30">{run.model || run.resolvedModel}</span>
       )}

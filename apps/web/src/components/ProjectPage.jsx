@@ -271,6 +271,7 @@ export default function ProjectPage({
                 >
                   <AgentIcon agentId={r.agentId} color={r.color} className={cn('h-3 w-3', !on && 'opacity-30')} />
                   {r.agentName}
+                  {r.providerName && <span className="text-sky-300/55">{r.providerName}</span>}
                   {(r.model || r.resolvedModel) && <span className="text-white/40">{r.model || r.resolvedModel}</span>}
                 </button>
               )

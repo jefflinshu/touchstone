@@ -14,6 +14,7 @@ import {
   Globe2,
   HardDrive,
   FileCode2,
+  Route,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
@@ -227,6 +228,15 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
       <footer className="flex min-h-11 flex-wrap items-center gap-x-2.5 gap-y-1 border-t border-white/8 px-3.5 py-2 sm:h-11 sm:flex-nowrap sm:py-0">
         <AgentIcon agentId={run.agentId} color={run.color} className="h-4 w-4" />
         <span className="truncate text-[13px] font-medium">{run.agentName}</span>
+        {run.providerName && (
+          <span
+            className="flex max-w-[110px] shrink-0 items-center gap-1 truncate font-mono text-[9px] text-sky-300/65"
+            title={`${run.providerName} · ${run.modelMode === 'strict' ? 'strict model' : 'routed'}`}
+          >
+            <Route className="h-2.5 w-2.5 shrink-0" />
+            <span className="truncate">{run.providerName}</span>
+          </span>
+        )}
         {model && (
           <span className="min-w-0 truncate font-mono text-[11px] text-white/35" title={run.model ? t('common.specified') : t('common.default')}>
             {model}
@@ -268,6 +278,7 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
             <header className="flex h-12 shrink-0 items-center gap-2.5 border-b border-white/10 px-4">
               <AgentIcon agentId={run.agentId} color={run.color} className="h-4 w-4" />
               <DialogTitle className="text-[13px] font-medium">{run.agentName}</DialogTitle>
+              {run.providerName && <span className="font-mono text-[10px] text-sky-300/60">{run.providerName}</span>}
               {model && <span className="font-mono text-[11px] text-white/35">{model}</span>}
               <span className="font-mono text-[11px] text-white/25">/ {run.project}</span>
               <div className="ml-auto flex items-center gap-1.5">
