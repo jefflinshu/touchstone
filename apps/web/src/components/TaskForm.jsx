@@ -26,8 +26,13 @@ import { useI18n } from '@/i18n.jsx'
 
 let uid = 0
 const DELIVERY_STORAGE_KEY = 'touchstone-delivery-constraint'
+const DELIVERY_MODE_STORAGE_KEY = 'touchstone-delivery-mode'
 const SINGLE_HTML_CONSTRAINT =
   '请把最终作品交付为当前工作目录中的一个自包含 index.html。CSS 和 JavaScript 必须内联；小型图片、字体或其他必要资源应尽量使用 data URL 内嵌。不要创建需要构建步骤才能运行的源码项目，不要依赖其他网站、网络 CDN、localhost 服务、密钥或父目录文件。直接双击打开 index.html 时，核心内容与交互必须可用。'
+const SINGLE_SVG_CONSTRAINT =
+  '请把最终作品交付为当前工作目录中的一个自包含 index.svg。所有样式、渐变、滤镜、图形与必要文字都必须写在这个 SVG 文件内；不要引用外部图片、字体、脚本、网络 CDN、localhost 服务、密钥或父目录文件。SVG 必须包含 title 和 desc，并且直接双击打开 index.svg 时即可完整查看。'
+const SINGLE_MARKDOWN_CONSTRAINT =
+  '请把最终方案交付为当前工作目录中的一个自包含 plan.md，只创建这一份最终产物。使用标准 Markdown/GFM，不依赖外部图片、网络链接中的内容、localhost 服务、密钥或父目录文件。为了便于比较不同 Agent 的方案，请明确写出：目标与假设、方案摘要、关键决策、执行步骤、风险与取舍、验收标准。直接打开 plan.md 时应能完整阅读。'
 const STATIC_FOLDER_CONSTRAINT =
   '请在当前工作目录生成最终静态作品。必须包含一个可以直接在浏览器中打开运行的 HTML 入口，优先命名为 index.html。所有资源必须位于当前目录内并使用相对路径，不要依赖网络 CDN、localhost 服务、密钥或父目录文件。'
 
@@ -36,6 +41,14 @@ function initialDeliveryConstraint() {
     return localStorage.getItem(DELIVERY_STORAGE_KEY) || SINGLE_HTML_CONSTRAINT
   } catch {
     return SINGLE_HTML_CONSTRAINT
+  }
+}
+
+function initialDeliveryMode() {
+  try {
+    return localStorage.getItem(DELIVERY_MODE_STORAGE_KEY) || 'single-html'
+  } catch {
+    return 'single-html'
   }
 }
 
@@ -105,7 +118,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   const [installingSkill, setInstallingSkill] = useState('')
   const [skillsError, setSkillsError] = useState('')
   const [showDelivery, setShowDelivery] = useState(false)
-  const [deliveryPreset, setDeliveryPreset] = useState('single-html')
+  const [deliveryPreset, setDeliveryPreset] = useState(initialDeliveryMode)
   const [deliveryConstraint, setDeliveryConstraint] = useState(initialDeliveryConstraint)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
@@ -149,8 +162,9 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   useEffect(() => {
     try {
       localStorage.setItem(DELIVERY_STORAGE_KEY, deliveryConstraint)
+      localStorage.setItem(DELIVERY_MODE_STORAGE_KEY, deliveryPreset)
     } catch {}
-  }, [deliveryConstraint])
+  }, [deliveryConstraint, deliveryPreset])
 
   useEffect(() => {
     setSelectedSkills((current) =>
@@ -196,6 +210,8 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   function chooseDeliveryPreset(preset) {
     setDeliveryPreset(preset)
     if (preset === 'single-html') setDeliveryConstraint(SINGLE_HTML_CONSTRAINT)
+    if (preset === 'single-svg') setDeliveryConstraint(SINGLE_SVG_CONSTRAINT)
+    if (preset === 'single-markdown') setDeliveryConstraint(SINGLE_MARKDOWN_CONSTRAINT)
     if (preset === 'static-folder') setDeliveryConstraint(STATIC_FOLDER_CONSTRAINT)
   }
 
@@ -236,6 +252,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
         runners: runners.map(({ agentId, model }) => ({ agentId, model: model.trim() })),
         publish,
         selectedSkills,
+        deliveryMode: deliveryPreset,
         deliveryConstraint: deliveryConstraint.trim(),
       })
       setPrompt('')
@@ -347,7 +364,13 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
             )}
           >
             <SlidersHorizontal className="h-3.5 w-3.5" />
-            {deliveryPreset === 'single-html' ? t('task.deliverySingleHtml') : t('task.delivery')}
+            {deliveryPreset === 'single-html'
+              ? t('task.deliverySingleHtml')
+              : deliveryPreset === 'single-svg'
+                ? t('task.deliverySingleSvg')
+                : deliveryPreset === 'single-markdown'
+                  ? t('task.deliverySingleMarkdown')
+                  : t('task.delivery')}
           </Button>
 
           {selectedSkills.map((id) => (
@@ -369,6 +392,8 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
             <div className="flex flex-wrap items-center gap-1.5">
               {[
                 ['single-html', t('task.deliverySingleHtml')],
+                ['single-svg', t('task.deliverySingleSvg')],
+                ['single-markdown', t('task.deliverySingleMarkdown')],
                 ['static-folder', t('task.deliveryStaticFolder')],
                 ['custom', t('task.deliveryCustom')],
               ].map(([value, label]) => (

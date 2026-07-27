@@ -66,15 +66,16 @@ Prerequisites: Node.js 20+, plus whichever CLIs you want in the arena:
 | Claude Code | `npm i -g @anthropic-ai/claude-code` | run `claude` once and log in |
 | Codex CLI | `npm i -g @openai/codex` | run `codex login` |
 | Gemini CLI | `npm i -g @google/gemini-cli` | run `gemini` once (browser sign-in) |
+| OpenCode | see [OpenCode install docs](https://opencode.ai/docs/) | run `opencode auth login` |
 
 Missing or unauthenticated CLIs show an amber warning in the UI with the fix.
 
 ## ⚙️ How it works
 
 1. You describe a task in the web UI and pick your runners (CLI × model — model lists are probed from each CLI's local config).
-2. The server creates `runs/<project>/<model>/` per runner and spawns each CLI there in full-auto mode (`claude -p --dangerously-skip-permissions`, `codex exec --full-auto`, `gemini -p --yolo`).
-3. A delivery requirement is appended to every prompt: produce a self-contained `index.html`.
-4. Output streams to the UI over WebSocket; as soon as an HTML entry appears, the card previews it live.
+2. The server creates `runs/<project>/<model>/` per runner, runs a version/model/auth preflight, and then starts each selected local CLI in that isolated run directory.
+3. An editable delivery requirement is appended to every prompt. The built-in single-file modes are self-contained HTML, SVG, and Markdown.
+4. Structured Agent activity streams to the UI over WebSocket. As soon as an HTML, SVG, or Markdown entry appears, the card previews it live.
 5. On completion, metrics are parsed from each CLI's output, and (if you opted in) the work is committed and pushed to the showcase repo.
 
 Everything runs on your machine — your prompts and API usage stay local unless you choose to publish results.
@@ -85,7 +86,8 @@ Everything runs on your machine — your prompts and API usage stay local unless
 - `models`: fallback model suggestions per CLI (local config takes priority).
 - `defaults.timeoutMinutes`: per-run timeout (default 20).
 - `defaults.git`: `autoCommit` / `autoPush` switches for publishing.
-- `defaults.artifactHint`: the delivery requirement appended to prompts.
+- `defaults.singleHtmlArtifactHint`, `singleSvgArtifactHint`, and `singleMarkdownArtifactHint`: default editable delivery requirements.
+- `interaction`: declares whether the current adapter supports follow-up input, questions, and progress. One-shot adapters do not expose a fake reply control.
 
 ## ⚠️ Notes
 

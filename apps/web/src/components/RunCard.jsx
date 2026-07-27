@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Loader2,
   Maximize2,
@@ -13,11 +13,13 @@ import {
   Coins,
   Globe2,
   HardDrive,
+  FileCode2,
 } from 'lucide-react'
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import AgentIcon from './AgentIcon.jsx'
 import AgentActivity from './AgentActivity.jsx'
+import ArtifactPreview, { artifactTypeOf, artifactUrlOf } from './ArtifactPreview.jsx'
 import { cn } from '@/lib/utils'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
@@ -32,22 +34,12 @@ const STATUS = {
   interrupted: { labelKey: 'run.status.interrupted', dot: 'bg-red-500/60', text: 'text-red-400/70' },
 }
 
-// 虚拟视口：作品按桌面尺寸渲染后整体缩放，保证内容完整可见
-const VIEW_W = 1280
-const VIEW_H = 800
-
 function elapsed(run) {
   if (!run.startedAt) return ''
   const end = run.endedAt ? new Date(run.endedAt) : new Date()
   const sec = Math.max(0, Math.round((end - new Date(run.startedAt)) / 1000))
   if (sec < 60) return `${sec}s`
   return `${Math.floor(sec / 60)}m${String(sec % 60).padStart(2, '0')}s`
-}
-
-function previewUrlOf(run) {
-  if (!run.entry) return null
-  const folderPath = run.folder.split('/').map(encodeURIComponent).join('/')
-  return `/workspace/${folderPath}/${run.entry}`
 }
 
 const fmtTokens = (n) => (n >= 1000 ? `${(n / 1000).toFixed(n >= 100000 ? 0 : 1)}k` : String(n))
@@ -124,37 +116,6 @@ function LikeButton({ run }) {
   )
 }
 
-function ScaledPreview({ url, frameKey }) {
-  const boxRef = useRef(null)
-  const [scale, setScale] = useState(0)
-
-  useEffect(() => {
-    const el = boxRef.current
-    if (!el) return
-    const ro = new ResizeObserver(() => setScale(el.clientWidth / VIEW_W))
-    ro.observe(el)
-    setScale(el.clientWidth / VIEW_W)
-    return () => ro.disconnect()
-  }, [])
-
-  return (
-    <div ref={boxRef} className="absolute inset-0 overflow-hidden">
-      {scale > 0 && (
-        <iframe
-          key={frameKey}
-          src={url}
-          title={url}
-          sandbox="allow-scripts allow-modals allow-pointer-lock allow-popups allow-downloads"
-          referrerPolicy="no-referrer"
-          loading="lazy"
-          className="pointer-events-none origin-top-left border-0 bg-black"
-          style={{ width: VIEW_W, height: VIEW_H, transform: `scale(${scale})` }}
-        />
-      )}
-    </div>
-  )
-}
-
 export default function RunCard({ run, log, events, onStop, onDelete, onFetchActivity }) {
   const { t } = useI18n()
   const [showActivity, setShowActivity] = useState(() => run.status === 'running' || run.status === 'pending')
@@ -183,7 +144,8 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
     if (showActivity && events == null) onFetchActivity(run.id)
   }, [showActivity, events, run.id, onFetchActivity])
 
-  const previewUrl = previewUrlOf(run)
+  const previewUrl = artifactUrlOf(run)
+  const artifactType = artifactTypeOf(run)
 
   return (
     <article
@@ -200,7 +162,7 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
         {showActivity ? (
           <AgentActivity run={run} events={events || []} rawLog={log || ''} />
         ) : previewUrl ? (
-          <ScaledPreview url={previewUrl} frameKey={frameKey} />
+          <ArtifactPreview run={run} frameKey={frameKey} />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
             {isLive ? (
@@ -267,6 +229,12 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
             {model}
           </span>
         )}
+        {run.entry && (
+          <span className="flex shrink-0 items-center gap-1 rounded border border-white/10 px-1.5 py-0.5 font-mono text-[8px] tracking-[0.12em] text-white/35 uppercase">
+            <FileCode2 className="h-2.5 w-2.5" />
+            {artifactType === 'markdown' ? 'MD' : artifactType}
+          </span>
+        )}
         <span
           className={cn(
             'flex shrink-0 items-center gap-1 rounded border px-1.5 py-0.5 font-mono text-[8px] tracking-[0.12em] uppercase',
@@ -310,15 +278,7 @@ export default function RunCard({ run, log, events, onStop, onDelete, onFetchAct
                 </DialogClose>
               </div>
             </header>
-            {previewUrl && (
-              <iframe
-                src={previewUrl}
-                title={`${run.folder}-full`}
-                sandbox="allow-scripts allow-modals allow-pointer-lock allow-popups allow-downloads"
-                referrerPolicy="no-referrer"
-                className="w-full flex-1 border-0 bg-black"
-              />
-            )}
+            {previewUrl && <div className="min-h-0 flex-1"><ArtifactPreview run={run} frameKey={frameKey} compact={false} /></div>}
           </div>
         </DialogContent>
       </Dialog>

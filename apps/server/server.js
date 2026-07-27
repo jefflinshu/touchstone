@@ -9,6 +9,12 @@ import crypto from 'node:crypto'
 import os from 'node:os'
 import Anthropic from '@anthropic-ai/sdk'
 import { createAgentEventParser } from './agent-events.js'
+import {
+  artifactTypeForEntry,
+  expectedArtifactType,
+  findArtifact,
+  normalizeDeliveryMode,
+} from './artifacts.js'
 import { probeAgentCapabilityAsync, validateAgentSelection } from './agent-capabilities.js'
 import { canManageRun, canReadRun, isRunPublished, visibleRunsFor } from './run-access.js'
 import {
@@ -87,9 +93,9 @@ const PUBLISH_LIMITS = {
 }
 const RUN_CONTRACT = `# Touchstone Run Output Contract
 
-- Build the final static showcase in this current directory.
-- The browser entry must be an HTML file, preferably ./index.html.
-- Use relative local files for CSS, JavaScript, images, fonts, audio, video, and models.
+- Build the final artifact in this current directory.
+- Touchstone can render a self-contained HTML, SVG, or Markdown artifact. Follow the user delivery constraint below.
+- Keep every required resource inside the requested single file unless the user explicitly chooses a static folder.
 - Do not depend on external CDN scripts or private localhost services.
 - Do not read, write, or include secrets, credentials, tokens, hidden files, or parent-directory files.
 - Do not write outside this directory.
@@ -679,33 +685,8 @@ function slugify(name) {
   )
 }
 
-// 在 run 目录中寻找浏览器可打开的作品入口（优先根目录 index.html，其次最浅层的 .html）
-function findEntry(folder) {
-  const dir = path.join(RUNS_DIR, folder)
-  if (!fs.existsSync(dir)) return null
-  const rootIndex = path.join(dir, 'index.html')
-  if (fs.existsSync(rootIndex)) return 'index.html'
-  const queue = [{ rel: '', depth: 0 }]
-  const htmls = []
-  while (queue.length) {
-    const { rel, depth } = queue.shift()
-    if (depth > 3) continue
-    let entries = []
-    try {
-      entries = fs.readdirSync(path.join(dir, rel), { withFileTypes: true })
-    } catch {
-      continue
-    }
-    for (const e of entries) {
-      if (e.name.startsWith('.') || e.name === 'node_modules') continue
-      const rp = rel ? `${rel}/${e.name}` : e.name
-      if (e.isDirectory()) queue.push({ rel: rp, depth: depth + 1 })
-      else if (e.name.toLowerCase().endsWith('.html')) htmls.push({ rp, depth })
-    }
-  }
-  if (!htmls.length) return null
-  htmls.sort((a, b) => a.depth - b.depth || (a.rp.endsWith('index.html') ? -1 : 1))
-  return htmls[0].rp
+function findRunArtifact(folder, preferredType = null) {
+  return findArtifact(path.join(RUNS_DIR, folder), preferredType)
 }
 
 function listFiles(folder) {
@@ -830,7 +811,9 @@ function collectPublishFiles(folder) {
   }
 
   walk('', 0)
-  if (!files.some((file) => file.path.toLowerCase().endsWith('.html'))) throw new Error('发布作品必须包含 HTML 入口')
+  if (!files.some((file) => artifactTypeForEntry(file.path))) {
+    throw new Error('发布作品必须包含 HTML、SVG 或 Markdown 入口')
+  }
   return { files, totalBytes }
 }
 
@@ -878,6 +861,11 @@ async function publishCompletedRun(run) {
         prompt: run.prompt,
         category: run.category,
         metrics: run.metrics,
+        artifactType: run.artifactType,
+        expectedArtifactType: run.expectedArtifactType,
+        deliveryMode: run.deliveryMode,
+        deliveryConstraint: run.deliveryConstraint,
+        interaction: run.interaction,
         createdAt: run.createdAt,
         startedAt: run.startedAt,
         endedAt: run.endedAt,
@@ -921,7 +909,7 @@ const previewPath = (run) => path.join(RUNS_DIR, run.folder, PREVIEW_FILE)
 // 截图串行队列，避免同时拉起多个 Chrome
 let shotQueue = Promise.resolve()
 function capturePreview(run) {
-  if (!chromeBin || !run.entry) return
+  if (!chromeBin || !run.entry || run.artifactType === 'markdown') return
   shotQueue = shotQueue
     .then(
       () =>
@@ -1065,10 +1053,11 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     fs.appendFileSync(logFile, text)
     broadcast({ type: 'log', runId: run.id, chunk: text })
     eventParser.push(channel, text)
-    // 运行过程中可能已经产出了 html，顺手刷新入口
-    const entry = findEntry(run.folder)
-    if (entry !== run.entry) {
-      run.entry = entry
+    // 运行过程中可能已经产出了作品，顺手刷新入口和实际类型。
+    const artifact = findRunArtifact(run.folder, run.expectedArtifactType)
+    if (artifact?.entry !== run.entry || artifact?.type !== run.artifactType) {
+      run.entry = artifact?.entry || null
+      run.artifactType = artifact?.type || null
       saveRegistry()
       broadcast({ type: 'run', run: publicRun(run) })
     }
@@ -1088,7 +1077,9 @@ function startRun(run, agent, prompt, timeoutMinutes) {
     liveProcs.delete(run.id)
     run.exitCode = code
     run.endedAt = new Date().toISOString()
-    run.entry = findEntry(run.folder)
+    const artifact = findRunArtifact(run.folder, run.expectedArtifactType)
+    run.entry = artifact?.entry || null
+    run.artifactType = artifact?.type || null
     if (!run.model) run.resolvedModel = detectModelFromLog(run) || run.resolvedModel
     run.metrics = parseMetrics(run)
     if (run.status === 'stopped') {
@@ -1149,6 +1140,7 @@ app.get('/api/agents', async (req, res) => {
         color: a.color,
         install: a.install || null,
         preferredProtocol: a.preferredProtocol || null,
+        interaction: a.interaction || { input: false, questions: false, progress: true, mode: 'one-shot' },
         models,
         health: { ...capability.health, modelHealth },
       }
@@ -1544,7 +1536,9 @@ function validatePublishFiles(files) {
     if (totalBytes > PUBLISH_LIMITS.maxTotalBytes) throw new Error('发布文件总大小超过限制')
     out.push({ path: rel, bytes })
   }
-  if (!out.some((file) => file.path.toLowerCase().endsWith('.html'))) throw new Error('发布作品必须包含 HTML 入口')
+  if (!out.some((file) => artifactTypeForEntry(file.path))) {
+    throw new Error('发布作品必须包含 HTML、SVG 或 Markdown 入口')
+  }
   return { files: out, totalBytes }
 }
 
@@ -1568,8 +1562,9 @@ function writePublishedFiles(folder, files) {
 }
 
 function registerPublishedRun({ sourceRun, identity, folder, totalBytes }) {
-  const entry = findEntry(folder)
-  if (!entry) throw new Error('找不到可渲染的 HTML 入口')
+  const preferredType = sourceRun.artifactType || expectedArtifactType(sourceRun.deliveryMode)
+  const artifact = findRunArtifact(folder, preferredType)
+  if (!artifact) throw new Error('找不到可渲染的 HTML、SVG 或 Markdown 入口')
   const now = new Date().toISOString()
   const project = String(sourceRun.project || '').trim() || path.dirname(folder)
   const run = {
@@ -1584,7 +1579,12 @@ function registerPublishedRun({ sourceRun, identity, folder, totalBytes }) {
     project,
     prompt: String(sourceRun.prompt || '').slice(0, 20000),
     folder,
-    entry,
+    entry: artifact.entry,
+    artifactType: artifact.type,
+    expectedArtifactType: sourceRun.expectedArtifactType || preferredType || null,
+    deliveryMode: normalizeDeliveryMode(sourceRun.deliveryMode, 'custom'),
+    deliveryConstraint: sourceRun.deliveryConstraint || null,
+    interaction: sourceRun.interaction || null,
     status: 'done',
     publish: true,
     publishState: 'published',
@@ -1923,6 +1923,7 @@ app.post('/api/tasks', async (req, res) => {
     return res.status(401).json({ error: '请先登录 Google 账号' })
   }
   const cfg = loadAgentsConfig()
+  const deliveryMode = normalizeDeliveryMode(req.body?.deliveryMode)
   const plannedRunners = await Promise.all(runners.map(async (runner) => {
     const agent = cfg.agents.find((item) => item.id === runner?.agentId)
     if (!agent) return { runner, error: `未知 Agent：${runner?.agentId || ''}` }
@@ -1962,9 +1963,15 @@ app.post('/api/tasks', async (req, res) => {
     category = named.category
   }
   if (!category) category = classifyHeuristic(prompt)
+  const deliveryDefaults = {
+    'single-html': cfg.defaults.singleHtmlArtifactHint,
+    'single-svg': cfg.defaults.singleSvgArtifactHint,
+    'single-markdown': cfg.defaults.singleMarkdownArtifactHint,
+    'static-folder': cfg.defaults.artifactHint,
+  }
   const finalDeliveryConstraint = normalizeDeliveryConstraint(
     deliveryConstraint,
-    cfg.defaults.singleHtmlArtifactHint || cfg.defaults.artifactHint
+    deliveryDefaults[deliveryMode] || cfg.defaults.singleHtmlArtifactHint || cfg.defaults.artifactHint
   )
   const finalPrompt =
     prompt.trim() +
@@ -1993,13 +2000,17 @@ app.post('/api/tasks', async (req, res) => {
       prompt,
       folder,
       entry: null,
+      artifactType: null,
+      expectedArtifactType: expectedArtifactType(deliveryMode),
       status: 'pending',
       publish: !!publish,
       publishState: publish ? 'pending' : 'local',
       user,
       category,
       selectedSkills,
+      deliveryMode,
       deliveryConstraint: finalDeliveryConstraint,
+      interaction: agent.interaction || { input: false, questions: false, progress: true, mode: 'one-shot' },
       createdAt: new Date().toISOString(),
     }
     runs.unshift(run)
@@ -2167,6 +2178,24 @@ app.get('/api/runs/:id/preview', (req, res) => {
   res.type('png').send(fs.readFileSync(f))
 })
 
+app.get('/api/runs/:id/artifact', (req, res) => {
+  const run = authorizedRun(req, res)
+  if (!run) return
+  const entry = safeRelativePath(run.entry)
+  const type = run.artifactType || artifactTypeForEntry(entry)
+  if (!entry || !type) return res.status(404).json({ error: 'no artifact' })
+  const root = path.join(RUNS_DIR, run.folder)
+  const absolute = path.resolve(root, entry)
+  if (!absolute.startsWith(`${root}${path.sep}`) || !fs.existsSync(absolute)) {
+    return res.status(404).json({ error: 'artifact missing' })
+  }
+  if (type !== 'markdown') return res.json({ entry, type })
+  const stat = fs.statSync(absolute)
+  if (stat.size > 2 * 1024 * 1024) return res.status(413).json({ error: 'Markdown artifact is too large to preview' })
+  res.setHeader('Cache-Control', 'no-store')
+  res.json({ entry, type, content: fs.readFileSync(absolute, 'utf8') })
+})
+
 app.get('/api/runs/:id/log', (req, res) => {
   const run = authorizedRun(req, res, 'manage')
   if (!run) return
@@ -2202,8 +2231,10 @@ app.post('/api/runs/:id/input', (req, res) => {
   const answer = String(req.body?.answer || '').trim()
   const questionId = String(req.body?.questionId || '').trim()
   if (!answer || !questionId) return res.status(400).json({ error: '缺少回答或问题 ID' })
-  if (live.agent.id !== 'claude' || !live.proc.stdin?.writable) {
-    return res.status(409).json({ error: '当前 Agent 暂不支持运行中回复' })
+  if (!live.agent.interaction?.input || live.agent.inputFormat !== 'claude-stream-json' || !live.proc.stdin?.writable) {
+    return res.status(409).json({
+      error: `当前 ${live.agent.name} 使用一次性 CLI 模式；需要 ${live.agent.interaction?.upgrade || '原生会话协议'} 才能运行中回复`,
+    })
   }
   const input = {
     type: 'user',
@@ -2453,6 +2484,12 @@ httpServer.listen(PORT, () => {
   // 回填：旧 run 的分类与缩略图（截图需要服务已就绪）
   for (const r of runs) {
     if (!r.category) r.category = classifyHeuristic(r.prompt)
+    if (r.entry && !r.artifactType) r.artifactType = artifactTypeForEntry(r.entry)
+    if (!r.entry && r.status === 'done') {
+      const artifact = findRunArtifact(r.folder, r.expectedArtifactType)
+      r.entry = artifact?.entry || null
+      r.artifactType = artifact?.type || null
+    }
     if (r.status === 'done' && r.entry) {
       r.preview = fs.existsSync(previewPath(r))
       if (!r.preview) capturePreview(r)
