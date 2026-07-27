@@ -15,6 +15,7 @@ import {
 import { Dialog, DialogContent, DialogClose, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import AgentIcon from './AgentIcon.jsx'
+import AgentActivity from './AgentActivity.jsx'
 import { cn } from '@/lib/utils'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
@@ -140,6 +141,8 @@ function ScaledPreview({ url, frameKey }) {
           key={frameKey}
           src={url}
           title={url}
+          sandbox="allow-scripts allow-modals allow-pointer-lock allow-popups allow-downloads"
+          referrerPolicy="no-referrer"
           loading="lazy"
           className="pointer-events-none origin-top-left border-0 bg-black"
           style={{ width: VIEW_W, height: VIEW_H, transform: `scale(${scale})` }}
@@ -149,13 +152,12 @@ function ScaledPreview({ url, frameKey }) {
   )
 }
 
-export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
+export default function RunCard({ run, log, events, onStop, onDelete, onFetchActivity }) {
   const { t } = useI18n()
-  const [showLog, setShowLog] = useState(false)
+  const [showActivity, setShowActivity] = useState(() => run.status === 'running' || run.status === 'pending')
   const [showFull, setShowFull] = useState(false)
   const [frameKey, setFrameKey] = useState(0)
   const [, forceTick] = useState(0)
-  const logRef = useRef(null)
 
   const isLive = run.status === 'running' || run.status === 'pending'
   const st = STATUS[run.status] || STATUS.pending
@@ -173,12 +175,8 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
   }, [run.status, run.entry])
 
   useEffect(() => {
-    if (showLog && log == null) onFetchLog(run.id)
-  }, [showLog, log, run.id, onFetchLog])
-
-  useEffect(() => {
-    if (showLog && logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight
-  }, [showLog, log])
+    if (showActivity && events == null) onFetchActivity(run.id)
+  }, [showActivity, events, run.id, onFetchActivity])
 
   const previewUrl = previewUrlOf(run)
 
@@ -191,10 +189,12 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
     >
       {/* 预览区 */}
       <div
-        className={cn('relative aspect-[16/10] bg-black', previewUrl && 'cursor-zoom-in')}
-        onClick={() => previewUrl && setShowFull(true)}
+        className={cn('relative aspect-[16/10] bg-black', previewUrl && !showActivity && 'cursor-zoom-in')}
+        onClick={() => previewUrl && !showActivity && setShowFull(true)}
       >
-        {previewUrl ? (
+        {showActivity ? (
+          <AgentActivity run={run} events={events || []} rawLog={log || ''} />
+        ) : previewUrl ? (
           <ScaledPreview url={previewUrl} frameKey={frameKey} />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
@@ -229,9 +229,9 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
           <Button
             variant="ghost"
             size="icon"
-            className={cn('bg-black/70 backdrop-blur', showLog && 'text-acid')}
-            title={t('common.log')}
-            onClick={() => setShowLog((s) => !s)}
+            className={cn('bg-black/70 backdrop-blur', showActivity && 'text-acid')}
+            title={showActivity ? t('common.preview') : t('common.log')}
+            onClick={() => setShowActivity((s) => !s)}
           >
             <Terminal className="h-3.5 w-3.5" />
           </Button>
@@ -273,16 +273,6 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
         </span>
       </footer>
 
-      {/* 日志 */}
-      {showLog && (
-        <pre
-          ref={logRef}
-          className="m-0 max-h-56 overflow-auto border-t border-white/8 bg-black/60 p-3.5 font-mono text-[11px] leading-relaxed break-all whitespace-pre-wrap text-white/55"
-        >
-          {log || t('common.noOutputYet')}
-        </pre>
-      )}
-
       {/* 全屏查看 */}
       <Dialog open={showFull} onOpenChange={setShowFull}>
         <DialogContent className="h-[94vh] w-[96vw] max-w-[1500px] overflow-hidden rounded-lg p-0">
@@ -303,7 +293,15 @@ export default function RunCard({ run, log, onStop, onDelete, onFetchLog }) {
                 </DialogClose>
               </div>
             </header>
-            {previewUrl && <iframe src={previewUrl} title={`${run.folder}-full`} className="w-full flex-1 border-0 bg-black" />}
+            {previewUrl && (
+              <iframe
+                src={previewUrl}
+                title={`${run.folder}-full`}
+                sandbox="allow-scripts allow-modals allow-pointer-lock allow-popups allow-downloads"
+                referrerPolicy="no-referrer"
+                className="w-full flex-1 border-0 bg-black"
+              />
+            )}
           </div>
         </DialogContent>
       </Dialog>

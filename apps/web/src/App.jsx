@@ -264,6 +264,7 @@ export default function App() {
   const [views, setViews] = useState({})
   const [projectLikes, setProjectLikes] = useState({})
   const [logs, setLogs] = useState({})
+  const [activities, setActivities] = useState({})
   const [wsOk, setWsOk] = useState(false)
   const [auth, setAuth] = useState({ loaded: false, email: null, name: null, picture: null })
   const [loggingIn, setLoggingIn] = useState(false)
@@ -416,6 +417,15 @@ export default function App() {
             const cur = (prev[msg.runId] || '') + msg.chunk
             return { ...prev, [msg.runId]: cur.length > LOG_CAP ? cur.slice(-LOG_CAP) : cur }
           })
+        } else if (msg.type === 'agent_event') {
+          setActivities((prev) => {
+            const current = prev[msg.runId] || []
+            const index = current.findIndex((event) => event.id === msg.event.id)
+            if (index === -1) return { ...prev, [msg.runId]: [...current, msg.event] }
+            const next = [...current]
+            next[index] = { ...next[index], ...msg.event }
+            return { ...prev, [msg.runId]: next }
+          })
         } else if (msg.type === 'removed') {
           setRuns((prev) => prev.filter((r) => r.id !== msg.runId))
         } else if (msg.type === 'view') {
@@ -468,11 +478,25 @@ export default function App() {
   const deleteRun = useCallback(async (id) => {
     await fetch(`/api/runs/${id}`, { method: 'DELETE' })
     setRuns((prev) => prev.filter((r) => r.id !== id))
+    setLogs((prev) => {
+      const next = { ...prev }
+      delete next[id]
+      return next
+    })
+    setActivities((prev) => {
+      const next = { ...prev }
+      delete next[id]
+      return next
+    })
   }, [])
 
-  const fetchLog = useCallback(async (id) => {
-    const text = await fetch(`/api/runs/${id}/log`).then((r) => r.text())
+  const fetchActivity = useCallback(async (id) => {
+    const [text, activity] = await Promise.all([
+      fetch(`/api/runs/${id}/log`).then((r) => r.text()),
+      fetch(`/api/runs/${id}/events`).then((r) => (r.ok ? r.json() : { events: [] })),
+    ])
     setLogs((prev) => ({ ...prev, [id]: text.length > LOG_CAP ? text.slice(-LOG_CAP) : text }))
+    setActivities((prev) => ({ ...prev, [id]: activity.events || [] }))
   }, [])
 
   const groups = useMemo(() => {
@@ -804,6 +828,7 @@ export default function App() {
               project={currentGroup.project}
               runs={currentGroup.runs}
               logs={logs}
+              activities={activities}
               likes={projectLikes[currentGroup.project]}
               category={currentGroup.category}
               prevProject={groups[currentIdx - 1]?.project}
@@ -813,7 +838,7 @@ export default function App() {
               onBack={goHome}
               onStop={stopRun}
               onDelete={deleteRun}
-              onFetchLog={fetchLog}
+              onFetchActivity={fetchActivity}
             />
           ) : (
             <div className="mt-20 text-center font-mono text-xs tracking-[0.2em] text-white/30 uppercase">

@@ -62,6 +62,7 @@ export default function ProjectPage({
   project,
   runs,
   logs,
+  activities,
   likes,
   category,
   prevProject,
@@ -71,7 +72,7 @@ export default function ProjectPage({
   onBack,
   onStop,
   onDelete,
-  onFetchLog,
+  onFetchActivity,
 }) {
   const { t, language } = useI18n()
   const [layout, setLayout] = useState('2')
@@ -225,9 +226,10 @@ export default function ProjectPage({
                 key={run.id}
                 run={run}
                 log={logs[run.id]}
+                events={activities[run.id]}
                 onStop={onStop}
                 onDelete={onDelete}
-                onFetchLog={onFetchLog}
+                onFetchActivity={onFetchActivity}
               />
             ))}
           </div>

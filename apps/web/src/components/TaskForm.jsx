@@ -15,6 +15,7 @@ import { useI18n } from '@/i18n.jsx'
 let uid = 0
 
 function ModelPicker({ agent, value, onChange }) {
+  const selectedHealth = agent.health?.modelHealth?.[value]
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,17 +23,22 @@ function ModelPicker({ agent, value, onChange }) {
           type="button"
           className="flex h-full max-w-[180px] cursor-pointer items-center gap-1 border-l border-white/10 px-2 font-mono text-[11px] whitespace-nowrap text-white/55 outline-none transition-colors hover:text-white"
         >
-          <span className="truncate">{value}</span>
+          <span className={cn('truncate', selectedHealth?.available === false && 'text-amber-400')}>{value || 'auto'}</span>
+          {selectedHealth?.available === false && <TriangleAlert className="h-3 w-3 shrink-0 text-amber-400" />}
           <ChevronDown className="h-3 w-3 opacity-50" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="font-mono text-[11px]">
-        {(agent.models || []).map((m) => (
-          <DropdownMenuItem key={m} onSelect={() => onChange(m)}>
+        {(agent.models || []).map((m) => {
+          const modelHealth = agent.health?.modelHealth?.[m]
+          return (
+          <DropdownMenuItem key={m} onSelect={() => onChange(m)} title={modelHealth?.fix || undefined}>
             <AgentIcon agentId={agent.id} color={agent.color} className="h-3 w-3" />
-            {m}
+            <span className={cn(modelHealth?.available === false && 'text-amber-400')}>{m}</span>
+            {modelHealth?.available === false && <TriangleAlert className="ml-auto h-3 w-3 text-amber-400" />}
           </DropdownMenuItem>
-        ))}
+          )
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   )
@@ -74,7 +80,8 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   // 默认：三个 CLI 各一个 runner，模型选列表第一个
   useEffect(() => {
     if (agents.length && runners.length === 0) {
-      setRunners(agents.map((a) => ({ key: ++uid, agentId: a.id, model: a.models?.[0] || '' })))
+      const readyAgents = agents.filter((agent) => agent.health?.ready !== false)
+      setRunners((readyAgents.length ? readyAgents : agents).map((a) => ({ key: ++uid, agentId: a.id, model: a.models?.[0] || '' })))
     }
   }, [agents]) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -94,6 +101,20 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
     if (!user) {
       setError(t('task.errorLogin'))
       onLogin?.()
+      return
+    }
+    const unavailable = runners
+      .map((runner) => {
+        const agent = agentOf(runner.agentId)
+        if (!agent) return `Unknown agent: ${runner.agentId}`
+        if (agent.health?.ready === false) return agent.health.fix
+        return agent.health?.modelHealth?.[runner.model]?.available === false
+          ? agent.health.modelHealth[runner.model].fix
+          : null
+      })
+      .filter(Boolean)
+    if (unavailable.length) {
+      setError(unavailable.join('；'))
       return
     }
     setBusy(true)
@@ -128,7 +149,10 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
           {runners.map((r) => {
             const a = agentOf(r.agentId)
             if (!a) return null
-            const ready = a.health?.ready !== false
+            const modelHealth = a.health?.modelHealth?.[r.model]
+            const ready = a.health?.ready !== false && modelHealth?.available !== false
+            const healthAgent =
+              modelHealth?.available === false ? { ...a, health: { ...a.health, fix: modelHealth.fix } } : a
             return (
               <div
                 key={r.key}
@@ -141,7 +165,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
                   <AgentIcon agentId={a.id} color={a.color} className="h-3.5 w-3.5" />
                   {/* 图标已标识 CLI，名称去掉 Code/CLI 后缀更紧凑 */}
                   {a.name.replace(/\s+(Code|CLI)$/i, '')}
-                  {!ready && <HealthHint agent={a} />}
+                  {!ready && <HealthHint agent={healthAgent} />}
                 </span>
                 <ModelPicker
                   agent={a}
