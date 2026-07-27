@@ -73,9 +73,17 @@ Codex 是例外中的优先原生适配：它的 app-server 能提供比最低�
 
 `publish: true` 只是意图，不等于公开。服务端以 `publishState: published` 作为公开判定。
 
-作品交付采用“静态 HTML 入口 + 相对资源目录”，而不是强制把所有内容塞进单个 HTML。这样既能离线打开，也不会依赖 CDN、localhost 服务或密钥。上传时拒绝隐藏文件、凭证、数据库、脚本和超限资源。
+作品交付默认采用一个自包含 `index.html`，降低缓存、同步和资源丢失带来的失败率。用户也可以在任务表单中切换为“静态 HTML 入口 + 相对资源目录”或直接编辑自定义约束。用户 Prompt 与交付约束分开保存，服务端在启动 Agent 前完成最终拼接，并把最终约束写入运行目录的 `AGENTS.md`。所有模式都不得依赖 CDN、localhost 服务、密钥或父目录文件；上传时拒绝隐藏文件、凭证、数据库、脚本和超限资源。
 
 所有服务端预览必须在无 `allow-same-origin` 的 iframe/CSP sandbox 中运行。更成熟的部署应把 artifact renderer 放在独立的无 Cookie 域名，例如 `preview.touchstoneusercontent.com`。
+
+## Skills
+
+- Local Bridge 只扫描各 Agent 的标准本地 Skill 目录，不上传 `SKILL.md` 内容或本机路径。
+- 用户可以为一次任务显式选择已安装的 Skills；服务端会验证每个目标 Agent 都已安装，然后把 Skill 名称追加到执行 Prompt。
+- 一键安装只接受 `skills/catalog.json` 白名单。Touchstone 自维护 Skill 从随仓库发布的目录复制；第三方热门 Skill 通过 Vercel Labs 的 `skills` CLI 安装到指定 Agent。
+- 生产环境默认关闭本机写入。可信的个人本地服务需要显式设置 `TOUCHSTONE_ALLOW_SKILL_INSTALL=1`。
+- 第三方 Skill 属于供应链输入；界面必须展示来源、维护方和安装目标，不支持用户从网页提交任意 Git URL 或 shell 命令。
 
 ## 配对与安全边界
 

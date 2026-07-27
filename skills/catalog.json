@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-07-27",
+  "skills": [
+    {
+      "id": "touchstone-static-showcase",
+      "name": "Touchstone Static Showcase",
+      "description": "Build and verify a polished, self-contained HTML showcase that opens directly in a browser.",
+      "provider": "Touchstone",
+      "sourceType": "bundled",
+      "source": "skills/touchstone-static-showcase",
+      "homepage": "https://github.com/jefflinshu/touchstone",
+      "popular": true,
+      "maintained": true
+    },
+    {
+      "id": "frontend-design",
+      "name": "Frontend Design",
+      "description": "Create distinctive, production-quality frontend interfaces with strong visual craft.",
+      "provider": "Vercel Labs",
+      "sourceType": "skills-cli",
+      "source": "vercel-labs/agent-skills",
+      "skill": "frontend-design",
+      "homepage": "https://github.com/vercel-labs/agent-skills",
+      "popular": true,
+      "maintained": false
+    },
+    {
+      "id": "react-best-practices",
+      "name": "React Best Practices",
+      "description": "Apply Vercel Engineering guidance for React and Next.js performance and architecture.",
+      "provider": "Vercel Labs",
+      "sourceType": "skills-cli",
+      "source": "vercel-labs/agent-skills",
+      "skill": "react-best-practices",
+      "homepage": "https://github.com/vercel-labs/agent-skills",
+      "popular": true,
+      "maintained": false
+    },
+    {
+      "id": "web-design-guidelines",
+      "name": "Web Design Guidelines",
+      "description": "Review web UI for usability, accessibility, responsive behavior, and interface quality.",
+      "provider": "Vercel Labs",
+      "sourceType": "skills-cli",
+      "source": "vercel-labs/agent-skills",
+      "skill": "web-design-guidelines",
+      "homepage": "https://github.com/vercel-labs/agent-skills",
+      "popular": true,
+      "maintained": false
+    },
+    {
+      "id": "skill-creator",
+      "name": "Skill Creator",
+      "description": "Create and refine reusable Agent Skills with valid SKILL.md structure and focused instructions.",
+      "provider": "Vercel Labs",
+      "sourceType": "skills-cli",
+      "source": "vercel-labs/agent-skills",
+      "skill": "skill-creator",
+      "homepage": "https://github.com/vercel-labs/agent-skills",
+      "popular": true,
+      "maintained": false
+    }
+  ]
+}

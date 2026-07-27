@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Loader2, ArrowRight, Plus, X, Check, ChevronDown, TriangleAlert, CircleHelp } from 'lucide-react'
+import {
+  Loader2,
+  ArrowRight,
+  Plus,
+  X,
+  Check,
+  ChevronDown,
+  TriangleAlert,
+  CircleHelp,
+  Sparkles,
+  SlidersHorizontal,
+  Download,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
 import {
@@ -13,6 +25,19 @@ import { cn } from '@/lib/utils'
 import { useI18n } from '@/i18n.jsx'
 
 let uid = 0
+const DELIVERY_STORAGE_KEY = 'touchstone-delivery-constraint'
+const SINGLE_HTML_CONSTRAINT =
+  '请把最终作品交付为当前工作目录中的一个自包含 index.html。CSS 和 JavaScript 必须内联；小型图片、字体或其他必要资源应尽量使用 data URL 内嵌。不要创建需要构建步骤才能运行的源码项目，不要依赖其他网站、网络 CDN、localhost 服务、密钥或父目录文件。直接双击打开 index.html 时，核心内容与交互必须可用。'
+const STATIC_FOLDER_CONSTRAINT =
+  '请在当前工作目录生成最终静态作品。必须包含一个可以直接在浏览器中打开运行的 HTML 入口，优先命名为 index.html。所有资源必须位于当前目录内并使用相对路径，不要依赖网络 CDN、localhost 服务、密钥或父目录文件。'
+
+function initialDeliveryConstraint() {
+  try {
+    return localStorage.getItem(DELIVERY_STORAGE_KEY) || SINGLE_HTML_CONSTRAINT
+  } catch {
+    return SINGLE_HTML_CONSTRAINT
+  }
+}
 
 function ModelPicker({ agent, value, onChange }) {
   const selectedHealth = agent.health?.modelHealth?.[value]
@@ -74,6 +99,14 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   const [prompt, setPrompt] = useState('')
   const [runners, setRunners] = useState([])
   const [publish, setPublish] = useState(false)
+  const [skills, setSkills] = useState([])
+  const [skillsInstallEnabled, setSkillsInstallEnabled] = useState(false)
+  const [selectedSkills, setSelectedSkills] = useState([])
+  const [installingSkill, setInstallingSkill] = useState('')
+  const [skillsError, setSkillsError] = useState('')
+  const [showDelivery, setShowDelivery] = useState(false)
+  const [deliveryPreset, setDeliveryPreset] = useState('single-html')
+  const [deliveryConstraint, setDeliveryConstraint] = useState(initialDeliveryConstraint)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
 
@@ -86,6 +119,85 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   }, [agents]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const agentOf = (id) => agents.find((a) => a.id === id)
+  const targetAgentIds = [...new Set(runners.map((runner) => runner.agentId))]
+
+  async function refreshSkills(nextSkills = null) {
+    if (nextSkills) {
+      setSkills(nextSkills)
+      return
+    }
+    if (!user) {
+      setSkills([])
+      return
+    }
+    try {
+      const response = await fetch('/api/skills')
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(data.error || 'failed')
+      setSkills(data.skills || [])
+      setSkillsInstallEnabled(Boolean(data.installEnabled))
+      setSkillsError('')
+    } catch (err) {
+      setSkillsError(err.message)
+    }
+  }
+
+  useEffect(() => {
+    refreshSkills()
+  }, [user]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(DELIVERY_STORAGE_KEY, deliveryConstraint)
+    } catch {}
+  }, [deliveryConstraint])
+
+  useEffect(() => {
+    setSelectedSkills((current) =>
+      current.filter((id) => {
+        const skill = skills.find((item) => item.id === id)
+        return skill && targetAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+      })
+    )
+  }, [skills, runners]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function installSkill(skill) {
+    if (!user) {
+      onLogin?.()
+      return
+    }
+    if (!skillsInstallEnabled) {
+      setSkillsError(t('task.skillsInstallLocalOnly'))
+      return
+    }
+    if (!targetAgentIds.length) {
+      setSkillsError(t('task.skillsChooseAgent'))
+      return
+    }
+    setInstallingSkill(skill.id)
+    setSkillsError('')
+    try {
+      const response = await fetch('/api/skills/install', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: skill.id, agentIds: targetAgentIds }),
+      })
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(data.error || 'failed')
+      await refreshSkills(data.skills || [])
+      setSelectedSkills((current) => [...new Set([...current, skill.id])])
+    } catch (err) {
+      setSkillsError(err.message)
+    } finally {
+      setInstallingSkill('')
+    }
+  }
+
+  function chooseDeliveryPreset(preset) {
+    setDeliveryPreset(preset)
+    if (preset === 'single-html') setDeliveryConstraint(SINGLE_HTML_CONSTRAINT)
+    if (preset === 'static-folder') setDeliveryConstraint(STATIC_FOLDER_CONSTRAINT)
+  }
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -123,6 +235,8 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
         prompt: prompt.trim(),
         runners: runners.map(({ agentId, model }) => ({ agentId, model: model.trim() })),
         publish,
+        selectedSkills,
+        deliveryConstraint: deliveryConstraint.trim(),
       })
       setPrompt('')
     } catch (err) {
@@ -142,6 +256,150 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
+
+        <div className="flex flex-wrap items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button type="button" variant="outline" size="sm" className="h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase">
+                <Sparkles className="h-3.5 w-3.5 text-violet-300" />
+                {t('task.skills')}
+                {selectedSkills.length > 0 && (
+                  <span className="rounded-full bg-violet-400/15 px-1.5 text-violet-200">{selectedSkills.length}</span>
+                )}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="max-h-[380px] w-[min(380px,calc(100vw-32px))] overflow-y-auto p-1.5">
+              <div className="px-2 py-1.5">
+                <p className="font-mono text-[9px] tracking-[0.16em] text-white/35 uppercase">{t('task.skillsLocalTitle')}</p>
+                <p className="mt-1 text-[11px] leading-4 text-white/45">{t('task.skillsHelp')}</p>
+              </div>
+              {skills.map((skill) => {
+                const installedForAll =
+                  targetAgentIds.length > 0 && targetAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+                const selected = selectedSkills.includes(skill.id)
+                const installing = installingSkill === skill.id
+                return (
+                  <DropdownMenuItem
+                    key={skill.id}
+                    onSelect={(event) => {
+                      event.preventDefault()
+                      if (installedForAll) {
+                        setSelectedSkills((current) =>
+                          selected ? current.filter((id) => id !== skill.id) : [...current, skill.id]
+                        )
+                      } else if (skill.installable) {
+                        installSkill(skill)
+                      }
+                    }}
+                    className="items-start py-2"
+                  >
+                    <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center">
+                      {installing ? (
+                        <Loader2 className="h-3.5 w-3.5 animate-spin text-violet-300" />
+                      ) : installedForAll ? (
+                        <span className={cn('flex h-3.5 w-3.5 items-center justify-center rounded border', selected ? 'border-violet-300 bg-violet-300 text-black' : 'border-white/25')}>
+                          {selected && <Check className="h-2.5 w-2.5" strokeWidth={3} />}
+                        </span>
+                      ) : (
+                        <Download className="h-3.5 w-3.5 text-white/35" />
+                      )}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center gap-1.5 text-xs text-white/85">
+                        <span className="truncate">{skill.name}</span>
+                        {skill.maintained && (
+                          <span className="rounded border border-acid/25 px-1 font-mono text-[8px] tracking-wider text-acid uppercase">
+                            Touchstone
+                          </span>
+                        )}
+                        {skill.popular && !skill.maintained && (
+                          <span className="rounded border border-white/12 px-1 font-mono text-[8px] tracking-wider text-white/35 uppercase">
+                            Popular
+                          </span>
+                        )}
+                      </span>
+                      <span className="mt-0.5 block text-[10px] leading-4 text-white/40">{skill.description}</span>
+                      <span className="mt-0.5 block font-mono text-[9px] text-white/25">
+                        {installedForAll
+                          ? t('task.skillsInstalledForAll')
+                          : skill.installedFor?.length
+                            ? t('task.skillsInstalledFor', { agents: skill.installedFor.join(', ') })
+                            : t('task.skillsInstallAction', { agents: targetAgentIds.join(', ') || '—' })}
+                      </span>
+                    </span>
+                  </DropdownMenuItem>
+                )
+              })}
+              {skills.length === 0 && (
+                <p className="px-2 py-4 text-center text-xs text-white/35">{skillsError || t('task.skillsNone')}</p>
+              )}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => setShowDelivery((value) => !value)}
+            className={cn(
+              'h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase',
+              showDelivery && 'border-acid/50 text-acid'
+            )}
+          >
+            <SlidersHorizontal className="h-3.5 w-3.5" />
+            {deliveryPreset === 'single-html' ? t('task.deliverySingleHtml') : t('task.delivery')}
+          </Button>
+
+          {selectedSkills.map((id) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setSelectedSkills((current) => current.filter((skillId) => skillId !== id))}
+              className="flex h-7 items-center gap-1 rounded-full border border-violet-300/20 bg-violet-300/8 px-2 font-mono text-[9px] text-violet-200"
+            >
+              {id}
+              <X className="h-2.5 w-2.5" />
+            </button>
+          ))}
+          {skillsError && <span className="text-[10px] text-amber-300">{skillsError}</span>}
+        </div>
+
+        {showDelivery && (
+          <div className="rounded-md border border-white/10 bg-black/20 p-3">
+            <div className="flex flex-wrap items-center gap-1.5">
+              {[
+                ['single-html', t('task.deliverySingleHtml')],
+                ['static-folder', t('task.deliveryStaticFolder')],
+                ['custom', t('task.deliveryCustom')],
+              ].map(([value, label]) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => chooseDeliveryPreset(value)}
+                  className={cn(
+                    'rounded-full border px-2.5 py-1 font-mono text-[9px] tracking-wider uppercase',
+                    deliveryPreset === value
+                      ? 'border-acid bg-acid text-black'
+                      : 'border-white/12 text-white/40 hover:border-white/30 hover:text-white'
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+              <span className="ml-auto text-[10px] text-white/30">{t('task.deliveryAppended')}</span>
+            </div>
+            <Textarea
+              rows={4}
+              maxLength={6000}
+              value={deliveryConstraint}
+              onChange={(event) => {
+                setDeliveryConstraint(event.target.value)
+                setDeliveryPreset('custom')
+              }}
+              className="mt-2 min-h-24 font-mono text-[11px] leading-5"
+            />
+          </div>
+        )}
 
         <div className="h-px bg-white/8" />
 

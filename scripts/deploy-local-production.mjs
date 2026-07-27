@@ -13,7 +13,14 @@ const TARGET_DIR = process.env.TOUCHSTONE_DEPLOY_DIR || '/Users/linshu/Deploy/to
 const SERVICE_LABEL = process.env.TOUCHSTONE_LAUNCHCTL_LABEL || 'ai.jefflin.touchstone'
 const PUBLIC_BASE_URL = process.env.PUBLIC_BASE_URL || 'https://touchstone.jefflin.ai'
 const LOCAL_BASE_URL = process.env.LOCAL_BASE_URL || 'http://127.0.0.1:3000'
-const REQUIRED_BUNDLE_MARKERS = ['ossRadar', 'nav.ossRadar', 'nav.ossRadarShort']
+const REQUIRED_BUNDLE_MARKERS = [
+  'ossRadar',
+  'nav.ossRadar',
+  'nav.ossRadarShort',
+  'home.communityTab',
+  'task.deliverySingleHtml',
+  'task.skillsLocalTitle',
+]
 
 function run(command, args, options = {}) {
   console.log(`$ ${[command, ...args].join(' ')}`)
@@ -71,8 +78,10 @@ async function main() {
 
   mkdirSync(join(TARGET_DIR, 'apps', 'server'), { recursive: true })
   mkdirSync(join(TARGET_DIR, 'apps', 'web'), { recursive: true })
+  mkdirSync(join(TARGET_DIR, 'skills'), { recursive: true })
 
   run('rsync', ['-a', 'package.json', 'package-lock.json', 'agents.json', `${TARGET_DIR}/`])
+  run('rsync', ['-a', '--delete', 'skills/', `${TARGET_DIR}/skills/`])
   run('rsync', ['-a', '--exclude', '*.test.js', 'apps/server/', `${TARGET_DIR}/apps/server/`])
   writeFileSync(join(TARGET_DIR, 'server.js'), "import './apps/server/server.js'\n")
   run('rsync', ['-a', 'apps/web/package.json', `${TARGET_DIR}/apps/web/`])

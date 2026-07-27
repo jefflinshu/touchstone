@@ -11,6 +11,16 @@ import Anthropic from '@anthropic-ai/sdk'
 import { createAgentEventParser } from './agent-events.js'
 import { probeAgentCapabilityAsync, validateAgentSelection } from './agent-capabilities.js'
 import { canManageRun, canReadRun, isRunPublished, visibleRunsFor } from './run-access.js'
+import {
+  buildSelectedSkillsPrompt,
+  discoverInstalledSkills,
+  installBundledSkill,
+  loadSkillCatalog,
+  mergeSkillCatalog,
+  normalizeDeliveryConstraint,
+  selectedSkillIssues,
+  skillInstallerArgs,
+} from './skill-registry.js'
 
 const APP_DIR = path.dirname(fileURLToPath(import.meta.url))
 const WORKSPACE_ROOT = path.resolve(APP_DIR, '../..')
@@ -21,6 +31,8 @@ const RUNS_DIR = process.env.TOUCHSTONE_RUNS_DIR || path.join(WORKSPACE_ROOT, 'r
 const DATA_DIR = process.env.TOUCHSTONE_DATA_DIR || path.join(WORKSPACE_ROOT, 'data')
 const REGISTRY_FILE = path.join(DATA_DIR, 'runs.json')
 const AGENTS_FILE = process.env.TOUCHSTONE_AGENTS_FILE || path.join(WORKSPACE_ROOT, 'agents.json')
+const SKILLS_CATALOG_FILE =
+  process.env.TOUCHSTONE_SKILLS_CATALOG_FILE || path.join(WORKSPACE_ROOT, 'skills', 'catalog.json')
 const PORT = process.env.PORT || 3000
 const SITE_NAME = 'Touchstone'
 const SITE_DESCRIPTION =
@@ -386,6 +398,49 @@ function loadAgentsConfig() {
   return JSON.parse(fs.readFileSync(AGENTS_FILE, 'utf8'))
 }
 
+function listLocalSkills() {
+  return mergeSkillCatalog(
+    loadSkillCatalog(SKILLS_CATALOG_FILE),
+    discoverInstalledSkills()
+  )
+}
+
+function publicSkill(skill) {
+  const { locations, ...safe } = skill
+  return safe
+}
+
+function skillInstallEnabled(req) {
+  if (process.env.TOUCHSTONE_ALLOW_SKILL_INSTALL === '1') return true
+  if (process.env.NODE_ENV === 'production') return false
+  const host = String(req.get('host') || '').split(':')[0].replace(/^\[|\]$/g, '')
+  const remote = String(req.socket?.remoteAddress || '')
+  const directLoopback = remote === '127.0.0.1' || remote === '::1' || remote === '::ffff:127.0.0.1'
+  return directLoopback && (host === 'localhost' || host === '127.0.0.1' || host === '::1')
+}
+
+function runSkillInstaller(args) {
+  return new Promise((resolve, reject) => {
+    execFile(
+      'npx',
+      args,
+      {
+        cwd: WORKSPACE_ROOT,
+        timeout: Number(process.env.SKILL_INSTALL_TIMEOUT_MS || 120_000),
+        maxBuffer: 2 * 1024 * 1024,
+        env: { ...process.env, DO_NOT_TRACK: '1', DISABLE_TELEMETRY: '1' },
+      },
+      (error, stdout, stderr) => {
+        if (error) {
+          reject(new Error(String(stderr || stdout || error.message).trim().slice(0, 1200)))
+          return
+        }
+        resolve({ stdout: String(stdout || '').slice(-4000), stderr: String(stderr || '').slice(-1000) })
+      }
+    )
+  })
+}
+
 const agentCapabilityCache = new Map()
 
 async function getAgentCapability(agent, force = false) {
@@ -688,9 +743,15 @@ function publicRun(r) {
   return { ...rest, likes: stats.likes[r.id] || 0 }
 }
 
-function writeRunContract(dir) {
+function writeRunContract(dir, run) {
   try {
-    fs.writeFileSync(path.join(dir, 'AGENTS.md'), RUN_CONTRACT)
+    const selectedSkills = Array.isArray(run.selectedSkills) && run.selectedSkills.length
+      ? `\n## Selected Skills\n\n${run.selectedSkills.map((skill) => `- ${skill}`).join('\n')}\n`
+      : ''
+    const delivery = run.deliveryConstraint
+      ? `\n## User Delivery Constraint\n\n${run.deliveryConstraint}\n`
+      : ''
+    fs.writeFileSync(path.join(dir, 'AGENTS.md'), `${RUN_CONTRACT}${selectedSkills}${delivery}`)
   } catch {}
 }
 
@@ -945,7 +1006,7 @@ const publishCredentials = new Map() // runId -> { idToken }
 function startRun(run, agent, prompt, timeoutMinutes) {
   const dir = path.join(RUNS_DIR, run.folder)
   fs.mkdirSync(dir, { recursive: true })
-  writeRunContract(dir)
+  writeRunContract(dir, run)
   const logFile = path.join(dir, '.touchstone.log')
   const eventsFile = path.join(dir, '.touchstone-events.jsonl')
 
@@ -1094,6 +1155,56 @@ app.get('/api/agents', async (req, res) => {
     })),
     defaults: cfg.defaults,
   })
+})
+
+app.get('/api/skills', (req, res) => {
+  if (!currentSession(req)?.email) return res.status(401).json({ error: '请先登录后读取本地 Skills' })
+  try {
+    res.json({
+      skills: listLocalSkills().map(publicSkill),
+      installEnabled: skillInstallEnabled(req),
+      supportedAgents: loadAgentsConfig().agents.map((agent) => agent.id),
+    })
+  } catch (error) {
+    res.status(500).json({ error: `读取 Skills 失败：${error.message}` })
+  }
+})
+
+app.post('/api/skills/install', async (req, res) => {
+  const session = currentSession(req)
+  if (!session?.email) return res.status(401).json({ error: '请先登录后安装 Skill' })
+  if (!skillInstallEnabled(req)) {
+    return res.status(403).json({
+      error: '此页面连接的不是允许写入的本地 Touchstone。请在本机打开，或为可信本地服务设置 TOUCHSTONE_ALLOW_SKILL_INSTALL=1。',
+    })
+  }
+  const id = String(req.body?.id || '').trim()
+  const configuredAgents = new Set(loadAgentsConfig().agents.map((agent) => agent.id))
+  const agentIds = [...new Set(Array.isArray(req.body?.agentIds) ? req.body.agentIds : [])]
+    .map((agentId) => String(agentId || '').trim())
+    .filter((agentId) => configuredAgents.has(agentId))
+  const catalog = loadSkillCatalog(SKILLS_CATALOG_FILE)
+  const entry = catalog.find((skill) => skill.id === id)
+  if (!entry) return res.status(404).json({ error: '该 Skill 不在 Touchstone 安装白名单中' })
+  if (!agentIds.length) return res.status(400).json({ error: '至少选择一个目标 Agent' })
+
+  try {
+    let output = null
+    if (entry.sourceType === 'bundled') {
+      output = { installed: installBundledSkill(entry, agentIds, { workspaceRoot: WORKSPACE_ROOT }) }
+    } else {
+      const args = skillInstallerArgs(entry, agentIds)
+      if (!args) throw new Error('Unsupported Skill installer')
+      output = await runSkillInstaller(args)
+    }
+    res.json({
+      ok: true,
+      output,
+      skills: listLocalSkills().map(publicSkill),
+    })
+  } catch (error) {
+    res.status(500).json({ error: `安装 Skill 失败：${error.message}` })
+  }
 })
 
 // ---------- 项目自动命名 ----------
@@ -1796,9 +1907,14 @@ app.get('/api/repo', (req, res) => {
 })
 
 app.post('/api/tasks', async (req, res) => {
-  const { prompt, runners, publish } = req.body || {}
+  const { prompt, runners, publish, deliveryConstraint } = req.body || {}
+  const selectedSkills = [...new Set(
+    (Array.isArray(req.body?.selectedSkills) ? req.body.selectedSkills : [])
+      .map((skill) => String(skill || '').trim())
+      .filter(Boolean)
+  )].slice(0, 12)
   let { project } = req.body || {}
-  if (!prompt || !Array.isArray(runners) || runners.length === 0) {
+  if (typeof prompt !== 'string' || !prompt.trim() || !Array.isArray(runners) || runners.length === 0) {
     return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
   }
   const sessionUser = currentSession(req)
@@ -1828,6 +1944,17 @@ app.post('/api/tasks', async (req, res) => {
       issues: compatibilityErrors,
     })
   }
+  const skillIssues = selectedSkillIssues(
+    selectedSkills,
+    listLocalSkills(),
+    [...new Set(plannedRunners.map((item) => item.agent.id))]
+  )
+  if (skillIssues.length) {
+    return res.status(409).json({
+      error: `本地 Skill 预检失败：${skillIssues.join('；')}`,
+      issues: skillIssues,
+    })
+  }
   let category = null
   if (!project || !String(project).trim()) {
     const named = await autoNameProject(prompt)
@@ -1835,8 +1962,14 @@ app.post('/api/tasks', async (req, res) => {
     category = named.category
   }
   if (!category) category = classifyHeuristic(prompt)
-  // 交付要求强制附加：网站展示依赖 index.html
-  const finalPrompt = prompt + cfg.defaults.artifactHint
+  const finalDeliveryConstraint = normalizeDeliveryConstraint(
+    deliveryConstraint,
+    cfg.defaults.singleHtmlArtifactHint || cfg.defaults.artifactHint
+  )
+  const finalPrompt =
+    prompt.trim() +
+    buildSelectedSkillsPrompt(selectedSkills) +
+    `\n\n【交付要求】\n${finalDeliveryConstraint}`
   const batchId = crypto.randomUUID()
   const created = []
 
@@ -1862,8 +1995,11 @@ app.post('/api/tasks', async (req, res) => {
       entry: null,
       status: 'pending',
       publish: !!publish,
+      publishState: publish ? 'pending' : 'local',
       user,
       category,
+      selectedSkills,
+      deliveryConstraint: finalDeliveryConstraint,
       createdAt: new Date().toISOString(),
     }
     runs.unshift(run)

@@ -1,0 +1,191 @@
+import fs from 'node:fs'
+import os from 'node:os'
+import path from 'node:path'
+
+export const AGENT_SKILL_TARGETS = {
+  claude: {
+    installerId: 'claude-code',
+    roots: ['.claude/skills'],
+  },
+  codex: {
+    installerId: 'codex',
+    roots: ['.codex/skills', '.agents/skills'],
+  },
+  gemini: {
+    installerId: 'gemini-cli',
+    roots: ['.gemini/skills'],
+  },
+  opencode: {
+    installerId: 'opencode',
+    roots: ['.config/opencode/skills'],
+  },
+}
+
+const SAFE_SKILL_ID = /^[a-z0-9][a-z0-9._-]{0,79}$/
+
+export function parseSkillFrontmatter(content, fallbackName = '') {
+  const source = String(content || '')
+  const block = source.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/)?.[1] || ''
+  const read = (key) => {
+    const match = block.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'))
+    if (!match) return ''
+    return match[1].trim().replace(/^(['"])([\s\S]*)\1$/, '$2')
+  }
+  const name = read('name') || fallbackName
+  return {
+    id: String(name || fallbackName).trim(),
+    name: String(name || fallbackName).trim(),
+    description: read('description'),
+  }
+}
+
+function readSkill(skillFile, fallbackName, io) {
+  try {
+    const parsed = parseSkillFrontmatter(io.readFileSync(skillFile, 'utf8'), fallbackName)
+    if (!SAFE_SKILL_ID.test(parsed.id)) return null
+    return { ...parsed, path: skillFile }
+  } catch {
+    return null
+  }
+}
+
+function scanRoot(root, io) {
+  if (!io.existsSync(root)) return []
+  const found = []
+  let entries = []
+  try {
+    entries = io.readdirSync(root, { withFileTypes: true })
+  } catch {
+    return found
+  }
+  for (const entry of entries.slice(0, 1000)) {
+    if (!entry.isDirectory() && !entry.isSymbolicLink()) continue
+    const skillFile = path.join(root, entry.name, 'SKILL.md')
+    if (!io.existsSync(skillFile)) continue
+    const skill = readSkill(skillFile, entry.name, io)
+    if (skill) found.push(skill)
+  }
+  return found
+}
+
+export function discoverInstalledSkills(options = {}) {
+  const io = options.io || fs
+  const homeDir = options.homeDir || os.homedir()
+  const targets = options.targets || AGENT_SKILL_TARGETS
+  const merged = new Map()
+
+  for (const [agentId, target] of Object.entries(targets)) {
+    for (const relativeRoot of target.roots || []) {
+      const root = path.resolve(homeDir, relativeRoot)
+      for (const skill of scanRoot(root, io)) {
+        const existing = merged.get(skill.id) || {
+          id: skill.id,
+          name: skill.name,
+          description: skill.description,
+          installedFor: [],
+          locations: [],
+          sourceType: 'local',
+          provider: 'Local',
+        }
+        if (!existing.installedFor.includes(agentId)) existing.installedFor.push(agentId)
+        existing.locations.push({ agentId, path: skill.path })
+        if (!existing.description && skill.description) existing.description = skill.description
+        merged.set(skill.id, existing)
+      }
+    }
+  }
+  return [...merged.values()].sort((a, b) => a.name.localeCompare(b.name))
+}
+
+export function loadSkillCatalog(filePath, io = fs) {
+  const parsed = JSON.parse(io.readFileSync(filePath, 'utf8'))
+  if (parsed?.schema !== 1 || !Array.isArray(parsed.skills)) throw new Error('Unsupported skills catalog')
+  const seen = new Set()
+  return parsed.skills.filter((skill) => {
+    if (!SAFE_SKILL_ID.test(skill?.id || '') || seen.has(skill.id)) return false
+    seen.add(skill.id)
+    return true
+  })
+}
+
+export function mergeSkillCatalog(catalog, installed) {
+  const installedById = new Map(installed.map((skill) => [skill.id, skill]))
+  const result = catalog.map((entry) => ({
+    ...entry,
+    installedFor: installedById.get(entry.id)?.installedFor || [],
+    locations: installedById.get(entry.id)?.locations || [],
+    installable: true,
+  }))
+  for (const local of installed) {
+    if (!result.some((skill) => skill.id === local.id)) result.push({ ...local, installable: false, popular: false })
+  }
+  return result
+}
+
+export function selectedSkillIssues(selectedSkillIds, skills, agentIds) {
+  const byId = new Map(skills.map((skill) => [skill.id, skill]))
+  const issues = []
+  for (const id of selectedSkillIds) {
+    const skill = byId.get(id)
+    if (!skill) {
+      issues.push(`未知 Skill：${id}`)
+      continue
+    }
+    const missing = agentIds.filter((agentId) => !skill.installedFor.includes(agentId))
+    if (missing.length) issues.push(`Skill ${id} 尚未安装到：${missing.join(', ')}`)
+  }
+  return issues
+}
+
+export function buildSelectedSkillsPrompt(selectedSkillIds) {
+  if (!selectedSkillIds.length) return ''
+  return `\n\n【已选择的 Agent Skills】\n${selectedSkillIds
+    .map((id) => `- ${id}`)
+    .join('\n')}\n开始工作前，请加载并遵循以上已安装 Skill；若 Skill 指令与用户明确要求冲突，以用户要求为准。`
+}
+
+export function normalizeDeliveryConstraint(value, fallback, maxLength = 6000) {
+  const text = typeof value === 'string' ? value.trim() : ''
+  return (text || String(fallback || '').trim()).slice(0, maxLength)
+}
+
+export function skillInstallerArgs(entry, agentIds) {
+  if (entry?.sourceType !== 'skills-cli' || !entry.source || !entry.skill) return null
+  const targets = agentIds.map((id) => AGENT_SKILL_TARGETS[id]?.installerId).filter(Boolean)
+  if (!targets.length) throw new Error('没有可安装 Skill 的 Agent')
+  return [
+    '--yes',
+    'skills',
+    'add',
+    entry.source,
+    '--skill',
+    entry.skill,
+    '--global',
+    '--copy',
+    '--yes',
+    ...targets.flatMap((target) => ['--agent', target]),
+  ]
+}
+
+export function installBundledSkill(entry, agentIds, options = {}) {
+  if (entry?.sourceType !== 'bundled') throw new Error('Not a bundled skill')
+  const io = options.io || fs
+  const homeDir = options.homeDir || os.homedir()
+  const workspaceRoot = options.workspaceRoot
+  const source = path.resolve(workspaceRoot, entry.source)
+  if (!source.startsWith(`${path.resolve(workspaceRoot)}${path.sep}`) || !io.existsSync(path.join(source, 'SKILL.md'))) {
+    throw new Error('Bundled skill source is invalid')
+  }
+  const installed = []
+  for (const agentId of agentIds) {
+    const target = AGENT_SKILL_TARGETS[agentId]
+    if (!target) continue
+    const root = path.resolve(homeDir, target.roots[0])
+    const destination = path.join(root, entry.id)
+    io.mkdirSync(root, { recursive: true })
+    io.cpSync(source, destination, { recursive: true, force: true })
+    installed.push({ agentId, path: destination })
+  }
+  if (!installed.length) throw new Error('没有可安装 Skill 的 Agent')
+  return installed
+}
