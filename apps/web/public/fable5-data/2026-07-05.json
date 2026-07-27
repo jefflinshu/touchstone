@@ -1,81 +1,255 @@
 [
   {
-    "id": "nikskld-2073507867911659650",
-    "title": "Prompt-driven motion or animation demo",
-    "author": "nik skld",
-    "handle": "@nikskld",
-    "sourceUrl": "https://x.com/nikskld/status/2073507867911659650",
+    "id": "majidmanzarpour-2073742439211225234",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "Majid Manzarpour",
+    "handle": "@majidmanzarpour",
+    "sourceUrl": "https://x.com/majidmanzarpour/status/2073742439211225234",
     "date": "2026-07-05",
     "kind": "showcase",
     "scene": "apps",
     "categories": [
       "apps",
-      "websites",
-      "videos",
-      "design",
+      "3d"
+    ],
+    "media": "video",
+    "heat": "2,051 likes · 113 reposts",
+    "tags": [
+      "fable5",
+      "apps",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from seed-conversation; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "real-time procedural dungeon generator in @threejs, built with Fable 5 👇 https://t.co/6mYNyCAksJ",
+    "metrics": {
+      "likes": 2051,
+      "reposts": 113,
+      "replies": 53,
+      "quotes": 9,
+      "views": 142275,
+      "bookmarks": 1571
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2073742381573132289/vid/avc1/3024x1964/YmhjPcona6RxnzVn.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-07-06T12:01:35.058Z",
+    "lastFetchedAt": "2026-07-27T07:54:14.085Z",
+    "fetchRuns": [
+      "homepage-fable5-seeds-2026-07-06"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "design-gen",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
+      "domain": [],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/majidmanzarpour-2073742439211225234.jpg"
+  },
+  {
+    "id": "thebuggeddev-2073601034195513830",
+    "title": "Open-source shader and pattern generator",
+    "author": "The Bugged Dev",
+    "handle": "@thebuggeddev",
+    "sourceUrl": "https://x.com/thebuggeddev/status/2073601034195513830",
+    "date": "2026-07-05",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d",
       "agents",
       "code"
     ],
     "media": "video",
-    "heat": "1 likes · 0 reposts",
+    "heat": "816 likes · 56 reposts",
     "tags": [
       "fable5",
-      "apps",
-      "websites",
-      "videos",
-      "design",
+      "3d",
       "agents",
       "code",
-      "web"
+      "demo"
     ],
-    "verification": "Fetched from X via twitter-cli from global-search; original author and post URL preserved.",
+    "verification": "Fetched from X via twitter-cli from seed-tweet; original author and post URL preserved.",
     "promptStatus": "commentary",
     "prompt": "",
     "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
-    "originalText": "CAN YOU BELIEVE CLAUDE CODE DID THIS? 🤯\n\nA designer just dropped a showreel of client websites — every single one built with Claude Code.\n\nNot mockups. Shipped, live, animated sites 👇\n\n🎨 Kinetic typography that moves like a $10K agency intro\n🏗️ Real client work: doors company, personal brands, product sites\n⚡ The pipeline: from sketch to shipped — one tool, no handoff\n🧠 “Own the whole stack” — design, code, motion, deploy\n\nThe setup behind work like this is stupidly simple:\n\ncurl -fsSL https://t.co/TwSPt2eanX | bash\nnpx skills add ppakaus/Impeccable\n\nOne install. One design skill. Then you describe the site like you’d brief a contractor — and Claude writes the layout, the animations, the responsive breakpoints.\n\n💰 The math nobody wants to say out loud:\n\n→ Agencies charge $3-10K per site like these\n→ Claude Code ships one in an afternoon\n→ The showreel IS the sales pitch — post your builds, clients come to you\n\nDesigners used to need developers.\n\nDevelopers used to need designers.\n\nNow one person with Claude Code is both 🚀\n\nLET’S BUILD SOMETHING GOOD.",
+    "originalText": "Everyone is using Fable 5 to build funny little demos so I decided to build something better. \n\nVibe coded a 3D keyboard ecom platform in @threejs and @greensock. Every key. Every switch. Every color. Customizable in real time in 3D. \n\nIt's really amusing that whole keyboard is built at runtime using Procedural geometry. \n\nTo achieve that kind of realistic lighting on keyboard, it used a studio environment (gradient sky + softbox panels) rendered into a PMREM cubemap for realistic reflections. Opus helped a bit more here (as Fable was failing in loop in Claude chat)\n\nThere is also custom GLSL shaders for RGB underflow/skirt and as well sRGB output encoding + explicit convertSRGBToLinear() on every material color so caps render at their exact swatch value.\n\nI don't know any of these techniques and concepts but I have had been reading how both Fable and Opus were trying to approach this by digging into their \"thinking\" phase. \n\nGo try it, there is a cool Claude theme keyboard you would want to purchase too :D\n\nLive: https://t.co/YaenuyXvaV\nCode: https://t.co/alYsHFguYt",
     "metrics": {
-      "likes": 1,
-      "reposts": 0,
-      "replies": 0,
-      "quotes": 0,
-      "views": 117,
-      "bookmarks": 0
+      "likes": 816,
+      "reposts": 56,
+      "replies": 37,
+      "quotes": 7,
+      "views": 74005,
+      "bookmarks": 751
     },
     "mediaUrls": [
-      "https://video.twimg.com/amplify_video/2073507730833170432/vid/avc1/1080x1920/ErCCu6dYNGGSTXCE.mp4?tag=28"
+      "https://video.twimg.com/amplify_video/2073600742062215168/vid/avc1/2938x1848/LrbmqR2BweqVBW43.mp4?tag=28"
     ],
-    "firstSeenAt": "2026-07-06T04:27:03.474Z",
-    "lastFetchedAt": "2026-07-06T04:27:03.474Z",
+    "firstSeenAt": "2026-07-06T12:01:35.058Z",
+    "lastFetchedAt": "2026-07-27T07:54:14.085Z",
     "fetchRuns": [
-      "daily-asia-2026-07-02-to-2026-07-06-broad-latest"
+      "homepage-fable5-seeds-2026-07-06"
     ],
     "summary": [
-      "Shows a motion or video generation demo associated with Claude Fable 5, based on the original post's media and description."
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
     ],
     "facets": {
-      "artifactType": "website",
+      "artifactType": "app",
       "medium": "video",
       "capability": [
         "design-gen",
-        "motion-gen",
+        "3d-gen",
         "automation"
       ],
       "evidence": [
         "unverified-claim"
       ],
+      "domain": [],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/thebuggeddev-2073601034195513830.jpg"
+  },
+  {
+    "id": "nevsved-2073687955265171924",
+    "title": "Playable game prototype built with Fable 5",
+    "author": "Sven",
+    "handle": "@nevsved",
+    "sourceUrl": "https://x.com/nevsved/status/2073687955265171924",
+    "date": "2026-07-05",
+    "kind": "showcase",
+    "scene": "games",
+    "categories": [
+      "games",
+      "3d",
+      "code"
+    ],
+    "media": "video",
+    "heat": "138 likes · 8 reposts",
+    "tags": [
+      "fable5",
+      "games",
+      "3d",
+      "code"
+    ],
+    "verification": "Fetched from X via twitter-cli from seed-tweet; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "I'm blown away! I was experimenting with AI for a creature game and Fable 5 just one-shot an AMAZING LOOKING procedural creature creator! All done through code in Three.js!\n\nMy original reddit post: https://t.co/uZ26m7jpvd https://t.co/Ehw3HvvNDw",
+    "metrics": {
+      "likes": 138,
+      "reposts": 8,
+      "replies": 8,
+      "quotes": 1,
+      "views": 10026,
+      "bookmarks": 86
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2073687552456871936/vid/avc1/1280x720/OZ1P-hZgGm6qgZTf.mp4?tag=14"
+    ],
+    "firstSeenAt": "2026-07-06T12:01:35.058Z",
+    "lastFetchedAt": "2026-07-27T07:54:14.085Z",
+    "fetchRuns": [
+      "homepage-fable5-seeds-2026-07-06"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "game",
+      "medium": "video",
+      "capability": [
+        "one-shot",
+        "3d-gen"
+      ],
+      "evidence": [
+        "unverified-claim"
+      ],
       "domain": [
-        "marketing",
-        "web-design"
+        "game-dev"
       ],
       "tech": [
-        "claude-code"
+        "threejs"
       ],
-      "risk": [
-        "market-claim"
-      ]
+      "risk": []
     },
-    "mediaThumbUrl": "/fable5-media/nikskld-2073507867911659650.jpg",
-    "avatarUrl": "/fable5-avatars/nikskld.jpg",
-    "sourceAvatarUrl": "https://pbs.twimg.com/profile_images/2071266698733420544/TmCgq2BW_normal.jpg"
+    "mediaThumbUrl": "/fable5-media/nevsved-2073687955265171924.jpg"
+  },
+  {
+    "id": "lifecode63512-2073724540413473208",
+    "title": "3D or WebGL prototype built with Fable 5",
+    "author": "bluecat",
+    "handle": "@lifecode63512",
+    "sourceUrl": "https://x.com/lifecode63512/status/2073724540413473208",
+    "date": "2026-07-05",
+    "kind": "showcase",
+    "scene": "3d",
+    "categories": [
+      "3d"
+    ],
+    "media": "video",
+    "heat": "102 likes · 10 reposts",
+    "tags": [
+      "fable5",
+      "3d"
+    ],
+    "verification": "Fetched from X via twitter-cli from seed-tweet; original author and post URL preserved.",
+    "promptStatus": "commentary",
+    "prompt": "",
+    "note": "Original post did not expose a complete repeatable prompt. Treat this as a real showcase post, not a verified tutorial.",
+    "originalText": "three.js作者亲自下场，今天早上用 Fable5 做了一个玩具制作器。\n你可以将木质组件拼接在一起，让零件旋转起来，看着它们仿佛活过来了一样。 https://t.co/RkPKJhN4B1",
+    "metrics": {
+      "likes": 102,
+      "reposts": 10,
+      "replies": 2,
+      "quotes": 1,
+      "views": 13849,
+      "bookmarks": 66
+    },
+    "mediaUrls": [
+      "https://video.twimg.com/amplify_video/2073724458360336384/vid/avc1/1874x1630/sJsIlZVVMEiJKpaQ.mp4?tag=28"
+    ],
+    "firstSeenAt": "2026-07-06T12:04:43.118Z",
+    "lastFetchedAt": "2026-07-27T07:54:14.085Z",
+    "fetchRuns": [
+      "homepage-fable5-seeds-2026-07-06"
+    ],
+    "summary": [
+      "Shows a 3D or interactive visual prototype built with Claude Fable 5, based on the original post's media and description."
+    ],
+    "facets": {
+      "artifactType": "3d-scene",
+      "medium": "video",
+      "capability": [
+        "3d-gen"
+      ],
+      "evidence": [
+        "commentary"
+      ],
+      "domain": [],
+      "tech": [
+        "threejs"
+      ],
+      "risk": []
+    },
+    "mediaThumbUrl": "/fable5-media/lifecode63512-2073724540413473208.jpg"
   }
 ]

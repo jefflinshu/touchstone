@@ -48,7 +48,7 @@ const OFFICIAL_HANDLES = [
 
 function usage() {
   console.error(
-    'Usage: node scripts/fetch-fable5-x-window.mjs --from YYYY-MM-DD --to YYYY-MM-DD [--archive-key fable5] [--default-query query] [--query-file path] [--target 500] [--max 40] [--min-likes 10] [--min-views 0] [--run-id name] [--mode top|latest] [--official-only 0|1] [--handles a,b,c] [--handle-query query] [--with-replies 1|0] [--max-replies 12] [--seed-tweets url,id] [--seed-search id,url]'
+    'Usage: node scripts/fetch-fable5-x-window.mjs --from YYYY-MM-DD --to YYYY-MM-DD [--archive-key fable5] [--default-query query] [--query-file path] [--target 500] [--max 40] [--min-likes 10] [--min-bookmarks 0] [--min-views 0] [--query-delay-ms 15000] [--rate-limit-cooldown-ms 180000] [--run-id name] [--mode top|latest] [--official-only 0|1] [--handles a,b,c] [--handle-query query] [--with-replies 1|0] [--max-replies 12] [--seed-tweets url,id] [--seed-search id,url]'
   )
   process.exit(1)
 }
@@ -94,6 +94,38 @@ function normalizeHandle(raw) {
 function flag(value, fallback = false) {
   if (value == null) return fallback
   return ['1', 'true', 'yes', 'y'].includes(String(value).trim().toLowerCase())
+}
+
+function nonNegativeNumber(value, fallback = 0) {
+  const numeric = Number(value ?? fallback)
+  return Number.isFinite(numeric) ? Math.max(0, numeric) : fallback
+}
+
+function sleep(ms) {
+  if (ms <= 0) return
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)
+}
+
+function errorMessage(error) {
+  return error.stderr?.toString?.() || error.message || String(error)
+}
+
+function isRateLimitMessage(message) {
+  return /\b(?:rate limited|429)\b/i.test(message)
+}
+
+function throttleSearch(index, total, label = 'query') {
+  if (index <= 0 || queryDelayMs <= 0) return
+  const jitter = Math.floor(Math.random() * Math.min(5000, Math.max(1, queryDelayMs / 3)))
+  const waitMs = queryDelayMs + jitter
+  console.log(`[throttle] waiting ${Math.round(waitMs / 1000)}s before ${label} ${index + 1}/${total}`)
+  sleep(waitMs)
+}
+
+function cooldownAfterRateLimit(message) {
+  if (!isRateLimitMessage(message) || rateLimitCooldownMs <= 0) return
+  console.log(`[rate-limit] cooling down ${Math.round(rateLimitCooldownMs / 1000)}s`)
+  sleep(rateLimitCooldownMs)
 }
 
 function toArray(payload) {
@@ -208,12 +240,16 @@ if (!from || !to || !isDate(from) || !isDate(to) || from > to) usage()
 const max = Math.max(5, Math.min(Number(args.max ?? 40), 200))
 const target = Math.max(5, Math.min(Number(args.target ?? max), 2000))
 const minLikes = Math.max(0, Number(args['min-likes'] ?? 10))
+const minBookmarks = Math.max(0, Number(args['min-bookmarks'] ?? 0))
 const minViews = Math.max(0, Number(args['min-views'] ?? 0))
 const mode = args.mode === 'latest' ? 'latest' : 'top'
 const officialOnly = flag(args['official-only'], false)
 const withReplies = flag(args['with-replies'], true)
 const maxReplies = Math.max(0, Math.min(Number(args['max-replies'] ?? 12), 50))
 const queries = loadQueries(args['query-file'])
+const defaultQueryDelayMs = queries.length > 1 || officialOnly ? 15_000 : 0
+const queryDelayMs = nonNegativeNumber(args['query-delay-ms'], defaultQueryDelayMs)
+const rateLimitCooldownMs = nonNegativeNumber(args['rate-limit-cooldown-ms'], 180_000)
 const seedTweets = String(args['seed-tweets'] || '')
   .split(',')
   .map((item) => item.trim())
@@ -305,6 +341,7 @@ function enrichPostWithConversation(post) {
 }
 
 function collectSeedConversation(seed, index) {
+  throttleSearch(index, seedTweets.length, 'seed tweet')
   try {
     const payload = runTwitter(['tweet', seed, '-n', String(maxReplies), '--json'], 30_000)
     writeFileSync(join(outDir, `seed-tweet-${index + 1}.json`), `${JSON.stringify(payload, null, 2)}\n`)
@@ -330,11 +367,14 @@ function collectSeedConversation(seed, index) {
       })
     }
   } catch (error) {
-    failed.push({ seed, mode: 'seed-conversation', error: error.stderr?.toString?.() || error.message || String(error) })
+    const message = errorMessage(error)
+    failed.push({ seed, mode: 'seed-conversation', error: message })
+    cooldownAfterRateLimit(message)
   }
 }
 
 function collectSeedSearch(seed, index) {
+  throttleSearch(index, seedSearches.length, 'seed search')
   try {
     const payload = runTwitter(['search', seed, '--type', 'top', '--exclude', 'retweets', '--min-likes', String(minLikes), '-n', String(max), '--json'])
     writeFileSync(join(outDir, `seed-search-${index + 1}.json`), `${JSON.stringify(payload, null, 2)}\n`)
@@ -343,7 +383,9 @@ function collectSeedSearch(seed, index) {
       if (normalized) collected.push({ ...normalized, sourceMode: 'seed-search', sourceSeed: seed })
     }
   } catch (error) {
-    failed.push({ seed, mode: 'seed-search', error: error.stderr?.toString?.() || error.message || String(error) })
+    const message = errorMessage(error)
+    failed.push({ seed, mode: 'seed-search', error: message })
+    cooldownAfterRateLimit(message)
   }
 }
 
@@ -362,6 +404,7 @@ try {
 
 if (officialOnly) {
   for (const [index, handle] of handles.entries()) {
+    throttleSearch(index, handles.length, 'handle')
     const query = `${args['handle-query'] || DEFAULT_QUERY} from:${handle}`
     console.log(`[${index + 1}/${handles.length}] @${handle}`)
     try {
@@ -388,12 +431,15 @@ if (officialOnly) {
         if (normalized) collected.push({ ...normalized, sourceMode: 'official-account' })
       }
     } catch (error) {
-      failed.push({ handle, error: error.stderr?.toString?.() || error.message || String(error) })
+      const message = errorMessage(error)
+      failed.push({ handle, error: message })
+      cooldownAfterRateLimit(message)
     }
   }
 } else {
   for (const [index, query] of queries.entries()) {
     if (new Map(collected.map((post) => [post.url, post])).size >= target) break
+    throttleSearch(index, queries.length)
     console.log(`[query ${index + 1}/${queries.length}] ${query}`)
     try {
       const payload = runTwitter([
@@ -419,7 +465,9 @@ if (officialOnly) {
         if (normalized) collected.push({ ...normalized, sourceMode: 'global-search', sourceQuery: query })
       }
     } catch (error) {
-      failed.push({ query, mode: 'global-search', error: error.stderr?.toString?.() || error.message || String(error) })
+      const message = errorMessage(error)
+      failed.push({ query, mode: 'global-search', error: message })
+      cooldownAfterRateLimit(message)
     }
   }
 }
@@ -430,6 +478,7 @@ seedSearches.forEach(collectSeedSearch)
 const dedup = new Map()
 for (const post of collected) {
   if (minViews && Number(post.metrics?.views || 0) < minViews) continue
+  if (minBookmarks && Number(post.metrics?.bookmarks || 0) < minBookmarks) continue
   if (!dedup.has(post.url)) dedup.set(post.url, post)
   if (dedup.size >= target) break
 }
@@ -472,7 +521,10 @@ const summary = {
   officialOnly,
   withReplies,
   maxReplies,
+  minBookmarks,
   minViews,
+  queryDelayMs,
+  rateLimitCooldownMs,
   target,
   queries,
   candidates: enrichedPosts.length,

@@ -1,0 +1,389 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2073742439211225234",
+      "text": "real-time procedural dungeon generator in @threejs, built with Fable 5 👇 https://t.co/6mYNyCAksJ",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2051,
+        "retweets": 113,
+        "replies": 53,
+        "quotes": 9,
+        "views": 142302,
+        "bookmarks": 1571
+      },
+      "createdAt": "Sun Jul 05 12:15:00 +0000 2026",
+      "createdAtLocal": "2026-07-05 20:15",
+      "createdAtISO": "2026-07-05T12:15:00+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2073742381573132289/vid/avc1/3024x1964/YmhjPcona6RxnzVn.mp4?tag=28",
+          "width": 3024,
+          "height": 1964
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073772788947546606",
+      "text": "Prompt if you want to build your own version or incorporate it into your game. This is tuned for my game so tweak it as you see fit:  \n\n# PROMPT — Procedural Dungeon Generator for an Isometric Three.js ARPG\n\n## ROLE\nYou are a senior gameplay/graphics engineer specializing in procedural content generation and real-time WebGL. You write deterministic, allocation-conscious JavaScript and understand Three.js instancing, draw-call budgets, and forward-lighting costs at a deep level. You ship code that self-verifies.\n\n## CONTEXT\nTarget: an isometric, Diablo-style ARPG built in Three.js (r128+, WebGL2). Camera is orthographic — yaw 45°, pitch 35–40°. World scale: **1 unit = 1 tile**, Y-up, grid (x, y) maps to world (x, z). Generation runs on the main thread on level load. No frameworks, no build step: one self-contained module.\n\n## OBJECTIVE\nImplement `generateDungeon(params) → Dungeon` (pure data, zero THREE imports) plus `buildDungeonScene(dungeon) → THREE .Group` (pure presentation). Dungeons must have:\n- **Character** — irregular silhouettes, mixed room shapes, themed set-pieces, torch-lit atmosphere, a seeded name.\n- **Depth** — branching with dead-end rewards, guaranteed loops (never a pure tree), secrets off the critical path, tension/release pacing.\n- **Challenge** — a difficulty ramp keyed to graph distance from the entrance, elite gates on the critical path, boss at maximal depth.\n\n## NON-NEGOTIABLE CONSTRAINTS\n1. **Determinism.** One integer seed reproduces the dungeon bit-for-bit. `Math.random`, `Date .now`, and iteration order over unordered Sets/Maps feeding logic are banned. Use mulberry32 (or xoshiro128**), threaded explicitly through every stage.\n2. **Connectivity.** Flood fill from the entrance must reach 100% of floor cells. On failure, re-roll internally with a derived seed (max 5 attempts) — never ship a broken layout, never \"fix\" islands with teleporters.\n3. **Performance.** ≤ 50 ms generation at 60 rooms. Level geometry in ≤ 10 draw calls via `InstancedMesh` — zero per-tile `Mesh` objects. ≤ 12 dynamic point lights, no shadow maps on point lights.\n4. **Separation of concerns.** Generator returns typed arrays + POJOs only. Renderer consumes that data and owns all THREE objects, with a `dispose()` that frees everything on regenerate.\n\n## PIPELINE — implement as discrete, individually testable stages\n1. **RNG.** mulberry32 with helpers: `float(a,b)`, `int(a,b)`, `pick(arr)`, `chance(p)`, `gaussian(mu,sigma)` (Box–Muller).\n2. **Room scatter.** Spawn `roomCount × 1.4` candidates inside an ellipse (radius ∝ √roomCount so density stays constant). Archetype table — small 5–7 (45%), medium 8–12 (40%), large 13–18 (15%). Shape table — rectangle 60%, ellipse 22%, chamfered octagon 18%. Force ≥ 2 large rooms.\n3. **Separation.** Iterative AABB push-apart with 2-cell padding until stable (cap 300 iterations), snap centers to integer grid, cull the smallest overflow down to `roomCount`.\n4. **Connectivity graph.** Bowyer–Watson Delaunay over room centers → Prim MST as the skeleton → re-add non-MST Delaunay edges with probability `loopChance` (default 0.15), rejecting edges longer than 2.2× the mean MST edge. Loops are mandatory for ARPG flow: report the cyclomatic number (E − V + 1) and require ≥ 1 at defaults.\n5. **Semantics before carving.** Boss = largest-area room. Entrance = degree-1 room maximizing graph distance from the boss. Critical path = BFS entrance→boss; remaining leaves → treasure (cap 4); 1–2 shrines mid-depth off-path; 1–2 elite arenas on the critical path at 55–85% depth; everything else combat. `difficulty = 0.15 + 0.85 × (depth / maxDepth)`, boss = 1.0.\n6. **Corridor carve.** L-corridors center-to-center with seeded elbow direction (skip the elbow when spans overlap enough for a straight run). Width 3 on the critical path, 2 default, 1 permitted on treasure spurs. Stamp FLOOR; tag corridor cells for styling and doorway detection.\n7. **Rasterize.** `Uint8Array` grid of {VOID, FLOOR, WALL}; WALL = any VOID cell with an 8-neighbor FLOOR (render only these — back rows stay void and vanish into fog). Doorway = corridor cell 4-adjacent to room floor. Compute a per-cell BFS distance field from the entrance (`Int16Array`, −1 for non-floor) — reused for pacing, reveal animation, and validation.\n8. **Decoration (data only).** Pillar grids in large rooms (only cells whose 8 neighbors are all floor, ≥ 2 cells from any doorway). Torches on floor-facing walls with min Chebyshev spacing 4. Debris density ∝ `decorDensity`, higher in low-difficulty rooms. Braziers ringing the boss arena; one chest per treasure room; shrine crystal; entrance portal ring. Enemy spawns: `round(area / 18 × (0.5 + difficulty))` for combat/elite, none in entrance/treasure/shrine, never on a prop or doorway cell.\n9. **Presentation metadata.** Seeded dungeon name from syllable tables (\"The Ashen Vaults of Vor'gul\"), per-room tint, stats block `{rooms, edges, loops, criticalLength, floorTiles, wallTiles, props, genMs}`.\n\n## RENDERING SPEC\n- One `InstancedMesh` per kind: floor, wall, pillar, torch bracket, flame, debris, chest, spawn marker, crystal.\n- **Baked per-instance AO:** floor color = base × (1 − 0.09 × min(adjacentWalls₈, 4)) ± 5% value noise, blended ~18% toward the room tint; corridors darker and untinted. Wall height 2.0 ± 0.25 seeded jitter for a ruined silhouette.\n- **Lighting:** dim blue hemisphere + faint directional for form; warm point lights (0xff8c3a, distance ≈ 9, decay 2) on a farthest-point-sampled subset of torches within budget, plus entrance/shrine/boss key lights. Per-frame flicker (intensity noise + flame scale jitter). `FogExp2` over a near-black clear color gives ortho depth falloff.\n- **Materials:** Lambert for level geometry (vertex lighting reads pleasingly chunky at tile scale and is cheap under many lights); unlit/emissive for flames, crystals, markers.\n- **Debug overlays (toggleable):** Delaunay (faint), MST (white), loop edges (cyan), critical path (red), difficulty heatmap recolor.\n\n## DATA CONTRACT\n```ts\ninterface Dungeon {\n  params: Params; name: string;\n  W: number; H: number;\n  grid: Uint8Array;            // VOID | FLOOR | WALL\n  bfs: Int16Array;             // per-cell distance from entrance, −1 = non-floor\n  rooms: Room[];               // { id, cx, cy, w, h, shape, type, depth, difficulty, degree }\n  edges: Edge[];               // { a, b, isLoop, isCritical }\n  doorways: Cell[]; corridorCells: Cell[];\n  props: Prop[];               // { kind, x, y, rot, scale, roomId }\n  spawns: Spawn[];             // { x, y, tier, roomId }\n  stats: Stats;\n}\n```\n\n## ACCEPTANCE TESTS — must run automatically and print results\n- Flood-fill reachability = 100% of floor cells.\n- Same seed + params ⇒ identical grid checksum across 3 consecutive runs.\n- Boss depth ≥ 60% of max BFS depth; entrance degree = 1; entrance ≠ boss-adjacent.\n- ≥ 3 leaf rooms at 40+ rooms; loop count = cyclomatic number = E − V + 1.\n- No prop or spawn on a doorway, wall, or void cell; light count within budget.\n- 60-room generation < 50 ms (report the measured value).\n\n## TUNABLES (expose with defaults)\n`seed`, `roomCount = 42`, `loopChance = 0.15`, `decorDensity = 0.6`, `theme = 'crypt'`\n\n## ANTI-GOALS\nUniform room sizes; corridor spaghetti (> 2 elbows per link); boss reachable in < 60% of max depth; per-tile meshes; shadow-mapped point lights; hidden nondeterminism; a pure-tree layout with zero cycles.\n\n## DELIVERABLE\nA single self-contained HTML file: generator module + scene builder + minimal control panel (seed input, dice, sliders for roomCount / loopChance / decorDensity, overlay toggles, live stats, legend). Include an optional staged build animation gated behind `animateBuild` — rooms scatter→separate, graph resolves Delaunay→MST+loops, floors flood outward along the BFS field, walls rise, props pop — so the algorithm itself is legible on screen.",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 98,
+        "retweets": 4,
+        "replies": 4,
+        "quotes": 5,
+        "views": 5530,
+        "bookmarks": 192
+      },
+      "createdAt": "Sun Jul 05 14:15:36 +0000 2026",
+      "createdAtLocal": "2026-07-05 22:15",
+      "createdAtISO": "2026-07-05T14:15:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073880263742869743",
+      "text": "@threejs Open sourced by popular demand! Added multiple dungeon types and improved objects. There's a live demo link in the repo.  https://t.co/YHyxu1easX",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2415,
+        "bookmarks": 21
+      },
+      "createdAt": "Sun Jul 05 21:22:40 +0000 2026",
+      "createdAtLocal": "2026-07-06 05:22",
+      "createdAtISO": "2026-07-05T21:22:40+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/majidmanzarpour/status/2073880053536940501?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073880053536940501",
+        "text": "open sourced my @threejs procedural dungeon generator, enjoy 🪄\nhttps://t.co/lEPGztrGRu",
+        "author": {
+          "screenName": "majidmanzarpour",
+          "name": "Majid Manzarpour"
+        }
+      }
+    },
+    {
+      "id": "2073797390868619401",
+      "text": "@majidmanzarpour @threejs Prompt worked perfectly. Huge thanks! https://t.co/hW6sVMaCsA",
+      "author": {
+        "id": "1525279621",
+        "name": "Jared Brown",
+        "screenName": "jaredatjared",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2073583341119721472/cGlGr6s__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 10,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1573,
+        "bookmarks": 6
+      },
+      "createdAt": "Sun Jul 05 15:53:21 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:53",
+      "createdAtISO": "2026-07-05T15:53:21+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMebsa6awAAiDeL.jpg",
+          "width": 1943,
+          "height": 1034
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073797824039338136",
+      "text": "@jaredatjared @threejs Sweet! Just need to tweak the lighting to brighten it up",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1281,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jul 05 15:55:05 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:55",
+      "createdAtISO": "2026-07-05T15:55:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073774262859551227",
+      "text": "@majidmanzarpour @threejs Can you post the git? please 😀",
+      "author": {
+        "id": "1489996215378980870",
+        "name": "Canzi",
+        "screenName": "0xCanzi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1750885578151727104/XOseMqLr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 742,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 14:21:27 +0000 2026",
+      "createdAtLocal": "2026-07-05 22:21",
+      "createdAtISO": "2026-07-05T14:21:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073776009610944848",
+      "text": "@0xCanzi @threejs Posted a prompt to get you started https://t.co/PLWjFtZTig",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 730,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jul 05 14:28:24 +0000 2026",
+      "createdAtLocal": "2026-07-05 22:28",
+      "createdAtISO": "2026-07-05T14:28:24+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/majidmanzarpour/status/2073772788947546606"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2073772788947546606",
+        "text": "Prompt if you want to build your own version or incorporate it into your game. This is tuned for my game so tweak it as you see fit:  \n\n# PROMPT — Procedural Dungeon Generator for an Isometric Three.js ARPG\n\n## ROLE\nYou are a senior gameplay/graphics engineer specializing in procedural content generation and real-time WebGL. You write deterministic, allocation-conscious JavaScript and understand Three.js instancing, draw-call budgets, and forward-lighting costs at a deep level. You ship code that self-verifies.\n\n## CONTEXT\nTarget: an isometric, Diablo-style ARPG built in Three.js (r128+, WebGL2). Camera is orthographic — yaw 45°, pitch 35–40°. World scale: **1 unit = 1 tile**, Y-up, grid (x, y) maps to world (x, z). Generation runs on the main thread on level load. No frameworks, no build step: one self-contained module.\n\n## OBJECTIVE\nImplement `generateDungeon(params) → Dungeon` (pure data, zero THREE imports) plus `buildDungeonScene(dungeon) → THREE .Group` (pure presentation). Dungeons must have:\n- **Character** — irregular silhouettes, mixed room shapes, themed set-pieces, torch-lit atmosphere, a seeded name.\n- **Depth** — branching with dead-end rewards, guaranteed loops (never a pure tree), secrets off the critical path, tension/release pacing.\n- **Challenge** — a difficulty ramp keyed to graph distance from the entrance, elite gates on the critical path, boss at maximal depth.\n\n## NON-NEGOTIABLE CONSTRAINTS\n1. **Determinism.** One integer seed reproduces the dungeon bit-for-bit. `Math.random`, `Date .now`, and iteration order over unordered Sets/Maps feeding logic are banned. Use mulberry32 (or xoshiro128**), threaded explicitly through every stage.\n2. **Connectivity.** Flood fill from the entrance must reach 100% of floor cells. On failure, re-roll internally with a derived seed (max 5 attempts) — never ship a broken layout, never \"fix\" islands with teleporters.\n3. **Performance.** ≤ 50 ms generation at 60 rooms. Level geometry in ≤ 10 draw calls via `InstancedMesh` — zero per-tile `Mesh` objects. ≤ 12 dynamic point lights, no shadow maps on point lights.\n4. **Separation of concerns.** Generator returns typed arrays + POJOs only. Renderer consumes that data and owns all THREE objects, with a `dispose()` that frees everything on regenerate.\n\n## PIPELINE — implement as discrete, individually testable stages\n1. **RNG.** mulberry32 with helpers: `float(a,b)`, `int(a,b)`, `pick(arr)`, `chance(p)`, `gaussian(mu,sigma)` (Box–Muller).\n2. **Room scatter.** Spawn `roomCount × 1.4` candidates inside an ellipse (radius ∝ √roomCount so density stays constant). Archetype table — small 5–7 (45%), medium 8–12 (40%), large 13–18 (15%). Shape table — rectangle 60%, ellipse 22%, chamfered octagon 18%. Force ≥ 2 large rooms.\n3. **Separation.** Iterative AABB push-apart with 2-cell padding until stable (cap 300 iterations), snap centers to integer grid, cull the smallest overflow down to `roomCount`.\n4. **Connectivity graph.** Bowyer–Watson Delaunay over room centers → Prim MST as the skeleton → re-add non-MST Delaunay edges with probability `loopChance` (default 0.15), rejecting edges longer than 2.2× the mean MST edge. Loops are mandatory for ARPG flow: report the cyclomatic number (E − V + 1) and require ≥ 1 at defaults.\n5. **Semantics before carving.** Boss = largest-area room. Entrance = degree-1 room maximizing graph distance from the boss. Critical path = BFS entrance→boss; remaining leaves → treasure (cap 4); 1–2 shrines mid-depth off-path; 1–2 elite arenas on the critical path at 55–85% depth; everything else combat. `difficulty = 0.15 + 0.85 × (depth / maxDepth)`, boss = 1.0.\n6. **Corridor carve.** L-corridors center-to-center with seeded elbow direction (skip the elbow when spans overlap enough for a straight run). Width 3 on the critical path, 2 default, 1 permitted on treasure spurs. Stamp FLOOR; tag corridor cells for styling and doorway detection.\n7. **Rasterize.** `Uint8Array` grid of {VOID, FLOOR, WALL}; WALL = any VOID cell with an 8-neighbor FLOOR (render only these — back rows stay void and vanish into fog). Doorway = corridor cell 4-adjacent to room floor. Compute a per-cell BFS distance field from the entrance (`Int16Array`, −1 for non-floor) — reused for pacing, reveal animation, and validation.\n8. **Decoration (data only).** Pillar grids in large rooms (only cells whose 8 neighbors are all floor, ≥ 2 cells from any doorway). Torches on floor-facing walls with min Chebyshev spacing 4. Debris density ∝ `decorDensity`, higher in low-difficulty rooms. Braziers ringing the boss arena; one chest per treasure room; shrine crystal; entrance portal ring. Enemy spawns: `round(area / 18 × (0.5 + difficulty))` for combat/elite, none in entrance/treasure/shrine, never on a prop or doorway cell.\n9. **Presentation metadata.** Seeded dungeon name from syllable tables (\"The Ashen Vaults of Vor'gul\"), per-room tint, stats block `{rooms, edges, loops, criticalLength, floorTiles, wallTiles, props, genMs}`.\n\n## RENDERING SPEC\n- One `InstancedMesh` per kind: floor, wall, pillar, torch bracket, flame, debris, chest, spawn marker, crystal.\n- **Baked per-instance AO:** floor color = base × (1 − 0.09 × min(adjacentWalls₈, 4)) ± 5% value noise, blended ~18% toward the room tint; corridors darker and untinted. Wall height 2.0 ± 0.25 seeded jitter for a ruined silhouette.\n- **Lighting:** dim blue hemisphere + faint directional for form; warm point lights (0xff8c3a, distance ≈ 9, decay 2) on a farthest-point-sampled subset of torches within budget, plus entrance/shrine/boss key lights. Per-frame flicker (intensity noise + flame scale jitter). `FogExp2` over a near-black clear color gives ortho depth falloff.\n- **Materials:** Lambert for level geometry (vertex lighting reads pleasingly chunky at tile scale and is cheap under many lights); unlit/emissive for flames, crystals, markers.\n- **Debug overlays (toggleable):** Delaunay (faint), MST (white), loop edges (cyan), critical path (red), difficulty heatmap recolor.\n\n## DATA CONTRACT\n```ts\ninterface Dungeon {\n  params: Params; name: string;\n  W: number; H: number;\n  grid: Uint8Array;            // VOID | FLOOR | WALL\n  bfs: Int16Array;             // per-cell distance from entrance, −1 = non-floor\n  rooms: Room[];               // { id, cx, cy, w, h, shape, type, depth, difficulty, degree }\n  edges: Edge[];               // { a, b, isLoop, isCritical }\n  doorways: Cell[]; corridorCells: Cell[];\n  props: Prop[];               // { kind, x, y, rot, scale, roomId }\n  spawns: Spawn[];             // { x, y, tier, roomId }\n  stats: Stats;\n}\n```\n\n## ACCEPTANCE TESTS — must run automatically and print results\n- Flood-fill reachability = 100% of floor cells.\n- Same seed + params ⇒ identical grid checksum across 3 consecutive runs.\n- Boss depth ≥ 60% of max BFS depth; entrance degree = 1; entrance ≠ boss-adjacent.\n- ≥ 3 leaf rooms at 40+ rooms; loop count = cyclomatic number = E − V + 1.\n- No prop or spawn on a doorway, wall, or void cell; light count within budget.\n- 60-room generation < 50 ms (report the measured value).\n\n## TUNABLES (expose with defaults)\n`seed`, `roomCount = 42`, `loopChance = 0.15`, `decorDensity = 0.6`, `theme = 'crypt'`\n\n## ANTI-GOALS\nUniform room sizes; corridor spaghetti (> 2 elbows per link); boss reachable in < 60% of max depth; per-tile meshes; shadow-mapped point lights; hidden nondeterminism; a pure-tree layout with zero cycles.\n\n## DELIVERABLE\nA single self-contained HTML file: generator module + scene builder + minimal control panel (seed input, dice, sliders for roomCount / loopChance / decorDensity, overlay toggles, live stats, legend). Include an optional staged build animation gated behind `animateBuild` — rooms scatter→separate, graph resolves Delaunay→MST+loops, floors flood outward along the BFS field, walls rise, props pop — so the algorithm itself is legible on screen.",
+        "author": {
+          "screenName": "majidmanzarpour",
+          "name": "Majid Manzarpour"
+        }
+      }
+    },
+    {
+      "id": "2073760729694396826",
+      "text": "@majidmanzarpour @threejs I once built my own dungeon with modular assets, could I feed the modules into fable to let fable make me different variations? And to what degree does Fable understand which modules fit together, does it try or do I have to give it clear instructions? https://t.co/f627KROQ12",
+      "author": {
+        "id": "2011216387205971972",
+        "name": "FaryaBlender3D",
+        "screenName": "FaryaBlender3D",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2035468212247355392/vdCvY9cu_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1620,
+        "bookmarks": 4
+      },
+      "createdAt": "Sun Jul 05 13:27:41 +0000 2026",
+      "createdAtLocal": "2026-07-05 21:27",
+      "createdAtISO": "2026-07-05T13:27:41+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMd6QQFXYAAusCS.jpg",
+          "width": 1281,
+          "height": 557
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HMd6VNoXAAAI5QY.jpg",
+          "width": 1270,
+          "height": 807
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073763153041645611",
+      "text": "@FaryaBlender3D @threejs I think it could, if you provided the assets in your prompt or screenshots of them.",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1181,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 13:37:18 +0000 2026",
+      "createdAtLocal": "2026-07-05 21:37",
+      "createdAtISO": "2026-07-05T13:37:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073783137247605099",
+      "text": "@majidmanzarpour @threejs Cant we just have yours and not waste credits?",
+      "author": {
+        "id": "1685713492446187520",
+        "name": "Len Seaside",
+        "screenName": "LenSeaside",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1999992783625437189/2MC4vOR7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 670,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 14:56:43 +0000 2026",
+      "createdAtLocal": "2026-07-05 22:56",
+      "createdAtISO": "2026-07-05T14:56:43+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073785900912324862",
+      "text": "@LenSeaside @threejs I'll look into open sourcing, want to make some enhancements first",
+      "author": {
+        "id": "161156636",
+        "name": "Majid Manzarpour",
+        "screenName": "majidmanzarpour",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961301857655033857/EI2OlLll_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 615,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Jul 05 15:07:42 +0000 2026",
+      "createdAtLocal": "2026-07-05 23:07",
+      "createdAtISO": "2026-07-05T15:07:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2073747935993774281",
+      "text": "@majidmanzarpour @threejs So much easier in threejs / html rather than Godot.",
+      "author": {
+        "id": "961199718779863040",
+        "name": "Brian",
+        "screenName": "GrowthPact",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1387627739197308932/fo-hj3uP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 884,
+        "bookmarks": 1
+      },
+      "createdAt": "Sun Jul 05 12:36:50 +0000 2026",
+      "createdAtLocal": "2026-07-05 20:36",
+      "createdAtISO": "2026-07-05T12:36:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

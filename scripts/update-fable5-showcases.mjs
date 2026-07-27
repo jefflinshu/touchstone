@@ -18,7 +18,7 @@ let previousShardFiles = []
 
 function usage() {
   console.error(
-    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
+    'Usage: node scripts/update-fable5-showcases.mjs [--input data-archive/fable5/<run-id>/window-posts.json | --archive-root data-archive/fable5] [--limit N] [--min-bookmarks N] [--cache-assets 1|0] [--cache-media 1|0] [--cache-from YYYY-MM-DD]'
   )
   process.exit(1)
 }
@@ -38,6 +38,11 @@ function parseArgs(argv) {
 function flag(value, fallback = false) {
   if (value == null) return fallback
   return ['1', 'true', 'yes', 'y'].includes(String(value).trim().toLowerCase())
+}
+
+function nonNegativeNumber(value, fallback = 0) {
+  const numeric = Number(value ?? fallback)
+  return Number.isFinite(numeric) ? Math.max(0, numeric) : fallback
 }
 
 function slugify(input) {
@@ -497,6 +502,10 @@ function scoreMetrics(metrics = {}) {
   )
 }
 
+function bookmarkCount(metrics = {}) {
+  return Number(metrics.bookmarks || 0)
+}
+
 function tierFor(score) {
   if (score >= 12000) return 'A'
   if (score >= 5000) return 'B'
@@ -811,11 +820,27 @@ function isShowcaseCandidate(post) {
   return linkedItems(post).some((item) => hasCaseEvidence(item) && !isWeakTextOnlyClaim(item) && !isNonCaseAnnouncement(item))
 }
 
+function isCuratedSeedRun(value) {
+  const raw = String(value || '')
+  return /\bmanual[-_]/i.test(raw) || raw.includes('homepage-fable5')
+}
+
+function isCuratedSeedPost(post) {
+  return isCuratedSeedRun(post?.sourceRun) && post?.sourceMode === 'seed-tweet'
+}
+
+function isCuratedSeedItem(item) {
+  return (item?.fetchRuns || []).some(isCuratedSeedRun)
+}
+
 function curationDecision(post) {
+  if (!post?.url || !post?.author || !post?.text) return { keep: false, reason: 'missing-url-author-or-text' }
   const override = post?.url ? curationOverrides.get(post.url) : null
   if (override?.decision === 'keep') return { keep: true, reason: `override-keep: ${override.reason}` }
   if (override?.decision === 'drop') return { keep: false, reason: `override-drop: ${override.reason}` }
-  if (!post?.url || !post?.author || !post?.text) return { keep: false, reason: 'missing-url-author-or-text' }
+  const curatedSeed = isCuratedSeedPost(post)
+  if (!curatedSeed && bookmarkCount(post?.metrics) < minBookmarks) return { keep: false, reason: 'below-min-bookmarks' }
+  if (curatedSeed) return { keep: true, reason: 'curated-seed-root' }
   if (isSystemPromptLeakText(post.text)) return { keep: false, reason: 'system-prompt-leak-or-analysis' }
   if (isMoneyHustleText(post.text)) return { keep: false, reason: 'money-hustle-or-hypothetical-prompt' }
   if (post.sourceMode === 'seed-conversation' && !/\b(?:claude|fable|mythos)\b/i.test(post.text)) {
@@ -862,6 +887,8 @@ function passesFinalNegativeFilter(item) {
   const post = itemAsPost(item)
   const text = post.text || ''
   const combined = `${item.title || ''} ${text}`.toLowerCase()
+  if (isCuratedSeedItem(item)) return true
+  if (bookmarkCount(item.metrics) < minBookmarks) return false
   if (/\bfable 5 benchmark results compared with other models\b/i.test(item.title || '')) return false
   if (/\b(?:artificial analysis intelligence index|epoch capabilities index|swe-bench|terminal bench|benchmark ranking|rubric score)\b/i.test(text)) {
     return false
@@ -946,7 +973,7 @@ function cacheMediaPreview(item) {
           '5',
           abs,
         ],
-        { cwd: ROOT, timeout: 25_000, stdio: ['ignore', 'ignore', 'pipe'] }
+        { cwd: ROOT, timeout: 60_000, stdio: ['ignore', 'ignore', 'pipe'] }
       )
     } else {
       let lastError
@@ -1033,6 +1060,7 @@ function toShowcase(post, sourceRun, generatedAt, options = {}) {
 const args = parseArgs(process.argv.slice(2))
 const explicitLimit = args.limit != null
 const limit = explicitLimit ? Math.max(1, Math.min(Number(args.limit), 5000)) : Number.POSITIVE_INFINITY
+const minBookmarks = nonNegativeNumber(args['min-bookmarks'], 20)
 const cacheMedia = flag(args['cache-media'], true)
 const cacheFrom = String(args['cache-from'] || '')
 const reviewLimit = Math.max(1, Math.min(Number(args['review-drops'] || 40), 200))
@@ -1040,7 +1068,7 @@ CACHE_ASSETS = args['cache-assets'] !== '0'
 
 const generatedAt = new Date().toISOString()
 const batches = loadInputBatches(args)
-const allPosts = batches.flatMap((batch) => batch.posts)
+const allPosts = batches.flatMap((batch) => batch.posts.map((post) => ({ ...post, sourceRun: batch.sourceRun })))
 const curationOverrides = loadCurationOverrides()
 let existingShowcases = []
 try {
@@ -1058,18 +1086,19 @@ const blockedUrls = new Set()
 const hardRejectReasons = new Set(['weak-text-only-or-no-public-evidence', 'news-platform-announcement-or-marketing', 'roundup-or-thread-index'])
 for (const batch of batches) {
   for (const post of batch.posts) {
-    const decision = curationDecision(post)
-    if (post?.url && !curationByUrl.has(post.url)) curationByUrl.set(post.url, { post: { ...post, sourceRun: batch.sourceRun }, decision })
-    if (post?.url && !decision.keep && hardRejectReasons.has(decision.reason)) {
-      blockedUrls.add(post.url)
-      candidateByUrl.delete(post.url)
+    const sourcedPost = { ...post, sourceRun: batch.sourceRun }
+    const decision = curationDecision(sourcedPost)
+    if (sourcedPost?.url && !curationByUrl.has(sourcedPost.url)) curationByUrl.set(sourcedPost.url, { post: sourcedPost, decision })
+    if (sourcedPost?.url && !decision.keep && hardRejectReasons.has(decision.reason)) {
+      blockedUrls.add(sourcedPost.url)
+      candidateByUrl.delete(sourcedPost.url)
     }
-    if (post?.url && blockedUrls.has(post.url)) continue
+    if (sourcedPost?.url && blockedUrls.has(sourcedPost.url)) continue
     if (!decision.keep) continue
-    const prev = candidateByUrl.get(post.url)
+    const prev = candidateByUrl.get(sourcedPost.url)
     const fetchRuns = [...new Set([...(prev?.fetchRuns || []), batch.sourceRun])]
-    if (!prev || scoreMetrics(post.metrics || {}) > scoreMetrics(prev.metrics || {})) {
-      candidateByUrl.set(post.url, { ...post, fetchRuns, sourceRun: batch.sourceRun })
+    if (!prev || scoreMetrics(sourcedPost.metrics || {}) > scoreMetrics(prev.metrics || {})) {
+      candidateByUrl.set(sourcedPost.url, { ...sourcedPost, fetchRuns })
     } else {
       prev.fetchRuns = fetchRuns
     }
@@ -1260,6 +1289,10 @@ writeJsonIfChanged(join(OUT_DIR, 'index.json'), {
   cliStatus: `Loaded ${allPosts.length} locally archived X posts from ${batches.length} fetch runs; collection now has ${collection.length} source-linked cards and ${creatorPool.length} creator profiles.`,
   sourceRun: 'local-archive',
   fetchRuns: [...new Set(collection.flatMap((item) => item.fetchRuns || []))],
+  filters: {
+    minBookmarks,
+    manualSeedOverride: true,
+  },
   total: collection.length,
   categoryCounts: sortCategoryCounts([...categoryCounts.entries()]).map(([key, count]) => ({ key, count })),
   pageSize: CHUNK_SIZE,
@@ -1294,4 +1327,5 @@ writeJsonIfChanged(join(ARCHIVE_ROOT, 'curation-review-latest.json'), {
 })
 console.log(`Loaded ${allPosts.length} archived posts from ${batches.length} runs`)
 console.log(`Merged ${selected.length} local showcase candidates into ${collection.length} total cards and ${creatorPool.length} creators at ${OUT_DIR}`)
+console.log(`Applied filters: min-bookmarks=${minBookmarks}`)
 console.log(`Shards: ${shardList.map((s) => `${s.date}(${s.count})`).join(' ')}; rewrote ${changedShards.length} shard file(s)`)

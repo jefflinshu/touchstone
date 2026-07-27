@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-06T04:27:03.474Z",
+  "generatedAt": "2026-07-27T07:54:14.085Z",
   "reviewLimit": 40,
   "totals": {
-    "archivedPosts": 4863,
-    "uniquePosts": 4364,
-    "kept": 510,
-    "removed": 3854
+    "archivedPosts": 4873,
+    "uniquePosts": 4374,
+    "kept": 159,
+    "removed": 4215
   },
   "removedSamples": [
     {
@@ -83,6 +83,25 @@
         "bookmarks": 1655
       },
       "text": "We've reset 5-hour and weekly rate limits for all users. Enjoy Fable 5"
+    },
+    {
+      "keep": false,
+      "reason": "thread-reply-not-about-fable",
+      "author": "@chipotletweets",
+      "authorName": "Chipotle",
+      "url": "https://x.com/chipotletweets/status/2048883622418018538",
+      "date": "2026-04-28",
+      "sourceMode": "seed-conversation",
+      "mediaCount": 0,
+      "metrics": {
+        "likes": 7386,
+        "reposts": 441,
+        "replies": 0,
+        "quotes": 104,
+        "views": 90909386,
+        "bookmarks": 1117
+      },
+      "text": "how will YOU enjoy chipotle honey chicken? it’s yours for a limited time"
     },
     {
       "keep": false,
@@ -748,25 +767,6 @@
         "bookmarks": 1425
       },
       "text": "https://t.co/JSn0lDCNkB"
-    },
-    {
-      "keep": false,
-      "reason": "weak-text-only-or-no-public-evidence",
-      "author": "@exm7777",
-      "authorName": "Machina",
-      "url": "https://x.com/exm7777/status/2064394615461908759",
-      "date": "2026-06-10",
-      "sourceMode": "seed-search",
-      "mediaCount": 0,
-      "metrics": {
-        "likes": 2478,
-        "reposts": 94,
-        "replies": 40,
-        "quotes": 5,
-        "views": 571948,
-        "bookmarks": 793
-      },
-      "text": "humanity will remember this day"
     }
   ],
   "keptSamples": [
@@ -925,6 +925,25 @@
     {
       "keep": true,
       "reason": "final-collection-kept",
+      "author": "@twoclipping",
+      "authorName": "zero",
+      "url": "https://x.com/twoclipping/status/2073819471354192083",
+      "date": "2026-07-06",
+      "sourceMode": "seed-tweet",
+      "mediaCount": 1,
+      "metrics": {
+        "likes": 1464,
+        "reposts": 82,
+        "replies": 1287,
+        "quotes": 13,
+        "views": 146242,
+        "bookmarks": 2322
+      },
+      "text": "fable 5 is INSANE for ugc ads i put every prompt behind our hyper realistic ai ads into one skills library. built from 1,855 viral ads scanned, 1,204 rejected, 61 winners reverse engineered every girl in this video came out of it. not one of them is real. under $1.20 an ad, under 15 minutes inside the library: the character lock that holds one face across every cut the voice formula that never drifts between scenes the anti ai negative stack that kills the \"ai look\" the full 8 beat ad template. fill the brackets..."
+    },
+    {
+      "keep": true,
+      "reason": "final-collection-kept",
       "author": "@oluwaphilemon1",
       "authorName": "FHILY👑",
       "url": "https://x.com/oluwaphilemon1/status/2064368803006337114",
@@ -997,6 +1016,25 @@
         "bookmarks": 634
       },
       "text": "Holy SHittttt Claude Fable 5 just finished Pokémon FireRed with vision alone 🤯 raw screenshots only no map / no nav / no hidden game state older Claude needed a helper harness This timelapse goes hardddddd.... https://t.co/rzOUP2O3yx"
+    },
+    {
+      "keep": true,
+      "reason": "final-collection-kept",
+      "author": "@majidmanzarpour",
+      "authorName": "Majid Manzarpour",
+      "url": "https://x.com/majidmanzarpour/status/2073742439211225234",
+      "date": "2026-07-05",
+      "sourceMode": "seed-conversation",
+      "mediaCount": 1,
+      "metrics": {
+        "likes": 2051,
+        "reposts": 113,
+        "replies": 53,
+        "quotes": 9,
+        "views": 142275,
+        "bookmarks": 1571
+      },
+      "text": "real-time procedural dungeon generator in @threejs, built with Fable 5 👇 https://t.co/6mYNyCAksJ"
     },
     {
       "keep": true,
@@ -1362,6 +1400,25 @@
     {
       "keep": true,
       "reason": "final-collection-kept",
+      "author": "@thebuggeddev",
+      "authorName": "The Bugged Dev",
+      "url": "https://x.com/thebuggeddev/status/2073601034195513830",
+      "date": "2026-07-05",
+      "sourceMode": "seed-tweet",
+      "mediaCount": 1,
+      "metrics": {
+        "likes": 816,
+        "reposts": 56,
+        "replies": 37,
+        "quotes": 7,
+        "views": 74005,
+        "bookmarks": 751
+      },
+      "text": "Everyone is using Fable 5 to build funny little demos so I decided to build something better. Vibe coded a 3D keyboard ecom platform in @threejs and @greensock. Every key. Every switch. Every color. Customizable in real time in 3D. It's really amusing that whole keyboard is built at runtime using Procedural geometry. To achieve that kind of realistic lighting on keyboard, it used a studio environment (gradient sky + softbox panels) rendered into a PMREM cubemap for realistic reflections. Opus helped a bit more here..."
+    },
+    {
+      "keep": true,
+      "reason": "final-collection-kept",
       "author": "@nicbstme",
       "authorName": "Nicolas Bustamante",
       "url": "https://x.com/nicbstme/status/2064926406530998573",
@@ -1472,63 +1529,6 @@
         "bookmarks": 352
       },
       "text": "Claude Fable 5だけで 金魚に餌やりできるアプリができた。 こちらから遊べます👇️ https://t.co/XgpCvEb5nW https://t.co/AQTNSUoyLo"
-    },
-    {
-      "keep": true,
-      "reason": "final-collection-kept",
-      "author": "@higgsfield",
-      "authorName": "Higgsfield AI 🧩",
-      "url": "https://x.com/higgsfield/status/2064410089000485374",
-      "date": "2026-06-10",
-      "sourceMode": "global-search",
-      "mediaCount": 1,
-      "metrics": {
-        "likes": 775,
-        "reposts": 97,
-        "replies": 89,
-        "quotes": 5,
-        "views": 31881,
-        "bookmarks": 384
-      },
-      "text": "Higgsfield MCP just got five new tools for Claude. Generate Kling Motion Control videos, turn any creative into an ad with Click-to-Ad, remove backgrounds from images and videos, upscale to 4K, and expand to 16:9 or 9:16. Pair with Fable 5 to control exactly what you generate. https://t.co/uLOHvTXbo3"
-    },
-    {
-      "keep": true,
-      "reason": "final-collection-kept",
-      "author": "@venturetwins",
-      "authorName": "Justine Moore",
-      "url": "https://x.com/venturetwins/status/2066353114404565422",
-      "date": "2026-06-15",
-      "sourceMode": "official-account",
-      "mediaCount": 1,
-      "metrics": {
-        "likes": 674,
-        "reposts": 78,
-        "replies": 78,
-        "quotes": 38,
-        "views": 128326,
-        "bookmarks": 378
-      },
-      "text": "Stumbled upon World of Claudecraft, an open source MMO created with Fable 5 (RIP). It's shockingly full featured - you can accept quests, trade items, duel, earn rewards, and more. And you can interact with other live players! Fun look at the future of vibecoding real games 👀"
-    },
-    {
-      "keep": true,
-      "reason": "final-collection-kept",
-      "author": "@zackpaid",
-      "authorName": "zack",
-      "url": "https://x.com/zackpaid/status/2066531004924436614",
-      "date": "2026-06-15",
-      "sourceMode": "global-search",
-      "mediaCount": 1,
-      "metrics": {
-        "likes": 400,
-        "reposts": 91,
-        "replies": 327,
-        "quotes": 1,
-        "views": 25626,
-        "bookmarks": 505
-      },
-      "text": "we're producing 100 meta ad creatives in 30min thanks to claude + higgsfield MCP just imagine accessing: - chatgpt images 2.0 - seedance 2.0 - opus 4.8 in the SAME claude chat so i decided to document the step-by-step playbook behind how we generated multi-7-figures with this method here's EVERYTHIGN we'll cover: → how to setup Higgsfield MCP: connects Claude to 30+ image and video models through one endpoint, 2-min connect, no API key, existing credits carry over → the model stack: which model when - ChatGPT..."
     }
   ]
 }
