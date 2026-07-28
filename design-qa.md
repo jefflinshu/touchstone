@@ -9,6 +9,7 @@
 ## Final states reviewed
 
 - Public visitor with the connected runner unavailable to the current account.
+- Compact runner status trigger in its closed and open states.
 - Advanced delivery constraints expanded.
 - Model Providers in read-only mode for a non-owner account.
 - ZenMux preset selected with the searchable model multi-select expanded.
@@ -17,6 +18,8 @@
 ## Visual checks
 
 - Runner ownership and connection state are visible before the prompt field.
+- Runner details are hidden behind a compact `Runner · state` trigger instead of occupying a full-width banner.
+- The connection popover is anchored to the trigger and fits within the task composer without covering primary controls.
 - The page no longer implies that signing in automatically connects the visitor's computer.
 - Light-theme semantic colors use darker emerald, sky, violet, amber, and red foregrounds.
 - Advanced delivery constraints use a light neutral panel instead of the former dark gray block.
@@ -35,4 +38,6 @@
 
 ## Result
 
-Passed. No blocking readability, overflow, or interaction issues remain in the reviewed states.
+final result: passed
+
+No blocking readability, overflow, or interaction issues remain in the reviewed states.

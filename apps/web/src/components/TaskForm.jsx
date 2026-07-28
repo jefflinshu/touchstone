@@ -211,44 +211,81 @@ function RunnerStatus({ runner, user, onLogin }) {
   const { t } = useI18n()
   const online = Boolean(runner?.online)
   const available = Boolean(runner?.canExecute)
-  const title = available
-    ? t('runner.connected', { label: runner.label })
+  const status = available
+    ? t('runner.ready')
     : online
-      ? t('runner.notPaired')
-      : t('runner.offline')
+      ? t('runner.viewOnly')
+      : t('runner.offlineShort')
   const detail = available
-    ? t('runner.connectedHelp')
+    ? t('runner.readyHelp')
     : online
-      ? t('runner.notPairedHelp', { label: runner?.label || 'Owner Mac' })
+      ? t('runner.viewOnlyHelp')
       : t('runner.offlineHelp')
 
   return (
-    <div
-      className={cn(
-        'flex flex-col gap-2 rounded-md border px-3 py-2.5 sm:flex-row sm:items-center',
-        available
-          ? 'border-emerald-300/25 bg-emerald-300/[0.045]'
-          : online
-            ? 'border-amber-300/25 bg-amber-300/[0.045]'
-            : 'border-red-300/20 bg-red-300/[0.035]'
-      )}
-    >
-      <span
-        className={cn(
-          'flex shrink-0 items-center gap-2 text-xs font-semibold',
-          available ? 'text-emerald-100' : online ? 'text-amber-200' : 'text-red-200'
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          className={cn(
+            'flex h-8 items-center gap-1.5 rounded-md border px-2.5 font-mono text-[10px] tracking-[0.08em] outline-none transition-colors',
+            available
+              ? 'border-emerald-300/25 text-emerald-200 hover:border-emerald-300/45'
+              : online
+                ? 'border-amber-300/25 text-amber-200 hover:border-amber-300/45'
+                : 'border-red-300/20 text-red-200 hover:border-red-300/40'
+          )}
+        >
+          <span
+            className={cn(
+              'h-1.5 w-1.5 rounded-full',
+              available ? 'bg-emerald-300' : online ? 'bg-amber-300' : 'bg-red-300'
+            )}
+          />
+          <span className="uppercase">{t('runner.label')}</span>
+          <span className="text-white/30">·</span>
+          <span>{status}</span>
+          <ChevronDown className="h-3 w-3 text-white/35" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="start" className="w-[min(320px,calc(100vw-32px))] p-3">
+        <div className="flex items-start gap-2.5">
+          <span
+            className={cn(
+              'mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border',
+              available
+                ? 'border-emerald-300/25 bg-emerald-300/[0.06] text-emerald-300'
+                : online
+                  ? 'border-amber-300/25 bg-amber-300/[0.06] text-amber-300'
+                  : 'border-red-300/20 bg-red-300/[0.05] text-red-300'
+            )}
+          >
+            {available ? <ShieldCheck className="h-3.5 w-3.5" /> : <Unplug className="h-3.5 w-3.5" />}
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-2">
+              <p className="truncate text-xs font-semibold text-white/85">{runner?.label || 'Owner Mac'}</p>
+              <span
+                className={cn(
+                  'rounded-full px-1.5 py-0.5 font-mono text-[8px] uppercase',
+                  online
+                    ? 'bg-emerald-300/10 text-emerald-200'
+                    : 'bg-red-300/10 text-red-200'
+                )}
+              >
+                {online ? t('runner.online') : t('runner.offlineShort')}
+              </span>
+            </div>
+            <p className="mt-1 text-[11px] leading-5 text-white/55">{detail}</p>
+          </div>
+        </div>
+        {!user && online && (
+          <Button type="button" variant="outline" size="sm" className="mt-3 w-full" onClick={onLogin}>
+            {t('nav.signIn')}
+          </Button>
         )}
-      >
-        {available ? <ShieldCheck className="h-4 w-4" /> : <Unplug className="h-4 w-4" />}
-        {title}
-      </span>
-      <span className="text-[11px] leading-5 text-white/60">{detail}</span>
-      {!user && online && (
-        <Button type="button" variant="outline" size="sm" className="sm:ml-auto" onClick={onLogin}>
-          {t('nav.signIn')}
-        </Button>
-      )}
-    </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }
 
@@ -467,8 +504,6 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   return (
     <form onSubmit={handleSubmit} className="mt-8 rounded-lg border border-white/10 bg-white/[0.02]">
       <div className="flex flex-col gap-3.5 p-5">
-        <RunnerStatus runner={runner} user={user} onLogin={onLogin} />
-
         <Textarea
           rows={3}
           className="border-0 bg-transparent px-1 py-1 text-sm focus:bg-transparent"
@@ -523,6 +558,8 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
+          <RunnerStatus runner={runner} user={user} onLogin={onLogin} />
+
           <ProviderManager
             providers={providers}
             onChange={setProviders}
