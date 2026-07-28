@@ -207,7 +207,7 @@ function ProviderModelSelect({ models, catalog, onChange }) {
   )
 }
 
-export default function ProviderManager({ providers, onChange, user, onLogin, runner }) {
+export default function ProviderManager({ providers, onChange, user, onLogin, runner, className }) {
   const { t } = useI18n()
   const [open, setOpen] = useState(false)
   const [draft, setDraft] = useState(emptyProvider)
@@ -360,7 +360,10 @@ export default function ProviderManager({ providers, onChange, user, onLogin, ru
           type="button"
           variant="outline"
           size="sm"
-          className="h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase"
+          className={cn(
+            'h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase',
+            className
+          )}
           title={!runner?.canExecute ? t('runner.errorNotPaired') : undefined}
         >
           <ServerCog className="h-3.5 w-3.5 text-sky-300" />

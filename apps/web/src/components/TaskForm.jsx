@@ -7,7 +7,6 @@ import {
   Check,
   ChevronDown,
   TriangleAlert,
-  CircleHelp,
   Sparkles,
   SlidersHorizontal,
   Download,
@@ -18,7 +17,6 @@ import {
   ShieldCheck,
   Shapes,
   Unplug,
-  Zap,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
@@ -242,8 +240,6 @@ function RunnerStatus({ runner, user, onLogin }) {
               available ? 'bg-emerald-300' : online ? 'bg-amber-300' : 'bg-red-300'
             )}
           />
-          <span className="uppercase">{t('runner.label')}</span>
-          <span className="text-white/30">·</span>
           <span>{status}</span>
           <ChevronDown className="h-3 w-3 text-white/35" />
         </button>
@@ -502,206 +498,24 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 rounded-lg border border-white/10 bg-white/[0.02]">
-      <div className="flex flex-col gap-3.5 p-5">
+    <form onSubmit={handleSubmit} className="mt-8 rounded-xl border border-white/12 bg-white/[0.02] shadow-[0_18px_60px_rgba(0,0,0,0.04)]">
+      <div className="flex min-h-[180px] flex-col p-4 sm:p-5">
         <Textarea
           rows={3}
-          className="border-0 bg-transparent px-1 py-1 text-sm focus:bg-transparent"
+          className="min-h-[88px] resize-none border-0 bg-transparent px-2 py-2 text-[15px] leading-7 placeholder:text-white/35 focus:bg-transparent"
           placeholder={t('task.placeholder')}
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
 
-        <div className="flex flex-wrap items-center gap-2 border-y border-white/8 py-2.5">
-          <span className="mr-1 font-mono text-[9px] tracking-[0.18em] text-white/35 uppercase">
-            {t('task.artifactType')}
-          </span>
-          {[
-            ['single-html', FileCode2, t('task.deliverySingleHtml'), 'index.html'],
-            ['single-svg', Shapes, t('task.deliverySingleSvg'), 'index.svg'],
-            ['single-markdown', FileText, t('task.deliverySingleMarkdown'), 'plan.md'],
-          ].map(([value, Icon, label, filename]) => (
-            <button
-              key={value}
-              type="button"
-              onClick={() => chooseDeliveryPreset(value)}
-              className={cn(
-                'flex h-8 items-center gap-1.5 rounded-md border px-2.5 transition-colors',
-                deliveryPreset === value
-                  ? 'border-acid bg-acid/10 text-acid'
-                  : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
-              )}
-            >
-              <Icon className="h-3.5 w-3.5" />
-              <span className="text-[11px] font-medium">{label}</span>
-              <span className="hidden font-mono text-[9px] text-current opacity-45 sm:inline">{filename}</span>
-            </button>
-          ))}
-          <button
-            type="button"
-            onClick={() => setShowDelivery((value) => !value)}
-            className={cn(
-              'ml-auto flex h-8 items-center gap-1.5 rounded-md border px-2.5 font-mono text-[9px] tracking-[0.12em] uppercase transition-colors',
-              showDelivery || deliveryPreset === 'static-folder' || deliveryPreset === 'custom'
-                ? 'border-white/30 text-white/75'
-                : 'border-white/10 text-white/30 hover:border-white/25 hover:text-white/70'
-            )}
-          >
-            <SlidersHorizontal className="h-3.5 w-3.5" />
-            {t('task.deliveryAdvanced')}
-          </button>
-          <span className="w-full font-mono text-[9px] text-white/25 sm:w-auto">
-            {deliveryPreset === 'single-html' && t('task.artifactSingleFile', { file: 'index.html' })}
-            {deliveryPreset === 'single-svg' && t('task.artifactSingleFile', { file: 'index.svg' })}
-            {deliveryPreset === 'single-markdown' && t('task.artifactSingleFile', { file: 'plan.md' })}
-          </span>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
-          <RunnerStatus runner={runner} user={user} onLogin={onLogin} />
-
-          <ProviderManager
-            providers={providers}
-            onChange={setProviders}
-            user={user}
-            onLogin={onLogin}
-            runner={runner}
-          />
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button type="button" variant="outline" size="sm" className="h-8 gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase">
-                <Sparkles className="h-3.5 w-3.5 text-violet-300" />
-                {t('task.skills')}
-                {selectedSkills.length > 0 && (
-                  <span className="rounded-full bg-violet-400/15 px-1.5 text-violet-200">{selectedSkills.length}</span>
-                )}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="max-h-[380px] w-[min(380px,calc(100vw-32px))] overflow-y-auto p-1.5">
-              <div className="px-2 py-1.5">
-                <p className="font-mono text-[9px] tracking-[0.16em] text-white/35 uppercase">{t('task.skillsLocalTitle')}</p>
-                <p className="mt-1 text-[11px] leading-4 text-white/45">{t('task.skillsHelp')}</p>
-              </div>
-              {skills.map((skill) => {
-                const installedForAll =
-                  targetAgentIds.length > 0 && targetAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
-                const selected = selectedSkills.includes(skill.id)
-                const installing = installingSkill === skill.id
-                return (
-                  <DropdownMenuItem
-                    key={skill.id}
-                    onSelect={(event) => {
-                      event.preventDefault()
-                      if (installedForAll) {
-                        setSelectedSkills((current) =>
-                          selected ? current.filter((id) => id !== skill.id) : [...current, skill.id]
-                        )
-                      } else if (skill.installable) {
-                        installSkill(skill)
-                      }
-                    }}
-                    className="items-start py-2"
-                  >
-                    <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center">
-                      {installing ? (
-                        <Loader2 className="h-3.5 w-3.5 animate-spin text-violet-300" />
-                      ) : installedForAll ? (
-                        <span className={cn('flex h-3.5 w-3.5 items-center justify-center rounded border', selected ? 'border-violet-300 bg-violet-300 text-black' : 'border-white/25')}>
-                          {selected && <Check className="h-2.5 w-2.5" strokeWidth={3} />}
-                        </span>
-                      ) : (
-                        <Download className="h-3.5 w-3.5 text-white/35" />
-                      )}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="flex items-center gap-1.5 text-xs text-white/85">
-                        <span className="truncate">{skill.name}</span>
-                        {skill.maintained && (
-                          <span className="rounded border border-acid/25 px-1 font-mono text-[8px] tracking-wider text-acid uppercase">
-                            Touchstone
-                          </span>
-                        )}
-                        {skill.popular && !skill.maintained && (
-                          <span className="rounded border border-white/12 px-1 font-mono text-[8px] tracking-wider text-white/35 uppercase">
-                            Popular
-                          </span>
-                        )}
-                      </span>
-                      <span className="mt-0.5 block text-[10px] leading-4 text-white/40">{skill.description}</span>
-                      <span className="mt-0.5 block font-mono text-[9px] text-white/25">
-                        {installedForAll
-                          ? t('task.skillsInstalledForAll')
-                          : skill.installedFor?.length
-                            ? t('task.skillsInstalledFor', { agents: skill.installedFor.join(', ') })
-                            : t('task.skillsInstallAction', { agents: targetAgentIds.join(', ') || '—' })}
-                      </span>
-                    </span>
-                  </DropdownMenuItem>
-                )
-              })}
-              {skills.length === 0 && (
-                <p className="px-2 py-4 text-center text-xs text-white/35">{skillsError || t('task.skillsNone')}</p>
-              )}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          {selectedSkills.map((id) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => setSelectedSkills((current) => current.filter((skillId) => skillId !== id))}
-              className="flex h-7 items-center gap-1 rounded-full border border-violet-300/20 bg-violet-300/8 px-2 font-mono text-[9px] text-violet-200"
-            >
-              {id}
-              <X className="h-2.5 w-2.5" />
-            </button>
-          ))}
-          {skillsError && <span className="text-[10px] text-amber-300">{skillsError}</span>}
-        </div>
-
-        {showDelivery && (
-          <div className="rounded-md border border-white/10 bg-white/[0.025] p-3">
-            <div className="flex flex-wrap items-center gap-1.5">
-              {[
-                ['single-html', t('task.deliverySingleHtml')],
-                ['single-svg', t('task.deliverySingleSvg')],
-                ['single-markdown', t('task.deliverySingleMarkdown')],
-                ['static-folder', t('task.deliveryStaticFolder')],
-                ['custom', t('task.deliveryCustom')],
-              ].map(([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => chooseDeliveryPreset(value)}
-                  className={cn(
-                    'rounded-full border px-2.5 py-1 font-mono text-[9px] tracking-wider uppercase',
-                    deliveryPreset === value
-                      ? 'border-acid bg-acid text-black'
-                      : 'border-white/12 text-white/40 hover:border-white/30 hover:text-white'
-                  )}
-                >
-                  {label}
-                </button>
-              ))}
-              <span className="ml-auto text-[10px] text-white/30">{t('task.deliveryAppended')}</span>
-            </div>
-            <Textarea
-              rows={4}
-              maxLength={6000}
-              value={deliveryConstraint}
-              onChange={(event) => {
-                setDeliveryConstraint(event.target.value)
-                setDeliveryPreset('custom')
-              }}
-              className="mt-2 min-h-24 font-mono text-[11px] leading-5"
-            />
-          </div>
+        {error && (
+          <p className="mx-2 mt-1 font-mono text-[11px] text-red-400" role="alert">
+            {error}
+          </p>
         )}
 
-        <div className="h-px bg-white/8" />
-
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="mt-auto flex flex-col gap-3 border-t border-white/8 pt-3 sm:flex-row sm:items-center">
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
           {runners.map((r) => {
             const a = agentOf(r.agentId)
             if (!a) return null
@@ -808,56 +622,236 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          </div>
 
-          <div className="ml-auto flex items-center gap-3">
-            {runners.length > 1 && (
-              <span
-                className="hidden items-center gap-1 font-mono text-[9px] tracking-[0.1em] text-emerald-300/65 uppercase sm:flex"
-                title={t('provider.concurrentHelp')}
-              >
-                <Zap className="h-3 w-3" />
-                {t('provider.concurrent', { count: runners.length })}
-              </span>
-            )}
-            {error && <span className="font-mono text-xs text-red-400">{error}</span>}
-            <span className="flex items-center gap-1">
-              <label className="flex cursor-pointer items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase select-none">
-                <input
-                  type="checkbox"
-                  checked={publish}
-                  onChange={(e) => setPublish(e.target.checked)}
-                  className="sr-only"
-                />
-                <span
-                  className={cn(
-                    'flex h-3.5 w-3.5 items-center justify-center rounded-[3px] border transition-colors',
-                    publish ? 'border-acid bg-acid text-black' : 'border-white/25'
-                  )}
+          <div className="flex shrink-0 items-center gap-2 self-end sm:self-auto">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  title={t('task.settings')}
+                  aria-label={t('task.settings')}
+                  className="h-9 w-9 rounded-md"
                 >
-                  {publish && <Check className="h-2.5 w-2.5" strokeWidth={3.5} />}
-                </span>
-                <span className={publish ? 'text-white/80' : 'text-white/40'}>{t('task.publish')}</span>
-              </label>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
+                  <SlidersHorizontal className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                sideOffset={-18}
+                className="w-[min(420px,calc(100vw-24px))] rounded-xl p-3 shadow-2xl sm:-translate-x-40"
+                onCloseAutoFocus={(event) => event.preventDefault()}
+              >
+                <section>
+                  <p className="px-1 font-mono text-[9px] tracking-[0.16em] text-white/45 uppercase">
+                    {t('task.artifactType')}
+                  </p>
+                  <div className="mt-2 grid grid-cols-3 gap-2">
+                    {[
+                      ['single-html', FileCode2, 'HTML'],
+                      ['single-svg', Shapes, 'SVG'],
+                      ['single-markdown', FileText, 'Markdown'],
+                    ].map(([value, Icon, label]) => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={() => chooseDeliveryPreset(value)}
+                        className={cn(
+                          'flex h-9 items-center justify-center gap-1.5 rounded-md border text-[11px] font-medium transition-colors',
+                          deliveryPreset === value
+                            ? 'border-acid bg-acid/10 text-acid'
+                            : 'border-white/12 text-white/55 hover:border-white/30 hover:text-white'
+                        )}
+                      >
+                        <Icon className="h-3.5 w-3.5" />
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="mt-4">
+                  <p className="px-1 font-mono text-[9px] tracking-[0.16em] text-white/45 uppercase">
+                    {t('task.settingsModelsSkills')}
+                  </p>
+                  <div className="mt-2 grid grid-cols-2 gap-2">
+                    <ProviderManager
+                      providers={providers}
+                      onChange={setProviders}
+                      user={user}
+                      onLogin={onLogin}
+                      runner={runner}
+                      className="w-full justify-start"
+                    />
+
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button
+                          type="button"
+                          variant="outline"
+                          className="h-8 justify-start gap-1.5 font-mono text-[10px] tracking-[0.08em] uppercase"
+                        >
+                          <Sparkles className="h-3.5 w-3.5 text-violet-300" />
+                          {t('task.skills')}
+                          {selectedSkills.length > 0 && (
+                            <span className="ml-auto rounded-full bg-violet-400/15 px-1.5 text-violet-200">
+                              {selectedSkills.length}
+                            </span>
+                          )}
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent
+                        align="end"
+                        className="max-h-[360px] w-[min(360px,calc(100vw-32px))] overflow-y-auto p-1.5"
+                      >
+                        {skills.map((skill) => {
+                          const installedForAll =
+                            targetAgentIds.length > 0 &&
+                            targetAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+                          const selected = selectedSkills.includes(skill.id)
+                          const installing = installingSkill === skill.id
+                          return (
+                            <DropdownMenuItem
+                              key={skill.id}
+                              onSelect={(event) => {
+                                event.preventDefault()
+                                if (installedForAll) {
+                                  setSelectedSkills((current) =>
+                                    selected ? current.filter((id) => id !== skill.id) : [...current, skill.id]
+                                  )
+                                } else if (skill.installable) {
+                                  installSkill(skill)
+                                }
+                              }}
+                              className="py-2"
+                            >
+                              <span className="flex h-4 w-4 shrink-0 items-center justify-center">
+                                {installing ? (
+                                  <Loader2 className="h-3.5 w-3.5 animate-spin text-violet-300" />
+                                ) : installedForAll ? (
+                                  <span
+                                    className={cn(
+                                      'flex h-3.5 w-3.5 items-center justify-center rounded border',
+                                      selected
+                                        ? 'border-violet-300 bg-violet-300 text-black'
+                                        : 'border-white/25'
+                                    )}
+                                  >
+                                    {selected && <Check className="h-2.5 w-2.5" strokeWidth={3} />}
+                                  </span>
+                                ) : (
+                                  <Download className="h-3.5 w-3.5 text-white/35" />
+                                )}
+                              </span>
+                              <span className="min-w-0 flex-1 truncate text-xs">{skill.name}</span>
+                              {!installedForAll && (
+                                <span className="font-mono text-[8px] text-white/35 uppercase">
+                                  {t('task.install')}
+                                </span>
+                              )}
+                            </DropdownMenuItem>
+                          )
+                        })}
+                        {skills.length === 0 && (
+                          <p className="px-2 py-4 text-center text-xs text-white/35">
+                            {skillsError || t('task.skillsNone')}
+                          </p>
+                        )}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                  {skillsError && skills.length > 0 && (
+                    <p className="mt-1.5 px-1 text-[10px] text-amber-300">{skillsError}</p>
+                  )}
+                </section>
+
+                <section className="mt-3 space-y-1 border-t border-white/8 pt-3">
+                  <label className="flex h-9 cursor-pointer items-center justify-between rounded-md px-1.5 select-none">
+                    <span className="text-xs font-medium text-white/75">{t('task.publish')}</span>
+                    <input
+                      type="checkbox"
+                      checked={publish}
+                      onChange={(event) => setPublish(event.target.checked)}
+                      className="sr-only"
+                    />
+                    <span
+                      className={cn(
+                        'relative h-5 w-9 rounded-full border transition-colors',
+                        publish ? 'border-acid bg-acid' : 'border-white/15 bg-white/10'
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          'absolute top-0.5 h-3.5 w-3.5 rounded-full bg-white shadow-sm transition-transform',
+                          publish ? 'translate-x-[17px] bg-black' : 'translate-x-0.5'
+                        )}
+                      />
+                    </span>
+                  </label>
+
+                  <div className="flex min-h-9 items-center justify-between gap-3 rounded-md px-1.5">
+                    <span className="text-xs font-medium text-white/75">{t('runner.label')}</span>
+                    <RunnerStatus runner={runner} user={user} onLogin={onLogin} />
+                  </div>
+                </section>
+
+                <section className="mt-3 border-t border-white/8 pt-2">
                   <button
                     type="button"
-                    title={t('task.publishHelpTitle')}
-                    className="cursor-pointer text-white/25 outline-none transition-colors hover:text-white"
+                    onClick={() => setShowDelivery((value) => !value)}
+                    className="flex h-9 w-full items-center gap-2 rounded-md px-1.5 text-left text-xs font-medium text-white/65 transition-colors hover:bg-white/8 hover:text-white"
                   >
-                    <CircleHelp className="h-3 w-3" />
+                    <SlidersHorizontal className="h-3.5 w-3.5" />
+                    {t('task.deliveryAdvanced')}
+                    <ChevronDown
+                      className={cn('ml-auto h-3.5 w-3.5 transition-transform', showDelivery && 'rotate-180')}
+                    />
                   </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-[280px] p-3">
-                  <p className="font-mono text-[10px] font-bold tracking-[0.18em] text-acid uppercase">{t('task.publishHelpHeading')}</p>
-                  <p className="mt-2 text-xs leading-5 text-white/70">
-                    {t('task.publishHelpBody')}
-                  </p>
-                  <p className="mt-1.5 text-xs leading-5 text-white/45">{t('task.publishHelpFoot')}</p>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </span>
-            <Button disabled={busy || !runner?.canExecute} className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase">
+
+                  {showDelivery && (
+                    <div className="pt-2">
+                      <div className="mb-2 flex gap-1.5">
+                        {[
+                          ['static-folder', t('task.deliveryStaticFolder')],
+                          ['custom', t('task.deliveryCustom')],
+                        ].map(([value, label]) => (
+                          <button
+                            key={value}
+                            type="button"
+                            onClick={() => chooseDeliveryPreset(value)}
+                            className={cn(
+                              'rounded-full border px-2.5 py-1 font-mono text-[9px] tracking-wide',
+                              deliveryPreset === value
+                                ? 'border-acid bg-acid text-black'
+                                : 'border-white/12 text-white/45 hover:border-white/30 hover:text-white'
+                            )}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                      <Textarea
+                        rows={4}
+                        maxLength={6000}
+                        value={deliveryConstraint}
+                        onChange={(event) => {
+                          setDeliveryConstraint(event.target.value)
+                          setDeliveryPreset('custom')
+                        }}
+                        className="min-h-24 font-mono text-[10px] leading-5"
+                      />
+                    </div>
+                  )}
+                </section>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button
+              disabled={busy || !runner?.canExecute}
+              className="h-9 px-4 font-mono text-[11px] font-bold tracking-[0.12em] uppercase"
+            >
               {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
               {busy ? t('task.naming') : t('task.run')}
               {!busy && <ArrowRight className="h-3.5 w-3.5" />}
