@@ -601,7 +601,7 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                 <Plus className="h-3.5 w-3.5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
+            <DropdownMenuContent align="start" className="min-w-[180px]">
               {agents.map((a) => (
                 <DropdownMenuItem
                   key={a.id}
@@ -620,6 +620,17 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                   {a.health?.ready === false && <TriangleAlert className="ml-auto h-3 w-3 text-amber-400" />}
                 </DropdownMenuItem>
               ))}
+              {agents.length === 0 && (
+                <div className="flex items-center gap-2 px-2.5 py-2 text-xs text-white/55">
+                  <span
+                    className={cn(
+                      'h-1.5 w-1.5 shrink-0 rounded-full',
+                      runner?.online ? 'bg-amber-300' : 'bg-red-300'
+                    )}
+                  />
+                  {t('task.noAgents')}
+                </div>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
           </div>
