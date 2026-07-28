@@ -1,11 +1,19 @@
 # Deploy Touchstone on touchstone.jefflin.ai
 
-This app should run as a normal Node.js service behind Cloudflare. Do not deploy only `apps/web/dist` to Cloudflare Pages unless you intentionally want a static preview without login, API, WebSocket, task execution, or workspace previews.
+Touchstone uses an edge-first split:
+
+- `touchstone.jefflin.ai` is served by `touchstone-edge` on Cloudflare Workers, including the SPA and a public run snapshot.
+- `touchstone-origin.jefflin.ai` reaches the local Node runner through Cloudflare Tunnel.
+- The edge proxies login, task, WebSocket, and live workspace requests only while the local runner is online.
+- If the Mac or runner is offline, the website and published snapshot remain available; local execution returns `LOCAL_RUNNER_OFFLINE`.
+
+The edge proxy is the availability boundary. Do not route the public hostname directly to the local runner.
 
 ## Target
 
 - Public URL: `https://touchstone.jefflin.ai`
-- Node origin: `http://localhost:3000`
+- Edge site: Cloudflare Worker `touchstone-edge`
+- Private Node origin: `https://touchstone-origin.jefflin.ai` → `http://localhost:3000`
 - Google OAuth callback: `https://touchstone.jefflin.ai/api/auth/callback`
 
 ## Repository Boundaries
@@ -100,14 +108,38 @@ credentials-file: /etc/cloudflared/touchstone-jefflin-ai.json
 protocol: http2
 
 ingress:
-  - hostname: touchstone.jefflin.ai
+  - hostname: touchstone-origin.jefflin.ai
     service: http://localhost:3000
   - service: http_status:404
 ```
 
-Then route `touchstone.jefflin.ai` to the tunnel in Cloudflare.
+Route only `touchstone-origin.jefflin.ai` to the tunnel. Set the same random `TOUCHSTONE_EDGE_SECRET` in the Worker and local LaunchAgent, and set:
+
+```bash
+TOUCHSTONE_EDGE_ORIGIN_HOST=touchstone-origin.jefflin.ai
+```
+
+Direct requests to the origin hostname are rejected without the edge secret.
 
 `protocol: http2` is intentional. Some local/proxy networks block Cloudflare Tunnel QUIC traffic on UDP 7844; forcing HTTP/2 keeps the tunnel connected over TCP and avoids Cloudflare 1033 errors caused by an inactive connector.
+
+## Edge Build And Deploy
+
+```bash
+npm run test:edge
+npm run build:edge
+wrangler deploy
+```
+
+`build:edge` produces a sanitized public snapshot at `apps/web/dist/_edge/runs.json` and copies only published workspaces. Private/local runs are never included in Worker assets.
+
+The production route is declared in `wrangler.toml`. For a full local-runner and edge release:
+
+```bash
+npm run deploy:production
+```
+
+`deploy:local` intentionally updates only the private runner. It no longer assumes that the public hostname is served by that process. `deploy:edge` updates the always-on website, and `verify:edge` checks the production bundle, edge health identity, and public-run privacy boundary.
 
 ## Production Notes
 

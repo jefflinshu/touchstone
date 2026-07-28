@@ -3,6 +3,6 @@ credentials-file: /etc/cloudflared/touchstone-jefflin-ai.json
 protocol: http2
 
 ingress:
-  - hostname: touchstone.jefflin.ai
+  - hostname: touchstone-origin.jefflin.ai
     service: http://localhost:3000
   - service: http_status:404

@@ -26,6 +26,7 @@ import {
   providerRuntimeEnv,
 } from './provider-registry.js'
 import { ModelCatalog } from './model-catalog.js'
+import { edgeProxyAuthorized } from './edge-auth.js'
 import {
   buildSelectedSkillsPrompt,
   discoverInstalledSkills,
@@ -675,6 +676,9 @@ const httpServer = createServer(app)
 const wss = new WebSocketServer({ server: httpServer, path: '/ws' })
 
 app.use((req, res, next) => {
+  if (!edgeProxyAuthorized(req)) {
+    return res.status(403).json({ error: 'Touchstone edge authentication required' })
+  }
   const forwardedProto = String(req.get('x-forwarded-proto') || '').split(',')[0].trim()
   const proto = forwardedProto || req.protocol
   const host = req.get('host') || ''
@@ -1923,6 +1927,10 @@ function currentSession(req) {
 }
 
 wss.on('connection', (socket, req) => {
+  if (!edgeProxyAuthorized(req)) {
+    socket.close(1008, 'Touchstone edge authentication required')
+    return
+  }
   socket.touchstoneEmail = currentSession(req)?.email || null
 })
 

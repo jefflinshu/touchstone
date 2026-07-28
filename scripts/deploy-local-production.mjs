@@ -114,17 +114,6 @@ async function main() {
     throw new Error(`Local HTML references ${localAsset}, expected ${sourceAsset}`)
   }
 
-  const publicHtml = await fetchText(`${PUBLIC_BASE_URL}/`)
-  const publicAsset = assetPathFromHtml(publicHtml)
-  if (publicAsset !== sourceAsset) {
-    throw new Error(`Public HTML references ${publicAsset}, expected ${sourceAsset}`)
-  }
-  const publicRuns = JSON.parse(await fetchText(`${PUBLIC_BASE_URL}/api/runs`))
-  const leakedRun = publicRuns.runs?.find(
-    (run) => run.publishState !== 'published' && run.publishSource !== 'community-api'
-  )
-  if (leakedRun) throw new Error(`Public API exposed an unpublished run: ${leakedRun.id}`)
-
   console.log(
     JSON.stringify(
       {
@@ -133,6 +122,7 @@ async function main() {
         service: SERVICE_LABEL,
         bundle: sourceAsset,
         publicUrl: PUBLIC_BASE_URL,
+        publicDeployment: 'Run npm run deploy:edge after local deployment',
         health: parsedHealth,
         agents: {
           codex: { version: codex.health.version, compatible: codex.health.compatible },

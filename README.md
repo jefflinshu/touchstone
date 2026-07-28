@@ -51,6 +51,8 @@ If the public URL is behind a proxy or differs from the request host, also set `
 
 For the `touchstone.jefflin.ai` migration checklist, see [`docs/deploy-touchstone-jefflin-ai.md`](docs/deploy-touchstone-jefflin-ai.md).
 
+Production uses an edge-first split: Cloudflare Workers serves the website and public snapshot continuously, while login, live tasks, WebSocket events, and CLI execution are proxied to a separately protected local runner only when it is online. Stopping the local runner no longer takes the website offline.
+
 GA4 analytics is optional. Create a GA4 Web data stream, then build the web UI with:
 
 ```bash
