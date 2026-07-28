@@ -27,6 +27,8 @@ import {
 } from './provider-registry.js'
 import { ModelCatalog } from './model-catalog.js'
 import { edgeProxyAuthorized } from './edge-auth.js'
+import { createCredentialEnvelope } from './credential-envelope.js'
+import { describeRunner, resolveRunnerAccess } from './runner-access.js'
 import {
   buildSelectedSkillsPrompt,
   discoverInstalledSkills,
@@ -116,6 +118,7 @@ fs.mkdirSync(RUNS_DIR, { recursive: true })
 fs.mkdirSync(DATA_DIR, { recursive: true })
 const providerRegistry = new ProviderRegistry(PROVIDERS_FILE)
 const modelCatalog = new ModelCatalog({ fetchJson: fetchProviderJson })
+const credentialEnvelope = createCredentialEnvelope()
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -1156,6 +1159,37 @@ function startRun(run, agent, prompt, timeoutMinutes, runtimeEnv = {}) {
 
 app.use(express.json({ limit: process.env.JSON_BODY_LIMIT || '80mb' }))
 
+function runnerAccess(req) {
+  return resolveRunnerAccess(
+    currentSession(req)?.email,
+    process.env.TOUCHSTONE_RUNNER_OWNER_EMAILS
+  )
+}
+
+function runnerDescriptor(req) {
+  return describeRunner({
+    email: currentSession(req)?.email,
+    ownerList: process.env.TOUCHSTONE_RUNNER_OWNER_EMAILS,
+    label: process.env.TOUCHSTONE_RUNNER_LABEL || 'Owner Mac',
+  })
+}
+
+function requireRunnerOwner(req, res) {
+  const access = runnerAccess(req)
+  if (!access.email) {
+    res.status(401).json({ error: '请先登录后使用本地执行器', code: 'RUNNER_LOGIN_REQUIRED' })
+    return null
+  }
+  if (!access.canExecute) {
+    res.status(403).json({
+      error: '这台本地执行器仅允许设备所有者使用；当前账号尚未配对个人 Companion。',
+      code: 'RUNNER_NOT_PAIRED',
+    })
+    return null
+  }
+  return access
+}
+
 app.get('/api/health', (req, res) => {
   res.json({
     ok: true,
@@ -1167,6 +1201,10 @@ app.get('/api/health', (req, res) => {
 })
 
 app.get('/api/agents', async (req, res) => {
+  const runner = runnerDescriptor(req)
+  if (!runner.canExecute) {
+    return res.json({ agents: [], defaults: {}, runner })
+  }
   const cfg = loadAgentsConfig()
   res.json({
     agents: await Promise.all(cfg.agents.map(async (a) => {
@@ -1193,17 +1231,24 @@ app.get('/api/agents', async (req, res) => {
       }
     })),
     defaults: cfg.defaults,
+    runner,
   })
 })
 
 app.get('/api/providers', (req, res) => {
-  const user = currentSession(req)?.email
-  if (!user) return res.status(401).json({ error: '请先登录后读取本地 Provider' })
-  res.json({ providers: providerRegistry.list(user) })
+  const access = requireRunnerOwner(req, res)
+  if (!access) return
+  res.json({ providers: providerRegistry.list(access.email) })
 })
 
 app.get('/api/provider-presets', (_req, res) => {
   res.json({ presets: listProviderPresets() })
+})
+
+app.get('/api/providers/encryption-key', (req, res) => {
+  if (!requireRunnerOwner(req, res)) return
+  res.setHeader('Cache-Control', 'no-store')
+  res.json(credentialEnvelope.publicDescriptor())
 })
 
 app.get('/api/model-catalog', async (req, res) => {
@@ -1223,28 +1268,35 @@ app.get('/api/model-catalog', async (req, res) => {
 })
 
 app.post('/api/providers', (req, res) => {
-  const user = currentSession(req)?.email
-  if (!user) return res.status(401).json({ error: '请先登录后配置 Provider' })
+  const access = requireRunnerOwner(req, res)
+  if (!access) return
   try {
-    const provider = providerRegistry.upsert(user, req.body || {})
-    res.json({ provider, providers: providerRegistry.list(user) })
+    const input = { ...(req.body || {}) }
+    if (input.credentialEnvelope) {
+      input.credential = credentialEnvelope.decrypt(input.credentialEnvelope)
+      delete input.credentialEnvelope
+    } else if (input.credential && process.env.TOUCHSTONE_REQUIRE_ENCRYPTED_CREDENTIALS === '1') {
+      return res.status(400).json({ error: 'API Token 必须先在浏览器中加密', code: 'CREDENTIAL_ENCRYPTION_REQUIRED' })
+    }
+    const provider = providerRegistry.upsert(access.email, input)
+    res.json({ provider, providers: providerRegistry.list(access.email) })
   } catch (error) {
     res.status(400).json({ error: error.message })
   }
 })
 
 app.delete('/api/providers/:id', (req, res) => {
-  const user = currentSession(req)?.email
-  if (!user) return res.status(401).json({ error: '请先登录后配置 Provider' })
-  const removed = providerRegistry.remove(user, req.params.id)
+  const access = requireRunnerOwner(req, res)
+  if (!access) return
+  const removed = providerRegistry.remove(access.email, req.params.id)
   if (!removed) return res.status(404).json({ error: 'Provider 不存在' })
-  res.json({ ok: true, providers: providerRegistry.list(user) })
+  res.json({ ok: true, providers: providerRegistry.list(access.email) })
 })
 
 app.post('/api/providers/:id/discover', async (req, res) => {
-  const user = currentSession(req)?.email
-  if (!user) return res.status(401).json({ error: '请先登录后同步模型' })
-  const provider = providerRegistry.resolve(user, req.params.id)
+  const access = requireRunnerOwner(req, res)
+  if (!access) return
+  const provider = providerRegistry.resolve(access.email, req.params.id)
   if (!provider) return res.status(404).json({ error: 'Provider 不存在' })
   const errors = []
   for (const url of modelDiscoveryUrls(provider.baseUrl)) {
@@ -1254,8 +1306,8 @@ app.post('/api/providers/:id/discover', async (req, res) => {
       })
       const models = parseDiscoveredModels(data)
       if (!models.length) throw new Error('接口没有返回模型 ID')
-      const updated = providerRegistry.replaceModels(user, provider.id, models)
-      return res.json({ provider: updated, providers: providerRegistry.list(user) })
+      const updated = providerRegistry.replaceModels(access.email, provider.id, models)
+      return res.json({ provider: updated, providers: providerRegistry.list(access.email) })
     } catch (error) {
       errors.push(`${url}: ${error.name === 'AbortError' ? '请求超时' : error.message}`)
     }
@@ -1264,9 +1316,9 @@ app.post('/api/providers/:id/discover', async (req, res) => {
 })
 
 app.post('/api/providers/:id/test', async (req, res) => {
-  const user = currentSession(req)?.email
-  if (!user) return res.status(401).json({ error: '请先登录后测试 Provider' })
-  const provider = providerRegistry.resolve(user, req.params.id)
+  const access = requireRunnerOwner(req, res)
+  if (!access) return
+  const provider = providerRegistry.resolve(access.email, req.params.id)
   if (!provider) return res.status(404).json({ error: 'Provider 不存在' })
   const model = String(req.body?.model || provider.models?.[0] || '').trim()
   if (!model) return res.status(400).json({ error: '请先填写至少一个模型 ID' })
@@ -1315,7 +1367,7 @@ app.post('/api/providers/:id/test', async (req, res) => {
 })
 
 app.get('/api/skills', (req, res) => {
-  if (!currentSession(req)?.email) return res.status(401).json({ error: '请先登录后读取本地 Skills' })
+  if (!requireRunnerOwner(req, res)) return
   try {
     res.json({
       skills: listLocalSkills().map(publicSkill),
@@ -1328,8 +1380,7 @@ app.get('/api/skills', (req, res) => {
 })
 
 app.post('/api/skills/install', async (req, res) => {
-  const session = currentSession(req)
-  if (!session?.email) return res.status(401).json({ error: '请先登录后安装 Skill' })
+  if (!requireRunnerOwner(req, res)) return
   if (!skillInstallEnabled(req)) {
     return res.status(403).json({
       error: '此页面连接的不是允许写入的本地 Touchstone。请在本机打开，或为可信本地服务设置 TOUCHSTONE_ALLOW_SKILL_INSTALL=1。',
@@ -2078,6 +2129,8 @@ app.get('/api/repo', (req, res) => {
 })
 
 app.post('/api/tasks', async (req, res) => {
+  const access = requireRunnerOwner(req, res)
+  if (!access) return
   const { prompt, runners, publish, deliveryConstraint } = req.body || {}
   const selectedSkills = [...new Set(
     (Array.isArray(req.body?.selectedSkills) ? req.body.selectedSkills : [])
@@ -2089,10 +2142,7 @@ app.post('/api/tasks', async (req, res) => {
     return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
   }
   const sessionUser = currentSession(req)
-  const user = sessionUser?.email || null
-  if (!user) {
-    return res.status(401).json({ error: '请先登录 Google 账号' })
-  }
+  const user = access.email
   const cfg = loadAgentsConfig()
   const deliveryMode = normalizeDeliveryMode(req.body?.deliveryMode)
   const plannedRunners = await Promise.all(runners.map(async (runner) => {

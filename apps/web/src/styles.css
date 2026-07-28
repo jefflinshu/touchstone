@@ -187,6 +187,7 @@ html[data-theme='light'] [class*='bg-[#101013]'] {
 }
 html[data-theme='light'] .bg-black,
 html[data-theme='light'] .bg-black\/30,
+html[data-theme='light'] .bg-black\/20,
 html[data-theme='light'] .bg-black\/50,
 html[data-theme='light'] .bg-black\/60 {
   background-color: rgb(244 245 239 / 0.92) !important;
@@ -229,6 +230,8 @@ html[data-theme='light'] .shadow-\[0_0_6px_rgba\(212\,255\,79\,0\.9\)\] {
   box-shadow: 0 0 6px rgba(112, 138, 24, 0.55) !important;
 }
 html[data-theme='light'] .placeholder\:text-white\/42::placeholder,
+html[data-theme='light'] .placeholder\:text-white\/35::placeholder,
+html[data-theme='light'] .placeholder\:text-white\/30::placeholder,
 html[data-theme='light'] .placeholder\:text-white\/25::placeholder,
 html[data-theme='light'] .placeholder\:text-white\/24::placeholder {
   color: rgb(24 24 27 / 0.38) !important;
@@ -253,6 +256,44 @@ html[data-theme='light'] .bg-acid\/\[0\.04\] { background-color: rgb(110 150 18 
 html[data-theme='light'] .pulse-dot.bg-acid,
 html[data-theme='light'] span.h-1\.5.bg-acid {
   background-color: #6e9612 !important;
+}
+
+/* Semantic accents need their own dark foregrounds in light mode. */
+html[data-theme='light'] .text-emerald-100,
+html[data-theme='light'] .text-emerald-200,
+html[data-theme='light'] .text-emerald-300 { color: #176b4b !important; }
+html[data-theme='light'] .text-sky-100,
+html[data-theme='light'] .text-sky-200,
+html[data-theme='light'] .text-sky-300 { color: #075985 !important; }
+html[data-theme='light'] .text-violet-200,
+html[data-theme='light'] .text-violet-300 { color: #6d28d9 !important; }
+html[data-theme='light'] .text-amber-200,
+html[data-theme='light'] .text-amber-300 { color: #92400e !important; }
+html[data-theme='light'] .text-red-200,
+html[data-theme='light'] .text-red-300 { color: #b91c1c !important; }
+
+html[data-theme='light'] .border-emerald-300\/40,
+html[data-theme='light'] .border-emerald-300\/35,
+html[data-theme='light'] .border-emerald-300\/25,
+html[data-theme='light'] .border-emerald-300\/20,
+html[data-theme='light'] .border-emerald-300\/18,
+html[data-theme='light'] .border-emerald-300\/15 {
+  border-color: rgb(23 107 75 / 0.28) !important;
+}
+html[data-theme='light'] .border-sky-300\/45,
+html[data-theme='light'] .border-sky-300\/40,
+html[data-theme='light'] .border-sky-300\/35,
+html[data-theme='light'] .border-sky-300\/25 {
+  border-color: rgb(7 89 133 / 0.28) !important;
+}
+html[data-theme='light'] .bg-emerald-300\/\[0\.025\],
+html[data-theme='light'] .bg-emerald-300\/\[0\.035\],
+html[data-theme='light'] .bg-emerald-300\/\[0\.045\],
+html[data-theme='light'] .bg-emerald-300\/\[0\.06\] {
+  background-color: rgb(23 107 75 / 0.07) !important;
+}
+html[data-theme='light'] .bg-sky-300\/\[0\.06\] {
+  background-color: rgb(7 89 133 / 0.07) !important;
 }
 
 /* Markdown artifacts are an isolated dark document canvas in both app themes. */

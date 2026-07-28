@@ -278,6 +278,13 @@ function getAnalyticsPage(route) {
 export default function App() {
   const { t, language } = useI18n()
   const [agents, setAgents] = useState([])
+  const [runner, setRunner] = useState({
+    online: false,
+    connected: false,
+    canExecute: false,
+    pairingAvailable: false,
+    label: 'Owner Mac',
+  })
   const [runs, setRuns] = useState([])
   const [views, setViews] = useState({})
   const [projectLikes, setProjectLikes] = useState({})
@@ -403,11 +410,19 @@ export default function App() {
   )
 
   useEffect(() => {
+    if (!auth.loaded) return
     fetch('/api/agents')
       .then((r) => r.json())
-      .then((d) => setAgents(d.agents))
+      .then((d) => {
+        setAgents(d.agents || [])
+        if (d.runner) setRunner(d.runner)
+      })
+      .catch(() => {
+        setAgents([])
+        setRunner((current) => ({ ...current, online: false, connected: false, canExecute: false }))
+      })
     refresh()
-  }, [refresh])
+  }, [refresh, auth.loaded, auth.email])
 
   // WebSocket 实时更新（断线自动重连）
   useEffect(() => {
@@ -900,7 +915,13 @@ export default function App() {
               <SponsorCard />
             </div>
 
-            <TaskForm agents={agents} onSubmit={submitTask} user={auth.email} onLogin={login} />
+            <TaskForm
+              agents={agents}
+              runner={runner}
+              onSubmit={submitTask}
+              user={auth.email}
+              onLogin={login}
+            />
 
             <div className="mt-10 flex items-center gap-1 border-b border-white/10">
               {[

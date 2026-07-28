@@ -24,7 +24,7 @@ if (health.service !== 'touchstone-edge' || !health.siteOnline) {
   throw new Error(`Production is not served by touchstone-edge: ${JSON.stringify(health)}`)
 }
 
-const publicIndex = await (await fetchOk('/')).text()
+const publicIndex = await (await fetchOk(`/?verify=${encodeURIComponent(expectedAsset)}`)).text()
 const publicAsset = assetPathFromHtml(publicIndex)
 if (publicAsset !== expectedAsset) {
   throw new Error(`Production references ${publicAsset}, expected ${expectedAsset}`)

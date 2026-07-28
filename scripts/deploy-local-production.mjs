@@ -103,10 +103,13 @@ async function main() {
   const localAgents = JSON.parse(await fetchText(`${LOCAL_BASE_URL}/api/agents`))
   const codex = localAgents.agents?.find((agent) => agent.id === 'codex')
   const opencode = localAgents.agents?.find((agent) => agent.id === 'opencode')
-  if (!codex?.health || typeof codex.health.compatible !== 'boolean') {
-    throw new Error('Local agent capability preflight is missing')
+  const accessControlled = localAgents.runner?.online && localAgents.runner?.canExecute === false
+  if (!accessControlled) {
+    if (!codex?.health || typeof codex.health.compatible !== 'boolean') {
+      throw new Error('Local agent capability preflight is missing')
+    }
+    if (!opencode) throw new Error('Local OpenCode adapter is missing')
   }
-  if (!opencode) throw new Error('Local OpenCode adapter is missing')
 
   const localHtml = await fetchText(`${LOCAL_BASE_URL}/`)
   const localAsset = assetPathFromHtml(localHtml)
@@ -124,10 +127,12 @@ async function main() {
         publicUrl: PUBLIC_BASE_URL,
         publicDeployment: 'Run npm run deploy:edge after local deployment',
         health: parsedHealth,
-        agents: {
-          codex: { version: codex.health.version, compatible: codex.health.compatible },
-          opencode: { version: opencode.health.version, compatible: opencode.health.compatible },
-        },
+        agents: accessControlled
+          ? { accessControlled: true }
+          : {
+              codex: { version: codex.health.version, compatible: codex.health.compatible },
+              opencode: { version: opencode.health.version, compatible: opencode.health.compatible },
+            },
       },
       null,
       2

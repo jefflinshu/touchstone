@@ -53,6 +53,8 @@ For the `touchstone.jefflin.ai` migration checklist, see [`docs/deploy-touchston
 
 Production uses an edge-first split: Cloudflare Workers serves the website and public snapshot continuously, while login, live tasks, WebSocket events, and CLI execution are proxied to a separately protected local runner only when it is online. Stopping the local runner no longer takes the website offline.
 
+Set `TOUCHSTONE_RUNNER_OWNER_EMAILS` in production so only the listed Google account(s) can configure providers, install skills, or start local CLI tasks on that runner. Provider tokens are RSA-OAEP encrypted in the browser before crossing the Cloudflare Worker, decrypted on the connected runner, and stored in its local data directory with user-only file permissions. Set `TOUCHSTONE_REQUIRE_ENCRYPTED_CREDENTIALS=1` to reject legacy plaintext credential submissions.
+
 GA4 analytics is optional. Create a GA4 Web data stream, then build the web UI with:
 
 ```bash

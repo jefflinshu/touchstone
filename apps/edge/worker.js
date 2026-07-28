@@ -83,7 +83,20 @@ async function apiWithOfflineFallback(request, env, fetchImpl) {
     return json({ loggedIn: false, email: null, runnerOnline: false })
   }
   if (pathname === '/api/agents') {
-    return json({ agents: [], defaults: {}, runnerOnline: false })
+    return json({
+      agents: [],
+      defaults: {},
+      runnerOnline: false,
+      runner: {
+        online: false,
+        connected: false,
+        canExecute: false,
+        restricted: true,
+        pairingAvailable: false,
+        label: 'Owner Mac',
+        transport: 'protected-edge-origin',
+      },
+    })
   }
   return json(
     {

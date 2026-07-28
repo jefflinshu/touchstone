@@ -15,7 +15,9 @@ import {
   FileText,
   LockKeyhole,
   Route,
+  ShieldCheck,
   Shapes,
+  Unplug,
   Zap,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -205,7 +207,52 @@ function HealthHint({ agent }) {
   )
 }
 
-export default function TaskForm({ agents, onSubmit, user, onLogin }) {
+function RunnerStatus({ runner, user, onLogin }) {
+  const { t } = useI18n()
+  const online = Boolean(runner?.online)
+  const available = Boolean(runner?.canExecute)
+  const title = available
+    ? t('runner.connected', { label: runner.label })
+    : online
+      ? t('runner.notPaired')
+      : t('runner.offline')
+  const detail = available
+    ? t('runner.connectedHelp')
+    : online
+      ? t('runner.notPairedHelp', { label: runner?.label || 'Owner Mac' })
+      : t('runner.offlineHelp')
+
+  return (
+    <div
+      className={cn(
+        'flex flex-col gap-2 rounded-md border px-3 py-2.5 sm:flex-row sm:items-center',
+        available
+          ? 'border-emerald-300/25 bg-emerald-300/[0.045]'
+          : online
+            ? 'border-amber-300/25 bg-amber-300/[0.045]'
+            : 'border-red-300/20 bg-red-300/[0.035]'
+      )}
+    >
+      <span
+        className={cn(
+          'flex shrink-0 items-center gap-2 text-xs font-semibold',
+          available ? 'text-emerald-100' : online ? 'text-amber-200' : 'text-red-200'
+        )}
+      >
+        {available ? <ShieldCheck className="h-4 w-4" /> : <Unplug className="h-4 w-4" />}
+        {title}
+      </span>
+      <span className="text-[11px] leading-5 text-white/60">{detail}</span>
+      {!user && online && (
+        <Button type="button" variant="outline" size="sm" className="sm:ml-auto" onClick={onLogin}>
+          {t('nav.signIn')}
+        </Button>
+      )}
+    </div>
+  )
+}
+
+export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   const { t } = useI18n()
   const [prompt, setPrompt] = useState('')
   const [runners, setRunners] = useState([])
@@ -354,6 +401,11 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
+    if (!runner?.canExecute) {
+      setError(runner?.online ? t('runner.errorNotPaired') : t('runner.errorOffline'))
+      if (!user && runner?.online) onLogin?.()
+      return
+    }
     if (!prompt.trim()) {
       setError(t('task.errorPrompt'))
       return
@@ -415,6 +467,8 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
   return (
     <form onSubmit={handleSubmit} className="mt-8 rounded-lg border border-white/10 bg-white/[0.02]">
       <div className="flex flex-col gap-3.5 p-5">
+        <RunnerStatus runner={runner} user={user} onLogin={onLogin} />
+
         <Textarea
           rows={3}
           className="border-0 bg-transparent px-1 py-1 text-sm focus:bg-transparent"
@@ -474,6 +528,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
             onChange={setProviders}
             user={user}
             onLogin={onLogin}
+            runner={runner}
           />
 
           <DropdownMenu>
@@ -569,7 +624,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
         </div>
 
         {showDelivery && (
-          <div className="rounded-md border border-white/10 bg-black/20 p-3">
+          <div className="rounded-md border border-white/10 bg-white/[0.025] p-3">
             <div className="flex flex-wrap items-center gap-1.5">
               {[
                 ['single-html', t('task.deliverySingleHtml')],
@@ -765,7 +820,7 @@ export default function TaskForm({ agents, onSubmit, user, onLogin }) {
                 </DropdownMenuContent>
               </DropdownMenu>
             </span>
-            <Button disabled={busy} className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase">
+            <Button disabled={busy || !runner?.canExecute} className="h-8 font-mono text-[11px] font-bold tracking-[0.15em] uppercase">
               {busy ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
               {busy ? t('task.naming') : t('task.run')}
               {!busy && <ArrowRight className="h-3.5 w-3.5" />}
