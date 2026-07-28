@@ -740,6 +740,26 @@ export default function App() {
                       X-1
                       <ExternalLink className="h-3.5 w-3.5" />
                     </a>
+                    <a
+                      href={X_PROFILE_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setMobileNavOpen(false)}
+                      className="flex h-12 items-center justify-between border-b border-white/8 px-1 font-mono text-[12px] tracking-[0.16em] text-white/65 uppercase transition-colors hover:text-white"
+                    >
+                      X
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href="https://github.com/jefflinshu/touchstone"
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setMobileNavOpen(false)}
+                      className="flex h-12 items-center justify-between border-b border-white/8 px-1 font-mono text-[12px] tracking-[0.16em] text-white/65 uppercase transition-colors hover:text-white"
+                    >
+                      GitHub
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
                   </nav>
                 </DialogPrimitive.Content>
               </DialogPrimitive.Portal>
