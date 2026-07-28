@@ -199,7 +199,6 @@ html[data-theme='light'] .bg-black\/80 {
   background-color: rgb(255 255 255 / 0.78) !important;
 }
 
-html[data-theme='light'] .top-nav-shell,
 html[data-theme='light'] .showcase-control-shell {
   background-color: #ffffff !important;
   border-color: rgb(24 24 27 / 0.12) !important;
@@ -217,10 +216,6 @@ html[data-theme='light'] .showcase-control-pill {
   background-color: #ffffff !important;
   border-color: rgb(24 24 27 / 0.12) !important;
   box-shadow: 0 12px 34px rgb(24 24 27 / 0.10) !important;
-}
-
-html[data-theme='light'] .top-nav-shell .hover\:bg-black\/5:hover {
-  background-color: rgb(24 24 27 / 0.06) !important;
 }
 
 html[data-theme='light'] .ring-\[\#0c0c0f\] {

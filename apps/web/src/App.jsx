@@ -153,33 +153,6 @@ function groupRuns(runs) {
   return groups
 }
 
-function GithubIcon({ className }) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
-    </svg>
-  )
-}
-
-function XIcon({ className }) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M9.52 6.77 15.48 0h-1.41L8.89 5.88 4.75 0H0l6.25 8.88L0 16h1.41l5.46-6.22L11.25 16H16L9.52 6.77Zm-1.93 2.2-.63-.88-5.04-6.96h2.16l4.07 5.63.63.88 5.29 7.31h-2.16L7.59 8.97Z" />
-    </svg>
-  )
-}
-
-function GoogleIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-      <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.57 5.57 0 0 1-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82Z" />
-      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0 0 12 24Z" />
-      <path fill="#FBBC05" d="M5.27 14.29A7.18 7.18 0 0 1 4.89 12c0-.8.14-1.57.38-2.29V6.62H1.29a11.99 11.99 0 0 0 0 10.76l3.98-3.09Z" />
-      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.29 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96Z" />
-    </svg>
-  )
-}
-
 function ThemeMenuItems({ themeMode, resolvedTheme, onChange }) {
   const { t } = useI18n()
   return (
@@ -668,8 +641,8 @@ export default function App() {
   return (
     <>
       <div className="bg-arena" />
-      <header className="sticky top-0 z-40 bg-[#09090b]/72 px-3 py-2 backdrop-blur-xl sm:px-6">
-        <div className="top-nav-shell mx-auto flex h-12 max-w-[1400px] items-center gap-2.5 rounded-full border border-white/10 bg-black/36 px-3 shadow-[0_18px_64px_rgba(0,0,0,0.30)] backdrop-blur-2xl sm:gap-4 sm:px-4">
+      <header className="sticky top-0 z-40 bg-[#09090b]/78 px-4 backdrop-blur-xl sm:px-6">
+        <div className="mx-auto flex h-14 max-w-[1400px] items-center gap-2.5 sm:gap-4">
           <a
             href="/"
             onClick={(e) => {
@@ -682,7 +655,7 @@ export default function App() {
             <img
               src="/brand/touchstone-mark.svg"
               alt=""
-              className="h-7 w-7 shrink-0 rounded-[7px] shadow-[0_0_18px_rgba(212,255,79,0.16)]"
+              className="h-7 w-7 shrink-0 rounded-[7px]"
             />
             <span className="hidden min-w-0 sm:block">
               <span className="pixel-cycle block font-pixel text-[15px] leading-none tracking-[0.2em] text-white">
@@ -690,16 +663,16 @@ export default function App() {
               </span>
             </span>
           </a>
-          <nav className="ml-2 hidden items-center gap-1 md:flex">
+          <nav className="ml-4 hidden h-full items-center gap-5 md:flex">
             {navItems.map((item) => (
               <button
                 key={item.key}
                 type="button"
                 onClick={item.onSelect}
-                className={`h-8 cursor-pointer rounded-full px-3 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors ${
+                className={`relative h-full cursor-pointer px-0 font-mono text-[10px] tracking-[0.16em] uppercase transition-colors after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px after:origin-left after:transition-transform ${
                   route.page === item.key
-                    ? 'border border-acid bg-acid text-black'
-                    : 'border border-transparent text-white/60 hover:border-white/25 hover:bg-black/5 hover:text-white'
+                    ? 'text-acid after:scale-x-100 after:bg-acid'
+                    : 'text-white/55 after:scale-x-0 after:bg-white/30 hover:text-white hover:after:scale-x-100'
                 }`}
               >
                 {item.label}
@@ -709,7 +682,7 @@ export default function App() {
               href={X1_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex h-8 items-center gap-1 rounded-full border border-transparent px-3 font-mono text-[10px] tracking-[0.16em] text-white/60 uppercase transition-colors hover:border-white/25 hover:bg-black/5 hover:text-white"
+              className="flex h-full items-center gap-1 font-mono text-[10px] tracking-[0.16em] text-white/55 uppercase transition-colors hover:text-white"
             >
               X-1
               <ExternalLink className="h-3 w-3 opacity-55" />
@@ -721,7 +694,7 @@ export default function App() {
                 <button
                   type="button"
                   title="Menu"
-                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white md:hidden"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center text-white/45 outline-none transition-colors hover:text-white md:hidden"
                 >
                   <Menu className="h-4 w-4" />
                 </button>
@@ -734,11 +707,11 @@ export default function App() {
                       <img src="/brand/touchstone-mark.svg" alt="" className="h-7 w-7 rounded-[7px]" />
                       <span className="font-pixel text-[14px] tracking-[0.18em] text-white">MENU</span>
                     </div>
-                    <DialogPrimitive.Close className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/12 text-white/55 transition-colors hover:border-white/28 hover:text-white">
+                    <DialogPrimitive.Close className="flex h-8 w-8 cursor-pointer items-center justify-center text-white/55 transition-colors hover:text-white">
                       <X className="h-4 w-4" />
                     </DialogPrimitive.Close>
                   </div>
-                  <nav className="mt-8 flex flex-col gap-2">
+                  <nav className="mt-8 flex flex-col">
                     {navItems.map((item) => (
                       <button
                         key={item.key}
@@ -748,10 +721,10 @@ export default function App() {
                           trackEvent(`${item.event}_mobile`)
                           setMobileNavOpen(false)
                         }}
-                        className={`flex h-12 cursor-pointer items-center justify-between rounded-full border px-4 font-mono text-[12px] tracking-[0.16em] uppercase transition-colors ${
+                        className={`flex h-12 cursor-pointer items-center justify-between border-b border-white/8 px-1 font-mono text-[12px] tracking-[0.16em] uppercase transition-colors ${
                           route.page === item.key
-                            ? 'border-acid bg-acid text-black'
-                            : 'border-white/12 bg-white/[0.04] text-white/70 hover:border-white/30 hover:text-white'
+                            ? 'text-acid'
+                            : 'text-white/65 hover:text-white'
                         }`}
                       >
                         {item.label}
@@ -762,7 +735,7 @@ export default function App() {
                       target="_blank"
                       rel="noreferrer"
                       onClick={() => setMobileNavOpen(false)}
-                      className="flex h-12 items-center justify-between rounded-full border border-white/12 bg-white/[0.04] px-4 font-mono text-[12px] tracking-[0.16em] text-white/70 uppercase transition-colors hover:border-white/30 hover:text-white"
+                      className="flex h-12 items-center justify-between border-b border-white/8 px-1 font-mono text-[12px] tracking-[0.16em] text-white/65 uppercase transition-colors hover:text-white"
                     >
                       X-1
                       <ExternalLink className="h-3.5 w-3.5" />
@@ -781,28 +754,28 @@ export default function App() {
               href={X_PROFILE_URL}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-white/40 transition-colors hover:text-white"
+              className="hidden font-mono text-[10px] tracking-[0.14em] text-white/45 uppercase transition-colors hover:text-white sm:inline"
               title="X"
             >
-              <XIcon className="h-4 w-4" />
+              X
             </a>
             <a
               href="https://github.com/jefflinshu/touchstone"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 text-white/40 transition-colors hover:text-white"
+              className="hidden font-mono text-[10px] tracking-[0.14em] text-white/45 uppercase transition-colors hover:text-white sm:inline"
               title="GitHub"
             >
-              <GithubIcon className="h-4 w-4" />
+              GitHub
             </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
                   type="button"
                   title={t('common.language')}
-                  className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/45 outline-none transition-colors hover:border-white/25 hover:text-white"
+                  className="h-8 cursor-pointer font-mono text-[10px] tracking-[0.14em] text-white/45 uppercase outline-none transition-colors hover:text-white"
                 >
-                  <Globe2 className="h-4 w-4" />
+                  {language}
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-[190px] font-mono text-[11px]">
@@ -835,13 +808,13 @@ export default function App() {
                 </DropdownMenu>
               ) : (
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="sm"
                   disabled={loggingIn}
                   onClick={login}
-                  className="h-8 rounded-full gap-2 font-mono text-[10px] tracking-[0.15em] uppercase"
+                  className="h-8 px-0 font-mono text-[10px] tracking-[0.15em] uppercase hover:bg-transparent"
                 >
-                  {loggingIn ? <Loader2 className="h-3 w-3 animate-spin" /> : <GoogleIcon className="h-3 w-3" />}
+                  {loggingIn ? <Loader2 className="h-3 w-3 animate-spin" /> : null}
                   {loggingIn ? t('nav.waitingAuth') : t('nav.signIn')}
                 </Button>
               ))}
