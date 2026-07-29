@@ -4,6 +4,7 @@ import os from 'node:os'
 import path from 'node:path'
 import test from 'node:test'
 import {
+  allocateRunFolder,
   artifactTypeForEntry,
   expectedArtifactType,
   findArtifact,
@@ -55,3 +56,37 @@ test('falls back to another supported artifact when the requested type is missin
   })
 })
 
+test('gives every run in a batch its own folder, including queued ones', () => {
+  // 排队中的 run 还没建目录，所以只靠文件系统判重会让它们撞在一起。
+  const claimed = new Set()
+  const exists = () => false
+  const folders = Array.from({ length: 4 }, () =>
+    allocateRunFolder('demo', 'claude-haiku', { claimed, exists })
+  )
+  assert.deepEqual(folders, [
+    'demo/claude-haiku',
+    'demo/claude-haiku_2',
+    'demo/claude-haiku_3',
+    'demo/claude-haiku_4',
+  ])
+  assert.equal(new Set(folders).size, folders.length)
+})
+
+test('skips folders that already exist on disk', () => {
+  const onDisk = new Set(['claude-haiku', 'claude-haiku_2'])
+  assert.equal(
+    allocateRunFolder('demo', 'claude-haiku', {
+      claimed: new Set(),
+      exists: (_project, name) => onDisk.has(name),
+    }),
+    'demo/claude-haiku_3'
+  )
+})
+
+test('scopes folder claims to their project', () => {
+  const claimed = new Set(['other/claude-haiku'])
+  assert.equal(
+    allocateRunFolder('demo', 'claude-haiku', { claimed, exists: () => false }),
+    'demo/claude-haiku'
+  )
+})

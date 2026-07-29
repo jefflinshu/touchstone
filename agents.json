@@ -78,7 +78,10 @@
         "doc": "https://github.com/google-gemini/gemini-cli"
       },
       "auth": {
-        "files": ["~/.gemini/oauth_creds.json"],
+        "files": [
+          { "path": "~/.gemini/oauth_creds.json" },
+          { "path": "~/.gemini/google_accounts.json", "requireJsonField": "active" }
+        ],
         "env": ["GEMINI_API_KEY", "GOOGLE_API_KEY"],
         "loginHint": "终端运行 gemini 完成 Google 账号授权（浏览器登录一次即可）"
       }
@@ -115,6 +118,7 @@
   ],
   "defaults": {
     "timeoutMinutes": 20,
+    "maxConcurrentRuns": 4,
     "git": { "autoCommit": true, "autoPush": true },
     "autoArtifactHint": true,
     "artifactHint": "请在当前工作目录生成最终静态作品，可以包含 HTML/CSS/JS/图片/字体/音频/模型等相对路径资源；必须包含一个可以直接在浏览器中打开运行的 HTML 入口，优先命名为 index.html。所有资源必须位于当前目录内并使用相对路径，不要依赖网络 CDN、localhost 服务、密钥或父目录文件。完成后确保入口 HTML 打开即可看到效果。",

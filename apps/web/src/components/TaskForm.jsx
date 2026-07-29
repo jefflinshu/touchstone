@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import {
   Loader2,
   ArrowRight,
@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Shapes,
   Unplug,
+  CopyPlus,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
@@ -30,10 +31,26 @@ import AgentIcon from './AgentIcon.jsx'
 import ProviderManager from './ProviderManager.jsx'
 import { cn } from '@/lib/utils'
 import { useI18n } from '@/i18n.jsx'
+import {
+  readJson,
+  readString,
+  restoreRunners,
+  restoreSelectedSkills,
+  writeJson,
+  writeString,
+} from '@/lib/persistedState'
 
 let uid = 0
+const nextRunnerKey = () => ++uid
+// 一次任务只挂载一个 Skill。CLI 只会展开 prompt 开头的第一个 `/<skill>`，
+// 多挂的部分只能靠模型自觉加载，不能保证生效，所以干脆不给这个选项。
+const MAX_SELECTED_SKILLS = 1
+// 历史上这两个键没有前缀，保持原样以免用户已保存的交付约束在升级后丢失。
 const DELIVERY_STORAGE_KEY = 'touchstone-delivery-constraint'
 const DELIVERY_MODE_STORAGE_KEY = 'touchstone-delivery-mode'
+const RUNNERS_STORAGE_KEY = 'runners'
+const DRAFT_STORAGE_KEY = 'prompt-draft'
+const SKILLS_STORAGE_KEY = 'selected-skills'
 const SINGLE_HTML_CONSTRAINT =
   '请把最终作品交付为当前工作目录中的一个自包含 index.html。CSS 和 JavaScript 必须内联；小型图片、字体或其他必要资源应尽量使用 data URL 内嵌。不要创建需要构建步骤才能运行的源码项目，不要依赖其他网站、网络 CDN、localhost 服务、密钥或父目录文件。直接双击打开 index.html 时，核心内容与交互必须可用。'
 const SINGLE_SVG_CONSTRAINT =
@@ -44,19 +61,11 @@ const STATIC_FOLDER_CONSTRAINT =
   '请在当前工作目录生成最终静态作品。必须包含一个可以直接在浏览器中打开运行的 HTML 入口，优先命名为 index.html。所有资源必须位于当前目录内并使用相对路径，不要依赖网络 CDN、localhost 服务、密钥或父目录文件。'
 
 function initialDeliveryConstraint() {
-  try {
-    return localStorage.getItem(DELIVERY_STORAGE_KEY) || SINGLE_HTML_CONSTRAINT
-  } catch {
-    return SINGLE_HTML_CONSTRAINT
-  }
+  return readString(DELIVERY_STORAGE_KEY, '', { raw: true }) || SINGLE_HTML_CONSTRAINT
 }
 
 function initialDeliveryMode() {
-  try {
-    return localStorage.getItem(DELIVERY_MODE_STORAGE_KEY) || 'single-html'
-  } catch {
-    return 'single-html'
-  }
+  return readString(DELIVERY_MODE_STORAGE_KEY, '', { raw: true }) || 'single-html'
 }
 
 function ModelPicker({ agent, provider, catalog, value, onChange }) {
@@ -285,9 +294,19 @@ function RunnerStatus({ runner, user, onLogin }) {
   )
 }
 
-export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
+export default function TaskForm({
+  agents,
+  runner,
+  onSubmit,
+  user,
+  onLogin,
+  activeRuns = 0,
+  queuedRuns = 0,
+  maxConcurrentRuns = 0,
+}) {
   const { t } = useI18n()
-  const [prompt, setPrompt] = useState('')
+  // 草稿写在本机：误刷新或切页面不该丢掉正在写的 prompt。
+  const [prompt, setPrompt] = useState(() => readString(DRAFT_STORAGE_KEY, ''))
   const [runners, setRunners] = useState([])
   const [publish, setPublish] = useState(false)
   const [skills, setSkills] = useState([])
@@ -295,7 +314,11 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   const [selectedSkills, setSelectedSkills] = useState([])
   const [installingSkill, setInstallingSkill] = useState('')
   const [skillsError, setSkillsError] = useState('')
+  // 输入框里打 `/` 时唤出的 Skill 选择器
+  const [slashMenu, setSlashMenu] = useState({ open: false, query: '' })
+  const promptRef = useRef(null)
   const [providers, setProviders] = useState([])
+  const [providersLoaded, setProvidersLoaded] = useState(false)
   const [modelCatalogs, setModelCatalogs] = useState({})
   const [showDelivery, setShowDelivery] = useState(false)
   const [deliveryPreset, setDeliveryPreset] = useState(initialDeliveryMode)
@@ -303,19 +326,56 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
 
-  // 默认：三个 CLI 各一个 runner，模型选列表第一个
+  // 首次拿到 agents/providers 后恢复上次的参赛者配置；没有存档时才回落到
+  // 「每个就绪的 CLI 各一个」。未就绪的（例如未登录的 Gemini）不自动入选，
+  // 但仍留在下拉里可手动添加。
+  const restoredRunners = useRef(false)
+  // 在下面的回写 effect 之前声明，避免读到暂存死区。
+  const restoredSkills = useRef(false)
   useEffect(() => {
-    if (agents.length && runners.length === 0) {
-      const readyAgents = agents.filter((agent) => agent.health?.ready !== false)
-      setRunners((readyAgents.length ? readyAgents : agents).map((a) => ({
-        key: ++uid,
-        agentId: a.id,
-        model: a.models?.[0] || '',
-        providerId: '',
-        strictModel: true,
-      })))
+    if (restoredRunners.current || !agents.length) return
+    // Provider 还在路上时先等一拍，否则存档里的 Provider 会被误判为已删除。
+    if (user && !providersLoaded) return
+    restoredRunners.current = true
+
+    const stored = restoreRunners(readJson(RUNNERS_STORAGE_KEY, []), {
+      agents,
+      providers,
+      nextKey: nextRunnerKey,
+    })
+    if (stored.length) {
+      setRunners(stored)
+      return
     }
-  }, [agents]) // eslint-disable-line react-hooks/exhaustive-deps
+    const readyAgents = agents.filter((agent) => agent.health?.ready)
+    if (!readyAgents.length) return
+    setRunners(readyAgents.map((a) => ({
+      key: nextRunnerKey(),
+      agentId: a.id,
+      model: a.models?.[0] || '',
+      providerId: '',
+      strictModel: true,
+    })))
+  }, [agents, providers, providersLoaded, user]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // 存档只保留可复原的字段，key 是运行时序号，不写进去。
+  useEffect(() => {
+    if (!restoredRunners.current) return
+    writeJson(
+      RUNNERS_STORAGE_KEY,
+      runners.map(({ agentId, model, providerId, strictModel }) => ({ agentId, model, providerId, strictModel }))
+    )
+  }, [runners])
+
+  useEffect(() => {
+    writeString(DRAFT_STORAGE_KEY, prompt)
+  }, [prompt])
+
+  useEffect(() => {
+    // 恢复完成前不要回写，否则初始的空数组会覆盖掉存档。
+    if (!restoredSkills.current) return
+    writeJson(SKILLS_STORAGE_KEY, selectedSkills)
+  }, [selectedSkills])
 
   const agentOf = (id) => agents.find((a) => a.id === id)
   const targetAgentIds = [...new Set(runners.map((runner) => runner.agentId))]
@@ -325,10 +385,7 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
       setSkills(nextSkills)
       return
     }
-    if (!user) {
-      setSkills([])
-      return
-    }
+    // 本机已装的 Skill 是只读信息，未登录也能浏览。
     try {
       const response = await fetch('/api/skills')
       const data = await response.json().catch(() => ({}))
@@ -348,6 +405,8 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   useEffect(() => {
     if (!user) {
       setProviders([])
+      // 未登录时没有 Provider 可拉，直接算加载完成，否则恢复逻辑会一直等。
+      setProvidersLoaded(true)
       return
     }
     fetch('/api/providers')
@@ -358,6 +417,7 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
       })
       .then((data) => setProviders(data.providers || []))
       .catch(() => setProviders([]))
+      .finally(() => setProvidersLoaded(true))
   }, [user])
 
   useEffect(() => {
@@ -377,19 +437,42 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem(DELIVERY_STORAGE_KEY, deliveryConstraint)
-      localStorage.setItem(DELIVERY_MODE_STORAGE_KEY, deliveryPreset)
+      writeString(DELIVERY_STORAGE_KEY, deliveryConstraint, { raw: true })
+      writeString(DELIVERY_MODE_STORAGE_KEY, deliveryPreset, { raw: true })
     } catch {}
   }, [deliveryConstraint, deliveryPreset])
 
+  // Skill 按 Agent 生效：只有支持 slash 展开的 Agent 会真的加载它。
+  // 只要有一个这样的 Agent 参赛就允许挂载，其余 Agent 会跳过（明确告知用户）。
+  const skillCapableAgentIds = useMemo(
+    () => targetAgentIds.filter((agentId) => agentOf(agentId)?.slashSkills),
+    [agents, runners] // eslint-disable-line react-hooks/exhaustive-deps
+  )
+  const skillsUsable = skillCapableAgentIds.length > 0
+  const skillSkippedAgents = useMemo(
+    () => targetAgentIds.filter((agentId) => !agentOf(agentId)?.slashSkills).map((agentId) => agentOf(agentId)?.name || agentId),
+    [agents, runners] // eslint-disable-line react-hooks/exhaustive-deps
+  )
+
+  // Skill 列表和参赛者都就位后，先恢复上次挂载的 Skill，之后每次变化都重新校验。
+  // 两者都要等：Skill 列表先到而 runners 还没恢复时，capableAgentIds 是空的，
+  // 会把存档里本来合法的 Skill 判成失效并清掉。
   useEffect(() => {
-    setSelectedSkills((current) =>
-      current.filter((id) => {
-        const skill = skills.find((item) => item.id === id)
-        return skill && targetAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+    if (!skills.length || !runners.length) return
+    const validate = (ids) =>
+      restoreSelectedSkills(ids, {
+        skills,
+        capableAgentIds: skillCapableAgentIds,
+        max: MAX_SELECTED_SKILLS,
       })
-    )
-  }, [skills, runners]) // eslint-disable-line react-hooks/exhaustive-deps
+    if (!restoredSkills.current) {
+      restoredSkills.current = true
+      const stored = readJson(SKILLS_STORAGE_KEY, [])
+      setSelectedSkills((current) => validate(current.length ? current : stored))
+      return
+    }
+    setSelectedSkills(validate)
+  }, [skills, runners, skillsUsable]) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function installSkill(skill) {
     if (!user) {
@@ -421,6 +504,45 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
     } finally {
       setInstallingSkill('')
     }
+  }
+
+  // 只列出真正能被加载的 Skill：已装在支持 slash 展开的 Agent 上，
+  // 且当前所有参赛 Agent 都装了它。
+  const availableSkills = useMemo(
+    () =>
+      skills.filter(
+        (skill) =>
+          skill.loadable &&
+          skillCapableAgentIds.length > 0 &&
+          skillCapableAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+      ),
+    [skills, runners] // eslint-disable-line react-hooks/exhaustive-deps
+  )
+
+  const slashMatches = useMemo(() => {
+    if (!slashMenu.open) return []
+    const query = slashMenu.query.trim().toLowerCase()
+    const pool = skillsUsable ? availableSkills : []
+    if (!query) return pool.slice(0, 8)
+    return pool
+      .filter((skill) => skill.id.toLowerCase().includes(query) || skill.name?.toLowerCase().includes(query))
+      .slice(0, 8)
+  }, [slashMenu, availableSkills, skillsUsable])
+
+  // 行首（或空白后）的 `/` 才唤出选择器，避免误伤正文里的斜杠和路径。
+  function syncSlashMenu(value, caret) {
+    const upToCaret = value.slice(0, caret)
+    const match = upToCaret.match(/(?:^|\s)\/([a-z0-9._-]*)$/i)
+    setSlashMenu(match ? { open: true, query: match[1] } : { open: false, query: '' })
+  }
+
+  function pickSkill(skill) {
+    setSelectedSkills([skill.id])
+    setSkillsError('')
+    setSlashMenu({ open: false, query: '' })
+    // 把触发用的 `/xxx` 从正文里删掉——真正的 slash 由服务端拼到 prompt 最前面。
+    setPrompt((current) => current.replace(/(?:^|\s)\/[a-z0-9._-]*$/i, (matched) => (matched.startsWith('/') ? '' : ' ')))
+    promptRef.current?.focus()
   }
 
   function chooseDeliveryPreset(preset) {
@@ -500,18 +622,102 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   return (
     <form onSubmit={handleSubmit} className="mt-8 rounded-xl border border-white/12 bg-white/[0.02] shadow-[0_18px_60px_rgba(0,0,0,0.04)]">
       <div className="flex min-h-[180px] flex-col p-4 sm:p-5">
-        <Textarea
-          rows={3}
-          className="min-h-[88px] resize-none border-0 bg-transparent px-2 py-2 text-[15px] leading-7 placeholder:text-white/35 focus:bg-transparent"
-          placeholder={t('task.placeholder')}
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-        />
+        <div className="relative">
+          <Textarea
+            ref={promptRef}
+            rows={3}
+            className="min-h-[88px] resize-none border-0 bg-transparent px-2 py-2 text-[15px] leading-7 placeholder:text-white/35 focus:bg-transparent"
+            placeholder={t('task.placeholder')}
+            value={prompt}
+            onChange={(e) => {
+              setPrompt(e.target.value)
+              syncSlashMenu(e.target.value, e.target.selectionStart ?? e.target.value.length)
+            }}
+            onKeyDown={(event) => {
+              if (!slashMenu.open) return
+              if (event.key === 'Escape') {
+                event.preventDefault()
+                setSlashMenu({ open: false, query: '' })
+              }
+              if (event.key === 'Enter' && slashMatches.length) {
+                event.preventDefault()
+                pickSkill(slashMatches[0])
+              }
+            }}
+            onBlur={() => setSlashMenu({ open: false, query: '' })}
+          />
+
+          {/* 往下展开并限高：composer 靠近页面顶部，向上弹会溢出到视口外 */}
+          {slashMenu.open && (
+            <div className="absolute top-full left-1 z-30 mt-1 max-h-[280px] w-[min(420px,calc(100vw-48px))] overflow-y-auto rounded-lg border border-white/12 bg-[#0c0c0f] shadow-2xl">
+              <p className="border-b border-white/8 px-2.5 py-1.5 font-mono text-[9px] tracking-[0.14em] text-white/40 uppercase">
+                {t('task.skillsSlashHint')}
+              </p>
+              {slashMatches.map((skill, index) => (
+                <button
+                  key={skill.id}
+                  type="button"
+                  // Textarea 的 blur 会先于 click 触发，用 mousedown 才点得中。
+                  onMouseDown={(event) => {
+                    event.preventDefault()
+                    pickSkill(skill)
+                  }}
+                  className={cn(
+                    'flex w-full items-start gap-2 px-2.5 py-2 text-left transition-colors hover:bg-white/[0.06]',
+                    index === 0 && 'bg-white/[0.03]'
+                  )}
+                >
+                  <Sparkles className="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet-300" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-mono text-[11px] text-white/85">/{skill.id}</span>
+                    {skill.description && (
+                      <span className="mt-0.5 block truncate text-[10px] leading-4 text-white/40">
+                        {skill.description}
+                      </span>
+                    )}
+                  </span>
+                </button>
+              ))}
+              {slashMatches.length === 0 && (
+                <p className="px-2.5 py-3 text-center text-[10px] text-white/35">
+                  {skillsUsable ? t('task.skillsNone') : t('task.skillsClaudeOnly')}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
 
         {error && (
           <p className="mx-2 mt-1 font-mono text-[11px] text-red-400" role="alert">
             {error}
           </p>
+        )}
+
+        {selectedSkills.length > 0 && (
+          <div className="mx-1 mt-2 flex flex-wrap items-center gap-1.5">
+            {selectedSkills.map((id) => (
+              <span
+                key={id}
+                className="flex h-6 items-center gap-1 rounded-md border border-violet-300/30 bg-violet-400/10 pr-1 pl-2 font-mono text-[10px] text-violet-200"
+              >
+                <Sparkles className="h-3 w-3" />
+                /{id}
+                <button
+                  type="button"
+                  onClick={() => setSelectedSkills([])}
+                  className="rounded p-0.5 text-violet-200/60 transition-colors hover:text-violet-100"
+                  aria-label={`${t('task.skillsRemove')} ${id}`}
+                >
+                  <X className="h-3 w-3" />
+                </button>
+              </span>
+            ))}
+            {skillSkippedAgents.length > 0 && (
+              <span className="text-[10px] text-white/40">
+                {t('task.skillsSkippedBy', { agents: skillSkippedAgents.join(', ') })}
+              </span>
+            )}
+          </div>
         )}
 
         <div className="mt-auto flex flex-col gap-3 border-t border-white/8 pt-3 sm:flex-row sm:items-center">
@@ -584,8 +790,27 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                     {r.strictModel ? <LockKeyhole className="h-3 w-3" /> : <Route className="h-3 w-3" />}
                   </button>
                 )}
+                {/* 复制出一个同 CLI、同模型、同 Provider 的参赛者：
+                    每个 run 都是独立会话，用来看同一模型跑同一题的稳定性。 */}
                 <button
                   type="button"
+                  title={t('task.duplicateRunner')}
+                  aria-label={t('task.duplicateRunner')}
+                  className="flex h-full cursor-pointer items-center border-l border-white/10 px-1.5 text-white/30 transition-colors hover:text-white"
+                  onClick={() =>
+                    setRunners((rs) => {
+                      const index = rs.findIndex((x) => x.key === r.key)
+                      const copy = { ...r, key: nextRunnerKey() }
+                      return [...rs.slice(0, index + 1), copy, ...rs.slice(index + 1)]
+                    })
+                  }
+                >
+                  <CopyPlus className="h-3 w-3" />
+                </button>
+                <button
+                  type="button"
+                  title={t('task.removeRunner')}
+                  aria-label={t('task.removeRunner')}
                   className="flex h-full cursor-pointer items-center px-1.5 text-white/30 transition-colors hover:text-red-400"
                   onClick={() => setRunners((rs) => rs.filter((x) => x.key !== r.key))}
                 >
@@ -633,6 +858,21 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
               )}
             </DropdownMenuContent>
           </DropdownMenu>
+
+          {/* 并发是全局的：连续下发多批时，超出上限的会排队而不是立即开跑。
+              这里把闸门状态显示出来，免得用户以为任务卡住了。 */}
+          {activeRuns > 0 && (
+            <span className="flex items-center gap-1.5 font-mono text-[10px] whitespace-nowrap text-white/45">
+              <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
+              {t('task.queueRunning', { count: activeRuns - queuedRuns })}
+              {queuedRuns > 0 && (
+                <span className="text-amber-300/80">· {t('task.queueWaiting', { count: queuedRuns })}</span>
+              )}
+              {maxConcurrentRuns > 0 && (
+                <span className="text-white/25">· {t('task.queueLimit', { max: maxConcurrentRuns })}</span>
+              )}
+            </span>
+          )}
           </div>
 
           <div className="flex shrink-0 items-center gap-2 self-end sm:self-auto">
@@ -717,10 +957,20 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                         align="end"
                         className="max-h-[360px] w-[min(360px,calc(100vw-32px))] overflow-y-auto p-1.5"
                       >
+                        {!skillsUsable && targetAgentIds.length > 0 && (
+                          <p className="border-b border-white/8 px-2 py-2 text-[10px] leading-4 text-amber-300">
+                            {t('task.skillsClaudeOnly')}
+                          </p>
+                        )}
                         {skills.map((skill) => {
                           const installedForAll =
                             targetAgentIds.length > 0 &&
                             targetAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+                          // 只要求能加载它的 Agent 装了它。
+                          const installedForCapable =
+                            skillCapableAgentIds.length > 0 &&
+                            skillCapableAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
+                          const selectable = installedForCapable && skill.loadable
                           const selected = selectedSkills.includes(skill.id)
                           const installing = installingSkill === skill.id
                           return (
@@ -728,10 +978,9 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                               key={skill.id}
                               onSelect={(event) => {
                                 event.preventDefault()
-                                if (installedForAll) {
-                                  setSelectedSkills((current) =>
-                                    selected ? current.filter((id) => id !== skill.id) : [...current, skill.id]
-                                  )
+                                if (selectable) {
+                                  // 单选：再点一次取消，点别的直接替换。
+                                  setSelectedSkills(selected ? [] : [skill.id])
                                 } else if (skill.installable) {
                                   installSkill(skill)
                                 }
@@ -741,10 +990,10 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                               <span className="flex h-4 w-4 shrink-0 items-center justify-center">
                                 {installing ? (
                                   <Loader2 className="h-3.5 w-3.5 animate-spin text-violet-300" />
-                                ) : installedForAll ? (
+                                ) : selectable ? (
                                   <span
                                     className={cn(
-                                      'flex h-3.5 w-3.5 items-center justify-center rounded border',
+                                      'flex h-3.5 w-3.5 items-center justify-center rounded-full border',
                                       selected
                                         ? 'border-violet-300 bg-violet-300 text-black'
                                         : 'border-white/25'

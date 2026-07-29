@@ -23,6 +23,16 @@ export const AGENT_SKILL_TARGETS = {
 
 const SAFE_SKILL_ID = /^[a-z0-9][a-z0-9._-]{0,79}$/
 
+// 只有 CLI 自己在读取 prompt 时展开 `/<skill>` 的 Agent 才算真实加载 Skill。
+// 展开发生在 CLI 层，不经过模型判断，因此是唯一可确定的注入路径。
+// 实测（Claude Code 2.1.220，--input-format stream-json）：
+//   - `/<skill>` 位于 prompt 开头 → SKILL.md 正文完整进入上下文
+//   - 同样的 slash 放在 prompt 末尾、或仅在文中点名 Skill → 完全不加载
+//   - 开头连写多个 slash → 只有第一个生效
+// 所以一次任务只挂载一个 Skill，并且必须拼在最前面。
+export const SLASH_SKILL_AGENTS = new Set(['claude'])
+export const MAX_SELECTED_SKILLS = 1
+
 export function parseSkillFrontmatter(content, fallbackName = '') {
   const source = String(content || '')
   const block = source.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/)?.[1] || ''
@@ -108,40 +118,79 @@ export function loadSkillCatalog(filePath, io = fs) {
   })
 }
 
-export function mergeSkillCatalog(catalog, installed) {
-  const installedById = new Map(installed.map((skill) => [skill.id, skill]))
-  const result = catalog.map((entry) => ({
-    ...entry,
-    installedFor: installedById.get(entry.id)?.installedFor || [],
-    locations: installedById.get(entry.id)?.locations || [],
-    installable: true,
-  }))
-  for (const local of installed) {
-    if (!result.some((skill) => skill.id === local.id)) result.push({ ...local, installable: false, popular: false })
+// `loadable` 表示这个 Skill 能否被确定性加载，即它已经装在支持 slash 展开的
+// Agent 目录下。UI 只应让 loadable 的条目可勾选，其余只是「可安装」。
+function withLoadable(skill) {
+  return {
+    ...skill,
+    loadable: (skill.installedFor || []).some((agentId) => SLASH_SKILL_AGENTS.has(agentId)),
   }
-  return result
 }
 
+export function mergeSkillCatalog(catalog, installed) {
+  const installedById = new Map(installed.map((skill) => [skill.id, skill]))
+  const result = catalog.map((entry) =>
+    withLoadable({
+      ...entry,
+      installedFor: installedById.get(entry.id)?.installedFor || [],
+      locations: installedById.get(entry.id)?.locations || [],
+      installable: true,
+    })
+  )
+  for (const local of installed) {
+    if (!result.some((skill) => skill.id === local.id)) {
+      result.push(withLoadable({ ...local, installable: false, popular: false }))
+    }
+  }
+  // 本机真正能加载的排在前面，让 `/` 选择器第一屏就是可用项。
+  return result.sort((left, right) => Number(right.loadable) - Number(left.loadable) || left.name.localeCompare(right.name))
+}
+
+// Skill 按 Agent 生效，不是按整个任务生效：只有支持 slash 展开的 Agent 会真的
+// 加载它。所以这里只在「没有任何一个参赛 Agent 能加载」时才判为错误；能加载的
+// 那部分照常挂载，不能加载的由 skillTargetSummary 明确告诉用户。
 export function selectedSkillIssues(selectedSkillIds, skills, agentIds) {
   const byId = new Map(skills.map((skill) => [skill.id, skill]))
   const issues = []
+  if (selectedSkillIds.length > MAX_SELECTED_SKILLS) {
+    issues.push(`一次任务最多挂载 ${MAX_SELECTED_SKILLS} 个 Skill，才能保证它被真实加载`)
+  }
+  const capableAgentIds = agentIds.filter((agentId) => SLASH_SKILL_AGENTS.has(agentId))
   for (const id of selectedSkillIds) {
     const skill = byId.get(id)
     if (!skill) {
       issues.push(`未知 Skill：${id}`)
       continue
     }
-    const missing = agentIds.filter((agentId) => !skill.installedFor.includes(agentId))
+    if (!capableAgentIds.length) {
+      issues.push(
+        `Skill ${id} 无法在所选 Agent 上确定性加载；目前只有 ${[...SLASH_SKILL_AGENTS].join(', ')} 支持`
+      )
+      continue
+    }
+    const missing = capableAgentIds.filter((agentId) => !skill.installedFor.includes(agentId))
     if (missing.length) issues.push(`Skill ${id} 尚未安装到：${missing.join(', ')}`)
   }
-  return issues
+  return [...new Set(issues)]
 }
 
-export function buildSelectedSkillsPrompt(selectedSkillIds) {
-  if (!selectedSkillIds.length) return ''
-  return `\n\n【已选择的 Agent Skills】\n${selectedSkillIds
-    .map((id) => `- ${id}`)
-    .join('\n')}\n开始工作前，请加载并遵循以上已安装 Skill；若 Skill 指令与用户明确要求冲突，以用户要求为准。`
+// 用于把「谁会加载、谁不会」如实回给界面，避免出现假绿灯。
+export function skillTargetSummary(selectedSkillIds, agentIds) {
+  if (!selectedSkillIds.length) return { loadedBy: [], skippedBy: [] }
+  return {
+    loadedBy: agentIds.filter((agentId) => SLASH_SKILL_AGENTS.has(agentId)),
+    skippedBy: agentIds.filter((agentId) => !SLASH_SKILL_AGENTS.has(agentId)),
+  }
+}
+
+export function agentLoadsSkills(agentId) {
+  return SLASH_SKILL_AGENTS.has(agentId)
+}
+
+// 返回值必须拼在最终 prompt 的最前面（见 SLASH_SKILL_AGENTS 上方说明）。
+export function buildSelectedSkillsPrefix(selectedSkillIds) {
+  const id = selectedSkillIds[0]
+  return id ? `/${id}\n\n` : ''
 }
 
 export function normalizeDeliveryConstraint(value, fallback, maxLength = 6000) {

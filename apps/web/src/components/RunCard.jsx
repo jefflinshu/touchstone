@@ -24,10 +24,12 @@ import ArtifactPreview, { artifactTypeOf, artifactUrlOf } from './ArtifactPrevie
 import { cn } from '@/lib/utils'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
-import { runVisibility } from '@/lib/runVisibility'
+import { isActiveRun, runVisibility } from '@/lib/runVisibility'
 
 const STATUS = {
   pending: { labelKey: 'run.status.pending', dot: 'bg-white/40', text: 'text-white/40' },
+  // 已创建但因并发上限还没启动进程，等前面的任务退出后自动接上。
+  queued: { labelKey: 'run.status.queued', dot: 'bg-amber-300/70', text: 'text-amber-300/80' },
   running: { labelKey: 'run.status.running', dot: 'bg-acid pulse-dot', text: 'text-acid' },
   done: { labelKey: 'run.status.done', dot: 'bg-emerald-400', text: 'text-emerald-400' },
   failed: { labelKey: 'run.status.failed', dot: 'bg-red-500', text: 'text-red-400' },
@@ -119,12 +121,12 @@ function LikeButton({ run }) {
 
 export default function RunCard({ run, log, events, onStop, onDelete, onFetchActivity, forceView = null }) {
   const { t } = useI18n()
-  const [showActivity, setShowActivity] = useState(() => run.status === 'running' || run.status === 'pending')
+  const [showActivity, setShowActivity] = useState(() => isActiveRun(run))
   const [showFull, setShowFull] = useState(false)
   const [frameKey, setFrameKey] = useState(0)
   const [, forceTick] = useState(0)
 
-  const isLive = run.status === 'running' || run.status === 'pending'
+  const isLive = isActiveRun(run)
   const st = STATUS[run.status] || STATUS.pending
   const model = run.model || run.resolvedModel
   const visibility = runVisibility(run)
