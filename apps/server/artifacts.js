@@ -27,6 +27,20 @@ const PREFERRED_NAMES = {
   markdown: ['plan.md', 'index.md', 'readme.md', 'result.md', 'output.md'],
 }
 
+// 为一批 run 分配互不冲突的目录名。
+//
+// 目录要到 run 真正启动时才创建，所以排队中的 run 在磁盘上还不存在；只查文件
+// 系统会让两个排队的 run 拿到同一个名字，跑起来后互相覆盖产物。`claimed` 用来
+// 带上那些已分配但尚未落盘的名字。
+export function allocateRunFolder(projectSlug, base, { claimed, exists }) {
+  const taken = (name) => claimed.has(`${projectSlug}/${name}`) || exists(projectSlug, name)
+  let sub = base
+  for (let n = 2; taken(sub); n += 1) sub = `${base}_${n}`
+  const folder = `${projectSlug}/${sub}`
+  claimed.add(folder)
+  return folder
+}
+
 export function normalizeDeliveryMode(value, fallback = 'single-html') {
   const mode = String(value || '').trim().toLowerCase()
   return DELIVERY_MODES.has(mode) ? mode : fallback

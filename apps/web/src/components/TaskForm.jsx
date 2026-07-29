@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Shapes,
   Unplug,
+  CopyPlus,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/input'
@@ -30,13 +31,26 @@ import AgentIcon from './AgentIcon.jsx'
 import ProviderManager from './ProviderManager.jsx'
 import { cn } from '@/lib/utils'
 import { useI18n } from '@/i18n.jsx'
+import {
+  readJson,
+  readString,
+  restoreRunners,
+  restoreSelectedSkills,
+  writeJson,
+  writeString,
+} from '@/lib/persistedState'
 
 let uid = 0
+const nextRunnerKey = () => ++uid
 // 一次任务只挂载一个 Skill。CLI 只会展开 prompt 开头的第一个 `/<skill>`，
 // 多挂的部分只能靠模型自觉加载，不能保证生效，所以干脆不给这个选项。
 const MAX_SELECTED_SKILLS = 1
+// 历史上这两个键没有前缀，保持原样以免用户已保存的交付约束在升级后丢失。
 const DELIVERY_STORAGE_KEY = 'touchstone-delivery-constraint'
 const DELIVERY_MODE_STORAGE_KEY = 'touchstone-delivery-mode'
+const RUNNERS_STORAGE_KEY = 'runners'
+const DRAFT_STORAGE_KEY = 'prompt-draft'
+const SKILLS_STORAGE_KEY = 'selected-skills'
 const SINGLE_HTML_CONSTRAINT =
   '请把最终作品交付为当前工作目录中的一个自包含 index.html。CSS 和 JavaScript 必须内联；小型图片、字体或其他必要资源应尽量使用 data URL 内嵌。不要创建需要构建步骤才能运行的源码项目，不要依赖其他网站、网络 CDN、localhost 服务、密钥或父目录文件。直接双击打开 index.html 时，核心内容与交互必须可用。'
 const SINGLE_SVG_CONSTRAINT =
@@ -47,19 +61,11 @@ const STATIC_FOLDER_CONSTRAINT =
   '请在当前工作目录生成最终静态作品。必须包含一个可以直接在浏览器中打开运行的 HTML 入口，优先命名为 index.html。所有资源必须位于当前目录内并使用相对路径，不要依赖网络 CDN、localhost 服务、密钥或父目录文件。'
 
 function initialDeliveryConstraint() {
-  try {
-    return localStorage.getItem(DELIVERY_STORAGE_KEY) || SINGLE_HTML_CONSTRAINT
-  } catch {
-    return SINGLE_HTML_CONSTRAINT
-  }
+  return readString(DELIVERY_STORAGE_KEY, '', { raw: true }) || SINGLE_HTML_CONSTRAINT
 }
 
 function initialDeliveryMode() {
-  try {
-    return localStorage.getItem(DELIVERY_MODE_STORAGE_KEY) || 'single-html'
-  } catch {
-    return 'single-html'
-  }
+  return readString(DELIVERY_MODE_STORAGE_KEY, '', { raw: true }) || 'single-html'
 }
 
 function ModelPicker({ agent, provider, catalog, value, onChange }) {
@@ -288,9 +294,19 @@ function RunnerStatus({ runner, user, onLogin }) {
   )
 }
 
-export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
+export default function TaskForm({
+  agents,
+  runner,
+  onSubmit,
+  user,
+  onLogin,
+  activeRuns = 0,
+  queuedRuns = 0,
+  maxConcurrentRuns = 0,
+}) {
   const { t } = useI18n()
-  const [prompt, setPrompt] = useState('')
+  // 草稿写在本机：误刷新或切页面不该丢掉正在写的 prompt。
+  const [prompt, setPrompt] = useState(() => readString(DRAFT_STORAGE_KEY, ''))
   const [runners, setRunners] = useState([])
   const [publish, setPublish] = useState(false)
   const [skills, setSkills] = useState([])
@@ -302,6 +318,7 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   const [slashMenu, setSlashMenu] = useState({ open: false, query: '' })
   const promptRef = useRef(null)
   const [providers, setProviders] = useState([])
+  const [providersLoaded, setProvidersLoaded] = useState(false)
   const [modelCatalogs, setModelCatalogs] = useState({})
   const [showDelivery, setShowDelivery] = useState(false)
   const [deliveryPreset, setDeliveryPreset] = useState(initialDeliveryMode)
@@ -309,21 +326,56 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
 
-  // 默认每个就绪的 CLI 各一个 runner，模型选列表第一个。
-  // 未就绪的（例如未登录的 Gemini）不自动入选，但仍留在下拉里可手动添加。
+  // 首次拿到 agents/providers 后恢复上次的参赛者配置；没有存档时才回落到
+  // 「每个就绪的 CLI 各一个」。未就绪的（例如未登录的 Gemini）不自动入选，
+  // 但仍留在下拉里可手动添加。
+  const restoredRunners = useRef(false)
+  // 在下面的回写 effect 之前声明，避免读到暂存死区。
+  const restoredSkills = useRef(false)
   useEffect(() => {
-    if (agents.length && runners.length === 0) {
-      const readyAgents = agents.filter((agent) => agent.health?.ready)
-      if (!readyAgents.length) return
-      setRunners(readyAgents.map((a) => ({
-        key: ++uid,
-        agentId: a.id,
-        model: a.models?.[0] || '',
-        providerId: '',
-        strictModel: true,
-      })))
+    if (restoredRunners.current || !agents.length) return
+    // Provider 还在路上时先等一拍，否则存档里的 Provider 会被误判为已删除。
+    if (user && !providersLoaded) return
+    restoredRunners.current = true
+
+    const stored = restoreRunners(readJson(RUNNERS_STORAGE_KEY, []), {
+      agents,
+      providers,
+      nextKey: nextRunnerKey,
+    })
+    if (stored.length) {
+      setRunners(stored)
+      return
     }
-  }, [agents]) // eslint-disable-line react-hooks/exhaustive-deps
+    const readyAgents = agents.filter((agent) => agent.health?.ready)
+    if (!readyAgents.length) return
+    setRunners(readyAgents.map((a) => ({
+      key: nextRunnerKey(),
+      agentId: a.id,
+      model: a.models?.[0] || '',
+      providerId: '',
+      strictModel: true,
+    })))
+  }, [agents, providers, providersLoaded, user]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // 存档只保留可复原的字段，key 是运行时序号，不写进去。
+  useEffect(() => {
+    if (!restoredRunners.current) return
+    writeJson(
+      RUNNERS_STORAGE_KEY,
+      runners.map(({ agentId, model, providerId, strictModel }) => ({ agentId, model, providerId, strictModel }))
+    )
+  }, [runners])
+
+  useEffect(() => {
+    writeString(DRAFT_STORAGE_KEY, prompt)
+  }, [prompt])
+
+  useEffect(() => {
+    // 恢复完成前不要回写，否则初始的空数组会覆盖掉存档。
+    if (!restoredSkills.current) return
+    writeJson(SKILLS_STORAGE_KEY, selectedSkills)
+  }, [selectedSkills])
 
   const agentOf = (id) => agents.find((a) => a.id === id)
   const targetAgentIds = [...new Set(runners.map((runner) => runner.agentId))]
@@ -353,6 +405,8 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
   useEffect(() => {
     if (!user) {
       setProviders([])
+      // 未登录时没有 Provider 可拉，直接算加载完成，否则恢复逻辑会一直等。
+      setProvidersLoaded(true)
       return
     }
     fetch('/api/providers')
@@ -363,6 +417,7 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
       })
       .then((data) => setProviders(data.providers || []))
       .catch(() => setProviders([]))
+      .finally(() => setProvidersLoaded(true))
   }, [user])
 
   useEffect(() => {
@@ -382,8 +437,8 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem(DELIVERY_STORAGE_KEY, deliveryConstraint)
-      localStorage.setItem(DELIVERY_MODE_STORAGE_KEY, deliveryPreset)
+      writeString(DELIVERY_STORAGE_KEY, deliveryConstraint, { raw: true })
+      writeString(DELIVERY_MODE_STORAGE_KEY, deliveryPreset, { raw: true })
     } catch {}
   }, [deliveryConstraint, deliveryPreset])
 
@@ -399,20 +454,24 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
     [agents, runners] // eslint-disable-line react-hooks/exhaustive-deps
   )
 
+  // Skill 列表和参赛者都就位后，先恢复上次挂载的 Skill，之后每次变化都重新校验。
+  // 两者都要等：Skill 列表先到而 runners 还没恢复时，capableAgentIds 是空的，
+  // 会把存档里本来合法的 Skill 判成失效并清掉。
   useEffect(() => {
-    setSelectedSkills((current) =>
-      current
-        .filter((id) => {
-          const skill = skills.find((item) => item.id === id)
-          // 只要求能加载它的那些 Agent 装了它。
-          return (
-            skill &&
-            skillsUsable &&
-            skillCapableAgentIds.every((agentId) => skill.installedFor?.includes(agentId))
-          )
-        })
-        .slice(0, MAX_SELECTED_SKILLS)
-    )
+    if (!skills.length || !runners.length) return
+    const validate = (ids) =>
+      restoreSelectedSkills(ids, {
+        skills,
+        capableAgentIds: skillCapableAgentIds,
+        max: MAX_SELECTED_SKILLS,
+      })
+    if (!restoredSkills.current) {
+      restoredSkills.current = true
+      const stored = readJson(SKILLS_STORAGE_KEY, [])
+      setSelectedSkills((current) => validate(current.length ? current : stored))
+      return
+    }
+    setSelectedSkills(validate)
   }, [skills, runners, skillsUsable]) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function installSkill(skill) {
@@ -731,8 +790,27 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
                     {r.strictModel ? <LockKeyhole className="h-3 w-3" /> : <Route className="h-3 w-3" />}
                   </button>
                 )}
+                {/* 复制出一个同 CLI、同模型、同 Provider 的参赛者：
+                    每个 run 都是独立会话，用来看同一模型跑同一题的稳定性。 */}
                 <button
                   type="button"
+                  title={t('task.duplicateRunner')}
+                  aria-label={t('task.duplicateRunner')}
+                  className="flex h-full cursor-pointer items-center border-l border-white/10 px-1.5 text-white/30 transition-colors hover:text-white"
+                  onClick={() =>
+                    setRunners((rs) => {
+                      const index = rs.findIndex((x) => x.key === r.key)
+                      const copy = { ...r, key: nextRunnerKey() }
+                      return [...rs.slice(0, index + 1), copy, ...rs.slice(index + 1)]
+                    })
+                  }
+                >
+                  <CopyPlus className="h-3 w-3" />
+                </button>
+                <button
+                  type="button"
+                  title={t('task.removeRunner')}
+                  aria-label={t('task.removeRunner')}
                   className="flex h-full cursor-pointer items-center px-1.5 text-white/30 transition-colors hover:text-red-400"
                   onClick={() => setRunners((rs) => rs.filter((x) => x.key !== r.key))}
                 >
@@ -780,6 +858,21 @@ export default function TaskForm({ agents, runner, onSubmit, user, onLogin }) {
               )}
             </DropdownMenuContent>
           </DropdownMenu>
+
+          {/* 并发是全局的：连续下发多批时，超出上限的会排队而不是立即开跑。
+              这里把闸门状态显示出来，免得用户以为任务卡住了。 */}
+          {activeRuns > 0 && (
+            <span className="flex items-center gap-1.5 font-mono text-[10px] whitespace-nowrap text-white/45">
+              <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
+              {t('task.queueRunning', { count: activeRuns - queuedRuns })}
+              {queuedRuns > 0 && (
+                <span className="text-amber-300/80">· {t('task.queueWaiting', { count: queuedRuns })}</span>
+              )}
+              {maxConcurrentRuns > 0 && (
+                <span className="text-white/25">· {t('task.queueLimit', { max: maxConcurrentRuns })}</span>
+              )}
+            </span>
+          )}
           </div>
 
           <div className="flex shrink-0 items-center gap-2 self-end sm:self-auto">

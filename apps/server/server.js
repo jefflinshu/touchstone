@@ -10,6 +10,7 @@ import os from 'node:os'
 import Anthropic from '@anthropic-ai/sdk'
 import { createAgentEventParser } from './agent-events.js'
 import {
+  allocateRunFolder,
   artifactTypeForEntry,
   expectedArtifactType,
   findArtifact,
@@ -2284,15 +2285,22 @@ app.post('/api/tasks', async (req, res) => {
     (agentLoadsSkills(agentId) ? buildSelectedSkillsPrefix(selectedSkills) : '') + promptBody
   const batchId = crypto.randomUUID()
   const created = []
+  // 目录要到真正启动时才创建，所以排队中的 run 在磁盘上还不存在。只查文件系统
+  // 会让两个排队的 run 拿到同一个名字并互相覆盖，所以把本批已分配的名字和所有
+  // 尚未落盘的 run 一起算进去。
+  const claimedFolders = new Set(
+    runs.filter((item) => item.status === 'queued' || item.status === 'pending').map((item) => item.folder)
+  )
 
   for (const plan of plannedRunners) {
     const { agent, capability, model, provider, strictModel } = plan
     // 目录结构：runs/<项目>/<模型>，同名冲突时追加 _2、_3…
     const projectSlug = slugify(project)
     const base = model ? `${agent.id}-${slugify(model)}` : agent.id
-    let sub = base
-    for (let n = 2; fs.existsSync(path.join(RUNS_DIR, projectSlug, sub)); n++) sub = `${base}_${n}`
-    const folder = `${projectSlug}/${sub}`
+    const folder = allocateRunFolder(projectSlug, base, {
+      claimed: claimedFolders,
+      exists: (project, name) => fs.existsSync(path.join(RUNS_DIR, project, name)),
+    })
     const run = {
       id: crypto.randomUUID(),
       batchId,

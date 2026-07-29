@@ -251,6 +251,7 @@ function getAnalyticsPage(route) {
 export default function App() {
   const { t, language } = useI18n()
   const [agents, setAgents] = useState([])
+  const [agentDefaults, setAgentDefaults] = useState({})
   const [runner, setRunner] = useState({
     online: false,
     connected: false,
@@ -388,6 +389,7 @@ export default function App() {
       .then((r) => r.json())
       .then((d) => {
         setAgents(d.agents || [])
+        setAgentDefaults(d.defaults || {})
         if (d.runner) setRunner(d.runner)
       })
       .catch(() => {
@@ -510,7 +512,9 @@ export default function App() {
     return groupRuns(runs)
   }, [runs])
 
+  // 分开数：queued 是被并发闸门挡住、还没起进程的，跟正在跑的不是一回事。
   const active = runs.filter(isActiveRun).length
+  const queued = runs.filter((run) => run.status === 'queued').length
   const currentIdx = route.page === 'project' ? groups.findIndex((g) => g.project === route.project) : -1
   const currentGroup = currentIdx >= 0 ? groups[currentIdx] : null
 
@@ -767,7 +771,10 @@ export default function App() {
             {active > 0 && (
               <span className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-acid uppercase">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-acid" />
-                {t('nav.running', { count: active })}
+                {t('nav.running', { count: active - queued })}
+                {queued > 0 && (
+                  <span className="text-amber-300/80">{t('nav.queued', { count: queued })}</span>
+                )}
               </span>
             )}
             <a
@@ -914,6 +921,9 @@ export default function App() {
               onSubmit={submitTask}
               user={auth.email}
               onLogin={login}
+              activeRuns={active}
+              queuedRuns={queued}
+              maxConcurrentRuns={agentDefaults.maxConcurrentRuns || 0}
             />
 
             <div className="mt-10 flex items-center gap-1 border-b border-white/10">
