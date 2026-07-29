@@ -6,6 +6,10 @@ import path from 'node:path'
 const VERSION_PATTERN = /(?:^|\s|v)(\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?)/m
 const ANSI_PATTERN = /\u001b\[[0-9;]*m/g
 
+// 所有 Agent 会被并发探测，冷启动时它们互相争抢 CPU 和磁盘。实测单独跑
+// `--version` 要 0.5–2.4s，并发更慢，3s 会让首屏把可用的 CLI 全判成坏的。
+const DEFAULT_PROBE_TIMEOUT_MS = 10_000
+
 export function parseCliVersion(output) {
   return String(output || '').match(VERSION_PATTERN)?.[1] || null
 }
@@ -52,12 +56,29 @@ function expandHome(value, homeDir) {
   return String(value || '').replace(/^~(?=$|\/|\\)/, homeDir)
 }
 
-function checkAuth(agent, { env, homeDir, existsSync }) {
+// 有些 CLI 登出后仍留着凭证文件，只是把内容清空（例如 Gemini CLI 的
+// google_accounts.json 会保留 {"active": null}）。所以除了文件存在，
+// 还允许声明一个必须非空的 JSON 字段。
+export function authFileSatisfied(file, { existsSync, readFileSync, homeDir }) {
+  const target = typeof file === 'string' ? { path: file } : file || {}
+  const resolved = expandHome(target.path, homeDir)
+  if (!resolved || !existsSync(resolved)) return false
+  if (!target.requireJsonField) return true
+  try {
+    const data = JSON.parse(readFileSync(resolved, 'utf8'))
+    const value = target.requireJsonField.split('.').reduce((node, key) => node?.[key], data)
+    return Array.isArray(value) ? value.length > 0 : value !== null && value !== undefined && value !== ''
+  } catch {
+    return false
+  }
+}
+
+function checkAuth(agent, { env, homeDir, existsSync, readFileSync }) {
   const auth = agent.auth || {}
   const files = Array.isArray(auth.files) ? auth.files : []
   const variables = Array.isArray(auth.env) ? auth.env : []
   if (!files.length && !variables.length) return true
-  if (files.some((file) => existsSync(expandHome(file, homeDir)))) return true
+  if (files.some((file) => authFileSatisfied(file, { existsSync, readFileSync, homeDir }))) return true
   return variables.some((key) => Boolean(env[key]))
 }
 
@@ -238,8 +259,9 @@ export function probeAgentCapability(agent, overrides = {}) {
     env: overrides.env || process.env,
     homeDir: overrides.homeDir || os.homedir(),
     existsSync: overrides.existsSync || fs.existsSync,
+    readFileSync: overrides.readFileSync || fs.readFileSync,
     runCommand: overrides.runCommand || defaultRun,
-    timeoutMs: overrides.timeoutMs || Number(agent.probeTimeoutMs || 3000),
+    timeoutMs: overrides.timeoutMs || Number(agent.probeTimeoutMs || DEFAULT_PROBE_TIMEOUT_MS),
   }
   const executable = findExecutable(agent.command, options.env.PATH || '')
   const installed = Boolean(executable)
@@ -258,8 +280,9 @@ export async function probeAgentCapabilityAsync(agent, overrides = {}) {
     env: overrides.env || process.env,
     homeDir: overrides.homeDir || os.homedir(),
     existsSync: overrides.existsSync || fs.existsSync,
+    readFileSync: overrides.readFileSync || fs.readFileSync,
     runCommandAsync: overrides.runCommandAsync || defaultRunAsync,
-    timeoutMs: overrides.timeoutMs || Number(agent.probeTimeoutMs || 3000),
+    timeoutMs: overrides.timeoutMs || Number(agent.probeTimeoutMs || DEFAULT_PROBE_TIMEOUT_MS),
   }
   const executable = findExecutable(agent.command, options.env.PATH || '')
   const installed = Boolean(executable)

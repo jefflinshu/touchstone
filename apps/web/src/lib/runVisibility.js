@@ -1,3 +1,8 @@
+// 还没有终态的 run：已创建但进程尚未启动（pending/queued）或正在跑。
+export function isActiveRun(run) {
+  return run?.status === 'running' || run?.status === 'pending' || run?.status === 'queued'
+}
+
 export function isCommunityRun(run) {
   return run?.publishState === 'published' || run?.publishSource === 'community-api'
 }

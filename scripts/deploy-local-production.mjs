@@ -20,6 +20,8 @@ const REQUIRED_BUNDLE_MARKERS = [
   'home.communityTab',
   'task.deliverySingleHtml',
   'task.skillsLocalTitle',
+  'task.skillsSlashHint',
+  'run.status.queued',
 ]
 
 function run(command, args, options = {}) {

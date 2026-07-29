@@ -30,7 +30,10 @@ import { edgeProxyAuthorized } from './edge-auth.js'
 import { createCredentialEnvelope } from './credential-envelope.js'
 import { describeRunner, resolveRunnerAccess } from './runner-access.js'
 import {
-  buildSelectedSkillsPrompt,
+  MAX_SELECTED_SKILLS,
+  SLASH_SKILL_AGENTS,
+  agentLoadsSkills,
+  buildSelectedSkillsPrefix,
   discoverInstalledSkills,
   installBundledSkill,
   loadSkillCatalog,
@@ -509,8 +512,20 @@ async function getAgentCapability(agent, force = false) {
     auth: agent.auth,
   })
   const cached = agentCapabilityCache.get(agent.id)
-  if (!force && cached?.fingerprint === fingerprint && cached.expiresAt > now) {
-    return cached.value || cached.promise
+  if (!force && cached?.fingerprint === fingerprint) {
+    if (cached.expiresAt > now) return cached.value || cached.promise
+    // 过期后先返回旧结果，后台再刷新。冷探测要几秒，不能让某个倒霉的请求
+    // 替所有人付这个代价并撞上边缘代理超时。
+    if (cached.value) {
+      cached.expiresAt = now + 60_000
+      probeAgentCapabilityAsync(agent)
+        .then((fresh) => {
+          const current = agentCapabilityCache.get(agent.id)
+          if (current?.fingerprint === fingerprint) current.value = fresh
+        })
+        .catch(() => {})
+      return cached.value
+    }
   }
   const entry = {
     fingerprint,
@@ -633,11 +648,13 @@ if (fs.existsSync(REGISTRY_FILE)) {
     runs = []
   }
 }
-// 服务重启后，残留的 running 状态标记为 interrupted
+// 服务重启后，残留的 running 状态标记为 interrupted。
+// 队列只存在内存里，重启后 queued 的任务同样不会自己恢复。
 for (const r of runs) {
-  if (r.status === 'running' || r.status === 'pending') {
+  if (r.status === 'running' || r.status === 'pending' || r.status === 'queued') {
     r.status = 'interrupted'
     r.endedAt = r.endedAt || new Date().toISOString()
+    delete r.queuePosition
   }
   // 历史记录回填实际执行模型
   if (!r.model && !r.resolvedModel) {
@@ -1041,6 +1058,49 @@ function autoCommitRun(run) {
 const liveProcs = new Map() // runId -> { proc, agent, emitEvent }
 const publishCredentials = new Map() // runId -> { idToken }
 
+// ---------- 并发闸门 ----------
+// 每个 run 都是一个独立 CLI 进程，可能吃掉数 GB 内存并大量读写磁盘。
+// 超过上限的 run 停在 queued 状态，等前面的进程退出后按入队顺序接上。
+const runQueue = [] // { run, agent, prompt, timeoutMinutes, runtimeEnv }
+
+function maxConcurrentRuns() {
+  const configured = Number(loadAgentsConfig().defaults?.maxConcurrentRuns)
+  return Number.isFinite(configured) && configured > 0 ? Math.floor(configured) : 4
+}
+
+function enqueueRun(entry) {
+  if (liveProcs.size < maxConcurrentRuns()) {
+    startRun(entry.run, entry.agent, entry.prompt, entry.timeoutMinutes, entry.runtimeEnv)
+    return
+  }
+  runQueue.push(entry)
+  entry.run.status = 'queued'
+  entry.run.queuePosition = runQueue.length
+  broadcast({ type: 'run', run: publicRun(entry.run) })
+}
+
+function drainRunQueue() {
+  while (runQueue.length && liveProcs.size < maxConcurrentRuns()) {
+    const entry = runQueue.shift()
+    // 排队期间被停止或删除的 run 不再启动。
+    if (entry.run.status !== 'queued') continue
+    delete entry.run.queuePosition
+    startRun(entry.run, entry.agent, entry.prompt, entry.timeoutMinutes, entry.runtimeEnv)
+  }
+  runQueue.forEach((entry, index) => {
+    entry.run.queuePosition = index + 1
+    broadcast({ type: 'run', run: publicRun(entry.run) })
+  })
+  saveRegistry()
+}
+
+function dropFromRunQueue(runId) {
+  const index = runQueue.findIndex((entry) => entry.run.id === runId)
+  if (index === -1) return false
+  runQueue.splice(index, 1)
+  return true
+}
+
 function startRun(run, agent, prompt, timeoutMinutes, runtimeEnv = {}) {
   const dir = path.join(RUNS_DIR, run.folder)
   fs.mkdirSync(dir, { recursive: true })
@@ -1085,6 +1145,8 @@ function startRun(run, agent, prompt, timeoutMinutes, runtimeEnv = {}) {
     run.error = String(err)
     saveRegistry()
     broadcast({ type: 'run', run: publicRun(run) })
+    // 启动失败也要让出名额，否则队列会永久卡住。
+    drainRunQueue()
     return
   }
 
@@ -1148,6 +1210,7 @@ function startRun(run, agent, prompt, timeoutMinutes, runtimeEnv = {}) {
       capturePreview(run)
       if (run.publish) publishCompletedRun(run)
     }
+    drainRunQueue()
   })
 
   proc.on('error', (err) => {
@@ -1201,10 +1264,9 @@ app.get('/api/health', (req, res) => {
 })
 
 app.get('/api/agents', async (req, res) => {
+  // 本地 CLI 的存在与健康状态是只读信息，未登录也返回，让页面能区分
+  // “没装 CLI” 和 “没登录”；能否真正下发任务由 runner.canExecute 决定。
   const runner = runnerDescriptor(req)
-  if (!runner.canExecute) {
-    return res.json({ agents: [], defaults: {}, runner })
-  }
   const cfg = loadAgentsConfig()
   res.json({
     agents: await Promise.all(cfg.agents.map(async (a) => {
@@ -1226,11 +1288,13 @@ app.get('/api/agents', async (req, res) => {
         install: a.install || null,
         preferredProtocol: a.preferredProtocol || null,
         interaction: a.interaction || { input: false, questions: false, progress: true, mode: 'one-shot' },
+        // 只有支持 slash 展开的 Agent 才能确定性加载 Skill。
+        slashSkills: SLASH_SKILL_AGENTS.has(a.id),
         models,
         health: { ...capability.health, modelHealth },
       }
     })),
-    defaults: cfg.defaults,
+    defaults: { ...cfg.defaults, maxSelectedSkills: MAX_SELECTED_SKILLS },
     runner,
   })
 })
@@ -1367,12 +1431,14 @@ app.post('/api/providers/:id/test', async (req, res) => {
 })
 
 app.get('/api/skills', (req, res) => {
-  if (!requireRunnerOwner(req, res)) return
+  // 同 /api/agents：本机已装 Skill 是只读信息，未登录也可浏览。
+  const runner = runnerDescriptor(req)
   try {
     res.json({
       skills: listLocalSkills().map(publicSkill),
-      installEnabled: skillInstallEnabled(req),
+      installEnabled: runner.canExecute && skillInstallEnabled(req),
       supportedAgents: loadAgentsConfig().agents.map((agent) => agent.id),
+      runner,
     })
   } catch (error) {
     res.status(500).json({ error: `读取 Skills 失败：${error.message}` })
@@ -2136,7 +2202,7 @@ app.post('/api/tasks', async (req, res) => {
     (Array.isArray(req.body?.selectedSkills) ? req.body.selectedSkills : [])
       .map((skill) => String(skill || '').trim())
       .filter(Boolean)
-  )].slice(0, 12)
+  )].slice(0, MAX_SELECTED_SKILLS)
   let { project } = req.body || {}
   if (typeof prompt !== 'string' || !prompt.trim() || !Array.isArray(runners) || runners.length === 0) {
     return res.status(400).json({ error: 'prompt 和至少一个 runner 必填' })
@@ -2210,10 +2276,12 @@ app.post('/api/tasks', async (req, res) => {
     deliveryConstraint,
     deliveryDefaults[deliveryMode] || cfg.defaults.singleHtmlArtifactHint || cfg.defaults.artifactHint
   )
-  const finalPrompt =
-    prompt.trim() +
-    buildSelectedSkillsPrompt(selectedSkills) +
-    `\n\n【交付要求】\n${finalDeliveryConstraint}`
+  // Skill 的 `/<name>` 必须是整个 prompt 的第一个 token，CLI 才会展开它。
+  // 只有支持 slash 展开的 Agent 才加前缀；其他 Agent 拿到不带前缀的原始
+  // prompt，而不是一个它读不懂的字面 `/xxx`。
+  const promptBody = `${prompt.trim()}\n\n【交付要求】\n${finalDeliveryConstraint}`
+  const promptFor = (agentId) =>
+    (agentLoadsSkills(agentId) ? buildSelectedSkillsPrefix(selectedSkills) : '') + promptBody
   const batchId = crypto.randomUUID()
   const created = []
 
@@ -2246,7 +2314,8 @@ app.post('/api/tasks', async (req, res) => {
       publishState: publish ? 'pending' : 'local',
       user,
       category,
-      selectedSkills,
+      // 只记录这个 Agent 真正会加载的 Skill，卡片上就不会出现假绿灯。
+      selectedSkills: agentLoadsSkills(agent.id) ? selectedSkills : [],
       deliveryMode,
       deliveryConstraint: finalDeliveryConstraint,
       interaction: agent.interaction || { input: false, questions: false, progress: true, mode: 'one-shot' },
@@ -2255,13 +2324,13 @@ app.post('/api/tasks', async (req, res) => {
     runs.unshift(run)
     if (run.publish && sessionUser?.idToken) publishCredentials.set(run.id, { idToken: sessionUser.idToken })
     created.push(run)
-    startRun(
+    enqueueRun({
       run,
-      { ...agent, command: capability.executable },
-      finalPrompt,
-      cfg.defaults.timeoutMinutes || 20,
-      providerRuntimeEnv(provider, model, strictModel)
-    )
+      agent: { ...agent, command: capability.executable },
+      prompt: promptFor(agent.id),
+      timeoutMinutes: cfg.defaults.timeoutMinutes || 20,
+      runtimeEnv: providerRuntimeEnv(provider, model, strictModel),
+    })
   }
   saveRegistry()
   res.json({ batchId, project, runs: created.map(publicRun) })
@@ -2513,6 +2582,13 @@ app.post('/api/runs/:id/stop', (req, res) => {
     run.status = 'stopped'
     live.proc.kill('SIGTERM')
     setTimeout(() => live.proc.kill('SIGKILL'), 5000).unref()
+  } else if (run.status === 'queued' && dropFromRunQueue(run.id)) {
+    // 还没轮到的任务直接出队，不占名额。
+    run.status = 'stopped'
+    delete run.queuePosition
+    run.endedAt = new Date().toISOString()
+    broadcast({ type: 'run', run: publicRun(run) })
+    drainRunQueue()
   }
   saveRegistry()
   res.json({ ok: true })
@@ -2527,6 +2603,7 @@ app.delete('/api/runs/:id', (req, res) => {
   if (liveProcs.get(run.id)) {
     return res.status(400).json({ error: '请先停止运行中的任务' })
   }
+  dropFromRunQueue(run.id)
   const dir = path.join(RUNS_DIR, run.folder)
   // 防御：只允许删除 runs 目录内的内容
   if (dir.startsWith(RUNS_DIR + path.sep) && fs.existsSync(dir)) {
@@ -2726,6 +2803,12 @@ if (fs.existsSync(WEB_DIST_DIR)) {
 
 httpServer.listen(PORT, () => {
   console.log(`Touchstone server: http://localhost:${PORT}`)
+  // 预热 CLI 探测缓存。冷探测要几秒，会超过边缘代理的 origin 超时，
+  // 让首个访问者看到「本地执行器离线」。启动时先跑一遍，首屏就命中缓存。
+  loadAgentsConfig()
+    .agents.forEach((agent) => {
+      getAgentCapability(agent).catch(() => {})
+    })
   // 回填：旧 run 的分类与缩略图（截图需要服务已就绪）
   for (const r of runs) {
     if (!r.category) r.category = classifyHeuristic(r.prompt)

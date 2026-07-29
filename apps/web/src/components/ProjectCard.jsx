@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { LIKED_PROJECTS_KEY, readFavoriteSet, writeFavoriteSet } from '@/lib/favorites'
 import { trackEvent } from '@/lib/analytics'
 import { useI18n } from '@/i18n.jsx'
-import { groupVisibility } from '@/lib/runVisibility'
+import { groupVisibility, isActiveRun } from '@/lib/runVisibility'
 
 const getLikedProjects = () => {
   return readFavoriteSet(LIKED_PROJECTS_KEY)
@@ -70,7 +70,7 @@ export function CategoryTag({ category, className }) {
 
 export default function ProjectCard({ group: g, views, likes, users, onOpen, onOpenUser }) {
   const { t } = useI18n()
-  const running = g.runs.filter((r) => r.status === 'running' || r.status === 'pending').length
+  const running = g.runs.filter(isActiveRun).length
   const done = g.runs.filter((r) => r.status === 'done').length
   const failed = g.runs.length - running - done
   const contributors = [...new Set(g.runs.map((r) => r.user).filter(Boolean))]

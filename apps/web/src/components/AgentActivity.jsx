@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useI18n } from '@/i18n.jsx'
+import { isActiveRun } from '@/lib/runVisibility'
 
 const EVENT_STATUS = {
   completed: { icon: CheckCircle2, color: 'text-emerald-400' },
@@ -228,7 +229,7 @@ export default function AgentActivity({ run, events = [], rawLog = '' }) {
   return (
     <div className="absolute inset-0 flex flex-col bg-[#09090b]">
       <header className="flex h-9 shrink-0 items-center gap-2 border-b border-white/8 px-3">
-        <span className={cn('h-1.5 w-1.5 rounded-full', run.status === 'running' || run.status === 'pending' ? 'bg-acid shadow-[0_0_7px_rgba(212,255,79,.7)]' : run.status === 'done' ? 'bg-emerald-400' : 'bg-red-400')} />
+        <span className={cn('h-1.5 w-1.5 rounded-full', isActiveRun(run) ? 'bg-acid shadow-[0_0_7px_rgba(212,255,79,.7)]' : run.status === 'done' ? 'bg-emerald-400' : 'bg-red-400')} />
         <span className="font-mono text-[9px] tracking-[0.16em] text-white/45 uppercase">{run.status === 'running' ? 'live activity' : 'agent activity'}</span>
         <span
           title={run.interaction?.input ? 'This adapter accepts follow-up input' : `One-shot CLI${run.interaction?.upgrade ? ` · upgrade: ${run.interaction.upgrade}` : ''}`}

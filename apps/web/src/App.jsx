@@ -16,7 +16,7 @@ import Avatar from './components/Avatar.jsx'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { trackEvent, trackPageView } from '@/lib/analytics'
-import { isCommunityRun } from '@/lib/runVisibility'
+import { isActiveRun, isCommunityRun } from '@/lib/runVisibility'
 import { cn } from '@/lib/utils'
 import {
   DropdownMenu,
@@ -510,7 +510,7 @@ export default function App() {
     return groupRuns(runs)
   }, [runs])
 
-  const active = runs.filter((r) => r.status === 'running' || r.status === 'pending').length
+  const active = runs.filter(isActiveRun).length
   const currentIdx = route.page === 'project' ? groups.findIndex((g) => g.project === route.project) : -1
   const currentGroup = currentIdx >= 0 ? groups[currentIdx] : null
 

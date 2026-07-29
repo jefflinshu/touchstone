@@ -56,6 +56,36 @@ test('does not claim readiness when the version probe hangs', () => {
   assert.match(capability.health.fix, /超时/)
 })
 
+test('treats a logged-out credential file as unauthenticated', () => {
+  // Gemini CLI 登出后仍保留 google_accounts.json，只是 active 变成 null。
+  const geminiAgent = {
+    id: 'gemini',
+    name: 'Gemini CLI',
+    command: '/bin/sh',
+    models: ['gemini-3.1-pro'],
+    auth: {
+      files: [{ path: '~/.gemini/google_accounts.json', requireJsonField: 'active' }],
+    },
+  }
+  const probe = (accountsJson) =>
+    probeAgentCapability(geminiAgent, {
+      env: { PATH: '/bin' },
+      homeDir: '/home/test',
+      existsSync: (value) => value === '/home/test/.gemini/google_accounts.json',
+      readFileSync: () => accountsJson,
+      runCommand: () => ({ status: 0, stdout: '0.33.1\n', stderr: '' }),
+    })
+
+  const loggedOut = probe('{"active": null, "old": [{"email": "a@b.c"}]}')
+  assert.equal(loggedOut.health.installed, true)
+  assert.equal(loggedOut.health.authed, false)
+  assert.equal(loggedOut.health.ready, false)
+
+  const loggedIn = probe('{"active": {"email": "a@b.c"}}')
+  assert.equal(loggedIn.health.authed, true)
+  assert.equal(loggedIn.health.ready, true)
+})
+
 test('supports asynchronous non-blocking probes', async () => {
   const capability = await probeAgentCapabilityAsync(baseAgent, {
     env: { PATH: '/bin' },
